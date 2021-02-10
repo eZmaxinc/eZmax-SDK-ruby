@@ -7,7 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
 | [**ezsignsignature_edit_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Modify an existing Ezsignsignature |
-| [**ezsignsignature_get_object_get_children_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs |
+| [**ezsignsignature_get_children_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs |
 | [**ezsignsignature_get_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 
 
@@ -222,9 +222,9 @@ end
 - **Accept**: application/json
 
 
-## ezsignsignature_get_object_get_children_v1
+## ezsignsignature_get_children_v1
 
-> ezsignsignature_get_object_get_children_v1(pki_ezsignsignature_id)
+> ezsignsignature_get_children_v1(pki_ezsignsignature_id)
 
 Retrieve an existing Ezsignsignature's children IDs
 
@@ -246,27 +246,27 @@ pki_ezsignsignature_id = 56 # Integer | The unique ID of the Ezsignsignature
 
 begin
   # Retrieve an existing Ezsignsignature's children IDs
-  api_instance.ezsignsignature_get_object_get_children_v1(pki_ezsignsignature_id)
+  api_instance.ezsignsignature_get_children_v1(pki_ezsignsignature_id)
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_get_children_v1: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_children_v1: #{e}"
 end
 ```
 
-#### Using the ezsignsignature_get_object_get_children_v1_with_http_info variant
+#### Using the ezsignsignature_get_children_v1_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> ezsignsignature_get_object_get_children_v1_with_http_info(pki_ezsignsignature_id)
+> <Array(nil, Integer, Hash)> ezsignsignature_get_children_v1_with_http_info(pki_ezsignsignature_id)
 
 ```ruby
 begin
   # Retrieve an existing Ezsignsignature's children IDs
-  data, status_code, headers = api_instance.ezsignsignature_get_object_get_children_v1_with_http_info(pki_ezsignsignature_id)
+  data, status_code, headers = api_instance.ezsignsignature_get_children_v1_with_http_info(pki_ezsignsignature_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_get_children_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_children_v1_with_http_info: #{e}"
 end
 ```
 

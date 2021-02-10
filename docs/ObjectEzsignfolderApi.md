@@ -7,7 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
 | [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
 | [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder |
-| [**ezsignfolder_get_object_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs |
+| [**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs |
 | [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
 | [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 
@@ -223,9 +223,9 @@ end
 - **Accept**: application/json
 
 
-## ezsignfolder_get_object_get_children_v1
+## ezsignfolder_get_children_v1
 
-> ezsignfolder_get_object_get_children_v1(pki_ezsignfolder_id)
+> ezsignfolder_get_children_v1(pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder's children IDs
 
@@ -247,27 +247,27 @@ pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
 
 begin
   # Retrieve an existing Ezsignfolder's children IDs
-  api_instance.ezsignfolder_get_object_get_children_v1(pki_ezsignfolder_id)
+  api_instance.ezsignfolder_get_children_v1(pki_ezsignfolder_id)
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_object_get_children_v1: #{e}"
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1: #{e}"
 end
 ```
 
-#### Using the ezsignfolder_get_object_get_children_v1_with_http_info variant
+#### Using the ezsignfolder_get_children_v1_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> ezsignfolder_get_object_get_children_v1_with_http_info(pki_ezsignfolder_id)
+> <Array(nil, Integer, Hash)> ezsignfolder_get_children_v1_with_http_info(pki_ezsignfolder_id)
 
 ```ruby
 begin
   # Retrieve an existing Ezsignfolder's children IDs
-  data, status_code, headers = api_instance.ezsignfolder_get_object_get_children_v1_with_http_info(pki_ezsignfolder_id)
+  data, status_code, headers = api_instance.ezsignfolder_get_children_v1_with_http_info(pki_ezsignfolder_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_object_get_children_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1_with_http_info: #{e}"
 end
 ```
 

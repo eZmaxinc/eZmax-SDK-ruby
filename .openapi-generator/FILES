@@ -96,6 +96,8 @@ docs/FranchisereferalincomeCreateObjectV1Response.md
 docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
 docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
+docs/GlobalCustomerApi.md
+docs/GlobalCustomerGetEndpointV1Response.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -125,6 +127,7 @@ docs/WebsiteRequest.md
 ezmax_api.gemspec
 git_push.sh
 lib/ezmax_api.rb
+lib/ezmax_api/api/global_customer_api.rb
 lib/ezmax_api/api/module_user_api.rb
 lib/ezmax_api/api/object_activesession_api.rb
 lib/ezmax_api/api/object_apikey_api.rb
@@ -230,6 +233,7 @@ lib/ezmax_api/models/franchisereferalincome_create_object_v1_response.rb
 lib/ezmax_api/models/franchisereferalincome_create_object_v1_response_m_payload.rb
 lib/ezmax_api/models/franchisereferalincome_request.rb
 lib/ezmax_api/models/franchisereferalincome_request_compound.rb
+lib/ezmax_api/models/global_customer_get_endpoint_v1_response.rb
 lib/ezmax_api/models/multilingual_apikey_description.rb
 lib/ezmax_api/models/phone_request.rb
 lib/ezmax_api/models/user_create_ezsignuser_v1_request.rb
@@ -246,6 +250,7 @@ lib/ezmax_api/models/webhook_user_user_created.rb
 lib/ezmax_api/models/webhook_user_user_created_all_of.rb
 lib/ezmax_api/models/website_request.rb
 lib/ezmax_api/version.rb
+spec/api/global_customer_api_spec.rb
 spec/api/module_user_api_spec.rb
 spec/api/object_activesession_api_spec.rb
 spec/api/object_apikey_api_spec.rb
@@ -349,6 +354,7 @@ spec/models/franchisereferalincome_create_object_v1_response_m_payload_spec.rb
 spec/models/franchisereferalincome_create_object_v1_response_spec.rb
 spec/models/franchisereferalincome_request_compound_spec.rb
 spec/models/franchisereferalincome_request_spec.rb
+spec/models/global_customer_get_endpoint_v1_response_spec.rb
 spec/models/multilingual_apikey_description_spec.rb
 spec/models/phone_request_spec.rb
 spec/models/user_create_ezsignuser_v1_request_spec.rb
