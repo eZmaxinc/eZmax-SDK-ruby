@@ -98,6 +98,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -128,6 +129,7 @@ ezmax_api.gemspec
 git_push.sh
 lib/ezmax_api.rb
 lib/ezmax_api/api/global_customer_api.rb
+lib/ezmax_api/api/module_sspr_api.rb
 lib/ezmax_api/api/module_user_api.rb
 lib/ezmax_api/api/object_activesession_api.rb
 lib/ezmax_api/api/object_apikey_api.rb
@@ -251,6 +253,7 @@ lib/ezmax_api/models/webhook_user_user_created_all_of.rb
 lib/ezmax_api/models/website_request.rb
 lib/ezmax_api/version.rb
 spec/api/global_customer_api_spec.rb
+spec/api/module_sspr_api_spec.rb
 spec/api/module_user_api_spec.rb
 spec/api/object_activesession_api_spec.rb
 spec/api/object_apikey_api_spec.rb
