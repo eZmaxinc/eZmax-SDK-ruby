@@ -1,4 +1,4 @@
-# EzmaxApi::EzsignsignatureEditObjectV1Request
+# EzmaxApi::UNUSEDEzsignsignatureEditObjectV1Request
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::EzsignsignatureEditObjectV1Request.new(
+instance = EzmaxApi::UNUSEDEzsignsignatureEditObjectV1Request.new(
   obj_ezsignsignature: null
 )
 ```

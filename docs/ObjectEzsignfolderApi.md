@@ -6,7 +6,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
 | [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
-| [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder |
 | [**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs |
 | [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
 | [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
@@ -149,77 +148,6 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsignfolder_edit_object_v1
-
-> <EzsignfolderEditObjectV1Response> ezsignfolder_edit_object_v1(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
-
-Modify an existing Ezsignfolder
-
-### Examples
-
-```ruby
-require 'time'
-require 'ezmax_api'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
-ezsignfolder_edit_object_v1_request = EzmaxApi::EzsignfolderEditObjectV1Request.new # EzsignfolderEditObjectV1Request | 
-
-begin
-  # Modify an existing Ezsignfolder
-  result = api_instance.ezsignfolder_edit_object_v1(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_edit_object_v1: #{e}"
-end
-```
-
-#### Using the ezsignfolder_edit_object_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignfolderEditObjectV1Response>, Integer, Hash)> ezsignfolder_edit_object_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
-
-```ruby
-begin
-  # Modify an existing Ezsignfolder
-  data, status_code, headers = api_instance.ezsignfolder_edit_object_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignfolderEditObjectV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_edit_object_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
-| **ezsignfolder_edit_object_v1_request** | [**EzsignfolderEditObjectV1Request**](EzsignfolderEditObjectV1Request.md) |  |  |
-
-### Return type
-
-[**EzsignfolderEditObjectV1Response**](EzsignfolderEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 

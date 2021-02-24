@@ -1,4 +1,4 @@
-# EzmaxApi::EzsignfolderEditObjectV1Request
+# EzmaxApi::UNUSEDEzsignfolderEditObjectV1Request
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::EzsignfolderEditObjectV1Request.new(
+instance = EzmaxApi::UNUSEDEzsignfolderEditObjectV1Request.new(
   obj_ezsignfolder: null
 )
 ```

@@ -1,4 +1,4 @@
-# EzmaxApi::EzsignfoldersignerassociationEditObjectV1Request
+# EzmaxApi::UNUSEDEzsignfoldersignerassociationEditObjectV1Request
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::EzsignfoldersignerassociationEditObjectV1Request.new(
+instance = EzmaxApi::UNUSEDEzsignfoldersignerassociationEditObjectV1Request.new(
   obj_ezsignfoldersignerassociation: null
 )
 ```

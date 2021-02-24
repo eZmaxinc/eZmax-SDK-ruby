@@ -7,7 +7,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_apply_ezsigntemplate_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument. |
 | [**ezsigndocument_create_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
-| [**ezsigndocument_edit_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_object_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Modify an existing Ezsigndocument |
 | [**ezsigndocument_get_children_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_children_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs |
 | [**ezsigndocument_get_download_url_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents. |
 | [**ezsigndocument_get_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
@@ -223,77 +222,6 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsigndocument_edit_object_v1
-
-> <EzsigndocumentEditObjectV1Response> ezsigndocument_edit_object_v1(pki_ezsigndocument_id, ezsigndocument_edit_object_v1_request)
-
-Modify an existing Ezsigndocument
-
-### Examples
-
-```ruby
-require 'time'
-require 'ezmax_api'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
-pki_ezsigndocument_id = 56 # Integer | The unique ID of the Ezsigndocument
-ezsigndocument_edit_object_v1_request = EzmaxApi::EzsigndocumentEditObjectV1Request.new # EzsigndocumentEditObjectV1Request | 
-
-begin
-  # Modify an existing Ezsigndocument
-  result = api_instance.ezsigndocument_edit_object_v1(pki_ezsigndocument_id, ezsigndocument_edit_object_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_object_v1: #{e}"
-end
-```
-
-#### Using the ezsigndocument_edit_object_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsigndocumentEditObjectV1Response>, Integer, Hash)> ezsigndocument_edit_object_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_object_v1_request)
-
-```ruby
-begin
-  # Modify an existing Ezsigndocument
-  data, status_code, headers = api_instance.ezsigndocument_edit_object_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_object_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsigndocumentEditObjectV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_object_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument |  |
-| **ezsigndocument_edit_object_v1_request** | [**EzsigndocumentEditObjectV1Request**](EzsigndocumentEditObjectV1Request.md) |  |  |
-
-### Return type
-
-[**EzsigndocumentEditObjectV1Response**](EzsigndocumentEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 

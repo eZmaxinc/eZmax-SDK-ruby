@@ -1,4 +1,4 @@
-# EzmaxApi::EzsignfolderEditObjectV1Response
+# EzmaxApi::UNUSEDEzsignsignatureEditObjectV1Response
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::EzsignfolderEditObjectV1Response.new(
+instance = EzmaxApi::UNUSEDEzsignsignatureEditObjectV1Response.new(
   obj_debug_payload: null,
   obj_debug: null
 )
