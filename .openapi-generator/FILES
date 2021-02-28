@@ -83,6 +83,7 @@ docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
 docs/FieldEPhoneType.md
 docs/FieldEUserType.md
+docs/FieldEUserTypeSSPR.md
 docs/FranchisereferalincomeCreateObjectV1Request.md
 docs/FranchisereferalincomeCreateObjectV1Response.md
 docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
@@ -104,6 +105,11 @@ docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
 docs/ObjectPeriodApi.md
 docs/PhoneRequest.md
+docs/SsprResetPasswordRequestV1Request.md
+docs/SsprResetPasswordV1Request.md
+docs/SsprSendUsernamesV1Request.md
+docs/SsprUnlockAccountRequestV1Request.md
+docs/SsprUnlockAccountV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Response.md
 docs/UNUSEDEzsignfolderEditObjectV1Request.md
@@ -222,6 +228,7 @@ lib/ezmax_api/models/field_e_ezsignfolder_sendreminderfrequency.rb
 lib/ezmax_api/models/field_e_ezsignfolder_step.rb
 lib/ezmax_api/models/field_e_phone_type.rb
 lib/ezmax_api/models/field_e_user_type.rb
+lib/ezmax_api/models/field_e_user_type_sspr.rb
 lib/ezmax_api/models/franchisereferalincome_create_object_v1_request.rb
 lib/ezmax_api/models/franchisereferalincome_create_object_v1_response.rb
 lib/ezmax_api/models/franchisereferalincome_create_object_v1_response_m_payload.rb
@@ -230,6 +237,11 @@ lib/ezmax_api/models/franchisereferalincome_request_compound.rb
 lib/ezmax_api/models/global_customer_get_endpoint_v1_response.rb
 lib/ezmax_api/models/multilingual_apikey_description.rb
 lib/ezmax_api/models/phone_request.rb
+lib/ezmax_api/models/sspr_reset_password_request_v1_request.rb
+lib/ezmax_api/models/sspr_reset_password_v1_request.rb
+lib/ezmax_api/models/sspr_send_usernames_v1_request.rb
+lib/ezmax_api/models/sspr_unlock_account_request_v1_request.rb
+lib/ezmax_api/models/sspr_unlock_account_v1_request.rb
 lib/ezmax_api/models/unused_ezsigndocument_edit_object_v1_request.rb
 lib/ezmax_api/models/unused_ezsigndocument_edit_object_v1_response.rb
 lib/ezmax_api/models/unused_ezsignfolder_edit_object_v1_request.rb
@@ -344,6 +356,7 @@ spec/models/field_e_ezsignfolder_sendreminderfrequency_spec.rb
 spec/models/field_e_ezsignfolder_step_spec.rb
 spec/models/field_e_phone_type_spec.rb
 spec/models/field_e_user_type_spec.rb
+spec/models/field_e_user_type_sspr_spec.rb
 spec/models/franchisereferalincome_create_object_v1_request_spec.rb
 spec/models/franchisereferalincome_create_object_v1_response_m_payload_spec.rb
 spec/models/franchisereferalincome_create_object_v1_response_spec.rb
@@ -352,6 +365,11 @@ spec/models/franchisereferalincome_request_spec.rb
 spec/models/global_customer_get_endpoint_v1_response_spec.rb
 spec/models/multilingual_apikey_description_spec.rb
 spec/models/phone_request_spec.rb
+spec/models/sspr_reset_password_request_v1_request_spec.rb
+spec/models/sspr_reset_password_v1_request_spec.rb
+spec/models/sspr_send_usernames_v1_request_spec.rb
+spec/models/sspr_unlock_account_request_v1_request_spec.rb
+spec/models/sspr_unlock_account_v1_request_spec.rb
 spec/models/unused_ezsigndocument_edit_object_v1_request_spec.rb
 spec/models/unused_ezsigndocument_edit_object_v1_response_spec.rb
 spec/models/unused_ezsignfolder_edit_object_v1_request_spec.rb

@@ -273,24 +273,6 @@ module EzmaxApi
 
     def operation_server_settings
       {
-        "GlobalCustomerApi.global_customer_get_endpoint_v1": [
-          {
-          url: "https://{sInfrastructureenvironmenttypeDescription}.api.global.ezmax.com",
-          description: "The server endpoint where to send your API requests.",
-          variables: {
-            sInfrastructureenvironmenttypeDescription: {
-                description: "The environment on on which to call the API. Should always be \"prod\" unless instructed otherwise by support.",
-                default_value: "prod",
-                enum_values: [
-                  "prod",
-                  "stg",
-                  "qa",
-                  "dev"
-                ]
-              }
-            }
-          }
-        ],
       }
     end
 
