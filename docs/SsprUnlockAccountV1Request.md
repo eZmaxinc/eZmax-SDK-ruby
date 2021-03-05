@@ -22,7 +22,7 @@ instance = EzmaxApi::SsprUnlockAccountV1Request.new(
   e_user_type_sspr: null,
   s_email_address: example@domain.com,
   s_user_loginname: JohnDoe,
-  bin_user_ssp_rtoken: 012345678901234567890123456789AB
+  bin_user_ssp_rtoken: 012345678901234567890123456789ab
 )
 ```
 

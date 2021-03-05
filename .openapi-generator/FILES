@@ -110,6 +110,7 @@ docs/SsprResetPasswordV1Request.md
 docs/SsprSendUsernamesV1Request.md
 docs/SsprUnlockAccountRequestV1Request.md
 docs/SsprUnlockAccountV1Request.md
+docs/SsprValidateTokenV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Response.md
 docs/UNUSEDEzsignfolderEditObjectV1Request.md
@@ -242,6 +243,7 @@ lib/ezmax_api/models/sspr_reset_password_v1_request.rb
 lib/ezmax_api/models/sspr_send_usernames_v1_request.rb
 lib/ezmax_api/models/sspr_unlock_account_request_v1_request.rb
 lib/ezmax_api/models/sspr_unlock_account_v1_request.rb
+lib/ezmax_api/models/sspr_validate_token_v1_request.rb
 lib/ezmax_api/models/unused_ezsigndocument_edit_object_v1_request.rb
 lib/ezmax_api/models/unused_ezsigndocument_edit_object_v1_response.rb
 lib/ezmax_api/models/unused_ezsignfolder_edit_object_v1_request.rb
@@ -370,6 +372,7 @@ spec/models/sspr_reset_password_v1_request_spec.rb
 spec/models/sspr_send_usernames_v1_request_spec.rb
 spec/models/sspr_unlock_account_request_v1_request_spec.rb
 spec/models/sspr_unlock_account_v1_request_spec.rb
+spec/models/sspr_validate_token_v1_request_spec.rb
 spec/models/unused_ezsigndocument_edit_object_v1_request_spec.rb
 spec/models/unused_ezsigndocument_edit_object_v1_response_spec.rb
 spec/models/unused_ezsignfolder_edit_object_v1_request_spec.rb

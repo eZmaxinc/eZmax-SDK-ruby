@@ -10,7 +10,6 @@
 | **fki_ezsignfolder_id** | **Integer** | A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation. |  |
 | **dt_ezsigndocument_duedate** | **String** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
-| **s_ezsigndocument_filename** | **String** | The actual file name that will be used when downloading or attaching to an email. |  |
 | **s_ezsigndocument_name** | **String** | The name of the document that will be presented to Ezsignfoldersignerassociations |  |
 
 ## Example
@@ -25,7 +24,6 @@ instance = EzmaxApi::EzsigndocumentRequest.new(
   fki_ezsignfolder_id: null,
   dt_ezsigndocument_duedate: 2020-12-31 23:59:59,
   fki_language_id: 2,
-  s_ezsigndocument_filename: null,
   s_ezsigndocument_name: null
 )
 ```

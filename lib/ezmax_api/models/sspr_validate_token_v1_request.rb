@@ -14,17 +14,34 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate API Request
-  class EzsigndocumentApplyEzsigntemplateV1Response
-    attr_accessor :obj_debug_payload
+  # Request for the /1/module/sspr/validateToken API Request
+  class SsprValidateTokenV1Request
+    # The customer code assigned to your account
+    attr_accessor :pks_customer_code
 
-    attr_accessor :obj_debug
+    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+    attr_accessor :fki_language_id
+
+    attr_accessor :e_user_type_sspr
+
+    # The email address.
+    attr_accessor :s_email_address
+
+    # The Login name of the User.
+    attr_accessor :s_user_loginname
+
+    # Hex Encoded Secret SSPR token
+    attr_accessor :bin_user_ssp_rtoken
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'obj_debug_payload' => :'objDebugPayload',
-        :'obj_debug' => :'objDebug'
+        :'pks_customer_code' => :'pksCustomerCode',
+        :'fki_language_id' => :'fkiLanguageID',
+        :'e_user_type_sspr' => :'eUserTypeSSPR',
+        :'s_email_address' => :'sEmailAddress',
+        :'s_user_loginname' => :'sUserLoginname',
+        :'bin_user_ssp_rtoken' => :'binUserSSPRtoken'
       }
     end
 
@@ -36,8 +53,12 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
-        :'obj_debug' => :'CommonResponseObjDebug'
+        :'pks_customer_code' => :'String',
+        :'fki_language_id' => :'Integer',
+        :'e_user_type_sspr' => :'FieldEUserTypeSSPR',
+        :'s_email_address' => :'String',
+        :'s_user_loginname' => :'String',
+        :'bin_user_ssp_rtoken' => :'String'
       }
     end
 
@@ -47,34 +68,43 @@ module EzmaxApi
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'CommonResponse'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsigndocumentApplyEzsigntemplateV1Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::SsprValidateTokenV1Request` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsigndocumentApplyEzsigntemplateV1Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::SsprValidateTokenV1Request`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'obj_debug_payload')
-        self.obj_debug_payload = attributes[:'obj_debug_payload']
+      if attributes.key?(:'pks_customer_code')
+        self.pks_customer_code = attributes[:'pks_customer_code']
       end
 
-      if attributes.key?(:'obj_debug')
-        self.obj_debug = attributes[:'obj_debug']
+      if attributes.key?(:'fki_language_id')
+        self.fki_language_id = attributes[:'fki_language_id']
+      end
+
+      if attributes.key?(:'e_user_type_sspr')
+        self.e_user_type_sspr = attributes[:'e_user_type_sspr']
+      end
+
+      if attributes.key?(:'s_email_address')
+        self.s_email_address = attributes[:'s_email_address']
+      end
+
+      if attributes.key?(:'s_user_loginname')
+        self.s_user_loginname = attributes[:'s_user_loginname']
+      end
+
+      if attributes.key?(:'bin_user_ssp_rtoken')
+        self.bin_user_ssp_rtoken = attributes[:'bin_user_ssp_rtoken']
       end
     end
 
@@ -82,13 +112,89 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @pks_customer_code.nil?
+        invalid_properties.push('invalid value for "pks_customer_code", pks_customer_code cannot be nil.')
+      end
+
+      if @pks_customer_code.to_s.length > 6
+        invalid_properties.push('invalid value for "pks_customer_code", the character length must be smaller than or equal to 6.')
+      end
+
+      if @pks_customer_code.to_s.length < 2
+        invalid_properties.push('invalid value for "pks_customer_code", the character length must be great than or equal to 2.')
+      end
+
+      if @fki_language_id.nil?
+        invalid_properties.push('invalid value for "fki_language_id", fki_language_id cannot be nil.')
+      end
+
+      if @fki_language_id > 2
+        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
+      end
+
+      if @fki_language_id < 1
+        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
+      end
+
+      if @e_user_type_sspr.nil?
+        invalid_properties.push('invalid value for "e_user_type_sspr", e_user_type_sspr cannot be nil.')
+      end
+
+      if @bin_user_ssp_rtoken.nil?
+        invalid_properties.push('invalid value for "bin_user_ssp_rtoken", bin_user_ssp_rtoken cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @pks_customer_code.nil?
+      return false if @pks_customer_code.to_s.length > 6
+      return false if @pks_customer_code.to_s.length < 2
+      return false if @fki_language_id.nil?
+      return false if @fki_language_id > 2
+      return false if @fki_language_id < 1
+      return false if @e_user_type_sspr.nil?
+      return false if @bin_user_ssp_rtoken.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] pks_customer_code Value to be assigned
+    def pks_customer_code=(pks_customer_code)
+      if pks_customer_code.nil?
+        fail ArgumentError, 'pks_customer_code cannot be nil'
+      end
+
+      if pks_customer_code.to_s.length > 6
+        fail ArgumentError, 'invalid value for "pks_customer_code", the character length must be smaller than or equal to 6.'
+      end
+
+      if pks_customer_code.to_s.length < 2
+        fail ArgumentError, 'invalid value for "pks_customer_code", the character length must be great than or equal to 2.'
+      end
+
+      @pks_customer_code = pks_customer_code
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] fki_language_id Value to be assigned
+    def fki_language_id=(fki_language_id)
+      if fki_language_id.nil?
+        fail ArgumentError, 'fki_language_id cannot be nil'
+      end
+
+      if fki_language_id > 2
+        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
+      end
+
+      if fki_language_id < 1
+        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
+      end
+
+      @fki_language_id = fki_language_id
     end
 
     # Checks equality by comparing each attribute.
@@ -96,8 +202,12 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          obj_debug_payload == o.obj_debug_payload &&
-          obj_debug == o.obj_debug
+          pks_customer_code == o.pks_customer_code &&
+          fki_language_id == o.fki_language_id &&
+          e_user_type_sspr == o.e_user_type_sspr &&
+          s_email_address == o.s_email_address &&
+          s_user_loginname == o.s_user_loginname &&
+          bin_user_ssp_rtoken == o.bin_user_ssp_rtoken
     end
 
     # @see the `==` method
@@ -109,7 +219,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_debug_payload, obj_debug].hash
+      [pks_customer_code, fki_language_id, e_user_type_sspr, s_email_address, s_user_loginname, bin_user_ssp_rtoken].hash
     end
 
     # Builds the object from hash

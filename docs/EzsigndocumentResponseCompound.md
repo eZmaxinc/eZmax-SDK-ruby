@@ -7,7 +7,6 @@
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **dt_ezsigndocument_duedate** | **String** | The maximum date and time at which the document can be signed. |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
-| **s_ezsigndocument_filename** | **String** | The actual file name that will be used when downloading or attaching to an email. |  |
 | **s_ezsigndocument_name** | **String** | The name of the document that will be presented to Ezsignfoldersignerassociations |  |
 | **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigntemplate |  |
 | **e_ezsigndocument_step** | [**FieldEEzsigndocumentStep**](FieldEEzsigndocumentStep.md) |  |  |
@@ -30,7 +29,6 @@ instance = EzmaxApi::EzsigndocumentResponseCompound.new(
   fki_ezsignfolder_id: 33,
   dt_ezsigndocument_duedate: 2020-12-31 23:59:59,
   fki_language_id: 2,
-  s_ezsigndocument_filename: Contract123.pdf,
   s_ezsigndocument_name: Contract #123,
   pki_ezsigndocument_id: 97,
   e_ezsigndocument_step: null,

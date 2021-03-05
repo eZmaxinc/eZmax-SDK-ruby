@@ -1,4 +1,4 @@
-# EzmaxApi::SsprResetPasswordV1Request
+# EzmaxApi::SsprValidateTokenV1Request
 
 ## Properties
 
@@ -10,21 +10,19 @@
 | **s_email_address** | **String** | The email address. | [optional] |
 | **s_user_loginname** | **String** | The Login name of the User. | [optional] |
 | **bin_user_ssp_rtoken** | **String** | Hex Encoded Secret SSPR token |  |
-| **s_password** | **String** | A Password.  Must meet complexity requirements |  |
 
 ## Example
 
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::SsprResetPasswordV1Request.new(
+instance = EzmaxApi::SsprValidateTokenV1Request.new(
   pks_customer_code: demo,
   fki_language_id: 2,
   e_user_type_sspr: null,
   s_email_address: example@domain.com,
   s_user_loginname: JohnDoe,
-  bin_user_ssp_rtoken: 012345678901234567890123456789ab,
-  s_password: Qwerty1234!
+  bin_user_ssp_rtoken: 012345678901234567890123456789ab
 )
 ```
 

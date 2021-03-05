@@ -11,6 +11,8 @@
 | **s_department_name_x** | **String** | The name of the active Department in the current language |  |
 | **a_registered_modules** | **Array&lt;String&gt;** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. |  |
 | **a_permissions** | **Array&lt;Integer&gt;** | An array of permissions granted to the user or api key |  |
+| **fki_user_id** | **Integer** | The unique ID of the User |  |
+| **fki_apikey_id** | **Integer** | The unique ID of the Apikey |  |
 
 ## Example
 
@@ -24,7 +26,9 @@ instance = EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload.new(
   s_company_name_x: null,
   s_department_name_x: null,
   a_registered_modules: null,
-  a_permissions: null
+  a_permissions: null,
+  fki_user_id: 70,
+  fki_apikey_id: 99
 )
 ```
 
