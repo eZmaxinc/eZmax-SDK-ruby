@@ -4,7 +4,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**sspr_reset_password_request_v1**](ModuleSsprApi.md#sspr_reset_password_request_v1) | **POST** /1/module/sspr/resetPasswordRequest/ | Reset Password Request |
+| [**sspr_reset_password_request_v1**](ModuleSsprApi.md#sspr_reset_password_request_v1) | **POST** /1/module/sspr/resetPasswordRequest | Reset Password Request |
 | [**sspr_reset_password_v1**](ModuleSsprApi.md#sspr_reset_password_v1) | **POST** /1/module/sspr/resetPassword | Reset Password |
 | [**sspr_send_usernames_v1**](ModuleSsprApi.md#sspr_send_usernames_v1) | **POST** /1/module/sspr/sendUsernames | Send username(s) |
 | [**sspr_unlock_account_request_v1**](ModuleSsprApi.md#sspr_unlock_account_request_v1) | **POST** /1/module/sspr/unlockAccountRequest | Unlock Account Request |
@@ -104,7 +104,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ModuleSsprApi.new
-sspr_reset_password_v1_request = EzmaxApi::SsprResetPasswordV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789ab', s_password: 'Qwerty1234!'}) # SsprResetPasswordV1Request | 
+sspr_reset_password_v1_request = EzmaxApi::SsprResetPasswordV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789012345678901234567890123456789abcd', s_password: 'Qwerty1234!'}) # SsprResetPasswordV1Request | 
 
 begin
   # Reset Password
@@ -314,7 +314,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ModuleSsprApi.new
-sspr_unlock_account_v1_request = EzmaxApi::SsprUnlockAccountV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789ab'}) # SsprUnlockAccountV1Request | 
+sspr_unlock_account_v1_request = EzmaxApi::SsprUnlockAccountV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789012345678901234567890123456789abcd'}) # SsprUnlockAccountV1Request | 
 
 begin
   # Unlock Account
@@ -368,7 +368,7 @@ nil (empty response body)
 
 Validate Token
 
-This endpoint validates if a Token is valid and not expired. If the token has less than an hour to its life, the TTL is reset to 1 hour.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+This endpoint validates if a Token is valid and not expired.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
 ### Examples
 
@@ -384,7 +384,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ModuleSsprApi.new
-sspr_validate_token_v1_request = EzmaxApi::SsprValidateTokenV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789ab'}) # SsprValidateTokenV1Request | 
+sspr_validate_token_v1_request = EzmaxApi::SsprValidateTokenV1Request.new({pks_customer_code: 'demo', fki_language_id: 2, e_user_type_sspr: EzmaxApi::FieldEUserTypeSSPR::EZSIGN_USER, bin_user_ssp_rtoken: '012345678901234567890123456789012345678901234567890123456789abcd'}) # SsprValidateTokenV1Request | 
 
 begin
   # Validate Token

@@ -23,7 +23,7 @@ instance = EzmaxApi::SsprResetPasswordV1Request.new(
   e_user_type_sspr: null,
   s_email_address: example@domain.com,
   s_user_loginname: JohnDoe,
-  bin_user_ssp_rtoken: 012345678901234567890123456789ab,
+  bin_user_ssp_rtoken: 012345678901234567890123456789012345678901234567890123456789abcd,
   s_password: Qwerty1234!
 )
 ```
