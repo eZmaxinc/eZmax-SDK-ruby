@@ -151,7 +151,6 @@ lib/ezmax_api/api/object_period_api.rb
 lib/ezmax_api/api_client.rb
 lib/ezmax_api/api_error.rb
 lib/ezmax_api/configuration.rb
-lib/ezmax_api/configuration.rb
 lib/ezmax_api/models/activesession_get_current_v1_response.rb
 lib/ezmax_api/models/activesession_get_current_v1_response_m_payload.rb
 lib/ezmax_api/models/address_request.rb
