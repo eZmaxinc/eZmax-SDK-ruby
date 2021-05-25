@@ -16,6 +16,9 @@ docs/ApikeyRequest.md
 docs/ApikeyRequestCompound.md
 docs/ApikeyResponse.md
 docs/AttemptResponse.md
+docs/AuthenticateAuthenticateV2Request.md
+docs/AuthenticateAuthenticateV2Response.md
+docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
@@ -91,6 +94,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
@@ -136,6 +140,7 @@ ezmax_api.gemspec
 git_push.sh
 lib/ezmax_api.rb
 lib/ezmax_api/api/global_customer_api.rb
+lib/ezmax_api/api/module_authenticate_api.rb
 lib/ezmax_api/api/module_sspr_api.rb
 lib/ezmax_api/api/module_user_api.rb
 lib/ezmax_api/api/object_activesession_api.rb
@@ -161,6 +166,9 @@ lib/ezmax_api/models/apikey_request.rb
 lib/ezmax_api/models/apikey_request_compound.rb
 lib/ezmax_api/models/apikey_response.rb
 lib/ezmax_api/models/attempt_response.rb
+lib/ezmax_api/models/authenticate_authenticate_v2_request.rb
+lib/ezmax_api/models/authenticate_authenticate_v2_response.rb
+lib/ezmax_api/models/authenticate_authenticate_v2_response_m_payload.rb
 lib/ezmax_api/models/common_audit.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response_m_payload.rb
@@ -266,6 +274,7 @@ lib/ezmax_api/models/webhook_user_user_created_all_of.rb
 lib/ezmax_api/models/website_request.rb
 lib/ezmax_api/version.rb
 spec/api/global_customer_api_spec.rb
+spec/api/module_authenticate_api_spec.rb
 spec/api/module_sspr_api_spec.rb
 spec/api/module_user_api_spec.rb
 spec/api/object_activesession_api_spec.rb
@@ -290,6 +299,9 @@ spec/models/apikey_request_compound_spec.rb
 spec/models/apikey_request_spec.rb
 spec/models/apikey_response_spec.rb
 spec/models/attempt_response_spec.rb
+spec/models/authenticate_authenticate_v2_request_spec.rb
+spec/models/authenticate_authenticate_v2_response_m_payload_spec.rb
+spec/models/authenticate_authenticate_v2_response_spec.rb
 spec/models/common_audit_spec.rb
 spec/models/common_get_autocomplete_v1_response_m_payload_spec.rb
 spec/models/common_get_autocomplete_v1_response_spec.rb
