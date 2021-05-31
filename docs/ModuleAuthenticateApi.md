@@ -30,7 +30,7 @@ end
 
 api_instance = EzmaxApi::ModuleAuthenticateApi.new
 e_session_type = 'ezsignuser' # String | 
-authenticate_authenticate_v2_request = EzmaxApi::AuthenticateAuthenticateV2Request.new({pks_customer_code: 'demo', s_password: 'Qwerty1234!'}) # AuthenticateAuthenticateV2Request | 
+authenticate_authenticate_v2_request = EzmaxApi::AuthenticateAuthenticateV2Request.new({pks_customer_code: 'demo'}) # AuthenticateAuthenticateV2Request | 
 
 begin
   # Authenticate a user

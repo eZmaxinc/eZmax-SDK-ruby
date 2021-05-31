@@ -84,6 +84,7 @@ docs/EzsignsignerRequestCompoundContact.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
+docs/FieldEEzsignsignatureType.md
 docs/FieldEPhoneType.md
 docs/FieldEUserType.md
 docs/FieldEUserTypeSSPR.md
@@ -234,6 +235,7 @@ lib/ezmax_api/models/ezsignsigner_request_compound_contact.rb
 lib/ezmax_api/models/field_e_ezsigndocument_step.rb
 lib/ezmax_api/models/field_e_ezsignfolder_sendreminderfrequency.rb
 lib/ezmax_api/models/field_e_ezsignfolder_step.rb
+lib/ezmax_api/models/field_e_ezsignsignature_type.rb
 lib/ezmax_api/models/field_e_phone_type.rb
 lib/ezmax_api/models/field_e_user_type.rb
 lib/ezmax_api/models/field_e_user_type_sspr.rb
@@ -367,6 +369,7 @@ spec/models/ezsignsigner_request_spec.rb
 spec/models/field_e_ezsigndocument_step_spec.rb
 spec/models/field_e_ezsignfolder_sendreminderfrequency_spec.rb
 spec/models/field_e_ezsignfolder_step_spec.rb
+spec/models/field_e_ezsignsignature_type_spec.rb
 spec/models/field_e_phone_type_spec.rb
 spec/models/field_e_user_type_spec.rb
 spec/models/field_e_user_type_sspr_spec.rb

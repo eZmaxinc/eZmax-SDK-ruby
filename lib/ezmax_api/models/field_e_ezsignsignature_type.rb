@@ -14,10 +14,12 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  class FieldEEzsignfolderSendreminderfrequency
-    NONE = "None".freeze
-    DAILY = "Daily".freeze
-    WEEKLY = "Weekly".freeze
+  class FieldEEzsignsignatureType
+    ACKNOWLEDGEMENT = "Acknowledgement".freeze
+    CITY = "City".freeze
+    HANDWRITTEN = "Handwritten".freeze
+    INITIALS = "Initials".freeze
+    NAME = "Name".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
@@ -30,8 +32,8 @@ module EzmaxApi
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      constantValues = FieldEEzsignfolderSendreminderfrequency.constants.select { |c| FieldEEzsignfolderSendreminderfrequency::const_get(c) == value }
-      raise "Invalid ENUM value #{value} for class #FieldEEzsignfolderSendreminderfrequency" if constantValues.empty?
+      constantValues = FieldEEzsignsignatureType.constants.select { |c| FieldEEzsignsignatureType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #FieldEEzsignsignatureType" if constantValues.empty?
       value
     end
   end
