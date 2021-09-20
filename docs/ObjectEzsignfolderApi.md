@@ -157,6 +157,8 @@ end
 
 Retrieve an existing Ezsignfolder's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Examples
 
 ```ruby
@@ -224,6 +226,8 @@ nil (empty response body)
 > <EzsignfolderGetObjectV1Response> ezsignfolder_get_object_v1(pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Examples
 

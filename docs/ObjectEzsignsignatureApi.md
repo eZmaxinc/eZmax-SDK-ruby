@@ -156,6 +156,8 @@ end
 
 Retrieve an existing Ezsignsignature's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Examples
 
 ```ruby
@@ -223,6 +225,8 @@ nil (empty response body)
 > <EzsignsignatureGetObjectV1Response> ezsignsignature_get_object_v1(pki_ezsignsignature_id)
 
 Retrieve an existing Ezsignsignature
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Examples
 

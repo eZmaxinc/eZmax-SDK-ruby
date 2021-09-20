@@ -9,7 +9,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
 | [**ezsigndocument_get_children_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_children_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs |
 | [**ezsigndocument_get_download_url_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents. |
+| [**ezsigndocument_get_form_data_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data |
 | [**ezsigndocument_get_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
+| [**ezsigndocument_get_words_positions_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument |
 
 
 ## ezsigndocument_apply_ezsigntemplate_v1
@@ -231,6 +233,8 @@ end
 
 Retrieve an existing Ezsigndocument's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Examples
 
 ```ruby
@@ -366,11 +370,84 @@ end
 - **Accept**: application/json
 
 
+## ezsigndocument_get_form_data_v1
+
+> File ezsigndocument_get_form_data_v1(pki_ezsigndocument_id)
+
+Retrieve an existing Ezsigndocument's Form Data
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ezmax_api'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | The unique ID of the Ezsigndocument
+
+begin
+  # Retrieve an existing Ezsigndocument's Form Data
+  result = api_instance.ezsigndocument_get_form_data_v1(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_form_data_v1: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_form_data_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigndocument's Form Data
+  data, status_code, headers = api_instance.ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_form_data_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/zip, application/json
+
+
 ## ezsigndocument_get_object_v1
 
 > <EzsigndocumentGetObjectV1Response> ezsigndocument_get_object_v1(pki_ezsigndocument_id)
 
 Retrieve an existing Ezsigndocument
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Examples
 
@@ -432,5 +509,78 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocument_get_words_positions_v1
+
+> <EzsigndocumentGetWordsPositionsV1Response> ezsigndocument_get_words_positions_v1(pki_ezsigndocument_id, ezsigndocument_get_words_positions_v1_request)
+
+Retrieve positions X,Y of given words from a Ezsigndocument
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ezmax_api'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | The unique ID of the Ezsigndocument
+ezsigndocument_get_words_positions_v1_request = EzmaxApi::EzsigndocumentGetWordsPositionsV1Request.new({a_s_words: ['a_s_words_example']}) # EzsigndocumentGetWordsPositionsV1Request | 
+
+begin
+  # Retrieve positions X,Y of given words from a Ezsigndocument
+  result = api_instance.ezsigndocument_get_words_positions_v1(pki_ezsigndocument_id, ezsigndocument_get_words_positions_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_words_positions_v1: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_words_positions_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetWordsPositionsV1Response>, Integer, Hash)> ezsigndocument_get_words_positions_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_get_words_positions_v1_request)
+
+```ruby
+begin
+  # Retrieve positions X,Y of given words from a Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_words_positions_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_get_words_positions_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetWordsPositionsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_words_positions_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument |  |
+| **ezsigndocument_get_words_positions_v1_request** | [**EzsigndocumentGetWordsPositionsV1Request**](EzsigndocumentGetWordsPositionsV1Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentGetWordsPositionsV1Response**](EzsigndocumentGetWordsPositionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

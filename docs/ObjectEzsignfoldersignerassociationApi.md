@@ -157,6 +157,8 @@ end
 
 Retrieve an existing Ezsignfoldersignerassociation's children IDs
 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
 ### Examples
 
 ```ruby
@@ -295,6 +297,8 @@ end
 > <EzsignfoldersignerassociationGetObjectV1Response> ezsignfoldersignerassociation_get_object_v1(pki_ezsignfoldersignerassociation_id)
 
 Retrieve an existing Ezsignfoldersignerassociation
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Examples
 
