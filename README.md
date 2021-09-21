@@ -66,7 +66,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::GlobalCustomerApi.new
-pks_customer_code = 'pks_customer_code_example' # String | The customer code assigned to your account
+pks_customer_code = 'pks_customer_code_example' # String | 
 opts = {
   s_infrastructureproduct_code: 'appcluster01' # String | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 }
@@ -103,12 +103,14 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_delete_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_children_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_children_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument's children IDs
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_download_url_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+*EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_ezsignpages_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignpages_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument's Ezsignpages
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_form_data_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument's Form Data
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_words_positions_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_create_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_delete_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_children_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder's children IDs
+*EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_forms_data_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder's forms data
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_send_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *EzmaxApi::ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociation_create_object_v1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
@@ -171,6 +173,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
  - [EzmaxApi::EzsigndocumentGetDownloadUrlV1ResponseAllOf](docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md)
  - [EzmaxApi::EzsigndocumentGetDownloadUrlV1ResponseMPayload](docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md)
+ - [EzmaxApi::EzsigndocumentGetEzsignpagesV1Response](docs/EzsigndocumentGetEzsignpagesV1Response.md)
+ - [EzmaxApi::EzsigndocumentGetEzsignpagesV1ResponseAllOf](docs/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md)
+ - [EzmaxApi::EzsigndocumentGetEzsignpagesV1ResponseMPayload](docs/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md)
  - [EzmaxApi::EzsigndocumentGetObjectV1Response](docs/EzsigndocumentGetObjectV1Response.md)
  - [EzmaxApi::EzsigndocumentGetObjectV1ResponseAllOf](docs/EzsigndocumentGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::EzsigndocumentGetObjectV1ResponseMPayload](docs/EzsigndocumentGetObjectV1ResponseMPayload.md)
@@ -181,7 +186,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigndocumentRequest](docs/EzsigndocumentRequest.md)
  - [EzmaxApi::EzsigndocumentRequestCompound](docs/EzsigndocumentRequestCompound.md)
  - [EzmaxApi::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)
- - [EzmaxApi::EzsigndocumentResponseAllOf](docs/EzsigndocumentResponseAllOf.md)
  - [EzmaxApi::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EzmaxApi::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
@@ -210,6 +214,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsignfoldersignerassociationRequest](docs/EzsignfoldersignerassociationRequest.md)
  - [EzmaxApi::EzsignfoldersignerassociationRequestCompound](docs/EzsignfoldersignerassociationRequestCompound.md)
  - [EzmaxApi::EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
+ - [EzmaxApi::EzsignpageResponse](docs/EzsignpageResponse.md)
  - [EzmaxApi::EzsignsignatureCreateObjectV1Request](docs/EzsignsignatureCreateObjectV1Request.md)
  - [EzmaxApi::EzsignsignatureCreateObjectV1Response](docs/EzsignsignatureCreateObjectV1Response.md)
  - [EzmaxApi::EzsignsignatureCreateObjectV1ResponseAllOf](docs/EzsignsignatureCreateObjectV1ResponseAllOf.md)

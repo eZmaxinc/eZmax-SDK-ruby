@@ -21,7 +21,7 @@ module EzmaxApi
     end
     # Get customer endpoint
     # Retrieve the customer's specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer's data is stored.
-    # @param pks_customer_code [String] The customer code assigned to your account
+    # @param pks_customer_code [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :s_infrastructureproduct_code The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
     # @return [GlobalCustomerGetEndpointV1Response]
@@ -32,7 +32,7 @@ module EzmaxApi
 
     # Get customer endpoint
     # Retrieve the customer&#39;s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer&#39;s data is stored.
-    # @param pks_customer_code [String] The customer code assigned to your account
+    # @param pks_customer_code [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :s_infrastructureproduct_code The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
     # @return [Array<(GlobalCustomerGetEndpointV1Response, Integer, Hash)>] GlobalCustomerGetEndpointV1Response data, response status code and response headers
@@ -44,6 +44,14 @@ module EzmaxApi
       if @api_client.config.client_side_validation && pks_customer_code.nil?
         fail ArgumentError, "Missing the required parameter 'pks_customer_code' when calling GlobalCustomerApi.global_customer_get_endpoint_v1"
       end
+      if @api_client.config.client_side_validation && pks_customer_code.to_s.length > 6
+        fail ArgumentError, 'invalid value for "pks_customer_code" when calling GlobalCustomerApi.global_customer_get_endpoint_v1, the character length must be smaller than or equal to 6.'
+      end
+
+      if @api_client.config.client_side_validation && pks_customer_code.to_s.length < 2
+        fail ArgumentError, 'invalid value for "pks_customer_code" when calling GlobalCustomerApi.global_customer_get_endpoint_v1, the character length must be great than or equal to 2.'
+      end
+
       allowable_values = ["appcluster01", "ezsignuser"]
       if @api_client.config.client_side_validation && opts[:'s_infrastructureproduct_code'] && !allowable_values.include?(opts[:'s_infrastructureproduct_code'])
         fail ArgumentError, "invalid value for \"s_infrastructureproduct_code\", must be one of #{allowable_values}"

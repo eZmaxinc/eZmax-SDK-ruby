@@ -46,7 +46,7 @@ describe 'ObjectEzsignfolderApi' do
 
   # unit tests for ezsignfolder_delete_object_v1
   # Delete an existing Ezsignfolder
-  # @param pki_ezsignfolder_id The unique ID of the Ezsignfolder
+  # @param pki_ezsignfolder_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfolderDeleteObjectV1Response]
   describe 'ezsignfolder_delete_object_v1 test' do
@@ -58,7 +58,7 @@ describe 'ObjectEzsignfolderApi' do
   # unit tests for ezsignfolder_get_children_v1
   # Retrieve an existing Ezsignfolder&#39;s children IDs
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignfolder_id The unique ID of the Ezsignfolder
+  # @param pki_ezsignfolder_id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'ezsignfolder_get_children_v1 test' do
@@ -67,10 +67,22 @@ describe 'ObjectEzsignfolderApi' do
     end
   end
 
+  # unit tests for ezsignfolder_get_forms_data_v1
+  # Retrieve an existing Ezsignfolder&#39;s forms data
+  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+  # @param pki_ezsignfolder_id 
+  # @param [Hash] opts the optional parameters
+  # @return [File]
+  describe 'ezsignfolder_get_forms_data_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsignfolder_get_object_v1
   # Retrieve an existing Ezsignfolder
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignfolder_id The unique ID of the Ezsignfolder
+  # @param pki_ezsignfolder_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfolderGetObjectV1Response]
   describe 'ezsignfolder_get_object_v1 test' do
@@ -81,7 +93,7 @@ describe 'ObjectEzsignfolderApi' do
 
   # unit tests for ezsignfolder_send_v1
   # Send the Ezsignfolder to the signatories for signature
-  # @param pki_ezsignfolder_id The unique ID of the Ezsignfolder
+  # @param pki_ezsignfolder_id 
   # @param ezsignfolder_send_v1_request 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfolderSendV1Response]

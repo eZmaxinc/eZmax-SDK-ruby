@@ -19,7 +19,7 @@ module EzmaxApi
     # The unique ID of the Ezsignfoldersignerassociation
     attr_accessor :fki_ezsignfoldersignerassociation_id
 
-    # The page number in the document where to apply the signature
+    # The page number in the Ezsigndocument
     attr_accessor :i_ezsignpage_pagenumber
 
     # The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
@@ -33,7 +33,7 @@ module EzmaxApi
 
     attr_accessor :e_ezsignsignature_type
 
-    # The unique ID of the Ezsigntemplate
+    # The unique ID of the Ezsigndocument
     attr_accessor :fki_ezsigndocument_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

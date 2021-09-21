@@ -46,7 +46,7 @@ describe 'ObjectEzsignsignatureApi' do
 
   # unit tests for ezsignsignature_delete_object_v1
   # Delete an existing Ezsignsignature
-  # @param pki_ezsignsignature_id The unique ID of the Ezsignsignature
+  # @param pki_ezsignsignature_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignsignatureDeleteObjectV1Response]
   describe 'ezsignsignature_delete_object_v1 test' do
@@ -58,7 +58,7 @@ describe 'ObjectEzsignsignatureApi' do
   # unit tests for ezsignsignature_get_children_v1
   # Retrieve an existing Ezsignsignature&#39;s children IDs
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignsignature_id The unique ID of the Ezsignsignature
+  # @param pki_ezsignsignature_id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'ezsignsignature_get_children_v1 test' do
@@ -70,7 +70,7 @@ describe 'ObjectEzsignsignatureApi' do
   # unit tests for ezsignsignature_get_object_v1
   # Retrieve an existing Ezsignsignature
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignsignature_id The unique ID of the Ezsignsignature
+  # @param pki_ezsignsignature_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignsignatureGetObjectV1Response]
   describe 'ezsignsignature_get_object_v1 test' do

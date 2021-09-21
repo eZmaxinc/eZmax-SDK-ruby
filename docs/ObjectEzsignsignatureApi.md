@@ -101,7 +101,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | The unique ID of the Ezsignsignature
+pki_ezsignsignature_id = 56 # Integer | 
 
 begin
   # Delete an existing Ezsignsignature
@@ -134,7 +134,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** | The unique ID of the Ezsignsignature |  |
+| **pki_ezsignsignature_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -172,7 +172,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | The unique ID of the Ezsignsignature
+pki_ezsignsignature_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignsignature's children IDs
@@ -204,7 +204,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** | The unique ID of the Ezsignsignature |  |
+| **pki_ezsignsignature_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -242,7 +242,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | The unique ID of the Ezsignsignature
+pki_ezsignsignature_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignsignature
@@ -275,7 +275,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** | The unique ID of the Ezsignsignature |  |
+| **pki_ezsignsignature_id** | **Integer** |  |  |
 
 ### Return type
 

@@ -7,6 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
 | [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
 | [**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs |
+| [**ezsignfolder_get_forms_data_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
 | [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
 | [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 
@@ -102,7 +103,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
+pki_ezsignfolder_id = 56 # Integer | 
 
 begin
   # Delete an existing Ezsignfolder
@@ -135,7 +136,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -173,7 +174,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
+pki_ezsignfolder_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignfolder's children IDs
@@ -205,7 +206,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -219,6 +220,77 @@ nil (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## ezsignfolder_get_forms_data_v1
+
+> File ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id)
+
+Retrieve an existing Ezsignfolder's forms data
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ezmax_api'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignfolder's forms data
+  result = api_instance.ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_forms_data_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_forms_data_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignfolder's forms data
+  data, status_code, headers = api_instance.ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_forms_data_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/zip, application/json
 
 
 ## ezsignfolder_get_object_v1
@@ -243,7 +315,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
+pki_ezsignfolder_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignfolder
@@ -276,7 +348,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -312,7 +384,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | The unique ID of the Ezsignfolder
+pki_ezsignfolder_id = 56 # Integer | 
 ezsignfolder_send_v1_request = EzmaxApi::EzsignfolderSendV1Request.new({t_extra_message: 't_extra_message_example'}) # EzsignfolderSendV1Request | 
 
 begin
@@ -346,7 +418,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
 | **ezsignfolder_send_v1_request** | [**EzsignfolderSendV1Request**](EzsignfolderSendV1Request.md) |  |  |
 
 ### Return type

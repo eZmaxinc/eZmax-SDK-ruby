@@ -46,7 +46,7 @@ describe 'ObjectEzsignfoldersignerassociationApi' do
 
   # unit tests for ezsignfoldersignerassociation_delete_object_v1
   # Delete an existing Ezsignfoldersignerassociation
-  # @param pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation
+  # @param pki_ezsignfoldersignerassociation_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfoldersignerassociationDeleteObjectV1Response]
   describe 'ezsignfoldersignerassociation_delete_object_v1 test' do
@@ -58,7 +58,7 @@ describe 'ObjectEzsignfoldersignerassociationApi' do
   # unit tests for ezsignfoldersignerassociation_get_children_v1
   # Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation
+  # @param pki_ezsignfoldersignerassociation_id 
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'ezsignfoldersignerassociation_get_children_v1 test' do
@@ -70,7 +70,7 @@ describe 'ObjectEzsignfoldersignerassociationApi' do
   # unit tests for ezsignfoldersignerassociation_get_in_person_login_url_v1
   # Retrieve a Login Url to allow In-Person signing
   # This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
-  # @param pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation
+  # @param pki_ezsignfoldersignerassociation_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfoldersignerassociationGetInPersonLoginUrlV1Response]
   describe 'ezsignfoldersignerassociation_get_in_person_login_url_v1 test' do
@@ -82,7 +82,7 @@ describe 'ObjectEzsignfoldersignerassociationApi' do
   # unit tests for ezsignfoldersignerassociation_get_object_v1
   # Retrieve an existing Ezsignfoldersignerassociation
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-  # @param pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation
+  # @param pki_ezsignfoldersignerassociation_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfoldersignerassociationGetObjectV1Response]
   describe 'ezsignfoldersignerassociation_get_object_v1 test' do

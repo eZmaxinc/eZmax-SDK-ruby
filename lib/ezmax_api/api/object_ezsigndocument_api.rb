@@ -21,7 +21,7 @@ module EzmaxApi
     end
     # Apply an Ezsign Template to the Ezsigndocument.
     # This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_apply_ezsigntemplate_v1_request [EzsigndocumentApplyEzsigntemplateV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentApplyEzsigntemplateV1Response]
@@ -32,7 +32,7 @@ module EzmaxApi
 
     # Apply an Ezsign Template to the Ezsigndocument.
     # This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_apply_ezsigntemplate_v1_request [EzsigndocumentApplyEzsigntemplateV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentApplyEzsigntemplateV1Response, Integer, Hash)>] EzsigndocumentApplyEzsigntemplateV1Response data, response status code and response headers
@@ -156,7 +156,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsigndocument
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentDeleteObjectV1Response]
     def ezsigndocument_delete_object_v1(pki_ezsigndocument_id, opts = {})
@@ -165,7 +165,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsigndocument
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentDeleteObjectV1Response, Integer, Hash)>] EzsigndocumentDeleteObjectV1Response data, response status code and response headers
     def ezsigndocument_delete_object_v1_with_http_info(pki_ezsigndocument_id, opts = {})
@@ -218,7 +218,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsigndocument's children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def ezsigndocument_get_children_v1(pki_ezsigndocument_id, opts = {})
@@ -228,7 +228,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsigndocument&#39;s children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def ezsigndocument_get_children_v1_with_http_info(pki_ezsigndocument_id, opts = {})
@@ -281,7 +281,7 @@ module EzmaxApi
 
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetDownloadUrlV1Response]
@@ -292,7 +292,7 @@ module EzmaxApi
 
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetDownloadUrlV1Response, Integer, Hash)>] EzsigndocumentGetDownloadUrlV1Response data, response status code and response headers
@@ -353,9 +353,72 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve an existing Ezsigndocument's Ezsignpages
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsigndocumentGetEzsignpagesV1Response]
+    def ezsigndocument_get_ezsignpages_v1(pki_ezsigndocument_id, opts = {})
+      data, _status_code, _headers = ezsigndocument_get_ezsignpages_v1_with_http_info(pki_ezsigndocument_id, opts)
+      data
+    end
+
+    # Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsigndocumentGetEzsignpagesV1Response, Integer, Hash)>] EzsigndocumentGetEzsignpagesV1Response data, response status code and response headers
+    def ezsigndocument_get_ezsignpages_v1_with_http_info(pki_ezsigndocument_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsigndocumentApi.ezsigndocument_get_ezsignpages_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsigndocument_id' is set
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsigndocument_id' when calling ObjectEzsigndocumentApi.ezsigndocument_get_ezsignpages_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages'.sub('{' + 'pkiEzsigndocumentID' + '}', CGI.escape(pki_ezsigndocument_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsigndocumentGetEzsignpagesV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsigndocumentApi.ezsigndocument_get_ezsignpages_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsigndocumentApi#ezsigndocument_get_ezsignpages_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve an existing Ezsigndocument's Form Data
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [File]
     def ezsigndocument_get_form_data_v1(pki_ezsigndocument_id, opts = {})
@@ -365,7 +428,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsigndocument&#39;s Form Data
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(File, Integer, Hash)>] File data, response status code and response headers
     def ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id, opts = {})
@@ -418,7 +481,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsigndocument
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetObjectV1Response]
     def ezsigndocument_get_object_v1(pki_ezsigndocument_id, opts = {})
@@ -428,7 +491,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsigndocument
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetObjectV1Response, Integer, Hash)>] EzsigndocumentGetObjectV1Response data, response status code and response headers
     def ezsigndocument_get_object_v1_with_http_info(pki_ezsigndocument_id, opts = {})
@@ -481,7 +544,7 @@ module EzmaxApi
 
     # Retrieve positions X,Y of given words from a Ezsigndocument
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_get_words_positions_v1_request [EzsigndocumentGetWordsPositionsV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetWordsPositionsV1Response]
@@ -492,7 +555,7 @@ module EzmaxApi
 
     # Retrieve positions X,Y of given words from a Ezsigndocument
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsigndocument_id [Integer] The unique ID of the Ezsigndocument
+    # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_get_words_positions_v1_request [EzsigndocumentGetWordsPositionsV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetWordsPositionsV1Response, Integer, Hash)>] EzsigndocumentGetWordsPositionsV1Response data, response status code and response headers

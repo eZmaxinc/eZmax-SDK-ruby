@@ -35,7 +35,7 @@ describe 'GlobalCustomerApi' do
   # unit tests for global_customer_get_endpoint_v1
   # Get customer endpoint
   # Retrieve the customer&#39;s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer&#39;s data is stored.
-  # @param pks_customer_code The customer code assigned to your account
+  # @param pks_customer_code 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :s_infrastructureproduct_code The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
   # @return [GlobalCustomerGetEndpointV1Response]

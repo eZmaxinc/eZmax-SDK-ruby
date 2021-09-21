@@ -102,7 +102,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
-pki_ezsignfoldersignerassociation_id = 56 # Integer | The unique ID of the Ezsignfoldersignerassociation
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
 
 begin
   # Delete an existing Ezsignfoldersignerassociation
@@ -135,7 +135,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -173,7 +173,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
-pki_ezsignfoldersignerassociation_id = 56 # Integer | The unique ID of the Ezsignfoldersignerassociation
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignfoldersignerassociation's children IDs
@@ -205,7 +205,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -243,7 +243,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
-pki_ezsignfoldersignerassociation_id = 56 # Integer | The unique ID of the Ezsignfoldersignerassociation
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
 
 begin
   # Retrieve a Login Url to allow In-Person signing
@@ -276,7 +276,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
 
 ### Return type
 
@@ -314,7 +314,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
-pki_ezsignfoldersignerassociation_id = 56 # Integer | The unique ID of the Ezsignfoldersignerassociation
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
 
 begin
   # Retrieve an existing Ezsignfoldersignerassociation
@@ -347,7 +347,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
 
 ### Return type
 

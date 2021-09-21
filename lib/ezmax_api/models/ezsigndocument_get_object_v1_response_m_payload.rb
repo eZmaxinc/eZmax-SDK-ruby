@@ -28,7 +28,7 @@ module EzmaxApi
     # The name of the document that will be presented to Ezsignfoldersignerassociations
     attr_accessor :s_ezsigndocument_name
 
-    # The unique ID of the Ezsigntemplate
+    # The unique ID of the Ezsigndocument
     attr_accessor :pki_ezsigndocument_id
 
     attr_accessor :e_ezsigndocument_step

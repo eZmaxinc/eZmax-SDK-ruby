@@ -85,7 +85,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsignfolder
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsignfolderDeleteObjectV1Response]
     def ezsignfolder_delete_object_v1(pki_ezsignfolder_id, opts = {})
@@ -94,7 +94,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsignfolder
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsignfolderDeleteObjectV1Response, Integer, Hash)>] EzsignfolderDeleteObjectV1Response data, response status code and response headers
     def ezsignfolder_delete_object_v1_with_http_info(pki_ezsignfolder_id, opts = {})
@@ -147,7 +147,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignfolder's children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def ezsignfolder_get_children_v1(pki_ezsignfolder_id, opts = {})
@@ -157,7 +157,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignfolder&#39;s children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def ezsignfolder_get_children_v1_with_http_info(pki_ezsignfolder_id, opts = {})
@@ -208,9 +208,72 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve an existing Ezsignfolder's forms data
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [File]
+    def ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id, opts = {})
+      data, _status_code, _headers = ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id, opts)
+      data
+    end
+
+    # Retrieve an existing Ezsignfolder&#39;s forms data
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(File, Integer, Hash)>] File data, response status code and response headers
+    def ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsignfolderApi.ezsignfolder_get_forms_data_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsignfolder_id' is set
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsignfolder_id' when calling ObjectEzsignfolderApi.ezsignfolder_get_forms_data_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData'.sub('{' + 'pkiEzsignfolderID' + '}', CGI.escape(pki_ezsignfolder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/zip', 'application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'File'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsignfolderApi.ezsignfolder_get_forms_data_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsignfolderApi#ezsignfolder_get_forms_data_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve an existing Ezsignfolder
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsignfolderGetObjectV1Response]
     def ezsignfolder_get_object_v1(pki_ezsignfolder_id, opts = {})
@@ -220,7 +283,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignfolder
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsignfolderGetObjectV1Response, Integer, Hash)>] EzsignfolderGetObjectV1Response data, response status code and response headers
     def ezsignfolder_get_object_v1_with_http_info(pki_ezsignfolder_id, opts = {})
@@ -272,7 +335,7 @@ module EzmaxApi
     end
 
     # Send the Ezsignfolder to the signatories for signature
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_send_v1_request [EzsignfolderSendV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [EzsignfolderSendV1Response]
@@ -282,7 +345,7 @@ module EzmaxApi
     end
 
     # Send the Ezsignfolder to the signatories for signature
-    # @param pki_ezsignfolder_id [Integer] The unique ID of the Ezsignfolder
+    # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_send_v1_request [EzsignfolderSendV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsignfolderSendV1Response, Integer, Hash)>] EzsignfolderSendV1Response data, response status code and response headers

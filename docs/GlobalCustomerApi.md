@@ -29,7 +29,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::GlobalCustomerApi.new
-pks_customer_code = 'pks_customer_code_example' # String | The customer code assigned to your account
+pks_customer_code = 'pks_customer_code_example' # String | 
 opts = {
   s_infrastructureproduct_code: 'appcluster01' # String | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 }
@@ -65,7 +65,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pks_customer_code** | **String** | The customer code assigned to your account |  |
+| **pks_customer_code** | **String** |  |  |
 | **s_infrastructureproduct_code** | **String** | The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional] |
 
 ### Return type

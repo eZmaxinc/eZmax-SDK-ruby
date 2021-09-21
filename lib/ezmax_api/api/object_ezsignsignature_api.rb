@@ -85,7 +85,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsignsignature
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsignsignatureDeleteObjectV1Response]
     def ezsignsignature_delete_object_v1(pki_ezsignsignature_id, opts = {})
@@ -94,7 +94,7 @@ module EzmaxApi
     end
 
     # Delete an existing Ezsignsignature
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsignsignatureDeleteObjectV1Response, Integer, Hash)>] EzsignsignatureDeleteObjectV1Response data, response status code and response headers
     def ezsignsignature_delete_object_v1_with_http_info(pki_ezsignsignature_id, opts = {})
@@ -147,7 +147,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignsignature's children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def ezsignsignature_get_children_v1(pki_ezsignsignature_id, opts = {})
@@ -157,7 +157,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignsignature&#39;s children IDs
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def ezsignsignature_get_children_v1_with_http_info(pki_ezsignsignature_id, opts = {})
@@ -210,7 +210,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignsignature
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsignsignatureGetObjectV1Response]
     def ezsignsignature_get_object_v1(pki_ezsignsignature_id, opts = {})
@@ -220,7 +220,7 @@ module EzmaxApi
 
     # Retrieve an existing Ezsignsignature
     # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-    # @param pki_ezsignsignature_id [Integer] The unique ID of the Ezsignsignature
+    # @param pki_ezsignsignature_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsignsignatureGetObjectV1Response, Integer, Hash)>] EzsignsignatureGetObjectV1Response data, response status code and response headers
     def ezsignsignature_get_object_v1_with_http_info(pki_ezsignsignature_id, opts = {})
