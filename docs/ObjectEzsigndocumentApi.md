@@ -5,6 +5,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**ezsigndocument_apply_ezsigntemplate_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument. |
+| [**ezsigndocument_apply_ezsigntemplate_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsign Template to the Ezsigndocument. |
 | [**ezsigndocument_create_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
 | [**ezsigndocument_get_children_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_children_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs |
@@ -21,7 +22,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Apply an Ezsign Template to the Ezsigndocument.
 
-This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \"E\" to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
 ### Examples
 
@@ -77,6 +78,79 @@ end
 ### Return type
 
 [**EzsigndocumentApplyEzsigntemplateV1Response**](EzsigndocumentApplyEzsigntemplateV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocument_apply_ezsigntemplate_v2
+
+> <EzsigndocumentApplyEzsigntemplateV2Response> ezsigndocument_apply_ezsigntemplate_v2(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
+
+Apply an Ezsign Template to the Ezsigndocument.
+
+This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ezmax_api'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_apply_ezsigntemplate_v2_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateV2Request.new({fki_ezsigntemplate_id: 36, a_s_ezsigntemplatesigner: ['John'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateV2Request | 
+
+begin
+  # Apply an Ezsign Template to the Ezsigndocument.
+  result = api_instance.ezsigndocument_apply_ezsigntemplate_v2(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_apply_ezsigntemplate_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_apply_ezsigntemplate_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentApplyEzsigntemplateV2Response>, Integer, Hash)> ezsigndocument_apply_ezsigntemplate_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
+
+```ruby
+begin
+  # Apply an Ezsign Template to the Ezsigndocument.
+  data, status_code, headers = api_instance.ezsigndocument_apply_ezsigntemplate_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentApplyEzsigntemplateV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_apply_ezsigntemplate_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_apply_ezsigntemplate_v2_request** | [**EzsigndocumentApplyEzsigntemplateV2Request**](EzsigndocumentApplyEzsigntemplateV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentApplyEzsigntemplateV2Response**](EzsigndocumentApplyEzsigntemplateV2Response.md)
 
 ### Authorization
 
@@ -377,8 +451,6 @@ end
 
 Retrieve an existing Ezsigndocument's Ezsignpages
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
 ### Examples
 
 ```ruby
@@ -444,7 +516,7 @@ end
 
 ## ezsigndocument_get_form_data_v1
 
-> File ezsigndocument_get_form_data_v1(pki_ezsigndocument_id)
+> <EzsigndocumentGetFormDataV1Response> ezsigndocument_get_form_data_v1(pki_ezsigndocument_id)
 
 Retrieve an existing Ezsigndocument's Form Data
 
@@ -479,7 +551,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(File, Integer, Hash)> ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id)
+> <Array(<EzsigndocumentGetFormDataV1Response>, Integer, Hash)> ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id)
 
 ```ruby
 begin
@@ -487,7 +559,7 @@ begin
   data, status_code, headers = api_instance.ezsigndocument_get_form_data_v1_with_http_info(pki_ezsigndocument_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => File
+  p data # => <EzsigndocumentGetFormDataV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_form_data_v1_with_http_info: #{e}"
 end
@@ -501,7 +573,7 @@ end
 
 ### Return type
 
-**File**
+[**EzsigndocumentGetFormDataV1Response**](EzsigndocumentGetFormDataV1Response.md)
 
 ### Authorization
 
@@ -510,7 +582,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/zip, application/json
+- **Accept**: application/json, application/zip, text/csv
 
 
 ## ezsigndocument_get_object_v1

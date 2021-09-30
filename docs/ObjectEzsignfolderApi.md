@@ -224,7 +224,7 @@ nil (empty response body)
 
 ## ezsignfolder_get_forms_data_v1
 
-> File ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id)
+> <EzsignfolderGetFormsDataV1Response> ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder's forms data
 
@@ -259,7 +259,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(File, Integer, Hash)> ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id)
+> <Array(<EzsignfolderGetFormsDataV1Response>, Integer, Hash)> ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id)
 
 ```ruby
 begin
@@ -267,7 +267,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_get_forms_data_v1_with_http_info(pki_ezsignfolder_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => File
+  p data # => <EzsignfolderGetFormsDataV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_forms_data_v1_with_http_info: #{e}"
 end
@@ -281,7 +281,7 @@ end
 
 ### Return type
 
-**File**
+[**EzsignfolderGetFormsDataV1Response**](EzsignfolderGetFormsDataV1Response.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/zip, application/json
+- **Accept**: application/json, application/zip
 
 
 ## ezsignfolder_get_object_v1
