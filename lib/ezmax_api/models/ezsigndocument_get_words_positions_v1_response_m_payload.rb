@@ -16,13 +16,9 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
   class EzsigndocumentGetWordsPositionsV1ResponseMPayload
-    # An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-    attr_accessor :a_s_words
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_s_words' => :'a_sWords'
       }
     end
 
@@ -34,7 +30,6 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_s_words' => :'Array<CustomWordPositionResponse>'
       }
     end
 
@@ -58,29 +53,18 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'a_s_words')
-        if (value = attributes[:'a_s_words']).is_a?(Array)
-          self.a_s_words = value
-        end
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @a_s_words.nil?
-        invalid_properties.push('invalid value for "a_s_words", a_s_words cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @a_s_words.nil?
       true
     end
 
@@ -88,8 +72,7 @@ module EzmaxApi
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          a_s_words == o.a_s_words
+      self.class == o.class
     end
 
     # @see the `==` method
@@ -101,7 +84,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_s_words].hash
+      [].hash
     end
 
     # Builds the object from hash

@@ -16,12 +16,39 @@ require 'time'
 module EzmaxApi
   # Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
   class EzsigndocumentGetWordsPositionsV1Request
-    attr_accessor :a_s_words
+    # Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+    attr_accessor :e_get
+
+    # Array of words to find in the document
+    attr_accessor :a_s_word
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_s_words' => :'a_sWords'
+        :'e_get' => :'eGet',
+        :'a_s_word' => :'a_sWord'
       }
     end
 
@@ -33,7 +60,8 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_s_words' => :'Array<String>'
+        :'e_get' => :'String',
+        :'a_s_word' => :'Array<String>'
       }
     end
 
@@ -58,9 +86,13 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'a_s_words')
-        if (value = attributes[:'a_s_words']).is_a?(Array)
-          self.a_s_words = value
+      if attributes.key?(:'e_get')
+        self.e_get = attributes[:'e_get']
+      end
+
+      if attributes.key?(:'a_s_word')
+        if (value = attributes[:'a_s_word']).is_a?(Array)
+          self.a_s_word = value
         end
       end
     end
@@ -69,18 +101,25 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @a_s_words.nil?
-        invalid_properties.push('invalid value for "a_s_words", a_s_words cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @a_s_words.nil?
+      e_get_validator = EnumAttributeValidator.new('String', ["All", "Words"])
+      return false unless e_get_validator.valid?(@e_get)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] e_get Object to be assigned
+    def e_get=(e_get)
+      validator = EnumAttributeValidator.new('String', ["All", "Words"])
+      unless validator.valid?(e_get)
+        fail ArgumentError, "invalid value for \"e_get\", must be one of #{validator.allowable_values}."
+      end
+      @e_get = e_get
     end
 
     # Checks equality by comparing each attribute.
@@ -88,7 +127,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          a_s_words == o.a_s_words
+          e_get == o.e_get &&
+          a_s_word == o.a_s_word
     end
 
     # @see the `==` method
@@ -100,7 +140,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_s_words].hash
+      [e_get, a_s_word].hash
     end
 
     # Builds the object from hash

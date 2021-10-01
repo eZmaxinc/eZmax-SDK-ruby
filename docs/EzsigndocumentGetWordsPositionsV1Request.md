@@ -4,7 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_s_words** | **Array&lt;String&gt;** |  |  |
+| **e_get** | **String** | Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*. | [optional] |
+| **a_s_word** | **Array&lt;String&gt;** | Array of words to find in the document | [optional] |
 
 ## Example
 
@@ -12,7 +13,8 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::EzsigndocumentGetWordsPositionsV1Request.new(
-  a_s_words: null
+  e_get: null,
+  a_s_word: null
 )
 ```
 

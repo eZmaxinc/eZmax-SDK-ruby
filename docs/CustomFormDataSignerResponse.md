@@ -8,7 +8,7 @@
 | **fki_user_id** | **Integer** | The unique ID of the User | [optional] |
 | **s_contact_firstname** | **String** | The First name of the contact |  |
 | **s_contact_lastname** | **String** | The Last name of the contact |  |
-| **a_obj_ezsignformfieldgroup_compound** | [**Array&lt;EzsignformfieldgroupResponseCompound&gt;**](EzsignformfieldgroupResponseCompound.md) | This array contains the labels or each Form fields in the form but WITHOUT the values |  |
+| **a_obj_ezsignformfieldgroup_compound** | [**Array&lt;EzsignformfieldgroupResponseCompound&gt;**](EzsignformfieldgroupResponseCompound.md) |  |  |
 
 ## Example
 

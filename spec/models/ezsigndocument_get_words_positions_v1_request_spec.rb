@@ -25,7 +25,17 @@ describe EzmaxApi::EzsigndocumentGetWordsPositionsV1Request do
       expect(instance).to be_instance_of(EzmaxApi::EzsigndocumentGetWordsPositionsV1Request)
     end
   end
-  describe 'test attribute "a_s_words"' do
+  describe 'test attribute "e_get"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["All", "Words"])
+      # validator.allowable_values.each do |value|
+      #   expect { instance.e_get = value }.not_to raise_error
+      # end
+    end
+  end
+
+  describe 'test attribute "a_s_word"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

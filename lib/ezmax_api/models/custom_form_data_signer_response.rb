@@ -28,7 +28,6 @@ module EzmaxApi
     # The Last name of the contact
     attr_accessor :s_contact_lastname
 
-    # This array contains the labels or each Form fields in the form but WITHOUT the values
     attr_accessor :a_obj_ezsignformfieldgroup_compound
 
     # Attribute mapping from ruby-style variable name to JSON key.

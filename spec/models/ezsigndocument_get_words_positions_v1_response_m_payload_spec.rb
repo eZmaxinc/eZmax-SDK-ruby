@@ -25,10 +25,4 @@ describe EzmaxApi::EzsigndocumentGetWordsPositionsV1ResponseMPayload do
       expect(instance).to be_instance_of(EzmaxApi::EzsigndocumentGetWordsPositionsV1ResponseMPayload)
     end
   end
-  describe 'test attribute "a_s_words"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
 end
