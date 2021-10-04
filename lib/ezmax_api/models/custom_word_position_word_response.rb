@@ -14,11 +14,19 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
-  class EzsigndocumentGetWordsPositionsV1ResponseMPayload
+  # A Word Position Object
+  class CustomWordPositionWordResponse
+    # The searched word
+    attr_accessor :s_word
+
+    # The found occurences for the seached word
+    attr_accessor :obj_word_position_occurence
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'s_word' => :'sWord',
+        :'obj_word_position_occurence' => :'objWordPositionOccurence'
       }
     end
 
@@ -30,6 +38,8 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'s_word' => :'String',
+        :'obj_word_position_occurence' => :'Array<CustomWordPositionOccurenceResponse>'
       }
     end
 
@@ -43,28 +53,48 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsigndocumentGetWordsPositionsV1ResponseMPayload` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CustomWordPositionWordResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsigndocumentGetWordsPositionsV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CustomWordPositionWordResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'s_word')
+        self.s_word = attributes[:'s_word']
+      end
+
+      if attributes.key?(:'obj_word_position_occurence')
+        if (value = attributes[:'obj_word_position_occurence']).is_a?(Array)
+          self.obj_word_position_occurence = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @s_word.nil?
+        invalid_properties.push('invalid value for "s_word", s_word cannot be nil.')
+      end
+
+      if @obj_word_position_occurence.nil?
+        invalid_properties.push('invalid value for "obj_word_position_occurence", obj_word_position_occurence cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @s_word.nil?
+      return false if @obj_word_position_occurence.nil?
       true
     end
 
@@ -72,7 +102,9 @@ module EzmaxApi
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class
+      self.class == o.class &&
+          s_word == o.s_word &&
+          obj_word_position_occurence == o.obj_word_position_occurence
     end
 
     # @see the `==` method
@@ -84,7 +116,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [].hash
+      [s_word, obj_word_position_occurence].hash
     end
 
     # Builds the object from hash

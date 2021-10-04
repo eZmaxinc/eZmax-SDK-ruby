@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
   class EzsigndocumentGetWordsPositionsV1Response
+    # Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
     attr_accessor :m_payload
 
     attr_accessor :obj_debug_payload
@@ -39,7 +40,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'EzsigndocumentGetWordsPositionsV1ResponseMPayload',
+        :'m_payload' => :'Array<CustomWordPositionWordResponse>',
         :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
         :'obj_debug' => :'CommonResponseObjDebug'
       }
@@ -75,7 +76,9 @@ module EzmaxApi
       }
 
       if attributes.key?(:'m_payload')
-        self.m_payload = attributes[:'m_payload']
+        if (value = attributes[:'m_payload']).is_a?(Array)
+          self.m_payload = value
+        end
       end
 
       if attributes.key?(:'obj_debug_payload')

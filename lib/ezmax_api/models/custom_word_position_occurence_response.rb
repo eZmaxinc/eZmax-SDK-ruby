@@ -15,7 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Word Position Object
-  class CustomWordPositionResponse
+  class CustomWordPositionOccurenceResponse
     # The page where the word occurence was found
     attr_accessor :i_page
 
@@ -58,13 +58,13 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CustomWordPositionResponse` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CustomWordPositionOccurenceResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CustomWordPositionResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CustomWordPositionOccurenceResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }

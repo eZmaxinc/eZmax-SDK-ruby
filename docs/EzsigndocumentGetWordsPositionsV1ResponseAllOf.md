@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**EzsigndocumentGetWordsPositionsV1ResponseMPayload**](EzsigndocumentGetWordsPositionsV1ResponseMPayload.md) |  |  |
+| **m_payload** | [**Array&lt;CustomWordPositionWordResponse&gt;**](CustomWordPositionWordResponse.md) | Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request |  |
 
 ## Example
 

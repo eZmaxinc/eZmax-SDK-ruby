@@ -1,4 +1,4 @@
-# EzmaxApi::CustomWordPositionResponse
+# EzmaxApi::CustomWordPositionOccurenceResponse
 
 ## Properties
 
@@ -13,7 +13,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::CustomWordPositionResponse.new(
+instance = EzmaxApi::CustomWordPositionOccurenceResponse.new(
   i_page: null,
   i_x: null,
   i_y: null

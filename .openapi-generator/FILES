@@ -41,7 +41,8 @@ docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
-docs/CustomWordPositionResponse.md
+docs/CustomWordPositionOccurenceResponse.md
+docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
@@ -67,7 +68,6 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
-docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
@@ -234,7 +234,8 @@ lib/ezmax_api/models/contactinformations_request_compound_all_of.rb
 lib/ezmax_api/models/custom_form_data_document_response.rb
 lib/ezmax_api/models/custom_form_data_folder_response.rb
 lib/ezmax_api/models/custom_form_data_signer_response.rb
-lib/ezmax_api/models/custom_word_position_response.rb
+lib/ezmax_api/models/custom_word_position_occurence_response.rb
+lib/ezmax_api/models/custom_word_position_word_response.rb
 lib/ezmax_api/models/email_request.rb
 lib/ezmax_api/models/ezsigndocument_apply_ezsigntemplate_v1_request.rb
 lib/ezmax_api/models/ezsigndocument_apply_ezsigntemplate_v1_response.rb
@@ -260,7 +261,6 @@ lib/ezmax_api/models/ezsigndocument_get_object_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_request.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_response.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_response_all_of.rb
-lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsigndocument_request.rb
 lib/ezmax_api/models/ezsigndocument_request_compound.rb
 lib/ezmax_api/models/ezsigndocument_response.rb
@@ -410,7 +410,8 @@ spec/models/contactinformations_request_spec.rb
 spec/models/custom_form_data_document_response_spec.rb
 spec/models/custom_form_data_folder_response_spec.rb
 spec/models/custom_form_data_signer_response_spec.rb
-spec/models/custom_word_position_response_spec.rb
+spec/models/custom_word_position_occurence_response_spec.rb
+spec/models/custom_word_position_word_response_spec.rb
 spec/models/email_request_spec.rb
 spec/models/ezsigndocument_apply_ezsigntemplate_v1_request_spec.rb
 spec/models/ezsigndocument_apply_ezsigntemplate_v1_response_spec.rb
@@ -435,7 +436,6 @@ spec/models/ezsigndocument_get_object_v1_response_m_payload_spec.rb
 spec/models/ezsigndocument_get_object_v1_response_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_request_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_response_all_of_spec.rb
-spec/models/ezsigndocument_get_words_positions_v1_response_m_payload_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_response_spec.rb
 spec/models/ezsigndocument_request_compound_spec.rb
 spec/models/ezsigndocument_request_spec.rb

@@ -15,6 +15,7 @@ require 'time'
 
 module EzmaxApi
   class EzsigndocumentGetWordsPositionsV1ResponseAllOf
+    # Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
     attr_accessor :m_payload
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -32,7 +33,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'EzsigndocumentGetWordsPositionsV1ResponseMPayload'
+        :'m_payload' => :'Array<CustomWordPositionWordResponse>'
       }
     end
 
@@ -58,7 +59,9 @@ module EzmaxApi
       }
 
       if attributes.key?(:'m_payload')
-        self.m_payload = attributes[:'m_payload']
+        if (value = attributes[:'m_payload']).is_a?(Array)
+          self.m_payload = value
+        end
       end
     end
 
