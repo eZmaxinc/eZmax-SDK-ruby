@@ -31,7 +31,7 @@ describe EzmaxApi::CustomWordPositionWordResponse do
     end
   end
 
-  describe 'test attribute "obj_word_position_occurence"' do
+  describe 'test attribute "a_obj_word_position_occurence"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

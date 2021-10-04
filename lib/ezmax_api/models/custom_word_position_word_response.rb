@@ -20,13 +20,13 @@ module EzmaxApi
     attr_accessor :s_word
 
     # The found occurences for the seached word
-    attr_accessor :obj_word_position_occurence
+    attr_accessor :a_obj_word_position_occurence
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'s_word' => :'sWord',
-        :'obj_word_position_occurence' => :'objWordPositionOccurence'
+        :'a_obj_word_position_occurence' => :'a_objWordPositionOccurence'
       }
     end
 
@@ -39,7 +39,7 @@ module EzmaxApi
     def self.openapi_types
       {
         :'s_word' => :'String',
-        :'obj_word_position_occurence' => :'Array<CustomWordPositionOccurenceResponse>'
+        :'a_obj_word_position_occurence' => :'Array<CustomWordPositionOccurenceResponse>'
       }
     end
 
@@ -68,9 +68,9 @@ module EzmaxApi
         self.s_word = attributes[:'s_word']
       end
 
-      if attributes.key?(:'obj_word_position_occurence')
-        if (value = attributes[:'obj_word_position_occurence']).is_a?(Array)
-          self.obj_word_position_occurence = value
+      if attributes.key?(:'a_obj_word_position_occurence')
+        if (value = attributes[:'a_obj_word_position_occurence']).is_a?(Array)
+          self.a_obj_word_position_occurence = value
         end
       end
     end
@@ -83,8 +83,8 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_word", s_word cannot be nil.')
       end
 
-      if @obj_word_position_occurence.nil?
-        invalid_properties.push('invalid value for "obj_word_position_occurence", obj_word_position_occurence cannot be nil.')
+      if @a_obj_word_position_occurence.nil?
+        invalid_properties.push('invalid value for "a_obj_word_position_occurence", a_obj_word_position_occurence cannot be nil.')
       end
 
       invalid_properties
@@ -94,7 +94,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       return false if @s_word.nil?
-      return false if @obj_word_position_occurence.nil?
+      return false if @a_obj_word_position_occurence.nil?
       true
     end
 
@@ -104,7 +104,7 @@ module EzmaxApi
       return true if self.equal?(o)
       self.class == o.class &&
           s_word == o.s_word &&
-          obj_word_position_occurence == o.obj_word_position_occurence
+          a_obj_word_position_occurence == o.a_obj_word_position_occurence
     end
 
     # @see the `==` method
@@ -116,7 +116,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_word, obj_word_position_occurence].hash
+      [s_word, a_obj_word_position_occurence].hash
     end
 
     # Builds the object from hash

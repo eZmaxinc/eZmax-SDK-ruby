@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **s_word** | **String** | The searched word |  |
-| **obj_word_position_occurence** | [**Array&lt;CustomWordPositionOccurenceResponse&gt;**](CustomWordPositionOccurenceResponse.md) | The found occurences for the seached word |  |
+| **a_obj_word_position_occurence** | [**Array&lt;CustomWordPositionOccurenceResponse&gt;**](CustomWordPositionOccurenceResponse.md) | The found occurences for the seached word |  |
 
 ## Example
 
@@ -14,7 +14,7 @@ require 'ezmax_api'
 
 instance = EzmaxApi::CustomWordPositionWordResponse.new(
   s_word: null,
-  obj_word_position_occurence: null
+  a_obj_word_position_occurence: null
 )
 ```
 
