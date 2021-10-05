@@ -14,45 +14,13 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
-  class EzsigndocumentGetWordsPositionsV1Request
-    # Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
-    attr_accessor :e_get
-
-    # IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
-    attr_accessor :b_word_case_sensitive
-
-    # Array of words to find in the document
-    attr_accessor :a_s_word
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+  class EzsignfoldertypeGetListV1ResponseMPayloadAllOf
+    attr_accessor :a_obj_ezsignfoldertype
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'e_get' => :'eGet',
-        :'b_word_case_sensitive' => :'bWordCaseSensitive',
-        :'a_s_word' => :'a_sWord'
+        :'a_obj_ezsignfoldertype' => :'a_objEzsignfoldertype'
       }
     end
 
@@ -64,9 +32,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'e_get' => :'String',
-        :'b_word_case_sensitive' => :'Boolean',
-        :'a_s_word' => :'Array<String>'
+        :'a_obj_ezsignfoldertype' => :'Array<EzsignfoldertypeListElement>'
       }
     end
 
@@ -80,28 +46,20 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsigndocumentGetWordsPositionsV1Request` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfoldertypeGetListV1ResponseMPayloadAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsigndocumentGetWordsPositionsV1Request`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfoldertypeGetListV1ResponseMPayloadAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'e_get')
-        self.e_get = attributes[:'e_get']
-      end
-
-      if attributes.key?(:'b_word_case_sensitive')
-        self.b_word_case_sensitive = attributes[:'b_word_case_sensitive']
-      end
-
-      if attributes.key?(:'a_s_word')
-        if (value = attributes[:'a_s_word']).is_a?(Array)
-          self.a_s_word = value
+      if attributes.key?(:'a_obj_ezsignfoldertype')
+        if (value = attributes[:'a_obj_ezsignfoldertype']).is_a?(Array)
+          self.a_obj_ezsignfoldertype = value
         end
       end
     end
@@ -110,12 +68,8 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @e_get.nil?
-        invalid_properties.push('invalid value for "e_get", e_get cannot be nil.')
-      end
-
-      if @b_word_case_sensitive.nil?
-        invalid_properties.push('invalid value for "b_word_case_sensitive", b_word_case_sensitive cannot be nil.')
+      if @a_obj_ezsignfoldertype.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignfoldertype", a_obj_ezsignfoldertype cannot be nil.')
       end
 
       invalid_properties
@@ -124,21 +78,8 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @e_get.nil?
-      e_get_validator = EnumAttributeValidator.new('String', ["All", "Words"])
-      return false unless e_get_validator.valid?(@e_get)
-      return false if @b_word_case_sensitive.nil?
+      return false if @a_obj_ezsignfoldertype.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] e_get Object to be assigned
-    def e_get=(e_get)
-      validator = EnumAttributeValidator.new('String', ["All", "Words"])
-      unless validator.valid?(e_get)
-        fail ArgumentError, "invalid value for \"e_get\", must be one of #{validator.allowable_values}."
-      end
-      @e_get = e_get
     end
 
     # Checks equality by comparing each attribute.
@@ -146,9 +87,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          e_get == o.e_get &&
-          b_word_case_sensitive == o.b_word_case_sensitive &&
-          a_s_word == o.a_s_word
+          a_obj_ezsignfoldertype == o.a_obj_ezsignfoldertype
     end
 
     # @see the `==` method
@@ -160,7 +99,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [e_get, b_word_case_sensitive, a_s_word].hash
+      [a_obj_ezsignfoldertype].hash
     end
 
     # Builds the object from hash

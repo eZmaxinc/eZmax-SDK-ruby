@@ -26,6 +26,7 @@ docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
+docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
 docs/CommonResponseObjDebug.md
@@ -102,6 +103,11 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignfoldertypeGetListV1Response.md
+docs/EzsignfoldertypeGetListV1ResponseAllOf.md
+docs/EzsignfoldertypeGetListV1ResponseMPayload.md
+docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md
+docs/EzsignfoldertypeListElement.md
 docs/EzsignformfieldResponse.md
 docs/EzsignformfieldResponseCompound.md
 docs/EzsignformfieldgroupResponse.md
@@ -146,6 +152,7 @@ docs/ObjectApikeyApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
+docs/ObjectEzsignfoldertypeApi.md
 docs/ObjectEzsignsignatureApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
@@ -191,6 +198,7 @@ lib/ezmax_api/api/object_apikey_api.rb
 lib/ezmax_api/api/object_ezsigndocument_api.rb
 lib/ezmax_api/api/object_ezsignfolder_api.rb
 lib/ezmax_api/api/object_ezsignfoldersignerassociation_api.rb
+lib/ezmax_api/api/object_ezsignfoldertype_api.rb
 lib/ezmax_api/api/object_ezsignsignature_api.rb
 lib/ezmax_api/api/object_franchisebroker_api.rb
 lib/ezmax_api/api/object_franchiseoffice_api.rb
@@ -219,6 +227,7 @@ lib/ezmax_api/models/common_audit.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response_all_of.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response_m_payload.rb
+lib/ezmax_api/models/common_get_list_v1_response_m_payload.rb
 lib/ezmax_api/models/common_response.rb
 lib/ezmax_api/models/common_response_error.rb
 lib/ezmax_api/models/common_response_obj_debug.rb
@@ -295,6 +304,11 @@ lib/ezmax_api/models/ezsignfoldersignerassociation_get_object_v1_response_all_of
 lib/ezmax_api/models/ezsignfoldersignerassociation_request.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_request_compound.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_request_compound_all_of.rb
+lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response.rb
+lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response_all_of.rb
+lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response_m_payload.rb
+lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response_m_payload_all_of.rb
+lib/ezmax_api/models/ezsignfoldertype_list_element.rb
 lib/ezmax_api/models/ezsignformfield_response.rb
 lib/ezmax_api/models/ezsignformfield_response_compound.rb
 lib/ezmax_api/models/ezsignformfieldgroup_response.rb
@@ -368,6 +382,7 @@ spec/api/object_apikey_api_spec.rb
 spec/api/object_ezsigndocument_api_spec.rb
 spec/api/object_ezsignfolder_api_spec.rb
 spec/api/object_ezsignfoldersignerassociation_api_spec.rb
+spec/api/object_ezsignfoldertype_api_spec.rb
 spec/api/object_ezsignsignature_api_spec.rb
 spec/api/object_franchisebroker_api_spec.rb
 spec/api/object_franchiseoffice_api_spec.rb
@@ -395,6 +410,7 @@ spec/models/common_audit_spec.rb
 spec/models/common_get_autocomplete_v1_response_all_of_spec.rb
 spec/models/common_get_autocomplete_v1_response_m_payload_spec.rb
 spec/models/common_get_autocomplete_v1_response_spec.rb
+spec/models/common_get_list_v1_response_m_payload_spec.rb
 spec/models/common_response_error_spec.rb
 spec/models/common_response_obj_debug_payload_spec.rb
 spec/models/common_response_obj_debug_spec.rb
@@ -471,6 +487,11 @@ spec/models/ezsignfoldersignerassociation_get_object_v1_response_spec.rb
 spec/models/ezsignfoldersignerassociation_request_compound_all_of_spec.rb
 spec/models/ezsignfoldersignerassociation_request_compound_spec.rb
 spec/models/ezsignfoldersignerassociation_request_spec.rb
+spec/models/ezsignfoldertype_get_list_v1_response_all_of_spec.rb
+spec/models/ezsignfoldertype_get_list_v1_response_m_payload_all_of_spec.rb
+spec/models/ezsignfoldertype_get_list_v1_response_m_payload_spec.rb
+spec/models/ezsignfoldertype_get_list_v1_response_spec.rb
+spec/models/ezsignfoldertype_list_element_spec.rb
 spec/models/ezsignformfield_response_compound_spec.rb
 spec/models/ezsignformfield_response_spec.rb
 spec/models/ezsignformfieldgroup_response_compound_all_of_spec.rb

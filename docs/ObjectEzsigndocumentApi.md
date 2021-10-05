@@ -679,7 +679,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_get_words_positions_v1_request = EzmaxApi::EzsigndocumentGetWordsPositionsV1Request.new # EzsigndocumentGetWordsPositionsV1Request | 
+ezsigndocument_get_words_positions_v1_request = EzmaxApi::EzsigndocumentGetWordsPositionsV1Request.new({e_get: 'All', b_word_case_sensitive: false}) # EzsigndocumentGetWordsPositionsV1Request | 
 
 begin
   # Retrieve positions X,Y of given words from a Ezsigndocument
