@@ -34,8 +34,13 @@ describe 'ObjectEzsignfoldertypeApi' do
 
   # unit tests for ezsignfoldertype_get_list_v1
   # Retrieve Ezsignfoldertype list
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :e_order_by Specify how you want the results to be sorted
+  # @option opts [Integer] :i_row_max 
+  # @option opts [Integer] :i_row_offset 
+  # @option opts [HeaderAcceptLanguage] :accept_language 
+  # @option opts [String] :s_filter 
   # @return [EzsignfoldertypeGetListV1Response]
   describe 'ezsignfoldertype_get_list_v1 test' do
     it 'should work' do

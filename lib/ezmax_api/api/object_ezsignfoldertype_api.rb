@@ -20,8 +20,13 @@ module EzmaxApi
       @api_client = api_client
     end
     # Retrieve Ezsignfoldertype list
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :e_order_by Specify how you want the results to be sorted
+    # @option opts [Integer] :i_row_max 
+    # @option opts [Integer] :i_row_offset 
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_filter 
     # @return [EzsignfoldertypeGetListV1Response]
     def ezsignfoldertype_get_list_v1(opts = {})
       data, _status_code, _headers = ezsignfoldertype_get_list_v1_with_http_info(opts)
@@ -29,23 +34,37 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfoldertype list
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :e_order_by Specify how you want the results to be sorted
+    # @option opts [Integer] :i_row_max 
+    # @option opts [Integer] :i_row_offset 
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_filter 
     # @return [Array<(EzsignfoldertypeGetListV1Response, Integer, Hash)>] EzsignfoldertypeGetListV1Response data, response status code and response headers
     def ezsignfoldertype_get_list_v1_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ObjectEzsignfoldertypeApi.ezsignfoldertype_get_list_v1 ...'
+      end
+      allowable_values = ["sEzsignfoldertypeNameX", "sEzsignfoldertypeNameX desc"]
+      if @api_client.config.client_side_validation && opts[:'e_order_by'] && !allowable_values.include?(opts[:'e_order_by'])
+        fail ArgumentError, "invalid value for \"e_order_by\", must be one of #{allowable_values}"
       end
       # resource path
       local_var_path = '/1/object/ezsignfoldertype/getList'
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'eOrderBy'] = opts[:'e_order_by'] if !opts[:'e_order_by'].nil?
+      query_params[:'iRowMax'] = opts[:'i_row_max'] if !opts[:'i_row_max'].nil?
+      query_params[:'iRowOffset'] = opts[:'i_row_offset'] if !opts[:'i_row_offset'].nil?
+      query_params[:'sFilter'] = opts[:'s_filter'] if !opts[:'s_filter'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])
+      header_params[:'Accept-Language'] = opts[:'accept_language'] if !opts[:'accept_language'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}

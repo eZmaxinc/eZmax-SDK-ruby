@@ -40,8 +40,8 @@ docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
-docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
+docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
@@ -143,6 +143,7 @@ docs/FranchisereferalincomeRequestCompound.md
 docs/FranchisereferalincomeRequestCompoundAllOf.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/HeaderAcceptLanguage.md
 docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
@@ -241,8 +242,8 @@ lib/ezmax_api/models/contactinformations_request.rb
 lib/ezmax_api/models/contactinformations_request_compound.rb
 lib/ezmax_api/models/contactinformations_request_compound_all_of.rb
 lib/ezmax_api/models/custom_form_data_document_response.rb
-lib/ezmax_api/models/custom_form_data_folder_response.rb
 lib/ezmax_api/models/custom_form_data_signer_response.rb
+lib/ezmax_api/models/custom_forms_data_folder_response.rb
 lib/ezmax_api/models/custom_word_position_occurence_response.rb
 lib/ezmax_api/models/custom_word_position_word_response.rb
 lib/ezmax_api/models/email_request.rb
@@ -343,6 +344,7 @@ lib/ezmax_api/models/franchisereferalincome_request.rb
 lib/ezmax_api/models/franchisereferalincome_request_compound.rb
 lib/ezmax_api/models/franchisereferalincome_request_compound_all_of.rb
 lib/ezmax_api/models/global_customer_get_endpoint_v1_response.rb
+lib/ezmax_api/models/header_accept_language.rb
 lib/ezmax_api/models/multilingual_apikey_description.rb
 lib/ezmax_api/models/phone_request.rb
 lib/ezmax_api/models/sspr_reset_password_request_v1_request.rb
@@ -424,8 +426,8 @@ spec/models/contactinformations_request_compound_all_of_spec.rb
 spec/models/contactinformations_request_compound_spec.rb
 spec/models/contactinformations_request_spec.rb
 spec/models/custom_form_data_document_response_spec.rb
-spec/models/custom_form_data_folder_response_spec.rb
 spec/models/custom_form_data_signer_response_spec.rb
+spec/models/custom_forms_data_folder_response_spec.rb
 spec/models/custom_word_position_occurence_response_spec.rb
 spec/models/custom_word_position_word_response_spec.rb
 spec/models/email_request_spec.rb
@@ -526,6 +528,7 @@ spec/models/franchisereferalincome_request_compound_all_of_spec.rb
 spec/models/franchisereferalincome_request_compound_spec.rb
 spec/models/franchisereferalincome_request_spec.rb
 spec/models/global_customer_get_endpoint_v1_response_spec.rb
+spec/models/header_accept_language_spec.rb
 spec/models/multilingual_apikey_description_spec.rb
 spec/models/phone_request_spec.rb
 spec/models/sspr_reset_password_request_v1_request_spec.rb

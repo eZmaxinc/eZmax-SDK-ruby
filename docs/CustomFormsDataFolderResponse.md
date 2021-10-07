@@ -1,4 +1,4 @@
-# EzmaxApi::CustomFormDataFolderResponse
+# EzmaxApi::CustomFormsDataFolderResponse
 
 ## Properties
 
@@ -13,7 +13,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::CustomFormDataFolderResponse.new(
+instance = EzmaxApi::CustomFormsDataFolderResponse.new(
   pki_ezsignfolder_id: 33,
   s_ezsignfolder_description: Test eZsign Folder,
   a_obj_form_data_document: null

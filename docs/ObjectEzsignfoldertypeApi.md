@@ -9,11 +9,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## ezsignfoldertype_get_list_v1
 
-> <EzsignfoldertypeGetListV1Response> ezsignfoldertype_get_list_v1
+> <EzsignfoldertypeGetListV1Response> ezsignfoldertype_get_list_v1(opts)
 
 Retrieve Ezsignfoldertype list
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
 
 ### Examples
 
@@ -29,10 +29,17 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
+opts = {
+  e_order_by: 'sEzsignfoldertypeNameX', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
 
 begin
   # Retrieve Ezsignfoldertype list
-  result = api_instance.ezsignfoldertype_get_list_v1
+  result = api_instance.ezsignfoldertype_get_list_v1(opts)
   p result
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_list_v1: #{e}"
@@ -43,12 +50,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfoldertypeGetListV1Response>, Integer, Hash)> ezsignfoldertype_get_list_v1_with_http_info
+> <Array(<EzsignfoldertypeGetListV1Response>, Integer, Hash)> ezsignfoldertype_get_list_v1_with_http_info(opts)
 
 ```ruby
 begin
   # Retrieve Ezsignfoldertype list
-  data, status_code, headers = api_instance.ezsignfoldertype_get_list_v1_with_http_info
+  data, status_code, headers = api_instance.ezsignfoldertype_get_list_v1_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EzsignfoldertypeGetListV1Response>
@@ -59,7 +66,13 @@ end
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
 
 ### Return type
 
@@ -72,5 +85,5 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
