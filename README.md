@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EzmaxApi::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
+ - [EzmaxApi::EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::EzsignfolderCreateObjectV1ResponseMPayload](docs/EzsignfolderCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::EzsignfolderDeleteObjectV1Response](docs/EzsignfolderDeleteObjectV1Response.md)
  - [EzmaxApi::EzsignfolderGetFormsDataV1Response](docs/EzsignfolderGetFormsDataV1Response.md)

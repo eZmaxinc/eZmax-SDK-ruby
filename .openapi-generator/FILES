@@ -75,6 +75,7 @@ docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
+docs/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetFormsDataV1Response.md
@@ -277,6 +278,7 @@ lib/ezmax_api/models/ezsigndocument_response.rb
 lib/ezmax_api/models/ezsigndocument_response_compound.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_request.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_response.rb
+lib/ezmax_api/models/ezsignfolder_create_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsignfolder_delete_object_v1_response.rb
 lib/ezmax_api/models/ezsignfolder_get_forms_data_v1_response.rb
@@ -460,6 +462,7 @@ spec/models/ezsigndocument_request_spec.rb
 spec/models/ezsigndocument_response_compound_spec.rb
 spec/models/ezsigndocument_response_spec.rb
 spec/models/ezsignfolder_create_object_v1_request_spec.rb
+spec/models/ezsignfolder_create_object_v1_response_all_of_spec.rb
 spec/models/ezsignfolder_create_object_v1_response_m_payload_spec.rb
 spec/models/ezsignfolder_create_object_v1_response_spec.rb
 spec/models/ezsignfolder_delete_object_v1_response_spec.rb
