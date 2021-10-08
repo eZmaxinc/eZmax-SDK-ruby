@@ -19,14 +19,21 @@ module EzmaxApi
     # The unique ID of the Ezsignfoldertype.
     attr_accessor :pki_ezsignfoldertype_id
 
+    attr_accessor :e_ezsignfoldertype_privacylevel
+
     # The name of the Ezsignfoldertype in the language of the requester
     attr_accessor :s_ezsignfoldertype_name_x
+
+    # Whether the Ezsignfoldertype is active or not
+    attr_accessor :b_ezsignfoldertype_isactive
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'pki_ezsignfoldertype_id' => :'pkiEzsignfoldertypeID',
-        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX'
+        :'e_ezsignfoldertype_privacylevel' => :'eEzsignfoldertypePrivacylevel',
+        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
+        :'b_ezsignfoldertype_isactive' => :'bEzsignfoldertypeIsactive'
       }
     end
 
@@ -39,7 +46,9 @@ module EzmaxApi
     def self.openapi_types
       {
         :'pki_ezsignfoldertype_id' => :'Integer',
-        :'s_ezsignfoldertype_name_x' => :'String'
+        :'e_ezsignfoldertype_privacylevel' => :'FieldEEzsignfoldertypePrivacylevel',
+        :'s_ezsignfoldertype_name_x' => :'String',
+        :'b_ezsignfoldertype_isactive' => :'Boolean'
       }
     end
 
@@ -68,8 +77,16 @@ module EzmaxApi
         self.pki_ezsignfoldertype_id = attributes[:'pki_ezsignfoldertype_id']
       end
 
+      if attributes.key?(:'e_ezsignfoldertype_privacylevel')
+        self.e_ezsignfoldertype_privacylevel = attributes[:'e_ezsignfoldertype_privacylevel']
+      end
+
       if attributes.key?(:'s_ezsignfoldertype_name_x')
         self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
+      end
+
+      if attributes.key?(:'b_ezsignfoldertype_isactive')
+        self.b_ezsignfoldertype_isactive = attributes[:'b_ezsignfoldertype_isactive']
       end
     end
 
@@ -81,8 +98,16 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pki_ezsignfoldertype_id", pki_ezsignfoldertype_id cannot be nil.')
       end
 
+      if @e_ezsignfoldertype_privacylevel.nil?
+        invalid_properties.push('invalid value for "e_ezsignfoldertype_privacylevel", e_ezsignfoldertype_privacylevel cannot be nil.')
+      end
+
       if @s_ezsignfoldertype_name_x.nil?
         invalid_properties.push('invalid value for "s_ezsignfoldertype_name_x", s_ezsignfoldertype_name_x cannot be nil.')
+      end
+
+      if @b_ezsignfoldertype_isactive.nil?
+        invalid_properties.push('invalid value for "b_ezsignfoldertype_isactive", b_ezsignfoldertype_isactive cannot be nil.')
       end
 
       invalid_properties
@@ -92,7 +117,9 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       return false if @pki_ezsignfoldertype_id.nil?
+      return false if @e_ezsignfoldertype_privacylevel.nil?
       return false if @s_ezsignfoldertype_name_x.nil?
+      return false if @b_ezsignfoldertype_isactive.nil?
       true
     end
 
@@ -102,7 +129,9 @@ module EzmaxApi
       return true if self.equal?(o)
       self.class == o.class &&
           pki_ezsignfoldertype_id == o.pki_ezsignfoldertype_id &&
-          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x
+          e_ezsignfoldertype_privacylevel == o.e_ezsignfoldertype_privacylevel &&
+          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
+          b_ezsignfoldertype_isactive == o.b_ezsignfoldertype_isactive
     end
 
     # @see the `==` method
@@ -114,7 +143,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldertype_id, s_ezsignfoldertype_name_x].hash
+      [pki_ezsignfoldertype_id, e_ezsignfoldertype_privacylevel, s_ezsignfoldertype_name_x, b_ezsignfoldertype_isactive].hash
     end
 
     # Builds the object from hash

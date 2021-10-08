@@ -14,20 +14,30 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for the /1/object/ezsignfoldertype/getList API Request
-  class EzsignfoldertypeGetListV1Response
-    attr_accessor :m_payload
+  # This is a debug object containing debugging information on the actual function
+  class CommonResponseObjDebugPayloadGetList
+    # The minimum version of the function that can be called
+    attr_accessor :i_version_min
 
-    attr_accessor :obj_debug_payload
+    # The maximum version of the function that can be called
+    attr_accessor :i_version_max
 
-    attr_accessor :obj_debug
+    # An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+    attr_accessor :a_required_permission
+
+    attr_accessor :a_filter
+
+    # List of available values for *eOrderBy*
+    attr_accessor :a_order_by
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'m_payload' => :'mPayload',
-        :'obj_debug_payload' => :'objDebugPayload',
-        :'obj_debug' => :'objDebug'
+        :'i_version_min' => :'iVersionMin',
+        :'i_version_max' => :'iVersionMax',
+        :'a_required_permission' => :'a_RequiredPermission',
+        :'a_filter' => :'a_Filter',
+        :'a_order_by' => :'a_OrderBy'
       }
     end
 
@@ -39,9 +49,11 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'EzsignfoldertypeGetListV1ResponseMPayload',
-        :'obj_debug_payload' => :'CommonResponseObjDebugPayloadGetList',
-        :'obj_debug' => :'CommonResponseObjDebug'
+        :'i_version_min' => :'Integer',
+        :'i_version_max' => :'Integer',
+        :'a_required_permission' => :'Array<Integer>',
+        :'a_filter' => :'CommonResponseFilter',
+        :'a_order_by' => :'Hash<String, String>'
       }
     end
 
@@ -54,8 +66,8 @@ module EzmaxApi
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'CommonResponseGetList',
-      :'EzsignfoldertypeGetListV1ResponseAllOf'
+      :'CommonResponseObjDebugPayload',
+      :'CommonResponseObjDebugPayloadGetListAllOf'
       ]
     end
 
@@ -63,27 +75,39 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfoldertypeGetListV1Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CommonResponseObjDebugPayloadGetList` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfoldertypeGetListV1Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CommonResponseObjDebugPayloadGetList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'m_payload')
-        self.m_payload = attributes[:'m_payload']
+      if attributes.key?(:'i_version_min')
+        self.i_version_min = attributes[:'i_version_min']
       end
 
-      if attributes.key?(:'obj_debug_payload')
-        self.obj_debug_payload = attributes[:'obj_debug_payload']
+      if attributes.key?(:'i_version_max')
+        self.i_version_max = attributes[:'i_version_max']
       end
 
-      if attributes.key?(:'obj_debug')
-        self.obj_debug = attributes[:'obj_debug']
+      if attributes.key?(:'a_required_permission')
+        if (value = attributes[:'a_required_permission']).is_a?(Array)
+          self.a_required_permission = value
+        end
+      end
+
+      if attributes.key?(:'a_filter')
+        self.a_filter = attributes[:'a_filter']
+      end
+
+      if attributes.key?(:'a_order_by')
+        if (value = attributes[:'a_order_by']).is_a?(Hash)
+          self.a_order_by = value
+        end
       end
     end
 
@@ -91,8 +115,24 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @m_payload.nil?
-        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
+      if @i_version_min.nil?
+        invalid_properties.push('invalid value for "i_version_min", i_version_min cannot be nil.')
+      end
+
+      if @i_version_max.nil?
+        invalid_properties.push('invalid value for "i_version_max", i_version_max cannot be nil.')
+      end
+
+      if @a_required_permission.nil?
+        invalid_properties.push('invalid value for "a_required_permission", a_required_permission cannot be nil.')
+      end
+
+      if @a_filter.nil?
+        invalid_properties.push('invalid value for "a_filter", a_filter cannot be nil.')
+      end
+
+      if @a_order_by.nil?
+        invalid_properties.push('invalid value for "a_order_by", a_order_by cannot be nil.')
       end
 
       invalid_properties
@@ -101,7 +141,11 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @m_payload.nil?
+      return false if @i_version_min.nil?
+      return false if @i_version_max.nil?
+      return false if @a_required_permission.nil?
+      return false if @a_filter.nil?
+      return false if @a_order_by.nil?
       true
     end
 
@@ -110,9 +154,11 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          m_payload == o.m_payload &&
-          obj_debug_payload == o.obj_debug_payload &&
-          obj_debug == o.obj_debug
+          i_version_min == o.i_version_min &&
+          i_version_max == o.i_version_max &&
+          a_required_permission == o.a_required_permission &&
+          a_filter == o.a_filter &&
+          a_order_by == o.a_order_by
     end
 
     # @see the `==` method
@@ -124,7 +170,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [m_payload, obj_debug_payload, obj_debug].hash
+      [i_version_min, i_version_max, a_required_permission, a_filter, a_order_by].hash
     end
 
     # Builds the object from hash

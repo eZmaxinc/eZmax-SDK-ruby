@@ -23,14 +23,14 @@ module EzmaxApi
     attr_accessor :i_version_max
 
     # An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-    attr_accessor :a_required_permissions
+    attr_accessor :a_required_permission
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'i_version_min' => :'iVersionMin',
         :'i_version_max' => :'iVersionMax',
-        :'a_required_permissions' => :'a_RequiredPermissions'
+        :'a_required_permission' => :'a_RequiredPermission'
       }
     end
 
@@ -44,7 +44,7 @@ module EzmaxApi
       {
         :'i_version_min' => :'Integer',
         :'i_version_max' => :'Integer',
-        :'a_required_permissions' => :'Array<Integer>'
+        :'a_required_permission' => :'Array<Integer>'
       }
     end
 
@@ -77,9 +77,9 @@ module EzmaxApi
         self.i_version_max = attributes[:'i_version_max']
       end
 
-      if attributes.key?(:'a_required_permissions')
-        if (value = attributes[:'a_required_permissions']).is_a?(Array)
-          self.a_required_permissions = value
+      if attributes.key?(:'a_required_permission')
+        if (value = attributes[:'a_required_permission']).is_a?(Array)
+          self.a_required_permission = value
         end
       end
     end
@@ -96,8 +96,8 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_version_max", i_version_max cannot be nil.')
       end
 
-      if @a_required_permissions.nil?
-        invalid_properties.push('invalid value for "a_required_permissions", a_required_permissions cannot be nil.')
+      if @a_required_permission.nil?
+        invalid_properties.push('invalid value for "a_required_permission", a_required_permission cannot be nil.')
       end
 
       invalid_properties
@@ -108,7 +108,7 @@ module EzmaxApi
     def valid?
       return false if @i_version_min.nil?
       return false if @i_version_max.nil?
-      return false if @a_required_permissions.nil?
+      return false if @a_required_permission.nil?
       true
     end
 
@@ -119,7 +119,7 @@ module EzmaxApi
       self.class == o.class &&
           i_version_min == o.i_version_min &&
           i_version_max == o.i_version_max &&
-          a_required_permissions == o.a_required_permissions
+          a_required_permission == o.a_required_permission
     end
 
     # @see the `==` method
@@ -131,7 +131,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_version_min, i_version_max, a_required_permissions].hash
+      [i_version_min, i_version_max, a_required_permission].hash
     end
 
     # Builds the object from hash

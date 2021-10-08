@@ -31,7 +31,19 @@ describe EzmaxApi::EzsignfoldertypeListElement do
     end
   end
 
+  describe 'test attribute "e_ezsignfoldertype_privacylevel"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "s_ezsignfoldertype_name_x"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "b_ezsignfoldertype_isactive"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

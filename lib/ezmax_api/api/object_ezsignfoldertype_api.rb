@@ -46,7 +46,7 @@ module EzmaxApi
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ObjectEzsignfoldertypeApi.ezsignfoldertype_get_list_v1 ...'
       end
-      allowable_values = ["sEzsignfoldertypeNameX", "sEzsignfoldertypeNameX desc"]
+      allowable_values = ["pkiEzsignfoldertypeID_ASC", "pkiEzsignfoldertypeID_DESC", "eEzsignfoldertypePrivacylevel_ASC", "eEzsignfoldertypePrivacylevel_DESC", "sEzsignfoldertypeNameX_ASC", "sEzsignfoldertypeNameX_DESC", "bEzsignfoldertypeIsactive_ASC", "bEzsignfoldertypeIsactive_DESC"]
       if @api_client.config.client_side_validation && opts[:'e_order_by'] && !allowable_values.include?(opts[:'e_order_by'])
         fail ArgumentError, "invalid value for \"e_order_by\", must be one of #{allowable_values}"
       end

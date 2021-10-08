@@ -1,10 +1,9 @@
-# EzmaxApi::EzsignfoldertypeGetListV1Response
+# EzmaxApi::CommonResponseGetList
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**EzsignfoldertypeGetListV1ResponseMPayload**](EzsignfoldertypeGetListV1ResponseMPayload.md) |  |  |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | [optional] |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
 
@@ -13,8 +12,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::EzsignfoldertypeGetListV1Response.new(
-  m_payload: null,
+instance = EzmaxApi::CommonResponseGetList.new(
   obj_debug_payload: null,
   obj_debug: null
 )

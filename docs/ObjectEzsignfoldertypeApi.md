@@ -30,7 +30,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
 opts = {
-  e_order_by: 'sEzsignfoldertypeNameX', # String | Specify how you want the results to be sorted
+  e_order_by: 'pkiEzsignfoldertypeID_ASC', # String | Specify how you want the results to be sorted
   i_row_max: 56, # Integer | 
   i_row_offset: 56, # Integer | 
   accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
