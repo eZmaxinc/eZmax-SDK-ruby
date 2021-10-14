@@ -37,7 +37,7 @@ describe 'ObjectPeriodApi' do
   # Get the list of Periods to be used in a dropdown or autocomplete control.
   # @param s_selector The types of Periods to return
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :s_query Allow to filter on the option value
+  # @option opts [String] :s_query Allow to filter the returned results
   # @return [CommonGetAutocompleteV1Response]
   describe 'period_get_autocomplete_v1 test' do
     it 'should work' do

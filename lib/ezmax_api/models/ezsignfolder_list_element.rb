@@ -14,14 +14,19 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  class CommonGetAutocompleteV1ResponseAllOf
-    # Generic Autocomplete Response
-    attr_accessor :m_payload
+  # An Ezsignfolder List Element
+  class EzsignfolderListElement
+    # The unique ID of the Ezsignfolder
+    attr_accessor :pki_ezsignfolder_id
+
+    # The description of the Ezsign Folder
+    attr_accessor :s_ezsignfolder_description
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'m_payload' => :'mPayload'
+        :'pki_ezsignfolder_id' => :'pkiEzsignfolderID',
+        :'s_ezsignfolder_description' => :'sEzsignfolderDescription'
       }
     end
 
@@ -33,7 +38,8 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'Array<CustomAutocompleteElementResponse>'
+        :'pki_ezsignfolder_id' => :'Integer',
+        :'s_ezsignfolder_description' => :'String'
       }
     end
 
@@ -47,21 +53,23 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderListElement` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderListElement`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'m_payload')
-        if (value = attributes[:'m_payload']).is_a?(Array)
-          self.m_payload = value
-        end
+      if attributes.key?(:'pki_ezsignfolder_id')
+        self.pki_ezsignfolder_id = attributes[:'pki_ezsignfolder_id']
+      end
+
+      if attributes.key?(:'s_ezsignfolder_description')
+        self.s_ezsignfolder_description = attributes[:'s_ezsignfolder_description']
       end
     end
 
@@ -69,8 +77,12 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @m_payload.nil?
-        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
+      if @pki_ezsignfolder_id.nil?
+        invalid_properties.push('invalid value for "pki_ezsignfolder_id", pki_ezsignfolder_id cannot be nil.')
+      end
+
+      if @s_ezsignfolder_description.nil?
+        invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
       end
 
       invalid_properties
@@ -79,7 +91,8 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @m_payload.nil?
+      return false if @pki_ezsignfolder_id.nil?
+      return false if @s_ezsignfolder_description.nil?
       true
     end
 
@@ -88,7 +101,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          m_payload == o.m_payload
+          pki_ezsignfolder_id == o.pki_ezsignfolder_id &&
+          s_ezsignfolder_description == o.s_ezsignfolder_description
     end
 
     # @see the `==` method
@@ -100,7 +114,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [m_payload].hash
+      [pki_ezsignfolder_id, s_ezsignfolder_description].hash
     end
 
     # Builds the object from hash

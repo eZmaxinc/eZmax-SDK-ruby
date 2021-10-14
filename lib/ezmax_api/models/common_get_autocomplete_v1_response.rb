@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Response for the /1/object/xxx/getAutocomplete API Request
   class CommonGetAutocompleteV1Response
+    # Generic Autocomplete Response
     attr_accessor :m_payload
 
     attr_accessor :obj_debug_payload
@@ -39,7 +40,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'Array<CommonGetAutocompleteV1ResponseMPayload>',
+        :'m_payload' => :'Array<CustomAutocompleteElementResponse>',
         :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
         :'obj_debug' => :'CommonResponseObjDebug'
       }

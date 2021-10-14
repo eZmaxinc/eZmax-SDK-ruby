@@ -31,7 +31,7 @@ end
 api_instance = EzmaxApi::ObjectPeriodApi.new
 s_selector = 'ActiveNormal' # String | The types of Periods to return
 opts = {
-  s_query: 's_query_example' # String | Allow to filter on the option value
+  s_query: 's_query_example' # String | Allow to filter the returned results
 }
 
 begin
@@ -66,7 +66,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **s_selector** | **String** | The types of Periods to return |  |
-| **s_query** | **String** | Allow to filter on the option value | [optional] |
+| **s_query** | **String** | Allow to filter the returned results | [optional] |
 
 ### Return type
 

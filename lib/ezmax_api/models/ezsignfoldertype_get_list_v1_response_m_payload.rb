@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Payload for the /1/object/ezsignfolder/getList API Request
+  # Payload for the /1/object/ezsignfoldertype/getList API Request
   class EzsignfoldertypeGetListV1ResponseMPayload
     attr_accessor :a_obj_ezsignfoldertype
 

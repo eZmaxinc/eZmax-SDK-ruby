@@ -25,7 +25,6 @@ docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
-docs/CommonGetAutocompleteV1ResponseMPayload.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
@@ -43,6 +42,7 @@ docs/ContactRequestCompoundAllOf.md
 docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
+docs/CustomAutocompleteElementResponse.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataSignerResponse.md
 docs/CustomFormsDataFolderResponse.md
@@ -85,9 +85,14 @@ docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetFormsDataV1Response.md
 docs/EzsignfolderGetFormsDataV1ResponseAllOf.md
 docs/EzsignfolderGetFormsDataV1ResponseMPayload.md
+docs/EzsignfolderGetListV1Response.md
+docs/EzsignfolderGetListV1ResponseAllOf.md
+docs/EzsignfolderGetListV1ResponseMPayload.md
+docs/EzsignfolderGetListV1ResponseMPayloadAllOf.md
 docs/EzsignfolderGetObjectV1Response.md
 docs/EzsignfolderGetObjectV1ResponseAllOf.md
 docs/EzsignfolderGetObjectV1ResponseMPayload.md
+docs/EzsignfolderListElement.md
 docs/EzsignfolderRequest.md
 docs/EzsignfolderRequestCompound.md
 docs/EzsignfolderRequestCompoundAllOf.md
@@ -233,7 +238,6 @@ lib/ezmax_api/models/authenticate_authenticate_v2_response_m_payload.rb
 lib/ezmax_api/models/common_audit.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response.rb
 lib/ezmax_api/models/common_get_autocomplete_v1_response_all_of.rb
-lib/ezmax_api/models/common_get_autocomplete_v1_response_m_payload.rb
 lib/ezmax_api/models/common_get_list_v1_response_m_payload.rb
 lib/ezmax_api/models/common_response.rb
 lib/ezmax_api/models/common_response_error.rb
@@ -251,6 +255,7 @@ lib/ezmax_api/models/contact_request_compound_all_of.rb
 lib/ezmax_api/models/contactinformations_request.rb
 lib/ezmax_api/models/contactinformations_request_compound.rb
 lib/ezmax_api/models/contactinformations_request_compound_all_of.rb
+lib/ezmax_api/models/custom_autocomplete_element_response.rb
 lib/ezmax_api/models/custom_form_data_document_response.rb
 lib/ezmax_api/models/custom_form_data_signer_response.rb
 lib/ezmax_api/models/custom_forms_data_folder_response.rb
@@ -293,9 +298,14 @@ lib/ezmax_api/models/ezsignfolder_delete_object_v1_response.rb
 lib/ezmax_api/models/ezsignfolder_get_forms_data_v1_response.rb
 lib/ezmax_api/models/ezsignfolder_get_forms_data_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignfolder_get_forms_data_v1_response_m_payload.rb
+lib/ezmax_api/models/ezsignfolder_get_list_v1_response.rb
+lib/ezmax_api/models/ezsignfolder_get_list_v1_response_all_of.rb
+lib/ezmax_api/models/ezsignfolder_get_list_v1_response_m_payload.rb
+lib/ezmax_api/models/ezsignfolder_get_list_v1_response_m_payload_all_of.rb
 lib/ezmax_api/models/ezsignfolder_get_object_v1_response.rb
 lib/ezmax_api/models/ezsignfolder_get_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignfolder_get_object_v1_response_m_payload.rb
+lib/ezmax_api/models/ezsignfolder_list_element.rb
 lib/ezmax_api/models/ezsignfolder_request.rb
 lib/ezmax_api/models/ezsignfolder_request_compound.rb
 lib/ezmax_api/models/ezsignfolder_request_compound_all_of.rb
@@ -422,7 +432,6 @@ spec/models/authenticate_authenticate_v2_response_m_payload_spec.rb
 spec/models/authenticate_authenticate_v2_response_spec.rb
 spec/models/common_audit_spec.rb
 spec/models/common_get_autocomplete_v1_response_all_of_spec.rb
-spec/models/common_get_autocomplete_v1_response_m_payload_spec.rb
 spec/models/common_get_autocomplete_v1_response_spec.rb
 spec/models/common_get_list_v1_response_m_payload_spec.rb
 spec/models/common_response_error_spec.rb
@@ -441,6 +450,7 @@ spec/models/contact_request_spec.rb
 spec/models/contactinformations_request_compound_all_of_spec.rb
 spec/models/contactinformations_request_compound_spec.rb
 spec/models/contactinformations_request_spec.rb
+spec/models/custom_autocomplete_element_response_spec.rb
 spec/models/custom_form_data_document_response_spec.rb
 spec/models/custom_form_data_signer_response_spec.rb
 spec/models/custom_forms_data_folder_response_spec.rb
@@ -483,9 +493,14 @@ spec/models/ezsignfolder_delete_object_v1_response_spec.rb
 spec/models/ezsignfolder_get_forms_data_v1_response_all_of_spec.rb
 spec/models/ezsignfolder_get_forms_data_v1_response_m_payload_spec.rb
 spec/models/ezsignfolder_get_forms_data_v1_response_spec.rb
+spec/models/ezsignfolder_get_list_v1_response_all_of_spec.rb
+spec/models/ezsignfolder_get_list_v1_response_m_payload_all_of_spec.rb
+spec/models/ezsignfolder_get_list_v1_response_m_payload_spec.rb
+spec/models/ezsignfolder_get_list_v1_response_spec.rb
 spec/models/ezsignfolder_get_object_v1_response_all_of_spec.rb
 spec/models/ezsignfolder_get_object_v1_response_m_payload_spec.rb
 spec/models/ezsignfolder_get_object_v1_response_spec.rb
+spec/models/ezsignfolder_list_element_spec.rb
 spec/models/ezsignfolder_request_compound_all_of_spec.rb
 spec/models/ezsignfolder_request_compound_spec.rb
 spec/models/ezsignfolder_request_spec.rb

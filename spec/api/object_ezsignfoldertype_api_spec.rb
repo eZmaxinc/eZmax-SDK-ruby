@@ -32,9 +32,23 @@ describe 'ObjectEzsignfoldertypeApi' do
     end
   end
 
+  # unit tests for ezsignfoldertype_get_autocomplete_v1
+  # Retrieve Ezsignfoldertypes and IDs
+  # Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+  # @param s_selector The type of Ezsignfoldertypes to return
+  # @param [Hash] opts the optional parameters
+  # @option opts [HeaderAcceptLanguage] :accept_language 
+  # @option opts [String] :s_query Allow to filter the returned results
+  # @return [CommonGetAutocompleteV1Response]
+  describe 'ezsignfoldertype_get_autocomplete_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsignfoldertype_get_list_v1
   # Retrieve Ezsignfoldertype list
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
+  # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
   # @param [Hash] opts the optional parameters
   # @option opts [String] :e_order_by Specify how you want the results to be sorted
   # @option opts [Integer] :i_row_max 

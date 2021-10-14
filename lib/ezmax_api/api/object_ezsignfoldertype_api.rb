@@ -19,8 +19,82 @@ module EzmaxApi
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Retrieve Ezsignfoldertypes and IDs
+    # Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+    # @param s_selector [String] The type of Ezsignfoldertypes to return
+    # @param [Hash] opts the optional parameters
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_query Allow to filter the returned results
+    # @return [CommonGetAutocompleteV1Response]
+    def ezsignfoldertype_get_autocomplete_v1(s_selector, opts = {})
+      data, _status_code, _headers = ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts)
+      data
+    end
+
+    # Retrieve Ezsignfoldertypes and IDs
+    # Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+    # @param s_selector [String] The type of Ezsignfoldertypes to return
+    # @param [Hash] opts the optional parameters
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_query Allow to filter the returned results
+    # @return [Array<(CommonGetAutocompleteV1Response, Integer, Hash)>] CommonGetAutocompleteV1Response data, response status code and response headers
+    def ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsignfoldertypeApi.ezsignfoldertype_get_autocomplete_v1 ...'
+      end
+      # verify the required parameter 's_selector' is set
+      if @api_client.config.client_side_validation && s_selector.nil?
+        fail ArgumentError, "Missing the required parameter 's_selector' when calling ObjectEzsignfoldertypeApi.ezsignfoldertype_get_autocomplete_v1"
+      end
+      # verify enum value
+      allowable_values = ["Active", "All"]
+      if @api_client.config.client_side_validation && !allowable_values.include?(s_selector)
+        fail ArgumentError, "invalid value for \"s_selector\", must be one of #{allowable_values}"
+      end
+      # resource path
+      local_var_path = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/'.sub('{' + 'sSelector' + '}', CGI.escape(s_selector.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'sQuery'] = opts[:'s_query'] if !opts[:'s_query'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params[:'Accept-Language'] = opts[:'accept_language'] if !opts[:'accept_language'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CommonGetAutocompleteV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsignfoldertypeApi.ezsignfoldertype_get_autocomplete_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsignfoldertypeApi#ezsignfoldertype_get_autocomplete_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve Ezsignfoldertype list
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 
@@ -34,7 +108,7 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfoldertype list
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 

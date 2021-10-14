@@ -14,23 +14,22 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Generic Autocomplete Response
-  class CommonGetAutocompleteV1ResponseMPayload
-    # The Category (ie group) for the dropdown or an empty string if not categorized
-    attr_accessor :group
+  # Payload for the /1/object/ezsignfolder/getList API Request
+  class EzsignfolderGetListV1ResponseMPayload
+    attr_accessor :a_obj_ezsignfolder
 
-    # The Unique ID of the element
-    attr_accessor :id
+    # The number of rows returned
+    attr_accessor :i_row_returned
 
-    # The Description of the element
-    attr_accessor :option
+    # The number of rows matching your filters (if any) or the total number of rows
+    attr_accessor :i_row_filtered
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'group' => :'group',
-        :'id' => :'id',
-        :'option' => :'option'
+        :'a_obj_ezsignfolder' => :'a_objEzsignfolder',
+        :'i_row_returned' => :'iRowReturned',
+        :'i_row_filtered' => :'iRowFiltered'
       }
     end
 
@@ -42,9 +41,9 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'group' => :'String',
-        :'id' => :'String',
-        :'option' => :'String'
+        :'a_obj_ezsignfolder' => :'Array<EzsignfolderListElement>',
+        :'i_row_returned' => :'Integer',
+        :'i_row_filtered' => :'Integer'
       }
     end
 
@@ -54,31 +53,41 @@ module EzmaxApi
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'CommonGetListV1ResponseMPayload',
+      :'EzsignfolderGetListV1ResponseMPayloadAllOf'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CommonGetAutocompleteV1ResponseMPayload` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderGetListV1ResponseMPayload` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CommonGetAutocompleteV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderGetListV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'group')
-        self.group = attributes[:'group']
+      if attributes.key?(:'a_obj_ezsignfolder')
+        if (value = attributes[:'a_obj_ezsignfolder']).is_a?(Array)
+          self.a_obj_ezsignfolder = value
+        end
       end
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'i_row_returned')
+        self.i_row_returned = attributes[:'i_row_returned']
       end
 
-      if attributes.key?(:'option')
-        self.option = attributes[:'option']
+      if attributes.key?(:'i_row_filtered')
+        self.i_row_filtered = attributes[:'i_row_filtered']
       end
     end
 
@@ -86,16 +95,16 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @group.nil?
-        invalid_properties.push('invalid value for "group", group cannot be nil.')
+      if @a_obj_ezsignfolder.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignfolder", a_obj_ezsignfolder cannot be nil.')
       end
 
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      if @i_row_returned.nil?
+        invalid_properties.push('invalid value for "i_row_returned", i_row_returned cannot be nil.')
       end
 
-      if @option.nil?
-        invalid_properties.push('invalid value for "option", option cannot be nil.')
+      if @i_row_filtered.nil?
+        invalid_properties.push('invalid value for "i_row_filtered", i_row_filtered cannot be nil.')
       end
 
       invalid_properties
@@ -104,9 +113,9 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @group.nil?
-      return false if @id.nil?
-      return false if @option.nil?
+      return false if @a_obj_ezsignfolder.nil?
+      return false if @i_row_returned.nil?
+      return false if @i_row_filtered.nil?
       true
     end
 
@@ -115,9 +124,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          group == o.group &&
-          id == o.id &&
-          option == o.option
+          a_obj_ezsignfolder == o.a_obj_ezsignfolder &&
+          i_row_returned == o.i_row_returned &&
+          i_row_filtered == o.i_row_filtered
     end
 
     # @see the `==` method
@@ -129,7 +138,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [group, id, option].hash
+      [a_obj_ezsignfolder, i_row_returned, i_row_filtered].hash
     end
 
     # Builds the object from hash

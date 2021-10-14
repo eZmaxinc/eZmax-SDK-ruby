@@ -14,8 +14,7 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  class CommonGetAutocompleteV1ResponseAllOf
-    # Generic Autocomplete Response
+  class EzsignfolderGetListV1ResponseAllOf
     attr_accessor :m_payload
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -33,7 +32,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'Array<CustomAutocompleteElementResponse>'
+        :'m_payload' => :'EzsignfolderGetListV1ResponseMPayload'
       }
     end
 
@@ -47,21 +46,19 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderGetListV1ResponseAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderGetListV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
       if attributes.key?(:'m_payload')
-        if (value = attributes[:'m_payload']).is_a?(Array)
-          self.m_payload = value
-        end
+        self.m_payload = attributes[:'m_payload']
       end
     end
 

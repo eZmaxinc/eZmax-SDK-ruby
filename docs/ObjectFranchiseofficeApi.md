@@ -31,7 +31,7 @@ end
 api_instance = EzmaxApi::ObjectFranchiseofficeApi.new
 s_selector = 'Active' # String | The type of Franchiseoffices to return
 opts = {
-  s_query: 's_query_example' # String | Allow to filter on the option value
+  s_query: 's_query_example' # String | Allow to filter the returned results
 }
 
 begin
@@ -66,7 +66,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **s_selector** | **String** | The type of Franchiseoffices to return |  |
-| **s_query** | **String** | Allow to filter on the option value | [optional] |
+| **s_query** | **String** | Allow to filter the returned results | [optional] |
 
 ### Return type
 

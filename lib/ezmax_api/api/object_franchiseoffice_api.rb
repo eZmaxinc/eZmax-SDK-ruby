@@ -23,7 +23,7 @@ module EzmaxApi
     # Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
     # @param s_selector [String] The type of Franchiseoffices to return
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :s_query Allow to filter on the option value
+    # @option opts [String] :s_query Allow to filter the returned results
     # @return [CommonGetAutocompleteV1Response]
     def franchiseoffice_get_autocomplete_v1(s_selector, opts = {})
       data, _status_code, _headers = franchiseoffice_get_autocomplete_v1_with_http_info(s_selector, opts)
@@ -34,7 +34,7 @@ module EzmaxApi
     # Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
     # @param s_selector [String] The type of Franchiseoffices to return
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :s_query Allow to filter on the option value
+    # @option opts [String] :s_query Allow to filter the returned results
     # @return [Array<(CommonGetAutocompleteV1Response, Integer, Hash)>] CommonGetAutocompleteV1Response data, response status code and response headers
     def franchiseoffice_get_autocomplete_v1_with_http_info(s_selector, opts = {})
       if @api_client.config.debugging

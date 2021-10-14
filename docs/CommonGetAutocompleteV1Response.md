@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**Array&lt;CommonGetAutocompleteV1ResponseMPayload&gt;**](CommonGetAutocompleteV1ResponseMPayload.md) |  |  |
+| **m_payload** | [**Array&lt;CustomAutocompleteElementResponse&gt;**](CustomAutocompleteElementResponse.md) | Generic Autocomplete Response |  |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
 

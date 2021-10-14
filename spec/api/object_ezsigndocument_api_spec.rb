@@ -119,7 +119,6 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_get_form_data_v1
   # Retrieve an existing Ezsigndocument&#39;s Form Data
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
   # @param pki_ezsigndocument_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetFormDataV1Response]
@@ -143,7 +142,6 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_get_words_positions_v1
   # Retrieve positions X,Y of given words from a Ezsigndocument
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
   # @param pki_ezsigndocument_id 
   # @param ezsigndocument_get_words_positions_v1_request 
   # @param [Hash] opts the optional parameters

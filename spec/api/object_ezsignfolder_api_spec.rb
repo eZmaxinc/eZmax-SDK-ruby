@@ -69,11 +69,25 @@ describe 'ObjectEzsignfolderApi' do
 
   # unit tests for ezsignfolder_get_forms_data_v1
   # Retrieve an existing Ezsignfolder&#39;s forms data
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
   # @param pki_ezsignfolder_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsignfolderGetFormsDataV1Response]
   describe 'ezsignfolder_get_forms_data_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for ezsignfolder_get_list_v1
+  # Retrieve Ezsignfolder list
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :e_order_by Specify how you want the results to be sorted
+  # @option opts [Integer] :i_row_max 
+  # @option opts [Integer] :i_row_offset 
+  # @option opts [HeaderAcceptLanguage] :accept_language 
+  # @option opts [String] :s_filter 
+  # @return [EzsignfolderGetListV1Response]
+  describe 'ezsignfolder_get_list_v1 test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

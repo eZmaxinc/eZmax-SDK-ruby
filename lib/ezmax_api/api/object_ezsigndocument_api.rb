@@ -495,7 +495,6 @@ module EzmaxApi
     end
 
     # Retrieve an existing Ezsigndocument's Form Data
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
     # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetFormDataV1Response]
@@ -505,7 +504,6 @@ module EzmaxApi
     end
 
     # Retrieve an existing Ezsigndocument&#39;s Form Data
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
     # @param pki_ezsigndocument_id [Integer] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetFormDataV1Response, Integer, Hash)>] EzsigndocumentGetFormDataV1Response data, response status code and response headers
@@ -621,7 +619,6 @@ module EzmaxApi
     end
 
     # Retrieve positions X,Y of given words from a Ezsigndocument
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
     # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_get_words_positions_v1_request [EzsigndocumentGetWordsPositionsV1Request] 
     # @param [Hash] opts the optional parameters
@@ -632,7 +629,6 @@ module EzmaxApi
     end
 
     # Retrieve positions X,Y of given words from a Ezsigndocument
-    # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
     # @param pki_ezsigndocument_id [Integer] 
     # @param ezsigndocument_get_words_positions_v1_request [EzsigndocumentGetWordsPositionsV1Request] 
     # @param [Hash] opts the optional parameters

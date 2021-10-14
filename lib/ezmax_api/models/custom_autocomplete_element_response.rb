@@ -14,14 +14,23 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  class CommonGetAutocompleteV1ResponseAllOf
-    # Generic Autocomplete Response
-    attr_accessor :m_payload
+  # Generic Autocomplete Response
+  class CustomAutocompleteElementResponse
+    # The Category for the dropdown or an empty string if not categorized
+    attr_accessor :s_category
+
+    # The Description of the element
+    attr_accessor :s_label
+
+    # The Unique ID of the element
+    attr_accessor :m_value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'m_payload' => :'mPayload'
+        :'s_category' => :'sCategory',
+        :'s_label' => :'sLabel',
+        :'m_value' => :'mValue'
       }
     end
 
@@ -33,13 +42,16 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'m_payload' => :'Array<CustomAutocompleteElementResponse>'
+        :'s_category' => :'String',
+        :'s_label' => :'String',
+        :'m_value' => :'OneOfintegerstring'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'m_value'
       ])
     end
 
@@ -47,21 +59,27 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::CustomAutocompleteElementResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CommonGetAutocompleteV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::CustomAutocompleteElementResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'m_payload')
-        if (value = attributes[:'m_payload']).is_a?(Array)
-          self.m_payload = value
-        end
+      if attributes.key?(:'s_category')
+        self.s_category = attributes[:'s_category']
+      end
+
+      if attributes.key?(:'s_label')
+        self.s_label = attributes[:'s_label']
+      end
+
+      if attributes.key?(:'m_value')
+        self.m_value = attributes[:'m_value']
       end
     end
 
@@ -69,8 +87,12 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @m_payload.nil?
-        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
+      if @s_category.nil?
+        invalid_properties.push('invalid value for "s_category", s_category cannot be nil.')
+      end
+
+      if @s_label.nil?
+        invalid_properties.push('invalid value for "s_label", s_label cannot be nil.')
       end
 
       invalid_properties
@@ -79,7 +101,8 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @m_payload.nil?
+      return false if @s_category.nil?
+      return false if @s_label.nil?
       true
     end
 
@@ -88,7 +111,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          m_payload == o.m_payload
+          s_category == o.s_category &&
+          s_label == o.s_label &&
+          m_value == o.m_value
     end
 
     # @see the `==` method
@@ -100,7 +125,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [m_payload].hash
+      [s_category, s_label, m_value].hash
     end
 
     # Builds the object from hash
