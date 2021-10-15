@@ -52,7 +52,7 @@ module EzmaxApi
         fail ArgumentError, "invalid value for \"s_selector\", must be one of #{allowable_values}"
       end
       # resource path
-      local_var_path = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/'.sub('{' + 'sSelector' + '}', CGI.escape(s_selector.to_s))
+      local_var_path = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}'.sub('{' + 'sSelector' + '}', CGI.escape(s_selector.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

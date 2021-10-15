@@ -80,6 +80,7 @@ describe 'ObjectEzsignfolderApi' do
 
   # unit tests for ezsignfolder_get_list_v1
   # Retrieve Ezsignfolder list
+  # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived |
   # @param [Hash] opts the optional parameters
   # @option opts [String] :e_order_by Specify how you want the results to be sorted
   # @option opts [Integer] :i_row_max 

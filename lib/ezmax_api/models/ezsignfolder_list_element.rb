@@ -19,14 +19,52 @@ module EzmaxApi
     # The unique ID of the Ezsignfolder
     attr_accessor :pki_ezsignfolder_id
 
+    # The unique ID of the Ezsignfoldertype.
+    attr_accessor :fki_ezsignfoldertype_id
+
+    # The name of the Ezsignfoldertype in the language of the requester
+    attr_accessor :s_ezsignfoldertype_name_x
+
     # The description of the Ezsign Folder
     attr_accessor :s_ezsignfolder_description
+
+    attr_accessor :e_ezsignfolder_step
+
+    # The date and time at which the object was created
+    attr_accessor :dt_created_date
+
+    attr_accessor :dt_ezsignfolder_sentdate
+
+    # The date at which no more signature will be accepted on the folder
+    attr_accessor :dt_due_date
+
+    # The total number of Ezsigndocument in the folder
+    attr_accessor :i_total_document
+
+    # The total number of Ezsigndocument in the folder that were saved in the edm system
+    attr_accessor :i_total_document_edm
+
+    # The total number of signature blocks in all Ezsigndocuments in the folder
+    attr_accessor :i_total_signature
+
+    # The total number of already signed signature blocks in all Ezsigndocuments in the folder
+    attr_accessor :i_total_signature_signed
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'pki_ezsignfolder_id' => :'pkiEzsignfolderID',
-        :'s_ezsignfolder_description' => :'sEzsignfolderDescription'
+        :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
+        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
+        :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
+        :'e_ezsignfolder_step' => :'eEzsignfolderStep',
+        :'dt_created_date' => :'dtCreatedDate',
+        :'dt_ezsignfolder_sentdate' => :'dtEzsignfolderSentdate',
+        :'dt_due_date' => :'dtDueDate',
+        :'i_total_document' => :'iTotalDocument',
+        :'i_total_document_edm' => :'iTotalDocumentEdm',
+        :'i_total_signature' => :'iTotalSignature',
+        :'i_total_signature_signed' => :'iTotalSignatureSigned'
       }
     end
 
@@ -39,13 +77,25 @@ module EzmaxApi
     def self.openapi_types
       {
         :'pki_ezsignfolder_id' => :'Integer',
-        :'s_ezsignfolder_description' => :'String'
+        :'fki_ezsignfoldertype_id' => :'Integer',
+        :'s_ezsignfoldertype_name_x' => :'String',
+        :'s_ezsignfolder_description' => :'String',
+        :'e_ezsignfolder_step' => :'FieldEEzsignfolderStep',
+        :'dt_created_date' => :'String',
+        :'dt_ezsignfolder_sentdate' => :'OneOfstringnull',
+        :'dt_due_date' => :'OneOfstringnull',
+        :'i_total_document' => :'Integer',
+        :'i_total_document_edm' => :'Integer',
+        :'i_total_signature' => :'Integer',
+        :'i_total_signature_signed' => :'Integer'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'dt_ezsignfolder_sentdate',
+        :'dt_due_date',
       ])
     end
 
@@ -68,8 +118,48 @@ module EzmaxApi
         self.pki_ezsignfolder_id = attributes[:'pki_ezsignfolder_id']
       end
 
+      if attributes.key?(:'fki_ezsignfoldertype_id')
+        self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
+      end
+
+      if attributes.key?(:'s_ezsignfoldertype_name_x')
+        self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
+      end
+
       if attributes.key?(:'s_ezsignfolder_description')
         self.s_ezsignfolder_description = attributes[:'s_ezsignfolder_description']
+      end
+
+      if attributes.key?(:'e_ezsignfolder_step')
+        self.e_ezsignfolder_step = attributes[:'e_ezsignfolder_step']
+      end
+
+      if attributes.key?(:'dt_created_date')
+        self.dt_created_date = attributes[:'dt_created_date']
+      end
+
+      if attributes.key?(:'dt_ezsignfolder_sentdate')
+        self.dt_ezsignfolder_sentdate = attributes[:'dt_ezsignfolder_sentdate']
+      end
+
+      if attributes.key?(:'dt_due_date')
+        self.dt_due_date = attributes[:'dt_due_date']
+      end
+
+      if attributes.key?(:'i_total_document')
+        self.i_total_document = attributes[:'i_total_document']
+      end
+
+      if attributes.key?(:'i_total_document_edm')
+        self.i_total_document_edm = attributes[:'i_total_document_edm']
+      end
+
+      if attributes.key?(:'i_total_signature')
+        self.i_total_signature = attributes[:'i_total_signature']
+      end
+
+      if attributes.key?(:'i_total_signature_signed')
+        self.i_total_signature_signed = attributes[:'i_total_signature_signed']
       end
     end
 
@@ -81,8 +171,40 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pki_ezsignfolder_id", pki_ezsignfolder_id cannot be nil.')
       end
 
+      if @fki_ezsignfoldertype_id.nil?
+        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", fki_ezsignfoldertype_id cannot be nil.')
+      end
+
+      if @s_ezsignfoldertype_name_x.nil?
+        invalid_properties.push('invalid value for "s_ezsignfoldertype_name_x", s_ezsignfoldertype_name_x cannot be nil.')
+      end
+
       if @s_ezsignfolder_description.nil?
         invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
+      end
+
+      if @e_ezsignfolder_step.nil?
+        invalid_properties.push('invalid value for "e_ezsignfolder_step", e_ezsignfolder_step cannot be nil.')
+      end
+
+      if @dt_created_date.nil?
+        invalid_properties.push('invalid value for "dt_created_date", dt_created_date cannot be nil.')
+      end
+
+      if @i_total_document.nil?
+        invalid_properties.push('invalid value for "i_total_document", i_total_document cannot be nil.')
+      end
+
+      if @i_total_document_edm.nil?
+        invalid_properties.push('invalid value for "i_total_document_edm", i_total_document_edm cannot be nil.')
+      end
+
+      if @i_total_signature.nil?
+        invalid_properties.push('invalid value for "i_total_signature", i_total_signature cannot be nil.')
+      end
+
+      if @i_total_signature_signed.nil?
+        invalid_properties.push('invalid value for "i_total_signature_signed", i_total_signature_signed cannot be nil.')
       end
 
       invalid_properties
@@ -92,7 +214,15 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       return false if @pki_ezsignfolder_id.nil?
+      return false if @fki_ezsignfoldertype_id.nil?
+      return false if @s_ezsignfoldertype_name_x.nil?
       return false if @s_ezsignfolder_description.nil?
+      return false if @e_ezsignfolder_step.nil?
+      return false if @dt_created_date.nil?
+      return false if @i_total_document.nil?
+      return false if @i_total_document_edm.nil?
+      return false if @i_total_signature.nil?
+      return false if @i_total_signature_signed.nil?
       true
     end
 
@@ -102,7 +232,17 @@ module EzmaxApi
       return true if self.equal?(o)
       self.class == o.class &&
           pki_ezsignfolder_id == o.pki_ezsignfolder_id &&
-          s_ezsignfolder_description == o.s_ezsignfolder_description
+          fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
+          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
+          s_ezsignfolder_description == o.s_ezsignfolder_description &&
+          e_ezsignfolder_step == o.e_ezsignfolder_step &&
+          dt_created_date == o.dt_created_date &&
+          dt_ezsignfolder_sentdate == o.dt_ezsignfolder_sentdate &&
+          dt_due_date == o.dt_due_date &&
+          i_total_document == o.i_total_document &&
+          i_total_document_edm == o.i_total_document_edm &&
+          i_total_signature == o.i_total_signature &&
+          i_total_signature_signed == o.i_total_signature_signed
     end
 
     # @see the `==` method
@@ -114,7 +254,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfolder_id, s_ezsignfolder_description].hash
+      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, s_ezsignfoldertype_name_x, s_ezsignfolder_description, e_ezsignfolder_step, dt_created_date, dt_ezsignfolder_sentdate, dt_due_date, i_total_document, i_total_document_edm, i_total_signature, i_total_signature_signed].hash
     end
 
     # Builds the object from hash

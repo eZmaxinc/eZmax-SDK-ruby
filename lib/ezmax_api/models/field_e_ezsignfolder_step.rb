@@ -19,7 +19,6 @@ module EzmaxApi
     SENT = "Sent".freeze
     PARTIALLY_SIGNED = "PartiallySigned".freeze
     EXPIRED = "Expired".freeze
-    SIGNED = "Signed".freeze
     COMPLETED = "Completed".freeze
     ARCHIVED = "Archived".freeze
 

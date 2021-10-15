@@ -273,6 +273,7 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfolder list
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 
@@ -286,6 +287,7 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfolder list
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 
@@ -297,7 +299,7 @@ module EzmaxApi
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ObjectEzsignfolderApi.ezsignfolder_get_list_v1 ...'
       end
-      allowable_values = ["pkiEzsignfolderID_ASC", "pkiEzsignfolderID_DESC", "sEzsignfolderDescription", "sEzsignfolderDescription_DESC"]
+      allowable_values = ["pkiEzsignfolderID_ASC", "pkiEzsignfolderID_DESC", "sEzsignfolderDescription_ASC", "sEzsignfolderDescription_DESC", "dtCreatedDate_ASC", "dtCreatedDate_DESC", "fkiEzsignfoldertypeID_ASC", "fkiEzsignfoldertypeID_DESC", "sEzsignfoldertypeNameX_ASC", "sEzsignfoldertypeNameX_DESC", "eEzsignfolderStep_ASC", "eEzsignfolderStep_DESC", "dtEzsignfolderSentdate_ASC", "dtEzsignfolderSentdate_DESC", "dtDueDate_ASC", "dtDueDate_DESC", "iTotalDocument_ASC", "iTotalDocument_DESC", "iTotalDocumentEdm_ASC", "iTotalDocumentEdm_DESC", "iTotalSignature_ASC", "iTotalSignature_DESC", "iTotalSignatureSigned_ASC", "iTotalSignatureSigned_DESC"]
       if @api_client.config.client_side_validation && opts[:'e_order_by'] && !allowable_values.include?(opts[:'e_order_by'])
         fail ArgumentError, "invalid value for \"e_order_by\", must be one of #{allowable_values}"
       end
