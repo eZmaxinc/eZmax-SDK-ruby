@@ -32,8 +32,8 @@ end
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
 s_selector = 'Active' # String | The type of Ezsignfoldertypes to return
 opts = {
-  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
-  s_query: 's_query_example' # String | Allow to filter the returned results
+  s_query: 's_query_example', # String | Allow to filter the returned results
+  accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
 }
 
 begin
@@ -68,8 +68,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **s_selector** | **String** | The type of Ezsignfoldertypes to return |  |
-| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
 | **s_query** | **String** | Allow to filter the returned results | [optional] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
 
 ### Return type
 

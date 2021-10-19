@@ -10,8 +10,8 @@
 | **s_ezsignfolder_description** | **String** | The description of the Ezsign Folder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
 | **dt_created_date** | **String** | The date and time at which the object was created |  |
-| **dt_ezsignfolder_sentdate** | [**OneOfstringnull**](OneOfstringnull.md) |  |  |
-| **dt_due_date** | [**OneOfstringnull**](OneOfstringnull.md) | The date at which no more signature will be accepted on the folder |  |
+| **dt_ezsignfolder_sentdate** | [**OneOfstringobject**](OneOfstringobject.md) |  |  |
+| **dt_due_date** | [**OneOfstringobject**](OneOfstringobject.md) | The date at which no more signature will be accepted on the folder |  |
 | **i_total_document** | **Integer** | The total number of Ezsigndocument in the folder |  |
 | **i_total_document_edm** | **Integer** | The total number of Ezsigndocument in the folder that were saved in the edm system |  |
 | **i_total_signature** | **Integer** | The total number of signature blocks in all Ezsigndocuments in the folder |  |

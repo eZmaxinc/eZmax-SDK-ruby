@@ -23,8 +23,8 @@ module EzmaxApi
     # Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
     # @param s_selector [String] The type of Ezsignfoldertypes to return
     # @param [Hash] opts the optional parameters
-    # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_query Allow to filter the returned results
+    # @option opts [HeaderAcceptLanguage] :accept_language 
     # @return [CommonGetAutocompleteV1Response]
     def ezsignfoldertype_get_autocomplete_v1(s_selector, opts = {})
       data, _status_code, _headers = ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts)
@@ -35,8 +35,8 @@ module EzmaxApi
     # Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
     # @param s_selector [String] The type of Ezsignfoldertypes to return
     # @param [Hash] opts the optional parameters
-    # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_query Allow to filter the returned results
+    # @option opts [HeaderAcceptLanguage] :accept_language 
     # @return [Array<(CommonGetAutocompleteV1Response, Integer, Hash)>] CommonGetAutocompleteV1Response data, response status code and response headers
     def ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts = {})
       if @api_client.config.debugging
