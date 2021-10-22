@@ -14,14 +14,13 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Payload for the POST /1/module/list/listpresentation/{sListName} API Request
-  class ListSaveListpresentationV1ResponseMPayload
-    attr_accessor :a_obj_listpresentation
+  class ListGetListpresentationV1ResponseAllOf
+    attr_accessor :m_payload
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_obj_listpresentation' => :'a_objListpresentation'
+        :'m_payload' => :'mPayload'
       }
     end
 
@@ -33,7 +32,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_obj_listpresentation' => :'Array<ListpresentationRequest>'
+        :'m_payload' => :'ListGetListpresentationV1ResponseMPayload'
       }
     end
 
@@ -47,21 +46,19 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ListSaveListpresentationV1ResponseMPayload` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ListGetListpresentationV1ResponseAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ListSaveListpresentationV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ListGetListpresentationV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'a_obj_listpresentation')
-        if (value = attributes[:'a_obj_listpresentation']).is_a?(Array)
-          self.a_obj_listpresentation = value
-        end
+      if attributes.key?(:'m_payload')
+        self.m_payload = attributes[:'m_payload']
       end
     end
 
@@ -69,8 +66,8 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @a_obj_listpresentation.nil?
-        invalid_properties.push('invalid value for "a_obj_listpresentation", a_obj_listpresentation cannot be nil.')
+      if @m_payload.nil?
+        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
       end
 
       invalid_properties
@@ -79,7 +76,7 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @a_obj_listpresentation.nil?
+      return false if @m_payload.nil?
       true
     end
 
@@ -88,7 +85,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          a_obj_listpresentation == o.a_obj_listpresentation
+          m_payload == o.m_payload
     end
 
     # @see the `==` method
@@ -100,7 +97,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_obj_listpresentation].hash
+      [m_payload].hash
     end
 
     # Builds the object from hash

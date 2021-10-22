@@ -19,14 +19,77 @@ module EzmaxApi
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Get all Listpresentation for a specific list
+    # Retrive previously saved Listpresentation
+    # @param s_list_name [String] The list Name
+    # @param [Hash] opts the optional parameters
+    # @return [ListGetListpresentationV1Response]
+    def list_get_listpresentation_v1(s_list_name, opts = {})
+      data, _status_code, _headers = list_get_listpresentation_v1_with_http_info(s_list_name, opts)
+      data
+    end
+
+    # Get all Listpresentation for a specific list
+    # Retrive previously saved Listpresentation
+    # @param s_list_name [String] The list Name
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ListGetListpresentationV1Response, Integer, Hash)>] ListGetListpresentationV1Response data, response status code and response headers
+    def list_get_listpresentation_v1_with_http_info(s_list_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ModuleListApi.list_get_listpresentation_v1 ...'
+      end
+      # verify the required parameter 's_list_name' is set
+      if @api_client.config.client_side_validation && s_list_name.nil?
+        fail ArgumentError, "Missing the required parameter 's_list_name' when calling ModuleListApi.list_get_listpresentation_v1"
+      end
+      # resource path
+      local_var_path = '/1/module/list/listpresentation/{sListName}'.sub('{' + 'sListName' + '}', CGI.escape(s_list_name.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ListGetListpresentationV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ModuleListApi.list_get_listpresentation_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ModuleListApi#list_get_listpresentation_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Save all Listpresentation for a specific list
     # Users can create many Listpresentations for lists in the system. They can customize orber by, filters, numbers of rows, etc.
     # @param s_list_name [String] The list Name
     # @param list_save_listpresentation_v1_request [ListSaveListpresentationV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [ListSaveListpresentationV1Response]
-    def list_listpresentation_v1(s_list_name, list_save_listpresentation_v1_request, opts = {})
-      data, _status_code, _headers = list_listpresentation_v1_with_http_info(s_list_name, list_save_listpresentation_v1_request, opts)
+    def list_save_listpresentation_v1(s_list_name, list_save_listpresentation_v1_request, opts = {})
+      data, _status_code, _headers = list_save_listpresentation_v1_with_http_info(s_list_name, list_save_listpresentation_v1_request, opts)
       data
     end
 
@@ -36,17 +99,17 @@ module EzmaxApi
     # @param list_save_listpresentation_v1_request [ListSaveListpresentationV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ListSaveListpresentationV1Response, Integer, Hash)>] ListSaveListpresentationV1Response data, response status code and response headers
-    def list_listpresentation_v1_with_http_info(s_list_name, list_save_listpresentation_v1_request, opts = {})
+    def list_save_listpresentation_v1_with_http_info(s_list_name, list_save_listpresentation_v1_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ModuleListApi.list_listpresentation_v1 ...'
+        @api_client.config.logger.debug 'Calling API: ModuleListApi.list_save_listpresentation_v1 ...'
       end
       # verify the required parameter 's_list_name' is set
       if @api_client.config.client_side_validation && s_list_name.nil?
-        fail ArgumentError, "Missing the required parameter 's_list_name' when calling ModuleListApi.list_listpresentation_v1"
+        fail ArgumentError, "Missing the required parameter 's_list_name' when calling ModuleListApi.list_save_listpresentation_v1"
       end
       # verify the required parameter 'list_save_listpresentation_v1_request' is set
       if @api_client.config.client_side_validation && list_save_listpresentation_v1_request.nil?
-        fail ArgumentError, "Missing the required parameter 'list_save_listpresentation_v1_request' when calling ModuleListApi.list_listpresentation_v1"
+        fail ArgumentError, "Missing the required parameter 'list_save_listpresentation_v1_request' when calling ModuleListApi.list_save_listpresentation_v1"
       end
       # resource path
       local_var_path = '/1/module/list/listpresentation/{sListName}'.sub('{' + 'sListName' + '}', CGI.escape(s_list_name.to_s))
@@ -77,7 +140,7 @@ module EzmaxApi
       auth_names = opts[:debug_auth_names] || ['Authorization']
 
       new_options = opts.merge(
-        :operation => :"ModuleListApi.list_listpresentation_v1",
+        :operation => :"ModuleListApi.list_save_listpresentation_v1",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,7 +151,7 @@ module EzmaxApi
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ModuleListApi#list_listpresentation_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ModuleListApi#list_save_listpresentation_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

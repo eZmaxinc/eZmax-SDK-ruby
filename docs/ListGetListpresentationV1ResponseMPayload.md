@@ -1,4 +1,4 @@
-# EzmaxApi::ListSaveListpresentationV1ResponseMPayload
+# EzmaxApi::ListGetListpresentationV1ResponseMPayload
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::ListSaveListpresentationV1ResponseMPayload.new(
+instance = EzmaxApi::ListGetListpresentationV1ResponseMPayload.new(
   a_obj_listpresentation: null
 )
 ```
