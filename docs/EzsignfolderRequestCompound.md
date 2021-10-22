@@ -20,8 +20,8 @@ instance = EzmaxApi::EzsignfolderRequestCompound.new(
   a_ezsignfoldersignerassociation: null,
   fki_ezsignfoldertype_id: 5,
   fki_ezsigntsarequirement_id: 92,
-  s_ezsignfolder_description: null,
-  t_ezsignfolder_note: null,
+  s_ezsignfolder_description: Test eZsign Folder,
+  t_ezsignfolder_note: An extra notes we can add to the ezsign folder,
   e_ezsignfolder_sendreminderfrequency: null
 )
 ```
