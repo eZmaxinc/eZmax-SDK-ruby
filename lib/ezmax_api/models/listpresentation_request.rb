@@ -34,6 +34,9 @@ module EzmaxApi
     # The starting element from where to start retrieving the results. For example if you started at iRowOffset=0 and asked for iRowMax=100, to get the next 100 results, you could specify iRowOffset=100&iRowMax=100,
     attr_accessor :i_listpresentation_row_offset
 
+    # Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+    attr_accessor :b_listpresentation_default
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -42,7 +45,8 @@ module EzmaxApi
         :'s_listpresentation_orderby' => :'sListpresentationOrderby',
         :'a_s_column_name' => :'a_sColumnName',
         :'i_listpresentation_row_max' => :'iListpresentationRowMax',
-        :'i_listpresentation_row_offset' => :'iListpresentationRowOffset'
+        :'i_listpresentation_row_offset' => :'iListpresentationRowOffset',
+        :'b_listpresentation_default' => :'bListpresentationDefault'
       }
     end
 
@@ -59,7 +63,8 @@ module EzmaxApi
         :'s_listpresentation_orderby' => :'String',
         :'a_s_column_name' => :'Array<String>',
         :'i_listpresentation_row_max' => :'Integer',
-        :'i_listpresentation_row_offset' => :'Integer'
+        :'i_listpresentation_row_offset' => :'Integer',
+        :'b_listpresentation_default' => :'Boolean'
       }
     end
 
@@ -109,6 +114,10 @@ module EzmaxApi
       if attributes.key?(:'i_listpresentation_row_offset')
         self.i_listpresentation_row_offset = attributes[:'i_listpresentation_row_offset']
       end
+
+      if attributes.key?(:'b_listpresentation_default')
+        self.b_listpresentation_default = attributes[:'b_listpresentation_default']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -139,6 +148,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_listpresentation_row_offset", i_listpresentation_row_offset cannot be nil.')
       end
 
+      if @b_listpresentation_default.nil?
+        invalid_properties.push('invalid value for "b_listpresentation_default", b_listpresentation_default cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -151,6 +164,7 @@ module EzmaxApi
       return false if @a_s_column_name.nil?
       return false if @i_listpresentation_row_max.nil?
       return false if @i_listpresentation_row_offset.nil?
+      return false if @b_listpresentation_default.nil?
       true
     end
 
@@ -164,7 +178,8 @@ module EzmaxApi
           s_listpresentation_orderby == o.s_listpresentation_orderby &&
           a_s_column_name == o.a_s_column_name &&
           i_listpresentation_row_max == o.i_listpresentation_row_max &&
-          i_listpresentation_row_offset == o.i_listpresentation_row_offset
+          i_listpresentation_row_offset == o.i_listpresentation_row_offset &&
+          b_listpresentation_default == o.b_listpresentation_default
     end
 
     # @see the `==` method
@@ -176,7 +191,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_listpresentation_description, s_listpresentation_filter, s_listpresentation_orderby, a_s_column_name, i_listpresentation_row_max, i_listpresentation_row_offset].hash
+      [s_listpresentation_description, s_listpresentation_filter, s_listpresentation_orderby, a_s_column_name, i_listpresentation_row_max, i_listpresentation_row_offset, b_listpresentation_default].hash
     end
 
     # Builds the object from hash
