@@ -159,6 +159,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EzmaxApi::CommonResponse](docs/CommonResponse.md)
  - [EzmaxApi::CommonResponseError](docs/CommonResponseError.md)
+ - [EzmaxApi::CommonResponseErrorSTemporaryFileUrl](docs/CommonResponseErrorSTemporaryFileUrl.md)
+ - [EzmaxApi::CommonResponseErrorSTemporaryFileUrlAllOf](docs/CommonResponseErrorSTemporaryFileUrlAllOf.md)
  - [EzmaxApi::CommonResponseFilter](docs/CommonResponseFilter.md)
  - [EzmaxApi::CommonResponseGetList](docs/CommonResponseGetList.md)
  - [EzmaxApi::CommonResponseObjDebug](docs/CommonResponseObjDebug.md)

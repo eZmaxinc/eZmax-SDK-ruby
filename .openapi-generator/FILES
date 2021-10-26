@@ -28,6 +28,8 @@ docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
+docs/CommonResponseErrorSTemporaryFileUrl.md
+docs/CommonResponseErrorSTemporaryFileUrlAllOf.md
 docs/CommonResponseFilter.md
 docs/CommonResponseGetList.md
 docs/CommonResponseObjDebug.md
@@ -250,6 +252,8 @@ lib/ezmax_api/models/common_get_autocomplete_v1_response_all_of.rb
 lib/ezmax_api/models/common_get_list_v1_response_m_payload.rb
 lib/ezmax_api/models/common_response.rb
 lib/ezmax_api/models/common_response_error.rb
+lib/ezmax_api/models/common_response_error_s_temporary_file_url.rb
+lib/ezmax_api/models/common_response_error_s_temporary_file_url_all_of.rb
 lib/ezmax_api/models/common_response_filter.rb
 lib/ezmax_api/models/common_response_get_list.rb
 lib/ezmax_api/models/common_response_obj_debug.rb
@@ -451,6 +455,8 @@ spec/models/common_audit_spec.rb
 spec/models/common_get_autocomplete_v1_response_all_of_spec.rb
 spec/models/common_get_autocomplete_v1_response_spec.rb
 spec/models/common_get_list_v1_response_m_payload_spec.rb
+spec/models/common_response_error_s_temporary_file_url_all_of_spec.rb
+spec/models/common_response_error_s_temporary_file_url_spec.rb
 spec/models/common_response_error_spec.rb
 spec/models/common_response_filter_spec.rb
 spec/models/common_response_get_list_spec.rb
