@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. |  |
+| **e_ezsignfoldertype_privacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester |  |
 | **s_ezsignfolder_description** | **String** | The description of the Ezsign Folder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
@@ -25,6 +26,7 @@ require 'ezmax_api'
 instance = EzmaxApi::EzsignfolderListElement.new(
   pki_ezsignfolder_id: 33,
   fki_ezsignfoldertype_id: 5,
+  e_ezsignfoldertype_privacylevel: null,
   s_ezsignfoldertype_name_x: Default,
   s_ezsignfolder_description: Test eZsign Folder,
   e_ezsignfolder_step: null,

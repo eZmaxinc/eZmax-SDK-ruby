@@ -19,7 +19,7 @@ require 'ezmax_api'
 
 instance = EzmaxApi::ListpresentationRequest.new(
   s_listpresentation_description: null,
-  s_listpresentation_filter: bField1 eq true and iField2 gte 0 and iField2 lte 1000 and sField3 eq &#39;Other&#39; and eField4 eq &#39;Paid&#39; and sField5 like &#39;%needle%&#39; and iField6 in &#39;1,2,3&#39;,
+  s_listpresentation_filter: bField1 eq true and iField2 gte 0 and iField2 lte 1000 and sField3 eq &#39;Other&#39; and eField4 eq &#39;Paid&#39; and sField5 like &#39;%needle%&#39; and iField6 in &#39;1,2,3&#39; and dtField7 rg &#39;&#x3D;m,&#x3D;3mm&#39;,
   s_listpresentation_orderby: null,
   a_s_column_name: null,
   i_listpresentation_row_max: 100,
