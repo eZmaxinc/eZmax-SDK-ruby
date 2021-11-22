@@ -8,15 +8,15 @@
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. |  |
 | **e_ezsignfoldertype_privacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester |  |
-| **s_ezsignfolder_description** | **String** | The description of the Ezsign Folder |  |
+| **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
 | **dt_created_date** | **String** | The date and time at which the object was created |  |
 | **dt_ezsignfolder_sentdate** | [**OneOfstringobject**](OneOfstringobject.md) |  |  |
 | **dt_due_date** | [**OneOfstringobject**](OneOfstringobject.md) | The date at which no more signature will be accepted on the folder |  |
-| **i_total_document** | **Integer** | The total number of Ezsigndocument in the folder |  |
-| **i_total_document_edm** | **Integer** | The total number of Ezsigndocument in the folder that were saved in the edm system |  |
-| **i_total_signature** | **Integer** | The total number of signature blocks in all Ezsigndocuments in the folder |  |
-| **i_total_signature_signed** | **Integer** | The total number of already signed signature blocks in all Ezsigndocuments in the folder |  |
+| **i_ezsigndocument** | **Integer** | The total number of Ezsigndocument in the folder |  |
+| **i_ezsigndocument_edm** | **Integer** | The total number of Ezsigndocument in the folder that were saved in the edm system |  |
+| **i_ezsignsignature** | **Integer** | The total number of signature blocks in all Ezsigndocuments in the folder |  |
+| **i_ezsignsignature_signed** | **Integer** | The total number of already signed signature blocks in all Ezsigndocuments in the folder |  |
 
 ## Example
 
@@ -33,10 +33,10 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   dt_created_date: 2020-12-31 23:59:59,
   dt_ezsignfolder_sentdate: null,
   dt_due_date: null,
-  i_total_document: null,
-  i_total_document_edm: null,
-  i_total_signature: null,
-  i_total_signature_signed: null
+  i_ezsigndocument: null,
+  i_ezsigndocument_edm: null,
+  i_ezsignsignature: null,
+  i_ezsignsignature_signed: null
 )
 ```
 

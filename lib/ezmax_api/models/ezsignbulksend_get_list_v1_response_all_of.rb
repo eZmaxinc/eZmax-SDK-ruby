@@ -14,30 +14,13 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # An Ezsignfolder Object
-  class EzsignfolderRequest
-    # The unique ID of the Ezsignfoldertype.
-    attr_accessor :fki_ezsignfoldertype_id
-
-    # The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
-    attr_accessor :fki_ezsigntsarequirement_id
-
-    # The description of the Ezsignfolder
-    attr_accessor :s_ezsignfolder_description
-
-    # Somes extra notes about the eZsign Folder
-    attr_accessor :t_ezsignfolder_note
-
-    attr_accessor :e_ezsignfolder_sendreminderfrequency
+  class EzsignbulksendGetListV1ResponseAllOf
+    attr_accessor :m_payload
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
-        :'fki_ezsigntsarequirement_id' => :'fkiEzsigntsarequirementID',
-        :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
-        :'t_ezsignfolder_note' => :'tEzsignfolderNote',
-        :'e_ezsignfolder_sendreminderfrequency' => :'eEzsignfolderSendreminderfrequency'
+        :'m_payload' => :'mPayload'
       }
     end
 
@@ -49,11 +32,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'fki_ezsignfoldertype_id' => :'Integer',
-        :'fki_ezsigntsarequirement_id' => :'Integer',
-        :'s_ezsignfolder_description' => :'String',
-        :'t_ezsignfolder_note' => :'String',
-        :'e_ezsignfolder_sendreminderfrequency' => :'FieldEEzsignfolderSendreminderfrequency'
+        :'m_payload' => :'EzsignbulksendGetListV1ResponseMPayload'
       }
     end
 
@@ -67,35 +46,19 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignbulksendGetListV1ResponseAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignbulksendGetListV1ResponseAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'fki_ezsignfoldertype_id')
-        self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
-      end
-
-      if attributes.key?(:'fki_ezsigntsarequirement_id')
-        self.fki_ezsigntsarequirement_id = attributes[:'fki_ezsigntsarequirement_id']
-      end
-
-      if attributes.key?(:'s_ezsignfolder_description')
-        self.s_ezsignfolder_description = attributes[:'s_ezsignfolder_description']
-      end
-
-      if attributes.key?(:'t_ezsignfolder_note')
-        self.t_ezsignfolder_note = attributes[:'t_ezsignfolder_note']
-      end
-
-      if attributes.key?(:'e_ezsignfolder_sendreminderfrequency')
-        self.e_ezsignfolder_sendreminderfrequency = attributes[:'e_ezsignfolder_sendreminderfrequency']
+      if attributes.key?(:'m_payload')
+        self.m_payload = attributes[:'m_payload']
       end
     end
 
@@ -103,32 +66,8 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @fki_ezsignfoldertype_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", fki_ezsignfoldertype_id cannot be nil.')
-      end
-
-      if @fki_ezsigntsarequirement_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntsarequirement_id", fki_ezsigntsarequirement_id cannot be nil.')
-      end
-
-      if @fki_ezsigntsarequirement_id > 3
-        invalid_properties.push('invalid value for "fki_ezsigntsarequirement_id", must be smaller than or equal to 3.')
-      end
-
-      if @fki_ezsigntsarequirement_id < 1
-        invalid_properties.push('invalid value for "fki_ezsigntsarequirement_id", must be greater than or equal to 1.')
-      end
-
-      if @s_ezsignfolder_description.nil?
-        invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
-      end
-
-      if @t_ezsignfolder_note.nil?
-        invalid_properties.push('invalid value for "t_ezsignfolder_note", t_ezsignfolder_note cannot be nil.')
-      end
-
-      if @e_ezsignfolder_sendreminderfrequency.nil?
-        invalid_properties.push('invalid value for "e_ezsignfolder_sendreminderfrequency", e_ezsignfolder_sendreminderfrequency cannot be nil.')
+      if @m_payload.nil?
+        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
       end
 
       invalid_properties
@@ -137,32 +76,8 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @fki_ezsignfoldertype_id.nil?
-      return false if @fki_ezsigntsarequirement_id.nil?
-      return false if @fki_ezsigntsarequirement_id > 3
-      return false if @fki_ezsigntsarequirement_id < 1
-      return false if @s_ezsignfolder_description.nil?
-      return false if @t_ezsignfolder_note.nil?
-      return false if @e_ezsignfolder_sendreminderfrequency.nil?
+      return false if @m_payload.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntsarequirement_id Value to be assigned
-    def fki_ezsigntsarequirement_id=(fki_ezsigntsarequirement_id)
-      if fki_ezsigntsarequirement_id.nil?
-        fail ArgumentError, 'fki_ezsigntsarequirement_id cannot be nil'
-      end
-
-      if fki_ezsigntsarequirement_id > 3
-        fail ArgumentError, 'invalid value for "fki_ezsigntsarequirement_id", must be smaller than or equal to 3.'
-      end
-
-      if fki_ezsigntsarequirement_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezsigntsarequirement_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezsigntsarequirement_id = fki_ezsigntsarequirement_id
     end
 
     # Checks equality by comparing each attribute.
@@ -170,11 +85,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
-          fki_ezsigntsarequirement_id == o.fki_ezsigntsarequirement_id &&
-          s_ezsignfolder_description == o.s_ezsignfolder_description &&
-          t_ezsignfolder_note == o.t_ezsignfolder_note &&
-          e_ezsignfolder_sendreminderfrequency == o.e_ezsignfolder_sendreminderfrequency
+          m_payload == o.m_payload
     end
 
     # @see the `==` method
@@ -186,7 +97,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_ezsignfoldertype_id, fki_ezsigntsarequirement_id, s_ezsignfolder_description, t_ezsignfolder_note, e_ezsignfolder_sendreminderfrequency].hash
+      [m_payload].hash
     end
 
     # Builds the object from hash

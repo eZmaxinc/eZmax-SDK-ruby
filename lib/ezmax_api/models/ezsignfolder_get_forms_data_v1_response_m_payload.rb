@@ -19,7 +19,7 @@ module EzmaxApi
     # The unique ID of the Ezsignfolder
     attr_accessor :pki_ezsignfolder_id
 
-    # The description of the Ezsign Folder
+    # The description of the Ezsignfolder
     attr_accessor :s_ezsignfolder_description
 
     attr_accessor :a_obj_form_data_document

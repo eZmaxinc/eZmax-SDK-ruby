@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
-| **s_ezsignfolder_description** | **String** | The description of the Ezsign Folder |  |
+| **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **a_obj_form_data_document** | [**Array&lt;CustomFormDataDocumentResponse&gt;**](CustomFormDataDocumentResponse.md) |  |  |
 
 ## Example

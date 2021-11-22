@@ -51,6 +51,11 @@ docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
+docs/EzsignbulksendGetListV1Response.md
+docs/EzsignbulksendGetListV1ResponseAllOf.md
+docs/EzsignbulksendGetListV1ResponseMPayload.md
+docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/EzsignbulksendListElement.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -171,6 +176,7 @@ docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
 docs/ObjectApikeyApi.md
+docs/ObjectEzsignbulksendApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
@@ -218,6 +224,7 @@ lib/ezmax_api/api/module_sspr_api.rb
 lib/ezmax_api/api/module_user_api.rb
 lib/ezmax_api/api/object_activesession_api.rb
 lib/ezmax_api/api/object_apikey_api.rb
+lib/ezmax_api/api/object_ezsignbulksend_api.rb
 lib/ezmax_api/api/object_ezsigndocument_api.rb
 lib/ezmax_api/api/object_ezsignfolder_api.rb
 lib/ezmax_api/api/object_ezsignfoldersignerassociation_api.rb
@@ -275,6 +282,11 @@ lib/ezmax_api/models/custom_forms_data_folder_response.rb
 lib/ezmax_api/models/custom_word_position_occurence_response.rb
 lib/ezmax_api/models/custom_word_position_word_response.rb
 lib/ezmax_api/models/email_request.rb
+lib/ezmax_api/models/ezsignbulksend_get_list_v1_response.rb
+lib/ezmax_api/models/ezsignbulksend_get_list_v1_response_all_of.rb
+lib/ezmax_api/models/ezsignbulksend_get_list_v1_response_m_payload.rb
+lib/ezmax_api/models/ezsignbulksend_get_list_v1_response_m_payload_all_of.rb
+lib/ezmax_api/models/ezsignbulksend_list_element.rb
 lib/ezmax_api/models/ezsigndocument_apply_ezsigntemplate_v1_request.rb
 lib/ezmax_api/models/ezsigndocument_apply_ezsigntemplate_v1_response.rb
 lib/ezmax_api/models/ezsigndocument_apply_ezsigntemplate_v2_request.rb
@@ -424,6 +436,7 @@ spec/api/module_sspr_api_spec.rb
 spec/api/module_user_api_spec.rb
 spec/api/object_activesession_api_spec.rb
 spec/api/object_apikey_api_spec.rb
+spec/api/object_ezsignbulksend_api_spec.rb
 spec/api/object_ezsigndocument_api_spec.rb
 spec/api/object_ezsignfolder_api_spec.rb
 spec/api/object_ezsignfoldersignerassociation_api_spec.rb
@@ -480,6 +493,11 @@ spec/models/custom_forms_data_folder_response_spec.rb
 spec/models/custom_word_position_occurence_response_spec.rb
 spec/models/custom_word_position_word_response_spec.rb
 spec/models/email_request_spec.rb
+spec/models/ezsignbulksend_get_list_v1_response_all_of_spec.rb
+spec/models/ezsignbulksend_get_list_v1_response_m_payload_all_of_spec.rb
+spec/models/ezsignbulksend_get_list_v1_response_m_payload_spec.rb
+spec/models/ezsignbulksend_get_list_v1_response_spec.rb
+spec/models/ezsignbulksend_list_element_spec.rb
 spec/models/ezsigndocument_apply_ezsigntemplate_v1_request_spec.rb
 spec/models/ezsigndocument_apply_ezsigntemplate_v1_response_spec.rb
 spec/models/ezsigndocument_apply_ezsigntemplate_v2_request_spec.rb
