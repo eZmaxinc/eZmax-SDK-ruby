@@ -25,7 +25,7 @@ describe EzmaxApi::EzsignbulksendGetListV1ResponseMPayloadAllOf do
       expect(instance).to be_instance_of(EzmaxApi::EzsignbulksendGetListV1ResponseMPayloadAllOf)
     end
   end
-  describe 'test attribute "a_obj_ezsignfolder"' do
+  describe 'test attribute "a_obj_ezsignbulksend"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsignfolder** | [**Array&lt;EzsignbulksendListElement&gt;**](EzsignbulksendListElement.md) |  | [optional] |
+| **a_obj_ezsignbulksend** | [**Array&lt;EzsignbulksendListElement&gt;**](EzsignbulksendListElement.md) |  |  |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::EzsignbulksendGetListV1ResponseMPayloadAllOf.new(
-  a_obj_ezsignfolder: null
+  a_obj_ezsignbulksend: null
 )
 ```
 

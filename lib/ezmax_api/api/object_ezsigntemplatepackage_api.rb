@@ -20,7 +20,7 @@ module EzmaxApi
       @api_client = api_client
     end
     # Retrieve Ezsigntemplatepackage list
-    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 
@@ -34,7 +34,7 @@ module EzmaxApi
     end
 
     # Retrieve Ezsigntemplatepackage list
-    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company&lt;br&gt;Department&lt;br&gt;Team&lt;br&gt;User&lt;br&gt;Usergroup |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company&lt;br&gt;Department&lt;br&gt;Team&lt;br&gt;User&lt;br&gt;Usergroup |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
     # @option opts [Integer] :i_row_max 

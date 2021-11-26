@@ -16,7 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsignbulksend/getList API Request
   class EzsignbulksendGetListV1ResponseMPayload
-    attr_accessor :a_obj_ezsignfolder
+    attr_accessor :a_obj_ezsignbulksend
 
     # The number of rows returned
     attr_accessor :i_row_returned
@@ -27,7 +27,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_obj_ezsignfolder' => :'a_objEzsignfolder',
+        :'a_obj_ezsignbulksend' => :'a_objEzsignbulksend',
         :'i_row_returned' => :'iRowReturned',
         :'i_row_filtered' => :'iRowFiltered'
       }
@@ -41,7 +41,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_obj_ezsignfolder' => :'Array<EzsignbulksendListElement>',
+        :'a_obj_ezsignbulksend' => :'Array<EzsignbulksendListElement>',
         :'i_row_returned' => :'Integer',
         :'i_row_filtered' => :'Integer'
       }
@@ -76,9 +76,9 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'a_obj_ezsignfolder')
-        if (value = attributes[:'a_obj_ezsignfolder']).is_a?(Array)
-          self.a_obj_ezsignfolder = value
+      if attributes.key?(:'a_obj_ezsignbulksend')
+        if (value = attributes[:'a_obj_ezsignbulksend']).is_a?(Array)
+          self.a_obj_ezsignbulksend = value
         end
       end
 
@@ -95,6 +95,10 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @a_obj_ezsignbulksend.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignbulksend", a_obj_ezsignbulksend cannot be nil.')
+      end
+
       if @i_row_returned.nil?
         invalid_properties.push('invalid value for "i_row_returned", i_row_returned cannot be nil.')
       end
@@ -109,6 +113,7 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @a_obj_ezsignbulksend.nil?
       return false if @i_row_returned.nil?
       return false if @i_row_filtered.nil?
       true
@@ -119,7 +124,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          a_obj_ezsignfolder == o.a_obj_ezsignfolder &&
+          a_obj_ezsignbulksend == o.a_obj_ezsignbulksend &&
           i_row_returned == o.i_row_returned &&
           i_row_filtered == o.i_row_filtered
     end
@@ -133,7 +138,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_obj_ezsignfolder, i_row_returned, i_row_filtered].hash
+      [a_obj_ezsignbulksend, i_row_returned, i_row_filtered].hash
     end
 
     # Builds the object from hash

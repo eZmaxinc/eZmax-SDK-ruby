@@ -15,12 +15,12 @@ require 'time'
 
 module EzmaxApi
   class EzsignbulksendGetListV1ResponseMPayloadAllOf
-    attr_accessor :a_obj_ezsignfolder
+    attr_accessor :a_obj_ezsignbulksend
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_obj_ezsignfolder' => :'a_objEzsignfolder'
+        :'a_obj_ezsignbulksend' => :'a_objEzsignbulksend'
       }
     end
 
@@ -32,7 +32,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_obj_ezsignfolder' => :'Array<EzsignbulksendListElement>'
+        :'a_obj_ezsignbulksend' => :'Array<EzsignbulksendListElement>'
       }
     end
 
@@ -57,9 +57,9 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'a_obj_ezsignfolder')
-        if (value = attributes[:'a_obj_ezsignfolder']).is_a?(Array)
-          self.a_obj_ezsignfolder = value
+      if attributes.key?(:'a_obj_ezsignbulksend')
+        if (value = attributes[:'a_obj_ezsignbulksend']).is_a?(Array)
+          self.a_obj_ezsignbulksend = value
         end
       end
     end
@@ -68,12 +68,17 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @a_obj_ezsignbulksend.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignbulksend", a_obj_ezsignbulksend cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @a_obj_ezsignbulksend.nil?
       true
     end
 
@@ -82,7 +87,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          a_obj_ezsignfolder == o.a_obj_ezsignfolder
+          a_obj_ezsignbulksend == o.a_obj_ezsignbulksend
     end
 
     # @see the `==` method
@@ -94,7 +99,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_obj_ezsignfolder].hash
+      [a_obj_ezsignbulksend].hash
     end
 
     # Builds the object from hash
