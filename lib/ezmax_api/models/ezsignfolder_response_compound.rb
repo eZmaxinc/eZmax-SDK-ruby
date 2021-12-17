@@ -83,6 +83,7 @@ module EzmaxApi
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'dt_ezsignfolder_sentdate',
       ])
     end
 
@@ -185,10 +186,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pki_ezsignfolder_id", pki_ezsignfolder_id cannot be nil.')
       end
 
-      if @dt_ezsignfolder_sentdate.nil?
-        invalid_properties.push('invalid value for "dt_ezsignfolder_sentdate", dt_ezsignfolder_sentdate cannot be nil.')
-      end
-
       if @e_ezsignfolder_step.nil?
         invalid_properties.push('invalid value for "e_ezsignfolder_step", e_ezsignfolder_step cannot be nil.')
       end
@@ -215,7 +212,6 @@ module EzmaxApi
       return false if @t_ezsignfolder_note.nil?
       return false if @e_ezsignfolder_sendreminderfrequency.nil?
       return false if @pki_ezsignfolder_id.nil?
-      return false if @dt_ezsignfolder_sentdate.nil?
       return false if @e_ezsignfolder_step.nil?
       return false if @dt_ezsignfolder_close.nil?
       return false if @obj_audit.nil?

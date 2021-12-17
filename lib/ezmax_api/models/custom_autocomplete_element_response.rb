@@ -44,14 +44,13 @@ module EzmaxApi
       {
         :'s_category' => :'String',
         :'s_label' => :'String',
-        :'m_value' => :'OneOfintegerstring'
+        :'m_value' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'m_value'
       ])
     end
 
@@ -95,6 +94,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_label", s_label cannot be nil.')
       end
 
+      if @m_value.nil?
+        invalid_properties.push('invalid value for "m_value", m_value cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -103,6 +106,7 @@ module EzmaxApi
     def valid?
       return false if @s_category.nil?
       return false if @s_label.nil?
+      return false if @m_value.nil?
       true
     end
 

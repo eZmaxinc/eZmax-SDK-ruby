@@ -19,10 +19,13 @@ module EzmaxApi
     # The unique ID of the Ezsigntemplatepackage
     attr_accessor :pki_ezsigntemplatepackage_id
 
+    # The unique ID of the Department.
     attr_accessor :fki_department_id
 
+    # The unique ID of the Team
     attr_accessor :fki_team_id
 
+    # The unique ID of the Ezsignfoldertype.
     attr_accessor :fki_ezsignfoldertype_id
 
     # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
@@ -63,9 +66,9 @@ module EzmaxApi
     def self.openapi_types
       {
         :'pki_ezsigntemplatepackage_id' => :'Integer',
-        :'fki_department_id' => :'OneOfintegerobject',
-        :'fki_team_id' => :'OneOfintegerobject',
-        :'fki_ezsignfoldertype_id' => :'OneOfintegerobject',
+        :'fki_department_id' => :'Integer',
+        :'fki_team_id' => :'Integer',
+        :'fki_ezsignfoldertype_id' => :'Integer',
         :'fki_language_id' => :'Integer',
         :'e_ezsigntemplatepackage_type' => :'FieldEEzsigntemplatepackageType',
         :'s_ezsigntemplatepackage_description' => :'String',

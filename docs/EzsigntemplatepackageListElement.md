@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsigntemplatepackage_id** | **Integer** | The unique ID of the Ezsigntemplatepackage |  |
-| **fki_department_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  |  |
-| **fki_team_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  |  |
-| **fki_ezsignfoldertype_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  |  |
+| **fki_department_id** | **Integer** | The unique ID of the Department. |  |
+| **fki_team_id** | **Integer** | The unique ID of the Team |  |
+| **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
 | **e_ezsigntemplatepackage_type** | [**FieldEEzsigntemplatepackageType**](FieldEEzsigntemplatepackageType.md) |  |  |
 | **s_ezsigntemplatepackage_description** | **String** | The description of the Ezsigntemplatepackage |  |
@@ -21,9 +21,9 @@ require 'ezmax_api'
 
 instance = EzmaxApi::EzsigntemplatepackageListElement.new(
   pki_ezsigntemplatepackage_id: 99,
-  fki_department_id: null,
-  fki_team_id: null,
-  fki_ezsignfoldertype_id: null,
+  fki_department_id: 1,
+  fki_team_id: 1,
+  fki_ezsignfoldertype_id: 5,
   fki_language_id: 2,
   e_ezsigntemplatepackage_type: null,
   s_ezsigntemplatepackage_description: Package for new clients,

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **s_category** | **String** | The Category for the dropdown or an empty string if not categorized |  |
 | **s_label** | **String** | The Description of the element |  |
-| **m_value** | [**OneOfintegerstring**](OneOfintegerstring.md) | The Unique ID of the element |  |
+| **m_value** | **String** | The Unique ID of the element |  |
 
 ## Example
 

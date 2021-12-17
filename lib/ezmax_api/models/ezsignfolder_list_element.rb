@@ -35,9 +35,10 @@ module EzmaxApi
     # The date and time at which the object was created
     attr_accessor :dt_created_date
 
+    # The date and time at which the Ezsign folder was sent the last time.
     attr_accessor :dt_ezsignfolder_sentdate
 
-    # The date at which no more signature will be accepted on the folder
+    # Represent a Date Time. The timezone is the one configured in the User's profile.
     attr_accessor :dt_due_date
 
     # The total number of Ezsigndocument in the folder
@@ -86,8 +87,8 @@ module EzmaxApi
         :'s_ezsignfolder_description' => :'String',
         :'e_ezsignfolder_step' => :'FieldEEzsignfolderStep',
         :'dt_created_date' => :'String',
-        :'dt_ezsignfolder_sentdate' => :'OneOfstringobject',
-        :'dt_due_date' => :'OneOfstringobject',
+        :'dt_ezsignfolder_sentdate' => :'String',
+        :'dt_due_date' => :'String',
         :'i_ezsigndocument' => :'Integer',
         :'i_ezsigndocument_edm' => :'Integer',
         :'i_ezsignsignature' => :'Integer',
