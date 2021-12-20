@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
-| **dt_ezsigndocument_duedate** | **String** | The maximum date and time at which the document can be signed. |  |
+| **dt_ezsigndocument_duedate** | **String** | The maximum date and time at which the Ezsigndocument can be signed. |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
 | **s_ezsigndocument_name** | **String** | The name of the document that will be presented to Ezsignfoldersignerassociations |  |
 | **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument |  |

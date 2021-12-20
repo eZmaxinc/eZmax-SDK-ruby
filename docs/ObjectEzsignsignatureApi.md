@@ -6,7 +6,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
-| [**ezsignsignature_get_children_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs |
 | [**ezsignsignature_get_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 
 
@@ -139,76 +138,6 @@ end
 ### Return type
 
 [**EzsignsignatureDeleteObjectV1Response**](EzsignsignatureDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsignsignature_get_children_v1
-
-> ezsignsignature_get_children_v1(pki_ezsignsignature_id)
-
-Retrieve an existing Ezsignsignature's children IDs
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
-### Examples
-
-```ruby
-require 'time'
-require 'ezmax_api'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | 
-
-begin
-  # Retrieve an existing Ezsignsignature's children IDs
-  api_instance.ezsignsignature_get_children_v1(pki_ezsignsignature_id)
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_children_v1: #{e}"
-end
-```
-
-#### Using the ezsignsignature_get_children_v1_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> ezsignsignature_get_children_v1_with_http_info(pki_ezsignsignature_id)
-
-```ruby
-begin
-  # Retrieve an existing Ezsignsignature's children IDs
-  data, status_code, headers = api_instance.ezsignsignature_get_children_v1_with_http_info(pki_ezsignsignature_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_children_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** |  |  |
-
-### Return type
-
-nil (empty response body)
 
 ### Authorization
 

@@ -6,7 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
 | [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
-| [**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs |
+| [**ezsignfolder_get_ezsigndocuments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolder_get_forms_data_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
 | [**ezsignfolder_get_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list |
 | [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder |
@@ -154,13 +154,11 @@ end
 - **Accept**: application/json
 
 
-## ezsignfolder_get_children_v1
+## ezsignfolder_get_ezsigndocuments_v1
 
-> ezsignfolder_get_children_v1(pki_ezsignfolder_id)
+> <EzsignfolderGetEzsigndocumentsV1Response> ezsignfolder_get_ezsigndocuments_v1(pki_ezsignfolder_id)
 
-Retrieve an existing Ezsignfolder's children IDs
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+Retrieve an existing Ezsignfolder's Ezsigndocuments
 
 ### Examples
 
@@ -179,28 +177,29 @@ api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
 
 begin
-  # Retrieve an existing Ezsignfolder's children IDs
-  api_instance.ezsignfolder_get_children_v1(pki_ezsignfolder_id)
+  # Retrieve an existing Ezsignfolder's Ezsigndocuments
+  result = api_instance.ezsignfolder_get_ezsigndocuments_v1(pki_ezsignfolder_id)
+  p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1: #{e}"
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_ezsigndocuments_v1: #{e}"
 end
 ```
 
-#### Using the ezsignfolder_get_children_v1_with_http_info variant
+#### Using the ezsignfolder_get_ezsigndocuments_v1_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> ezsignfolder_get_children_v1_with_http_info(pki_ezsignfolder_id)
+> <Array(<EzsignfolderGetEzsigndocumentsV1Response>, Integer, Hash)> ezsignfolder_get_ezsigndocuments_v1_with_http_info(pki_ezsignfolder_id)
 
 ```ruby
 begin
-  # Retrieve an existing Ezsignfolder's children IDs
-  data, status_code, headers = api_instance.ezsignfolder_get_children_v1_with_http_info(pki_ezsignfolder_id)
+  # Retrieve an existing Ezsignfolder's Ezsigndocuments
+  data, status_code, headers = api_instance.ezsignfolder_get_ezsigndocuments_v1_with_http_info(pki_ezsignfolder_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => <EzsignfolderGetEzsigndocumentsV1Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_ezsigndocuments_v1_with_http_info: #{e}"
 end
 ```
 
@@ -212,7 +211,7 @@ end
 
 ### Return type
 
-nil (empty response body)
+[**EzsignfolderGetEzsigndocumentsV1Response**](EzsignfolderGetEzsigndocumentsV1Response.md)
 
 ### Authorization
 
@@ -379,8 +378,6 @@ end
 > <EzsignfolderGetObjectV1Response> ezsignfolder_get_object_v1(pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Examples
 

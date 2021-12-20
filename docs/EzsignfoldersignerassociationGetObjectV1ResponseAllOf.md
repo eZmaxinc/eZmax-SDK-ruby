@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | **Object** | Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request |  |
+| **m_payload** | [**EzsignfoldersignerassociationGetObjectV1ResponseMPayload**](EzsignfoldersignerassociationGetObjectV1ResponseMPayload.md) |  |  |
 
 ## Example
 
