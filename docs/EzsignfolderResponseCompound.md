@@ -16,6 +16,8 @@
 | **e_ezsignfolder_sendreminderfrequency** | [**FieldEEzsignfolderSendreminderfrequency**](FieldEEzsignfolderSendreminderfrequency.md) |  |  |
 | **dt_ezsignfolder_duedate** | **String** | The maximum date and time at which the Ezsignfolder can be signed. |  |
 | **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsign folder was sent the last time. |  |
+| **dt_ezsignfolder_scheduledarchive** | **String** | The scheduled date and time at which the Ezsignfolder should be archived. |  |
+| **dt_ezsignfolder_scheduleddestruction** | **String** | The scheduled date and time at which the Ezsignfolder should be Destroyed. |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
 | **dt_ezsignfolder_close** | **String** | The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely. |  |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
@@ -38,6 +40,8 @@ instance = EzmaxApi::EzsignfolderResponseCompound.new(
   e_ezsignfolder_sendreminderfrequency: null,
   dt_ezsignfolder_duedate: 2020-12-31 23:59:59,
   dt_ezsignfolder_sentdate: 2020-12-31 23:59:59,
+  dt_ezsignfolder_scheduledarchive: 2020-12-31 23:59:59,
+  dt_ezsignfolder_scheduleddestruction: 2020-12-31 23:59:59,
   e_ezsignfolder_step: null,
   dt_ezsignfolder_close: 2020-12-31 23:59:59,
   obj_audit: null
