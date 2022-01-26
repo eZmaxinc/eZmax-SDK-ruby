@@ -25,6 +25,18 @@ describe EzmaxApi::EzsignsignatureRequestCompound do
       expect(instance).to be_instance_of(EzmaxApi::EzsignsignatureRequestCompound)
     end
   end
+  describe 'test attribute "b_ezsignsignature_customdate"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "a_obj_ezsignsignaturecustomdate"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fki_ezsignfoldersignerassociation_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

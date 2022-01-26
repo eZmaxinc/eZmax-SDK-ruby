@@ -151,6 +151,7 @@ docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
+docs/EzsignsignaturecustomdateRequest.md
 docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
 docs/EzsignsignerRequestCompoundAllOf.md
@@ -404,6 +405,7 @@ lib/ezmax_api/models/ezsignsignature_get_object_v1_response.rb
 lib/ezmax_api/models/ezsignsignature_get_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignsignature_request.rb
 lib/ezmax_api/models/ezsignsignature_request_compound.rb
+lib/ezmax_api/models/ezsignsignaturecustomdate_request.rb
 lib/ezmax_api/models/ezsignsigner_request.rb
 lib/ezmax_api/models/ezsignsigner_request_compound.rb
 lib/ezmax_api/models/ezsignsigner_request_compound_all_of.rb
@@ -636,6 +638,7 @@ spec/models/ezsignsignature_get_object_v1_response_all_of_spec.rb
 spec/models/ezsignsignature_get_object_v1_response_spec.rb
 spec/models/ezsignsignature_request_compound_spec.rb
 spec/models/ezsignsignature_request_spec.rb
+spec/models/ezsignsignaturecustomdate_request_spec.rb
 spec/models/ezsignsigner_request_compound_all_of_spec.rb
 spec/models/ezsignsigner_request_compound_contact_spec.rb
 spec/models/ezsignsigner_request_compound_spec.rb

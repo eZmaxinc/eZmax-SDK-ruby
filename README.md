@@ -282,6 +282,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EzmaxApi::EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
+ - [EzmaxApi::EzsignsignaturecustomdateRequest](docs/EzsignsignaturecustomdateRequest.md)
  - [EzmaxApi::EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EzmaxApi::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EzmaxApi::EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
