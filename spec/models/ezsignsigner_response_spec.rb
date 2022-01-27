@@ -25,6 +25,12 @@ describe EzmaxApi::EzsignsignerResponse do
       expect(instance).to be_instance_of(EzmaxApi::EzsignsignerResponse)
     end
   end
+  describe 'test attribute "pki_ezsignsigner_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fki_taxassignment_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -37,17 +43,13 @@ describe EzmaxApi::EzsignsignerResponse do
     end
   end
 
-  describe 'test attribute "e_ezsignsigner_logintype"' do
+  describe 'test attribute "fki_userlogintype_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["Password", "PasswordPhone", "PasswordQuestion", "InPersonPhone", "InPerson"])
-      # validator.allowable_values.each do |value|
-      #   expect { instance.e_ezsignsigner_logintype = value }.not_to raise_error
-      # end
     end
   end
 
-  describe 'test attribute "s_ezsignsigner_secretanswer"' do
+  describe 'test attribute "s_userlogintype_description_x"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -49,13 +49,13 @@ describe EzmaxApi::EzsignsignerResponseCompoundContact do
     end
   end
 
-  describe 'test attribute "s_phone_number"' do
+  describe 'test attribute "s_phone_e164"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "s_phone_number_cell"' do
+  describe 'test attribute "s_phone_e164_cell"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

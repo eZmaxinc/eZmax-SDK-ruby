@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsignfoldersignerassociation** | [**Array&lt;EzsignfoldersignerassociationResponse&gt;**](EzsignfoldersignerassociationResponse.md) |  |  |
+| **a_obj_ezsignfoldersignerassociation** | [**Array&lt;EzsignfoldersignerassociationResponseCompound&gt;**](EzsignfoldersignerassociationResponseCompound.md) |  |  |
 
 ## Example
 

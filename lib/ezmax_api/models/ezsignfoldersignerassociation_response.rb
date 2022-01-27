@@ -22,12 +22,6 @@ module EzmaxApi
     # The unique ID of the Ezsignfolder
     attr_accessor :fki_ezsignfolder_id
 
-    # The unique ID of the Ezsignsigner
-    attr_accessor :fki_ezsignsigner_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
     # If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
     attr_accessor :b_ezsignfoldersignerassociation_receivecopy
 
@@ -36,8 +30,6 @@ module EzmaxApi
       {
         :'pki_ezsignfoldersignerassociation_id' => :'pkiEzsignfoldersignerassociationID',
         :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
-        :'fki_ezsignsigner_id' => :'fkiEzsignsignerID',
-        :'fki_user_id' => :'fkiUserID',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy'
       }
     end
@@ -52,8 +44,6 @@ module EzmaxApi
       {
         :'pki_ezsignfoldersignerassociation_id' => :'Integer',
         :'fki_ezsignfolder_id' => :'Integer',
-        :'fki_ezsignsigner_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean'
       }
     end
@@ -61,8 +51,6 @@ module EzmaxApi
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'fki_ezsignsigner_id',
-        :'fki_user_id',
       ])
     end
 
@@ -87,14 +75,6 @@ module EzmaxApi
 
       if attributes.key?(:'fki_ezsignfolder_id')
         self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
-      end
-
-      if attributes.key?(:'fki_ezsignsigner_id')
-        self.fki_ezsignsigner_id = attributes[:'fki_ezsignsigner_id']
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
       end
 
       if attributes.key?(:'b_ezsignfoldersignerassociation_receivecopy')
@@ -137,8 +117,6 @@ module EzmaxApi
       self.class == o.class &&
           pki_ezsignfoldersignerassociation_id == o.pki_ezsignfoldersignerassociation_id &&
           fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
-          fki_ezsignsigner_id == o.fki_ezsignsigner_id &&
-          fki_user_id == o.fki_user_id &&
           b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy
     end
 
@@ -151,7 +129,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, fki_ezsignsigner_id, fki_user_id, b_ezsignfoldersignerassociation_receivecopy].hash
+      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
     end
 
     # Builds the object from hash

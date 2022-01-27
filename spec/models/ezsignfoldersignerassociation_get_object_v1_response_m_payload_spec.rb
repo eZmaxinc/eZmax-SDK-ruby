@@ -37,18 +37,6 @@ describe EzmaxApi::EzsignfoldersignerassociationGetObjectV1ResponseMPayload do
     end
   end
 
-  describe 'test attribute "fki_ezsignsigner_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "fki_user_id"' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   describe 'test attribute "b_ezsignfoldersignerassociation_receivecopy"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -28,11 +28,11 @@ module EzmaxApi
     # The email address.
     attr_accessor :s_email_address
 
-    # The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
-    attr_accessor :s_phone_number
+    # A phone number in E.164 Format
+    attr_accessor :s_phone_e164
 
-    # The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
-    attr_accessor :s_phone_number_cell
+    # A phone number in E.164 Format
+    attr_accessor :s_phone_e164_cell
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -41,8 +41,8 @@ module EzmaxApi
         :'s_contact_lastname' => :'sContactLastname',
         :'fki_language_id' => :'fkiLanguageID',
         :'s_email_address' => :'sEmailAddress',
-        :'s_phone_number' => :'sPhoneNumber',
-        :'s_phone_number_cell' => :'sPhoneNumberCell'
+        :'s_phone_e164' => :'sPhoneE164',
+        :'s_phone_e164_cell' => :'sPhoneE164Cell'
       }
     end
 
@@ -58,8 +58,8 @@ module EzmaxApi
         :'s_contact_lastname' => :'String',
         :'fki_language_id' => :'Integer',
         :'s_email_address' => :'String',
-        :'s_phone_number' => :'String',
-        :'s_phone_number_cell' => :'String'
+        :'s_phone_e164' => :'String',
+        :'s_phone_e164_cell' => :'String'
       }
     end
 
@@ -100,12 +100,12 @@ module EzmaxApi
         self.s_email_address = attributes[:'s_email_address']
       end
 
-      if attributes.key?(:'s_phone_number')
-        self.s_phone_number = attributes[:'s_phone_number']
+      if attributes.key?(:'s_phone_e164')
+        self.s_phone_e164 = attributes[:'s_phone_e164']
       end
 
-      if attributes.key?(:'s_phone_number_cell')
-        self.s_phone_number_cell = attributes[:'s_phone_number_cell']
+      if attributes.key?(:'s_phone_e164_cell')
+        self.s_phone_e164_cell = attributes[:'s_phone_e164_cell']
       end
     end
 
@@ -174,8 +174,8 @@ module EzmaxApi
           s_contact_lastname == o.s_contact_lastname &&
           fki_language_id == o.fki_language_id &&
           s_email_address == o.s_email_address &&
-          s_phone_number == o.s_phone_number &&
-          s_phone_number_cell == o.s_phone_number_cell
+          s_phone_e164 == o.s_phone_e164 &&
+          s_phone_e164_cell == o.s_phone_e164_cell
     end
 
     # @see the `==` method
@@ -187,7 +187,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_contact_firstname, s_contact_lastname, fki_language_id, s_email_address, s_phone_number, s_phone_number_cell].hash
+      [s_contact_firstname, s_contact_lastname, fki_language_id, s_email_address, s_phone_e164, s_phone_e164_cell].hash
     end
 
     # Builds the object from hash

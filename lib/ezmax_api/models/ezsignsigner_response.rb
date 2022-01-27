@@ -16,47 +16,29 @@ require 'time'
 module EzmaxApi
   # An Ezsignsigner Object
   class EzsignsignerResponse
+    # The unique ID of the Ezsignsigner
+    attr_accessor :pki_ezsignsigner_id
+
     # The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
     attr_accessor :fki_taxassignment_id
 
     # The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)|
     attr_accessor :fki_secretquestion_id
 
-    # The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
-    attr_accessor :e_ezsignsigner_logintype
+    # The unique ID of the Userlogintype
+    attr_accessor :fki_userlogintype_id
 
-    # The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
-    attr_accessor :s_ezsignsigner_secretanswer
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # The description of the Userlogintype in the language of the requester
+    attr_accessor :s_userlogintype_description_x
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsignsigner_id' => :'pkiEzsignsignerID',
         :'fki_taxassignment_id' => :'fkiTaxassignmentID',
         :'fki_secretquestion_id' => :'fkiSecretquestionID',
-        :'e_ezsignsigner_logintype' => :'eEzsignsignerLogintype',
-        :'s_ezsignsigner_secretanswer' => :'sEzsignsignerSecretanswer'
+        :'fki_userlogintype_id' => :'fkiUserlogintypeID',
+        :'s_userlogintype_description_x' => :'sUserlogintypeDescriptionX'
       }
     end
 
@@ -68,10 +50,11 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsignsigner_id' => :'Integer',
         :'fki_taxassignment_id' => :'Integer',
         :'fki_secretquestion_id' => :'Integer',
-        :'e_ezsignsigner_logintype' => :'String',
-        :'s_ezsignsigner_secretanswer' => :'String'
+        :'fki_userlogintype_id' => :'Integer',
+        :'s_userlogintype_description_x' => :'String'
       }
     end
 
@@ -96,6 +79,10 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'pki_ezsignsigner_id')
+        self.pki_ezsignsigner_id = attributes[:'pki_ezsignsigner_id']
+      end
+
       if attributes.key?(:'fki_taxassignment_id')
         self.fki_taxassignment_id = attributes[:'fki_taxassignment_id']
       end
@@ -104,12 +91,12 @@ module EzmaxApi
         self.fki_secretquestion_id = attributes[:'fki_secretquestion_id']
       end
 
-      if attributes.key?(:'e_ezsignsigner_logintype')
-        self.e_ezsignsigner_logintype = attributes[:'e_ezsignsigner_logintype']
+      if attributes.key?(:'fki_userlogintype_id')
+        self.fki_userlogintype_id = attributes[:'fki_userlogintype_id']
       end
 
-      if attributes.key?(:'s_ezsignsigner_secretanswer')
-        self.s_ezsignsigner_secretanswer = attributes[:'s_ezsignsigner_secretanswer']
+      if attributes.key?(:'s_userlogintype_description_x')
+        self.s_userlogintype_description_x = attributes[:'s_userlogintype_description_x']
       end
     end
 
@@ -117,6 +104,10 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @pki_ezsignsigner_id.nil?
+        invalid_properties.push('invalid value for "pki_ezsignsigner_id", pki_ezsignsigner_id cannot be nil.')
+      end
+
       if @fki_taxassignment_id.nil?
         invalid_properties.push('invalid value for "fki_taxassignment_id", fki_taxassignment_id cannot be nil.')
       end
@@ -129,8 +120,12 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_taxassignment_id", must be greater than or equal to 1.')
       end
 
-      if @e_ezsignsigner_logintype.nil?
-        invalid_properties.push('invalid value for "e_ezsignsigner_logintype", e_ezsignsigner_logintype cannot be nil.')
+      if @fki_userlogintype_id.nil?
+        invalid_properties.push('invalid value for "fki_userlogintype_id", fki_userlogintype_id cannot be nil.')
+      end
+
+      if @s_userlogintype_description_x.nil?
+        invalid_properties.push('invalid value for "s_userlogintype_description_x", s_userlogintype_description_x cannot be nil.')
       end
 
       invalid_properties
@@ -139,12 +134,12 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @pki_ezsignsigner_id.nil?
       return false if @fki_taxassignment_id.nil?
       return false if @fki_taxassignment_id > 15
       return false if @fki_taxassignment_id < 1
-      return false if @e_ezsignsigner_logintype.nil?
-      e_ezsignsigner_logintype_validator = EnumAttributeValidator.new('String', ["Password", "PasswordPhone", "PasswordQuestion", "InPersonPhone", "InPerson"])
-      return false unless e_ezsignsigner_logintype_validator.valid?(@e_ezsignsigner_logintype)
+      return false if @fki_userlogintype_id.nil?
+      return false if @s_userlogintype_description_x.nil?
       true
     end
 
@@ -166,25 +161,16 @@ module EzmaxApi
       @fki_taxassignment_id = fki_taxassignment_id
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] e_ezsignsigner_logintype Object to be assigned
-    def e_ezsignsigner_logintype=(e_ezsignsigner_logintype)
-      validator = EnumAttributeValidator.new('String', ["Password", "PasswordPhone", "PasswordQuestion", "InPersonPhone", "InPerson"])
-      unless validator.valid?(e_ezsignsigner_logintype)
-        fail ArgumentError, "invalid value for \"e_ezsignsigner_logintype\", must be one of #{validator.allowable_values}."
-      end
-      @e_ezsignsigner_logintype = e_ezsignsigner_logintype
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsignsigner_id == o.pki_ezsignsigner_id &&
           fki_taxassignment_id == o.fki_taxassignment_id &&
           fki_secretquestion_id == o.fki_secretquestion_id &&
-          e_ezsignsigner_logintype == o.e_ezsignsigner_logintype &&
-          s_ezsignsigner_secretanswer == o.s_ezsignsigner_secretanswer
+          fki_userlogintype_id == o.fki_userlogintype_id &&
+          s_userlogintype_description_x == o.s_userlogintype_description_x
     end
 
     # @see the `==` method
@@ -196,7 +182,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_taxassignment_id, fki_secretquestion_id, e_ezsignsigner_logintype, s_ezsignsigner_secretanswer].hash
+      [pki_ezsignsigner_id, fki_taxassignment_id, fki_secretquestion_id, fki_userlogintype_id, s_userlogintype_description_x].hash
     end
 
     # Builds the object from hash

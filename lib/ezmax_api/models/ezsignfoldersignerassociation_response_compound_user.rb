@@ -14,14 +14,31 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
-  class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
-    attr_accessor :a_obj_ezsignfoldersignerassociation
+  # A Ezsignfoldersignerassociation->User Object and children to create a complete structure
+  class EzsignfoldersignerassociationResponseCompoundUser
+    # The unique ID of the User
+    attr_accessor :pki_user_id
+
+    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+    attr_accessor :fki_language_id
+
+    # The First name of the user
+    attr_accessor :s_user_firstname
+
+    # The Last name of the user
+    attr_accessor :s_user_lastname
+
+    # The email address.
+    attr_accessor :s_email_address
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'a_obj_ezsignfoldersignerassociation' => :'a_objEzsignfoldersignerassociation'
+        :'pki_user_id' => :'pkiUserID',
+        :'fki_language_id' => :'fkiLanguageID',
+        :'s_user_firstname' => :'sUserFirstname',
+        :'s_user_lastname' => :'sUserLastname',
+        :'s_email_address' => :'sEmailAddress'
       }
     end
 
@@ -33,7 +50,11 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'a_obj_ezsignfoldersignerassociation' => :'Array<EzsignfoldersignerassociationResponseCompound>'
+        :'pki_user_id' => :'Integer',
+        :'fki_language_id' => :'Integer',
+        :'s_user_firstname' => :'String',
+        :'s_user_lastname' => :'String',
+        :'s_email_address' => :'String'
       }
     end
 
@@ -47,21 +68,35 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfoldersignerassociationResponseCompoundUser` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfoldersignerassociationResponseCompoundUser`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'a_obj_ezsignfoldersignerassociation')
-        if (value = attributes[:'a_obj_ezsignfoldersignerassociation']).is_a?(Array)
-          self.a_obj_ezsignfoldersignerassociation = value
-        end
+      if attributes.key?(:'pki_user_id')
+        self.pki_user_id = attributes[:'pki_user_id']
+      end
+
+      if attributes.key?(:'fki_language_id')
+        self.fki_language_id = attributes[:'fki_language_id']
+      end
+
+      if attributes.key?(:'s_user_firstname')
+        self.s_user_firstname = attributes[:'s_user_firstname']
+      end
+
+      if attributes.key?(:'s_user_lastname')
+        self.s_user_lastname = attributes[:'s_user_lastname']
+      end
+
+      if attributes.key?(:'s_email_address')
+        self.s_email_address = attributes[:'s_email_address']
       end
     end
 
@@ -69,8 +104,32 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @a_obj_ezsignfoldersignerassociation.nil?
-        invalid_properties.push('invalid value for "a_obj_ezsignfoldersignerassociation", a_obj_ezsignfoldersignerassociation cannot be nil.')
+      if @pki_user_id.nil?
+        invalid_properties.push('invalid value for "pki_user_id", pki_user_id cannot be nil.')
+      end
+
+      if @fki_language_id.nil?
+        invalid_properties.push('invalid value for "fki_language_id", fki_language_id cannot be nil.')
+      end
+
+      if @fki_language_id > 2
+        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
+      end
+
+      if @fki_language_id < 1
+        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
+      end
+
+      if @s_user_firstname.nil?
+        invalid_properties.push('invalid value for "s_user_firstname", s_user_firstname cannot be nil.')
+      end
+
+      if @s_user_lastname.nil?
+        invalid_properties.push('invalid value for "s_user_lastname", s_user_lastname cannot be nil.')
+      end
+
+      if @s_email_address.nil?
+        invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
       invalid_properties
@@ -79,8 +138,32 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @a_obj_ezsignfoldersignerassociation.nil?
+      return false if @pki_user_id.nil?
+      return false if @fki_language_id.nil?
+      return false if @fki_language_id > 2
+      return false if @fki_language_id < 1
+      return false if @s_user_firstname.nil?
+      return false if @s_user_lastname.nil?
+      return false if @s_email_address.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] fki_language_id Value to be assigned
+    def fki_language_id=(fki_language_id)
+      if fki_language_id.nil?
+        fail ArgumentError, 'fki_language_id cannot be nil'
+      end
+
+      if fki_language_id > 2
+        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
+      end
+
+      if fki_language_id < 1
+        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
+      end
+
+      @fki_language_id = fki_language_id
     end
 
     # Checks equality by comparing each attribute.
@@ -88,7 +171,11 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          a_obj_ezsignfoldersignerassociation == o.a_obj_ezsignfoldersignerassociation
+          pki_user_id == o.pki_user_id &&
+          fki_language_id == o.fki_language_id &&
+          s_user_firstname == o.s_user_firstname &&
+          s_user_lastname == o.s_user_lastname &&
+          s_email_address == o.s_email_address
     end
 
     # @see the `==` method
@@ -100,7 +187,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [a_obj_ezsignfoldersignerassociation].hash
+      [pki_user_id, fki_language_id, s_user_firstname, s_user_lastname, s_email_address].hash
     end
 
     # Builds the object from hash
