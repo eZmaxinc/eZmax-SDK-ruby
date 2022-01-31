@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **pki_contact_id** | **Integer** | The unique ID of the Contact |  |
 | **s_contact_firstname** | **String** | The First name of the contact |  |
 | **s_contact_lastname** | **String** | The Last name of the contact |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
@@ -17,6 +18,7 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::EzsignsignerResponseCompoundContact.new(
+  pki_contact_id: 21,
   s_contact_firstname: John,
   s_contact_lastname: Doe,
   fki_language_id: 2,

@@ -237,6 +237,7 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
+docs/Xxxx.md
 ezmax_api.gemspec
 git_push.sh
 lib/ezmax_api.rb
@@ -474,6 +475,7 @@ lib/ezmax_api/models/webhook_response.rb
 lib/ezmax_api/models/webhook_user_user_created.rb
 lib/ezmax_api/models/webhook_user_user_created_all_of.rb
 lib/ezmax_api/models/website_request.rb
+lib/ezmax_api/models/xxxx.rb
 lib/ezmax_api/version.rb
 spec/api/global_customer_api_spec.rb
 spec/api/module_authenticate_api_spec.rb
@@ -708,4 +710,5 @@ spec/models/webhook_response_spec.rb
 spec/models/webhook_user_user_created_all_of_spec.rb
 spec/models/webhook_user_user_created_spec.rb
 spec/models/website_request_spec.rb
+spec/models/xxxx_spec.rb
 spec/spec_helper.rb

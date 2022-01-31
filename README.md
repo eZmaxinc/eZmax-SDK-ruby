@@ -350,6 +350,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EzmaxApi::WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EzmaxApi::WebsiteRequest](docs/WebsiteRequest.md)
+ - [EzmaxApi::Xxxx](docs/Xxxx.md)
 
 
 ## Documentation for Authorization
