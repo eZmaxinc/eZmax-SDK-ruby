@@ -14,29 +14,29 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # An Ezsignfoldersignerassociation Object
-  class EzsignfoldersignerassociationResponseCompound
-    attr_accessor :obj_user
+  class EzsigndocumentResponseCompoundAllOf
+    # The total number of steps in the form filling phase
+    attr_accessor :i_ezsigndocument_stepformtotal
 
-    attr_accessor :obj_ezsignsigner
+    # The current step in the form filling phase
+    attr_accessor :i_ezsigndocument_stepformcurrent
 
-    # The unique ID of the Ezsignfoldersignerassociation
-    attr_accessor :pki_ezsignfoldersignerassociation_id
+    # The total number of steps in the signature filling phase
+    attr_accessor :i_ezsigndocument_stepsignaturetotal
 
-    # The unique ID of the Ezsignfolder
-    attr_accessor :fki_ezsignfolder_id
+    # The current step in the signature phase
+    attr_accessor :i_ezsigndocument_stepsignature_current
 
-    # If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
-    attr_accessor :b_ezsignfoldersignerassociation_receivecopy
+    attr_accessor :a_obj_ezsignfoldersignerassociationstatus
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'obj_user' => :'objUser',
-        :'obj_ezsignsigner' => :'objEzsignsigner',
-        :'pki_ezsignfoldersignerassociation_id' => :'pkiEzsignfoldersignerassociationID',
-        :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
-        :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy'
+        :'i_ezsigndocument_stepformtotal' => :'iEzsigndocumentStepformtotal',
+        :'i_ezsigndocument_stepformcurrent' => :'iEzsigndocumentStepformcurrent',
+        :'i_ezsigndocument_stepsignaturetotal' => :'iEzsigndocumentStepsignaturetotal',
+        :'i_ezsigndocument_stepsignature_current' => :'iEzsigndocumentStepsignatureCurrent',
+        :'a_obj_ezsignfoldersignerassociationstatus' => :'a_objEzsignfoldersignerassociationstatus'
       }
     end
 
@@ -48,11 +48,11 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'obj_user' => :'EzsignfoldersignerassociationResponseCompoundUser',
-        :'obj_ezsignsigner' => :'EzsignsignerResponseCompound',
-        :'pki_ezsignfoldersignerassociation_id' => :'Integer',
-        :'fki_ezsignfolder_id' => :'Integer',
-        :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean'
+        :'i_ezsigndocument_stepformtotal' => :'Integer',
+        :'i_ezsigndocument_stepformcurrent' => :'Integer',
+        :'i_ezsigndocument_stepsignaturetotal' => :'Integer',
+        :'i_ezsigndocument_stepsignature_current' => :'Integer',
+        :'a_obj_ezsignfoldersignerassociationstatus' => :'Array<CustomEzsignfoldersignerassociationstatusResponse>'
       }
     end
 
@@ -62,47 +62,41 @@ module EzmaxApi
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'EzsignfoldersignerassociationResponse',
-      :'EzsignfoldersignerassociationResponseCompoundAllOf'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfoldersignerassociationResponseCompound` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsigndocumentResponseCompoundAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfoldersignerassociationResponseCompound`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsigndocumentResponseCompoundAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'obj_user')
-        self.obj_user = attributes[:'obj_user']
+      if attributes.key?(:'i_ezsigndocument_stepformtotal')
+        self.i_ezsigndocument_stepformtotal = attributes[:'i_ezsigndocument_stepformtotal']
       end
 
-      if attributes.key?(:'obj_ezsignsigner')
-        self.obj_ezsignsigner = attributes[:'obj_ezsignsigner']
+      if attributes.key?(:'i_ezsigndocument_stepformcurrent')
+        self.i_ezsigndocument_stepformcurrent = attributes[:'i_ezsigndocument_stepformcurrent']
       end
 
-      if attributes.key?(:'pki_ezsignfoldersignerassociation_id')
-        self.pki_ezsignfoldersignerassociation_id = attributes[:'pki_ezsignfoldersignerassociation_id']
+      if attributes.key?(:'i_ezsigndocument_stepsignaturetotal')
+        self.i_ezsigndocument_stepsignaturetotal = attributes[:'i_ezsigndocument_stepsignaturetotal']
       end
 
-      if attributes.key?(:'fki_ezsignfolder_id')
-        self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
+      if attributes.key?(:'i_ezsigndocument_stepsignature_current')
+        self.i_ezsigndocument_stepsignature_current = attributes[:'i_ezsigndocument_stepsignature_current']
       end
 
-      if attributes.key?(:'b_ezsignfoldersignerassociation_receivecopy')
-        self.b_ezsignfoldersignerassociation_receivecopy = attributes[:'b_ezsignfoldersignerassociation_receivecopy']
+      if attributes.key?(:'a_obj_ezsignfoldersignerassociationstatus')
+        if (value = attributes[:'a_obj_ezsignfoldersignerassociationstatus']).is_a?(Array)
+          self.a_obj_ezsignfoldersignerassociationstatus = value
+        end
       end
     end
 
@@ -110,16 +104,24 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @pki_ezsignfoldersignerassociation_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsignfoldersignerassociation_id", pki_ezsignfoldersignerassociation_id cannot be nil.')
+      if @i_ezsigndocument_stepformtotal.nil?
+        invalid_properties.push('invalid value for "i_ezsigndocument_stepformtotal", i_ezsigndocument_stepformtotal cannot be nil.')
       end
 
-      if @fki_ezsignfolder_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfolder_id", fki_ezsignfolder_id cannot be nil.')
+      if @i_ezsigndocument_stepformcurrent.nil?
+        invalid_properties.push('invalid value for "i_ezsigndocument_stepformcurrent", i_ezsigndocument_stepformcurrent cannot be nil.')
       end
 
-      if @b_ezsignfoldersignerassociation_receivecopy.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_receivecopy", b_ezsignfoldersignerassociation_receivecopy cannot be nil.')
+      if @i_ezsigndocument_stepsignaturetotal.nil?
+        invalid_properties.push('invalid value for "i_ezsigndocument_stepsignaturetotal", i_ezsigndocument_stepsignaturetotal cannot be nil.')
+      end
+
+      if @i_ezsigndocument_stepsignature_current.nil?
+        invalid_properties.push('invalid value for "i_ezsigndocument_stepsignature_current", i_ezsigndocument_stepsignature_current cannot be nil.')
+      end
+
+      if @a_obj_ezsignfoldersignerassociationstatus.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignfoldersignerassociationstatus", a_obj_ezsignfoldersignerassociationstatus cannot be nil.')
       end
 
       invalid_properties
@@ -128,9 +130,11 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @pki_ezsignfoldersignerassociation_id.nil?
-      return false if @fki_ezsignfolder_id.nil?
-      return false if @b_ezsignfoldersignerassociation_receivecopy.nil?
+      return false if @i_ezsigndocument_stepformtotal.nil?
+      return false if @i_ezsigndocument_stepformcurrent.nil?
+      return false if @i_ezsigndocument_stepsignaturetotal.nil?
+      return false if @i_ezsigndocument_stepsignature_current.nil?
+      return false if @a_obj_ezsignfoldersignerassociationstatus.nil?
       true
     end
 
@@ -139,11 +143,11 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          obj_user == o.obj_user &&
-          obj_ezsignsigner == o.obj_ezsignsigner &&
-          pki_ezsignfoldersignerassociation_id == o.pki_ezsignfoldersignerassociation_id &&
-          fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
-          b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy
+          i_ezsigndocument_stepformtotal == o.i_ezsigndocument_stepformtotal &&
+          i_ezsigndocument_stepformcurrent == o.i_ezsigndocument_stepformcurrent &&
+          i_ezsigndocument_stepsignaturetotal == o.i_ezsigndocument_stepsignaturetotal &&
+          i_ezsigndocument_stepsignature_current == o.i_ezsigndocument_stepsignature_current &&
+          a_obj_ezsignfoldersignerassociationstatus == o.a_obj_ezsignfoldersignerassociationstatus
     end
 
     # @see the `==` method
@@ -155,7 +159,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_user, obj_ezsignsigner, pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
+      [i_ezsigndocument_stepformtotal, i_ezsigndocument_stepformcurrent, i_ezsigndocument_stepsignaturetotal, i_ezsigndocument_stepsignature_current, a_obj_ezsignfoldersignerassociationstatus].hash
     end
 
     # Builds the object from hash

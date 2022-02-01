@@ -86,6 +86,7 @@ docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
+docs/EzsigndocumentResponseCompoundAllOf.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -131,6 +132,7 @@ docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
+docs/EzsignfoldersignerassociationResponseCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/EzsignfoldertypeGetListV1Response.md
 docs/EzsignfoldertypeGetListV1ResponseAllOf.md
@@ -152,6 +154,7 @@ docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
+docs/EzsignsignatureRequestCompoundAllOf.md
 docs/EzsignsignaturecustomdateRequest.md
 docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
@@ -166,6 +169,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
@@ -342,6 +346,7 @@ lib/ezmax_api/models/ezsigndocument_request.rb
 lib/ezmax_api/models/ezsigndocument_request_compound.rb
 lib/ezmax_api/models/ezsigndocument_response.rb
 lib/ezmax_api/models/ezsigndocument_response_compound.rb
+lib/ezmax_api/models/ezsigndocument_response_compound_all_of.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_request.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_response.rb
 lib/ezmax_api/models/ezsignfolder_create_object_v1_response_all_of.rb
@@ -387,6 +392,7 @@ lib/ezmax_api/models/ezsignfoldersignerassociation_request_compound.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_request_compound_all_of.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_response.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_response_compound.rb
+lib/ezmax_api/models/ezsignfoldersignerassociation_response_compound_all_of.rb
 lib/ezmax_api/models/ezsignfoldersignerassociation_response_compound_user.rb
 lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response.rb
 lib/ezmax_api/models/ezsignfoldertype_get_list_v1_response_all_of.rb
@@ -408,6 +414,7 @@ lib/ezmax_api/models/ezsignsignature_get_object_v1_response.rb
 lib/ezmax_api/models/ezsignsignature_get_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignsignature_request.rb
 lib/ezmax_api/models/ezsignsignature_request_compound.rb
+lib/ezmax_api/models/ezsignsignature_request_compound_all_of.rb
 lib/ezmax_api/models/ezsignsignaturecustomdate_request.rb
 lib/ezmax_api/models/ezsignsigner_request.rb
 lib/ezmax_api/models/ezsignsigner_request_compound.rb
@@ -422,6 +429,7 @@ lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_all_of.rb
 lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_m_payload_all_of.rb
 lib/ezmax_api/models/ezsigntemplatepackage_list_element.rb
+lib/ezmax_api/models/field_e_activesession_weekdaystart.rb
 lib/ezmax_api/models/field_e_ezsigndocument_step.rb
 lib/ezmax_api/models/field_e_ezsignfolder_sendreminderfrequency.rb
 lib/ezmax_api/models/field_e_ezsignfolder_step.rb
@@ -575,6 +583,7 @@ spec/models/ezsigndocument_get_words_positions_v1_response_all_of_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_response_spec.rb
 spec/models/ezsigndocument_request_compound_spec.rb
 spec/models/ezsigndocument_request_spec.rb
+spec/models/ezsigndocument_response_compound_all_of_spec.rb
 spec/models/ezsigndocument_response_compound_spec.rb
 spec/models/ezsigndocument_response_spec.rb
 spec/models/ezsignfolder_create_object_v1_request_spec.rb
@@ -620,6 +629,7 @@ spec/models/ezsignfoldersignerassociation_get_object_v1_response_spec.rb
 spec/models/ezsignfoldersignerassociation_request_compound_all_of_spec.rb
 spec/models/ezsignfoldersignerassociation_request_compound_spec.rb
 spec/models/ezsignfoldersignerassociation_request_spec.rb
+spec/models/ezsignfoldersignerassociation_response_compound_all_of_spec.rb
 spec/models/ezsignfoldersignerassociation_response_compound_spec.rb
 spec/models/ezsignfoldersignerassociation_response_compound_user_spec.rb
 spec/models/ezsignfoldersignerassociation_response_spec.rb
@@ -641,6 +651,7 @@ spec/models/ezsignsignature_create_object_v1_response_spec.rb
 spec/models/ezsignsignature_delete_object_v1_response_spec.rb
 spec/models/ezsignsignature_get_object_v1_response_all_of_spec.rb
 spec/models/ezsignsignature_get_object_v1_response_spec.rb
+spec/models/ezsignsignature_request_compound_all_of_spec.rb
 spec/models/ezsignsignature_request_compound_spec.rb
 spec/models/ezsignsignature_request_spec.rb
 spec/models/ezsignsignaturecustomdate_request_spec.rb
@@ -657,6 +668,7 @@ spec/models/ezsigntemplatepackage_get_list_v1_response_m_payload_all_of_spec.rb
 spec/models/ezsigntemplatepackage_get_list_v1_response_m_payload_spec.rb
 spec/models/ezsigntemplatepackage_get_list_v1_response_spec.rb
 spec/models/ezsigntemplatepackage_list_element_spec.rb
+spec/models/field_e_activesession_weekdaystart_spec.rb
 spec/models/field_e_ezsigndocument_step_spec.rb
 spec/models/field_e_ezsignfolder_sendreminderfrequency_spec.rb
 spec/models/field_e_ezsignfolder_step_spec.rb

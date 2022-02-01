@@ -16,6 +16,10 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
   class EzsignfoldersignerassociationGetObjectV1ResponseMPayload
+    attr_accessor :obj_user
+
+    attr_accessor :obj_ezsignsigner
+
     # The unique ID of the Ezsignfoldersignerassociation
     attr_accessor :pki_ezsignfoldersignerassociation_id
 
@@ -28,6 +32,8 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'obj_user' => :'objUser',
+        :'obj_ezsignsigner' => :'objEzsignsigner',
         :'pki_ezsignfoldersignerassociation_id' => :'pkiEzsignfoldersignerassociationID',
         :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy'
@@ -42,6 +48,8 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'obj_user' => :'EzsignfoldersignerassociationResponseCompoundUser',
+        :'obj_ezsignsigner' => :'EzsignsignerResponseCompound',
         :'pki_ezsignfoldersignerassociation_id' => :'Integer',
         :'fki_ezsignfolder_id' => :'Integer',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean'
@@ -75,6 +83,14 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'obj_user')
+        self.obj_user = attributes[:'obj_user']
+      end
+
+      if attributes.key?(:'obj_ezsignsigner')
+        self.obj_ezsignsigner = attributes[:'obj_ezsignsigner']
+      end
 
       if attributes.key?(:'pki_ezsignfoldersignerassociation_id')
         self.pki_ezsignfoldersignerassociation_id = attributes[:'pki_ezsignfoldersignerassociation_id']
@@ -122,6 +138,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          obj_user == o.obj_user &&
+          obj_ezsignsigner == o.obj_ezsignsigner &&
           pki_ezsignfoldersignerassociation_id == o.pki_ezsignfoldersignerassociation_id &&
           fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
           b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy
@@ -136,7 +154,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
+      [obj_user, obj_ezsignsigner, pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
     end
 
     # Builds the object from hash

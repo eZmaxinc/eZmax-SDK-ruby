@@ -4,6 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **i_ezsigndocument_stepformtotal** | **Integer** | The total number of steps in the form filling phase |  |
+| **i_ezsigndocument_stepformcurrent** | **Integer** | The current step in the form filling phase |  |
+| **i_ezsigndocument_stepsignaturetotal** | **Integer** | The total number of steps in the signature filling phase |  |
+| **i_ezsigndocument_stepsignature_current** | **Integer** | The current step in the signature phase |  |
+| **a_obj_ezsignfoldersignerassociationstatus** | [**Array&lt;CustomEzsignfoldersignerassociationstatusResponse&gt;**](CustomEzsignfoldersignerassociationstatusResponse.md) |  |  |
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **dt_ezsigndocument_duedate** | **String** | The maximum date and time at which the Ezsigndocument can be signed. |  |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
@@ -26,6 +31,11 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::EzsigndocumentGetObjectV1ResponseMPayload.new(
+  i_ezsigndocument_stepformtotal: 2,
+  i_ezsigndocument_stepformcurrent: 1,
+  i_ezsigndocument_stepsignaturetotal: 2,
+  i_ezsigndocument_stepsignature_current: 0,
+  a_obj_ezsignfoldersignerassociationstatus: null,
   fki_ezsignfolder_id: 33,
   dt_ezsigndocument_duedate: 2020-12-31 23:59:59,
   fki_language_id: 2,

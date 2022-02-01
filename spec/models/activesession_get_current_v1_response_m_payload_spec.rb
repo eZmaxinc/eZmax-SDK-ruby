@@ -41,6 +41,12 @@ describe EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload do
     end
   end
 
+  describe 'test attribute "e_activesession_weekdaystart"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fki_language_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -22,6 +22,8 @@ module EzmaxApi
     # The type of session used for the API request call
     attr_accessor :e_activesession_sessiontype
 
+    attr_accessor :e_activesession_weekdaystart
+
     # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
     attr_accessor :fki_language_id
 
@@ -70,6 +72,7 @@ module EzmaxApi
       {
         :'s_customer_code' => :'sCustomerCode',
         :'e_activesession_sessiontype' => :'eActivesessionSessiontype',
+        :'e_activesession_weekdaystart' => :'eActivesessionWeekdaystart',
         :'fki_language_id' => :'fkiLanguageID',
         :'s_company_name_x' => :'sCompanyNameX',
         :'s_department_name_x' => :'sDepartmentNameX',
@@ -90,6 +93,7 @@ module EzmaxApi
       {
         :'s_customer_code' => :'String',
         :'e_activesession_sessiontype' => :'String',
+        :'e_activesession_weekdaystart' => :'FieldEActivesessionWeekdaystart',
         :'fki_language_id' => :'Integer',
         :'s_company_name_x' => :'String',
         :'s_department_name_x' => :'String',
@@ -127,6 +131,10 @@ module EzmaxApi
 
       if attributes.key?(:'e_activesession_sessiontype')
         self.e_activesession_sessiontype = attributes[:'e_activesession_sessiontype']
+      end
+
+      if attributes.key?(:'e_activesession_weekdaystart')
+        self.e_activesession_weekdaystart = attributes[:'e_activesession_weekdaystart']
       end
 
       if attributes.key?(:'fki_language_id')
@@ -172,6 +180,10 @@ module EzmaxApi
 
       if @e_activesession_sessiontype.nil?
         invalid_properties.push('invalid value for "e_activesession_sessiontype", e_activesession_sessiontype cannot be nil.')
+      end
+
+      if @e_activesession_weekdaystart.nil?
+        invalid_properties.push('invalid value for "e_activesession_weekdaystart", e_activesession_weekdaystart cannot be nil.')
       end
 
       if @fki_language_id.nil?
@@ -220,6 +232,7 @@ module EzmaxApi
       return false if @e_activesession_sessiontype.nil?
       e_activesession_sessiontype_validator = EnumAttributeValidator.new('String', ["Normal"])
       return false unless e_activesession_sessiontype_validator.valid?(@e_activesession_sessiontype)
+      return false if @e_activesession_weekdaystart.nil?
       return false if @fki_language_id.nil?
       return false if @fki_language_id > 2
       return false if @fki_language_id < 1
@@ -267,6 +280,7 @@ module EzmaxApi
       self.class == o.class &&
           s_customer_code == o.s_customer_code &&
           e_activesession_sessiontype == o.e_activesession_sessiontype &&
+          e_activesession_weekdaystart == o.e_activesession_weekdaystart &&
           fki_language_id == o.fki_language_id &&
           s_company_name_x == o.s_company_name_x &&
           s_department_name_x == o.s_department_name_x &&
@@ -285,7 +299,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_customer_code, e_activesession_sessiontype, fki_language_id, s_company_name_x, s_department_name_x, a_registered_modules, a_permissions, fki_user_id, fki_apikey_id].hash
+      [s_customer_code, e_activesession_sessiontype, e_activesession_weekdaystart, fki_language_id, s_company_name_x, s_department_name_x, a_registered_modules, a_permissions, fki_user_id, fki_apikey_id].hash
     end
 
     # Builds the object from hash
