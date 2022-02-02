@@ -15,7 +15,7 @@ require 'time'
 
 module EzmaxApi
   # Payload for the /1/object/activesession/getCurrent API Request
-  class ActivesessionGetCurrentV1ResponseMPayload
+  class ActivesessionResponseCompound
     # An array of permissions granted to the user or api key
     attr_accessor :a_pki_permission_id
 
@@ -97,7 +97,8 @@ module EzmaxApi
     # List of class defined in allOf (OpenAPI v3)
     def self.openapi_all_of
       [
-      :'ActivesessionResponseCompound'
+      :'ActivesessionResponse',
+      :'ActivesessionResponseCompoundAllOf'
       ]
     end
 
@@ -105,13 +106,13 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ActivesessionResponseCompound` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ActivesessionResponseCompound`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }

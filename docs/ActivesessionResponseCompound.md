@@ -1,4 +1,4 @@
-# EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload
+# EzmaxApi::ActivesessionResponseCompound
 
 ## Properties
 
@@ -22,7 +22,7 @@
 ```ruby
 require 'ezmax_api'
 
-instance = EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload.new(
+instance = EzmaxApi::ActivesessionResponseCompound.new(
   a_pki_permission_id: null,
   obj_user_real: null,
   obj_user_cloned: null,

@@ -9,6 +9,11 @@ Rakefile
 docs/ActivesessionGetCurrentV1Response.md
 docs/ActivesessionGetCurrentV1ResponseAllOf.md
 docs/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/ActivesessionResponse.md
+docs/ActivesessionResponseCompound.md
+docs/ActivesessionResponseCompoundAllOf.md
+docs/ActivesessionResponseCompoundApikey.md
+docs/ActivesessionResponseCompoundUser.md
 docs/AddressRequest.md
 docs/ApikeyCreateObjectV1Request.md
 docs/ApikeyCreateObjectV1Response.md
@@ -169,6 +174,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionSessiontype.md
 docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
@@ -241,7 +247,6 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
-docs/Xxxx.md
 ezmax_api.gemspec
 git_push.sh
 lib/ezmax_api.rb
@@ -269,6 +274,11 @@ lib/ezmax_api/configuration.rb
 lib/ezmax_api/models/activesession_get_current_v1_response.rb
 lib/ezmax_api/models/activesession_get_current_v1_response_all_of.rb
 lib/ezmax_api/models/activesession_get_current_v1_response_m_payload.rb
+lib/ezmax_api/models/activesession_response.rb
+lib/ezmax_api/models/activesession_response_compound.rb
+lib/ezmax_api/models/activesession_response_compound_all_of.rb
+lib/ezmax_api/models/activesession_response_compound_apikey.rb
+lib/ezmax_api/models/activesession_response_compound_user.rb
 lib/ezmax_api/models/address_request.rb
 lib/ezmax_api/models/apikey_create_object_v1_request.rb
 lib/ezmax_api/models/apikey_create_object_v1_response.rb
@@ -429,6 +439,7 @@ lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_all_of.rb
 lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsigntemplatepackage_get_list_v1_response_m_payload_all_of.rb
 lib/ezmax_api/models/ezsigntemplatepackage_list_element.rb
+lib/ezmax_api/models/field_e_activesession_sessiontype.rb
 lib/ezmax_api/models/field_e_activesession_weekdaystart.rb
 lib/ezmax_api/models/field_e_ezsigndocument_step.rb
 lib/ezmax_api/models/field_e_ezsignfolder_sendreminderfrequency.rb
@@ -483,7 +494,6 @@ lib/ezmax_api/models/webhook_response.rb
 lib/ezmax_api/models/webhook_user_user_created.rb
 lib/ezmax_api/models/webhook_user_user_created_all_of.rb
 lib/ezmax_api/models/website_request.rb
-lib/ezmax_api/models/xxxx.rb
 lib/ezmax_api/version.rb
 spec/api/global_customer_api_spec.rb
 spec/api/module_authenticate_api_spec.rb
@@ -508,6 +518,11 @@ spec/configuration_spec.rb
 spec/models/activesession_get_current_v1_response_all_of_spec.rb
 spec/models/activesession_get_current_v1_response_m_payload_spec.rb
 spec/models/activesession_get_current_v1_response_spec.rb
+spec/models/activesession_response_compound_all_of_spec.rb
+spec/models/activesession_response_compound_apikey_spec.rb
+spec/models/activesession_response_compound_spec.rb
+spec/models/activesession_response_compound_user_spec.rb
+spec/models/activesession_response_spec.rb
 spec/models/address_request_spec.rb
 spec/models/apikey_create_object_v1_request_spec.rb
 spec/models/apikey_create_object_v1_response_all_of_spec.rb
@@ -668,6 +683,7 @@ spec/models/ezsigntemplatepackage_get_list_v1_response_m_payload_all_of_spec.rb
 spec/models/ezsigntemplatepackage_get_list_v1_response_m_payload_spec.rb
 spec/models/ezsigntemplatepackage_get_list_v1_response_spec.rb
 spec/models/ezsigntemplatepackage_list_element_spec.rb
+spec/models/field_e_activesession_sessiontype_spec.rb
 spec/models/field_e_activesession_weekdaystart_spec.rb
 spec/models/field_e_ezsigndocument_step_spec.rb
 spec/models/field_e_ezsignfolder_sendreminderfrequency_spec.rb
@@ -722,5 +738,4 @@ spec/models/webhook_response_spec.rb
 spec/models/webhook_user_user_created_all_of_spec.rb
 spec/models/webhook_user_user_created_spec.rb
 spec/models/website_request_spec.rb
-spec/models/xxxx_spec.rb
 spec/spec_helper.rb

@@ -14,17 +14,27 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Test
-  class Xxxx
-    attr_accessor :foo
+  class ActivesessionResponseCompoundAllOf
+    # An array of permissions granted to the user or api key
+    attr_accessor :a_pki_permission_id
 
-    attr_accessor :bar
+    attr_accessor :obj_user_real
+
+    attr_accessor :obj_user_cloned
+
+    attr_accessor :obj_apikey
+
+    # An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+    attr_accessor :a_e_module_internalname
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'foo' => :'foo',
-        :'bar' => :'bar'
+        :'a_pki_permission_id' => :'a_pkiPermissionID',
+        :'obj_user_real' => :'objUserReal',
+        :'obj_user_cloned' => :'objUserCloned',
+        :'obj_apikey' => :'objApikey',
+        :'a_e_module_internalname' => :'a_eModuleInternalname'
       }
     end
 
@@ -36,8 +46,11 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'foo' => :'Integer',
-        :'bar' => :'Integer'
+        :'a_pki_permission_id' => :'Array<Integer>',
+        :'obj_user_real' => :'ActivesessionResponseCompoundUser',
+        :'obj_user_cloned' => :'ActivesessionResponseCompoundUser',
+        :'obj_apikey' => :'ActivesessionResponseCompoundApikey',
+        :'a_e_module_internalname' => :'Array<String>'
       }
     end
 
@@ -51,23 +64,39 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::Xxxx` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ActivesessionResponseCompoundAllOf` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::Xxxx`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ActivesessionResponseCompoundAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'foo')
-        self.foo = attributes[:'foo']
+      if attributes.key?(:'a_pki_permission_id')
+        if (value = attributes[:'a_pki_permission_id']).is_a?(Array)
+          self.a_pki_permission_id = value
+        end
       end
 
-      if attributes.key?(:'bar')
-        self.bar = attributes[:'bar']
+      if attributes.key?(:'obj_user_real')
+        self.obj_user_real = attributes[:'obj_user_real']
+      end
+
+      if attributes.key?(:'obj_user_cloned')
+        self.obj_user_cloned = attributes[:'obj_user_cloned']
+      end
+
+      if attributes.key?(:'obj_apikey')
+        self.obj_apikey = attributes[:'obj_apikey']
+      end
+
+      if attributes.key?(:'a_e_module_internalname')
+        if (value = attributes[:'a_e_module_internalname']).is_a?(Array)
+          self.a_e_module_internalname = value
+        end
       end
     end
 
@@ -75,12 +104,16 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @foo.nil?
-        invalid_properties.push('invalid value for "foo", foo cannot be nil.')
+      if @a_pki_permission_id.nil?
+        invalid_properties.push('invalid value for "a_pki_permission_id", a_pki_permission_id cannot be nil.')
       end
 
-      if @bar.nil?
-        invalid_properties.push('invalid value for "bar", bar cannot be nil.')
+      if @obj_user_real.nil?
+        invalid_properties.push('invalid value for "obj_user_real", obj_user_real cannot be nil.')
+      end
+
+      if @a_e_module_internalname.nil?
+        invalid_properties.push('invalid value for "a_e_module_internalname", a_e_module_internalname cannot be nil.')
       end
 
       invalid_properties
@@ -89,8 +122,9 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @foo.nil?
-      return false if @bar.nil?
+      return false if @a_pki_permission_id.nil?
+      return false if @obj_user_real.nil?
+      return false if @a_e_module_internalname.nil?
       true
     end
 
@@ -99,8 +133,11 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          foo == o.foo &&
-          bar == o.bar
+          a_pki_permission_id == o.a_pki_permission_id &&
+          obj_user_real == o.obj_user_real &&
+          obj_user_cloned == o.obj_user_cloned &&
+          obj_apikey == o.obj_apikey &&
+          a_e_module_internalname == o.a_e_module_internalname
     end
 
     # @see the `==` method
@@ -112,7 +149,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [foo, bar].hash
+      [a_pki_permission_id, obj_user_real, obj_user_cloned, obj_apikey, a_e_module_internalname].hash
     end
 
     # Builds the object from hash

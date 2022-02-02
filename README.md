@@ -140,6 +140,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::ActivesessionGetCurrentV1Response](docs/ActivesessionGetCurrentV1Response.md)
  - [EzmaxApi::ActivesessionGetCurrentV1ResponseAllOf](docs/ActivesessionGetCurrentV1ResponseAllOf.md)
  - [EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload](docs/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [EzmaxApi::ActivesessionResponse](docs/ActivesessionResponse.md)
+ - [EzmaxApi::ActivesessionResponseCompound](docs/ActivesessionResponseCompound.md)
+ - [EzmaxApi::ActivesessionResponseCompoundAllOf](docs/ActivesessionResponseCompoundAllOf.md)
+ - [EzmaxApi::ActivesessionResponseCompoundApikey](docs/ActivesessionResponseCompoundApikey.md)
+ - [EzmaxApi::ActivesessionResponseCompoundUser](docs/ActivesessionResponseCompoundUser.md)
  - [EzmaxApi::AddressRequest](docs/AddressRequest.md)
  - [EzmaxApi::ApikeyCreateObjectV1Request](docs/ApikeyCreateObjectV1Request.md)
  - [EzmaxApi::ApikeyCreateObjectV1Response](docs/ApikeyCreateObjectV1Response.md)
@@ -300,6 +305,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
  - [EzmaxApi::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
+ - [EzmaxApi::FieldEActivesessionSessiontype](docs/FieldEActivesessionSessiontype.md)
  - [EzmaxApi::FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EzmaxApi::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
@@ -354,7 +360,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EzmaxApi::WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EzmaxApi::WebsiteRequest](docs/WebsiteRequest.md)
- - [EzmaxApi::Xxxx](docs/Xxxx.md)
 
 
 ## Documentation for Authorization
