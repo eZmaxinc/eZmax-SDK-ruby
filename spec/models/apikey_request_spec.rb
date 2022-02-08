@@ -25,6 +25,12 @@ describe EzmaxApi::ApikeyRequest do
       expect(instance).to be_instance_of(EzmaxApi::ApikeyRequest)
     end
   end
+  describe 'test attribute "pki_apikey_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fki_user_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

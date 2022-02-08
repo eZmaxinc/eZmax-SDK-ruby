@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Apikey Object and children to create a complete structure
   class ApikeyRequestCompound
+    # The unique ID of the Apikey
+    attr_accessor :pki_apikey_id
+
     # The unique ID of the User
     attr_accessor :fki_user_id
 
@@ -24,6 +27,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_apikey_id' => :'pkiApikeyID',
         :'fki_user_id' => :'fkiUserID',
         :'obj_apikey_description' => :'objApikeyDescription'
       }
@@ -37,6 +41,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_apikey_id' => :'Integer',
         :'fki_user_id' => :'Integer',
         :'obj_apikey_description' => :'MultilingualApikeyDescription'
       }
@@ -69,6 +74,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_apikey_id')
+        self.pki_apikey_id = attributes[:'pki_apikey_id']
+      end
 
       if attributes.key?(:'fki_user_id')
         self.fki_user_id = attributes[:'fki_user_id']
@@ -107,6 +116,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_apikey_id == o.pki_apikey_id &&
           fki_user_id == o.fki_user_id &&
           obj_apikey_description == o.obj_apikey_description
     end
@@ -120,7 +130,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_user_id, obj_apikey_description].hash
+      [pki_apikey_id, fki_user_id, obj_apikey_description].hash
     end
 
     # Builds the object from hash

@@ -55,6 +55,18 @@ describe 'ObjectEzsignfolderApi' do
     end
   end
 
+  # unit tests for ezsignfolder_edit_object_v1
+  # Edit an Ezsignfolder
+  # @param pki_ezsignfolder_id 
+  # @param ezsignfolder_edit_object_v1_request 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsignfolderEditObjectV1Response]
+  describe 'ezsignfolder_edit_object_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsignfolder_get_ezsigndocuments_v1
   # Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
   # @param pki_ezsignfolder_id 

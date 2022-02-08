@@ -22,6 +22,9 @@ module EzmaxApi
     # An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
     attr_accessor :a_obj_ezsignsignaturecustomdate
 
+    # The unique ID of the Ezsignsignature
+    attr_accessor :pki_ezsignsignature_id
+
     # The unique ID of the Ezsignfoldersignerassociation
     attr_accessor :fki_ezsignfoldersignerassociation_id
 
@@ -47,6 +50,7 @@ module EzmaxApi
       {
         :'b_ezsignsignature_customdate' => :'bEzsignsignatureCustomdate',
         :'a_obj_ezsignsignaturecustomdate' => :'a_objEzsignsignaturecustomdate',
+        :'pki_ezsignsignature_id' => :'pkiEzsignsignatureID',
         :'fki_ezsignfoldersignerassociation_id' => :'fkiEzsignfoldersignerassociationID',
         :'i_ezsignpage_pagenumber' => :'iEzsignpagePagenumber',
         :'i_ezsignsignature_x' => :'iEzsignsignatureX',
@@ -67,6 +71,7 @@ module EzmaxApi
       {
         :'b_ezsignsignature_customdate' => :'Boolean',
         :'a_obj_ezsignsignaturecustomdate' => :'Array<EzsignsignaturecustomdateRequest>',
+        :'pki_ezsignsignature_id' => :'Integer',
         :'fki_ezsignfoldersignerassociation_id' => :'Integer',
         :'i_ezsignpage_pagenumber' => :'Integer',
         :'i_ezsignsignature_x' => :'Integer',
@@ -114,6 +119,10 @@ module EzmaxApi
         if (value = attributes[:'a_obj_ezsignsignaturecustomdate']).is_a?(Array)
           self.a_obj_ezsignsignaturecustomdate = value
         end
+      end
+
+      if attributes.key?(:'pki_ezsignsignature_id')
+        self.pki_ezsignsignature_id = attributes[:'pki_ezsignsignature_id']
       end
 
       if attributes.key?(:'fki_ezsignfoldersignerassociation_id')
@@ -200,6 +209,7 @@ module EzmaxApi
       self.class == o.class &&
           b_ezsignsignature_customdate == o.b_ezsignsignature_customdate &&
           a_obj_ezsignsignaturecustomdate == o.a_obj_ezsignsignaturecustomdate &&
+          pki_ezsignsignature_id == o.pki_ezsignsignature_id &&
           fki_ezsignfoldersignerassociation_id == o.fki_ezsignfoldersignerassociation_id &&
           i_ezsignpage_pagenumber == o.i_ezsignpage_pagenumber &&
           i_ezsignsignature_x == o.i_ezsignsignature_x &&
@@ -218,7 +228,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id].hash
+      [b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, pki_ezsignsignature_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id].hash
     end
 
     # Builds the object from hash

@@ -20,6 +20,9 @@ module EzmaxApi
 
     attr_accessor :a_obj_contact
 
+    # The unique ID of the Franchisereferalincome
+    attr_accessor :pki_franchisereferalincome_id
+
     # The unique ID of the Franchisebroker
     attr_accessor :fki_franchisebroker_id
 
@@ -57,6 +60,7 @@ module EzmaxApi
       {
         :'obj_address' => :'objAddress',
         :'a_obj_contact' => :'a_objContact',
+        :'pki_franchisereferalincome_id' => :'pkiFranchisereferalincomeID',
         :'fki_franchisebroker_id' => :'fkiFranchisebrokerID',
         :'fki_franchisereferalincomeprogram_id' => :'fkiFranchisereferalincomeprogramID',
         :'fki_period_id' => :'fkiPeriodID',
@@ -81,6 +85,7 @@ module EzmaxApi
       {
         :'obj_address' => :'AddressRequest',
         :'a_obj_contact' => :'Array<ContactRequestCompound>',
+        :'pki_franchisereferalincome_id' => :'Integer',
         :'fki_franchisebroker_id' => :'Integer',
         :'fki_franchisereferalincomeprogram_id' => :'Integer',
         :'fki_period_id' => :'Integer',
@@ -132,6 +137,10 @@ module EzmaxApi
         if (value = attributes[:'a_obj_contact']).is_a?(Array)
           self.a_obj_contact = value
         end
+      end
+
+      if attributes.key?(:'pki_franchisereferalincome_id')
+        self.pki_franchisereferalincome_id = attributes[:'pki_franchisereferalincome_id']
       end
 
       if attributes.key?(:'fki_franchisebroker_id')
@@ -264,6 +273,7 @@ module EzmaxApi
       self.class == o.class &&
           obj_address == o.obj_address &&
           a_obj_contact == o.a_obj_contact &&
+          pki_franchisereferalincome_id == o.pki_franchisereferalincome_id &&
           fki_franchisebroker_id == o.fki_franchisebroker_id &&
           fki_franchisereferalincomeprogram_id == o.fki_franchisereferalincomeprogram_id &&
           fki_period_id == o.fki_period_id &&
@@ -286,7 +296,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_address, a_obj_contact, fki_franchisebroker_id, fki_franchisereferalincomeprogram_id, fki_period_id, d_franchisereferalincome_loan, d_franchisereferalincome_franchiseamount, d_franchisereferalincome_franchisoramount, d_franchisereferalincome_agentamount, dt_franchisereferalincome_disbursed, t_franchisereferalincome_comment, fki_franchiseoffice_id, s_franchisereferalincome_remoteid].hash
+      [obj_address, a_obj_contact, pki_franchisereferalincome_id, fki_franchisebroker_id, fki_franchisereferalincomeprogram_id, fki_period_id, d_franchisereferalincome_loan, d_franchisereferalincome_franchiseamount, d_franchisereferalincome_franchisoramount, d_franchisereferalincome_agentamount, dt_franchisereferalincome_disbursed, t_franchisereferalincome_comment, fki_franchiseoffice_id, s_franchisereferalincome_remoteid].hash
     end
 
     # Builds the object from hash

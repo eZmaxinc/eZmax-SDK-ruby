@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Ezsignfoldersignerassociation Object
   class EzsignfoldersignerassociationRequest
+    # The unique ID of the Ezsignfoldersignerassociation
+    attr_accessor :pki_ezsignfoldersignerassociation_id
+
     # The unique ID of the User
     attr_accessor :fki_user_id
 
@@ -28,6 +31,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsignfoldersignerassociation_id' => :'pkiEzsignfoldersignerassociationID',
         :'fki_user_id' => :'fkiUserID',
         :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy'
@@ -42,6 +46,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsignfoldersignerassociation_id' => :'Integer',
         :'fki_user_id' => :'Integer',
         :'fki_ezsignfolder_id' => :'Integer',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean'
@@ -68,6 +73,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_ezsignfoldersignerassociation_id')
+        self.pki_ezsignfoldersignerassociation_id = attributes[:'pki_ezsignfoldersignerassociation_id']
+      end
 
       if attributes.key?(:'fki_user_id')
         self.fki_user_id = attributes[:'fki_user_id']
@@ -105,6 +114,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsignfoldersignerassociation_id == o.pki_ezsignfoldersignerassociation_id &&
           fki_user_id == o.fki_user_id &&
           fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
           b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy
@@ -119,7 +129,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_user_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
+      [pki_ezsignfoldersignerassociation_id, fki_user_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_receivecopy].hash
     end
 
     # Builds the object from hash

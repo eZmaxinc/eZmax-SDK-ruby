@@ -25,6 +25,12 @@ describe EzmaxApi::EzsigndocumentRequest do
       expect(instance).to be_instance_of(EzmaxApi::EzsigndocumentRequest)
     end
   end
+  describe 'test attribute "pki_ezsigndocument_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "e_ezsigndocument_source"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

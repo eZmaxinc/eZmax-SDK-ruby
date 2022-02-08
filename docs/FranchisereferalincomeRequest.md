@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **pki_franchisereferalincome_id** | **Integer** | The unique ID of the Franchisereferalincome | [optional] |
 | **fki_franchisebroker_id** | **Integer** | The unique ID of the Franchisebroker |  |
 | **fki_franchisereferalincomeprogram_id** | **Integer** | The unique ID of the Franchisereferalincomeprogram |  |
 | **fki_period_id** | **Integer** | The unique ID of the Period |  |
@@ -22,6 +23,7 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::FranchisereferalincomeRequest.new(
+  pki_franchisereferalincome_id: 35,
   fki_franchisebroker_id: 61,
   fki_franchisereferalincomeprogram_id: 51,
   fki_period_id: 21,

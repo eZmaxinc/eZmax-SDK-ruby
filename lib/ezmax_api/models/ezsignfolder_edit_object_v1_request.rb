@@ -14,22 +14,14 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # An Apikey Object
-  class ApikeyRequest
-    # The unique ID of the Apikey
-    attr_accessor :pki_apikey_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    attr_accessor :obj_apikey_description
+  # Request for the /1/object/ezsignfolder/editObject API Request
+  class EzsignfolderEditObjectV1Request
+    attr_accessor :obj_ezsignfolder
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_apikey_id' => :'pkiApikeyID',
-        :'fki_user_id' => :'fkiUserID',
-        :'obj_apikey_description' => :'objApikeyDescription'
+        :'obj_ezsignfolder' => :'objEzsignfolder'
       }
     end
 
@@ -41,9 +33,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_apikey_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'obj_apikey_description' => :'MultilingualApikeyDescription'
+        :'obj_ezsignfolder' => :'EzsignfolderRequestCompound'
       }
     end
 
@@ -57,27 +47,19 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ApikeyRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderEditObjectV1Request` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ApikeyRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderEditObjectV1Request`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_apikey_id')
-        self.pki_apikey_id = attributes[:'pki_apikey_id']
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      end
-
-      if attributes.key?(:'obj_apikey_description')
-        self.obj_apikey_description = attributes[:'obj_apikey_description']
+      if attributes.key?(:'obj_ezsignfolder')
+        self.obj_ezsignfolder = attributes[:'obj_ezsignfolder']
       end
     end
 
@@ -85,12 +67,8 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @fki_user_id.nil?
-        invalid_properties.push('invalid value for "fki_user_id", fki_user_id cannot be nil.')
-      end
-
-      if @obj_apikey_description.nil?
-        invalid_properties.push('invalid value for "obj_apikey_description", obj_apikey_description cannot be nil.')
+      if @obj_ezsignfolder.nil?
+        invalid_properties.push('invalid value for "obj_ezsignfolder", obj_ezsignfolder cannot be nil.')
       end
 
       invalid_properties
@@ -99,8 +77,7 @@ module EzmaxApi
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @fki_user_id.nil?
-      return false if @obj_apikey_description.nil?
+      return false if @obj_ezsignfolder.nil?
       true
     end
 
@@ -109,9 +86,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_apikey_id == o.pki_apikey_id &&
-          fki_user_id == o.fki_user_id &&
-          obj_apikey_description == o.obj_apikey_description
+          obj_ezsignfolder == o.obj_ezsignfolder
     end
 
     # @see the `==` method
@@ -123,7 +98,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_apikey_id, fki_user_id, obj_apikey_description].hash
+      [obj_ezsignfolder].hash
     end
 
     # Builds the object from hash

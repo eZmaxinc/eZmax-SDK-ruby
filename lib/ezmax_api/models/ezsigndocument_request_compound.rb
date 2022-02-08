@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Ezsigndocument Object and children to create a complete structure
   class EzsigndocumentRequestCompound
+    # The unique ID of the Ezsigndocument
+    attr_accessor :pki_ezsigndocument_id
+
     # Indicates where to look for the document binary content.
     attr_accessor :e_ezsigndocument_source
 
@@ -71,6 +74,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsigndocument_id' => :'pkiEzsigndocumentID',
         :'e_ezsigndocument_source' => :'eEzsigndocumentSource',
         :'e_ezsigndocument_format' => :'eEzsigndocumentFormat',
         :'s_ezsigndocument_base64' => :'sEzsigndocumentBase64',
@@ -92,6 +96,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsigndocument_id' => :'Integer',
         :'e_ezsigndocument_source' => :'String',
         :'e_ezsigndocument_format' => :'String',
         :'s_ezsigndocument_base64' => :'String',
@@ -132,6 +137,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_ezsigndocument_id')
+        self.pki_ezsigndocument_id = attributes[:'pki_ezsigndocument_id']
+      end
 
       if attributes.key?(:'e_ezsigndocument_source')
         self.e_ezsigndocument_source = attributes[:'e_ezsigndocument_source']
@@ -278,6 +287,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsigndocument_id == o.pki_ezsigndocument_id &&
           e_ezsigndocument_source == o.e_ezsigndocument_source &&
           e_ezsigndocument_format == o.e_ezsigndocument_format &&
           s_ezsigndocument_base64 == o.s_ezsigndocument_base64 &&
@@ -299,7 +309,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [e_ezsigndocument_source, e_ezsigndocument_format, s_ezsigndocument_base64, s_ezsigndocument_url, b_ezsigndocument_forcerepair, s_ezsigndocument_password, fki_ezsignfolder_id, dt_ezsigndocument_duedate, fki_language_id, s_ezsigndocument_name].hash
+      [pki_ezsigndocument_id, e_ezsigndocument_source, e_ezsigndocument_format, s_ezsigndocument_base64, s_ezsigndocument_url, b_ezsigndocument_forcerepair, s_ezsigndocument_password, fki_ezsignfolder_id, dt_ezsigndocument_duedate, fki_language_id, s_ezsigndocument_name].hash
     end
 
     # Builds the object from hash

@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **obj_address** | [**AddressRequest**](AddressRequest.md) |  |  |
 | **a_obj_contact** | [**Array&lt;ContactRequestCompound&gt;**](ContactRequestCompound.md) |  |  |
+| **pki_franchisereferalincome_id** | **Integer** | The unique ID of the Franchisereferalincome | [optional] |
 | **fki_franchisebroker_id** | **Integer** | The unique ID of the Franchisebroker |  |
 | **fki_franchisereferalincomeprogram_id** | **Integer** | The unique ID of the Franchisereferalincomeprogram |  |
 | **fki_period_id** | **Integer** | The unique ID of the Period |  |
@@ -26,6 +27,7 @@ require 'ezmax_api'
 instance = EzmaxApi::FranchisereferalincomeRequestCompound.new(
   obj_address: null,
   a_obj_contact: null,
+  pki_franchisereferalincome_id: 35,
   fki_franchisebroker_id: 61,
   fki_franchisereferalincomeprogram_id: 51,
   fki_period_id: 21,

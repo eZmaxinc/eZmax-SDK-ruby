@@ -25,6 +25,12 @@ describe EzmaxApi::EzsignfolderRequest do
       expect(instance).to be_instance_of(EzmaxApi::EzsignfolderRequest)
     end
   end
+  describe 'test attribute "pki_ezsignfolder_id"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "fki_ezsignfoldertype_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

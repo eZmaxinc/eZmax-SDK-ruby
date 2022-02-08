@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Ezsignfolder Object and children to create a complete structure
   class EzsignfolderRequestCompound
+    # The unique ID of the Ezsignfolder
+    attr_accessor :pki_ezsignfolder_id
+
     # The unique ID of the Ezsignfoldertype.
     attr_accessor :fki_ezsignfoldertype_id
 
@@ -33,6 +36,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsignfolder_id' => :'pkiEzsignfolderID',
         :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
         :'fki_ezsigntsarequirement_id' => :'fkiEzsigntsarequirementID',
         :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
@@ -49,6 +53,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsignfolder_id' => :'Integer',
         :'fki_ezsignfoldertype_id' => :'Integer',
         :'fki_ezsigntsarequirement_id' => :'Integer',
         :'s_ezsignfolder_description' => :'String',
@@ -84,6 +89,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_ezsignfolder_id')
+        self.pki_ezsignfolder_id = attributes[:'pki_ezsignfolder_id']
+      end
 
       if attributes.key?(:'fki_ezsignfoldertype_id')
         self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
@@ -177,6 +186,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsignfolder_id == o.pki_ezsignfolder_id &&
           fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
           fki_ezsigntsarequirement_id == o.fki_ezsigntsarequirement_id &&
           s_ezsignfolder_description == o.s_ezsignfolder_description &&
@@ -193,7 +203,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_ezsignfoldertype_id, fki_ezsigntsarequirement_id, s_ezsignfolder_description, t_ezsignfolder_note, e_ezsignfolder_sendreminderfrequency].hash
+      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, fki_ezsigntsarequirement_id, s_ezsignfolder_description, t_ezsignfolder_note, e_ezsignfolder_sendreminderfrequency].hash
     end
 
     # Builds the object from hash

@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Ezsignsignature Object
   class EzsignsignatureRequest
+    # The unique ID of the Ezsignsignature
+    attr_accessor :pki_ezsignsignature_id
+
     # The unique ID of the Ezsignfoldersignerassociation
     attr_accessor :fki_ezsignfoldersignerassociation_id
 
@@ -39,6 +42,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsignsignature_id' => :'pkiEzsignsignatureID',
         :'fki_ezsignfoldersignerassociation_id' => :'fkiEzsignfoldersignerassociationID',
         :'i_ezsignpage_pagenumber' => :'iEzsignpagePagenumber',
         :'i_ezsignsignature_x' => :'iEzsignsignatureX',
@@ -57,6 +61,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsignsignature_id' => :'Integer',
         :'fki_ezsignfoldersignerassociation_id' => :'Integer',
         :'i_ezsignpage_pagenumber' => :'Integer',
         :'i_ezsignsignature_x' => :'Integer',
@@ -87,6 +92,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_ezsignsignature_id')
+        self.pki_ezsignsignature_id = attributes[:'pki_ezsignsignature_id']
+      end
 
       if attributes.key?(:'fki_ezsignfoldersignerassociation_id')
         self.fki_ezsignfoldersignerassociation_id = attributes[:'fki_ezsignfoldersignerassociation_id']
@@ -170,6 +179,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsignsignature_id == o.pki_ezsignsignature_id &&
           fki_ezsignfoldersignerassociation_id == o.fki_ezsignfoldersignerassociation_id &&
           i_ezsignpage_pagenumber == o.i_ezsignpage_pagenumber &&
           i_ezsignsignature_x == o.i_ezsignsignature_x &&
@@ -188,7 +198,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id].hash
+      [pki_ezsignsignature_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id].hash
     end
 
     # Builds the object from hash

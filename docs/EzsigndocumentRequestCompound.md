@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument | [optional] |
 | **e_ezsigndocument_source** | **String** | Indicates where to look for the document binary content. |  |
 | **e_ezsigndocument_format** | **String** | Indicates the format of the document. |  |
 | **s_ezsigndocument_base64** | **String** | The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource &#x3D; Base64. | [optional] |
@@ -21,6 +22,7 @@
 require 'ezmax_api'
 
 instance = EzmaxApi::EzsigndocumentRequestCompound.new(
+  pki_ezsigndocument_id: 97,
   e_ezsigndocument_source: null,
   e_ezsigndocument_format: null,
   s_ezsigndocument_base64: null,
