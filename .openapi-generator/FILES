@@ -87,8 +87,11 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
+docs/EzsigndocumentPatchObjectV1Request.md
+docs/EzsigndocumentPatchObjectV1Response.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
+docs/EzsigndocumentRequestPatch.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsigndocumentResponseCompoundAllOf.md
@@ -354,8 +357,11 @@ lib/ezmax_api/models/ezsigndocument_get_object_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_request.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_response.rb
 lib/ezmax_api/models/ezsigndocument_get_words_positions_v1_response_all_of.rb
+lib/ezmax_api/models/ezsigndocument_patch_object_v1_request.rb
+lib/ezmax_api/models/ezsigndocument_patch_object_v1_response.rb
 lib/ezmax_api/models/ezsigndocument_request.rb
 lib/ezmax_api/models/ezsigndocument_request_compound.rb
+lib/ezmax_api/models/ezsigndocument_request_patch.rb
 lib/ezmax_api/models/ezsigndocument_response.rb
 lib/ezmax_api/models/ezsigndocument_response_compound.rb
 lib/ezmax_api/models/ezsigndocument_response_compound_all_of.rb
@@ -600,7 +606,10 @@ spec/models/ezsigndocument_get_object_v1_response_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_request_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_response_all_of_spec.rb
 spec/models/ezsigndocument_get_words_positions_v1_response_spec.rb
+spec/models/ezsigndocument_patch_object_v1_request_spec.rb
+spec/models/ezsigndocument_patch_object_v1_response_spec.rb
 spec/models/ezsigndocument_request_compound_spec.rb
+spec/models/ezsigndocument_request_patch_spec.rb
 spec/models/ezsigndocument_request_spec.rb
 spec/models/ezsigndocument_response_compound_all_of_spec.rb
 spec/models/ezsigndocument_response_compound_spec.rb

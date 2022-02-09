@@ -6,7 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder |
 | [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder |
-| [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an Ezsignfolder |
+| [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder |
 | [**ezsignfolder_get_ezsigndocuments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations |
 | [**ezsignfolder_get_forms_data_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
@@ -160,7 +160,7 @@ end
 
 > <EzsignfolderEditObjectV1Response> ezsignfolder_edit_object_v1(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
 
-Edit an Ezsignfolder
+Modify an existing Ezsignfolder
 
 ### Examples
 
@@ -180,7 +180,7 @@ pki_ezsignfolder_id = 56 # Integer |
 ezsignfolder_edit_object_v1_request = EzmaxApi::EzsignfolderEditObjectV1Request.new({obj_ezsignfolder: EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, fki_ezsigntsarequirement_id: 92, s_ezsignfolder_description: 'Test eZsign Folder', t_ezsignfolder_note: 'An extra notes we can add to the ezsign folder', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})}) # EzsignfolderEditObjectV1Request | 
 
 begin
-  # Edit an Ezsignfolder
+  # Modify an existing Ezsignfolder
   result = api_instance.ezsignfolder_edit_object_v1(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
@@ -196,7 +196,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Edit an Ezsignfolder
+  # Modify an existing Ezsignfolder
   data, status_code, headers = api_instance.ezsignfolder_edit_object_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
