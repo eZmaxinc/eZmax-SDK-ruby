@@ -55,6 +55,18 @@ describe 'ObjectEzsignsignatureApi' do
     end
   end
 
+  # unit tests for ezsignsignature_edit_object_v1
+  # Edit an existing Ezsignsignature
+  # @param pki_ezsignsignature_id 
+  # @param ezsignsignature_edit_object_v1_request 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsignsignatureEditObjectV1Response]
+  describe 'ezsignsignature_edit_object_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsignsignature_get_object_v1
   # Retrieve an existing Ezsignsignature
   # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.

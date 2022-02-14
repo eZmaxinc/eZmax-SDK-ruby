@@ -160,6 +160,8 @@ docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseAllOf.md
 docs/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/EzsignsignatureDeleteObjectV1Response.md
+docs/EzsignsignatureEditObjectV1Request.md
+docs/EzsignsignatureEditObjectV1Response.md
 docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
@@ -430,6 +432,8 @@ lib/ezmax_api/models/ezsignsignature_create_object_v1_response.rb
 lib/ezmax_api/models/ezsignsignature_create_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignsignature_create_object_v1_response_m_payload.rb
 lib/ezmax_api/models/ezsignsignature_delete_object_v1_response.rb
+lib/ezmax_api/models/ezsignsignature_edit_object_v1_request.rb
+lib/ezmax_api/models/ezsignsignature_edit_object_v1_response.rb
 lib/ezmax_api/models/ezsignsignature_get_object_v1_response.rb
 lib/ezmax_api/models/ezsignsignature_get_object_v1_response_all_of.rb
 lib/ezmax_api/models/ezsignsignature_request.rb
@@ -679,6 +683,8 @@ spec/models/ezsignsignature_create_object_v1_response_all_of_spec.rb
 spec/models/ezsignsignature_create_object_v1_response_m_payload_spec.rb
 spec/models/ezsignsignature_create_object_v1_response_spec.rb
 spec/models/ezsignsignature_delete_object_v1_response_spec.rb
+spec/models/ezsignsignature_edit_object_v1_request_spec.rb
+spec/models/ezsignsignature_edit_object_v1_response_spec.rb
 spec/models/ezsignsignature_get_object_v1_response_all_of_spec.rb
 spec/models/ezsignsignature_get_object_v1_response_spec.rb
 spec/models/ezsignsignature_request_compound_all_of_spec.rb

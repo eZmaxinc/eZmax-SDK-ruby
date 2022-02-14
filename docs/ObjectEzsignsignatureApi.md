@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
+| [**ezsignsignature_edit_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignature_get_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 
 
@@ -146,6 +147,77 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignsignature_edit_object_v1
+
+> <EzsignsignatureEditObjectV1Response> ezsignsignature_edit_object_v1(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+
+Edit an existing Ezsignsignature
+
+### Examples
+
+```ruby
+require 'time'
+require 'ezmax_api'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
+pki_ezsignsignature_id = 56 # Integer | 
+ezsignsignature_edit_object_v1_request = EzmaxApi::EzsignsignatureEditObjectV1Request.new({obj_ezsignsignature: EzmaxApi::EzsignsignatureRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})}) # EzsignsignatureEditObjectV1Request | 
+
+begin
+  # Edit an existing Ezsignsignature
+  result = api_instance.ezsignsignature_edit_object_v1(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v1: #{e}"
+end
+```
+
+#### Using the ezsignsignature_edit_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignsignatureEditObjectV1Response>, Integer, Hash)> ezsignsignature_edit_object_v1_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+
+```ruby
+begin
+  # Edit an existing Ezsignsignature
+  data, status_code, headers = api_instance.ezsignsignature_edit_object_v1_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignsignatureEditObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignsignature_id** | **Integer** |  |  |
+| **ezsignsignature_edit_object_v1_request** | [**EzsignsignatureEditObjectV1Request**](EzsignsignatureEditObjectV1Request.md) |  |  |
+
+### Return type
+
+[**EzsignsignatureEditObjectV1Response**](EzsignsignatureEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
