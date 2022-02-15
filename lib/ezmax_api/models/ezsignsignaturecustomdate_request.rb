@@ -16,6 +16,9 @@ require 'time'
 module EzmaxApi
   # An Ezsignsignaturecustomdate Object
   class EzsignsignaturecustomdateRequest
+    # The unique ID of the Ezsignsignaturecustomdate
+    attr_accessor :pki_ezsignsignaturecustomdate_id
+
     # The X coordinate (Horizontal) where to put the custom date block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the custom date block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
     attr_accessor :i_ezsignsignaturecustomdate_x
 
@@ -28,6 +31,7 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'pki_ezsignsignaturecustomdate_id' => :'pkiEzsignsignaturecustomdateID',
         :'i_ezsignsignaturecustomdate_x' => :'iEzsignsignaturecustomdateX',
         :'i_ezsignsignaturecustomdate_y' => :'iEzsignsignaturecustomdateY',
         :'s_ezsignsignaturecustomdate_format' => :'sEzsignsignaturecustomdateFormat'
@@ -42,6 +46,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'pki_ezsignsignaturecustomdate_id' => :'Integer',
         :'i_ezsignsignaturecustomdate_x' => :'Integer',
         :'i_ezsignsignaturecustomdate_y' => :'Integer',
         :'s_ezsignsignaturecustomdate_format' => :'String'
@@ -68,6 +73,10 @@ module EzmaxApi
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'pki_ezsignsignaturecustomdate_id')
+        self.pki_ezsignsignaturecustomdate_id = attributes[:'pki_ezsignsignaturecustomdate_id']
+      end
 
       if attributes.key?(:'i_ezsignsignaturecustomdate_x')
         self.i_ezsignsignaturecustomdate_x = attributes[:'i_ezsignsignaturecustomdate_x']
@@ -115,6 +124,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          pki_ezsignsignaturecustomdate_id == o.pki_ezsignsignaturecustomdate_id &&
           i_ezsignsignaturecustomdate_x == o.i_ezsignsignaturecustomdate_x &&
           i_ezsignsignaturecustomdate_y == o.i_ezsignsignaturecustomdate_y &&
           s_ezsignsignaturecustomdate_format == o.s_ezsignsignaturecustomdate_format
@@ -129,7 +139,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_ezsignsignaturecustomdate_x, i_ezsignsignaturecustomdate_y, s_ezsignsignaturecustomdate_format].hash
+      [pki_ezsignsignaturecustomdate_id, i_ezsignsignaturecustomdate_x, i_ezsignsignaturecustomdate_y, s_ezsignsignaturecustomdate_format].hash
     end
 
     # Builds the object from hash
