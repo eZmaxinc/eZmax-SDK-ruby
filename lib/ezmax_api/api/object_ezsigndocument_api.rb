@@ -299,21 +299,21 @@ module EzmaxApi
     # Edit multiple ezsignsignatures
     # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param ezsignsignature_request_compound [Array<EzsignsignatureRequestCompound>] 
+    # @param ezsigndocument_edit_ezsignsignatures_v1_request [EzsigndocumentEditEzsignsignaturesV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentEditEzsignsignaturesV1Response]
-    def ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsignsignature_request_compound, opts = {})
-      data, _status_code, _headers = ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound, opts)
+    def ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request, opts = {})
+      data, _status_code, _headers = ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request, opts)
       data
     end
 
     # Edit multiple ezsignsignatures
     # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param ezsignsignature_request_compound [Array<EzsignsignatureRequestCompound>] 
+    # @param ezsigndocument_edit_ezsignsignatures_v1_request [EzsigndocumentEditEzsignsignaturesV1Request] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentEditEzsignsignaturesV1Response, Integer, Hash)>] EzsigndocumentEditEzsignsignaturesV1Response data, response status code and response headers
-    def ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound, opts = {})
+    def ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1 ...'
       end
@@ -321,9 +321,9 @@ module EzmaxApi
       if @api_client.config.client_side_validation && pki_ezsigndocument_id.nil?
         fail ArgumentError, "Missing the required parameter 'pki_ezsigndocument_id' when calling ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1"
       end
-      # verify the required parameter 'ezsignsignature_request_compound' is set
-      if @api_client.config.client_side_validation && ezsignsignature_request_compound.nil?
-        fail ArgumentError, "Missing the required parameter 'ezsignsignature_request_compound' when calling ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1"
+      # verify the required parameter 'ezsigndocument_edit_ezsignsignatures_v1_request' is set
+      if @api_client.config.client_side_validation && ezsigndocument_edit_ezsignsignatures_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'ezsigndocument_edit_ezsignsignatures_v1_request' when calling ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1"
       end
       # resource path
       local_var_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures'.sub('{' + 'pkiEzsigndocumentID' + '}', CGI.escape(pki_ezsigndocument_id.to_s))
@@ -345,7 +345,7 @@ module EzmaxApi
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(ezsignsignature_request_compound)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(ezsigndocument_edit_ezsignsignatures_v1_request)
 
       # return_type
       return_type = opts[:debug_return_type] || 'EzsigndocumentEditEzsignsignaturesV1Response'

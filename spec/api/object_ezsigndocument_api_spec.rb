@@ -85,7 +85,7 @@ describe 'ObjectEzsigndocumentApi' do
   # Edit multiple ezsignsignatures
   # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
   # @param pki_ezsigndocument_id 
-  # @param ezsignsignature_request_compound 
+  # @param ezsigndocument_edit_ezsignsignatures_v1_request 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentEditEzsignsignaturesV1Response]
   describe 'ezsigndocument_edit_ezsignsignatures_v1 test' do

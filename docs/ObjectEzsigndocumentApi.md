@@ -305,7 +305,7 @@ end
 
 ## ezsigndocument_edit_ezsignsignatures_v1
 
-> <EzsigndocumentEditEzsignsignaturesV1Response> ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsignsignature_request_compound)
+> <EzsigndocumentEditEzsignsignaturesV1Response> ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request)
 
 Edit multiple ezsignsignatures
 
@@ -326,11 +326,11 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsignsignature_request_compound = [EzmaxApi::EzsignsignatureRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})] # Array<EzsignsignatureRequestCompound> | 
+ezsigndocument_edit_ezsignsignatures_v1_request = EzmaxApi::EzsigndocumentEditEzsignsignaturesV1Request.new({a_obj_ezsignsignature: [EzmaxApi::EzsignsignatureRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})]}) # EzsigndocumentEditEzsignsignaturesV1Request | 
 
 begin
   # Edit multiple ezsignsignatures
-  result = api_instance.ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsignsignature_request_compound)
+  result = api_instance.ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignsignatures_v1: #{e}"
@@ -341,12 +341,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsigndocumentEditEzsignsignaturesV1Response>, Integer, Hash)> ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound)
+> <Array(<EzsigndocumentEditEzsignsignaturesV1Response>, Integer, Hash)> ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request)
 
 ```ruby
 begin
   # Edit multiple ezsignsignatures
-  data, status_code, headers = api_instance.ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound)
+  data, status_code, headers = api_instance.ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EzsigndocumentEditEzsignsignaturesV1Response>
@@ -360,7 +360,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsigndocument_id** | **Integer** |  |  |
-| **ezsignsignature_request_compound** | [**Array&lt;EzsignsignatureRequestCompound&gt;**](EzsignsignatureRequestCompound.md) |  |  |
+| **ezsigndocument_edit_ezsignsignatures_v1_request** | [**EzsigndocumentEditEzsignsignaturesV1Request**](EzsigndocumentEditEzsignsignaturesV1Request.md) |  |  |
 
 ### Return type
 
