@@ -81,6 +81,19 @@ describe 'ObjectEzsigndocumentApi' do
     end
   end
 
+  # unit tests for ezsigndocument_edit_ezsignsignatures_v1
+  # Edit multiple ezsignsignatures
+  # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+  # @param pki_ezsigndocument_id 
+  # @param ezsignsignature_request_compound 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsigndocumentEditEzsignsignaturesV1Response]
+  describe 'ezsigndocument_edit_ezsignsignatures_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsigndocument_get_download_url_v1
   # Retrieve a URL to download documents.
   # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.

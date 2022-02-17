@@ -148,7 +148,7 @@ module EzmaxApi
       return data, status_code, headers
     end
 
-    # Modify an existing Ezsignfolder
+    # Edit an existing Ezsignfolder
     # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_edit_object_v1_request [EzsignfolderEditObjectV1Request] 
     # @param [Hash] opts the optional parameters
@@ -158,7 +158,7 @@ module EzmaxApi
       data
     end
 
-    # Modify an existing Ezsignfolder
+    # Edit an existing Ezsignfolder
     # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_edit_object_v1_request [EzsignfolderEditObjectV1Request] 
     # @param [Hash] opts the optional parameters

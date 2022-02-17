@@ -296,6 +296,80 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Edit multiple ezsignsignatures
+    # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param ezsignsignature_request_compound [Array<EzsignsignatureRequestCompound>] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsigndocumentEditEzsignsignaturesV1Response]
+    def ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsignsignature_request_compound, opts = {})
+      data, _status_code, _headers = ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound, opts)
+      data
+    end
+
+    # Edit multiple ezsignsignatures
+    # Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param ezsignsignature_request_compound [Array<EzsignsignatureRequestCompound>] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsigndocumentEditEzsignsignaturesV1Response, Integer, Hash)>] EzsigndocumentEditEzsignsignaturesV1Response data, response status code and response headers
+    def ezsigndocument_edit_ezsignsignatures_v1_with_http_info(pki_ezsigndocument_id, ezsignsignature_request_compound, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsigndocument_id' is set
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsigndocument_id' when calling ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1"
+      end
+      # verify the required parameter 'ezsignsignature_request_compound' is set
+      if @api_client.config.client_side_validation && ezsignsignature_request_compound.nil?
+        fail ArgumentError, "Missing the required parameter 'ezsignsignature_request_compound' when calling ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures'.sub('{' + 'pkiEzsigndocumentID' + '}', CGI.escape(pki_ezsigndocument_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(ezsignsignature_request_compound)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsigndocumentEditEzsignsignaturesV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsigndocumentApi.ezsigndocument_edit_ezsignsignatures_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsigndocumentApi#ezsigndocument_edit_ezsignsignatures_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
     # @param pki_ezsigndocument_id [Integer] 

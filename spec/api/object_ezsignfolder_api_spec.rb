@@ -56,7 +56,7 @@ describe 'ObjectEzsignfolderApi' do
   end
 
   # unit tests for ezsignfolder_edit_object_v1
-  # Modify an existing Ezsignfolder
+  # Edit an existing Ezsignfolder
   # @param pki_ezsignfolder_id 
   # @param ezsignfolder_edit_object_v1_request 
   # @param [Hash] opts the optional parameters
