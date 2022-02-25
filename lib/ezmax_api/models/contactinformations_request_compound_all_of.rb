@@ -15,12 +15,16 @@ require 'time'
 
 module EzmaxApi
   class ContactinformationsRequestCompoundAllOf
+    # 
     attr_accessor :a_obj_address
 
+    # 
     attr_accessor :a_obj_phone
 
+    # 
     attr_accessor :a_obj_email
 
+    # 
     attr_accessor :a_obj_website
 
     # Attribute mapping from ruby-style variable name to JSON key.

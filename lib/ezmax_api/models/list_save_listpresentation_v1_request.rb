@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Request for the POST /1/module/list/listpresentation/{sListName} API Request
   class ListSaveListpresentationV1Request
+    # 
     attr_accessor :a_obj_listpresentation
 
     # Attribute mapping from ruby-style variable name to JSON key.

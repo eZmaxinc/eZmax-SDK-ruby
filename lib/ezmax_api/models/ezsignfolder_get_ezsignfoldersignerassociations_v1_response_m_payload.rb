@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
   class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
+    # 
     attr_accessor :a_obj_ezsignfoldersignerassociation
 
     # Attribute mapping from ruby-style variable name to JSON key.

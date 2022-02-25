@@ -19,6 +19,7 @@ module EzmaxApi
     # The Label for the Ezsignformfieldgroup
     attr_accessor :s_ezsignformfieldgroup_label
 
+    # 
     attr_accessor :a_obj_ezsignformfield
 
     # Attribute mapping from ruby-style variable name to JSON key.

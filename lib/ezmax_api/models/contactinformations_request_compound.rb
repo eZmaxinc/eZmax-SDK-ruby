@@ -16,12 +16,16 @@ require 'time'
 module EzmaxApi
   # A Contactinformations Object and children to create a complete structure
   class ContactinformationsRequestCompound
+    # 
     attr_accessor :a_obj_address
 
+    # 
     attr_accessor :a_obj_phone
 
+    # 
     attr_accessor :a_obj_email
 
+    # 
     attr_accessor :a_obj_website
 
     # The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.

@@ -17,6 +17,7 @@ module EzmaxApi
   class FranchisereferalincomeRequestCompoundAllOf
     attr_accessor :obj_address
 
+    # 
     attr_accessor :a_obj_contact
 
     # Attribute mapping from ruby-style variable name to JSON key.

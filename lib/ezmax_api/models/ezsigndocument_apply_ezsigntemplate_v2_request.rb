@@ -19,6 +19,7 @@ module EzmaxApi
     # The unique ID of the Ezsigndocument
     attr_accessor :fki_ezsigntemplate_id
 
+    # 
     attr_accessor :a_s_ezsigntemplatesigner
 
     attr_accessor :a_pki_ezsignfoldersignerassociation_id

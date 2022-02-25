@@ -15,6 +15,7 @@ require 'time'
 
 module EzmaxApi
   class EzsignfolderGetListV1ResponseMPayloadAllOf
+    # 
     attr_accessor :a_obj_ezsignfolder
 
     # Attribute mapping from ruby-style variable name to JSON key.

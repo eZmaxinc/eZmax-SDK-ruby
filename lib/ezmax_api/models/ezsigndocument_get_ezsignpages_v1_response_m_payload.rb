@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignpages API Request
   class EzsigndocumentGetEzsignpagesV1ResponseMPayload
+    # 
     attr_accessor :a_obj_ezsignpage
 
     # Attribute mapping from ruby-style variable name to JSON key.

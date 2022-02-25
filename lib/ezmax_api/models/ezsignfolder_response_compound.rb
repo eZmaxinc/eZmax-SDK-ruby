@@ -40,7 +40,7 @@ module EzmaxApi
     # The description of the Ezsignfolder
     attr_accessor :s_ezsignfolder_description
 
-    # Somes extra notes about the eZsign Folder
+    # Note about the Ezsignfolder
     attr_accessor :t_ezsignfolder_note
 
     attr_accessor :e_ezsignfolder_sendreminderfrequency

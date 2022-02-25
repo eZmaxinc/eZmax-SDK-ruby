@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsigntemplatepackage/getList API Request
   class EzsigntemplatepackageGetListV1ResponseMPayload
+    # 
     attr_accessor :a_obj_ezsigntemplatepackage
 
     # The number of rows returned

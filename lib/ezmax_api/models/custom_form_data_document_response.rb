@@ -28,6 +28,7 @@ module EzmaxApi
     # The date and time at which the object was last modified
     attr_accessor :dt_modified_date
 
+    # 
     attr_accessor :a_obj_form_data_signer
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -72,6 +72,7 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_delete_object_v1
   # Delete an existing Ezsigndocument
+  # 
   # @param pki_ezsigndocument_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentDeleteObjectV1Response]
@@ -94,6 +95,18 @@ describe 'ObjectEzsigndocumentApi' do
     end
   end
 
+  # unit tests for ezsigndocument_end_prematurely_v1
+  # End prematurely
+  # End prematurely an Ezsigndocument when some signatures are still required
+  # @param pki_ezsigndocument_id 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsigndocumentEndPrematurelyV1Response]
+  describe 'ezsigndocument_end_prematurely_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsigndocument_get_download_url_v1
   # Retrieve a URL to download documents.
   # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
@@ -109,6 +122,7 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_get_ezsignpages_v1
   # Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+  # 
   # @param pki_ezsigndocument_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetEzsignpagesV1Response]
@@ -120,6 +134,7 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_get_form_data_v1
   # Retrieve an existing Ezsigndocument&#39;s Form Data
+  # 
   # @param pki_ezsigndocument_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetFormDataV1Response]
@@ -131,7 +146,6 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_get_object_v1
   # Retrieve an existing Ezsigndocument
-  # ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
   # @param pki_ezsigndocument_id 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetObjectV1Response]
@@ -141,8 +155,21 @@ describe 'ObjectEzsigndocumentApi' do
     end
   end
 
+  # unit tests for ezsigndocument_get_temporary_proof_v1
+  # Retrieve the temporary proof
+  # Retrieve the temporary proof while the Ezsigndocument is being processed since the proof isn&#39;t available until the Ezsigndocument is completed
+  # @param pki_ezsigndocument_id 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsigndocumentGetTemporaryProofV1Response]
+  describe 'ezsigndocument_get_temporary_proof_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for ezsigndocument_get_words_positions_v1
   # Retrieve positions X,Y of given words from a Ezsigndocument
+  # 
   # @param pki_ezsigndocument_id 
   # @param ezsigndocument_get_words_positions_v1_request 
   # @param [Hash] opts the optional parameters
@@ -155,6 +182,7 @@ describe 'ObjectEzsigndocumentApi' do
 
   # unit tests for ezsigndocument_patch_object_v1
   # Patch an existing Ezsigndocument
+  # 
   # @param pki_ezsigndocument_id 
   # @param ezsigndocument_patch_object_v1_request 
   # @param [Hash] opts the optional parameters

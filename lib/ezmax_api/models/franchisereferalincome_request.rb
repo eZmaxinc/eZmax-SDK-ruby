@@ -43,12 +43,13 @@ module EzmaxApi
     # The date the amounts were disbursed
     attr_accessor :dt_franchisereferalincome_disbursed
 
-    # A comment about the transaction
+    # Comment about the transaction
     attr_accessor :t_franchisereferalincome_comment
 
     # The unique ID of the Franchisereoffice
     attr_accessor :fki_franchiseoffice_id
 
+    # 
     attr_accessor :s_franchisereferalincome_remoteid
 
     # Attribute mapping from ruby-style variable name to JSON key.

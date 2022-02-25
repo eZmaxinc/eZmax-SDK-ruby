@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsignfolder/getList API Request
   class EzsignfolderGetListV1ResponseMPayload
+    # 
     attr_accessor :a_obj_ezsignfolder
 
     # The number of rows returned

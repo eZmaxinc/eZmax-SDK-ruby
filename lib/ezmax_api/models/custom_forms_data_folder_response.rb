@@ -22,6 +22,7 @@ module EzmaxApi
     # The description of the Ezsignfolder
     attr_accessor :s_ezsignfolder_description
 
+    # 
     attr_accessor :a_obj_form_data_document
 
     # Attribute mapping from ruby-style variable name to JSON key.

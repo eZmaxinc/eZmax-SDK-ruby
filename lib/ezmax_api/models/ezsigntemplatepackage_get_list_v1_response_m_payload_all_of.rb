@@ -15,6 +15,7 @@ require 'time'
 
 module EzmaxApi
   class EzsigntemplatepackageGetListV1ResponseMPayloadAllOf
+    # 
     attr_accessor :a_obj_ezsigntemplatepackage
 
     # Attribute mapping from ruby-style variable name to JSON key.

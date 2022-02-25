@@ -15,6 +15,7 @@ require 'time'
 
 module EzmaxApi
   class EzsignformfieldgroupResponseCompoundAllOf
+    # 
     attr_accessor :a_obj_ezsignformfield
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -28,6 +28,7 @@ module EzmaxApi
     # The Last name of the contact
     attr_accessor :s_contact_lastname
 
+    # 
     attr_accessor :a_obj_ezsignformfieldgroup_compound
 
     # Attribute mapping from ruby-style variable name to JSON key.

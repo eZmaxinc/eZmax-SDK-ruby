@@ -15,6 +15,7 @@ require 'time'
 
 module EzmaxApi
   class EzsignbulksendGetListV1ResponseMPayloadAllOf
+    # 
     attr_accessor :a_obj_ezsignbulksend
 
     # Attribute mapping from ruby-style variable name to JSON key.

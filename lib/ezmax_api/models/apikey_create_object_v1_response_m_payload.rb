@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/apikey/createObject API Request
   class ApikeyCreateObjectV1ResponseMPayload
+    # 
     attr_accessor :a_obj_apikey
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the /1/object/ezsignbulksend/getList API Request
   class EzsignbulksendGetListV1ResponseMPayload
+    # 
     attr_accessor :a_obj_ezsignbulksend
 
     # The number of rows returned

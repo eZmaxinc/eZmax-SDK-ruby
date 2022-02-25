@@ -16,6 +16,7 @@ require 'time'
 module EzmaxApi
   # Payload for the GET /1/module/list/listpresentation/{sListName} API Request
   class ListGetListpresentationV1ResponseMPayload
+    # 
     attr_accessor :a_obj_listpresentation
 
     # Attribute mapping from ruby-style variable name to JSON key.
