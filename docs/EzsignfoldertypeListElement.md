@@ -12,13 +12,13 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfoldertypeListElement.new(
   pki_ezsignfoldertype_id: 5,
   e_ezsignfoldertype_privacylevel: null,
   s_ezsignfoldertype_name_x: Default,
-  b_ezsignfoldertype_isactive: null
+  b_ezsignfoldertype_isactive: true
 )
 ```
 

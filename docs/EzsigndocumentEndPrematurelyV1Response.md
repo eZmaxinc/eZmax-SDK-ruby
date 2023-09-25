@@ -4,13 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] |
+| **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentEndPrematurelyV1Response.new(
   obj_debug_payload: null,

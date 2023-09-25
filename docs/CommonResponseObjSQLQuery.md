@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CommonResponseObjSQLQuery.new(
   s_query: null,

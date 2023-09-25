@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CustomFormsDataFolderResponse.new(
   pki_ezsignfolder_id: 33,

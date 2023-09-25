@@ -14,7 +14,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::ContactRequest.new(
   fki_contacttitle_id: 2,

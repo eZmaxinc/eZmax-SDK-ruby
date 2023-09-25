@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **fki_user_id** | **Integer** | The unique ID of the User |  |
-| **fki_ezsignsigner_id** | **Integer** | The unique ID of the Ezsignsigner |  |
+| **fki_user_id** | **Integer** | The unique ID of the User | [optional] |
+| **fki_ezsignsigner_id** | **Integer** | The unique ID of the Ezsignsigner | [optional] |
 | **dt_ezsigndocumentlog_datetime** | **String** | The date and time at which the event was logged |  |
 | **e_ezsigndocumentlog_type** | [**FieldEEzsigndocumentlogType**](FieldEEzsigndocumentlogType.md) |  |  |
 | **s_ezsigndocumentlog_detail** | **String** | The detail of the Ezsigndocumentlog |  |
@@ -16,7 +16,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentlogResponse.new(
   fki_user_id: 70,

@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CustomWordPositionWordResponse.new(
   s_word: null,

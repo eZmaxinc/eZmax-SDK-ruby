@@ -4,16 +4,16 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **s_error_message** | **String** | More detail about the error |  |
-| **e_error_code** | **String** | The error code. See documentation for valid values | [optional] |
+| **s_error_message** | **String** | The message giving details about the error |  |
+| **e_error_code** | [**FieldEErrorCode**](FieldEErrorCode.md) |  |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CommonResponseError.new(
-  s_error_message: null,
+  s_error_message: Invalid Signature Headers,
   e_error_code: null
 )
 ```

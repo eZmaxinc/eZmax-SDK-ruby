@@ -4,19 +4,19 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**EzsigndocumentGetEzsignpagesV1ResponseMPayload**](EzsigndocumentGetEzsignpagesV1ResponseMPayload.md) |  |  |
-| **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] |
+| **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
+| **m_payload** | [**EzsigndocumentGetEzsignpagesV1ResponseMPayload**](EzsigndocumentGetEzsignpagesV1ResponseMPayload.md) |  |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentGetEzsignpagesV1Response.new(
-  m_payload: null,
   obj_debug_payload: null,
-  obj_debug: null
+  obj_debug: null,
+  m_payload: null
 )
 ```
 

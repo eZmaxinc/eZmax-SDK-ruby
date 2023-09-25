@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsignfoldersignerassociation** | [**Array&lt;EzsignfoldersignerassociationResponseCompound&gt;**](EzsignfoldersignerassociationResponseCompound.md) |  |  |
+| **a_obj_ezsignfoldersignerassociation** | [**Array&lt;CustomEzsignfoldersignerassociationActionableElementResponse&gt;**](CustomEzsignfoldersignerassociationActionableElementResponse.md) |  |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.new(
   a_obj_ezsignfoldersignerassociation: null

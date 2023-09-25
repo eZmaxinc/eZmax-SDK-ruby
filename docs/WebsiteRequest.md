@@ -10,11 +10,11 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::WebsiteRequest.new(
   fki_websitetype_id: 1,
-  s_website_address: https://www.domain.com
+  s_website_address: https://www.example.com
 )
 ```
 

@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::UserCreateEzsignuserV1ResponseMPayload.new(
   a_s_email_address_success: null,

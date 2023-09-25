@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::AttemptResponse.new(
   dt_attempt_start: 2020-12-31 23:59:59,

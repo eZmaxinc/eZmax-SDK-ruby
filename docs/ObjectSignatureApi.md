@@ -1,0 +1,297 @@
+# EzmaxApi::ObjectSignatureApi
+
+All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**signature_create_object_v1**](ObjectSignatureApi.md#signature_create_object_v1) | **POST** /1/object/signature | Create a new Signature |
+| [**signature_delete_object_v1**](ObjectSignatureApi.md#signature_delete_object_v1) | **DELETE** /1/object/signature/{pkiSignatureID} | Delete an existing Signature |
+| [**signature_edit_object_v1**](ObjectSignatureApi.md#signature_edit_object_v1) | **PUT** /1/object/signature/{pkiSignatureID} | Edit an existing Signature |
+| [**signature_get_object_v2**](ObjectSignatureApi.md#signature_get_object_v2) | **GET** /2/object/signature/{pkiSignatureID} | Retrieve an existing Signature |
+
+
+## signature_create_object_v1
+
+> <SignatureCreateObjectV1Response> signature_create_object_v1(signature_create_object_v1_request)
+
+Create a new Signature
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSignatureApi.new
+signature_create_object_v1_request = EzmaxApi::SignatureCreateObjectV1Request.new({a_obj_signature: [EzmaxApi::SignatureRequestCompound.new({t_signature_svg: '{"$ref":"#/components/examples/Svg/value"}'})]}) # SignatureCreateObjectV1Request | 
+
+begin
+  # Create a new Signature
+  result = api_instance.signature_create_object_v1(signature_create_object_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_create_object_v1: #{e}"
+end
+```
+
+#### Using the signature_create_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SignatureCreateObjectV1Response>, Integer, Hash)> signature_create_object_v1_with_http_info(signature_create_object_v1_request)
+
+```ruby
+begin
+  # Create a new Signature
+  data, status_code, headers = api_instance.signature_create_object_v1_with_http_info(signature_create_object_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SignatureCreateObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_create_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **signature_create_object_v1_request** | [**SignatureCreateObjectV1Request**](SignatureCreateObjectV1Request.md) |  |  |
+
+### Return type
+
+[**SignatureCreateObjectV1Response**](SignatureCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## signature_delete_object_v1
+
+> <SignatureDeleteObjectV1Response> signature_delete_object_v1(pki_signature_id)
+
+Delete an existing Signature
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSignatureApi.new
+pki_signature_id = 56 # Integer | The unique ID of the Signature
+
+begin
+  # Delete an existing Signature
+  result = api_instance.signature_delete_object_v1(pki_signature_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_delete_object_v1: #{e}"
+end
+```
+
+#### Using the signature_delete_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SignatureDeleteObjectV1Response>, Integer, Hash)> signature_delete_object_v1_with_http_info(pki_signature_id)
+
+```ruby
+begin
+  # Delete an existing Signature
+  data, status_code, headers = api_instance.signature_delete_object_v1_with_http_info(pki_signature_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SignatureDeleteObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_delete_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_signature_id** | **Integer** | The unique ID of the Signature |  |
+
+### Return type
+
+[**SignatureDeleteObjectV1Response**](SignatureDeleteObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## signature_edit_object_v1
+
+> <SignatureEditObjectV1Response> signature_edit_object_v1(pki_signature_id, signature_edit_object_v1_request)
+
+Edit an existing Signature
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSignatureApi.new
+pki_signature_id = 56 # Integer | The unique ID of the Signature
+signature_edit_object_v1_request = EzmaxApi::SignatureEditObjectV1Request.new({obj_signature: EzmaxApi::SignatureRequestCompound.new({t_signature_svg: '{"$ref":"#/components/examples/Svg/value"}'})}) # SignatureEditObjectV1Request | 
+
+begin
+  # Edit an existing Signature
+  result = api_instance.signature_edit_object_v1(pki_signature_id, signature_edit_object_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_edit_object_v1: #{e}"
+end
+```
+
+#### Using the signature_edit_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SignatureEditObjectV1Response>, Integer, Hash)> signature_edit_object_v1_with_http_info(pki_signature_id, signature_edit_object_v1_request)
+
+```ruby
+begin
+  # Edit an existing Signature
+  data, status_code, headers = api_instance.signature_edit_object_v1_with_http_info(pki_signature_id, signature_edit_object_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SignatureEditObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_edit_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_signature_id** | **Integer** | The unique ID of the Signature |  |
+| **signature_edit_object_v1_request** | [**SignatureEditObjectV1Request**](SignatureEditObjectV1Request.md) |  |  |
+
+### Return type
+
+[**SignatureEditObjectV1Response**](SignatureEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## signature_get_object_v2
+
+> <SignatureGetObjectV2Response> signature_get_object_v2(pki_signature_id)
+
+Retrieve an existing Signature
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSignatureApi.new
+pki_signature_id = 56 # Integer | The unique ID of the Signature
+
+begin
+  # Retrieve an existing Signature
+  result = api_instance.signature_get_object_v2(pki_signature_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_get_object_v2: #{e}"
+end
+```
+
+#### Using the signature_get_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SignatureGetObjectV2Response>, Integer, Hash)> signature_get_object_v2_with_http_info(pki_signature_id)
+
+```ruby
+begin
+  # Retrieve an existing Signature
+  data, status_code, headers = api_instance.signature_get_object_v2_with_http_info(pki_signature_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SignatureGetObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSignatureApi->signature_get_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_signature_id** | **Integer** | The unique ID of the Signature |  |
+
+### Return type
+
+[**SignatureGetObjectV2Response**](SignatureGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+

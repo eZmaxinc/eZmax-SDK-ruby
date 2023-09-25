@@ -8,7 +8,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::HeaderAcceptLanguage.new()
 ```

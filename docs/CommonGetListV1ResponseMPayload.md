@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CommonGetListV1ResponseMPayload.new(
   i_row_returned: 100,

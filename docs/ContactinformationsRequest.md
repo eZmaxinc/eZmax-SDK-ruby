@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::ContactinformationsRequest.new(
   i_address_default: null,

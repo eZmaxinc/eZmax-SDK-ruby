@@ -19,7 +19,7 @@ The endpoint allows to initiate the creation or a user of type Ezsignuser.  The 
 
 ```ruby
 require 'time'
-require 'ezmax_api'
+require 'Ezmaxapi'
 # setup authorization
 EzmaxApi.configure do |config|
   # Configure API key authorization: Authorization
@@ -29,7 +29,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ModuleUserApi.new
-user_create_ezsignuser_v1_request = [EzmaxApi::UserCreateEzsignuserV1Request.new({fki_language_id: 2, s_user_firstname: 'John', s_user_lastname: 'Doe', s_email_address: 'example@domain.com', s_phone_region: '514', s_phone_exchange: '990', s_phone_number: '1516'})] # Array<UserCreateEzsignuserV1Request> | 
+user_create_ezsignuser_v1_request = [EzmaxApi::UserCreateEzsignuserV1Request.new({fki_language_id: 2, s_user_firstname: 'John', s_user_lastname: 'Doe', s_email_address: 'email@example.com', s_phone_region: '514', s_phone_exchange: '990', s_phone_number: '1516'})] # Array<UserCreateEzsignuserV1Request> | 
 
 begin
   # Create a new User of type Ezsignuser

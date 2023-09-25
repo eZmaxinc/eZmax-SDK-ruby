@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentGetWordsPositionsV1Request.new(
   e_get: null,

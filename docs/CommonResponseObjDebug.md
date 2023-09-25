@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CommonResponseObjDebug.new(
   s_memory_usage: null,

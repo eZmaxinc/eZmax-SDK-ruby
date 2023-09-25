@@ -10,12 +10,12 @@
 | **i_ezsignpage_widthpdf** | **Integer** | The Width of the page in points calculated at 72 DPI |  |
 | **i_ezsignpage_heightpdf** | **Integer** | The Height of the page in points calculated at 72 DPI |  |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
-| **s_image_url** | **String** | The Url to the Ezsignpage&#39;s rasterized image.  Url will expire after 5 minutes. |  |
+| **s_computed_imageurl** | **String** | The Url to the Ezsignpage&#39;s rasterized image.  Url will expire after 5 minutes. |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignpageResponse.new(
   pki_ezsignpage_id: 64,
@@ -24,7 +24,7 @@ instance = EzmaxApi::EzsignpageResponse.new(
   i_ezsignpage_widthpdf: 612,
   i_ezsignpage_heightpdf: 792,
   i_ezsignpage_pagenumber: 1,
-  s_image_url: null
+  s_computed_imageurl: null
 )
 ```
 

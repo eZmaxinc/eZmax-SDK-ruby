@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfoldersignerassociationCreateObjectV1Request.new(
   obj_ezsignfoldersignerassociation: null,

@@ -11,8 +11,8 @@
 | **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
 | **dt_created_date** | **String** | The date and time at which the object was created |  |
-| **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsign folder was sent the last time. |  |
-| **dt_due_date** | **String** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. |  |
+| **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsignfolder was sent the last time. | [optional] |
+| **dt_ezsignfolder_duedate** | **String** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] |
 | **i_ezsigndocument** | **Integer** | The total number of Ezsigndocument in the folder |  |
 | **i_ezsigndocument_edm** | **Integer** | The total number of Ezsigndocument in the folder that were saved in the edm system |  |
 | **i_ezsignsignature** | **Integer** | The total number of signature blocks in all Ezsigndocuments in the folder |  |
@@ -21,7 +21,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfolderListElement.new(
   pki_ezsignfolder_id: 33,
@@ -31,8 +31,8 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   s_ezsignfolder_description: Test eZsign Folder,
   e_ezsignfolder_step: null,
   dt_created_date: 2020-12-31 23:59:59,
-  dt_ezsignfolder_sentdate: 2020-12-31 23:59:59,
-  dt_due_date: 2020-12-31 23:59:59,
+  dt_ezsignfolder_sentdate: 2020-12-31T23:59:59.000Z,
+  dt_ezsignfolder_duedate: 2020-12-31 23:59:59,
   i_ezsigndocument: null,
   i_ezsigndocument_edm: null,
   i_ezsignsignature: null,

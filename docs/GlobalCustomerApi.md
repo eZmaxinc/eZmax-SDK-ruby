@@ -19,14 +19,7 @@ Retrieve the customer's specific server endpoint where to send requests. This wi
 
 ```ruby
 require 'time'
-require 'ezmax_api'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
+require 'Ezmaxapi'
 
 api_instance = EzmaxApi::GlobalCustomerApi.new
 pks_customer_code = 'pks_customer_code_example' # String | 
@@ -74,7 +67,7 @@ end
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 

@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentRequestPatch.new(
   dt_ezsigndocument_duedate: 2020-12-31 23:59:59,

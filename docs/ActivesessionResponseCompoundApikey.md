@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::ActivesessionResponseCompoundApikey.new(
   pki_apikey_id: 99,

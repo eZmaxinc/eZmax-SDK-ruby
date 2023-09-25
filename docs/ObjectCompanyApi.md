@@ -1,0 +1,87 @@
+# EzmaxApi::ObjectCompanyApi
+
+All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**company_get_autocomplete_v2**](ObjectCompanyApi.md#company_get_autocomplete_v2) | **GET** /2/object/company/getAutocomplete/{sSelector} | Retrieve Companys and IDs |
+
+
+## company_get_autocomplete_v2
+
+> <CompanyGetAutocompleteV2Response> company_get_autocomplete_v2(s_selector, opts)
+
+Retrieve Companys and IDs
+
+Get the list of Company to be used in a dropdown or autocomplete control.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCompanyApi.new
+s_selector = 'All' # String | The type of Companys to return
+opts = {
+  e_filter_active: 'All', # String | Specify which results we want to display.
+  s_query: 's_query_example', # String | Allow to filter the returned results
+  accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
+}
+
+begin
+  # Retrieve Companys and IDs
+  result = api_instance.company_get_autocomplete_v2(s_selector, opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCompanyApi->company_get_autocomplete_v2: #{e}"
+end
+```
+
+#### Using the company_get_autocomplete_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CompanyGetAutocompleteV2Response>, Integer, Hash)> company_get_autocomplete_v2_with_http_info(s_selector, opts)
+
+```ruby
+begin
+  # Retrieve Companys and IDs
+  data, status_code, headers = api_instance.company_get_autocomplete_v2_with_http_info(s_selector, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CompanyGetAutocompleteV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCompanyApi->company_get_autocomplete_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **s_selector** | **String** | The type of Companys to return |  |
+| **e_filter_active** | **String** | Specify which results we want to display. | [optional][default to &#39;Active&#39;] |
+| **s_query** | **String** | Allow to filter the returned results | [optional] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+
+### Return type
+
+[**CompanyGetAutocompleteV2Response**](CompanyGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+

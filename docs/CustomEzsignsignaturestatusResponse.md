@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CustomEzsignsignaturestatusResponse.new(
   e_ezsignsignaturestatus_steptype: null,

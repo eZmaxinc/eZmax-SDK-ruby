@@ -4,19 +4,19 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**EzsigntemplatepackageGetListV1ResponseMPayload**](EzsigntemplatepackageGetListV1ResponseMPayload.md) |  |  |
-| **obj_debug_payload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | [optional] |
+| **obj_debug_payload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
+| **m_payload** | [**EzsigntemplatepackageGetListV1ResponseMPayload**](EzsigntemplatepackageGetListV1ResponseMPayload.md) |  |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigntemplatepackageGetListV1Response.new(
-  m_payload: null,
   obj_debug_payload: null,
-  obj_debug: null
+  obj_debug: null,
+  m_payload: null
 )
 ```
 

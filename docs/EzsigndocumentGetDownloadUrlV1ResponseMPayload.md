@@ -9,10 +9,10 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigndocumentGetDownloadUrlV1ResponseMPayload.new(
-  s_download_url: null
+  s_download_url: http://www.example.com/document.pdf
 )
 ```
 

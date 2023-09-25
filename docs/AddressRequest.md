@@ -16,7 +16,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::AddressRequest.new(
   fki_addresstype_id: 1,

@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CustomFormDataDocumentResponse.new(
   pki_ezsigndocument_id: 97,

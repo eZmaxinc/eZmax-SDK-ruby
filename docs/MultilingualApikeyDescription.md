@@ -4,17 +4,17 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **s_apikey_description1** | **String** | Value in French | [optional] |
-| **s_apikey_description2** | **String** | Value in English | [optional] |
+| **s_apikey_description1** | **String** | The description of the Apikey in French | [optional] |
+| **s_apikey_description2** | **String** | The description of the Apikey in English | [optional] |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualApikeyDescription.new(
-  s_apikey_description1: null,
-  s_apikey_description2: null
+  s_apikey_description1: Projet X,
+  s_apikey_description2: Project X
 )
 ```
 

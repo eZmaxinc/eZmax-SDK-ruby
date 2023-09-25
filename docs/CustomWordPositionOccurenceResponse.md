@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::CustomWordPositionOccurenceResponse.new(
   i_page: null,

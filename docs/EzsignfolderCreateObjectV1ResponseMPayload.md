@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfolderCreateObjectV1ResponseMPayload.new(
   a_pki_ezsignfolder_id: null

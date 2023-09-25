@@ -4,8 +4,6 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_address** | [**AddressRequest**](AddressRequest.md) |  |  |
-| **a_obj_contact** | [**Array&lt;ContactRequestCompound&gt;**](ContactRequestCompound.md) |  |  |
 | **pki_franchisereferalincome_id** | **Integer** | The unique ID of the Franchisereferalincome | [optional] |
 | **fki_franchisebroker_id** | **Integer** | The unique ID of the Franchisebroker |  |
 | **fki_franchisereferalincomeprogram_id** | **Integer** | The unique ID of the Franchisereferalincomeprogram |  |
@@ -18,15 +16,15 @@
 | **t_franchisereferalincome_comment** | **String** | Comment about the transaction |  |
 | **fki_franchiseoffice_id** | **Integer** | The unique ID of the Franchisereoffice |  |
 | **s_franchisereferalincome_remoteid** | **String** |  |  |
+| **obj_address** | [**AddressRequest**](AddressRequest.md) |  |  |
+| **a_obj_contact** | [**Array&lt;ContactRequestCompound&gt;**](ContactRequestCompound.md) |  |  |
 
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::FranchisereferalincomeRequestCompound.new(
-  obj_address: null,
-  a_obj_contact: null,
   pki_franchisereferalincome_id: 35,
   fki_franchisebroker_id: 61,
   fki_franchisereferalincomeprogram_id: 51,
@@ -38,7 +36,9 @@ instance = EzmaxApi::FranchisereferalincomeRequestCompound.new(
   dt_franchisereferalincome_disbursed: 2020-12-31,
   t_franchisereferalincome_comment: This is a comment,
   fki_franchiseoffice_id: 50,
-  s_franchisereferalincome_remoteid: null
+  s_franchisereferalincome_remoteid: null,
+  obj_address: null,
+  a_obj_contact: null
 )
 ```
 

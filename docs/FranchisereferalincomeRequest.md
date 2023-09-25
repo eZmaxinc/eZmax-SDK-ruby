@@ -20,7 +20,7 @@
 ## Example
 
 ```ruby
-require 'ezmax_api'
+require 'Ezmaxapi'
 
 instance = EzmaxApi::FranchisereferalincomeRequest.new(
   pki_franchisereferalincome_id: 35,
