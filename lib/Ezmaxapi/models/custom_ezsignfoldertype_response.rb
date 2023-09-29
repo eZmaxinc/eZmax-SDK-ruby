@@ -92,20 +92,14 @@ module EzmaxApi
 
       if attributes.key?(:'s_ezsignfoldertype_name_x')
         self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
-      else
-        self.s_ezsignfoldertype_name_x = nil
       end
 
       if attributes.key?(:'b_ezsignfoldertype_includeproofsigner')
         self.b_ezsignfoldertype_includeproofsigner = attributes[:'b_ezsignfoldertype_includeproofsigner']
-      else
-        self.b_ezsignfoldertype_includeproofsigner = nil
       end
 
       if attributes.key?(:'b_ezsignfoldertype_includeproofuser')
         self.b_ezsignfoldertype_includeproofuser = attributes[:'b_ezsignfoldertype_includeproofuser']
-      else
-        self.b_ezsignfoldertype_includeproofuser = nil
       end
 
       if attributes.key?(:'b_ezsignfoldertype_delegate')
@@ -130,18 +124,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pki_ezsignfoldertype_id", must be greater than or equal to 0.')
       end
 
-      if @s_ezsignfoldertype_name_x.nil?
-        invalid_properties.push('invalid value for "s_ezsignfoldertype_name_x", s_ezsignfoldertype_name_x cannot be nil.')
-      end
-
-      if @b_ezsignfoldertype_includeproofsigner.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldertype_includeproofsigner", b_ezsignfoldertype_includeproofsigner cannot be nil.')
-      end
-
-      if @b_ezsignfoldertype_includeproofuser.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldertype_includeproofuser", b_ezsignfoldertype_includeproofuser cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -151,9 +133,6 @@ module EzmaxApi
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @pki_ezsignfoldertype_id.nil?
       return false if @pki_ezsignfoldertype_id < 0
-      return false if @s_ezsignfoldertype_name_x.nil?
-      return false if @b_ezsignfoldertype_includeproofsigner.nil?
-      return false if @b_ezsignfoldertype_includeproofuser.nil?
       true
     end
 

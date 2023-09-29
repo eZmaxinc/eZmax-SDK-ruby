@@ -40,6 +40,9 @@ module EzmaxApi
     # The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
     attr_accessor :i_ezsignformfield_height
 
+    # Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+    attr_accessor :b_ezsignformfield_autocomplete
+
     # Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
     attr_accessor :b_ezsignformfield_selected
 
@@ -57,6 +60,7 @@ module EzmaxApi
         :'i_ezsignformfield_y' => :'iEzsignformfieldY',
         :'i_ezsignformfield_width' => :'iEzsignformfieldWidth',
         :'i_ezsignformfield_height' => :'iEzsignformfieldHeight',
+        :'b_ezsignformfield_autocomplete' => :'bEzsignformfieldAutocomplete',
         :'b_ezsignformfield_selected' => :'bEzsignformfieldSelected',
         :'s_ezsignformfield_enteredvalue' => :'sEzsignformfieldEnteredvalue'
       }
@@ -78,6 +82,7 @@ module EzmaxApi
         :'i_ezsignformfield_y' => :'Integer',
         :'i_ezsignformfield_width' => :'Integer',
         :'i_ezsignformfield_height' => :'Integer',
+        :'b_ezsignformfield_autocomplete' => :'Boolean',
         :'b_ezsignformfield_selected' => :'Boolean',
         :'s_ezsignformfield_enteredvalue' => :'String'
       }
@@ -155,6 +160,10 @@ module EzmaxApi
         self.i_ezsignformfield_height = attributes[:'i_ezsignformfield_height']
       else
         self.i_ezsignformfield_height = nil
+      end
+
+      if attributes.key?(:'b_ezsignformfield_autocomplete')
+        self.b_ezsignformfield_autocomplete = attributes[:'b_ezsignformfield_autocomplete']
       end
 
       if attributes.key?(:'b_ezsignformfield_selected')
@@ -343,6 +352,7 @@ module EzmaxApi
           i_ezsignformfield_y == o.i_ezsignformfield_y &&
           i_ezsignformfield_width == o.i_ezsignformfield_width &&
           i_ezsignformfield_height == o.i_ezsignformfield_height &&
+          b_ezsignformfield_autocomplete == o.b_ezsignformfield_autocomplete &&
           b_ezsignformfield_selected == o.b_ezsignformfield_selected &&
           s_ezsignformfield_enteredvalue == o.s_ezsignformfield_enteredvalue
     end
@@ -356,7 +366,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignformfield_id, i_ezsignpage_pagenumber, s_ezsignformfield_label, s_ezsignformfield_value, i_ezsignformfield_x, i_ezsignformfield_y, i_ezsignformfield_width, i_ezsignformfield_height, b_ezsignformfield_selected, s_ezsignformfield_enteredvalue].hash
+      [pki_ezsignformfield_id, i_ezsignpage_pagenumber, s_ezsignformfield_label, s_ezsignformfield_value, i_ezsignformfield_x, i_ezsignformfield_y, i_ezsignformfield_width, i_ezsignformfield_height, b_ezsignformfield_autocomplete, b_ezsignformfield_selected, s_ezsignformfield_enteredvalue].hash
     end
 
     # Builds the object from hash

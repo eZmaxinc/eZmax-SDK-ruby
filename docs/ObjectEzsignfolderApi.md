@@ -17,7 +17,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_get_communication_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list |
 | [**ezsignfolder_get_ezsigndocuments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations |
-| [**ezsignfolder_get_ezsignfoldersignerassociationsmine_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociationsmine_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociationsmine | Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder |
 | [**ezsignfolder_get_ezsignsignatures_automatic_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures |
 | [**ezsignfolder_get_forms_data_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data |
 | [**ezsignfolder_get_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list |
@@ -948,77 +947,6 @@ end
 ### Return type
 
 [**EzsignfolderGetEzsignfoldersignerassociationsV1Response**](EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsignfolder_get_ezsignfoldersignerassociationsmine_v1
-
-> <EzsignfolderGetEzsignfoldersignerassociationsmineV1Response> ezsignfolder_get_ezsignfoldersignerassociationsmine_v1(pki_ezsignfolder_id)
-
-Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | 
-
-begin
-  # Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder
-  result = api_instance.ezsignfolder_get_ezsignfoldersignerassociationsmine_v1(pki_ezsignfolder_id)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_ezsignfoldersignerassociationsmine_v1: #{e}"
-end
-```
-
-#### Using the ezsignfolder_get_ezsignfoldersignerassociationsmine_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignfolderGetEzsignfoldersignerassociationsmineV1Response>, Integer, Hash)> ezsignfolder_get_ezsignfoldersignerassociationsmine_v1_with_http_info(pki_ezsignfolder_id)
-
-```ruby
-begin
-  # Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder
-  data, status_code, headers = api_instance.ezsignfolder_get_ezsignfoldersignerassociationsmine_v1_with_http_info(pki_ezsignfolder_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignfolderGetEzsignfoldersignerassociationsmineV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_ezsignfoldersignerassociationsmine_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** |  |  |
-
-### Return type
-
-[**EzsignfolderGetEzsignfoldersignerassociationsmineV1Response**](EzsignfolderGetEzsignfoldersignerassociationsmineV1Response.md)
 
 ### Authorization
 

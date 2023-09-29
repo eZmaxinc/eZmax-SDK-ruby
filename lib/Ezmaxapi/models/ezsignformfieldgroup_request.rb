@@ -188,8 +188,6 @@ module EzmaxApi
 
       if attributes.key?(:'s_ezsignformfieldgroup_defaultvalue')
         self.s_ezsignformfieldgroup_defaultvalue = attributes[:'s_ezsignformfieldgroup_defaultvalue']
-      else
-        self.s_ezsignformfieldgroup_defaultvalue = nil
       end
 
       if attributes.key?(:'i_ezsignformfieldgroup_filledmin')
@@ -280,10 +278,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_ezsignformfieldgroup_step", must be greater than or equal to 1.')
       end
 
-      if @s_ezsignformfieldgroup_defaultvalue.nil?
-        invalid_properties.push('invalid value for "s_ezsignformfieldgroup_defaultvalue", s_ezsignformfieldgroup_defaultvalue cannot be nil.')
-      end
-
       if @i_ezsignformfieldgroup_filledmin.nil?
         invalid_properties.push('invalid value for "i_ezsignformfieldgroup_filledmin", i_ezsignformfieldgroup_filledmin cannot be nil.')
       end
@@ -334,7 +328,6 @@ module EzmaxApi
       return false if @s_ezsignformfieldgroup_label.to_s.length < 1
       return false if @i_ezsignformfieldgroup_step.nil?
       return false if @i_ezsignformfieldgroup_step < 1
-      return false if @s_ezsignformfieldgroup_defaultvalue.nil?
       return false if @i_ezsignformfieldgroup_filledmin.nil?
       return false if @i_ezsignformfieldgroup_filledmin < 0
       return false if @i_ezsignformfieldgroup_filledmax.nil?

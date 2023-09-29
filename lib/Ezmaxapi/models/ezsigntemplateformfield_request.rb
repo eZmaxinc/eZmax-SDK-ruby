@@ -40,6 +40,9 @@ module EzmaxApi
     # The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
     attr_accessor :i_ezsigntemplateformfield_height
 
+    # Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+    attr_accessor :b_ezsigntemplateformfield_autocomplete
+
     # Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
     attr_accessor :b_ezsigntemplateformfield_selected
 
@@ -54,6 +57,7 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_y' => :'iEzsigntemplateformfieldY',
         :'i_ezsigntemplateformfield_width' => :'iEzsigntemplateformfieldWidth',
         :'i_ezsigntemplateformfield_height' => :'iEzsigntemplateformfieldHeight',
+        :'b_ezsigntemplateformfield_autocomplete' => :'bEzsigntemplateformfieldAutocomplete',
         :'b_ezsigntemplateformfield_selected' => :'bEzsigntemplateformfieldSelected'
       }
     end
@@ -74,6 +78,7 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_y' => :'Integer',
         :'i_ezsigntemplateformfield_width' => :'Integer',
         :'i_ezsigntemplateformfield_height' => :'Integer',
+        :'b_ezsigntemplateformfield_autocomplete' => :'Boolean',
         :'b_ezsigntemplateformfield_selected' => :'Boolean'
       }
     end
@@ -141,6 +146,10 @@ module EzmaxApi
         self.i_ezsigntemplateformfield_height = attributes[:'i_ezsigntemplateformfield_height']
       else
         self.i_ezsigntemplateformfield_height = nil
+      end
+
+      if attributes.key?(:'b_ezsigntemplateformfield_autocomplete')
+        self.b_ezsigntemplateformfield_autocomplete = attributes[:'b_ezsigntemplateformfield_autocomplete']
       end
 
       if attributes.key?(:'b_ezsigntemplateformfield_selected')
@@ -320,6 +329,7 @@ module EzmaxApi
           i_ezsigntemplateformfield_y == o.i_ezsigntemplateformfield_y &&
           i_ezsigntemplateformfield_width == o.i_ezsigntemplateformfield_width &&
           i_ezsigntemplateformfield_height == o.i_ezsigntemplateformfield_height &&
+          b_ezsigntemplateformfield_autocomplete == o.b_ezsigntemplateformfield_autocomplete &&
           b_ezsigntemplateformfield_selected == o.b_ezsigntemplateformfield_selected
     end
 
@@ -332,7 +342,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplateformfield_id, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_selected].hash
+      [pki_ezsigntemplateformfield_id, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_autocomplete, b_ezsigntemplateformfield_selected].hash
     end
 
     # Builds the object from hash

@@ -190,18 +190,6 @@ describe 'ObjectEzsignfolderApi' do
     end
   end
 
-  # unit tests for ezsignfolder_get_ezsignfoldersignerassociationsmine_v1
-  # Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder
-  # 
-  # @param pki_ezsignfolder_id 
-  # @param [Hash] opts the optional parameters
-  # @return [EzsignfolderGetEzsignfoldersignerassociationsmineV1Response]
-  describe 'ezsignfolder_get_ezsignfoldersignerassociationsmine_v1 test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for ezsignfolder_get_ezsignsignatures_automatic_v1
   # Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures
   # Return the Ezsignsignatures that can be signed by the current user at the current step in the process

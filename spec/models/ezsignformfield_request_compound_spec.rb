@@ -73,6 +73,12 @@ describe EzmaxApi::EzsignformfieldRequestCompound do
     end
   end
 
+  describe 'test attribute "b_ezsignformfield_autocomplete"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "b_ezsignformfield_selected"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

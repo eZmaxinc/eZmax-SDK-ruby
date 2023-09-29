@@ -905,7 +905,7 @@ module EzmaxApi
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
+    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetDownloadUrlV1Response]
     def ezsigndocument_get_download_url_v1(pki_ezsigndocument_id, e_document_type, opts = {})
@@ -916,7 +916,7 @@ module EzmaxApi
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
+    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetDownloadUrlV1Response, Integer, Hash)>] EzsigndocumentGetDownloadUrlV1Response data, response status code and response headers
     def ezsigndocument_get_download_url_v1_with_http_info(pki_ezsigndocument_id, e_document_type, opts = {})
@@ -936,7 +936,7 @@ module EzmaxApi
         fail ArgumentError, "Missing the required parameter 'e_document_type' when calling ObjectEzsigndocumentApi.ezsigndocument_get_download_url_v1"
       end
       # verify enum value
-      allowable_values = ["Initial", "Signed", "Proof", "Proofdocument"]
+      allowable_values = ["Initial", "SignatureReady", "Signed", "Proof", "Proofdocument"]
       if @api_client.config.client_side_validation && !allowable_values.include?(e_document_type)
         fail ArgumentError, "invalid value for \"e_document_type\", must be one of #{allowable_values}"
       end
