@@ -135,8 +135,6 @@ module EzmaxApi
         if (value = attributes[:'a_obj_modulesection']).is_a?(Array)
           self.a_obj_modulesection = value
         end
-      else
-        self.a_obj_modulesection = nil
       end
     end
 
@@ -181,10 +179,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_module_registeredapi", b_module_registeredapi cannot be nil.')
       end
 
-      if @a_obj_modulesection.nil?
-        invalid_properties.push('invalid value for "a_obj_modulesection", a_obj_modulesection cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -201,7 +195,6 @@ module EzmaxApi
       return false if @s_module_name_x.nil?
       return false if @b_module_registered.nil?
       return false if @b_module_registeredapi.nil?
-      return false if @a_obj_modulesection.nil?
       true
     end
 

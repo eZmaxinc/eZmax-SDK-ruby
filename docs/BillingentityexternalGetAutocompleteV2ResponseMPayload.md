@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_billingentityexternal** | [**Array&lt;BillingentityexternalAutocompleteElementResponse&gt;**](BillingentityexternalAutocompleteElementResponse.md) | An array of Billingentityexternal autocomplete element response. | [optional] |
+| **a_obj_billingentityexternal** | [**Array&lt;BillingentityexternalAutocompleteElementResponse&gt;**](BillingentityexternalAutocompleteElementResponse.md) | An array of Billingentityexternal autocomplete element response. |  |
 
 ## Example
 

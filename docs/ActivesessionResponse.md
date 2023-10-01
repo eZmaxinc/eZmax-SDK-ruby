@@ -13,7 +13,7 @@
 | **b_activesession_debug** | **Boolean** | Whether the active session is in debug or not |  |
 | **b_activesession_issuperadmin** | **Boolean** | Whether the active session is superadmin or not |  |
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
-| **fki_systemconfigurationtype_id** | **Integer** | The unique ID of the Systemconfigurationtype | [optional] |
+| **fki_systemconfigurationtype_id** | **Integer** | The unique ID of the Systemconfigurationtype |  |
 | **fki_signature_id** | **Integer** | The unique ID of the Signature | [optional] |
 
 ## Example

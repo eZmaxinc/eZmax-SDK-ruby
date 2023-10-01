@@ -63,6 +63,8 @@ module EzmaxApi
         if (value = attributes[:'a_obj_franchiseoffice']).is_a?(Array)
           self.a_obj_franchiseoffice = value
         end
+      else
+        self.a_obj_franchiseoffice = nil
       end
     end
 
@@ -71,6 +73,10 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @a_obj_franchiseoffice.nil?
+        invalid_properties.push('invalid value for "a_obj_franchiseoffice", a_obj_franchiseoffice cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -78,6 +84,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @a_obj_franchiseoffice.nil?
       true
     end
 

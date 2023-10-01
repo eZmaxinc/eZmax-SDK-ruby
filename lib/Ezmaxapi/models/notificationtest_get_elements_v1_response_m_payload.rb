@@ -88,6 +88,8 @@ module EzmaxApi
         if (value = attributes[:'a_s_variableobject_property']).is_a?(Array)
           self.a_s_variableobject_property = value
         end
+      else
+        self.a_s_variableobject_property = nil
       end
 
       if attributes.key?(:'a_obj_variableobject')
@@ -116,6 +118,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_notificationtest_function", s_notificationtest_function cannot be nil.')
       end
 
+      if @a_s_variableobject_property.nil?
+        invalid_properties.push('invalid value for "a_s_variableobject_property", a_s_variableobject_property cannot be nil.')
+      end
+
       if @a_obj_variableobject.nil?
         invalid_properties.push('invalid value for "a_obj_variableobject", a_obj_variableobject cannot be nil.')
       end
@@ -130,6 +136,7 @@ module EzmaxApi
       return false if @pki_notificationtest_id.nil?
       return false if @pki_notificationtest_id < 0
       return false if @s_notificationtest_function.nil?
+      return false if @a_s_variableobject_property.nil?
       return false if @a_obj_variableobject.nil?
       true
     end

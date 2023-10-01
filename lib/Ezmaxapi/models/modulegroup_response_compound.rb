@@ -91,8 +91,6 @@ module EzmaxApi
         if (value = attributes[:'a_obj_module']).is_a?(Array)
           self.a_obj_module = value
         end
-      else
-        self.a_obj_module = nil
       end
     end
 
@@ -122,10 +120,6 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"s_modulegroup_name_x\", must conform to the pattern #{pattern}.")
       end
 
-      if @a_obj_module.nil?
-        invalid_properties.push('invalid value for "a_obj_module", a_obj_module cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -138,7 +132,6 @@ module EzmaxApi
       return false if @pki_modulegroup_id < 1
       return false if @s_modulegroup_name_x.nil?
       return false if @s_modulegroup_name_x !~ Regexp.new(/^.{0,25}$/)
-      return false if @a_obj_module.nil?
       true
     end
 

@@ -158,6 +158,8 @@ module EzmaxApi
 
       if attributes.key?(:'b_ezsignfoldersignerassociation_hasactionableelements_future')
         self.b_ezsignfoldersignerassociation_hasactionableelements_future = attributes[:'b_ezsignfoldersignerassociation_hasactionableelements_future']
+      else
+        self.b_ezsignfoldersignerassociation_hasactionableelements_future = nil
       end
     end
 
@@ -198,6 +200,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_hasactionableelements_current", b_ezsignfoldersignerassociation_hasactionableelements_current cannot be nil.')
       end
 
+      if @b_ezsignfoldersignerassociation_hasactionableelements_future.nil?
+        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_hasactionableelements_future", b_ezsignfoldersignerassociation_hasactionableelements_future cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -213,6 +219,7 @@ module EzmaxApi
       return false if @b_ezsignfoldersignerassociation_receivecopy.nil?
       return false if @t_ezsignfoldersignerassociation_message.nil?
       return false if @b_ezsignfoldersignerassociation_hasactionableelements_current.nil?
+      return false if @b_ezsignfoldersignerassociation_hasactionableelements_future.nil?
       true
     end
 

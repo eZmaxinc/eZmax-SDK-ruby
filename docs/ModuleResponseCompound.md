@@ -10,7 +10,7 @@
 | **s_module_name_x** | **String** | The Name of the Module in the language of the requester |  |
 | **b_module_registered** | **Boolean** | Whether the Module is registered or not |  |
 | **b_module_registeredapi** | **Boolean** | Whether the Module is registered or not for api use |  |
-| **a_obj_modulesection** | [**Array&lt;ModulesectionResponseCompound&gt;**](ModulesectionResponseCompound.md) |  |  |
+| **a_obj_modulesection** | [**Array&lt;ModulesectionResponseCompound&gt;**](ModulesectionResponseCompound.md) |  | [optional] |
 
 ## Example
 

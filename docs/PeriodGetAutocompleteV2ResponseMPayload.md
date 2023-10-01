@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_period** | [**Array&lt;PeriodAutocompleteElementResponse&gt;**](PeriodAutocompleteElementResponse.md) | An array of Period autocomplete element response. | [optional] |
+| **a_obj_period** | [**Array&lt;PeriodAutocompleteElementResponse&gt;**](PeriodAutocompleteElementResponse.md) | An array of Period autocomplete element response. |  |
 
 ## Example
 

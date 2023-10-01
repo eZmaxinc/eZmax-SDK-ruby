@@ -16,7 +16,7 @@
 | **t_franchisereferalincome_comment** | **String** | Comment about the transaction |  |
 | **fki_franchiseoffice_id** | **Integer** | The unique ID of the Franchisereoffice |  |
 | **s_franchisereferalincome_remoteid** | **String** |  |  |
-| **obj_address** | [**AddressRequest**](AddressRequest.md) |  |  |
+| **obj_address** | [**AddressRequest**](AddressRequest.md) |  | [optional] |
 | **a_obj_contact** | [**Array&lt;ContactRequestCompound&gt;**](ContactRequestCompound.md) |  |  |
 
 ## Example

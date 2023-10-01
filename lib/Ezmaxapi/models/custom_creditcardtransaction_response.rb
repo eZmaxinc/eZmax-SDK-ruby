@@ -97,6 +97,8 @@ module EzmaxApi
 
       if attributes.key?(:'e_creditcardtype_codename')
         self.e_creditcardtype_codename = attributes[:'e_creditcardtype_codename']
+      else
+        self.e_creditcardtype_codename = nil
       end
 
       if attributes.key?(:'d_creditcardtransaction_amount')
@@ -123,6 +125,10 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @e_creditcardtype_codename.nil?
+        invalid_properties.push('invalid value for "e_creditcardtype_codename", e_creditcardtype_codename cannot be nil.')
+      end
+
       if @d_creditcardtransaction_amount.nil?
         invalid_properties.push('invalid value for "d_creditcardtransaction_amount", d_creditcardtransaction_amount cannot be nil.')
       end
@@ -157,6 +163,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @e_creditcardtype_codename.nil?
       return false if @d_creditcardtransaction_amount.nil?
       return false if @d_creditcardtransaction_amount !~ Regexp.new(/^-{0,1}[\d]{1,9}?\.[\d]{2}$/)
       return false if @s_creditcardtransaction_partiallydecryptednumber.nil?

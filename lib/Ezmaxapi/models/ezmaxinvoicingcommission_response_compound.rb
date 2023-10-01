@@ -147,8 +147,6 @@ module EzmaxApi
 
       if attributes.key?(:'obj_contact_name')
         self.obj_contact_name = attributes[:'obj_contact_name']
-      else
-        self.obj_contact_name = nil
       end
     end
 
@@ -194,10 +192,6 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"d_ezmaxinvoicingcommission_amount\", must conform to the pattern #{pattern}.")
       end
 
-      if @obj_contact_name.nil?
-        invalid_properties.push('invalid value for "obj_contact_name", obj_contact_name cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -214,7 +208,6 @@ module EzmaxApi
       return false if @i_ezmaxinvoicingcommission_days < 0
       return false if @d_ezmaxinvoicingcommission_amount.nil?
       return false if @d_ezmaxinvoicingcommission_amount !~ Regexp.new(/^-{0,1}[\d]{1,9}?\.[\d]{2}$/)
-      return false if @obj_contact_name.nil?
       true
     end
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_font** | [**Array&lt;FontAutocompleteElementResponse&gt;**](FontAutocompleteElementResponse.md) | An array of Font autocomplete element response. | [optional] |
+| **a_obj_font** | [**Array&lt;FontAutocompleteElementResponse&gt;**](FontAutocompleteElementResponse.md) | An array of Font autocomplete element response. |  |
 
 ## Example
 

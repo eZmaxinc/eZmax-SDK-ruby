@@ -201,8 +201,6 @@ module EzmaxApi
 
       if attributes.key?(:'obj_address')
         self.obj_address = attributes[:'obj_address']
-      else
-        self.obj_address = nil
       end
 
       if attributes.key?(:'a_obj_contact')
@@ -283,10 +281,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_franchisereferalincome_remoteid", s_franchisereferalincome_remoteid cannot be nil.')
       end
 
-      if @obj_address.nil?
-        invalid_properties.push('invalid value for "obj_address", obj_address cannot be nil.')
-      end
-
       if @a_obj_contact.nil?
         invalid_properties.push('invalid value for "a_obj_contact", a_obj_contact cannot be nil.')
       end
@@ -314,7 +308,6 @@ module EzmaxApi
       return false if @fki_franchiseoffice_id.nil?
       return false if @fki_franchiseoffice_id < 0
       return false if @s_franchisereferalincome_remoteid.nil?
-      return false if @obj_address.nil?
       return false if @a_obj_contact.nil?
       true
     end

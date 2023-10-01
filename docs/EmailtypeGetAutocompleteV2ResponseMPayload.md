@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_emailtype** | [**Array&lt;EmailtypeAutocompleteElementResponse&gt;**](EmailtypeAutocompleteElementResponse.md) | An array of Emailtype autocomplete element response. | [optional] |
+| **a_obj_emailtype** | [**Array&lt;EmailtypeAutocompleteElementResponse&gt;**](EmailtypeAutocompleteElementResponse.md) | An array of Emailtype autocomplete element response. |  |
 
 ## Example
 

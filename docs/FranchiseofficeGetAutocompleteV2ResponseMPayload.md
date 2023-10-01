@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_franchiseoffice** | [**Array&lt;FranchiseofficeAutocompleteElementResponse&gt;**](FranchiseofficeAutocompleteElementResponse.md) | An array of Franchiseoffice autocomplete element response. | [optional] |
+| **a_obj_franchiseoffice** | [**Array&lt;FranchiseofficeAutocompleteElementResponse&gt;**](FranchiseofficeAutocompleteElementResponse.md) | An array of Franchiseoffice autocomplete element response. |  |
 
 ## Example
 

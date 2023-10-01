@@ -184,6 +184,8 @@ module EzmaxApi
 
       if attributes.key?(:'fki_systemconfigurationtype_id')
         self.fki_systemconfigurationtype_id = attributes[:'fki_systemconfigurationtype_id']
+      else
+        self.fki_systemconfigurationtype_id = nil
       end
 
       if attributes.key?(:'fki_signature_id')
@@ -248,7 +250,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pks_customer_code", the character length must be great than or equal to 2.')
       end
 
-      if !@fki_systemconfigurationtype_id.nil? && @fki_systemconfigurationtype_id < 1
+      if @fki_systemconfigurationtype_id.nil?
+        invalid_properties.push('invalid value for "fki_systemconfigurationtype_id", fki_systemconfigurationtype_id cannot be nil.')
+      end
+
+      if @fki_systemconfigurationtype_id < 1
         invalid_properties.push('invalid value for "fki_systemconfigurationtype_id", must be greater than or equal to 1.')
       end
 
@@ -280,7 +286,8 @@ module EzmaxApi
       return false if @pks_customer_code.nil?
       return false if @pks_customer_code.to_s.length > 6
       return false if @pks_customer_code.to_s.length < 2
-      return false if !@fki_systemconfigurationtype_id.nil? && @fki_systemconfigurationtype_id < 1
+      return false if @fki_systemconfigurationtype_id.nil?
+      return false if @fki_systemconfigurationtype_id < 1
       return false if !@fki_signature_id.nil? && @fki_signature_id > 16777215
       return false if !@fki_signature_id.nil? && @fki_signature_id < 0
       true

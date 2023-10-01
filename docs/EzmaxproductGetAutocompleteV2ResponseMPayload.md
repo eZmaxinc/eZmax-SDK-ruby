@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezmaxproduct** | [**Array&lt;EzmaxproductAutocompleteElementResponse&gt;**](EzmaxproductAutocompleteElementResponse.md) | An array of Ezmaxproduct autocomplete element response. | [optional] |
+| **a_obj_ezmaxproduct** | [**Array&lt;EzmaxproductAutocompleteElementResponse&gt;**](EzmaxproductAutocompleteElementResponse.md) | An array of Ezmaxproduct autocomplete element response. |  |
 
 ## Example
 

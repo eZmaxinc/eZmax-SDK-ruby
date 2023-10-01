@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **e_creditcardtype_codename** | [**FieldECreditcardtypeCodename**](FieldECreditcardtypeCodename.md) |  | [optional] |
+| **e_creditcardtype_codename** | [**FieldECreditcardtypeCodename**](FieldECreditcardtypeCodename.md) |  |  |
 | **d_creditcardtransaction_amount** | **String** | The amount of the Creditcardtransaction |  |
 | **s_creditcardtransaction_partiallydecryptednumber** | **String** | The partially decrypted credit card number used in the Creditcardtransaction |  |
 | **s_creditcardtransaction_referencenumber** | **String** | The reference number on the creditcard service for the Creditcardtransaction |  |

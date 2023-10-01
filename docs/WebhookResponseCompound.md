@@ -15,7 +15,7 @@
 | **s_webhook_emailfailed** | **String** | The email that will receive the Webhook in case all attempts fail |  |
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not | [optional] |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
-| **s_webhook_event** | **String** | The concatenated string to describe the Webhook event |  |
+| **s_webhook_event** | **String** | The concatenated string to describe the Webhook event | [optional] |
 
 ## Example
 

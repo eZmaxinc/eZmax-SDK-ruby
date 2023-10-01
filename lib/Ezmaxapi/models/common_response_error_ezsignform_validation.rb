@@ -14,6 +14,7 @@ require 'date'
 require 'time'
 
 module EzmaxApi
+  # Generic Error Message
   class CommonResponseErrorEzsignformValidation
     # The message giving details about the error
     attr_accessor :s_error_message

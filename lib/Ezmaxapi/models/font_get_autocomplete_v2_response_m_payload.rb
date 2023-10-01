@@ -63,6 +63,8 @@ module EzmaxApi
         if (value = attributes[:'a_obj_font']).is_a?(Array)
           self.a_obj_font = value
         end
+      else
+        self.a_obj_font = nil
       end
     end
 
@@ -71,6 +73,10 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @a_obj_font.nil?
+        invalid_properties.push('invalid value for "a_obj_font", a_obj_font cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -78,6 +84,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @a_obj_font.nil?
       true
     end
 

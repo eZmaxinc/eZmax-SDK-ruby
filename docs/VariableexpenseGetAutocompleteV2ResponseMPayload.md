@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_variableexpense** | [**Array&lt;VariableexpenseAutocompleteElementResponse&gt;**](VariableexpenseAutocompleteElementResponse.md) | An array of Variableexpense autocomplete element response. | [optional] |
+| **a_obj_variableexpense** | [**Array&lt;VariableexpenseAutocompleteElementResponse&gt;**](VariableexpenseAutocompleteElementResponse.md) | An array of Variableexpense autocomplete element response. |  |
 
 ## Example
 

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_notificationtest_id** | **Integer** | The unique ID of the Notificationtest |  |
 | **s_notificationtest_function** | **String** | The function name of the Notificationtest |  |
-| **a_s_variableobject_property** | **Array&lt;String&gt;** |  | [optional] |
+| **a_s_variableobject_property** | **Array&lt;String&gt;** |  |  |
 | **a_obj_variableobject** | **Array&lt;Hash&gt;** |  |  |
 
 ## Example

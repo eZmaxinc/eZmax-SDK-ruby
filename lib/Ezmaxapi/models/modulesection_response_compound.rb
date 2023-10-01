@@ -113,8 +113,6 @@ module EzmaxApi
         if (value = attributes[:'a_obj_permission']).is_a?(Array)
           self.a_obj_permission = value
         end
-      else
-        self.a_obj_permission = nil
       end
     end
 
@@ -147,10 +145,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_modulesection_name_x", s_modulesection_name_x cannot be nil.')
       end
 
-      if @a_obj_permission.nil?
-        invalid_properties.push('invalid value for "a_obj_permission", a_obj_permission cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -164,7 +158,6 @@ module EzmaxApi
       return false if @fki_module_id < 0
       return false if @s_modulesection_internalname.nil?
       return false if @s_modulesection_name_x.nil?
-      return false if @a_obj_permission.nil?
       true
     end
 

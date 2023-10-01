@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_paymentterm** | [**Array&lt;PaymenttermAutocompleteElementResponse&gt;**](PaymenttermAutocompleteElementResponse.md) | An array of Paymentterm autocomplete element response. | [optional] |
+| **a_obj_paymentterm** | [**Array&lt;PaymenttermAutocompleteElementResponse&gt;**](PaymenttermAutocompleteElementResponse.md) | An array of Paymentterm autocomplete element response. |  |
 
 ## Example
 

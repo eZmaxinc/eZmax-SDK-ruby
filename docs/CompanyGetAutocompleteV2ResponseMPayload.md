@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_company** | [**Array&lt;CompanyAutocompleteElementResponse&gt;**](CompanyAutocompleteElementResponse.md) | An array of Company autocomplete element response. | [optional] |
+| **a_obj_company** | [**Array&lt;CompanyAutocompleteElementResponse&gt;**](CompanyAutocompleteElementResponse.md) | An array of Company autocomplete element response. |  |
 
 ## Example
 
