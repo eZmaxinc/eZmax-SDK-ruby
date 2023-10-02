@@ -56,7 +56,7 @@ instance = EzmaxApi::EzsignfoldertypeResponse.new(
   fki_ezsigntsarequirement_id: 1,
   s_branding_description_x: Company X,
   s_billingentityinternal_description_x: Default,
-  s_ezsigntsarequirement_description_x: Default,
+  s_ezsigntsarequirement_description_x: No,
   s_email_address_signed: email@example.com,
   s_email_address_summary: email@example.com,
   s_usergroup_name_x: Administration,

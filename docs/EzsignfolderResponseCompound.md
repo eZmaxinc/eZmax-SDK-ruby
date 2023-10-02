@@ -40,7 +40,7 @@ instance = EzmaxApi::EzsignfolderResponseCompound.new(
   fki_billingentityinternal_id: 1,
   s_billingentityinternal_description_x: Default,
   fki_ezsigntsarequirement_id: 1,
-  s_ezsigntsarequirement_description_x: Default,
+  s_ezsigntsarequirement_description_x: No,
   s_ezsignfolder_description: Test eZsign Folder,
   t_ezsignfolder_note: This is a note,
   b_ezsignfolder_isdisposable: false,

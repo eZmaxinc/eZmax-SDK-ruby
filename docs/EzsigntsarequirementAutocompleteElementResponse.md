@@ -15,7 +15,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsigntsarequirementAutocompleteElementResponse.new(
-  s_ezsigntsarequirement_description_x: Default,
+  s_ezsigntsarequirement_description_x: No,
   pki_ezsigntsarequirement_id: 1,
   b_ezsigntsarequirement_isactive: true,
   b_disabled: null
