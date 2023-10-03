@@ -268,7 +268,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-ezsignfolder_create_object_v2_request = EzmaxApi::EzsignfolderCreateObjectV2Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', t_ezsignfolder_note: 'This is a note', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})]}) # EzsignfolderCreateObjectV2Request | 
+ezsignfolder_create_object_v2_request = EzmaxApi::EzsignfolderCreateObjectV2Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})]}) # EzsignfolderCreateObjectV2Request | 
 
 begin
   # Create a new Ezsignfolder
@@ -553,7 +553,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
-ezsignfolder_edit_object_v1_request = EzmaxApi::EzsignfolderEditObjectV1Request.new({obj_ezsignfolder: EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', t_ezsignfolder_note: 'This is a note', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})}) # EzsignfolderEditObjectV1Request | 
+ezsignfolder_edit_object_v1_request = EzmaxApi::EzsignfolderEditObjectV1Request.new({obj_ezsignfolder: EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})}) # EzsignfolderEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsignfolder
@@ -1723,15 +1723,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
-ezsignfolder_send_v3_request = EzmaxApi::EzsignfolderSendV3Request.new({t_ezsignfolder_message: 'Hi everyone,
-
-This is the document I need you to review.
-
-Could you sign it before Monday please.
-
-Best Regards.
-
-Mary', a_fki_ezsignfoldersignerassociation_id: [20]}) # EzsignfolderSendV3Request | 
+ezsignfolder_send_v3_request = EzmaxApi::EzsignfolderSendV3Request.new({a_fki_ezsignfoldersignerassociation_id: [20]}) # EzsignfolderSendV3Request | 
 
 begin
   # Send the Ezsignfolder to the signatories for signature

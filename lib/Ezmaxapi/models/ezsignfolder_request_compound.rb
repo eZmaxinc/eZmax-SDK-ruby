@@ -139,8 +139,6 @@ module EzmaxApi
 
       if attributes.key?(:'t_ezsignfolder_note')
         self.t_ezsignfolder_note = attributes[:'t_ezsignfolder_note']
-      else
-        self.t_ezsignfolder_note = nil
       end
 
       if attributes.key?(:'e_ezsignfolder_sendreminderfrequency')
@@ -183,10 +181,6 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
       end
 
-      if @t_ezsignfolder_note.nil?
-        invalid_properties.push('invalid value for "t_ezsignfolder_note", t_ezsignfolder_note cannot be nil.')
-      end
-
       if @e_ezsignfolder_sendreminderfrequency.nil?
         invalid_properties.push('invalid value for "e_ezsignfolder_sendreminderfrequency", e_ezsignfolder_sendreminderfrequency cannot be nil.')
       end
@@ -209,7 +203,6 @@ module EzmaxApi
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id > 3
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id < 1
       return false if @s_ezsignfolder_description.nil?
-      return false if @t_ezsignfolder_note.nil?
       return false if @e_ezsignfolder_sendreminderfrequency.nil?
       return false if !@s_ezsignfolder_externalid.nil? && @s_ezsignfolder_externalid !~ Regexp.new(/^.{0,64}$/)
       true

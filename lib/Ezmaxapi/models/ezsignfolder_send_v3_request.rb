@@ -70,8 +70,6 @@ module EzmaxApi
 
       if attributes.key?(:'t_ezsignfolder_message')
         self.t_ezsignfolder_message = attributes[:'t_ezsignfolder_message']
-      else
-        self.t_ezsignfolder_message = nil
       end
 
       if attributes.key?(:'dt_ezsignfolder_delayedsenddate')
@@ -92,10 +90,6 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @t_ezsignfolder_message.nil?
-        invalid_properties.push('invalid value for "t_ezsignfolder_message", t_ezsignfolder_message cannot be nil.')
-      end
-
       if @a_fki_ezsignfoldersignerassociation_id.nil?
         invalid_properties.push('invalid value for "a_fki_ezsignfoldersignerassociation_id", a_fki_ezsignfoldersignerassociation_id cannot be nil.')
       end
@@ -107,7 +101,6 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @t_ezsignfolder_message.nil?
       return false if @a_fki_ezsignfoldersignerassociation_id.nil?
       true
     end
