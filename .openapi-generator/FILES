@@ -793,6 +793,9 @@ docs/GlobalEzmaxclientVersionV1Response.md
 docs/GlobalEzmaxcustomerApi.md
 docs/GlobalEzmaxcustomerGetConfigurationV1Response.md
 docs/HeaderAcceptLanguage.md
+docs/LanguageAutocompleteElementResponse.md
+docs/LanguageGetAutocompleteV2Response.md
+docs/LanguageGetAutocompleteV2ResponseMPayload.md
 docs/ModuleEzsignApi.md
 docs/ModuleReportApi.md
 docs/ModuleResponse.md
@@ -863,6 +866,7 @@ docs/ObjectFontApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
+docs/ObjectLanguageApi.md
 docs/ObjectModulegroupApi.md
 docs/ObjectNotificationsectionApi.md
 docs/ObjectNotificationtestApi.md
@@ -1190,6 +1194,7 @@ lib/Ezmaxapi/api/object_font_api.rb
 lib/Ezmaxapi/api/object_franchisebroker_api.rb
 lib/Ezmaxapi/api/object_franchiseoffice_api.rb
 lib/Ezmaxapi/api/object_franchisereferalincome_api.rb
+lib/Ezmaxapi/api/object_language_api.rb
 lib/Ezmaxapi/api/object_modulegroup_api.rb
 lib/Ezmaxapi/api/object_notificationsection_api.rb
 lib/Ezmaxapi/api/object_notificationtest_api.rb
@@ -2000,6 +2005,9 @@ lib/Ezmaxapi/models/global_customer_get_endpoint_v1_response.rb
 lib/Ezmaxapi/models/global_ezmaxclient_version_v1_response.rb
 lib/Ezmaxapi/models/global_ezmaxcustomer_get_configuration_v1_response.rb
 lib/Ezmaxapi/models/header_accept_language.rb
+lib/Ezmaxapi/models/language_autocomplete_element_response.rb
+lib/Ezmaxapi/models/language_get_autocomplete_v2_response.rb
+lib/Ezmaxapi/models/language_get_autocomplete_v2_response_m_payload.rb
 lib/Ezmaxapi/models/module_response.rb
 lib/Ezmaxapi/models/module_response_compound.rb
 lib/Ezmaxapi/models/modulegroup_get_all_v1_response.rb
@@ -2328,6 +2336,7 @@ spec/api/object_font_api_spec.rb
 spec/api/object_franchisebroker_api_spec.rb
 spec/api/object_franchiseoffice_api_spec.rb
 spec/api/object_franchisereferalincome_api_spec.rb
+spec/api/object_language_api_spec.rb
 spec/api/object_modulegroup_api_spec.rb
 spec/api/object_notificationsection_api_spec.rb
 spec/api/object_notificationtest_api_spec.rb
@@ -3137,6 +3146,9 @@ spec/models/global_customer_get_endpoint_v1_response_spec.rb
 spec/models/global_ezmaxclient_version_v1_response_spec.rb
 spec/models/global_ezmaxcustomer_get_configuration_v1_response_spec.rb
 spec/models/header_accept_language_spec.rb
+spec/models/language_autocomplete_element_response_spec.rb
+spec/models/language_get_autocomplete_v2_response_m_payload_spec.rb
+spec/models/language_get_autocomplete_v2_response_spec.rb
 spec/models/module_response_compound_spec.rb
 spec/models/module_response_spec.rb
 spec/models/modulegroup_get_all_v1_response_m_payload_spec.rb

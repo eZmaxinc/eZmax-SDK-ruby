@@ -286,6 +286,7 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectFranchiseofficeApi* | [**franchiseoffice_get_autocomplete_v2**](docs/ObjectFranchiseofficeApi.md#franchiseoffice_get_autocomplete_v2) | **GET** /2/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *EzmaxApi::ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v1**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 *EzmaxApi::ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v2**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
+*EzmaxApi::ObjectLanguageApi* | [**language_get_autocomplete_v2**](docs/ObjectLanguageApi.md#language_get_autocomplete_v2) | **GET** /2/object/language/getAutocomplete/{sSelector} | Retrieve Languages and IDs
 *EzmaxApi::ObjectModulegroupApi* | [**modulegroup_get_all_v1**](docs/ObjectModulegroupApi.md#modulegroup_get_all_v1) | **GET** /1/object/modulegroup/getAll/{eContext} | Retrieve all Modulegroups
 *EzmaxApi::ObjectNotificationsectionApi* | [**notificationsection_get_notificationtests_v1**](docs/ObjectNotificationsectionApi.md#notificationsection_get_notificationtests_v1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection's Notificationtests
 *EzmaxApi::ObjectNotificationtestApi* | [**notificationtest_get_elements_v1**](docs/ObjectNotificationtestApi.md#notificationtest_get_elements_v1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest's Elements
@@ -1160,6 +1161,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::GlobalEzmaxclientVersionV1Response](docs/GlobalEzmaxclientVersionV1Response.md)
  - [EzmaxApi::GlobalEzmaxcustomerGetConfigurationV1Response](docs/GlobalEzmaxcustomerGetConfigurationV1Response.md)
  - [EzmaxApi::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EzmaxApi::LanguageAutocompleteElementResponse](docs/LanguageAutocompleteElementResponse.md)
+ - [EzmaxApi::LanguageGetAutocompleteV2Response](docs/LanguageGetAutocompleteV2Response.md)
+ - [EzmaxApi::LanguageGetAutocompleteV2ResponseMPayload](docs/LanguageGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::ModuleResponse](docs/ModuleResponse.md)
  - [EzmaxApi::ModuleResponseCompound](docs/ModuleResponseCompound.md)
  - [EzmaxApi::ModulegroupGetAllV1Response](docs/ModulegroupGetAllV1Response.md)
