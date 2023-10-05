@@ -151,6 +151,12 @@ describe EzmaxApi::EzsignsignatureRequestCompound do
     end
   end
 
+  describe 'test attribute "e_ezsignsignature_dependencyrequirement"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "b_ezsignsignature_customdate"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -158,6 +164,12 @@ describe EzmaxApi::EzsignsignatureRequestCompound do
   end
 
   describe 'test attribute "a_obj_ezsignsignaturecustomdate"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "a_obj_ezsignelementdependency"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

@@ -14,6 +14,8 @@
 | **i_ezsigntemplateformfield_height** | **Integer** | The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     |  |  |
 | **b_ezsigntemplateformfield_autocomplete** | **Boolean** | Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text** | [optional] |
 | **b_ezsigntemplateformfield_selected** | **Boolean** | Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio** | [optional] |
+| **e_ezsigntemplateformfield_dependencyrequirement** | [**FieldEEzsigntemplateformfieldDependencyrequirement**](FieldEEzsigntemplateformfieldDependencyrequirement.md) |  | [optional] |
+| **a_obj_ezsigntemplateelementdependency** | [**Array&lt;EzsigntemplateelementdependencyRequestCompound&gt;**](EzsigntemplateelementdependencyRequestCompound.md) |  | [optional] |
 
 ## Example
 
@@ -30,7 +32,9 @@ instance = EzmaxApi::EzsigntemplateformfieldRequestCompound.new(
   i_ezsigntemplateformfield_width: 102,
   i_ezsigntemplateformfield_height: 22,
   b_ezsigntemplateformfield_autocomplete: null,
-  b_ezsigntemplateformfield_selected: null
+  b_ezsigntemplateformfield_selected: null,
+  e_ezsigntemplateformfield_dependencyrequirement: null,
+  a_obj_ezsigntemplateelementdependency: null
 )
 ```
 

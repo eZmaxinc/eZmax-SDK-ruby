@@ -74,6 +74,8 @@ module EzmaxApi
 
     attr_accessor :e_ezsigntemplatesignature_textvalidation
 
+    attr_accessor :e_ezsigntemplatesignature_dependencyrequirement
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -119,7 +121,8 @@ module EzmaxApi
         :'b_ezsigntemplatesignature_required' => :'bEzsigntemplatesignatureRequired',
         :'i_ezsigntemplatesignature_maxlength' => :'iEzsigntemplatesignatureMaxlength',
         :'s_ezsigntemplatesignature_regexp' => :'sEzsigntemplatesignatureRegexp',
-        :'e_ezsigntemplatesignature_textvalidation' => :'eEzsigntemplatesignatureTextvalidation'
+        :'e_ezsigntemplatesignature_textvalidation' => :'eEzsigntemplatesignatureTextvalidation',
+        :'e_ezsigntemplatesignature_dependencyrequirement' => :'eEzsigntemplatesignatureDependencyrequirement'
       }
     end
 
@@ -151,7 +154,8 @@ module EzmaxApi
         :'b_ezsigntemplatesignature_required' => :'Boolean',
         :'i_ezsigntemplatesignature_maxlength' => :'Integer',
         :'s_ezsigntemplatesignature_regexp' => :'String',
-        :'e_ezsigntemplatesignature_textvalidation' => :'EnumTextvalidation'
+        :'e_ezsigntemplatesignature_textvalidation' => :'EnumTextvalidation',
+        :'e_ezsigntemplatesignature_dependencyrequirement' => :'FieldEEzsigntemplatesignatureDependencyrequirement'
       }
     end
 
@@ -274,6 +278,10 @@ module EzmaxApi
 
       if attributes.key?(:'e_ezsigntemplatesignature_textvalidation')
         self.e_ezsigntemplatesignature_textvalidation = attributes[:'e_ezsigntemplatesignature_textvalidation']
+      end
+
+      if attributes.key?(:'e_ezsigntemplatesignature_dependencyrequirement')
+        self.e_ezsigntemplatesignature_dependencyrequirement = attributes[:'e_ezsigntemplatesignature_dependencyrequirement']
       end
     end
 
@@ -596,7 +604,8 @@ module EzmaxApi
           b_ezsigntemplatesignature_required == o.b_ezsigntemplatesignature_required &&
           i_ezsigntemplatesignature_maxlength == o.i_ezsigntemplatesignature_maxlength &&
           s_ezsigntemplatesignature_regexp == o.s_ezsigntemplatesignature_regexp &&
-          e_ezsigntemplatesignature_textvalidation == o.e_ezsigntemplatesignature_textvalidation
+          e_ezsigntemplatesignature_textvalidation == o.e_ezsigntemplatesignature_textvalidation &&
+          e_ezsigntemplatesignature_dependencyrequirement == o.e_ezsigntemplatesignature_dependencyrequirement
     end
 
     # @see the `==` method
@@ -608,7 +617,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatesignature_id, fki_ezsigntemplatedocument_id, fki_ezsigntemplatesigner_id, fki_ezsigntemplatesigner_id_validation, i_ezsigntemplatedocumentpage_pagenumber, i_ezsigntemplatesignature_x, i_ezsigntemplatesignature_y, i_ezsigntemplatesignature_width, i_ezsigntemplatesignature_height, i_ezsigntemplatesignature_step, e_ezsigntemplatesignature_type, t_ezsigntemplatesignature_tooltip, e_ezsigntemplatesignature_tooltipposition, e_ezsigntemplatesignature_font, i_ezsigntemplatesignature_validationstep, s_ezsigntemplatesignature_attachmentdescription, e_ezsigntemplatesignature_attachmentnamesource, b_ezsigntemplatesignature_required, i_ezsigntemplatesignature_maxlength, s_ezsigntemplatesignature_regexp, e_ezsigntemplatesignature_textvalidation].hash
+      [pki_ezsigntemplatesignature_id, fki_ezsigntemplatedocument_id, fki_ezsigntemplatesigner_id, fki_ezsigntemplatesigner_id_validation, i_ezsigntemplatedocumentpage_pagenumber, i_ezsigntemplatesignature_x, i_ezsigntemplatesignature_y, i_ezsigntemplatesignature_width, i_ezsigntemplatesignature_height, i_ezsigntemplatesignature_step, e_ezsigntemplatesignature_type, t_ezsigntemplatesignature_tooltip, e_ezsigntemplatesignature_tooltipposition, e_ezsigntemplatesignature_font, i_ezsigntemplatesignature_validationstep, s_ezsigntemplatesignature_attachmentdescription, e_ezsigntemplatesignature_attachmentnamesource, b_ezsigntemplatesignature_required, i_ezsigntemplatesignature_maxlength, s_ezsigntemplatesignature_regexp, e_ezsigntemplatesignature_textvalidation, e_ezsigntemplatesignature_dependencyrequirement].hash
     end
 
     # Builds the object from hash

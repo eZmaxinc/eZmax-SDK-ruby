@@ -15,6 +15,7 @@
 | **b_ezsignformfield_autocomplete** | **Boolean** | Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text** | [optional] |
 | **b_ezsignformfield_selected** | **Boolean** | Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio** | [optional] |
 | **s_ezsignformfield_enteredvalue** | **String** | This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea** | [optional] |
+| **e_ezsignformfield_dependencyrequirement** | [**FieldEEzsignformfieldDependencyrequirement**](FieldEEzsignformfieldDependencyrequirement.md) |  | [optional] |
 
 ## Example
 
@@ -32,7 +33,8 @@ instance = EzmaxApi::EzsignformfieldResponse.new(
   i_ezsignformfield_height: 22,
   b_ezsignformfield_autocomplete: null,
   b_ezsignformfield_selected: null,
-  s_ezsignformfield_enteredvalue: Montreal
+  s_ezsignformfield_enteredvalue: Montreal,
+  e_ezsignformfield_dependencyrequirement: null
 )
 ```
 

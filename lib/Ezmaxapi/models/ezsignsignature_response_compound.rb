@@ -80,6 +80,8 @@ module EzmaxApi
 
     attr_accessor :e_ezsignsignature_textvalidation
 
+    attr_accessor :e_ezsignsignature_dependencyrequirement
+
     # A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
     attr_accessor :s_ezsignsignature_regexp
 
@@ -96,6 +98,8 @@ module EzmaxApi
     attr_accessor :a_obj_ezsignsignaturecustomdate
 
     attr_accessor :obj_creditcardtransaction
+
+    attr_accessor :a_obj_ezsignelementdependency
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -145,13 +149,15 @@ module EzmaxApi
         :'s_ezsignsignature_description' => :'sEzsignsignatureDescription',
         :'i_ezsignsignature_maxlength' => :'iEzsignsignatureMaxlength',
         :'e_ezsignsignature_textvalidation' => :'eEzsignsignatureTextvalidation',
+        :'e_ezsignsignature_dependencyrequirement' => :'eEzsignsignatureDependencyrequirement',
         :'s_ezsignsignature_regexp' => :'sEzsignsignatureRegexp',
         :'obj_contact_name' => :'objContactName',
         :'obj_contact_name_delegation' => :'objContactNameDelegation',
         :'obj_signature' => :'objSignature',
         :'b_ezsignsignature_customdate' => :'bEzsignsignatureCustomdate',
         :'a_obj_ezsignsignaturecustomdate' => :'a_objEzsignsignaturecustomdate',
-        :'obj_creditcardtransaction' => :'objCreditcardtransaction'
+        :'obj_creditcardtransaction' => :'objCreditcardtransaction',
+        :'a_obj_ezsignelementdependency' => :'a_objEzsignelementdependency'
       }
     end
 
@@ -186,13 +192,15 @@ module EzmaxApi
         :'s_ezsignsignature_description' => :'String',
         :'i_ezsignsignature_maxlength' => :'Integer',
         :'e_ezsignsignature_textvalidation' => :'EnumTextvalidation',
+        :'e_ezsignsignature_dependencyrequirement' => :'FieldEEzsignsignatureDependencyrequirement',
         :'s_ezsignsignature_regexp' => :'String',
         :'obj_contact_name' => :'CustomContactNameResponse',
         :'obj_contact_name_delegation' => :'CustomContactNameResponse',
         :'obj_signature' => :'SignatureResponseCompound',
         :'b_ezsignsignature_customdate' => :'Boolean',
         :'a_obj_ezsignsignaturecustomdate' => :'Array<EzsignsignaturecustomdateResponseCompound>',
-        :'obj_creditcardtransaction' => :'CustomCreditcardtransactionResponse'
+        :'obj_creditcardtransaction' => :'CustomCreditcardtransactionResponse',
+        :'a_obj_ezsignelementdependency' => :'Array<EzsignelementdependencyResponseCompound>'
       }
     end
 
@@ -332,6 +340,10 @@ module EzmaxApi
         self.e_ezsignsignature_textvalidation = attributes[:'e_ezsignsignature_textvalidation']
       end
 
+      if attributes.key?(:'e_ezsignsignature_dependencyrequirement')
+        self.e_ezsignsignature_dependencyrequirement = attributes[:'e_ezsignsignature_dependencyrequirement']
+      end
+
       if attributes.key?(:'s_ezsignsignature_regexp')
         self.s_ezsignsignature_regexp = attributes[:'s_ezsignsignature_regexp']
       end
@@ -362,6 +374,12 @@ module EzmaxApi
 
       if attributes.key?(:'obj_creditcardtransaction')
         self.obj_creditcardtransaction = attributes[:'obj_creditcardtransaction']
+      end
+
+      if attributes.key?(:'a_obj_ezsignelementdependency')
+        if (value = attributes[:'a_obj_ezsignelementdependency']).is_a?(Array)
+          self.a_obj_ezsignelementdependency = value
+        end
       end
     end
 
@@ -694,13 +712,15 @@ module EzmaxApi
           s_ezsignsignature_description == o.s_ezsignsignature_description &&
           i_ezsignsignature_maxlength == o.i_ezsignsignature_maxlength &&
           e_ezsignsignature_textvalidation == o.e_ezsignsignature_textvalidation &&
+          e_ezsignsignature_dependencyrequirement == o.e_ezsignsignature_dependencyrequirement &&
           s_ezsignsignature_regexp == o.s_ezsignsignature_regexp &&
           obj_contact_name == o.obj_contact_name &&
           obj_contact_name_delegation == o.obj_contact_name_delegation &&
           obj_signature == o.obj_signature &&
           b_ezsignsignature_customdate == o.b_ezsignsignature_customdate &&
           a_obj_ezsignsignaturecustomdate == o.a_obj_ezsignsignaturecustomdate &&
-          obj_creditcardtransaction == o.obj_creditcardtransaction
+          obj_creditcardtransaction == o.obj_creditcardtransaction &&
+          a_obj_ezsignelementdependency == o.a_obj_ezsignelementdependency
     end
 
     # @see the `==` method
@@ -712,7 +732,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, e_ezsignsignature_type, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, obj_creditcardtransaction].hash
+      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, e_ezsignsignature_type, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, e_ezsignsignature_dependencyrequirement, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, obj_creditcardtransaction, a_obj_ezsignelementdependency].hash
     end
 
     # Builds the object from hash

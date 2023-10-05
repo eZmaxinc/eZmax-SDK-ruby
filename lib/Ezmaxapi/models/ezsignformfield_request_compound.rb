@@ -49,6 +49,32 @@ module EzmaxApi
     # This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
     attr_accessor :s_ezsignformfield_enteredvalue
 
+    attr_accessor :e_ezsignformfield_dependencyrequirement
+
+    attr_accessor :a_obj_ezsignelementdependency
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -62,7 +88,9 @@ module EzmaxApi
         :'i_ezsignformfield_height' => :'iEzsignformfieldHeight',
         :'b_ezsignformfield_autocomplete' => :'bEzsignformfieldAutocomplete',
         :'b_ezsignformfield_selected' => :'bEzsignformfieldSelected',
-        :'s_ezsignformfield_enteredvalue' => :'sEzsignformfieldEnteredvalue'
+        :'s_ezsignformfield_enteredvalue' => :'sEzsignformfieldEnteredvalue',
+        :'e_ezsignformfield_dependencyrequirement' => :'eEzsignformfieldDependencyrequirement',
+        :'a_obj_ezsignelementdependency' => :'a_objEzsignelementdependency'
       }
     end
 
@@ -84,7 +112,9 @@ module EzmaxApi
         :'i_ezsignformfield_height' => :'Integer',
         :'b_ezsignformfield_autocomplete' => :'Boolean',
         :'b_ezsignformfield_selected' => :'Boolean',
-        :'s_ezsignformfield_enteredvalue' => :'String'
+        :'s_ezsignformfield_enteredvalue' => :'String',
+        :'e_ezsignformfield_dependencyrequirement' => :'FieldEEzsignformfieldDependencyrequirement',
+        :'a_obj_ezsignelementdependency' => :'Array<EzsignelementdependencyRequestCompound>'
       }
     end
 
@@ -170,6 +200,16 @@ module EzmaxApi
 
       if attributes.key?(:'s_ezsignformfield_enteredvalue')
         self.s_ezsignformfield_enteredvalue = attributes[:'s_ezsignformfield_enteredvalue']
+      end
+
+      if attributes.key?(:'e_ezsignformfield_dependencyrequirement')
+        self.e_ezsignformfield_dependencyrequirement = attributes[:'e_ezsignformfield_dependencyrequirement']
+      end
+
+      if attributes.key?(:'a_obj_ezsignelementdependency')
+        if (value = attributes[:'a_obj_ezsignelementdependency']).is_a?(Array)
+          self.a_obj_ezsignelementdependency = value
+        end
       end
     end
 
@@ -347,7 +387,9 @@ module EzmaxApi
           i_ezsignformfield_height == o.i_ezsignformfield_height &&
           b_ezsignformfield_autocomplete == o.b_ezsignformfield_autocomplete &&
           b_ezsignformfield_selected == o.b_ezsignformfield_selected &&
-          s_ezsignformfield_enteredvalue == o.s_ezsignformfield_enteredvalue
+          s_ezsignformfield_enteredvalue == o.s_ezsignformfield_enteredvalue &&
+          e_ezsignformfield_dependencyrequirement == o.e_ezsignformfield_dependencyrequirement &&
+          a_obj_ezsignelementdependency == o.a_obj_ezsignelementdependency
     end
 
     # @see the `==` method
@@ -359,7 +401,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignformfield_id, i_ezsignpage_pagenumber, s_ezsignformfield_label, s_ezsignformfield_value, i_ezsignformfield_x, i_ezsignformfield_y, i_ezsignformfield_width, i_ezsignformfield_height, b_ezsignformfield_autocomplete, b_ezsignformfield_selected, s_ezsignformfield_enteredvalue].hash
+      [pki_ezsignformfield_id, i_ezsignpage_pagenumber, s_ezsignformfield_label, s_ezsignformfield_value, i_ezsignformfield_x, i_ezsignformfield_y, i_ezsignformfield_width, i_ezsignformfield_height, b_ezsignformfield_autocomplete, b_ezsignformfield_selected, s_ezsignformfield_enteredvalue, e_ezsignformfield_dependencyrequirement, a_obj_ezsignelementdependency].hash
     end
 
     # Builds the object from hash

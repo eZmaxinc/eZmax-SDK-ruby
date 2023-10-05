@@ -74,11 +74,15 @@ module EzmaxApi
     # A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
     attr_accessor :s_ezsignsignature_regexp
 
+    attr_accessor :e_ezsignsignature_dependencyrequirement
+
     # Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
     attr_accessor :b_ezsignsignature_customdate
 
     # An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
     attr_accessor :a_obj_ezsignsignaturecustomdate
+
+    attr_accessor :a_obj_ezsignelementdependency
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -126,8 +130,10 @@ module EzmaxApi
         :'i_ezsignsignature_maxlength' => :'iEzsignsignatureMaxlength',
         :'e_ezsignsignature_textvalidation' => :'eEzsignsignatureTextvalidation',
         :'s_ezsignsignature_regexp' => :'sEzsignsignatureRegexp',
+        :'e_ezsignsignature_dependencyrequirement' => :'eEzsignsignatureDependencyrequirement',
         :'b_ezsignsignature_customdate' => :'bEzsignsignatureCustomdate',
-        :'a_obj_ezsignsignaturecustomdate' => :'a_objEzsignsignaturecustomdate'
+        :'a_obj_ezsignsignaturecustomdate' => :'a_objEzsignsignaturecustomdate',
+        :'a_obj_ezsignelementdependency' => :'a_objEzsignelementdependency'
       }
     end
 
@@ -160,8 +166,10 @@ module EzmaxApi
         :'i_ezsignsignature_maxlength' => :'Integer',
         :'e_ezsignsignature_textvalidation' => :'EnumTextvalidation',
         :'s_ezsignsignature_regexp' => :'String',
+        :'e_ezsignsignature_dependencyrequirement' => :'FieldEEzsignsignatureDependencyrequirement',
         :'b_ezsignsignature_customdate' => :'Boolean',
-        :'a_obj_ezsignsignaturecustomdate' => :'Array<EzsignsignaturecustomdateRequestCompound>'
+        :'a_obj_ezsignsignaturecustomdate' => :'Array<EzsignsignaturecustomdateRequestCompound>',
+        :'a_obj_ezsignelementdependency' => :'Array<EzsignelementdependencyRequestCompound>'
       }
     end
 
@@ -291,6 +299,10 @@ module EzmaxApi
         self.s_ezsignsignature_regexp = attributes[:'s_ezsignsignature_regexp']
       end
 
+      if attributes.key?(:'e_ezsignsignature_dependencyrequirement')
+        self.e_ezsignsignature_dependencyrequirement = attributes[:'e_ezsignsignature_dependencyrequirement']
+      end
+
       if attributes.key?(:'b_ezsignsignature_customdate')
         self.b_ezsignsignature_customdate = attributes[:'b_ezsignsignature_customdate']
       end
@@ -298,6 +310,12 @@ module EzmaxApi
       if attributes.key?(:'a_obj_ezsignsignaturecustomdate')
         if (value = attributes[:'a_obj_ezsignsignaturecustomdate']).is_a?(Array)
           self.a_obj_ezsignsignaturecustomdate = value
+        end
+      end
+
+      if attributes.key?(:'a_obj_ezsignelementdependency')
+        if (value = attributes[:'a_obj_ezsignelementdependency']).is_a?(Array)
+          self.a_obj_ezsignelementdependency = value
         end
       end
     end
@@ -598,8 +616,10 @@ module EzmaxApi
           i_ezsignsignature_maxlength == o.i_ezsignsignature_maxlength &&
           e_ezsignsignature_textvalidation == o.e_ezsignsignature_textvalidation &&
           s_ezsignsignature_regexp == o.s_ezsignsignature_regexp &&
+          e_ezsignsignature_dependencyrequirement == o.e_ezsignsignature_dependencyrequirement &&
           b_ezsignsignature_customdate == o.b_ezsignsignature_customdate &&
-          a_obj_ezsignsignaturecustomdate == o.a_obj_ezsignsignaturecustomdate
+          a_obj_ezsignsignaturecustomdate == o.a_obj_ezsignsignaturecustomdate &&
+          a_obj_ezsignelementdependency == o.a_obj_ezsignelementdependency
     end
 
     # @see the `==` method
@@ -611,7 +631,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignsignature_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_width, i_ezsignsignature_height, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, fki_ezsignfoldersignerassociation_id_validation, b_ezsignsignature_required, e_ezsignsignature_attachmentnamesource, s_ezsignsignature_attachmentdescription, i_ezsignsignature_validationstep, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, s_ezsignsignature_regexp, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate].hash
+      [pki_ezsignsignature_id, fki_ezsignfoldersignerassociation_id, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_width, i_ezsignsignature_height, i_ezsignsignature_step, e_ezsignsignature_type, fki_ezsigndocument_id, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, fki_ezsignfoldersignerassociation_id_validation, b_ezsignsignature_required, e_ezsignsignature_attachmentnamesource, s_ezsignsignature_attachmentdescription, i_ezsignsignature_validationstep, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, s_ezsignsignature_regexp, e_ezsignsignature_dependencyrequirement, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, a_obj_ezsignelementdependency].hash
     end
 
     # Builds the object from hash

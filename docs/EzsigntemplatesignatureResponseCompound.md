@@ -25,8 +25,10 @@
 | **i_ezsigntemplatesignature_maxlength** | **Integer** | The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea** | [optional] |
 | **s_ezsigntemplatesignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea** | [optional] |
 | **e_ezsigntemplatesignature_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
+| **e_ezsigntemplatesignature_dependencyrequirement** | [**FieldEEzsigntemplatesignatureDependencyrequirement**](FieldEEzsigntemplatesignatureDependencyrequirement.md) |  | [optional] |
 | **b_ezsigntemplatesignature_customdate** | **Boolean** | Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**) | [optional] |
 | **a_obj_ezsigntemplatesignaturecustomdate** | [**Array&lt;EzsigntemplatesignaturecustomdateResponseCompound&gt;**](EzsigntemplatesignaturecustomdateResponseCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
+| **a_obj_ezsigntemplateelementdependency** | [**Array&lt;EzsigntemplateelementdependencyResponseCompound&gt;**](EzsigntemplateelementdependencyResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -55,8 +57,10 @@ instance = EzmaxApi::EzsigntemplatesignatureResponseCompound.new(
   i_ezsigntemplatesignature_maxlength: 75,
   s_ezsigntemplatesignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
   e_ezsigntemplatesignature_textvalidation: null,
+  e_ezsigntemplatesignature_dependencyrequirement: null,
   b_ezsigntemplatesignature_customdate: null,
-  a_obj_ezsigntemplatesignaturecustomdate: null
+  a_obj_ezsigntemplatesignaturecustomdate: null,
+  a_obj_ezsigntemplateelementdependency: null
 )
 ```
 

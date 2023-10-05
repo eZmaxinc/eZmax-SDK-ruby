@@ -91,4 +91,16 @@ describe EzmaxApi::EzsignformfieldResponseCompound do
     end
   end
 
+  describe 'test attribute "e_ezsignformfield_dependencyrequirement"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "a_obj_ezsignelementdependency"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
 end

@@ -25,6 +25,7 @@
 | **i_ezsignsignature_maxlength** | **Integer** | The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** | [optional] |
 | **e_ezsignsignature_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
 | **s_ezsignsignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional] |
+| **e_ezsignsignature_dependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] |
 
 ## Example
 
@@ -52,7 +53,8 @@ instance = EzmaxApi::EzsignsignatureRequest.new(
   i_ezsignsignature_validationstep: 1,
   i_ezsignsignature_maxlength: 75,
   e_ezsignsignature_textvalidation: null,
-  s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/
+  s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  e_ezsignsignature_dependencyrequirement: null
 )
 ```
 

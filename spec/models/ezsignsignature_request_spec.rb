@@ -151,4 +151,10 @@ describe EzmaxApi::EzsignsignatureRequest do
     end
   end
 
+  describe 'test attribute "e_ezsignsignature_dependencyrequirement"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
 end

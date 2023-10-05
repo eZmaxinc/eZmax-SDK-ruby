@@ -46,6 +46,32 @@ module EzmaxApi
     # Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
     attr_accessor :b_ezsigntemplateformfield_selected
 
+    attr_accessor :e_ezsigntemplateformfield_dependencyrequirement
+
+    attr_accessor :a_obj_ezsigntemplateelementdependency
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -58,7 +84,9 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_width' => :'iEzsigntemplateformfieldWidth',
         :'i_ezsigntemplateformfield_height' => :'iEzsigntemplateformfieldHeight',
         :'b_ezsigntemplateformfield_autocomplete' => :'bEzsigntemplateformfieldAutocomplete',
-        :'b_ezsigntemplateformfield_selected' => :'bEzsigntemplateformfieldSelected'
+        :'b_ezsigntemplateformfield_selected' => :'bEzsigntemplateformfieldSelected',
+        :'e_ezsigntemplateformfield_dependencyrequirement' => :'eEzsigntemplateformfieldDependencyrequirement',
+        :'a_obj_ezsigntemplateelementdependency' => :'a_objEzsigntemplateelementdependency'
       }
     end
 
@@ -79,7 +107,9 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_width' => :'Integer',
         :'i_ezsigntemplateformfield_height' => :'Integer',
         :'b_ezsigntemplateformfield_autocomplete' => :'Boolean',
-        :'b_ezsigntemplateformfield_selected' => :'Boolean'
+        :'b_ezsigntemplateformfield_selected' => :'Boolean',
+        :'e_ezsigntemplateformfield_dependencyrequirement' => :'FieldEEzsigntemplateformfieldDependencyrequirement',
+        :'a_obj_ezsigntemplateelementdependency' => :'Array<EzsigntemplateelementdependencyResponseCompound>'
       }
     end
 
@@ -163,6 +193,16 @@ module EzmaxApi
 
       if attributes.key?(:'b_ezsigntemplateformfield_selected')
         self.b_ezsigntemplateformfield_selected = attributes[:'b_ezsigntemplateformfield_selected']
+      end
+
+      if attributes.key?(:'e_ezsigntemplateformfield_dependencyrequirement')
+        self.e_ezsigntemplateformfield_dependencyrequirement = attributes[:'e_ezsigntemplateformfield_dependencyrequirement']
+      end
+
+      if attributes.key?(:'a_obj_ezsigntemplateelementdependency')
+        if (value = attributes[:'a_obj_ezsigntemplateelementdependency']).is_a?(Array)
+          self.a_obj_ezsigntemplateelementdependency = value
+        end
       end
     end
 
@@ -344,7 +384,9 @@ module EzmaxApi
           i_ezsigntemplateformfield_width == o.i_ezsigntemplateformfield_width &&
           i_ezsigntemplateformfield_height == o.i_ezsigntemplateformfield_height &&
           b_ezsigntemplateformfield_autocomplete == o.b_ezsigntemplateformfield_autocomplete &&
-          b_ezsigntemplateformfield_selected == o.b_ezsigntemplateformfield_selected
+          b_ezsigntemplateformfield_selected == o.b_ezsigntemplateformfield_selected &&
+          e_ezsigntemplateformfield_dependencyrequirement == o.e_ezsigntemplateformfield_dependencyrequirement &&
+          a_obj_ezsigntemplateelementdependency == o.a_obj_ezsigntemplateelementdependency
     end
 
     # @see the `==` method
@@ -356,7 +398,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplateformfield_id, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_autocomplete, b_ezsigntemplateformfield_selected].hash
+      [pki_ezsigntemplateformfield_id, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_autocomplete, b_ezsigntemplateformfield_selected, e_ezsigntemplateformfield_dependencyrequirement, a_obj_ezsigntemplateelementdependency].hash
     end
 
     # Builds the object from hash
