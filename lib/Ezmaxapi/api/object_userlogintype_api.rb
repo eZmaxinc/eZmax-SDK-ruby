@@ -13,62 +13,55 @@ OpenAPI Generator version: 7.0.1
 require 'cgi'
 
 module EzmaxApi
-  class ObjectEzsigntsarequirementApi
+  class ObjectUserlogintypeApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Retrieve Ezsigntsarequirements and IDs
-    # Get the list of Ezsigntsarequirement to be used in a dropdown or autocomplete control.
-    # @param s_selector [String] The type of Ezsigntsarequirements to return
+    # Retrieve Userlogintypes and IDs
+    # Get the list of Userlogintype to be used in a dropdown or autocomplete control.
+    # @param s_selector [String] The type of Userlogintypes to return
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :fki_ezsignfoldertype_id 
     # @option opts [String] :e_filter_active Specify which results we want to display. (default to 'Active')
     # @option opts [String] :s_query Allow to filter the returned results
     # @option opts [HeaderAcceptLanguage] :accept_language 
-    # @return [EzsigntsarequirementGetAutocompleteV2Response]
-    def ezsigntsarequirement_get_autocomplete_v2(s_selector, opts = {})
-      data, _status_code, _headers = ezsigntsarequirement_get_autocomplete_v2_with_http_info(s_selector, opts)
+    # @return [UserlogintypeGetAutocompleteV2Response]
+    def userlogintype_get_autocomplete_v2(s_selector, opts = {})
+      data, _status_code, _headers = userlogintype_get_autocomplete_v2_with_http_info(s_selector, opts)
       data
     end
 
-    # Retrieve Ezsigntsarequirements and IDs
-    # Get the list of Ezsigntsarequirement to be used in a dropdown or autocomplete control.
-    # @param s_selector [String] The type of Ezsigntsarequirements to return
+    # Retrieve Userlogintypes and IDs
+    # Get the list of Userlogintype to be used in a dropdown or autocomplete control.
+    # @param s_selector [String] The type of Userlogintypes to return
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :fki_ezsignfoldertype_id 
     # @option opts [String] :e_filter_active Specify which results we want to display. (default to 'Active')
     # @option opts [String] :s_query Allow to filter the returned results
     # @option opts [HeaderAcceptLanguage] :accept_language 
-    # @return [Array<(EzsigntsarequirementGetAutocompleteV2Response, Integer, Hash)>] EzsigntsarequirementGetAutocompleteV2Response data, response status code and response headers
-    def ezsigntsarequirement_get_autocomplete_v2_with_http_info(s_selector, opts = {})
+    # @return [Array<(UserlogintypeGetAutocompleteV2Response, Integer, Hash)>] UserlogintypeGetAutocompleteV2Response data, response status code and response headers
+    def userlogintype_get_autocomplete_v2_with_http_info(s_selector, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ObjectEzsigntsarequirementApi.ezsigntsarequirement_get_autocomplete_v2 ...'
+        @api_client.config.logger.debug 'Calling API: ObjectUserlogintypeApi.userlogintype_get_autocomplete_v2 ...'
       end
       # verify the required parameter 's_selector' is set
       if @api_client.config.client_side_validation && s_selector.nil?
-        fail ArgumentError, "Missing the required parameter 's_selector' when calling ObjectEzsigntsarequirementApi.ezsigntsarequirement_get_autocomplete_v2"
+        fail ArgumentError, "Missing the required parameter 's_selector' when calling ObjectUserlogintypeApi.userlogintype_get_autocomplete_v2"
       end
       # verify enum value
-      allowable_values = ["All", "User", "Usergroup"]
+      allowable_values = ["All"]
       if @api_client.config.client_side_validation && !allowable_values.include?(s_selector)
         fail ArgumentError, "invalid value for \"s_selector\", must be one of #{allowable_values}"
       end
-      if @api_client.config.client_side_validation && !opts[:'fki_ezsignfoldertype_id'].nil? && opts[:'fki_ezsignfoldertype_id'] < 0
-        fail ArgumentError, 'invalid value for "opts[:"fki_ezsignfoldertype_id"]" when calling ObjectEzsigntsarequirementApi.ezsigntsarequirement_get_autocomplete_v2, must be greater than or equal to 0.'
-      end
-
       allowable_values = ["All", "Active", "Inactive"]
       if @api_client.config.client_side_validation && opts[:'e_filter_active'] && !allowable_values.include?(opts[:'e_filter_active'])
         fail ArgumentError, "invalid value for \"e_filter_active\", must be one of #{allowable_values}"
       end
       # resource path
-      local_var_path = '/2/object/ezsigntsarequirement/getAutocomplete/{sSelector}'.sub('{' + 'sSelector' + '}', CGI.escape(s_selector.to_s))
+      local_var_path = '/2/object/userlogintype/getAutocomplete/{sSelector}'.sub('{' + 'sSelector' + '}', CGI.escape(s_selector.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'fkiEzsignfoldertypeID'] = opts[:'fki_ezsignfoldertype_id'] if !opts[:'fki_ezsignfoldertype_id'].nil?
       query_params[:'eFilterActive'] = opts[:'e_filter_active'] if !opts[:'e_filter_active'].nil?
       query_params[:'sQuery'] = opts[:'s_query'] if !opts[:'s_query'].nil?
 
@@ -85,13 +78,13 @@ module EzmaxApi
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'EzsigntsarequirementGetAutocompleteV2Response'
+      return_type = opts[:debug_return_type] || 'UserlogintypeGetAutocompleteV2Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['Authorization']
 
       new_options = opts.merge(
-        :operation => :"ObjectEzsigntsarequirementApi.ezsigntsarequirement_get_autocomplete_v2",
+        :operation => :"ObjectUserlogintypeApi.userlogintype_get_autocomplete_v2",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -102,7 +95,7 @@ module EzmaxApi
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ObjectEzsigntsarequirementApi#ezsigntsarequirement_get_autocomplete_v2\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ObjectUserlogintypeApi#userlogintype_get_autocomplete_v2\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

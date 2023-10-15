@@ -325,7 +325,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectUserApi.new
-s_selector = 'All' # String | The type of Users to return
+s_selector = 'AgentBrokerEmployeeEzsignUserNormal' # String | The type of Users to return
 opts = {
   e_filter_active: 'All', # String | Specify which results we want to display.
   s_query: 's_query_example', # String | Allow to filter the returned results

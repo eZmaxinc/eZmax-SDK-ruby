@@ -885,6 +885,7 @@ docs/ObjectUserApi.md
 docs/ObjectUsergroupApi.md
 docs/ObjectUsergroupdelegationApi.md
 docs/ObjectUsergroupmembershipApi.md
+docs/ObjectUserlogintypeApi.md
 docs/ObjectUserstagedApi.md
 docs/ObjectVariableexpenseApi.md
 docs/ObjectVersionhistoryApi.md
@@ -1080,6 +1081,9 @@ docs/UsergroupmembershipRequest.md
 docs/UsergroupmembershipRequestCompound.md
 docs/UsergroupmembershipResponse.md
 docs/UsergroupmembershipResponseCompound.md
+docs/UserlogintypeAutocompleteElementResponse.md
+docs/UserlogintypeGetAutocompleteV2Response.md
+docs/UserlogintypeGetAutocompleteV2ResponseMPayload.md
 docs/UserstagedCreateUserV1Response.md
 docs/UserstagedCreateUserV1ResponseMPayload.md
 docs/UserstagedDeleteObjectV1Response.md
@@ -1213,6 +1217,7 @@ lib/Ezmaxapi/api/object_user_api.rb
 lib/Ezmaxapi/api/object_usergroup_api.rb
 lib/Ezmaxapi/api/object_usergroupdelegation_api.rb
 lib/Ezmaxapi/api/object_usergroupmembership_api.rb
+lib/Ezmaxapi/api/object_userlogintype_api.rb
 lib/Ezmaxapi/api/object_userstaged_api.rb
 lib/Ezmaxapi/api/object_variableexpense_api.rb
 lib/Ezmaxapi/api/object_versionhistory_api.rb
@@ -2223,6 +2228,9 @@ lib/Ezmaxapi/models/usergroupmembership_request.rb
 lib/Ezmaxapi/models/usergroupmembership_request_compound.rb
 lib/Ezmaxapi/models/usergroupmembership_response.rb
 lib/Ezmaxapi/models/usergroupmembership_response_compound.rb
+lib/Ezmaxapi/models/userlogintype_autocomplete_element_response.rb
+lib/Ezmaxapi/models/userlogintype_get_autocomplete_v2_response.rb
+lib/Ezmaxapi/models/userlogintype_get_autocomplete_v2_response_m_payload.rb
 lib/Ezmaxapi/models/userstaged_create_user_v1_response.rb
 lib/Ezmaxapi/models/userstaged_create_user_v1_response_m_payload.rb
 lib/Ezmaxapi/models/userstaged_delete_object_v1_response.rb
@@ -2355,6 +2363,7 @@ spec/api/object_user_api_spec.rb
 spec/api/object_usergroup_api_spec.rb
 spec/api/object_usergroupdelegation_api_spec.rb
 spec/api/object_usergroupmembership_api_spec.rb
+spec/api/object_userlogintype_api_spec.rb
 spec/api/object_userstaged_api_spec.rb
 spec/api/object_variableexpense_api_spec.rb
 spec/api/object_versionhistory_api_spec.rb
@@ -3364,6 +3373,9 @@ spec/models/usergroupmembership_request_compound_spec.rb
 spec/models/usergroupmembership_request_spec.rb
 spec/models/usergroupmembership_response_compound_spec.rb
 spec/models/usergroupmembership_response_spec.rb
+spec/models/userlogintype_autocomplete_element_response_spec.rb
+spec/models/userlogintype_get_autocomplete_v2_response_m_payload_spec.rb
+spec/models/userlogintype_get_autocomplete_v2_response_spec.rb
 spec/models/userstaged_create_user_v1_response_m_payload_spec.rb
 spec/models/userstaged_create_user_v1_response_spec.rb
 spec/models/userstaged_delete_object_v1_response_spec.rb

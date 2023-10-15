@@ -29,7 +29,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsigntsarequirementApi.new
-s_selector = 'User' # String | The type of Ezsigntsarequirements to return
+s_selector = 'All' # String | The type of Ezsigntsarequirements to return
 opts = {
   fki_ezsignfoldertype_id: 56, # Integer | 
   e_filter_active: 'All', # String | Specify which results we want to display.
