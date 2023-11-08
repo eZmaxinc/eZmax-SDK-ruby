@@ -376,7 +376,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
-| **i_row_max** | **Integer** |  | [optional][default to 10000] |
+| **i_row_max** | **Integer** |  | [optional] |
 | **i_row_offset** | **Integer** |  | [optional][default to 0] |
 | **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
 | **s_filter** | **String** |  | [optional] |

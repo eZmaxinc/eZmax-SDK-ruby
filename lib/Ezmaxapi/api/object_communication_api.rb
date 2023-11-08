@@ -19,35 +19,31 @@ module EzmaxApi
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Retrieve an existing Communication
-    # 
-    # @param pki_communication_id [Integer] 
+    # Send a new Communication
+    # The endpoint allows to send one or many elements at once.
+    # @param communication_send_v1_request [CommunicationSendV1Request] 
     # @param [Hash] opts the optional parameters
-    # @return [CommunicationGetObjectV2Response]
-    def communication_get_object_v2(pki_communication_id, opts = {})
-      data, _status_code, _headers = communication_get_object_v2_with_http_info(pki_communication_id, opts)
+    # @return [CommunicationSendV1Response]
+    def communication_send_v1(communication_send_v1_request, opts = {})
+      data, _status_code, _headers = communication_send_v1_with_http_info(communication_send_v1_request, opts)
       data
     end
 
-    # Retrieve an existing Communication
-    # 
-    # @param pki_communication_id [Integer] 
+    # Send a new Communication
+    # The endpoint allows to send one or many elements at once.
+    # @param communication_send_v1_request [CommunicationSendV1Request] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(CommunicationGetObjectV2Response, Integer, Hash)>] CommunicationGetObjectV2Response data, response status code and response headers
-    def communication_get_object_v2_with_http_info(pki_communication_id, opts = {})
+    # @return [Array<(CommunicationSendV1Response, Integer, Hash)>] CommunicationSendV1Response data, response status code and response headers
+    def communication_send_v1_with_http_info(communication_send_v1_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ObjectCommunicationApi.communication_get_object_v2 ...'
+        @api_client.config.logger.debug 'Calling API: ObjectCommunicationApi.communication_send_v1 ...'
       end
-      # verify the required parameter 'pki_communication_id' is set
-      if @api_client.config.client_side_validation && pki_communication_id.nil?
-        fail ArgumentError, "Missing the required parameter 'pki_communication_id' when calling ObjectCommunicationApi.communication_get_object_v2"
+      # verify the required parameter 'communication_send_v1_request' is set
+      if @api_client.config.client_side_validation && communication_send_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'communication_send_v1_request' when calling ObjectCommunicationApi.communication_send_v1"
       end
-      if @api_client.config.client_side_validation && pki_communication_id < 0
-        fail ArgumentError, 'invalid value for "pki_communication_id" when calling ObjectCommunicationApi.communication_get_object_v2, must be greater than or equal to 0.'
-      end
-
       # resource path
-      local_var_path = '/2/object/communication/{pkiCommunicationID}'.sub('{' + 'pkiCommunicationID' + '}', CGI.escape(pki_communication_id.to_s))
+      local_var_path = '/1/object/communication/send'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -56,21 +52,26 @@ module EzmaxApi
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(communication_send_v1_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CommunicationGetObjectV2Response'
+      return_type = opts[:debug_return_type] || 'CommunicationSendV1Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['Authorization']
 
       new_options = opts.merge(
-        :operation => :"ObjectCommunicationApi.communication_get_object_v2",
+        :operation => :"ObjectCommunicationApi.communication_send_v1",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -79,9 +80,9 @@ module EzmaxApi
         :return_type => return_type
       )
 
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ObjectCommunicationApi#communication_get_object_v2\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ObjectCommunicationApi#communication_send_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

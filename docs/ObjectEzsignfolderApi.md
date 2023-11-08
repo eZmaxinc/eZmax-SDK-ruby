@@ -15,6 +15,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolder_get_communication_count_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communication_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count |
 | [**ezsignfolder_get_communication_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list |
+| [**ezsignfolder_get_communicationrecipients_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communicationrecipients_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder&#39;s Communicationrecipient |
+| [**ezsignfolder_get_communicationsenders_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communicationsenders_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders | Retrieve Ezsignfolder&#39;s Communicationsender |
 | [**ezsignfolder_get_ezsigndocuments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments |
 | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations |
 | [**ezsignfolder_get_ezsignsignatures_automatic_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures |
@@ -816,6 +818,148 @@ end
 - **Accept**: application/json
 
 
+## ezsignfolder_get_communicationrecipients_v1
+
+> <EzsignfolderGetCommunicationrecipientsV1Response> ezsignfolder_get_communicationrecipients_v1(pki_ezsignfolder_id)
+
+Retrieve Ezsignfolder's Communicationrecipient
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+
+begin
+  # Retrieve Ezsignfolder's Communicationrecipient
+  result = api_instance.ezsignfolder_get_communicationrecipients_v1(pki_ezsignfolder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderGetCommunicationrecipientsV1Response>, Integer, Hash)> ezsignfolder_get_communicationrecipients_v1_with_http_info(pki_ezsignfolder_id)
+
+```ruby
+begin
+  # Retrieve Ezsignfolder's Communicationrecipient
+  data, status_code, headers = api_instance.ezsignfolder_get_communicationrecipients_v1_with_http_info(pki_ezsignfolder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfolderGetCommunicationrecipientsV1Response**](EzsignfolderGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfolder_get_communicationsenders_v1
+
+> <EzsignfolderGetCommunicationsendersV1Response> ezsignfolder_get_communicationsenders_v1(pki_ezsignfolder_id)
+
+Retrieve Ezsignfolder's Communicationsender
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+
+begin
+  # Retrieve Ezsignfolder's Communicationsender
+  result = api_instance.ezsignfolder_get_communicationsenders_v1(pki_ezsignfolder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderGetCommunicationsendersV1Response>, Integer, Hash)> ezsignfolder_get_communicationsenders_v1_with_http_info(pki_ezsignfolder_id)
+
+```ruby
+begin
+  # Retrieve Ezsignfolder's Communicationsender
+  data, status_code, headers = api_instance.ezsignfolder_get_communicationsenders_v1_with_http_info(pki_ezsignfolder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfolderGetCommunicationsendersV1Response**](EzsignfolderGetCommunicationsendersV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## ezsignfolder_get_ezsigndocuments_v1
 
 > <EzsignfolderGetEzsigndocumentsV1Response> ezsignfolder_get_ezsigndocuments_v1(pki_ezsignfolder_id)
@@ -1106,7 +1250,7 @@ end
 
 Retrieve Ezsignfolder list
 
-Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
 
 ### Examples
 
@@ -1162,7 +1306,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
-| **i_row_max** | **Integer** |  | [optional][default to 10000] |
+| **i_row_max** | **Integer** |  | [optional] |
 | **i_row_offset** | **Integer** |  | [optional][default to 0] |
 | **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
 | **s_filter** | **String** |  | [optional] |

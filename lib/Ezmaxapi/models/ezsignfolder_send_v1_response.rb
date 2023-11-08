@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
+  # Response for GET /1/object/attachment/{pkiAttachmentID}/download
   class EzsignfolderSendV1Response
     attr_accessor :obj_debug_payload
 

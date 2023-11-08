@@ -188,6 +188,8 @@ module EzmaxApi
 
       if attributes.key?(:'b_webhook_isactive')
         self.b_webhook_isactive = attributes[:'b_webhook_isactive']
+      else
+        self.b_webhook_isactive = nil
       end
 
       if attributes.key?(:'b_webhook_skipsslvalidation')
@@ -230,6 +232,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_webhook_emailfailed", s_webhook_emailfailed cannot be nil.')
       end
 
+      if @b_webhook_isactive.nil?
+        invalid_properties.push('invalid value for "b_webhook_isactive", b_webhook_isactive cannot be nil.')
+      end
+
       if @b_webhook_skipsslvalidation.nil?
         invalid_properties.push('invalid value for "b_webhook_skipsslvalidation", b_webhook_skipsslvalidation cannot be nil.')
       end
@@ -247,6 +253,7 @@ module EzmaxApi
       return false if @e_webhook_module.nil?
       return false if @s_webhook_url.nil?
       return false if @s_webhook_emailfailed.nil?
+      return false if @b_webhook_isactive.nil?
       return false if @b_webhook_skipsslvalidation.nil?
       true
     end

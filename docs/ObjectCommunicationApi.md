@@ -4,16 +4,16 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**communication_get_object_v2**](ObjectCommunicationApi.md#communication_get_object_v2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication |
+| [**communication_send_v1**](ObjectCommunicationApi.md#communication_send_v1) | **POST** /1/object/communication/send | Send a new Communication |
 
 
-## communication_get_object_v2
+## communication_send_v1
 
-> <CommunicationGetObjectV2Response> communication_get_object_v2(pki_communication_id)
+> <CommunicationSendV1Response> communication_send_v1(communication_send_v1_request)
 
-Retrieve an existing Communication
+Send a new Communication
 
-
+The endpoint allows to send one or many elements at once.
 
 ### Examples
 
@@ -29,32 +29,32 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectCommunicationApi.new
-pki_communication_id = 56 # Integer | 
+communication_send_v1_request = EzmaxApi::CommunicationSendV1Request.new({a_obj_communication: [EzmaxApi::CommunicationRequestCompound.new({e_communication_type: EzmaxApi::FieldECommunicationType::EMAIL, t_communication_body: 't_communication_body_example', b_communication_private: false, a_obj_communicationattachment: [EzmaxApi::CustomCommunicationattachmentRequest.new], a_obj_communicationrecipient: [EzmaxApi::CommunicationrecipientRequestCompound.new], a_obj_communicationreference: [EzmaxApi::CommunicationreferenceRequestCompound.new], a_obj_communicationexternalrecipient: [EzmaxApi::CommunicationexternalrecipientRequestCompound.new({s_communicationexternalrecipient_name: 'John Doe'})]})]}) # CommunicationSendV1Request | 
 
 begin
-  # Retrieve an existing Communication
-  result = api_instance.communication_get_object_v2(pki_communication_id)
+  # Send a new Communication
+  result = api_instance.communication_send_v1(communication_send_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectCommunicationApi->communication_get_object_v2: #{e}"
+  puts "Error when calling ObjectCommunicationApi->communication_send_v1: #{e}"
 end
 ```
 
-#### Using the communication_get_object_v2_with_http_info variant
+#### Using the communication_send_v1_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommunicationGetObjectV2Response>, Integer, Hash)> communication_get_object_v2_with_http_info(pki_communication_id)
+> <Array(<CommunicationSendV1Response>, Integer, Hash)> communication_send_v1_with_http_info(communication_send_v1_request)
 
 ```ruby
 begin
-  # Retrieve an existing Communication
-  data, status_code, headers = api_instance.communication_get_object_v2_with_http_info(pki_communication_id)
+  # Send a new Communication
+  data, status_code, headers = api_instance.communication_send_v1_with_http_info(communication_send_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommunicationGetObjectV2Response>
+  p data # => <CommunicationSendV1Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectCommunicationApi->communication_get_object_v2_with_http_info: #{e}"
+  puts "Error when calling ObjectCommunicationApi->communication_send_v1_with_http_info: #{e}"
 end
 ```
 
@@ -62,11 +62,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_communication_id** | **Integer** |  |  |
+| **communication_send_v1_request** | [**CommunicationSendV1Request**](CommunicationSendV1Request.md) |  |  |
 
 ### Return type
 
-[**CommunicationGetObjectV2Response**](CommunicationGetObjectV2Response.md)
+[**CommunicationSendV1Response**](CommunicationSendV1Response.md)
 
 ### Authorization
 
@@ -74,6 +74,6 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 

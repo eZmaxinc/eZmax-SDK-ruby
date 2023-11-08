@@ -22,7 +22,7 @@ module EzmaxApi
     # Retrieve Sessionhistory list
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
-    # @option opts [Integer] :i_row_max  (default to 10000)
+    # @option opts [Integer] :i_row_max 
     # @option opts [Integer] :i_row_offset  (default to 0)
     # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_filter 
@@ -35,7 +35,7 @@ module EzmaxApi
     # Retrieve Sessionhistory list
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
-    # @option opts [Integer] :i_row_max  (default to 10000)
+    # @option opts [Integer] :i_row_max 
     # @option opts [Integer] :i_row_offset  (default to 0)
     # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_filter 

@@ -799,6 +799,140 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Ezsignfolder's Communicationrecipient
+    # 
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsignfolderGetCommunicationrecipientsV1Response]
+    def ezsignfolder_get_communicationrecipients_v1(pki_ezsignfolder_id, opts = {})
+      data, _status_code, _headers = ezsignfolder_get_communicationrecipients_v1_with_http_info(pki_ezsignfolder_id, opts)
+      data
+    end
+
+    # Retrieve Ezsignfolder&#39;s Communicationrecipient
+    # 
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsignfolderGetCommunicationrecipientsV1Response, Integer, Hash)>] EzsignfolderGetCommunicationrecipientsV1Response data, response status code and response headers
+    def ezsignfolder_get_communicationrecipients_v1_with_http_info(pki_ezsignfolder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsignfolderApi.ezsignfolder_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsignfolder_id' is set
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsignfolder_id' when calling ObjectEzsignfolderApi.ezsignfolder_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id < 0
+        fail ArgumentError, 'invalid value for "pki_ezsignfolder_id" when calling ObjectEzsignfolderApi.ezsignfolder_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients'.sub('{' + 'pkiEzsignfolderID' + '}', CGI.escape(pki_ezsignfolder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsignfolderGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsignfolderApi.ezsignfolder_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsignfolderApi#ezsignfolder_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Ezsignfolder's Communicationsender
+    # 
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsignfolderGetCommunicationsendersV1Response]
+    def ezsignfolder_get_communicationsenders_v1(pki_ezsignfolder_id, opts = {})
+      data, _status_code, _headers = ezsignfolder_get_communicationsenders_v1_with_http_info(pki_ezsignfolder_id, opts)
+      data
+    end
+
+    # Retrieve Ezsignfolder&#39;s Communicationsender
+    # 
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsignfolderGetCommunicationsendersV1Response, Integer, Hash)>] EzsignfolderGetCommunicationsendersV1Response data, response status code and response headers
+    def ezsignfolder_get_communicationsenders_v1_with_http_info(pki_ezsignfolder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsignfolderApi.ezsignfolder_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsignfolder_id' is set
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsignfolder_id' when calling ObjectEzsignfolderApi.ezsignfolder_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id < 0
+        fail ArgumentError, 'invalid value for "pki_ezsignfolder_id" when calling ObjectEzsignfolderApi.ezsignfolder_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders'.sub('{' + 'pkiEzsignfolderID' + '}', CGI.escape(pki_ezsignfolder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsignfolderGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsignfolderApi.ezsignfolder_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsignfolderApi#ezsignfolder_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve an existing Ezsignfolder's Ezsigndocuments
     # 
     # @param pki_ezsignfolder_id [Integer] 
@@ -1068,10 +1202,10 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfolder list
-    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
-    # @option opts [Integer] :i_row_max  (default to 10000)
+    # @option opts [Integer] :i_row_max 
     # @option opts [Integer] :i_row_offset  (default to 0)
     # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_filter 
@@ -1082,10 +1216,10 @@ module EzmaxApi
     end
 
     # Retrieve Ezsignfolder list
-    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived&lt;br&gt;Disposed| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived&lt;br&gt;Disposed| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
     # @param [Hash] opts the optional parameters
     # @option opts [String] :e_order_by Specify how you want the results to be sorted
-    # @option opts [Integer] :i_row_max  (default to 10000)
+    # @option opts [Integer] :i_row_max 
     # @option opts [Integer] :i_row_offset  (default to 0)
     # @option opts [HeaderAcceptLanguage] :accept_language 
     # @option opts [String] :s_filter 

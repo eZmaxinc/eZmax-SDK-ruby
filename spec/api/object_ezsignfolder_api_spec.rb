@@ -166,6 +166,30 @@ describe 'ObjectEzsignfolderApi' do
     end
   end
 
+  # unit tests for ezsignfolder_get_communicationrecipients_v1
+  # Retrieve Ezsignfolder&#39;s Communicationrecipient
+  # 
+  # @param pki_ezsignfolder_id 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsignfolderGetCommunicationrecipientsV1Response]
+  describe 'ezsignfolder_get_communicationrecipients_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for ezsignfolder_get_communicationsenders_v1
+  # Retrieve Ezsignfolder&#39;s Communicationsender
+  # 
+  # @param pki_ezsignfolder_id 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsignfolderGetCommunicationsendersV1Response]
+  describe 'ezsignfolder_get_communicationsenders_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for ezsignfolder_get_ezsigndocuments_v1
   # Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
   # 
@@ -216,7 +240,7 @@ describe 'ObjectEzsignfolderApi' do
 
   # unit tests for ezsignfolder_get_list_v1
   # Retrieve Ezsignfolder list
-  # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived&lt;br&gt;Disposed| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+  # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent&lt;br&gt;Sent&lt;br&gt;PartiallySigned&lt;br&gt;Expired&lt;br&gt;Completed&lt;br&gt;Archived&lt;br&gt;Disposed| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
   # @param [Hash] opts the optional parameters
   # @option opts [String] :e_order_by Specify how you want the results to be sorted
   # @option opts [Integer] :i_row_max 

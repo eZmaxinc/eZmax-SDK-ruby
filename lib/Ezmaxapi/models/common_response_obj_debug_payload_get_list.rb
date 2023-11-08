@@ -33,7 +33,7 @@ module EzmaxApi
     # List of available values for *eOrderBy*
     attr_accessor :a_order_by
 
-    # The maximum numbers of results to be returned
+    # The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
     attr_accessor :i_row_max
 
     # The starting element from where to start retrieving the results. For example if you started at iRowOffset=0 and asked for iRowMax=100, to get the next 100 results, you could specify iRowOffset=100&iRowMax=100,
@@ -143,7 +143,7 @@ module EzmaxApi
       if attributes.key?(:'i_row_max')
         self.i_row_max = attributes[:'i_row_max']
       else
-        self.i_row_max = 10000
+        self.i_row_max = nil
       end
 
       if attributes.key?(:'i_row_offset')

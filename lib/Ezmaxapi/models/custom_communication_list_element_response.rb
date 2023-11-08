@@ -210,6 +210,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_communication_subject", s_communication_subject cannot be nil.')
       end
 
+      pattern = Regexp.new(/^.{0,150}$/)
+      if @s_communication_subject !~ pattern
+        invalid_properties.push("invalid value for \"s_communication_subject\", must conform to the pattern #{pattern}.")
+      end
+
       if @s_communication_sender.nil?
         invalid_properties.push('invalid value for "s_communication_sender", s_communication_sender cannot be nil.')
       end
@@ -233,6 +238,7 @@ module EzmaxApi
       return false if @e_communication_type.nil?
       return false if @i_communicationrecipient_count.nil?
       return false if @s_communication_subject.nil?
+      return false if @s_communication_subject !~ Regexp.new(/^.{0,150}$/)
       return false if @s_communication_sender.nil?
       return false if @s_communication_recipient.nil?
       true
@@ -250,6 +256,21 @@ module EzmaxApi
       end
 
       @pki_communication_id = pki_communication_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_communication_subject Value to be assigned
+    def s_communication_subject=(s_communication_subject)
+      if s_communication_subject.nil?
+        fail ArgumentError, 's_communication_subject cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,150}$/)
+      if s_communication_subject !~ pattern
+        fail ArgumentError, "invalid value for \"s_communication_subject\", must conform to the pattern #{pattern}."
+      end
+
+      @s_communication_subject = s_communication_subject
     end
 
     # Checks equality by comparing each attribute.

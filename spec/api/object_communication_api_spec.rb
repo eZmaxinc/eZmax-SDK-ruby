@@ -32,13 +32,13 @@ describe 'ObjectCommunicationApi' do
     end
   end
 
-  # unit tests for communication_get_object_v2
-  # Retrieve an existing Communication
-  # 
-  # @param pki_communication_id 
+  # unit tests for communication_send_v1
+  # Send a new Communication
+  # The endpoint allows to send one or many elements at once.
+  # @param communication_send_v1_request 
   # @param [Hash] opts the optional parameters
-  # @return [CommunicationGetObjectV2Response]
-  describe 'communication_get_object_v2 test' do
+  # @return [CommunicationSendV1Response]
+  describe 'communication_send_v1 test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

@@ -225,7 +225,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_user_loginname_cloning", s_user_loginname_cloning cannot be nil.')
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       if @s_user_loginname_cloning !~ pattern
         invalid_properties.push("invalid value for \"s_user_loginname_cloning\", must conform to the pattern #{pattern}.")
       end
@@ -242,7 +242,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_user_loginname_cloned", s_user_loginname_cloned cannot be nil.')
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       if @s_user_loginname_cloned !~ pattern
         invalid_properties.push("invalid value for \"s_user_loginname_cloned\", must conform to the pattern #{pattern}.")
       end
@@ -273,11 +273,11 @@ module EzmaxApi
       return false if @dt_clonehistory_firsthit !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
       return false if !@dt_clonehistory_lasthit.nil? && @dt_clonehistory_lasthit !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
       return false if @s_user_loginname_cloning.nil?
-      return false if @s_user_loginname_cloning !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      return false if @s_user_loginname_cloning !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       return false if @s_user_firstname_cloning.nil?
       return false if @s_user_lastname_cloning.nil?
       return false if @s_user_loginname_cloned.nil?
-      return false if @s_user_loginname_cloned !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      return false if @s_user_loginname_cloned !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       return false if @s_user_firstname_cloned.nil?
       return false if @s_user_lastname_cloned.nil?
       true
@@ -366,7 +366,7 @@ module EzmaxApi
         fail ArgumentError, 's_user_loginname_cloning cannot be nil'
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       if s_user_loginname_cloning !~ pattern
         fail ArgumentError, "invalid value for \"s_user_loginname_cloning\", must conform to the pattern #{pattern}."
       end
@@ -381,7 +381,7 @@ module EzmaxApi
         fail ArgumentError, 's_user_loginname_cloned cannot be nil'
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,4})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
       if s_user_loginname_cloned !~ pattern
         fail ArgumentError, "invalid value for \"s_user_loginname_cloned\", must conform to the pattern #{pattern}."
       end
