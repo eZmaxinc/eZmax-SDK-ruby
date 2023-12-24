@@ -27,7 +27,7 @@ instance = EzmaxApi::BrandingRequest.new(
   pki_branding_id: 78,
   obj_branding_description: null,
   e_branding_logo: null,
-  s_branding_base64: [B@2289aca5,
+  s_branding_base64: [B@3e2822,
   i_branding_colortext: 3752795,
   i_branding_colortextlinkbox: 0,
   i_branding_colortextbutton: 16777215,

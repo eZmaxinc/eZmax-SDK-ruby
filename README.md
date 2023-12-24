@@ -98,6 +98,8 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectApikeyApi* | [**apikey_get_subnets_v1**](docs/ObjectApikeyApi.md#apikey_get_subnets_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey's subnets
 *EzmaxApi::ObjectApikeyApi* | [**apikey_regenerate_v1**](docs/ObjectApikeyApi.md#apikey_regenerate_v1) | **POST** /1/object/apikey/{pkiApikeyID}/regenerate | Regenerate the Apikey
 *EzmaxApi::ObjectAttachmentApi* | [**attachment_download_v1**](docs/ObjectAttachmentApi.md#attachment_download_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_get_attachmentlogs_v1**](docs/ObjectAttachmentApi.md#attachment_get_attachmentlogs_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_get_download_url_v1**](docs/ObjectAttachmentApi.md#attachment_get_download_url_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/getDownloadUrl | Retrieve a URL to download attachments.
 *EzmaxApi::ObjectBillingentityexternalApi* | [**billingentityexternal_get_autocomplete_v2**](docs/ObjectBillingentityexternalApi.md#billingentityexternal_get_autocomplete_v2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
 *EzmaxApi::ObjectBillingentityinternalApi* | [**billingentityinternal_create_object_v1**](docs/ObjectBillingentityinternalApi.md#billingentityinternal_create_object_v1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
 *EzmaxApi::ObjectBillingentityinternalApi* | [**billingentityinternal_edit_object_v1**](docs/ObjectBillingentityinternalApi.md#billingentityinternal_edit_object_v1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
@@ -118,7 +120,7 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectCorsApi* | [**cors_edit_object_v1**](docs/ObjectCorsApi.md#cors_edit_object_v1) | **PUT** /1/object/cors/{pkiCorsID} | Edit an existing Cors
 *EzmaxApi::ObjectCorsApi* | [**cors_get_object_v2**](docs/ObjectCorsApi.md#cors_get_object_v2) | **GET** /2/object/cors/{pkiCorsID} | Retrieve an existing Cors
 *EzmaxApi::ObjectDepartmentApi* | [**department_get_autocomplete_v2**](docs/ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
-*EzmaxApi::ObjectElectronicfundstransferApi* | [**eletronicfundstransfer_get_communication_list_v1**](docs/ObjectElectronicfundstransferApi.md#eletronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectElectronicfundstransferApi* | [**electronicfundstransfer_get_communication_list_v1**](docs/ObjectElectronicfundstransferApi.md#electronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
 *EzmaxApi::ObjectEmailtypeApi* | [**emailtype_get_autocomplete_v2**](docs/ObjectEmailtypeApi.md#emailtype_get_autocomplete_v2) | **GET** /2/object/emailtype/getAutocomplete/{sSelector} | Retrieve Emailtypes and IDs
 *EzmaxApi::ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_autocomplete_v1**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v1) | **GET** /1/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *EzmaxApi::ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_autocomplete_v2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
@@ -157,6 +159,7 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_end_prematurely_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_end_prematurely_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_flatten_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_actionable_elements_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
+*EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_attachments_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_attachments_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument's Attachments
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_completed_elements_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_download_url_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
 *EzmaxApi::ObjectEzsigndocumentApi* | [**ezsigndocument_get_ezsignannotations_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignannotations_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations | Retrieve an existing Ezsigndocument's Ezsignannotations
@@ -181,6 +184,8 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_dispose_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_dispose_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_edit_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
+*EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_attachment_count_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_attachment_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count
+*EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_attachments_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_attachments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments | Retrieve Ezsignfolder's Attachments
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_communication_count_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communication_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_communication_list_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list
 *EzmaxApi::ObjectEzsignfolderApi* | [**ezsignfolder_get_communicationrecipients_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communicationrecipients_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder's Communicationrecipient
@@ -236,6 +241,11 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEzsignsignergroupmembershipApi* | [**ezsignsignergroupmembership_create_object_v1**](docs/ObjectEzsignsignergroupmembershipApi.md#ezsignsignergroupmembership_create_object_v1) | **POST** /1/object/ezsignsignergroupmembership | Create a new Ezsignsignergroupmembership
 *EzmaxApi::ObjectEzsignsignergroupmembershipApi* | [**ezsignsignergroupmembership_delete_object_v1**](docs/ObjectEzsignsignergroupmembershipApi.md#ezsignsignergroupmembership_delete_object_v1) | **DELETE** /1/object/ezsignsignergroupmembership/{pkiEzsignsignergroupmembershipID} | Delete an existing Ezsignsignergroupmembership
 *EzmaxApi::ObjectEzsignsignergroupmembershipApi* | [**ezsignsignergroupmembership_get_object_v2**](docs/ObjectEzsignsignergroupmembershipApi.md#ezsignsignergroupmembership_get_object_v2) | **GET** /2/object/ezsignsignergroupmembership/{pkiEzsignsignergroupmembershipID} | Retrieve an existing Ezsignsignergroupmembership
+*EzmaxApi::ObjectEzsignsigningreasonApi* | [**ezsignsigningreason_create_object_v1**](docs/ObjectEzsignsigningreasonApi.md#ezsignsigningreason_create_object_v1) | **POST** /1/object/ezsignsigningreason | Create a new Ezsignsigningreason
+*EzmaxApi::ObjectEzsignsigningreasonApi* | [**ezsignsigningreason_edit_object_v1**](docs/ObjectEzsignsigningreasonApi.md#ezsignsigningreason_edit_object_v1) | **PUT** /1/object/ezsignsigningreason/{pkiEzsignsigningreasonID} | Edit an existing Ezsignsigningreason
+*EzmaxApi::ObjectEzsignsigningreasonApi* | [**ezsignsigningreason_get_autocomplete_v2**](docs/ObjectEzsignsigningreasonApi.md#ezsignsigningreason_get_autocomplete_v2) | **GET** /2/object/ezsignsigningreason/getAutocomplete/{sSelector} | Retrieve Ezsignsigningreasons and IDs
+*EzmaxApi::ObjectEzsignsigningreasonApi* | [**ezsignsigningreason_get_list_v1**](docs/ObjectEzsignsigningreasonApi.md#ezsignsigningreason_get_list_v1) | **GET** /1/object/ezsignsigningreason/getList | Retrieve Ezsignsigningreason list
+*EzmaxApi::ObjectEzsignsigningreasonApi* | [**ezsignsigningreason_get_object_v2**](docs/ObjectEzsignsigningreasonApi.md#ezsignsigningreason_get_object_v2) | **GET** /2/object/ezsignsigningreason/{pkiEzsignsigningreasonID} | Retrieve an existing Ezsignsigningreason
 *EzmaxApi::ObjectEzsigntemplateApi* | [**ezsigntemplate_copy_v1**](docs/ObjectEzsigntemplateApi.md#ezsigntemplate_copy_v1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate
 *EzmaxApi::ObjectEzsigntemplateApi* | [**ezsigntemplate_create_object_v1**](docs/ObjectEzsigntemplateApi.md#ezsigntemplate_create_object_v1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate
 *EzmaxApi::ObjectEzsigntemplateApi* | [**ezsigntemplate_delete_object_v1**](docs/ObjectEzsigntemplateApi.md#ezsigntemplate_delete_object_v1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate
@@ -291,9 +301,12 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectFranchiseofficeApi* | [**franchiseoffice_get_autocomplete_v2**](docs/ObjectFranchiseofficeApi.md#franchiseoffice_get_autocomplete_v2) | **GET** /2/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *EzmaxApi::ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v1**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 *EzmaxApi::ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v2**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
+*EzmaxApi::ObjectInscriptionApi* | [**inscription_get_attachments_v1**](docs/ObjectInscriptionApi.md#inscription_get_attachments_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getAttachments | Retrieve Inscription's Attachments
 *EzmaxApi::ObjectInscriptionApi* | [**inscription_get_communication_list_v1**](docs/ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectInscriptionApi* | [**inscription_get_communicationsenders_v1**](docs/ObjectInscriptionApi.md#inscription_get_communicationsenders_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription's Communicationsender
 *EzmaxApi::ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticated_get_communication_list_v1**](docs/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_list_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list
 *EzmaxApi::ObjectInscriptiontempApi* | [**inscriptiontemp_get_communication_list_v1**](docs/ObjectInscriptiontempApi.md#inscriptiontemp_get_communication_list_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectInvoiceApi* | [**invoice_get_attachments_v1**](docs/ObjectInvoiceApi.md#invoice_get_attachments_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getAttachments | Retrieve Invoice's Attachments
 *EzmaxApi::ObjectInvoiceApi* | [**invoice_get_communication_list_v1**](docs/ObjectInvoiceApi.md#invoice_get_communication_list_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list
 *EzmaxApi::ObjectLanguageApi* | [**language_get_autocomplete_v2**](docs/ObjectLanguageApi.md#language_get_autocomplete_v2) | **GET** /2/object/language/getAutocomplete/{sSelector} | Retrieve Languages and IDs
 *EzmaxApi::ObjectModulegroupApi* | [**modulegroup_get_all_v1**](docs/ObjectModulegroupApi.md#modulegroup_get_all_v1) | **GET** /1/object/modulegroup/getAll/{eContext} | Retrieve all Modulegroups
@@ -370,11 +383,13 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectVariableexpenseApi* | [**variableexpense_get_object_v2**](docs/ObjectVariableexpenseApi.md#variableexpense_get_object_v2) | **GET** /2/object/variableexpense/{pkiVariableexpenseID} | Retrieve an existing Variableexpense
 *EzmaxApi::ObjectVersionhistoryApi* | [**versionhistory_get_object_v2**](docs/ObjectVersionhistoryApi.md#versionhistory_get_object_v2) | **GET** /2/object/versionhistory/{pkiVersionhistoryID} | Retrieve an existing Versionhistory
 *EzmaxApi::ObjectWebhookApi* | [**webhook_create_object_v1**](docs/ObjectWebhookApi.md#webhook_create_object_v1) | **POST** /1/object/webhook | Create a new Webhook
+*EzmaxApi::ObjectWebhookApi* | [**webhook_create_object_v2**](docs/ObjectWebhookApi.md#webhook_create_object_v2) | **POST** /2/object/webhook | Create a new Webhook
 *EzmaxApi::ObjectWebhookApi* | [**webhook_delete_object_v1**](docs/ObjectWebhookApi.md#webhook_delete_object_v1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook
 *EzmaxApi::ObjectWebhookApi* | [**webhook_edit_object_v1**](docs/ObjectWebhookApi.md#webhook_edit_object_v1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook
 *EzmaxApi::ObjectWebhookApi* | [**webhook_get_history_v1**](docs/ObjectWebhookApi.md#webhook_get_history_v1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls
 *EzmaxApi::ObjectWebhookApi* | [**webhook_get_list_v1**](docs/ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
 *EzmaxApi::ObjectWebhookApi* | [**webhook_get_object_v2**](docs/ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
+*EzmaxApi::ObjectWebhookApi* | [**webhook_regenerate_apikey_v1**](docs/ObjectWebhookApi.md#webhook_regenerate_apikey_v1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey
 *EzmaxApi::ObjectWebhookApi* | [**webhook_test_v1**](docs/ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
 *EzmaxApi::ScimGroupsApi* | [**groups_create_object_scim_v2**](docs/ScimGroupsApi.md#groups_create_object_scim_v2) | **POST** /2/scim/Groups | Create a new Usergroup
 *EzmaxApi::ScimGroupsApi* | [**groups_delete_object_scim_v2**](docs/ScimGroupsApi.md#groups_delete_object_scim_v2) | **DELETE** /2/scim/Groups/{groupId} | Delete an existing Usergroup
@@ -428,7 +443,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::ApikeyRequestCompound](docs/ApikeyRequestCompound.md)
  - [EzmaxApi::ApikeyResponse](docs/ApikeyResponse.md)
  - [EzmaxApi::ApikeyResponseCompound](docs/ApikeyResponseCompound.md)
- - [EzmaxApi::AttachmentDownloadV1Response](docs/AttachmentDownloadV1Response.md)
+ - [EzmaxApi::AttachmentGetAttachmentlogsV1Response](docs/AttachmentGetAttachmentlogsV1Response.md)
+ - [EzmaxApi::AttachmentGetAttachmentlogsV1ResponseMPayload](docs/AttachmentGetAttachmentlogsV1ResponseMPayload.md)
+ - [EzmaxApi::AttachmentGetDownloadUrlV1Response](docs/AttachmentGetDownloadUrlV1Response.md)
+ - [EzmaxApi::AttachmentGetDownloadUrlV1ResponseMPayload](docs/AttachmentGetDownloadUrlV1ResponseMPayload.md)
+ - [EzmaxApi::AttachmentResponse](docs/AttachmentResponse.md)
+ - [EzmaxApi::AttachmentResponseCompound](docs/AttachmentResponseCompound.md)
+ - [EzmaxApi::AttachmentlogResponse](docs/AttachmentlogResponse.md)
+ - [EzmaxApi::AttachmentlogResponseCompound](docs/AttachmentlogResponseCompound.md)
  - [EzmaxApi::AttemptResponse](docs/AttemptResponse.md)
  - [EzmaxApi::AttemptResponseCompound](docs/AttemptResponseCompound.md)
  - [EzmaxApi::BillingentityexternalAutocompleteElementResponse](docs/BillingentityexternalAutocompleteElementResponse.md)
@@ -541,6 +563,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::CorsRequestCompound](docs/CorsRequestCompound.md)
  - [EzmaxApi::CorsResponse](docs/CorsResponse.md)
  - [EzmaxApi::CorsResponseCompound](docs/CorsResponseCompound.md)
+ - [EzmaxApi::CustomAttachmentResponse](docs/CustomAttachmentResponse.md)
+ - [EzmaxApi::CustomAttachmentdocumenttypeResponse](docs/CustomAttachmentdocumenttypeResponse.md)
  - [EzmaxApi::CustomAutocompleteElementResponse](docs/CustomAutocompleteElementResponse.md)
  - [EzmaxApi::CustomCommunicationListElementResponse](docs/CustomCommunicationListElementResponse.md)
  - [EzmaxApi::CustomCommunicationattachmentRequest](docs/CustomCommunicationattachmentRequest.md)
@@ -714,6 +738,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigndocumentFlattenV1Response](docs/EzsigndocumentFlattenV1Response.md)
  - [EzmaxApi::EzsigndocumentGetActionableElementsV1Response](docs/EzsigndocumentGetActionableElementsV1Response.md)
  - [EzmaxApi::EzsigndocumentGetActionableElementsV1ResponseMPayload](docs/EzsigndocumentGetActionableElementsV1ResponseMPayload.md)
+ - [EzmaxApi::EzsigndocumentGetAttachmentsV1Response](docs/EzsigndocumentGetAttachmentsV1Response.md)
+ - [EzmaxApi::EzsigndocumentGetAttachmentsV1ResponseMPayload](docs/EzsigndocumentGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::EzsigndocumentGetCompletedElementsV1Response](docs/EzsigndocumentGetCompletedElementsV1Response.md)
  - [EzmaxApi::EzsigndocumentGetCompletedElementsV1ResponseMPayload](docs/EzsigndocumentGetCompletedElementsV1ResponseMPayload.md)
  - [EzmaxApi::EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
@@ -770,6 +796,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsignfolderEditObjectV1Response](docs/EzsignfolderEditObjectV1Response.md)
  - [EzmaxApi::EzsignfolderGetActionableElementsV1Response](docs/EzsignfolderGetActionableElementsV1Response.md)
  - [EzmaxApi::EzsignfolderGetActionableElementsV1ResponseMPayload](docs/EzsignfolderGetActionableElementsV1ResponseMPayload.md)
+ - [EzmaxApi::EzsignfolderGetAttachmentCountV1Response](docs/EzsignfolderGetAttachmentCountV1Response.md)
+ - [EzmaxApi::EzsignfolderGetAttachmentCountV1ResponseMPayload](docs/EzsignfolderGetAttachmentCountV1ResponseMPayload.md)
+ - [EzmaxApi::EzsignfolderGetAttachmentsV1Response](docs/EzsignfolderGetAttachmentsV1Response.md)
+ - [EzmaxApi::EzsignfolderGetAttachmentsV1ResponseMPayload](docs/EzsignfolderGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::EzsignfolderGetCommunicationCountV1Response](docs/EzsignfolderGetCommunicationCountV1Response.md)
  - [EzmaxApi::EzsignfolderGetCommunicationCountV1ResponseMPayload](docs/EzsignfolderGetCommunicationCountV1ResponseMPayload.md)
  - [EzmaxApi::EzsignfolderGetCommunicationListV1Response](docs/EzsignfolderGetCommunicationListV1Response.md)
@@ -935,6 +965,23 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsignsignergroupmembershipRequestCompound](docs/EzsignsignergroupmembershipRequestCompound.md)
  - [EzmaxApi::EzsignsignergroupmembershipResponse](docs/EzsignsignergroupmembershipResponse.md)
  - [EzmaxApi::EzsignsignergroupmembershipResponseCompound](docs/EzsignsignergroupmembershipResponseCompound.md)
+ - [EzmaxApi::EzsignsigningreasonAutocompleteElementResponse](docs/EzsignsigningreasonAutocompleteElementResponse.md)
+ - [EzmaxApi::EzsignsigningreasonCreateObjectV1Request](docs/EzsignsigningreasonCreateObjectV1Request.md)
+ - [EzmaxApi::EzsignsigningreasonCreateObjectV1Response](docs/EzsignsigningreasonCreateObjectV1Response.md)
+ - [EzmaxApi::EzsignsigningreasonCreateObjectV1ResponseMPayload](docs/EzsignsigningreasonCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::EzsignsigningreasonEditObjectV1Request](docs/EzsignsigningreasonEditObjectV1Request.md)
+ - [EzmaxApi::EzsignsigningreasonEditObjectV1Response](docs/EzsignsigningreasonEditObjectV1Response.md)
+ - [EzmaxApi::EzsignsigningreasonGetAutocompleteV2Response](docs/EzsignsigningreasonGetAutocompleteV2Response.md)
+ - [EzmaxApi::EzsignsigningreasonGetAutocompleteV2ResponseMPayload](docs/EzsignsigningreasonGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::EzsignsigningreasonGetListV1Response](docs/EzsignsigningreasonGetListV1Response.md)
+ - [EzmaxApi::EzsignsigningreasonGetListV1ResponseMPayload](docs/EzsignsigningreasonGetListV1ResponseMPayload.md)
+ - [EzmaxApi::EzsignsigningreasonGetObjectV2Response](docs/EzsignsigningreasonGetObjectV2Response.md)
+ - [EzmaxApi::EzsignsigningreasonGetObjectV2ResponseMPayload](docs/EzsignsigningreasonGetObjectV2ResponseMPayload.md)
+ - [EzmaxApi::EzsignsigningreasonListElement](docs/EzsignsigningreasonListElement.md)
+ - [EzmaxApi::EzsignsigningreasonRequest](docs/EzsignsigningreasonRequest.md)
+ - [EzmaxApi::EzsignsigningreasonRequestCompound](docs/EzsignsigningreasonRequestCompound.md)
+ - [EzmaxApi::EzsignsigningreasonResponse](docs/EzsignsigningreasonResponse.md)
+ - [EzmaxApi::EzsignsigningreasonResponseCompound](docs/EzsignsigningreasonResponseCompound.md)
  - [EzmaxApi::EzsigntemplateAutocompleteElementResponse](docs/EzsigntemplateAutocompleteElementResponse.md)
  - [EzmaxApi::EzsigntemplateCopyV1Request](docs/EzsigntemplateCopyV1Request.md)
  - [EzmaxApi::EzsigntemplateCopyV1Response](docs/EzsigntemplateCopyV1Response.md)
@@ -1102,6 +1149,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::FieldEActivesessionOrigin](docs/FieldEActivesessionOrigin.md)
  - [EzmaxApi::FieldEActivesessionUsertype](docs/FieldEActivesessionUsertype.md)
  - [EzmaxApi::FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
+ - [EzmaxApi::FieldEAttachmentDocumenttype](docs/FieldEAttachmentDocumenttype.md)
+ - [EzmaxApi::FieldEAttachmentPrivacy](docs/FieldEAttachmentPrivacy.md)
+ - [EzmaxApi::FieldEAttachmentType](docs/FieldEAttachmentType.md)
+ - [EzmaxApi::FieldEAttachmentVerified](docs/FieldEAttachmentVerified.md)
+ - [EzmaxApi::FieldEAttachmentlogType](docs/FieldEAttachmentlogType.md)
  - [EzmaxApi::FieldEBrandingLogo](docs/FieldEBrandingLogo.md)
  - [EzmaxApi::FieldECommunicationImportance](docs/FieldECommunicationImportance.md)
  - [EzmaxApi::FieldECommunicationType](docs/FieldECommunicationType.md)
@@ -1153,6 +1205,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::FieldESystemconfigurationLanguage2](docs/FieldESystemconfigurationLanguage2.md)
  - [EzmaxApi::FieldESystemconfigurationNewexternaluseraction](docs/FieldESystemconfigurationNewexternaluseraction.md)
  - [EzmaxApi::FieldEUserEzsignaccess](docs/FieldEUserEzsignaccess.md)
+ - [EzmaxApi::FieldEUserEzsignprepaid](docs/FieldEUserEzsignprepaid.md)
  - [EzmaxApi::FieldEUserEzsignsendreminderfrequency](docs/FieldEUserEzsignsendreminderfrequency.md)
  - [EzmaxApi::FieldEUserLogintype](docs/FieldEUserLogintype.md)
  - [EzmaxApi::FieldEUserOrigin](docs/FieldEUserOrigin.md)
@@ -1185,12 +1238,18 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::GlobalEzmaxclientVersionV1Response](docs/GlobalEzmaxclientVersionV1Response.md)
  - [EzmaxApi::GlobalEzmaxcustomerGetConfigurationV1Response](docs/GlobalEzmaxcustomerGetConfigurationV1Response.md)
  - [EzmaxApi::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EzmaxApi::InscriptionGetAttachmentsV1Response](docs/InscriptionGetAttachmentsV1Response.md)
+ - [EzmaxApi::InscriptionGetAttachmentsV1ResponseMPayload](docs/InscriptionGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::InscriptionGetCommunicationListV1Response](docs/InscriptionGetCommunicationListV1Response.md)
  - [EzmaxApi::InscriptionGetCommunicationListV1ResponseMPayload](docs/InscriptionGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::InscriptionGetCommunicationsendersV1Response](docs/InscriptionGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::InscriptionGetCommunicationsendersV1ResponseMPayload](docs/InscriptionGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::InscriptionnotauthenticatedGetCommunicationListV1Response](docs/InscriptionnotauthenticatedGetCommunicationListV1Response.md)
  - [EzmaxApi::InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload](docs/InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::InscriptiontempGetCommunicationListV1Response](docs/InscriptiontempGetCommunicationListV1Response.md)
  - [EzmaxApi::InscriptiontempGetCommunicationListV1ResponseMPayload](docs/InscriptiontempGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::InvoiceGetAttachmentsV1Response](docs/InvoiceGetAttachmentsV1Response.md)
+ - [EzmaxApi::InvoiceGetAttachmentsV1ResponseMPayload](docs/InvoiceGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::InvoiceGetCommunicationListV1Response](docs/InvoiceGetCommunicationListV1Response.md)
  - [EzmaxApi::InvoiceGetCommunicationListV1ResponseMPayload](docs/InvoiceGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::LanguageAutocompleteElementResponse](docs/LanguageAutocompleteElementResponse.md)
@@ -1210,6 +1269,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::MultilingualEzmaxinvoicingsummaryinternalDescription](docs/MultilingualEzmaxinvoicingsummaryinternalDescription.md)
  - [EzmaxApi::MultilingualEzsignfoldertypeName](docs/MultilingualEzsignfoldertypeName.md)
  - [EzmaxApi::MultilingualEzsignsignergroupDescription](docs/MultilingualEzsignsignergroupDescription.md)
+ - [EzmaxApi::MultilingualEzsignsigningreasonDescription](docs/MultilingualEzsignsigningreasonDescription.md)
  - [EzmaxApi::MultilingualNotificationsubsectionName](docs/MultilingualNotificationsubsectionName.md)
  - [EzmaxApi::MultilingualNotificationtestName](docs/MultilingualNotificationtestName.md)
  - [EzmaxApi::MultilingualPaymenttermDescription](docs/MultilingualPaymenttermDescription.md)
@@ -1452,6 +1512,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::WebhookCreateObjectV1Request](docs/WebhookCreateObjectV1Request.md)
  - [EzmaxApi::WebhookCreateObjectV1Response](docs/WebhookCreateObjectV1Response.md)
  - [EzmaxApi::WebhookCreateObjectV1ResponseMPayload](docs/WebhookCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::WebhookCreateObjectV2Request](docs/WebhookCreateObjectV2Request.md)
+ - [EzmaxApi::WebhookCreateObjectV2Response](docs/WebhookCreateObjectV2Response.md)
+ - [EzmaxApi::WebhookCreateObjectV2ResponseMPayload](docs/WebhookCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::WebhookDeleteObjectV1Response](docs/WebhookDeleteObjectV1Response.md)
  - [EzmaxApi::WebhookEditObjectV1Request](docs/WebhookEditObjectV1Request.md)
  - [EzmaxApi::WebhookEditObjectV1Response](docs/WebhookEditObjectV1Response.md)
@@ -1466,6 +1529,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::WebhookGetObjectV2Response](docs/WebhookGetObjectV2Response.md)
  - [EzmaxApi::WebhookGetObjectV2ResponseMPayload](docs/WebhookGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::WebhookListElement](docs/WebhookListElement.md)
+ - [EzmaxApi::WebhookRegenerateApikeyV1Request](docs/WebhookRegenerateApikeyV1Request.md)
+ - [EzmaxApi::WebhookRegenerateApikeyV1Response](docs/WebhookRegenerateApikeyV1Response.md)
+ - [EzmaxApi::WebhookRegenerateApikeyV1ResponseMPayload](docs/WebhookRegenerateApikeyV1ResponseMPayload.md)
  - [EzmaxApi::WebhookRequest](docs/WebhookRequest.md)
  - [EzmaxApi::WebhookRequestCompound](docs/WebhookRequestCompound.md)
  - [EzmaxApi::WebhookResponse](docs/WebhookResponse.md)

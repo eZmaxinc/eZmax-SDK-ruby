@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
 | **s_value** | **String** | The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea** | [optional] |
 | **e_attachments_confirmation_decision** | **String** | Whether the attachment are accepted or refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] |
 | **s_attachments_refusal_reason** | **String** | The reason of refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] |
@@ -17,6 +18,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignsignatureSignV1Request.new(
+  fki_ezsignsigningreason_id: 194,
   s_value: null,
   e_attachments_confirmation_decision: null,
   s_attachments_refusal_reason: null,

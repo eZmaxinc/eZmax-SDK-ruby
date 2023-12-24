@@ -1,4 +1,4 @@
-# EzmaxApi::AttachmentDownloadV1Response
+# EzmaxApi::EzsignsigningreasonGetAutocompleteV2Response
 
 ## Properties
 
@@ -6,15 +6,17 @@
 | ---- | ---- | ----------- | ----- |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
+| **m_payload** | [**EzsignsigningreasonGetAutocompleteV2ResponseMPayload**](EzsignsigningreasonGetAutocompleteV2ResponseMPayload.md) |  |  |
 
 ## Example
 
 ```ruby
 require 'Ezmaxapi'
 
-instance = EzmaxApi::AttachmentDownloadV1Response.new(
+instance = EzmaxApi::EzsignsigningreasonGetAutocompleteV2Response.new(
   obj_debug_payload: null,
-  obj_debug: null
+  obj_debug: null,
+  m_payload: null
 )
 ```
 

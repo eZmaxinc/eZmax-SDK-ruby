@@ -9,6 +9,7 @@
 | **e_phone_type** | [**FieldEPhoneType**](FieldEPhoneType.md) |  | [optional] |
 | **s_phone_e164** | **String** | A phone number in E.164 Format | [optional] |
 | **s_phone_extension** | **String** | The extension of the phone number.  The extension is the \&quot;123\&quot; section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers | [optional] |
+| **b_phone_international** | **Boolean** | Indicate the phone number is an international phone number. | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = EzmaxApi::PhoneResponseCompound.new(
   fki_phonetype_id: 1,
   e_phone_type: null,
   s_phone_e164: +15149901516,
-  s_phone_extension: 123
+  s_phone_extension: 123,
+  b_phone_international: true
 )
 ```
 

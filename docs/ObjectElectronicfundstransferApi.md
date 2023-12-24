@@ -4,12 +4,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**eletronicfundstransfer_get_communication_list_v1**](ObjectElectronicfundstransferApi.md#eletronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list |
+| [**electronicfundstransfer_get_communication_list_v1**](ObjectElectronicfundstransferApi.md#electronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list |
 
 
-## eletronicfundstransfer_get_communication_list_v1
+## electronicfundstransfer_get_communication_list_v1
 
-> <ElectronicfundstransferGetCommunicationListV1Response> eletronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id)
+> <ElectronicfundstransferGetCommunicationListV1Response> electronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id)
 
 Retrieve Communication list
 
@@ -33,28 +33,28 @@ pki_electronicfundstransfer_id = 56 # Integer |
 
 begin
   # Retrieve Communication list
-  result = api_instance.eletronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id)
+  result = api_instance.electronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectElectronicfundstransferApi->eletronicfundstransfer_get_communication_list_v1: #{e}"
+  puts "Error when calling ObjectElectronicfundstransferApi->electronicfundstransfer_get_communication_list_v1: #{e}"
 end
 ```
 
-#### Using the eletronicfundstransfer_get_communication_list_v1_with_http_info variant
+#### Using the electronicfundstransfer_get_communication_list_v1_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ElectronicfundstransferGetCommunicationListV1Response>, Integer, Hash)> eletronicfundstransfer_get_communication_list_v1_with_http_info(pki_electronicfundstransfer_id)
+> <Array(<ElectronicfundstransferGetCommunicationListV1Response>, Integer, Hash)> electronicfundstransfer_get_communication_list_v1_with_http_info(pki_electronicfundstransfer_id)
 
 ```ruby
 begin
   # Retrieve Communication list
-  data, status_code, headers = api_instance.eletronicfundstransfer_get_communication_list_v1_with_http_info(pki_electronicfundstransfer_id)
+  data, status_code, headers = api_instance.electronicfundstransfer_get_communication_list_v1_with_http_info(pki_electronicfundstransfer_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ElectronicfundstransferGetCommunicationListV1Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectElectronicfundstransferApi->eletronicfundstransfer_get_communication_list_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectElectronicfundstransferApi->electronicfundstransfer_get_communication_list_v1_with_http_info: #{e}"
 end
 ```
 

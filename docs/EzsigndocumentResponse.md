@@ -25,6 +25,7 @@
 | **b_ezsigndocument_hassignedsignatures** | **Boolean** | If the Ezsigndocument contains signed signatures (From internal or external sources) | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_ezsigndocument_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
+| **i_ezsigndocument_ezsignsignatureattachmenttotal** | **Integer** | The number of Ezsigndocumentattachment total |  |
 
 ## Example
 
@@ -52,7 +53,8 @@ instance = EzmaxApi::EzsigndocumentResponse.new(
   b_ezsigndocument_ezsignform: true,
   b_ezsigndocument_hassignedsignatures: true,
   obj_audit: null,
-  s_ezsigndocument_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]}
+  s_ezsigndocument_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]},
+  i_ezsigndocument_ezsignsignatureattachmenttotal: 3
 )
 ```
 

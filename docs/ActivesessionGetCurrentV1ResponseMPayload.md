@@ -15,6 +15,9 @@
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
 | **fki_systemconfigurationtype_id** | **Integer** | The unique ID of the Systemconfigurationtype |  |
 | **fki_signature_id** | **Integer** | The unique ID of the Signature | [optional] |
+| **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
+| **e_user_ezsignprepaid** | [**FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional] |
+| **dt_user_ezsignprepaidexpiration** | **String** | The eZsign prepaid expiration date | [optional] |
 | **a_pki_permission_id** | **Array&lt;Integer&gt;** | An array of permissions granted to the user or api key |  |
 | **obj_user_real** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |  |
 | **obj_user_cloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] |
@@ -38,6 +41,9 @@ instance = EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload.new(
   pks_customer_code: demo,
   fki_systemconfigurationtype_id: 28,
   fki_signature_id: 12,
+  e_user_ezsignaccess: null,
+  e_user_ezsignprepaid: null,
+  dt_user_ezsignprepaidexpiration: 2020-12-31,
   a_pki_permission_id: null,
   obj_user_real: null,
   obj_user_cloned: null,

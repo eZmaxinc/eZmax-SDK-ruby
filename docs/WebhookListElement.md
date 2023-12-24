@@ -13,6 +13,7 @@
 | **e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] |
 | **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] |
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
+| **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = EzmaxApi::WebhookListElement.new(
   e_webhook_module: null,
   e_webhook_ezsignevent: null,
   e_webhook_managementevent: null,
-  b_webhook_isactive: true
+  b_webhook_isactive: true,
+  b_webhook_issigned: true
 )
 ```
 

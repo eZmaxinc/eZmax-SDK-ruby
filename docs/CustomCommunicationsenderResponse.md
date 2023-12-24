@@ -8,10 +8,12 @@
 | **fki_broker_id** | **Integer** | The unique ID of the Broker. | [optional] |
 | **fki_user_id** | **Integer** | The unique ID of the User | [optional] |
 | **fki_mailboxshared_id** | **Integer** | The unique ID of the Mailboxshared | [optional] |
+| **fki_phonelineshared_id** | **Integer** | The unique ID of the Phonelineshared | [optional] |
 | **e_communicationsender_objecttype** | **String** |  |  |
 | **obj_contact_name** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  |  |
-| **s_email_address** | **String** | The email address. | [optional] |
-| **s_phone_e164** | **String** | A phone number in E.164 Format | [optional] |
+| **obj_email** | [**EmailResponseCompound**](EmailResponseCompound.md) |  | [optional] |
+| **obj_phone_fax** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] |
+| **obj_phone_sms** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -23,10 +25,12 @@ instance = EzmaxApi::CustomCommunicationsenderResponse.new(
   fki_broker_id: 26,
   fki_user_id: 70,
   fki_mailboxshared_id: 47,
+  fki_phonelineshared_id: 47,
   e_communicationsender_objecttype: User,
   obj_contact_name: null,
-  s_email_address: email@example.com,
-  s_phone_e164: +15149901516
+  obj_email: null,
+  obj_phone_fax: null,
+  obj_phone_sms: null
 )
 ```
 

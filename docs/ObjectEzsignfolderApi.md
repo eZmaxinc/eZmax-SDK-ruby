@@ -13,6 +13,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_dispose_v1**](ObjectEzsignfolderApi.md#ezsignfolder_dispose_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder |
 | [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
 | [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
+| [**ezsignfolder_get_attachment_count_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_attachment_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count |
+| [**ezsignfolder_get_attachments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_attachments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments | Retrieve Ezsignfolder&#39;s Attachments |
 | [**ezsignfolder_get_communication_count_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communication_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count |
 | [**ezsignfolder_get_communication_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list |
 | [**ezsignfolder_get_communicationrecipients_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_communicationrecipients_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder&#39;s Communicationrecipient |
@@ -665,6 +667,148 @@ end
 ### Return type
 
 [**EzsignfolderGetActionableElementsV1Response**](EzsignfolderGetActionableElementsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfolder_get_attachment_count_v1
+
+> <EzsignfolderGetAttachmentCountV1Response> ezsignfolder_get_attachment_count_v1(pki_ezsignfolder_id)
+
+Retrieve Attachment count
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+
+begin
+  # Retrieve Attachment count
+  result = api_instance.ezsignfolder_get_attachment_count_v1(pki_ezsignfolder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_attachment_count_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_attachment_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderGetAttachmentCountV1Response>, Integer, Hash)> ezsignfolder_get_attachment_count_v1_with_http_info(pki_ezsignfolder_id)
+
+```ruby
+begin
+  # Retrieve Attachment count
+  data, status_code, headers = api_instance.ezsignfolder_get_attachment_count_v1_with_http_info(pki_ezsignfolder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderGetAttachmentCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_attachment_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfolderGetAttachmentCountV1Response**](EzsignfolderGetAttachmentCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfolder_get_attachments_v1
+
+> <EzsignfolderGetAttachmentsV1Response> ezsignfolder_get_attachments_v1(pki_ezsignfolder_id)
+
+Retrieve Ezsignfolder's Attachments
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+
+begin
+  # Retrieve Ezsignfolder's Attachments
+  result = api_instance.ezsignfolder_get_attachments_v1(pki_ezsignfolder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderGetAttachmentsV1Response>, Integer, Hash)> ezsignfolder_get_attachments_v1_with_http_info(pki_ezsignfolder_id)
+
+```ruby
+begin
+  # Retrieve Ezsignfolder's Attachments
+  data, status_code, headers = api_instance.ezsignfolder_get_attachments_v1_with_http_info(pki_ezsignfolder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfolderGetAttachmentsV1Response**](EzsignfolderGetAttachmentsV1Response.md)
 
 ### Authorization
 
