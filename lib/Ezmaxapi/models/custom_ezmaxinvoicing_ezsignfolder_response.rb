@@ -19,6 +19,9 @@ module EzmaxApi
     # The unique ID of the Ezsignfolder
     attr_accessor :fki_ezsignfolder_id
 
+    # The unique ID of the Billingentityinternal.
+    attr_accessor :fki_billingentityinternal_id
+
     # The description of the Ezsignfolder
     attr_accessor :s_ezsignfolder_description
 
@@ -38,6 +41,7 @@ module EzmaxApi
     def self.attribute_map
       {
         :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
+        :'fki_billingentityinternal_id' => :'fkiBillingentityinternalID',
         :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
         :'b_ezsigntsarequirement_billable' => :'bEzsigntsarequirementBillable',
         :'b_ezsignfolder_mfaused' => :'bEzsignfolderMfaused',
@@ -55,6 +59,7 @@ module EzmaxApi
     def self.openapi_types
       {
         :'fki_ezsignfolder_id' => :'Integer',
+        :'fki_billingentityinternal_id' => :'Integer',
         :'s_ezsignfolder_description' => :'String',
         :'b_ezsigntsarequirement_billable' => :'Boolean',
         :'b_ezsignfolder_mfaused' => :'Boolean',
@@ -88,6 +93,10 @@ module EzmaxApi
         self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
       else
         self.fki_ezsignfolder_id = nil
+      end
+
+      if attributes.key?(:'fki_billingentityinternal_id')
+        self.fki_billingentityinternal_id = attributes[:'fki_billingentityinternal_id']
       end
 
       if attributes.key?(:'s_ezsignfolder_description')
@@ -134,6 +143,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.')
       end
 
+      if !@fki_billingentityinternal_id.nil? && @fki_billingentityinternal_id < 0
+        invalid_properties.push('invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.')
+      end
+
       if @s_ezsignfolder_description.nil?
         invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
       end
@@ -163,6 +176,7 @@ module EzmaxApi
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @fki_ezsignfolder_id.nil?
       return false if @fki_ezsignfolder_id < 0
+      return false if !@fki_billingentityinternal_id.nil? && @fki_billingentityinternal_id < 0
       return false if @s_ezsignfolder_description.nil?
       return false if @b_ezsigntsarequirement_billable.nil?
       return false if @b_ezsignfolder_mfaused.nil?
@@ -185,12 +199,27 @@ module EzmaxApi
       @fki_ezsignfolder_id = fki_ezsignfolder_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] fki_billingentityinternal_id Value to be assigned
+    def fki_billingentityinternal_id=(fki_billingentityinternal_id)
+      if fki_billingentityinternal_id.nil?
+        fail ArgumentError, 'fki_billingentityinternal_id cannot be nil'
+      end
+
+      if fki_billingentityinternal_id < 0
+        fail ArgumentError, 'invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.'
+      end
+
+      @fki_billingentityinternal_id = fki_billingentityinternal_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
+          fki_billingentityinternal_id == o.fki_billingentityinternal_id &&
           s_ezsignfolder_description == o.s_ezsignfolder_description &&
           b_ezsigntsarequirement_billable == o.b_ezsigntsarequirement_billable &&
           b_ezsignfolder_mfaused == o.b_ezsignfolder_mfaused &&
@@ -207,7 +236,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_ezsignfolder_id, s_ezsignfolder_description, b_ezsigntsarequirement_billable, b_ezsignfolder_mfaused, b_ezsignfolder_paymentused, b_ezsignfolder_allowed].hash
+      [fki_ezsignfolder_id, fki_billingentityinternal_id, s_ezsignfolder_description, b_ezsigntsarequirement_billable, b_ezsignfolder_mfaused, b_ezsignfolder_paymentused, b_ezsignfolder_allowed].hash
     end
 
     # Builds the object from hash

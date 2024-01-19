@@ -51,6 +51,12 @@ describe EzmaxApi::EzsigntemplatesignatureRequestCompound do
     end
   end
 
+  describe 'test attribute "e_ezsigntemplatesignature_positioning"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "i_ezsigntemplatedocumentpage_pagenumber"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -154,6 +160,30 @@ describe EzmaxApi::EzsigntemplatesignatureRequestCompound do
   end
 
   describe 'test attribute "e_ezsigntemplatesignature_dependencyrequirement"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "s_ezsigntemplatesignature_positioningpattern"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "i_ezsigntemplatesignature_positioningoffsetx"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "i_ezsigntemplatesignature_positioningoffsety"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "e_ezsigntemplatesignature_positioningoccurence"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

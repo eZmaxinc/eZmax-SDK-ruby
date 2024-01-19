@@ -25,6 +25,12 @@ module EzmaxApi
     # The Y coordinate (Vertical) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
     attr_accessor :i_ezsigntemplatesignaturecustomdate_y
 
+    # The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left of the signature, you would use \"200\" for the X coordinate.
+    attr_accessor :i_ezsigntemplatesignaturecustomdate_offsetx
+
+    # The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the top of the signature, you would use \"200\" for the Y coordinate.
+    attr_accessor :i_ezsigntemplatesignaturecustomdate_offsety
+
     # The custom date format to use  You can use the codes below and they will be replaced at signature time. Text values like month and day names will be rendered in the proper language. Other text will be left as-is.  The codes examples below are based on the following datetime: Thursday, January 6, 2022 at 08:07:09 EST  For example, the format \"Signature date: {MM}/{DD}/{YYYY} {hh}:{mm}\" would become \"Signature date: 01/06/2022 08:07\"  **Year**  | Code | Example | | - | - | | {YYYY} | 2022 | | {YY} | 22 |  **Month**  | Code | Example | | - | - | | {MonthCapitalize} | Janvier | | {Month} | janvier | | {MM} | 01 | | {M} | 1 |  **Day**  | Code | Example | | - | - | | {DayCapitalize} | Jeudi | | {Day} | jeudi | | {DD} | 06 | | {D} | 6 |  **Hour**  | Code | Example | | - | - | | {hh} | 08 |  **Minute**  | Code | Example | | - | - | | {mm} | 07 |  **Second**  | Code | Example | | - | - | | {ss} | 09 |        **Timezone**  | Code | Example | | - | - | | {Z} | EST |       **Time**  | Code | Example | | - | - | | {Time} | 08:07:09 |   | {TimeZ} | 08:07:09 EST |     **Date**  | Code | Example | | - | - | | {Date} | 2022-01-06 |   | {DateText} | 1er Janvier 2022 |  **Full**  | Code | Example | | - | - | | {DateTime} | 2022-01-06 08:07:09 |   | {DateTimeZ} | 2022-01-06 08:07:09 EST | 
     attr_accessor :s_ezsigntemplatesignaturecustomdate_format
 
@@ -34,6 +40,8 @@ module EzmaxApi
         :'pki_ezsigntemplatesignaturecustomdate_id' => :'pkiEzsigntemplatesignaturecustomdateID',
         :'i_ezsigntemplatesignaturecustomdate_x' => :'iEzsigntemplatesignaturecustomdateX',
         :'i_ezsigntemplatesignaturecustomdate_y' => :'iEzsigntemplatesignaturecustomdateY',
+        :'i_ezsigntemplatesignaturecustomdate_offsetx' => :'iEzsigntemplatesignaturecustomdateOffsetx',
+        :'i_ezsigntemplatesignaturecustomdate_offsety' => :'iEzsigntemplatesignaturecustomdateOffsety',
         :'s_ezsigntemplatesignaturecustomdate_format' => :'sEzsigntemplatesignaturecustomdateFormat'
       }
     end
@@ -49,6 +57,8 @@ module EzmaxApi
         :'pki_ezsigntemplatesignaturecustomdate_id' => :'Integer',
         :'i_ezsigntemplatesignaturecustomdate_x' => :'Integer',
         :'i_ezsigntemplatesignaturecustomdate_y' => :'Integer',
+        :'i_ezsigntemplatesignaturecustomdate_offsetx' => :'Integer',
+        :'i_ezsigntemplatesignaturecustomdate_offsety' => :'Integer',
         :'s_ezsigntemplatesignaturecustomdate_format' => :'String'
       }
     end
@@ -87,14 +97,18 @@ module EzmaxApi
 
       if attributes.key?(:'i_ezsigntemplatesignaturecustomdate_x')
         self.i_ezsigntemplatesignaturecustomdate_x = attributes[:'i_ezsigntemplatesignaturecustomdate_x']
-      else
-        self.i_ezsigntemplatesignaturecustomdate_x = nil
       end
 
       if attributes.key?(:'i_ezsigntemplatesignaturecustomdate_y')
         self.i_ezsigntemplatesignaturecustomdate_y = attributes[:'i_ezsigntemplatesignaturecustomdate_y']
-      else
-        self.i_ezsigntemplatesignaturecustomdate_y = nil
+      end
+
+      if attributes.key?(:'i_ezsigntemplatesignaturecustomdate_offsetx')
+        self.i_ezsigntemplatesignaturecustomdate_offsetx = attributes[:'i_ezsigntemplatesignaturecustomdate_offsetx']
+      end
+
+      if attributes.key?(:'i_ezsigntemplatesignaturecustomdate_offsety')
+        self.i_ezsigntemplatesignaturecustomdate_offsety = attributes[:'i_ezsigntemplatesignaturecustomdate_offsety']
       end
 
       if attributes.key?(:'s_ezsigntemplatesignaturecustomdate_format')
@@ -113,20 +127,20 @@ module EzmaxApi
         invalid_properties.push('invalid value for "pki_ezsigntemplatesignaturecustomdate_id", must be greater than or equal to 0.')
       end
 
-      if @i_ezsigntemplatesignaturecustomdate_x.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_x", i_ezsigntemplatesignaturecustomdate_x cannot be nil.')
-      end
-
-      if @i_ezsigntemplatesignaturecustomdate_x < 0
+      if !@i_ezsigntemplatesignaturecustomdate_x.nil? && @i_ezsigntemplatesignaturecustomdate_x < 0
         invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_x", must be greater than or equal to 0.')
       end
 
-      if @i_ezsigntemplatesignaturecustomdate_y.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_y", i_ezsigntemplatesignaturecustomdate_y cannot be nil.')
+      if !@i_ezsigntemplatesignaturecustomdate_y.nil? && @i_ezsigntemplatesignaturecustomdate_y < 0
+        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_y", must be greater than or equal to 0.')
       end
 
-      if @i_ezsigntemplatesignaturecustomdate_y < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_y", must be greater than or equal to 0.')
+      if !@i_ezsigntemplatesignaturecustomdate_offsetx.nil? && @i_ezsigntemplatesignaturecustomdate_offsetx < 0
+        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_offsetx", must be greater than or equal to 0.')
+      end
+
+      if !@i_ezsigntemplatesignaturecustomdate_offsety.nil? && @i_ezsigntemplatesignaturecustomdate_offsety < 0
+        invalid_properties.push('invalid value for "i_ezsigntemplatesignaturecustomdate_offsety", must be greater than or equal to 0.')
       end
 
       if @s_ezsigntemplatesignaturecustomdate_format.nil?
@@ -141,10 +155,10 @@ module EzmaxApi
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@pki_ezsigntemplatesignaturecustomdate_id.nil? && @pki_ezsigntemplatesignaturecustomdate_id < 0
-      return false if @i_ezsigntemplatesignaturecustomdate_x.nil?
-      return false if @i_ezsigntemplatesignaturecustomdate_x < 0
-      return false if @i_ezsigntemplatesignaturecustomdate_y.nil?
-      return false if @i_ezsigntemplatesignaturecustomdate_y < 0
+      return false if !@i_ezsigntemplatesignaturecustomdate_x.nil? && @i_ezsigntemplatesignaturecustomdate_x < 0
+      return false if !@i_ezsigntemplatesignaturecustomdate_y.nil? && @i_ezsigntemplatesignaturecustomdate_y < 0
+      return false if !@i_ezsigntemplatesignaturecustomdate_offsetx.nil? && @i_ezsigntemplatesignaturecustomdate_offsetx < 0
+      return false if !@i_ezsigntemplatesignaturecustomdate_offsety.nil? && @i_ezsigntemplatesignaturecustomdate_offsety < 0
       return false if @s_ezsigntemplatesignaturecustomdate_format.nil?
       true
     end
@@ -191,6 +205,34 @@ module EzmaxApi
       @i_ezsigntemplatesignaturecustomdate_y = i_ezsigntemplatesignaturecustomdate_y
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] i_ezsigntemplatesignaturecustomdate_offsetx Value to be assigned
+    def i_ezsigntemplatesignaturecustomdate_offsetx=(i_ezsigntemplatesignaturecustomdate_offsetx)
+      if i_ezsigntemplatesignaturecustomdate_offsetx.nil?
+        fail ArgumentError, 'i_ezsigntemplatesignaturecustomdate_offsetx cannot be nil'
+      end
+
+      if i_ezsigntemplatesignaturecustomdate_offsetx < 0
+        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignaturecustomdate_offsetx", must be greater than or equal to 0.'
+      end
+
+      @i_ezsigntemplatesignaturecustomdate_offsetx = i_ezsigntemplatesignaturecustomdate_offsetx
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] i_ezsigntemplatesignaturecustomdate_offsety Value to be assigned
+    def i_ezsigntemplatesignaturecustomdate_offsety=(i_ezsigntemplatesignaturecustomdate_offsety)
+      if i_ezsigntemplatesignaturecustomdate_offsety.nil?
+        fail ArgumentError, 'i_ezsigntemplatesignaturecustomdate_offsety cannot be nil'
+      end
+
+      if i_ezsigntemplatesignaturecustomdate_offsety < 0
+        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignaturecustomdate_offsety", must be greater than or equal to 0.'
+      end
+
+      @i_ezsigntemplatesignaturecustomdate_offsety = i_ezsigntemplatesignaturecustomdate_offsety
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -199,6 +241,8 @@ module EzmaxApi
           pki_ezsigntemplatesignaturecustomdate_id == o.pki_ezsigntemplatesignaturecustomdate_id &&
           i_ezsigntemplatesignaturecustomdate_x == o.i_ezsigntemplatesignaturecustomdate_x &&
           i_ezsigntemplatesignaturecustomdate_y == o.i_ezsigntemplatesignaturecustomdate_y &&
+          i_ezsigntemplatesignaturecustomdate_offsetx == o.i_ezsigntemplatesignaturecustomdate_offsetx &&
+          i_ezsigntemplatesignaturecustomdate_offsety == o.i_ezsigntemplatesignaturecustomdate_offsety &&
           s_ezsigntemplatesignaturecustomdate_format == o.s_ezsigntemplatesignaturecustomdate_format
     end
 
@@ -211,7 +255,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatesignaturecustomdate_id, i_ezsigntemplatesignaturecustomdate_x, i_ezsigntemplatesignaturecustomdate_y, s_ezsigntemplatesignaturecustomdate_format].hash
+      [pki_ezsigntemplatesignaturecustomdate_id, i_ezsigntemplatesignaturecustomdate_x, i_ezsigntemplatesignaturecustomdate_y, i_ezsigntemplatesignaturecustomdate_offsetx, i_ezsigntemplatesignaturecustomdate_offsety, s_ezsigntemplatesignaturecustomdate_format].hash
     end
 
     # Builds the object from hash

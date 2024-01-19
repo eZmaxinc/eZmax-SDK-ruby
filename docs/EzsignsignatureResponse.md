@@ -15,6 +15,7 @@
 | **i_ezsignsignature_height** | **Integer** | The height of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsignsignatureHeight. | [optional] |
 | **i_ezsignsignature_width** | **Integer** | The width of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have a width of 2 inches, you would use \&quot;200\&quot; for the iEzsignsignatureWidth. | [optional] |
 | **i_ezsignsignature_step** | **Integer** | The step when the Ezsignsigner will be invited to sign |  |
+| **i_ezsignsignature_stepadjusted** | **Integer** | The step when the Ezsignsigner will be invited to sign | [optional] |
 | **e_ezsignsignature_type** | [**FieldEEzsignsignatureType**](FieldEEzsignsignatureType.md) |  |  |
 | **t_ezsignsignature_tooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignsignature | [optional] |
 | **e_ezsignsignature_tooltipposition** | [**FieldEEzsignsignatureTooltipposition**](FieldEEzsignsignatureTooltipposition.md) |  | [optional] |
@@ -52,6 +53,7 @@ instance = EzmaxApi::EzsignsignatureResponse.new(
   i_ezsignsignature_height: 200,
   i_ezsignsignature_width: 200,
   i_ezsignsignature_step: 1,
+  i_ezsignsignature_stepadjusted: 1,
   e_ezsignsignature_type: null,
   t_ezsignsignature_tooltip: Please sign here if you agree to the terms,
   e_ezsignsignature_tooltipposition: null,

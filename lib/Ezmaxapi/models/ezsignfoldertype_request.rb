@@ -51,6 +51,8 @@ module EzmaxApi
 
     attr_accessor :e_ezsignfoldertype_disposal
 
+    attr_accessor :e_ezsignfoldertype_completion
+
     # The number of days after the archival before the disposal of the Ezsignfolder
     attr_accessor :i_ezsignfoldertype_disposaldays
 
@@ -62,6 +64,12 @@ module EzmaxApi
 
     # Wheter if Reassignment of signature is allowed to another signatory or not
     attr_accessor :b_ezsignfoldertype_reassign
+
+    # Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+    attr_accessor :b_ezsignfoldertype_reassignezsignsigner
+
+    # Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+    attr_accessor :b_ezsignfoldertype_reassignuser
 
     # THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
     attr_accessor :b_ezsignfoldertype_sendattatchmentsigner
@@ -173,10 +181,13 @@ module EzmaxApi
         :'e_ezsignfoldertype_sendreminderfrequency' => :'eEzsignfoldertypeSendreminderfrequency',
         :'i_ezsignfoldertype_archivaldays' => :'iEzsignfoldertypeArchivaldays',
         :'e_ezsignfoldertype_disposal' => :'eEzsignfoldertypeDisposal',
+        :'e_ezsignfoldertype_completion' => :'eEzsignfoldertypeCompletion',
         :'i_ezsignfoldertype_disposaldays' => :'iEzsignfoldertypeDisposaldays',
         :'i_ezsignfoldertype_deadlinedays' => :'iEzsignfoldertypeDeadlinedays',
         :'b_ezsignfoldertype_delegate' => :'bEzsignfoldertypeDelegate',
         :'b_ezsignfoldertype_reassign' => :'bEzsignfoldertypeReassign',
+        :'b_ezsignfoldertype_reassignezsignsigner' => :'bEzsignfoldertypeReassignezsignsigner',
+        :'b_ezsignfoldertype_reassignuser' => :'bEzsignfoldertypeReassignuser',
         :'b_ezsignfoldertype_sendattatchmentsigner' => :'bEzsignfoldertypeSendattatchmentsigner',
         :'b_ezsignfoldertype_sendsignedtoezsignsigner' => :'bEzsignfoldertypeSendsignedtoezsignsigner',
         :'b_ezsignfoldertype_sendsignedtouser' => :'bEzsignfoldertypeSendsignedtouser',
@@ -225,10 +236,13 @@ module EzmaxApi
         :'e_ezsignfoldertype_sendreminderfrequency' => :'FieldEEzsignfoldertypeSendreminderfrequency',
         :'i_ezsignfoldertype_archivaldays' => :'Integer',
         :'e_ezsignfoldertype_disposal' => :'FieldEEzsignfoldertypeDisposal',
+        :'e_ezsignfoldertype_completion' => :'FieldEEzsignfoldertypeCompletion',
         :'i_ezsignfoldertype_disposaldays' => :'Integer',
         :'i_ezsignfoldertype_deadlinedays' => :'Integer',
         :'b_ezsignfoldertype_delegate' => :'Boolean',
         :'b_ezsignfoldertype_reassign' => :'Boolean',
+        :'b_ezsignfoldertype_reassignezsignsigner' => :'Boolean',
+        :'b_ezsignfoldertype_reassignuser' => :'Boolean',
         :'b_ezsignfoldertype_sendattatchmentsigner' => :'Boolean',
         :'b_ezsignfoldertype_sendsignedtoezsignsigner' => :'Boolean',
         :'b_ezsignfoldertype_sendsignedtouser' => :'Boolean',
@@ -339,6 +353,12 @@ module EzmaxApi
         self.e_ezsignfoldertype_disposal = nil
       end
 
+      if attributes.key?(:'e_ezsignfoldertype_completion')
+        self.e_ezsignfoldertype_completion = attributes[:'e_ezsignfoldertype_completion']
+      else
+        self.e_ezsignfoldertype_completion = 'PerEzsigndocument'
+      end
+
       if attributes.key?(:'i_ezsignfoldertype_disposaldays')
         self.i_ezsignfoldertype_disposaldays = attributes[:'i_ezsignfoldertype_disposaldays']
       end
@@ -355,6 +375,14 @@ module EzmaxApi
 
       if attributes.key?(:'b_ezsignfoldertype_reassign')
         self.b_ezsignfoldertype_reassign = attributes[:'b_ezsignfoldertype_reassign']
+      end
+
+      if attributes.key?(:'b_ezsignfoldertype_reassignezsignsigner')
+        self.b_ezsignfoldertype_reassignezsignsigner = attributes[:'b_ezsignfoldertype_reassignezsignsigner']
+      end
+
+      if attributes.key?(:'b_ezsignfoldertype_reassignuser')
+        self.b_ezsignfoldertype_reassignuser = attributes[:'b_ezsignfoldertype_reassignuser']
       end
 
       if attributes.key?(:'b_ezsignfoldertype_sendattatchmentsigner')
@@ -798,10 +826,13 @@ module EzmaxApi
           e_ezsignfoldertype_sendreminderfrequency == o.e_ezsignfoldertype_sendreminderfrequency &&
           i_ezsignfoldertype_archivaldays == o.i_ezsignfoldertype_archivaldays &&
           e_ezsignfoldertype_disposal == o.e_ezsignfoldertype_disposal &&
+          e_ezsignfoldertype_completion == o.e_ezsignfoldertype_completion &&
           i_ezsignfoldertype_disposaldays == o.i_ezsignfoldertype_disposaldays &&
           i_ezsignfoldertype_deadlinedays == o.i_ezsignfoldertype_deadlinedays &&
           b_ezsignfoldertype_delegate == o.b_ezsignfoldertype_delegate &&
           b_ezsignfoldertype_reassign == o.b_ezsignfoldertype_reassign &&
+          b_ezsignfoldertype_reassignezsignsigner == o.b_ezsignfoldertype_reassignezsignsigner &&
+          b_ezsignfoldertype_reassignuser == o.b_ezsignfoldertype_reassignuser &&
           b_ezsignfoldertype_sendattatchmentsigner == o.b_ezsignfoldertype_sendattatchmentsigner &&
           b_ezsignfoldertype_sendsignedtoezsignsigner == o.b_ezsignfoldertype_sendsignedtoezsignsigner &&
           b_ezsignfoldertype_sendsignedtouser == o.b_ezsignfoldertype_sendsignedtouser &&
@@ -837,7 +868,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldertype_id, obj_ezsignfoldertype_name, fki_branding_id, fki_billingentityinternal_id, fki_usergroup_id, fki_usergroup_id_restricted, fki_ezsigntsarequirement_id, s_email_address_signed, s_email_address_summary, e_ezsignfoldertype_privacylevel, e_ezsignfoldertype_sendreminderfrequency, i_ezsignfoldertype_archivaldays, e_ezsignfoldertype_disposal, i_ezsignfoldertype_disposaldays, i_ezsignfoldertype_deadlinedays, b_ezsignfoldertype_delegate, b_ezsignfoldertype_reassign, b_ezsignfoldertype_sendattatchmentsigner, b_ezsignfoldertype_sendsignedtoezsignsigner, b_ezsignfoldertype_sendsignedtouser, b_ezsignfoldertype_sendattachmentezsignsigner, b_ezsignfoldertype_sendproofezsignsigner, b_ezsignfoldertype_sendattachmentuser, b_ezsignfoldertype_sendproofuser, b_ezsignfoldertype_sendproofemail, b_ezsignfoldertype_allowdownloadattachmentezsignsigner, b_ezsignfoldertype_allowdownloadproofezsignsigner, b_ezsignfoldertype_sendproofreceivealldocument, b_ezsignfoldertype_sendsignedtodocumentowner, b_ezsignfoldertype_sendsignedtofolderowner, b_ezsignfoldertype_sendsignedtofullgroup, b_ezsignfoldertype_sendsignedtolimitedgroup, b_ezsignfoldertype_sendsignedtocolleague, b_ezsignfoldertype_sendsummarytodocumentowner, b_ezsignfoldertype_sendsummarytofolderowner, b_ezsignfoldertype_sendsummarytofullgroup, b_ezsignfoldertype_sendsummarytolimitedgroup, b_ezsignfoldertype_sendsummarytocolleague, b_ezsignfoldertype_includeproofsigner, b_ezsignfoldertype_includeproofuser, b_ezsignfoldertype_isactive].hash
+      [pki_ezsignfoldertype_id, obj_ezsignfoldertype_name, fki_branding_id, fki_billingentityinternal_id, fki_usergroup_id, fki_usergroup_id_restricted, fki_ezsigntsarequirement_id, s_email_address_signed, s_email_address_summary, e_ezsignfoldertype_privacylevel, e_ezsignfoldertype_sendreminderfrequency, i_ezsignfoldertype_archivaldays, e_ezsignfoldertype_disposal, e_ezsignfoldertype_completion, i_ezsignfoldertype_disposaldays, i_ezsignfoldertype_deadlinedays, b_ezsignfoldertype_delegate, b_ezsignfoldertype_reassign, b_ezsignfoldertype_reassignezsignsigner, b_ezsignfoldertype_reassignuser, b_ezsignfoldertype_sendattatchmentsigner, b_ezsignfoldertype_sendsignedtoezsignsigner, b_ezsignfoldertype_sendsignedtouser, b_ezsignfoldertype_sendattachmentezsignsigner, b_ezsignfoldertype_sendproofezsignsigner, b_ezsignfoldertype_sendattachmentuser, b_ezsignfoldertype_sendproofuser, b_ezsignfoldertype_sendproofemail, b_ezsignfoldertype_allowdownloadattachmentezsignsigner, b_ezsignfoldertype_allowdownloadproofezsignsigner, b_ezsignfoldertype_sendproofreceivealldocument, b_ezsignfoldertype_sendsignedtodocumentowner, b_ezsignfoldertype_sendsignedtofolderowner, b_ezsignfoldertype_sendsignedtofullgroup, b_ezsignfoldertype_sendsignedtolimitedgroup, b_ezsignfoldertype_sendsignedtocolleague, b_ezsignfoldertype_sendsummarytodocumentowner, b_ezsignfoldertype_sendsummarytofolderowner, b_ezsignfoldertype_sendsummarytofullgroup, b_ezsignfoldertype_sendsummarytolimitedgroup, b_ezsignfoldertype_sendsummarytocolleague, b_ezsignfoldertype_includeproofsigner, b_ezsignfoldertype_includeproofuser, b_ezsignfoldertype_isactive].hash
     end
 
     # Builds the object from hash

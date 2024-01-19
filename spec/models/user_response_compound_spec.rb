@@ -189,6 +189,12 @@ describe EzmaxApi::UserResponseCompound do
     end
   end
 
+  describe 'test attribute "s_user_jobtitle"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "e_user_ezsignaccess"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -11,6 +11,7 @@
 | **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
 | **dt_created_date** | **String** | The date and time at which the object was created |  |
+| **dt_ezsignfolder_delayedsenddate** | **String** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] |
 | **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsignfolder was sent the last time. | [optional] |
 | **dt_ezsignfolder_duedate** | **String** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] |
 | **i_ezsigndocument** | **Integer** | The total number of Ezsigndocument in the folder |  |
@@ -31,6 +32,7 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   s_ezsignfolder_description: Test eZsign Folder,
   e_ezsignfolder_step: null,
   dt_created_date: 2020-12-31 23:59:59,
+  dt_ezsignfolder_delayedsenddate: 2020-12-31T23:59:59.000Z,
   dt_ezsignfolder_sentdate: 2020-12-31T23:59:59.000Z,
   dt_ezsignfolder_duedate: 2020-12-31 23:59:59,
   i_ezsigndocument: null,

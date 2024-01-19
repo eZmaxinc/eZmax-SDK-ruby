@@ -20,11 +20,12 @@ module EzmaxApi
     PARTIALLY_SIGNED = "PartiallySigned".freeze
     DECLINED_TO_SIGN = "DeclinedToSign".freeze
     PREMATURELY_ENDED = "PrematurelyEnded".freeze
+    PENDING_COMPLETION = "PendingCompletion".freeze
     COMPLETED = "Completed".freeze
     DISPOSED = "Disposed".freeze
 
     def self.all_vars
-      @all_vars ||= [UNSENT, UNSIGNED, PARTIALLY_SIGNED, DECLINED_TO_SIGN, PREMATURELY_ENDED, COMPLETED, DISPOSED].freeze
+      @all_vars ||= [UNSENT, UNSIGNED, PARTIALLY_SIGNED, DECLINED_TO_SIGN, PREMATURELY_ENDED, PENDING_COMPLETION, COMPLETED, DISPOSED].freeze
     end
 
     # Builds the enum from string

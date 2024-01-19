@@ -49,6 +49,9 @@ module EzmaxApi
     # The step when the Ezsignsigner will be invited to sign
     attr_accessor :i_ezsignsignature_step
 
+    # The step when the Ezsignsigner will be invited to sign
+    attr_accessor :i_ezsignsignature_stepadjusted
+
     attr_accessor :e_ezsignsignature_type
 
     # A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
@@ -133,6 +136,7 @@ module EzmaxApi
         :'i_ezsignsignature_height' => :'iEzsignsignatureHeight',
         :'i_ezsignsignature_width' => :'iEzsignsignatureWidth',
         :'i_ezsignsignature_step' => :'iEzsignsignatureStep',
+        :'i_ezsignsignature_stepadjusted' => :'iEzsignsignatureStepadjusted',
         :'e_ezsignsignature_type' => :'eEzsignsignatureType',
         :'t_ezsignsignature_tooltip' => :'tEzsignsignatureTooltip',
         :'e_ezsignsignature_tooltipposition' => :'eEzsignsignatureTooltipposition',
@@ -174,6 +178,7 @@ module EzmaxApi
         :'i_ezsignsignature_height' => :'Integer',
         :'i_ezsignsignature_width' => :'Integer',
         :'i_ezsignsignature_step' => :'Integer',
+        :'i_ezsignsignature_stepadjusted' => :'Integer',
         :'e_ezsignsignature_type' => :'FieldEEzsignsignatureType',
         :'t_ezsignsignature_tooltip' => :'String',
         :'e_ezsignsignature_tooltipposition' => :'FieldEEzsignsignatureTooltipposition',
@@ -273,6 +278,10 @@ module EzmaxApi
         self.i_ezsignsignature_step = attributes[:'i_ezsignsignature_step']
       else
         self.i_ezsignsignature_step = nil
+      end
+
+      if attributes.key?(:'i_ezsignsignature_stepadjusted')
+        self.i_ezsignsignature_stepadjusted = attributes[:'i_ezsignsignature_stepadjusted']
       end
 
       if attributes.key?(:'e_ezsignsignature_type')
@@ -722,6 +731,7 @@ module EzmaxApi
           i_ezsignsignature_height == o.i_ezsignsignature_height &&
           i_ezsignsignature_width == o.i_ezsignsignature_width &&
           i_ezsignsignature_step == o.i_ezsignsignature_step &&
+          i_ezsignsignature_stepadjusted == o.i_ezsignsignature_stepadjusted &&
           e_ezsignsignature_type == o.e_ezsignsignature_type &&
           t_ezsignsignature_tooltip == o.t_ezsignsignature_tooltip &&
           e_ezsignsignature_tooltipposition == o.e_ezsignsignature_tooltipposition &&
@@ -752,7 +762,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, fki_ezsignsigningreason_id, s_ezsignsigningreason_description_x, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, e_ezsignsignature_type, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, e_ezsignsignature_dependencyrequirement, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature].hash
+      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, fki_ezsignsigningreason_id, s_ezsignsigningreason_description_x, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, i_ezsignsignature_stepadjusted, e_ezsignsignature_type, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, e_ezsignsignature_dependencyrequirement, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature].hash
     end
 
     # Builds the object from hash

@@ -55,6 +55,8 @@ module EzmaxApi
     # Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
     attr_accessor :b_webhook_skipsslvalidation
 
+    attr_accessor :obj_audit
+
     # The customer code assigned to your account
     attr_accessor :pks_customer_code
 
@@ -100,6 +102,7 @@ module EzmaxApi
         :'b_webhook_isactive' => :'bWebhookIsactive',
         :'b_webhook_issigned' => :'bWebhookIssigned',
         :'b_webhook_skipsslvalidation' => :'bWebhookSkipsslvalidation',
+        :'obj_audit' => :'objAudit',
         :'pks_customer_code' => :'pksCustomerCode',
         :'b_webhook_test' => :'bWebhookTest'
       }
@@ -127,6 +130,7 @@ module EzmaxApi
         :'b_webhook_isactive' => :'Boolean',
         :'b_webhook_issigned' => :'Boolean',
         :'b_webhook_skipsslvalidation' => :'Boolean',
+        :'obj_audit' => :'CommonAudit',
         :'pks_customer_code' => :'String',
         :'b_webhook_test' => :'Boolean'
       }
@@ -232,6 +236,12 @@ module EzmaxApi
         self.b_webhook_skipsslvalidation = nil
       end
 
+      if attributes.key?(:'obj_audit')
+        self.obj_audit = attributes[:'obj_audit']
+      else
+        self.obj_audit = nil
+      end
+
       if attributes.key?(:'pks_customer_code')
         self.pks_customer_code = attributes[:'pks_customer_code']
       else
@@ -286,6 +296,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_webhook_skipsslvalidation", b_webhook_skipsslvalidation cannot be nil.')
       end
 
+      if @obj_audit.nil?
+        invalid_properties.push('invalid value for "obj_audit", obj_audit cannot be nil.')
+      end
+
       if @pks_customer_code.nil?
         invalid_properties.push('invalid value for "pks_customer_code", pks_customer_code cannot be nil.')
       end
@@ -318,6 +332,7 @@ module EzmaxApi
       return false if @b_webhook_isactive.nil?
       return false if @b_webhook_issigned.nil?
       return false if @b_webhook_skipsslvalidation.nil?
+      return false if @obj_audit.nil?
       return false if @pks_customer_code.nil?
       return false if @pks_customer_code.to_s.length > 6
       return false if @pks_customer_code.to_s.length < 2
@@ -376,6 +391,7 @@ module EzmaxApi
           b_webhook_isactive == o.b_webhook_isactive &&
           b_webhook_issigned == o.b_webhook_issigned &&
           b_webhook_skipsslvalidation == o.b_webhook_skipsslvalidation &&
+          obj_audit == o.obj_audit &&
           pks_customer_code == o.pks_customer_code &&
           b_webhook_test == o.b_webhook_test
     end
@@ -389,7 +405,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_webhook_id, s_webhook_description, fki_ezsignfoldertype_id, s_ezsignfoldertype_name_x, e_webhook_module, e_webhook_ezsignevent, e_webhook_managementevent, s_webhook_url, s_webhook_emailfailed, s_webhook_apikey, s_webhook_secret, b_webhook_isactive, b_webhook_issigned, b_webhook_skipsslvalidation, pks_customer_code, b_webhook_test].hash
+      [pki_webhook_id, s_webhook_description, fki_ezsignfoldertype_id, s_ezsignfoldertype_name_x, e_webhook_module, e_webhook_ezsignevent, e_webhook_managementevent, s_webhook_url, s_webhook_emailfailed, s_webhook_apikey, s_webhook_secret, b_webhook_isactive, b_webhook_issigned, b_webhook_skipsslvalidation, obj_audit, pks_customer_code, b_webhook_test].hash
     end
 
     # Builds the object from hash

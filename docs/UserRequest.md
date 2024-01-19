@@ -25,6 +25,7 @@
 | **s_user_firstname** | **String** | The first name of the user |  |
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_user_loginname** | **String** | The login name of the User. |  |
+| **s_user_jobtitle** | **String** | The job title of the user | [optional] |
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
 | **b_user_isactive** | **Boolean** | Whether the User is active or not |  |
 | **b_user_validatebyadministration** | **Boolean** | Whether if the transactions in which the User is implicated must be validated by administrative personnel or not | [optional] |
@@ -59,6 +60,7 @@ instance = EzmaxApi::UserRequest.new(
   s_user_firstname: John,
   s_user_lastname: Doe,
   s_user_loginname: JohnDoe,
+  s_user_jobtitle: Sales Representative,
   e_user_ezsignaccess: null,
   b_user_isactive: true,
   b_user_validatebyadministration: false,

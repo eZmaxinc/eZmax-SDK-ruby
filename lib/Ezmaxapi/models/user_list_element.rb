@@ -43,6 +43,9 @@ module EzmaxApi
     # The email address.
     attr_accessor :s_email_address
 
+    # The job title of the user
+    attr_accessor :s_user_jobtitle
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -77,7 +80,8 @@ module EzmaxApi
         :'e_user_origin' => :'eUserOrigin',
         :'e_user_ezsignaccess' => :'eUserEzsignaccess',
         :'dt_user_ezsignprepaidexpiration' => :'dtUserEzsignprepaidexpiration',
-        :'s_email_address' => :'sEmailAddress'
+        :'s_email_address' => :'sEmailAddress',
+        :'s_user_jobtitle' => :'sUserJobtitle'
       }
     end
 
@@ -98,7 +102,8 @@ module EzmaxApi
         :'e_user_origin' => :'FieldEUserOrigin',
         :'e_user_ezsignaccess' => :'FieldEUserEzsignaccess',
         :'dt_user_ezsignprepaidexpiration' => :'String',
-        :'s_email_address' => :'String'
+        :'s_email_address' => :'String',
+        :'s_user_jobtitle' => :'String'
       }
     end
 
@@ -180,6 +185,10 @@ module EzmaxApi
       else
         self.s_email_address = nil
       end
+
+      if attributes.key?(:'s_user_jobtitle')
+        self.s_user_jobtitle = attributes[:'s_user_jobtitle']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -237,6 +246,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
+      pattern = Regexp.new(/^.{0,50}$/)
+      if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ pattern
+        invalid_properties.push("invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -256,6 +270,7 @@ module EzmaxApi
       return false if @e_user_ezsignaccess.nil?
       return false if !@dt_user_ezsignprepaidexpiration.nil? && @dt_user_ezsignprepaidexpiration !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/)
       return false if @s_email_address.nil?
+      return false if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ Regexp.new(/^.{0,50}$/)
       true
     end
 
@@ -303,6 +318,21 @@ module EzmaxApi
       @dt_user_ezsignprepaidexpiration = dt_user_ezsignprepaidexpiration
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] s_user_jobtitle Value to be assigned
+    def s_user_jobtitle=(s_user_jobtitle)
+      if s_user_jobtitle.nil?
+        fail ArgumentError, 's_user_jobtitle cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,50}$/)
+      if s_user_jobtitle !~ pattern
+        fail ArgumentError, "invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}."
+      end
+
+      @s_user_jobtitle = s_user_jobtitle
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -317,7 +347,8 @@ module EzmaxApi
           e_user_origin == o.e_user_origin &&
           e_user_ezsignaccess == o.e_user_ezsignaccess &&
           dt_user_ezsignprepaidexpiration == o.dt_user_ezsignprepaidexpiration &&
-          s_email_address == o.s_email_address
+          s_email_address == o.s_email_address &&
+          s_user_jobtitle == o.s_user_jobtitle
     end
 
     # @see the `==` method
@@ -329,7 +360,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_user_id, s_user_firstname, s_user_lastname, s_user_loginname, b_user_isactive, e_user_type, e_user_origin, e_user_ezsignaccess, dt_user_ezsignprepaidexpiration, s_email_address].hash
+      [pki_user_id, s_user_firstname, s_user_lastname, s_user_loginname, b_user_isactive, e_user_type, e_user_origin, e_user_ezsignaccess, dt_user_ezsignprepaidexpiration, s_email_address, s_user_jobtitle].hash
     end
 
     # Builds the object from hash

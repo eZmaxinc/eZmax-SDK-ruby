@@ -35,6 +35,9 @@ module EzmaxApi
     # The date and time at which the object was created
     attr_accessor :dt_created_date
 
+    # The date and time at which the Ezsignfolder will be sent in the future.
+    attr_accessor :dt_ezsignfolder_delayedsenddate
+
     # The date and time at which the Ezsignfolder was sent the last time.
     attr_accessor :dt_ezsignfolder_sentdate
 
@@ -85,6 +88,7 @@ module EzmaxApi
         :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
         :'e_ezsignfolder_step' => :'eEzsignfolderStep',
         :'dt_created_date' => :'dtCreatedDate',
+        :'dt_ezsignfolder_delayedsenddate' => :'dtEzsignfolderDelayedsenddate',
         :'dt_ezsignfolder_sentdate' => :'dtEzsignfolderSentdate',
         :'dt_ezsignfolder_duedate' => :'dtEzsignfolderDuedate',
         :'i_ezsigndocument' => :'iEzsigndocument',
@@ -109,6 +113,7 @@ module EzmaxApi
         :'s_ezsignfolder_description' => :'String',
         :'e_ezsignfolder_step' => :'FieldEEzsignfolderStep',
         :'dt_created_date' => :'String',
+        :'dt_ezsignfolder_delayedsenddate' => :'String',
         :'dt_ezsignfolder_sentdate' => :'String',
         :'dt_ezsignfolder_duedate' => :'String',
         :'i_ezsigndocument' => :'Integer',
@@ -179,6 +184,10 @@ module EzmaxApi
         self.dt_created_date = attributes[:'dt_created_date']
       else
         self.dt_created_date = nil
+      end
+
+      if attributes.key?(:'dt_ezsignfolder_delayedsenddate')
+        self.dt_ezsignfolder_delayedsenddate = attributes[:'dt_ezsignfolder_delayedsenddate']
       end
 
       if attributes.key?(:'dt_ezsignfolder_sentdate')
@@ -334,6 +343,7 @@ module EzmaxApi
           s_ezsignfolder_description == o.s_ezsignfolder_description &&
           e_ezsignfolder_step == o.e_ezsignfolder_step &&
           dt_created_date == o.dt_created_date &&
+          dt_ezsignfolder_delayedsenddate == o.dt_ezsignfolder_delayedsenddate &&
           dt_ezsignfolder_sentdate == o.dt_ezsignfolder_sentdate &&
           dt_ezsignfolder_duedate == o.dt_ezsignfolder_duedate &&
           i_ezsigndocument == o.i_ezsigndocument &&
@@ -351,7 +361,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, e_ezsignfoldertype_privacylevel, s_ezsignfoldertype_name_x, s_ezsignfolder_description, e_ezsignfolder_step, dt_created_date, dt_ezsignfolder_sentdate, dt_ezsignfolder_duedate, i_ezsigndocument, i_ezsigndocument_edm, i_ezsignsignature, i_ezsignsignature_signed].hash
+      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, e_ezsignfoldertype_privacylevel, s_ezsignfoldertype_name_x, s_ezsignfolder_description, e_ezsignfolder_step, dt_created_date, dt_ezsignfolder_delayedsenddate, dt_ezsignfolder_sentdate, dt_ezsignfolder_duedate, i_ezsigndocument, i_ezsigndocument_edm, i_ezsignsignature, i_ezsignsignature_signed].hash
     end
 
     # Builds the object from hash

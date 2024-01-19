@@ -31,6 +31,7 @@
 | **s_user_firstname** | **String** | The first name of the user |  |
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_user_loginname** | **String** | The login name of the User. |  |
+| **s_user_jobtitle** | **String** | The job title of the user | [optional] |
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
 | **dt_user_lastlogondate** | **String** | The last logon date of the User | [optional] |
 | **dt_user_passwordchanged** | **String** | The date at which the User&#39;s password was last changed | [optional] |
@@ -75,6 +76,7 @@ instance = EzmaxApi::UserResponse.new(
   s_user_firstname: John,
   s_user_lastname: Doe,
   s_user_loginname: JohnDoe,
+  s_user_jobtitle: Sales Representative,
   e_user_ezsignaccess: null,
   dt_user_lastlogondate: 2020-12-31 23:59:59,
   dt_user_passwordchanged: 2020-12-31 23:59:59,

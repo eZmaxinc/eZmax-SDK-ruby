@@ -45,6 +45,18 @@ describe EzmaxApi::EzsigntemplatesignaturecustomdateRequestCompound do
     end
   end
 
+  describe 'test attribute "i_ezsigntemplatesignaturecustomdate_offsetx"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "i_ezsigntemplatesignaturecustomdate_offsety"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "s_ezsigntemplatesignaturecustomdate_format"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

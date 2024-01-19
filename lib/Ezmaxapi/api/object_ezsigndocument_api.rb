@@ -175,6 +175,84 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Create multiple Ezsignsignatures/Ezsignformfieldgroups
+    # Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param ezsigndocument_create_ezsignelements_positioned_by_word_v1_request [EzsigndocumentCreateEzsignelementsPositionedByWordV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsigndocumentCreateEzsignelementsPositionedByWordV1Response]
+    def ezsigndocument_create_ezsignelements_positioned_by_word_v1(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v1_request, opts = {})
+      data, _status_code, _headers = ezsigndocument_create_ezsignelements_positioned_by_word_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v1_request, opts)
+      data
+    end
+
+    # Create multiple Ezsignsignatures/Ezsignformfieldgroups
+    # Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param ezsigndocument_create_ezsignelements_positioned_by_word_v1_request [EzsigndocumentCreateEzsignelementsPositionedByWordV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsigndocumentCreateEzsignelementsPositionedByWordV1Response, Integer, Hash)>] EzsigndocumentCreateEzsignelementsPositionedByWordV1Response data, response status code and response headers
+    def ezsigndocument_create_ezsignelements_positioned_by_word_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v1_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsigndocumentApi.ezsigndocument_create_ezsignelements_positioned_by_word_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsigndocument_id' is set
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsigndocument_id' when calling ObjectEzsigndocumentApi.ezsigndocument_create_ezsignelements_positioned_by_word_v1"
+      end
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id < 0
+        fail ArgumentError, 'invalid value for "pki_ezsigndocument_id" when calling ObjectEzsigndocumentApi.ezsigndocument_create_ezsignelements_positioned_by_word_v1, must be greater than or equal to 0.'
+      end
+
+      # verify the required parameter 'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request' is set
+      if @api_client.config.client_side_validation && ezsigndocument_create_ezsignelements_positioned_by_word_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request' when calling ObjectEzsigndocumentApi.ezsigndocument_create_ezsignelements_positioned_by_word_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord'.sub('{' + 'pkiEzsigndocumentID' + '}', CGI.escape(pki_ezsigndocument_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(ezsigndocument_create_ezsignelements_positioned_by_word_v1_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsigndocumentCreateEzsignelementsPositionedByWordV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsigndocumentApi.ezsigndocument_create_ezsignelements_positioned_by_word_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsigndocumentApi#ezsigndocument_create_ezsignelements_positioned_by_word_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create a new Ezsigndocument
     # The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
     # @param ezsigndocument_create_object_v1_request [Array<EzsigndocumentCreateObjectV1Request>] 
@@ -972,7 +1050,7 @@ module EzmaxApi
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [EzsigndocumentGetDownloadUrlV1Response]
     def ezsigndocument_get_download_url_v1(pki_ezsigndocument_id, e_document_type, opts = {})
@@ -983,7 +1061,7 @@ module EzmaxApi
     # Retrieve a URL to download documents.
     # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
     # @param pki_ezsigndocument_id [Integer] 
-    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+    # @param e_document_type [String] The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EzsigndocumentGetDownloadUrlV1Response, Integer, Hash)>] EzsigndocumentGetDownloadUrlV1Response data, response status code and response headers
     def ezsigndocument_get_download_url_v1_with_http_info(pki_ezsigndocument_id, e_document_type, opts = {})
@@ -1110,6 +1188,73 @@ module EzmaxApi
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ObjectEzsigndocumentApi#ezsigndocument_get_ezsignannotations_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve an existing Ezsigndocument's Ezsigndiscussions
+    # 
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [EzsigndocumentGetEzsigndiscussionsV1Response]
+    def ezsigndocument_get_ezsigndiscussions_v1(pki_ezsigndocument_id, opts = {})
+      data, _status_code, _headers = ezsigndocument_get_ezsigndiscussions_v1_with_http_info(pki_ezsigndocument_id, opts)
+      data
+    end
+
+    # Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+    # 
+    # @param pki_ezsigndocument_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(EzsigndocumentGetEzsigndiscussionsV1Response, Integer, Hash)>] EzsigndocumentGetEzsigndiscussionsV1Response data, response status code and response headers
+    def ezsigndocument_get_ezsigndiscussions_v1_with_http_info(pki_ezsigndocument_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsigndocumentApi.ezsigndocument_get_ezsigndiscussions_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsigndocument_id' is set
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsigndocument_id' when calling ObjectEzsigndocumentApi.ezsigndocument_get_ezsigndiscussions_v1"
+      end
+      if @api_client.config.client_side_validation && pki_ezsigndocument_id < 0
+        fail ArgumentError, 'invalid value for "pki_ezsigndocument_id" when calling ObjectEzsigndocumentApi.ezsigndocument_get_ezsigndiscussions_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions'.sub('{' + 'pkiEzsigndocumentID' + '}', CGI.escape(pki_ezsigndocument_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsigndocumentGetEzsigndiscussionsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsigndocumentApi.ezsigndocument_get_ezsigndiscussions_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsigndocumentApi#ezsigndocument_get_ezsigndiscussions_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

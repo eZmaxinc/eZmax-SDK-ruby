@@ -91,6 +91,9 @@ module EzmaxApi
     # The login name of the User.
     attr_accessor :s_user_loginname
 
+    # The job title of the user
+    attr_accessor :s_user_jobtitle
+
     attr_accessor :e_user_ezsignaccess
 
     # The last logon date of the User
@@ -171,6 +174,7 @@ module EzmaxApi
         :'s_user_firstname' => :'sUserFirstname',
         :'s_user_lastname' => :'sUserLastname',
         :'s_user_loginname' => :'sUserLoginname',
+        :'s_user_jobtitle' => :'sUserJobtitle',
         :'e_user_ezsignaccess' => :'eUserEzsignaccess',
         :'dt_user_lastlogondate' => :'dtUserLastlogondate',
         :'dt_user_passwordchanged' => :'dtUserPasswordchanged',
@@ -219,6 +223,7 @@ module EzmaxApi
         :'s_user_firstname' => :'String',
         :'s_user_lastname' => :'String',
         :'s_user_loginname' => :'String',
+        :'s_user_jobtitle' => :'String',
         :'e_user_ezsignaccess' => :'FieldEUserEzsignaccess',
         :'dt_user_lastlogondate' => :'String',
         :'dt_user_passwordchanged' => :'String',
@@ -402,6 +407,10 @@ module EzmaxApi
         self.s_user_loginname = attributes[:'s_user_loginname']
       else
         self.s_user_loginname = nil
+      end
+
+      if attributes.key?(:'s_user_jobtitle')
+        self.s_user_jobtitle = attributes[:'s_user_jobtitle']
       end
 
       if attributes.key?(:'e_user_ezsignaccess')
@@ -591,6 +600,11 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^.{0,50}$/)
+      if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ pattern
+        invalid_properties.push("invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}.")
+      end
+
       if @e_user_ezsignaccess.nil?
         invalid_properties.push('invalid value for "e_user_ezsignaccess", e_user_ezsignaccess cannot be nil.')
       end
@@ -662,6 +676,7 @@ module EzmaxApi
       return false if @s_user_lastname.nil?
       return false if @s_user_loginname.nil?
       return false if @s_user_loginname !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      return false if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ Regexp.new(/^.{0,50}$/)
       return false if @e_user_ezsignaccess.nil?
       return false if !@dt_user_lastlogondate.nil? && @dt_user_lastlogondate !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
       return false if !@dt_user_passwordchanged.nil? && @dt_user_passwordchanged !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
@@ -864,6 +879,21 @@ module EzmaxApi
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] s_user_jobtitle Value to be assigned
+    def s_user_jobtitle=(s_user_jobtitle)
+      if s_user_jobtitle.nil?
+        fail ArgumentError, 's_user_jobtitle cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,50}$/)
+      if s_user_jobtitle !~ pattern
+        fail ArgumentError, "invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}."
+      end
+
+      @s_user_jobtitle = s_user_jobtitle
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] dt_user_lastlogondate Value to be assigned
     def dt_user_lastlogondate=(dt_user_lastlogondate)
       if dt_user_lastlogondate.nil?
@@ -940,6 +970,7 @@ module EzmaxApi
           s_user_firstname == o.s_user_firstname &&
           s_user_lastname == o.s_user_lastname &&
           s_user_loginname == o.s_user_loginname &&
+          s_user_jobtitle == o.s_user_jobtitle &&
           e_user_ezsignaccess == o.e_user_ezsignaccess &&
           dt_user_lastlogondate == o.dt_user_lastlogondate &&
           dt_user_passwordchanged == o.dt_user_passwordchanged &&
@@ -961,7 +992,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_user_id, fki_agent_id, fki_broker_id, fki_assistant_id, fki_employee_id, fki_company_id_default, s_company_name_x, fki_department_id_default, s_department_name_x, fki_timezone_id, s_timezone_name, fki_language_id, s_language_name_x, obj_email, fki_billingentityinternal_id, s_billingentityinternal_description_x, obj_phone_home, obj_phone_sms, fki_secretquestion_id, fki_module_id_form, s_module_name_x, e_user_origin, e_user_type, e_user_logintype, s_user_firstname, s_user_lastname, s_user_loginname, e_user_ezsignaccess, dt_user_lastlogondate, dt_user_passwordchanged, dt_user_ezsignprepaidexpiration, b_user_isactive, b_user_validatebyadministration, b_user_validatebydirector, b_user_attachmentautoverified, b_user_changepassword, obj_audit].hash
+      [pki_user_id, fki_agent_id, fki_broker_id, fki_assistant_id, fki_employee_id, fki_company_id_default, s_company_name_x, fki_department_id_default, s_department_name_x, fki_timezone_id, s_timezone_name, fki_language_id, s_language_name_x, obj_email, fki_billingentityinternal_id, s_billingentityinternal_description_x, obj_phone_home, obj_phone_sms, fki_secretquestion_id, fki_module_id_form, s_module_name_x, e_user_origin, e_user_type, e_user_logintype, s_user_firstname, s_user_lastname, s_user_loginname, s_user_jobtitle, e_user_ezsignaccess, dt_user_lastlogondate, dt_user_passwordchanged, dt_user_ezsignprepaidexpiration, b_user_isactive, b_user_validatebyadministration, b_user_validatebydirector, b_user_attachmentautoverified, b_user_changepassword, obj_audit].hash
     end
 
     # Builds the object from hash

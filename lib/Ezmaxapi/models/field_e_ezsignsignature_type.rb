@@ -25,9 +25,10 @@ module EzmaxApi
     ATTACHMENTS_CONFIRMATION = "AttachmentsConfirmation".freeze
     FIELD_TEXT = "FieldText".freeze
     FIELD_TEXTAREA = "FieldTextarea".freeze
+    CONSULTATION = "Consultation".freeze
 
     def self.all_vars
-      @all_vars ||= [ACKNOWLEDGEMENT, CITY, HANDWRITTEN, INITIALS, NAME, NAME_REASON, ATTACHMENTS, ATTACHMENTS_CONFIRMATION, FIELD_TEXT, FIELD_TEXTAREA].freeze
+      @all_vars ||= [ACKNOWLEDGEMENT, CITY, HANDWRITTEN, INITIALS, NAME, NAME_REASON, ATTACHMENTS, ATTACHMENTS_CONFIRMATION, FIELD_TEXT, FIELD_TEXTAREA, CONSULTATION].freeze
     end
 
     # Builds the enum from string

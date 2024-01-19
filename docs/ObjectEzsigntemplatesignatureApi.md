@@ -32,7 +32,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsigntemplatesignatureApi.new
-ezsigntemplatesignature_create_object_v1_request = EzmaxApi::EzsigntemplatesignatureCreateObjectV1Request.new({a_obj_ezsigntemplatesignature: [EzmaxApi::EzsigntemplatesignatureRequestCompound.new({fki_ezsigntemplatedocument_id: 133, fki_ezsigntemplatesigner_id: 9, i_ezsigntemplatedocumentpage_pagenumber: 1, i_ezsigntemplatesignature_x: 200, i_ezsigntemplatesignature_y: 300, i_ezsigntemplatesignature_step: 1, e_ezsigntemplatesignature_type: EzmaxApi::FieldEEzsigntemplatesignatureType::ACKNOWLEDGEMENT})]}) # EzsigntemplatesignatureCreateObjectV1Request | 
+ezsigntemplatesignature_create_object_v1_request = EzmaxApi::EzsigntemplatesignatureCreateObjectV1Request.new({a_obj_ezsigntemplatesignature: [EzmaxApi::EzsigntemplatesignatureRequestCompound.new({fki_ezsigntemplatedocument_id: 133, fki_ezsigntemplatesigner_id: 9, i_ezsigntemplatedocumentpage_pagenumber: 1, i_ezsigntemplatesignature_step: 1, e_ezsigntemplatesignature_type: EzmaxApi::FieldEEzsigntemplatesignatureType::ACKNOWLEDGEMENT})]}) # EzsigntemplatesignatureCreateObjectV1Request | 
 
 begin
   # Create a new Ezsigntemplatesignature
@@ -175,7 +175,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigntemplatesignatureApi.new
 pki_ezsigntemplatesignature_id = 56 # Integer | 
-ezsigntemplatesignature_edit_object_v1_request = EzmaxApi::EzsigntemplatesignatureEditObjectV1Request.new({obj_ezsigntemplatesignature: EzmaxApi::EzsigntemplatesignatureRequestCompound.new({fki_ezsigntemplatedocument_id: 133, fki_ezsigntemplatesigner_id: 9, i_ezsigntemplatedocumentpage_pagenumber: 1, i_ezsigntemplatesignature_x: 200, i_ezsigntemplatesignature_y: 300, i_ezsigntemplatesignature_step: 1, e_ezsigntemplatesignature_type: EzmaxApi::FieldEEzsigntemplatesignatureType::ACKNOWLEDGEMENT})}) # EzsigntemplatesignatureEditObjectV1Request | 
+ezsigntemplatesignature_edit_object_v1_request = EzmaxApi::EzsigntemplatesignatureEditObjectV1Request.new({obj_ezsigntemplatesignature: EzmaxApi::EzsigntemplatesignatureRequestCompound.new({fki_ezsigntemplatedocument_id: 133, fki_ezsigntemplatesigner_id: 9, i_ezsigntemplatedocumentpage_pagenumber: 1, i_ezsigntemplatesignature_step: 1, e_ezsigntemplatesignature_type: EzmaxApi::FieldEEzsigntemplatesignatureType::ACKNOWLEDGEMENT})}) # EzsigntemplatesignatureEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsigntemplatesignature

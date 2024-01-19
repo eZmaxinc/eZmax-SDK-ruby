@@ -14,6 +14,7 @@
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
 | **dt_user_ezsignprepaidexpiration** | **String** | The eZsign prepaid expiration date | [optional] |
 | **s_email_address** | **String** | The email address. |  |
+| **s_user_jobtitle** | **String** | The job title of the user | [optional] |
 
 ## Example
 
@@ -30,7 +31,8 @@ instance = EzmaxApi::UserListElement.new(
   e_user_origin: null,
   e_user_ezsignaccess: null,
   dt_user_ezsignprepaidexpiration: 2020-12-31,
-  s_email_address: email@example.com
+  s_email_address: email@example.com,
+  s_user_jobtitle: Sales Representative
 )
 ```
 

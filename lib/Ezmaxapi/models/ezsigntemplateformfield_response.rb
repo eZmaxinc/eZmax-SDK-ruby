@@ -19,6 +19,8 @@ module EzmaxApi
     # The unique ID of the Ezsigntemplateformfield
     attr_accessor :pki_ezsigntemplateformfield_id
 
+    attr_accessor :e_ezsigntemplateformfield_positioning
+
     # The page number in the Ezsigntemplatedocument
     attr_accessor :i_ezsigntemplatedocumentpage_pagenumber
 
@@ -48,6 +50,17 @@ module EzmaxApi
 
     attr_accessor :e_ezsigntemplateformfield_dependencyrequirement
 
+    # The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+    attr_accessor :s_ezsigntemplateformfield_positioningpattern
+
+    # The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+    attr_accessor :i_ezsigntemplateformfield_positioningoffsetx
+
+    # The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+    attr_accessor :i_ezsigntemplateformfield_positioningoffsety
+
+    attr_accessor :e_ezsigntemplateformfield_positioningoccurence
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -74,6 +87,7 @@ module EzmaxApi
     def self.attribute_map
       {
         :'pki_ezsigntemplateformfield_id' => :'pkiEzsigntemplateformfieldID',
+        :'e_ezsigntemplateformfield_positioning' => :'eEzsigntemplateformfieldPositioning',
         :'i_ezsigntemplatedocumentpage_pagenumber' => :'iEzsigntemplatedocumentpagePagenumber',
         :'s_ezsigntemplateformfield_label' => :'sEzsigntemplateformfieldLabel',
         :'s_ezsigntemplateformfield_value' => :'sEzsigntemplateformfieldValue',
@@ -83,7 +97,11 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_height' => :'iEzsigntemplateformfieldHeight',
         :'b_ezsigntemplateformfield_autocomplete' => :'bEzsigntemplateformfieldAutocomplete',
         :'b_ezsigntemplateformfield_selected' => :'bEzsigntemplateformfieldSelected',
-        :'e_ezsigntemplateformfield_dependencyrequirement' => :'eEzsigntemplateformfieldDependencyrequirement'
+        :'e_ezsigntemplateformfield_dependencyrequirement' => :'eEzsigntemplateformfieldDependencyrequirement',
+        :'s_ezsigntemplateformfield_positioningpattern' => :'sEzsigntemplateformfieldPositioningpattern',
+        :'i_ezsigntemplateformfield_positioningoffsetx' => :'iEzsigntemplateformfieldPositioningoffsetx',
+        :'i_ezsigntemplateformfield_positioningoffsety' => :'iEzsigntemplateformfieldPositioningoffsety',
+        :'e_ezsigntemplateformfield_positioningoccurence' => :'eEzsigntemplateformfieldPositioningoccurence'
       }
     end
 
@@ -96,6 +114,7 @@ module EzmaxApi
     def self.openapi_types
       {
         :'pki_ezsigntemplateformfield_id' => :'Integer',
+        :'e_ezsigntemplateformfield_positioning' => :'FieldEEzsigntemplateformfieldPositioning',
         :'i_ezsigntemplatedocumentpage_pagenumber' => :'Integer',
         :'s_ezsigntemplateformfield_label' => :'String',
         :'s_ezsigntemplateformfield_value' => :'String',
@@ -105,7 +124,11 @@ module EzmaxApi
         :'i_ezsigntemplateformfield_height' => :'Integer',
         :'b_ezsigntemplateformfield_autocomplete' => :'Boolean',
         :'b_ezsigntemplateformfield_selected' => :'Boolean',
-        :'e_ezsigntemplateformfield_dependencyrequirement' => :'FieldEEzsigntemplateformfieldDependencyrequirement'
+        :'e_ezsigntemplateformfield_dependencyrequirement' => :'FieldEEzsigntemplateformfieldDependencyrequirement',
+        :'s_ezsigntemplateformfield_positioningpattern' => :'String',
+        :'i_ezsigntemplateformfield_positioningoffsetx' => :'Integer',
+        :'i_ezsigntemplateformfield_positioningoffsety' => :'Integer',
+        :'e_ezsigntemplateformfield_positioningoccurence' => :'FieldEEzsigntemplateformfieldPositioningoccurence'
       }
     end
 
@@ -136,6 +159,12 @@ module EzmaxApi
         self.pki_ezsigntemplateformfield_id = nil
       end
 
+      if attributes.key?(:'e_ezsigntemplateformfield_positioning')
+        self.e_ezsigntemplateformfield_positioning = attributes[:'e_ezsigntemplateformfield_positioning']
+      else
+        self.e_ezsigntemplateformfield_positioning = 'PerCoordinates'
+      end
+
       if attributes.key?(:'i_ezsigntemplatedocumentpage_pagenumber')
         self.i_ezsigntemplatedocumentpage_pagenumber = attributes[:'i_ezsigntemplatedocumentpage_pagenumber']
       else
@@ -154,14 +183,10 @@ module EzmaxApi
 
       if attributes.key?(:'i_ezsigntemplateformfield_x')
         self.i_ezsigntemplateformfield_x = attributes[:'i_ezsigntemplateformfield_x']
-      else
-        self.i_ezsigntemplateformfield_x = nil
       end
 
       if attributes.key?(:'i_ezsigntemplateformfield_y')
         self.i_ezsigntemplateformfield_y = attributes[:'i_ezsigntemplateformfield_y']
-      else
-        self.i_ezsigntemplateformfield_y = nil
       end
 
       if attributes.key?(:'i_ezsigntemplateformfield_width')
@@ -186,6 +211,22 @@ module EzmaxApi
 
       if attributes.key?(:'e_ezsigntemplateformfield_dependencyrequirement')
         self.e_ezsigntemplateformfield_dependencyrequirement = attributes[:'e_ezsigntemplateformfield_dependencyrequirement']
+      end
+
+      if attributes.key?(:'s_ezsigntemplateformfield_positioningpattern')
+        self.s_ezsigntemplateformfield_positioningpattern = attributes[:'s_ezsigntemplateformfield_positioningpattern']
+      end
+
+      if attributes.key?(:'i_ezsigntemplateformfield_positioningoffsetx')
+        self.i_ezsigntemplateformfield_positioningoffsetx = attributes[:'i_ezsigntemplateformfield_positioningoffsetx']
+      end
+
+      if attributes.key?(:'i_ezsigntemplateformfield_positioningoffsety')
+        self.i_ezsigntemplateformfield_positioningoffsety = attributes[:'i_ezsigntemplateformfield_positioningoffsety']
+      end
+
+      if attributes.key?(:'e_ezsigntemplateformfield_positioningoccurence')
+        self.e_ezsigntemplateformfield_positioningoccurence = attributes[:'e_ezsigntemplateformfield_positioningoccurence']
       end
     end
 
@@ -214,19 +255,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_ezsigntemplateformfield_label", s_ezsigntemplateformfield_label cannot be nil.')
       end
 
-      if @i_ezsigntemplateformfield_x.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplateformfield_x", i_ezsigntemplateformfield_x cannot be nil.')
-      end
-
-      if @i_ezsigntemplateformfield_x < 0
+      if !@i_ezsigntemplateformfield_x.nil? && @i_ezsigntemplateformfield_x < 0
         invalid_properties.push('invalid value for "i_ezsigntemplateformfield_x", must be greater than or equal to 0.')
       end
 
-      if @i_ezsigntemplateformfield_y.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplateformfield_y", i_ezsigntemplateformfield_y cannot be nil.')
-      end
-
-      if @i_ezsigntemplateformfield_y < 0
+      if !@i_ezsigntemplateformfield_y.nil? && @i_ezsigntemplateformfield_y < 0
         invalid_properties.push('invalid value for "i_ezsigntemplateformfield_y", must be greater than or equal to 0.')
       end
 
@@ -246,6 +279,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_ezsigntemplateformfield_height", must be greater than or equal to 0.')
       end
 
+      pattern = Regexp.new(/^.{0,30}$/)
+      if !@s_ezsigntemplateformfield_positioningpattern.nil? && @s_ezsigntemplateformfield_positioningpattern !~ pattern
+        invalid_properties.push("invalid value for \"s_ezsigntemplateformfield_positioningpattern\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -258,14 +296,13 @@ module EzmaxApi
       return false if @i_ezsigntemplatedocumentpage_pagenumber.nil?
       return false if @i_ezsigntemplatedocumentpage_pagenumber < 1
       return false if @s_ezsigntemplateformfield_label.nil?
-      return false if @i_ezsigntemplateformfield_x.nil?
-      return false if @i_ezsigntemplateformfield_x < 0
-      return false if @i_ezsigntemplateformfield_y.nil?
-      return false if @i_ezsigntemplateformfield_y < 0
+      return false if !@i_ezsigntemplateformfield_x.nil? && @i_ezsigntemplateformfield_x < 0
+      return false if !@i_ezsigntemplateformfield_y.nil? && @i_ezsigntemplateformfield_y < 0
       return false if @i_ezsigntemplateformfield_width.nil?
       return false if @i_ezsigntemplateformfield_width < 0
       return false if @i_ezsigntemplateformfield_height.nil?
       return false if @i_ezsigntemplateformfield_height < 0
+      return false if !@s_ezsigntemplateformfield_positioningpattern.nil? && @s_ezsigntemplateformfield_positioningpattern !~ Regexp.new(/^.{0,30}$/)
       true
     end
 
@@ -353,12 +390,28 @@ module EzmaxApi
       @i_ezsigntemplateformfield_height = i_ezsigntemplateformfield_height
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] s_ezsigntemplateformfield_positioningpattern Value to be assigned
+    def s_ezsigntemplateformfield_positioningpattern=(s_ezsigntemplateformfield_positioningpattern)
+      if s_ezsigntemplateformfield_positioningpattern.nil?
+        fail ArgumentError, 's_ezsigntemplateformfield_positioningpattern cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,30}$/)
+      if s_ezsigntemplateformfield_positioningpattern !~ pattern
+        fail ArgumentError, "invalid value for \"s_ezsigntemplateformfield_positioningpattern\", must conform to the pattern #{pattern}."
+      end
+
+      @s_ezsigntemplateformfield_positioningpattern = s_ezsigntemplateformfield_positioningpattern
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           pki_ezsigntemplateformfield_id == o.pki_ezsigntemplateformfield_id &&
+          e_ezsigntemplateformfield_positioning == o.e_ezsigntemplateformfield_positioning &&
           i_ezsigntemplatedocumentpage_pagenumber == o.i_ezsigntemplatedocumentpage_pagenumber &&
           s_ezsigntemplateformfield_label == o.s_ezsigntemplateformfield_label &&
           s_ezsigntemplateformfield_value == o.s_ezsigntemplateformfield_value &&
@@ -368,7 +421,11 @@ module EzmaxApi
           i_ezsigntemplateformfield_height == o.i_ezsigntemplateformfield_height &&
           b_ezsigntemplateformfield_autocomplete == o.b_ezsigntemplateformfield_autocomplete &&
           b_ezsigntemplateformfield_selected == o.b_ezsigntemplateformfield_selected &&
-          e_ezsigntemplateformfield_dependencyrequirement == o.e_ezsigntemplateformfield_dependencyrequirement
+          e_ezsigntemplateformfield_dependencyrequirement == o.e_ezsigntemplateformfield_dependencyrequirement &&
+          s_ezsigntemplateformfield_positioningpattern == o.s_ezsigntemplateformfield_positioningpattern &&
+          i_ezsigntemplateformfield_positioningoffsetx == o.i_ezsigntemplateformfield_positioningoffsetx &&
+          i_ezsigntemplateformfield_positioningoffsety == o.i_ezsigntemplateformfield_positioningoffsety &&
+          e_ezsigntemplateformfield_positioningoccurence == o.e_ezsigntemplateformfield_positioningoccurence
     end
 
     # @see the `==` method
@@ -380,7 +437,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplateformfield_id, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_autocomplete, b_ezsigntemplateformfield_selected, e_ezsigntemplateformfield_dependencyrequirement].hash
+      [pki_ezsigntemplateformfield_id, e_ezsigntemplateformfield_positioning, i_ezsigntemplatedocumentpage_pagenumber, s_ezsigntemplateformfield_label, s_ezsigntemplateformfield_value, i_ezsigntemplateformfield_x, i_ezsigntemplateformfield_y, i_ezsigntemplateformfield_width, i_ezsigntemplateformfield_height, b_ezsigntemplateformfield_autocomplete, b_ezsigntemplateformfield_selected, e_ezsigntemplateformfield_dependencyrequirement, s_ezsigntemplateformfield_positioningpattern, i_ezsigntemplateformfield_positioningoffsetx, i_ezsigntemplateformfield_positioningoffsety, e_ezsigntemplateformfield_positioningoccurence].hash
     end
 
     # Builds the object from hash

@@ -33,6 +33,12 @@ describe EzmaxApi::EzsigntemplateformfieldResponseCompound do
     end
   end
 
+  describe 'test attribute "e_ezsigntemplateformfield_positioning"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "i_ezsigntemplatedocumentpage_pagenumber"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -88,6 +94,30 @@ describe EzmaxApi::EzsigntemplateformfieldResponseCompound do
   end
 
   describe 'test attribute "e_ezsigntemplateformfield_dependencyrequirement"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "s_ezsigntemplateformfield_positioningpattern"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "i_ezsigntemplateformfield_positioningoffsetx"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "i_ezsigntemplateformfield_positioningoffsety"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "e_ezsigntemplateformfield_positioningoccurence"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

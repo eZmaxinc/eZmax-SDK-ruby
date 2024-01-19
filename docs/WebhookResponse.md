@@ -18,6 +18,7 @@
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
+| **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
 
 ## Example
 
@@ -38,7 +39,8 @@ instance = EzmaxApi::WebhookResponse.new(
   s_webhook_secret: null,
   b_webhook_isactive: true,
   b_webhook_issigned: true,
-  b_webhook_skipsslvalidation: false
+  b_webhook_skipsslvalidation: false,
+  obj_audit: null
 )
 ```
 

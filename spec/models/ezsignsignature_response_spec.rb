@@ -93,6 +93,12 @@ describe EzmaxApi::EzsignsignatureResponse do
     end
   end
 
+  describe 'test attribute "i_ezsignsignature_stepadjusted"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "e_ezsignsignature_type"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

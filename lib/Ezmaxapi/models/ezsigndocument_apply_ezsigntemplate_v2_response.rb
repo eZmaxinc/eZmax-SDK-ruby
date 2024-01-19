@@ -20,11 +20,14 @@ module EzmaxApi
 
     attr_accessor :obj_debug
 
+    attr_accessor :a_obj_warning
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'obj_debug_payload' => :'objDebugPayload',
-        :'obj_debug' => :'objDebug'
+        :'obj_debug' => :'objDebug',
+        :'a_obj_warning' => :'a_objWarning'
       }
     end
 
@@ -37,7 +40,8 @@ module EzmaxApi
     def self.openapi_types
       {
         :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
-        :'obj_debug' => :'CommonResponseObjDebug'
+        :'obj_debug' => :'CommonResponseObjDebug',
+        :'a_obj_warning' => :'Array<CommonResponseWarning>'
       }
     end
 
@@ -78,6 +82,12 @@ module EzmaxApi
       if attributes.key?(:'obj_debug')
         self.obj_debug = attributes[:'obj_debug']
       end
+
+      if attributes.key?(:'a_obj_warning')
+        if (value = attributes[:'a_obj_warning']).is_a?(Array)
+          self.a_obj_warning = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -106,7 +116,8 @@ module EzmaxApi
       return true if self.equal?(o)
       self.class == o.class &&
           obj_debug_payload == o.obj_debug_payload &&
-          obj_debug == o.obj_debug
+          obj_debug == o.obj_debug &&
+          a_obj_warning == o.a_obj_warning
     end
 
     # @see the `==` method
@@ -118,7 +129,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_debug_payload, obj_debug].hash
+      [obj_debug_payload, obj_debug, a_obj_warning].hash
     end
 
     # Builds the object from hash

@@ -22,10 +22,13 @@
 | **e_ezsignfoldertype_sendreminderfrequency** | [**FieldEEzsignfoldertypeSendreminderfrequency**](FieldEEzsignfoldertypeSendreminderfrequency.md) |  | [optional] |
 | **i_ezsignfoldertype_archivaldays** | **Integer** | The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype |  |
 | **e_ezsignfoldertype_disposal** | [**FieldEEzsignfoldertypeDisposal**](FieldEEzsignfoldertypeDisposal.md) |  |  |
+| **e_ezsignfoldertype_completion** | [**FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  | [optional][default to &#39;PerEzsigndocument&#39;] |
 | **i_ezsignfoldertype_disposaldays** | **Integer** | The number of days after the archival before the disposal of the Ezsignfolder | [optional] |
 | **i_ezsignfoldertype_deadlinedays** | **Integer** | The number of days to get all Ezsignsignatures |  |
 | **b_ezsignfoldertype_delegate** | **Boolean** | Wheter if delegation of signature is allowed to another user or not | [optional] |
 | **b_ezsignfoldertype_reassign** | **Boolean** | Wheter if Reassignment of signature is allowed to another signatory or not | [optional] |
+| **b_ezsignfoldertype_reassignezsignsigner** | **Boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] |
+| **b_ezsignfoldertype_reassignuser** | **Boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] |
 | **b_ezsignfoldertype_sendattatchmentsigner** | **Boolean** | THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email | [optional] |
 | **b_ezsignfoldertype_sendsignedtoezsignsigner** | **Boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] |
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
@@ -75,10 +78,13 @@ instance = EzmaxApi::EzsignfoldertypeResponse.new(
   e_ezsignfoldertype_sendreminderfrequency: null,
   i_ezsignfoldertype_archivaldays: 30,
   e_ezsignfoldertype_disposal: null,
+  e_ezsignfoldertype_completion: null,
   i_ezsignfoldertype_disposaldays: 365,
   i_ezsignfoldertype_deadlinedays: 5,
   b_ezsignfoldertype_delegate: true,
   b_ezsignfoldertype_reassign: true,
+  b_ezsignfoldertype_reassignezsignsigner: true,
+  b_ezsignfoldertype_reassignuser: true,
   b_ezsignfoldertype_sendattatchmentsigner: false,
   b_ezsignfoldertype_sendsignedtoezsignsigner: false,
   b_ezsignfoldertype_sendsignedtouser: false,

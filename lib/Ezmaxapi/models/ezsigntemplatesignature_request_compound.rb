@@ -28,6 +28,8 @@ module EzmaxApi
     # The unique ID of the Ezsigntemplatesigner
     attr_accessor :fki_ezsigntemplatesigner_id_validation
 
+    attr_accessor :e_ezsigntemplatesignature_positioning
+
     # The page number in the Ezsigntemplatedocument
     attr_accessor :i_ezsigntemplatedocumentpage_pagenumber
 
@@ -76,6 +78,17 @@ module EzmaxApi
 
     attr_accessor :e_ezsigntemplatesignature_dependencyrequirement
 
+    # The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+    attr_accessor :s_ezsigntemplatesignature_positioningpattern
+
+    # The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+    attr_accessor :i_ezsigntemplatesignature_positioningoffsetx
+
+    # The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+    attr_accessor :i_ezsigntemplatesignature_positioningoffsety
+
+    attr_accessor :e_ezsigntemplatesignature_positioningoccurence
+
     # Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
     attr_accessor :b_ezsigntemplatesignature_customdate
 
@@ -113,6 +126,7 @@ module EzmaxApi
         :'fki_ezsigntemplatedocument_id' => :'fkiEzsigntemplatedocumentID',
         :'fki_ezsigntemplatesigner_id' => :'fkiEzsigntemplatesignerID',
         :'fki_ezsigntemplatesigner_id_validation' => :'fkiEzsigntemplatesignerIDValidation',
+        :'e_ezsigntemplatesignature_positioning' => :'eEzsigntemplatesignaturePositioning',
         :'i_ezsigntemplatedocumentpage_pagenumber' => :'iEzsigntemplatedocumentpagePagenumber',
         :'i_ezsigntemplatesignature_x' => :'iEzsigntemplatesignatureX',
         :'i_ezsigntemplatesignature_y' => :'iEzsigntemplatesignatureY',
@@ -131,6 +145,10 @@ module EzmaxApi
         :'s_ezsigntemplatesignature_regexp' => :'sEzsigntemplatesignatureRegexp',
         :'e_ezsigntemplatesignature_textvalidation' => :'eEzsigntemplatesignatureTextvalidation',
         :'e_ezsigntemplatesignature_dependencyrequirement' => :'eEzsigntemplatesignatureDependencyrequirement',
+        :'s_ezsigntemplatesignature_positioningpattern' => :'sEzsigntemplatesignaturePositioningpattern',
+        :'i_ezsigntemplatesignature_positioningoffsetx' => :'iEzsigntemplatesignaturePositioningoffsetx',
+        :'i_ezsigntemplatesignature_positioningoffsety' => :'iEzsigntemplatesignaturePositioningoffsety',
+        :'e_ezsigntemplatesignature_positioningoccurence' => :'eEzsigntemplatesignaturePositioningoccurence',
         :'b_ezsigntemplatesignature_customdate' => :'bEzsigntemplatesignatureCustomdate',
         :'a_obj_ezsigntemplatesignaturecustomdate' => :'a_objEzsigntemplatesignaturecustomdate',
         :'a_obj_ezsigntemplateelementdependency' => :'a_objEzsigntemplateelementdependency'
@@ -149,6 +167,7 @@ module EzmaxApi
         :'fki_ezsigntemplatedocument_id' => :'Integer',
         :'fki_ezsigntemplatesigner_id' => :'Integer',
         :'fki_ezsigntemplatesigner_id_validation' => :'Integer',
+        :'e_ezsigntemplatesignature_positioning' => :'FieldEEzsigntemplatesignaturePositioning',
         :'i_ezsigntemplatedocumentpage_pagenumber' => :'Integer',
         :'i_ezsigntemplatesignature_x' => :'Integer',
         :'i_ezsigntemplatesignature_y' => :'Integer',
@@ -167,6 +186,10 @@ module EzmaxApi
         :'s_ezsigntemplatesignature_regexp' => :'String',
         :'e_ezsigntemplatesignature_textvalidation' => :'EnumTextvalidation',
         :'e_ezsigntemplatesignature_dependencyrequirement' => :'FieldEEzsigntemplatesignatureDependencyrequirement',
+        :'s_ezsigntemplatesignature_positioningpattern' => :'String',
+        :'i_ezsigntemplatesignature_positioningoffsetx' => :'Integer',
+        :'i_ezsigntemplatesignature_positioningoffsety' => :'Integer',
+        :'e_ezsigntemplatesignature_positioningoccurence' => :'FieldEEzsigntemplatesignaturePositioningoccurence',
         :'b_ezsigntemplatesignature_customdate' => :'Boolean',
         :'a_obj_ezsigntemplatesignaturecustomdate' => :'Array<EzsigntemplatesignaturecustomdateRequestCompound>',
         :'a_obj_ezsigntemplateelementdependency' => :'Array<EzsigntemplateelementdependencyRequestCompound>'
@@ -221,6 +244,10 @@ module EzmaxApi
         self.fki_ezsigntemplatesigner_id_validation = attributes[:'fki_ezsigntemplatesigner_id_validation']
       end
 
+      if attributes.key?(:'e_ezsigntemplatesignature_positioning')
+        self.e_ezsigntemplatesignature_positioning = attributes[:'e_ezsigntemplatesignature_positioning']
+      end
+
       if attributes.key?(:'i_ezsigntemplatedocumentpage_pagenumber')
         self.i_ezsigntemplatedocumentpage_pagenumber = attributes[:'i_ezsigntemplatedocumentpage_pagenumber']
       else
@@ -229,14 +256,10 @@ module EzmaxApi
 
       if attributes.key?(:'i_ezsigntemplatesignature_x')
         self.i_ezsigntemplatesignature_x = attributes[:'i_ezsigntemplatesignature_x']
-      else
-        self.i_ezsigntemplatesignature_x = nil
       end
 
       if attributes.key?(:'i_ezsigntemplatesignature_y')
         self.i_ezsigntemplatesignature_y = attributes[:'i_ezsigntemplatesignature_y']
-      else
-        self.i_ezsigntemplatesignature_y = nil
       end
 
       if attributes.key?(:'i_ezsigntemplatesignature_width')
@@ -303,6 +326,22 @@ module EzmaxApi
         self.e_ezsigntemplatesignature_dependencyrequirement = attributes[:'e_ezsigntemplatesignature_dependencyrequirement']
       end
 
+      if attributes.key?(:'s_ezsigntemplatesignature_positioningpattern')
+        self.s_ezsigntemplatesignature_positioningpattern = attributes[:'s_ezsigntemplatesignature_positioningpattern']
+      end
+
+      if attributes.key?(:'i_ezsigntemplatesignature_positioningoffsetx')
+        self.i_ezsigntemplatesignature_positioningoffsetx = attributes[:'i_ezsigntemplatesignature_positioningoffsetx']
+      end
+
+      if attributes.key?(:'i_ezsigntemplatesignature_positioningoffsety')
+        self.i_ezsigntemplatesignature_positioningoffsety = attributes[:'i_ezsigntemplatesignature_positioningoffsety']
+      end
+
+      if attributes.key?(:'e_ezsigntemplatesignature_positioningoccurence')
+        self.e_ezsigntemplatesignature_positioningoccurence = attributes[:'e_ezsigntemplatesignature_positioningoccurence']
+      end
+
       if attributes.key?(:'b_ezsigntemplatesignature_customdate')
         self.b_ezsigntemplatesignature_customdate = attributes[:'b_ezsigntemplatesignature_customdate']
       end
@@ -357,19 +396,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpage_pagenumber", must be greater than or equal to 1.')
       end
 
-      if @i_ezsigntemplatesignature_x.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_x", i_ezsigntemplatesignature_x cannot be nil.')
-      end
-
-      if @i_ezsigntemplatesignature_x < 0
+      if !@i_ezsigntemplatesignature_x.nil? && @i_ezsigntemplatesignature_x < 0
         invalid_properties.push('invalid value for "i_ezsigntemplatesignature_x", must be greater than or equal to 0.')
       end
 
-      if @i_ezsigntemplatesignature_y.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_y", i_ezsigntemplatesignature_y cannot be nil.')
-      end
-
-      if @i_ezsigntemplatesignature_y < 0
+      if !@i_ezsigntemplatesignature_y.nil? && @i_ezsigntemplatesignature_y < 0
         invalid_properties.push('invalid value for "i_ezsigntemplatesignature_y", must be greater than or equal to 0.')
       end
 
@@ -406,6 +437,11 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"s_ezsigntemplatesignature_regexp\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^.{0,30}$/)
+      if !@s_ezsigntemplatesignature_positioningpattern.nil? && @s_ezsigntemplatesignature_positioningpattern !~ pattern
+        invalid_properties.push("invalid value for \"s_ezsigntemplatesignature_positioningpattern\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -421,10 +457,8 @@ module EzmaxApi
       return false if !@fki_ezsigntemplatesigner_id_validation.nil? && @fki_ezsigntemplatesigner_id_validation < 0
       return false if @i_ezsigntemplatedocumentpage_pagenumber.nil?
       return false if @i_ezsigntemplatedocumentpage_pagenumber < 1
-      return false if @i_ezsigntemplatesignature_x.nil?
-      return false if @i_ezsigntemplatesignature_x < 0
-      return false if @i_ezsigntemplatesignature_y.nil?
-      return false if @i_ezsigntemplatesignature_y < 0
+      return false if !@i_ezsigntemplatesignature_x.nil? && @i_ezsigntemplatesignature_x < 0
+      return false if !@i_ezsigntemplatesignature_y.nil? && @i_ezsigntemplatesignature_y < 0
       return false if !@i_ezsigntemplatesignature_width.nil? && @i_ezsigntemplatesignature_width < 0
       return false if !@i_ezsigntemplatesignature_height.nil? && @i_ezsigntemplatesignature_height < 0
       return false if @i_ezsigntemplatesignature_step.nil?
@@ -433,6 +467,7 @@ module EzmaxApi
       return false if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength > 65535
       return false if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength < 0
       return false if !@s_ezsigntemplatesignature_regexp.nil? && @s_ezsigntemplatesignature_regexp !~ Regexp.new(/^\^.*\$$|^$/)
+      return false if !@s_ezsigntemplatesignature_positioningpattern.nil? && @s_ezsigntemplatesignature_positioningpattern !~ Regexp.new(/^.{0,30}$/)
       true
     end
 
@@ -609,6 +644,21 @@ module EzmaxApi
       @s_ezsigntemplatesignature_regexp = s_ezsigntemplatesignature_regexp
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] s_ezsigntemplatesignature_positioningpattern Value to be assigned
+    def s_ezsigntemplatesignature_positioningpattern=(s_ezsigntemplatesignature_positioningpattern)
+      if s_ezsigntemplatesignature_positioningpattern.nil?
+        fail ArgumentError, 's_ezsigntemplatesignature_positioningpattern cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,30}$/)
+      if s_ezsigntemplatesignature_positioningpattern !~ pattern
+        fail ArgumentError, "invalid value for \"s_ezsigntemplatesignature_positioningpattern\", must conform to the pattern #{pattern}."
+      end
+
+      @s_ezsigntemplatesignature_positioningpattern = s_ezsigntemplatesignature_positioningpattern
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -618,6 +668,7 @@ module EzmaxApi
           fki_ezsigntemplatedocument_id == o.fki_ezsigntemplatedocument_id &&
           fki_ezsigntemplatesigner_id == o.fki_ezsigntemplatesigner_id &&
           fki_ezsigntemplatesigner_id_validation == o.fki_ezsigntemplatesigner_id_validation &&
+          e_ezsigntemplatesignature_positioning == o.e_ezsigntemplatesignature_positioning &&
           i_ezsigntemplatedocumentpage_pagenumber == o.i_ezsigntemplatedocumentpage_pagenumber &&
           i_ezsigntemplatesignature_x == o.i_ezsigntemplatesignature_x &&
           i_ezsigntemplatesignature_y == o.i_ezsigntemplatesignature_y &&
@@ -636,6 +687,10 @@ module EzmaxApi
           s_ezsigntemplatesignature_regexp == o.s_ezsigntemplatesignature_regexp &&
           e_ezsigntemplatesignature_textvalidation == o.e_ezsigntemplatesignature_textvalidation &&
           e_ezsigntemplatesignature_dependencyrequirement == o.e_ezsigntemplatesignature_dependencyrequirement &&
+          s_ezsigntemplatesignature_positioningpattern == o.s_ezsigntemplatesignature_positioningpattern &&
+          i_ezsigntemplatesignature_positioningoffsetx == o.i_ezsigntemplatesignature_positioningoffsetx &&
+          i_ezsigntemplatesignature_positioningoffsety == o.i_ezsigntemplatesignature_positioningoffsety &&
+          e_ezsigntemplatesignature_positioningoccurence == o.e_ezsigntemplatesignature_positioningoccurence &&
           b_ezsigntemplatesignature_customdate == o.b_ezsigntemplatesignature_customdate &&
           a_obj_ezsigntemplatesignaturecustomdate == o.a_obj_ezsigntemplatesignaturecustomdate &&
           a_obj_ezsigntemplateelementdependency == o.a_obj_ezsigntemplateelementdependency
@@ -650,7 +705,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatesignature_id, fki_ezsigntemplatedocument_id, fki_ezsigntemplatesigner_id, fki_ezsigntemplatesigner_id_validation, i_ezsigntemplatedocumentpage_pagenumber, i_ezsigntemplatesignature_x, i_ezsigntemplatesignature_y, i_ezsigntemplatesignature_width, i_ezsigntemplatesignature_height, i_ezsigntemplatesignature_step, e_ezsigntemplatesignature_type, t_ezsigntemplatesignature_tooltip, e_ezsigntemplatesignature_tooltipposition, e_ezsigntemplatesignature_font, b_ezsigntemplatesignature_required, e_ezsigntemplatesignature_attachmentnamesource, s_ezsigntemplatesignature_attachmentdescription, i_ezsigntemplatesignature_validationstep, i_ezsigntemplatesignature_maxlength, s_ezsigntemplatesignature_regexp, e_ezsigntemplatesignature_textvalidation, e_ezsigntemplatesignature_dependencyrequirement, b_ezsigntemplatesignature_customdate, a_obj_ezsigntemplatesignaturecustomdate, a_obj_ezsigntemplateelementdependency].hash
+      [pki_ezsigntemplatesignature_id, fki_ezsigntemplatedocument_id, fki_ezsigntemplatesigner_id, fki_ezsigntemplatesigner_id_validation, e_ezsigntemplatesignature_positioning, i_ezsigntemplatedocumentpage_pagenumber, i_ezsigntemplatesignature_x, i_ezsigntemplatesignature_y, i_ezsigntemplatesignature_width, i_ezsigntemplatesignature_height, i_ezsigntemplatesignature_step, e_ezsigntemplatesignature_type, t_ezsigntemplatesignature_tooltip, e_ezsigntemplatesignature_tooltipposition, e_ezsigntemplatesignature_font, b_ezsigntemplatesignature_required, e_ezsigntemplatesignature_attachmentnamesource, s_ezsigntemplatesignature_attachmentdescription, i_ezsigntemplatesignature_validationstep, i_ezsigntemplatesignature_maxlength, s_ezsigntemplatesignature_regexp, e_ezsigntemplatesignature_textvalidation, e_ezsigntemplatesignature_dependencyrequirement, s_ezsigntemplatesignature_positioningpattern, i_ezsigntemplatesignature_positioningoffsetx, i_ezsigntemplatesignature_positioningoffsety, e_ezsigntemplatesignature_positioningoccurence, b_ezsigntemplatesignature_customdate, a_obj_ezsigntemplatesignaturecustomdate, a_obj_ezsigntemplateelementdependency].hash
     end
 
     # Builds the object from hash

@@ -19,6 +19,9 @@ module EzmaxApi
     # The unique ID of the Ezsignfolder
     attr_accessor :fki_ezsignfolder_id
 
+    # The unique ID of the Billingentityinternal.
+    attr_accessor :fki_billingentityinternal_id
+
     attr_accessor :s_name
 
     # The description of the Ezsignfolder
@@ -34,6 +37,7 @@ module EzmaxApi
     def self.attribute_map
       {
         :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
+        :'fki_billingentityinternal_id' => :'fkiBillingentityinternalID',
         :'s_name' => :'sName',
         :'s_ezsignfolder_description' => :'sEzsignfolderDescription',
         :'s_ezsigndocument_name' => :'sEzsigndocumentName',
@@ -50,6 +54,7 @@ module EzmaxApi
     def self.openapi_types
       {
         :'fki_ezsignfolder_id' => :'Integer',
+        :'fki_billingentityinternal_id' => :'Integer',
         :'s_name' => :'String',
         :'s_ezsignfolder_description' => :'String',
         :'s_ezsigndocument_name' => :'String',
@@ -82,6 +87,10 @@ module EzmaxApi
         self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
       else
         self.fki_ezsignfolder_id = nil
+      end
+
+      if attributes.key?(:'fki_billingentityinternal_id')
+        self.fki_billingentityinternal_id = attributes[:'fki_billingentityinternal_id']
       end
 
       if attributes.key?(:'s_name')
@@ -122,6 +131,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.')
       end
 
+      if !@fki_billingentityinternal_id.nil? && @fki_billingentityinternal_id < 0
+        invalid_properties.push('invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.')
+      end
+
       if @s_name.nil?
         invalid_properties.push('invalid value for "s_name", s_name cannot be nil.')
       end
@@ -147,6 +160,7 @@ module EzmaxApi
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @fki_ezsignfolder_id.nil?
       return false if @fki_ezsignfolder_id < 0
+      return false if !@fki_billingentityinternal_id.nil? && @fki_billingentityinternal_id < 0
       return false if @s_name.nil?
       return false if @s_ezsignfolder_description.nil?
       return false if @s_ezsigndocument_name.nil?
@@ -168,12 +182,27 @@ module EzmaxApi
       @fki_ezsignfolder_id = fki_ezsignfolder_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] fki_billingentityinternal_id Value to be assigned
+    def fki_billingentityinternal_id=(fki_billingentityinternal_id)
+      if fki_billingentityinternal_id.nil?
+        fail ArgumentError, 'fki_billingentityinternal_id cannot be nil'
+      end
+
+      if fki_billingentityinternal_id < 0
+        fail ArgumentError, 'invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.'
+      end
+
+      @fki_billingentityinternal_id = fki_billingentityinternal_id
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
+          fki_billingentityinternal_id == o.fki_billingentityinternal_id &&
           s_name == o.s_name &&
           s_ezsignfolder_description == o.s_ezsignfolder_description &&
           s_ezsigndocument_name == o.s_ezsigndocument_name &&
@@ -189,7 +218,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_ezsignfolder_id, s_name, s_ezsignfolder_description, s_ezsigndocument_name, b_ezsignfolder_allowed].hash
+      [fki_ezsignfolder_id, fki_billingentityinternal_id, s_name, s_ezsignfolder_description, s_ezsigndocument_name, b_ezsignfolder_allowed].hash
     end
 
     # Builds the object from hash

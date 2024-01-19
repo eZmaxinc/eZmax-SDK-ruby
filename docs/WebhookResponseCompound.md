@@ -18,6 +18,7 @@
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
+| **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
 | **s_webhook_event** | **String** | The concatenated string to describe the Webhook event | [optional] |
 
 ## Example
@@ -40,6 +41,7 @@ instance = EzmaxApi::WebhookResponseCompound.new(
   b_webhook_isactive: true,
   b_webhook_issigned: true,
   b_webhook_skipsslvalidation: false,
+  obj_audit: null,
   s_webhook_event: Ezsign-DocumentCompleted
 )
 ```

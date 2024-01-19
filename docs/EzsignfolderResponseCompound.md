@@ -7,6 +7,7 @@
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **obj_ezsignfoldertype** | [**CustomEzsignfoldertypeResponse**](CustomEzsignfoldertypeResponse.md) |  | [optional] |
+| **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  | [optional][default to &#39;PerEzsigndocument&#39;] |
 | **s_ezsignfoldertype_name_x** | **String** |  | [optional] |
 | **fki_billingentityinternal_id** | **Integer** | The unique ID of the Billingentityinternal. | [optional] |
 | **s_billingentityinternal_description_x** | **String** | The description of the Billingentityinternal in the language of the requester | [optional] |
@@ -36,6 +37,7 @@ instance = EzmaxApi::EzsignfolderResponseCompound.new(
   pki_ezsignfolder_id: 33,
   fki_ezsignfoldertype_id: 5,
   obj_ezsignfoldertype: null,
+  e_ezsignfolder_completion: null,
   s_ezsignfoldertype_name_x: null,
   fki_billingentityinternal_id: 1,
   s_billingentityinternal_description_x: Default,

@@ -58,6 +58,19 @@ describe 'ObjectEzsigndocumentApi' do
     end
   end
 
+  # unit tests for ezsigndocument_create_ezsignelements_positioned_by_word_v1
+  # Create multiple Ezsignsignatures/Ezsignformfieldgroups
+  # Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+  # @param pki_ezsigndocument_id 
+  # @param ezsigndocument_create_ezsignelements_positioned_by_word_v1_request 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsigndocumentCreateEzsignelementsPositionedByWordV1Response]
+  describe 'ezsigndocument_create_ezsignelements_positioned_by_word_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for ezsigndocument_create_object_v1
   # Create a new Ezsigndocument
   # The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
@@ -199,7 +212,7 @@ describe 'ObjectEzsigndocumentApi' do
   # Retrieve a URL to download documents.
   # This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
   # @param pki_ezsigndocument_id 
-  # @param e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+  # @param e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetDownloadUrlV1Response]
   describe 'ezsigndocument_get_download_url_v1 test' do
@@ -215,6 +228,18 @@ describe 'ObjectEzsigndocumentApi' do
   # @param [Hash] opts the optional parameters
   # @return [EzsigndocumentGetEzsignannotationsV1Response]
   describe 'ezsigndocument_get_ezsignannotations_v1 test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for ezsigndocument_get_ezsigndiscussions_v1
+  # Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions
+  # 
+  # @param pki_ezsigndocument_id 
+  # @param [Hash] opts the optional parameters
+  # @return [EzsigndocumentGetEzsigndiscussionsV1Response]
+  describe 'ezsigndocument_get_ezsigndiscussions_v1 test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

@@ -13,6 +13,8 @@
 | **b_ezsignfoldertype_allowdownloadproofezsignsigner** | **Boolean** | Whether we allow the proof to be downloaded by an Ezsignsigner | [optional] |
 | **b_ezsignfoldertype_delegate** | **Boolean** | Wheter if delegation of signature is allowed to another user or not | [optional] |
 | **b_ezsignfoldertype_reassign** | **Boolean** | Wheter if Reassignment of signature is allowed to another signatory or not | [optional] |
+| **b_ezsignfoldertype_reassignezsignsigner** | **Boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] |
+| **b_ezsignfoldertype_reassignuser** | **Boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] |
 
 ## Example
 
@@ -28,7 +30,9 @@ instance = EzmaxApi::CustomEzsignfoldertypeResponse.new(
   b_ezsignfoldertype_allowdownloadattachmentezsignsigner: false,
   b_ezsignfoldertype_allowdownloadproofezsignsigner: false,
   b_ezsignfoldertype_delegate: true,
-  b_ezsignfoldertype_reassign: true
+  b_ezsignfoldertype_reassign: true,
+  b_ezsignfoldertype_reassignezsignsigner: true,
+  b_ezsignfoldertype_reassignuser: true
 )
 ```
 

@@ -43,6 +43,12 @@ module EzmaxApi
     # Wheter if Reassignment of signature is allowed to another signatory or not
     attr_accessor :b_ezsignfoldertype_reassign
 
+    # Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+    attr_accessor :b_ezsignfoldertype_reassignezsignsigner
+
+    # Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+    attr_accessor :b_ezsignfoldertype_reassignuser
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -54,7 +60,9 @@ module EzmaxApi
         :'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => :'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
         :'b_ezsignfoldertype_allowdownloadproofezsignsigner' => :'bEzsignfoldertypeAllowdownloadproofezsignsigner',
         :'b_ezsignfoldertype_delegate' => :'bEzsignfoldertypeDelegate',
-        :'b_ezsignfoldertype_reassign' => :'bEzsignfoldertypeReassign'
+        :'b_ezsignfoldertype_reassign' => :'bEzsignfoldertypeReassign',
+        :'b_ezsignfoldertype_reassignezsignsigner' => :'bEzsignfoldertypeReassignezsignsigner',
+        :'b_ezsignfoldertype_reassignuser' => :'bEzsignfoldertypeReassignuser'
       }
     end
 
@@ -74,7 +82,9 @@ module EzmaxApi
         :'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => :'Boolean',
         :'b_ezsignfoldertype_allowdownloadproofezsignsigner' => :'Boolean',
         :'b_ezsignfoldertype_delegate' => :'Boolean',
-        :'b_ezsignfoldertype_reassign' => :'Boolean'
+        :'b_ezsignfoldertype_reassign' => :'Boolean',
+        :'b_ezsignfoldertype_reassignezsignsigner' => :'Boolean',
+        :'b_ezsignfoldertype_reassignuser' => :'Boolean'
       }
     end
 
@@ -136,6 +146,14 @@ module EzmaxApi
       if attributes.key?(:'b_ezsignfoldertype_reassign')
         self.b_ezsignfoldertype_reassign = attributes[:'b_ezsignfoldertype_reassign']
       end
+
+      if attributes.key?(:'b_ezsignfoldertype_reassignezsignsigner')
+        self.b_ezsignfoldertype_reassignezsignsigner = attributes[:'b_ezsignfoldertype_reassignezsignsigner']
+      end
+
+      if attributes.key?(:'b_ezsignfoldertype_reassignuser')
+        self.b_ezsignfoldertype_reassignuser = attributes[:'b_ezsignfoldertype_reassignuser']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -190,7 +208,9 @@ module EzmaxApi
           b_ezsignfoldertype_allowdownloadattachmentezsignsigner == o.b_ezsignfoldertype_allowdownloadattachmentezsignsigner &&
           b_ezsignfoldertype_allowdownloadproofezsignsigner == o.b_ezsignfoldertype_allowdownloadproofezsignsigner &&
           b_ezsignfoldertype_delegate == o.b_ezsignfoldertype_delegate &&
-          b_ezsignfoldertype_reassign == o.b_ezsignfoldertype_reassign
+          b_ezsignfoldertype_reassign == o.b_ezsignfoldertype_reassign &&
+          b_ezsignfoldertype_reassignezsignsigner == o.b_ezsignfoldertype_reassignezsignsigner &&
+          b_ezsignfoldertype_reassignuser == o.b_ezsignfoldertype_reassignuser
     end
 
     # @see the `==` method
@@ -202,7 +222,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldertype_id, s_ezsignfoldertype_name_x, b_ezsignfoldertype_sendproofezsignsigner, b_ezsignfoldertype_includeproofsigner, b_ezsignfoldertype_includeproofuser, b_ezsignfoldertype_allowdownloadattachmentezsignsigner, b_ezsignfoldertype_allowdownloadproofezsignsigner, b_ezsignfoldertype_delegate, b_ezsignfoldertype_reassign].hash
+      [pki_ezsignfoldertype_id, s_ezsignfoldertype_name_x, b_ezsignfoldertype_sendproofezsignsigner, b_ezsignfoldertype_includeproofsigner, b_ezsignfoldertype_includeproofuser, b_ezsignfoldertype_allowdownloadattachmentezsignsigner, b_ezsignfoldertype_allowdownloadproofezsignsigner, b_ezsignfoldertype_delegate, b_ezsignfoldertype_reassign, b_ezsignfoldertype_reassignezsignsigner, b_ezsignfoldertype_reassignuser].hash
     end
 
     # Builds the object from hash

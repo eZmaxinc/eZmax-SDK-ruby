@@ -24,6 +24,8 @@ module EzmaxApi
 
     attr_accessor :obj_ezsignfoldertype
 
+    attr_accessor :e_ezsignfolder_completion
+
     attr_accessor :s_ezsignfoldertype_name_x
 
     # The unique ID of the Billingentityinternal.
@@ -105,6 +107,7 @@ module EzmaxApi
         :'pki_ezsignfolder_id' => :'pkiEzsignfolderID',
         :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
         :'obj_ezsignfoldertype' => :'objEzsignfoldertype',
+        :'e_ezsignfolder_completion' => :'eEzsignfolderCompletion',
         :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
         :'fki_billingentityinternal_id' => :'fkiBillingentityinternalID',
         :'s_billingentityinternal_description_x' => :'sBillingentityinternalDescriptionX',
@@ -138,6 +141,7 @@ module EzmaxApi
         :'pki_ezsignfolder_id' => :'Integer',
         :'fki_ezsignfoldertype_id' => :'Integer',
         :'obj_ezsignfoldertype' => :'CustomEzsignfoldertypeResponse',
+        :'e_ezsignfolder_completion' => :'FieldEEzsignfolderCompletion',
         :'s_ezsignfoldertype_name_x' => :'String',
         :'fki_billingentityinternal_id' => :'Integer',
         :'s_billingentityinternal_description_x' => :'String',
@@ -193,6 +197,12 @@ module EzmaxApi
 
       if attributes.key?(:'obj_ezsignfoldertype')
         self.obj_ezsignfoldertype = attributes[:'obj_ezsignfoldertype']
+      end
+
+      if attributes.key?(:'e_ezsignfolder_completion')
+        self.e_ezsignfolder_completion = attributes[:'e_ezsignfolder_completion']
+      else
+        self.e_ezsignfolder_completion = 'PerEzsigndocument'
       end
 
       if attributes.key?(:'s_ezsignfoldertype_name_x')
@@ -413,6 +423,7 @@ module EzmaxApi
           pki_ezsignfolder_id == o.pki_ezsignfolder_id &&
           fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
           obj_ezsignfoldertype == o.obj_ezsignfoldertype &&
+          e_ezsignfolder_completion == o.e_ezsignfolder_completion &&
           s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
           fki_billingentityinternal_id == o.fki_billingentityinternal_id &&
           s_billingentityinternal_description_x == o.s_billingentityinternal_description_x &&
@@ -443,7 +454,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, obj_ezsignfoldertype, s_ezsignfoldertype_name_x, fki_billingentityinternal_id, s_billingentityinternal_description_x, fki_ezsigntsarequirement_id, s_ezsigntsarequirement_description_x, s_ezsignfolder_description, t_ezsignfolder_note, b_ezsignfolder_isdisposable, e_ezsignfolder_sendreminderfrequency, dt_ezsignfolder_delayedsenddate, dt_ezsignfolder_duedate, dt_ezsignfolder_sentdate, dt_ezsignfolder_scheduledarchive, dt_ezsignfolder_scheduleddispose, e_ezsignfolder_step, dt_ezsignfolder_close, t_ezsignfolder_message, obj_audit, s_ezsignfolder_externalid].hash
+      [pki_ezsignfolder_id, fki_ezsignfoldertype_id, obj_ezsignfoldertype, e_ezsignfolder_completion, s_ezsignfoldertype_name_x, fki_billingentityinternal_id, s_billingentityinternal_description_x, fki_ezsigntsarequirement_id, s_ezsigntsarequirement_description_x, s_ezsignfolder_description, t_ezsignfolder_note, b_ezsignfolder_isdisposable, e_ezsignfolder_sendreminderfrequency, dt_ezsignfolder_delayedsenddate, dt_ezsignfolder_duedate, dt_ezsignfolder_sentdate, dt_ezsignfolder_scheduledarchive, dt_ezsignfolder_scheduleddispose, e_ezsignfolder_step, dt_ezsignfolder_close, t_ezsignfolder_message, obj_audit, s_ezsignfolder_externalid].hash
     end
 
     # Builds the object from hash
