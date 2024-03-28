@@ -32,7 +32,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectUsergroupmembershipApi.new
-usergroupmembership_create_object_v1_request = EzmaxApi::UsergroupmembershipCreateObjectV1Request.new({a_obj_usergroupmembership: [EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2, fki_user_id: 70})]}) # UsergroupmembershipCreateObjectV1Request | 
+usergroupmembership_create_object_v1_request = EzmaxApi::UsergroupmembershipCreateObjectV1Request.new({a_obj_usergroupmembership: [EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2})]}) # UsergroupmembershipCreateObjectV1Request | 
 
 begin
   # Create a new Usergroupmembership
@@ -175,7 +175,7 @@ end
 
 api_instance = EzmaxApi::ObjectUsergroupmembershipApi.new
 pki_usergroupmembership_id = 56 # Integer | 
-usergroupmembership_edit_object_v1_request = EzmaxApi::UsergroupmembershipEditObjectV1Request.new({obj_usergroupmembership: EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2, fki_user_id: 70})}) # UsergroupmembershipEditObjectV1Request | 
+usergroupmembership_edit_object_v1_request = EzmaxApi::UsergroupmembershipEditObjectV1Request.new({obj_usergroupmembership: EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2})}) # UsergroupmembershipEditObjectV1Request | 
 
 begin
   # Edit an existing Usergroupmembership

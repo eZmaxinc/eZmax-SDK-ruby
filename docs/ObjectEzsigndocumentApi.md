@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsigndocument_apply_ezsigntemplate_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
 | [**ezsigndocument_apply_ezsigntemplate_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
+| [**ezsigndocument_apply_ezsigntemplateglobal_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplateglobal_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument. |
 | [**ezsigndocument_create_ezsignelements_positioned_by_word_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_ezsignelements_positioned_by_word_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups |
 | [**ezsigndocument_create_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocument_create_object_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument |
@@ -181,6 +182,79 @@ end
 - **Accept**: application/json
 
 
+## ezsigndocument_apply_ezsigntemplateglobal_v1
+
+> <EzsigndocumentApplyEzsigntemplateglobalV1Response> ezsigndocument_apply_ezsigntemplateglobal_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
+
+Apply an Ezsigntemplateglobal to the Ezsigndocument.
+
+This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_apply_ezsigntemplateglobal_v1_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateglobalV1Request.new({fki_ezsigntemplateglobal_id: 36, a_s_ezsigntemplateglobalsigner: ['John'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateglobalV1Request | 
+
+begin
+  # Apply an Ezsigntemplateglobal to the Ezsigndocument.
+  result = api_instance.ezsigndocument_apply_ezsigntemplateglobal_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_apply_ezsigntemplateglobal_v1: #{e}"
+end
+```
+
+#### Using the ezsigndocument_apply_ezsigntemplateglobal_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentApplyEzsigntemplateglobalV1Response>, Integer, Hash)> ezsigndocument_apply_ezsigntemplateglobal_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
+
+```ruby
+begin
+  # Apply an Ezsigntemplateglobal to the Ezsigndocument.
+  data, status_code, headers = api_instance.ezsigndocument_apply_ezsigntemplateglobal_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentApplyEzsigntemplateglobalV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_apply_ezsigntemplateglobal_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_apply_ezsigntemplateglobal_v1_request** | [**EzsigndocumentApplyEzsigntemplateglobalV1Request**](EzsigndocumentApplyEzsigntemplateglobalV1Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentApplyEzsigntemplateglobalV1Response**](EzsigndocumentApplyEzsigntemplateglobalV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsigndocument_create_ezsignelements_positioned_by_word_v1
 
 > <EzsigndocumentCreateEzsignelementsPositionedByWordV1Response> ezsigndocument_create_ezsignelements_positioned_by_word_v1(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v1_request)
@@ -204,7 +278,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_create_ezsignelements_positioned_by_word_v1_request = EzmaxApi::EzsigndocumentCreateEzsignelementsPositionedByWordV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, e_ezsignformfieldgroup_signerrequirement: EzmaxApi::FieldEEzsignformfieldgroupSignerrequirement::ALL, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})], obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})], a_obj_ezsignsignature: [EzmaxApi::CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97, obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})]}) # EzsigndocumentCreateEzsignelementsPositionedByWordV1Request | 
+ezsigndocument_create_ezsignelements_positioned_by_word_v1_request = EzmaxApi::EzsigndocumentCreateEzsignelementsPositionedByWordV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})], obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})], a_obj_ezsignsignature: [EzmaxApi::CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97, obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})]}) # EzsigndocumentCreateEzsignelementsPositionedByWordV1Request | 
 
 begin
   # Create multiple Ezsignsignatures/Ezsignformfieldgroups
@@ -563,7 +637,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_edit_ezsignformfieldgroups_v1_request = EzmaxApi::EzsigndocumentEditEzsignformfieldgroupsV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, e_ezsignformfieldgroup_signerrequirement: EzmaxApi::FieldEEzsignformfieldgroupSignerrequirement::ALL, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})]}) # EzsigndocumentEditEzsignformfieldgroupsV1Request | 
+ezsigndocument_edit_ezsignformfieldgroups_v1_request = EzmaxApi::EzsigndocumentEditEzsignformfieldgroupsV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})]}) # EzsigndocumentEditEzsignformfieldgroupsV1Request | 
 
 begin
   # Edit multiple Ezsignformfieldgroups

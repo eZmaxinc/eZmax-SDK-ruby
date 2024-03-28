@@ -15,6 +15,7 @@
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not | [optional] |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
+| **a_obj_webhookheader** | [**Array&lt;WebhookheaderRequestCompound&gt;**](WebhookheaderRequestCompound.md) |  | [optional] |
 
 ## Example
 
@@ -32,7 +33,8 @@ instance = EzmaxApi::WebhookRequestCompound.new(
   s_webhook_emailfailed: email@example.com,
   b_webhook_isactive: true,
   b_webhook_issigned: true,
-  b_webhook_skipsslvalidation: false
+  b_webhook_skipsslvalidation: false,
+  a_obj_webhookheader: null
 )
 ```
 

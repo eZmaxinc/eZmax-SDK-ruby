@@ -15,7 +15,7 @@
 | **s_ezsigndocument_url** | **String** | The url where the document content resides.  This field is Required when eEzsigndocumentSource &#x3D; Url. | [optional] |
 | **b_ezsigndocument_forcerepair** | **Boolean** | Try to repair the document or flatten it if it cannot be used for electronic signature.  | [optional][default to true] |
 | **s_ezsigndocument_password** | **String** | If the source document is password protected, the password to open/modify it. | [optional] |
-| **e_ezsigndocument_form** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID** | [optional] |
+| **e_ezsigndocument_form** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document. | [optional] |
 | **dt_ezsigndocument_duedate** | **String** | The maximum date and time at which the Ezsigndocument can be signed. |  |
 | **s_ezsigndocument_name** | **String** | The name of the document that will be presented to Ezsignfoldersignerassociations |  |
 | **s_ezsigndocument_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
@@ -33,7 +33,7 @@ instance = EzmaxApi::EzsigndocumentRequest.new(
   fki_language_id: 2,
   e_ezsigndocument_source: null,
   e_ezsigndocument_format: null,
-  s_ezsigndocument_base64: [B@79e18e38,
+  s_ezsigndocument_base64: [B@2b58f754,
   s_ezsigndocument_url: http://www.example.com/document.pdf,
   b_ezsigndocument_forcerepair: null,
   s_ezsigndocument_password: SecretPassword123,

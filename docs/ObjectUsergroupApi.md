@@ -330,7 +330,7 @@ end
 
 api_instance = EzmaxApi::ObjectUsergroupApi.new
 pki_usergroup_id = 56 # Integer | 
-usergroup_edit_usergroupmemberships_v1_request = EzmaxApi::UsergroupEditUsergroupmembershipsV1Request.new({a_obj_usergroupmembership: [EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2, fki_user_id: 70})]}) # UsergroupEditUsergroupmembershipsV1Request | 
+usergroup_edit_usergroupmemberships_v1_request = EzmaxApi::UsergroupEditUsergroupmembershipsV1Request.new({a_obj_usergroupmembership: [EzmaxApi::UsergroupmembershipRequestCompound.new({fki_usergroup_id: 2})]}) # UsergroupEditUsergroupmembershipsV1Request | 
 
 begin
   # Edit multiple Usergroupmemberships

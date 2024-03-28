@@ -7,10 +7,10 @@
 | **pki_ezsigntemplateformfieldgroup_id** | **Integer** | The unique ID of the Ezsigntemplateformfieldgroup | [optional] |
 | **fki_ezsigntemplatedocument_id** | **Integer** | The unique ID of the Ezsigntemplatedocument |  |
 | **e_ezsigntemplateformfieldgroup_type** | [**FieldEEzsigntemplateformfieldgroupType**](FieldEEzsigntemplateformfieldgroupType.md) |  |  |
-| **e_ezsigntemplateformfieldgroup_signerrequirement** | [**FieldEEzsigntemplateformfieldgroupSignerrequirement**](FieldEEzsigntemplateformfieldgroupSignerrequirement.md) |  |  |
+| **e_ezsigntemplateformfieldgroup_signerrequirement** | [**FieldEEzsigntemplateformfieldgroupSignerrequirement**](FieldEEzsigntemplateformfieldgroupSignerrequirement.md) |  | [optional] |
 | **s_ezsigntemplateformfieldgroup_label** | **String** | The Label for the Ezsigntemplateformfieldgroup |  |
 | **i_ezsigntemplateformfieldgroup_step** | **Integer** | The step when the Ezsigntemplatesigner will be invited to fill the form fields |  |
-| **s_ezsigntemplateformfieldgroup_defaultvalue** | **String** | The default value for the Ezsigntemplateformfieldgroup |  |
+| **s_ezsigntemplateformfieldgroup_defaultvalue** | **String** | The default value for the Ezsigntemplateformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 | |  |
 | **i_ezsigntemplateformfieldgroup_filledmin** | **Integer** | The minimum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup |  |
 | **i_ezsigntemplateformfieldgroup_filledmax** | **Integer** | The maximum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup |  |
 | **b_ezsigntemplateformfieldgroup_readonly** | **Boolean** | Whether the Ezsigntemplateformfieldgroup is read only or not. |  |

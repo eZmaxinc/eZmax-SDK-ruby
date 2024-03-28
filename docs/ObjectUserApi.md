@@ -5,6 +5,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**user_create_object_v1**](ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User |
+| [**user_create_object_v2**](ObjectUserApi.md#user_create_object_v2) | **POST** /2/object/user | Create a new User |
 | [**user_edit_object_v1**](ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User |
 | [**user_edit_permissions_v1**](ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions |
 | [**user_get_apikeys_v1**](ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys |
@@ -14,6 +15,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
 | [**user_get_permissions_v1**](ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions |
 | [**user_get_subnets_v1**](ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets |
+| [**user_get_usergroupexternals_v1**](ObjectUserApi.md#user_get_usergroupexternals_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals |
+| [**user_get_usergroups_v1**](ObjectUserApi.md#user_get_usergroups_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups |
 | [**user_send_password_reset_v1**](ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset |
 
 
@@ -77,6 +80,77 @@ end
 ### Return type
 
 [**UserCreateObjectV1Response**](UserCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## user_create_object_v2
+
+> <UserCreateObjectV2Response> user_create_object_v2(user_create_object_v2_request)
+
+Create a new User
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+user_create_object_v2_request = EzmaxApi::UserCreateObjectV2Request.new({a_obj_user: [EzmaxApi::UserRequestCompoundV2.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequestCompound.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})]}) # UserCreateObjectV2Request | 
+
+begin
+  # Create a new User
+  result = api_instance.user_create_object_v2(user_create_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_create_object_v2: #{e}"
+end
+```
+
+#### Using the user_create_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserCreateObjectV2Response>, Integer, Hash)> user_create_object_v2_with_http_info(user_create_object_v2_request)
+
+```ruby
+begin
+  # Create a new User
+  data, status_code, headers = api_instance.user_create_object_v2_with_http_info(user_create_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserCreateObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_create_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user_create_object_v2_request** | [**UserCreateObjectV2Request**](UserCreateObjectV2Request.md) |  |  |
+
+### Return type
+
+[**UserCreateObjectV2Response**](UserCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -732,6 +806,144 @@ end
 ### Return type
 
 [**UserGetSubnetsV1Response**](UserGetSubnetsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## user_get_usergroupexternals_v1
+
+> <UserGetUsergroupexternalsV1Response> user_get_usergroupexternals_v1(pki_user_id)
+
+Get User's Usergroupexternals
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+
+begin
+  # Get User's Usergroupexternals
+  result = api_instance.user_get_usergroupexternals_v1(pki_user_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_usergroupexternals_v1: #{e}"
+end
+```
+
+#### Using the user_get_usergroupexternals_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserGetUsergroupexternalsV1Response>, Integer, Hash)> user_get_usergroupexternals_v1_with_http_info(pki_user_id)
+
+```ruby
+begin
+  # Get User's Usergroupexternals
+  data, status_code, headers = api_instance.user_get_usergroupexternals_v1_with_http_info(pki_user_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserGetUsergroupexternalsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_usergroupexternals_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+
+### Return type
+
+[**UserGetUsergroupexternalsV1Response**](UserGetUsergroupexternalsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## user_get_usergroups_v1
+
+> <UserGetUsergroupsV1Response> user_get_usergroups_v1(pki_user_id)
+
+Get User's Usergroups
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+
+begin
+  # Get User's Usergroups
+  result = api_instance.user_get_usergroups_v1(pki_user_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_usergroups_v1: #{e}"
+end
+```
+
+#### Using the user_get_usergroups_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserGetUsergroupsV1Response>, Integer, Hash)> user_get_usergroups_v1_with_http_info(pki_user_id)
+
+```ruby
+begin
+  # Get User's Usergroups
+  data, status_code, headers = api_instance.user_get_usergroups_v1_with_http_info(pki_user_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserGetUsergroupsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_usergroups_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+
+### Return type
+
+[**UserGetUsergroupsV1Response**](UserGetUsergroupsV1Response.md)
 
 ### Authorization
 

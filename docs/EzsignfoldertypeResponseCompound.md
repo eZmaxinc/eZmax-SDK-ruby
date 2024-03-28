@@ -22,14 +22,13 @@
 | **e_ezsignfoldertype_sendreminderfrequency** | [**FieldEEzsignfoldertypeSendreminderfrequency**](FieldEEzsignfoldertypeSendreminderfrequency.md) |  | [optional] |
 | **i_ezsignfoldertype_archivaldays** | **Integer** | The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype |  |
 | **e_ezsignfoldertype_disposal** | [**FieldEEzsignfoldertypeDisposal**](FieldEEzsignfoldertypeDisposal.md) |  |  |
-| **e_ezsignfoldertype_completion** | [**FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  | [optional][default to &#39;PerEzsigndocument&#39;] |
+| **e_ezsignfoldertype_completion** | [**FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  |  |
 | **i_ezsignfoldertype_disposaldays** | **Integer** | The number of days after the archival before the disposal of the Ezsignfolder | [optional] |
 | **i_ezsignfoldertype_deadlinedays** | **Integer** | The number of days to get all Ezsignsignatures |  |
 | **b_ezsignfoldertype_delegate** | **Boolean** | Wheter if delegation of signature is allowed to another user or not | [optional] |
-| **b_ezsignfoldertype_reassign** | **Boolean** | Wheter if Reassignment of signature is allowed to another signatory or not | [optional] |
+| **b_ezsignfoldertype_discussion** | **Boolean** | Wheter if creating a new Discussion is allowed or not | [optional] |
 | **b_ezsignfoldertype_reassignezsignsigner** | **Boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] |
 | **b_ezsignfoldertype_reassignuser** | **Boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] |
-| **b_ezsignfoldertype_sendattatchmentsigner** | **Boolean** | THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email | [optional] |
 | **b_ezsignfoldertype_sendsignedtoezsignsigner** | **Boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] |
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
 | **b_ezsignfoldertype_sendattachmentezsignsigner** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] |
@@ -50,9 +49,8 @@
 | **b_ezsignfoldertype_sendsummarytofullgroup** | **Boolean** | Whether we send the summary to the Usergroup that has acces to all Ezsignfolders | [optional] |
 | **b_ezsignfoldertype_sendsummarytolimitedgroup** | **Boolean** | Whether we send the summary to the Usergroup that has acces to only their own Ezsignfolders | [optional] |
 | **b_ezsignfoldertype_sendsummarytocolleague** | **Boolean** | Whether we send the summary to the colleagues |  |
-| **b_ezsignfoldertype_includeproofsigner** | **Boolean** | THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners | [optional] |
-| **b_ezsignfoldertype_includeproofuser** | **Boolean** | Whether we include the proof with the signed Ezsigndocument for users |  |
 | **b_ezsignfoldertype_isactive** | **Boolean** | Whether the Ezsignfoldertype is active or not |  |
+| **a_obj_userlogintype** | [**Array&lt;UserlogintypeResponse&gt;**](UserlogintypeResponse.md) |  |  |
 | **a_fki_user_id_signed** | **Array&lt;Integer&gt;** |  | [optional] |
 | **a_fki_user_id_summary** | **Array&lt;Integer&gt;** |  | [optional] |
 
@@ -84,10 +82,9 @@ instance = EzmaxApi::EzsignfoldertypeResponseCompound.new(
   i_ezsignfoldertype_disposaldays: 365,
   i_ezsignfoldertype_deadlinedays: 5,
   b_ezsignfoldertype_delegate: true,
-  b_ezsignfoldertype_reassign: true,
+  b_ezsignfoldertype_discussion: true,
   b_ezsignfoldertype_reassignezsignsigner: true,
   b_ezsignfoldertype_reassignuser: true,
-  b_ezsignfoldertype_sendattatchmentsigner: false,
   b_ezsignfoldertype_sendsignedtoezsignsigner: false,
   b_ezsignfoldertype_sendsignedtouser: false,
   b_ezsignfoldertype_sendattachmentezsignsigner: false,
@@ -108,9 +105,8 @@ instance = EzmaxApi::EzsignfoldertypeResponseCompound.new(
   b_ezsignfoldertype_sendsummarytofullgroup: false,
   b_ezsignfoldertype_sendsummarytolimitedgroup: false,
   b_ezsignfoldertype_sendsummarytocolleague: false,
-  b_ezsignfoldertype_includeproofsigner: true,
-  b_ezsignfoldertype_includeproofuser: true,
   b_ezsignfoldertype_isactive: true,
+  a_obj_userlogintype: null,
   a_fki_user_id_signed: null,
   a_fki_user_id_summary: null
 )

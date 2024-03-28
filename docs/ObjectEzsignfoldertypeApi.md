@@ -4,17 +4,18 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**ezsignfoldertype_create_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_create_object_v1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype |
+| [**ezsignfoldertype_create_object_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_create_object_v2) | **POST** /2/object/ezsignfoldertype | Create a new Ezsignfoldertype |
 | [**ezsignfoldertype_edit_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_edit_object_v1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
-| [**ezsignfoldertype_get_autocomplete_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
+| [**ezsignfoldertype_edit_object_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_edit_object_v2) | **PUT** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
 | [**ezsignfoldertype_get_autocomplete_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
 | [**ezsignfoldertype_get_list_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list |
 | [**ezsignfoldertype_get_object_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
+| [**ezsignfoldertype_get_object_v3**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v3) | **GET** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
 
 
-## ezsignfoldertype_create_object_v1
+## ezsignfoldertype_create_object_v2
 
-> <EzsignfoldertypeCreateObjectV1Response> ezsignfoldertype_create_object_v1(ezsignfoldertype_create_object_v1_request)
+> <EzsignfoldertypeCreateObjectV2Response> ezsignfoldertype_create_object_v2(ezsignfoldertype_create_object_v2_request)
 
 Create a new Ezsignfoldertype
 
@@ -34,32 +35,32 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
-ezsignfoldertype_create_object_v1_request = EzmaxApi::EzsignfoldertypeCreateObjectV1Request.new({a_obj_ezsignfoldertype: [EzmaxApi::EzsignfoldertypeRequestCompound.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_includeproofuser: true, b_ezsignfoldertype_isactive: true})]}) # EzsignfoldertypeCreateObjectV1Request | 
+ezsignfoldertype_create_object_v2_request = EzmaxApi::EzsignfoldertypeCreateObjectV2Request.new({a_obj_ezsignfoldertype: [EzmaxApi::EzsignfoldertypeRequestCompoundV2.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, a_fki_userlogintype_id: [2], e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, e_ezsignfoldertype_completion: EzmaxApi::FieldEEzsignfoldertypeCompletion::PER_EZSIGNDOCUMENT, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_isactive: true})]}) # EzsignfoldertypeCreateObjectV2Request | 
 
 begin
   # Create a new Ezsignfoldertype
-  result = api_instance.ezsignfoldertype_create_object_v1(ezsignfoldertype_create_object_v1_request)
+  result = api_instance.ezsignfoldertype_create_object_v2(ezsignfoldertype_create_object_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v1: #{e}"
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v2: #{e}"
 end
 ```
 
-#### Using the ezsignfoldertype_create_object_v1_with_http_info variant
+#### Using the ezsignfoldertype_create_object_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfoldertypeCreateObjectV1Response>, Integer, Hash)> ezsignfoldertype_create_object_v1_with_http_info(ezsignfoldertype_create_object_v1_request)
+> <Array(<EzsignfoldertypeCreateObjectV2Response>, Integer, Hash)> ezsignfoldertype_create_object_v2_with_http_info(ezsignfoldertype_create_object_v2_request)
 
 ```ruby
 begin
   # Create a new Ezsignfoldertype
-  data, status_code, headers = api_instance.ezsignfoldertype_create_object_v1_with_http_info(ezsignfoldertype_create_object_v1_request)
+  data, status_code, headers = api_instance.ezsignfoldertype_create_object_v2_with_http_info(ezsignfoldertype_create_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfoldertypeCreateObjectV1Response>
+  p data # => <EzsignfoldertypeCreateObjectV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v2_with_http_info: #{e}"
 end
 ```
 
@@ -67,11 +68,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **ezsignfoldertype_create_object_v1_request** | [**EzsignfoldertypeCreateObjectV1Request**](EzsignfoldertypeCreateObjectV1Request.md) |  |  |
+| **ezsignfoldertype_create_object_v2_request** | [**EzsignfoldertypeCreateObjectV2Request**](EzsignfoldertypeCreateObjectV2Request.md) |  |  |
 
 ### Return type
 
-[**EzsignfoldertypeCreateObjectV1Response**](EzsignfoldertypeCreateObjectV1Response.md)
+[**EzsignfoldertypeCreateObjectV2Response**](EzsignfoldertypeCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -106,7 +107,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
 pki_ezsignfoldertype_id = 56 # Integer | 
-ezsignfoldertype_edit_object_v1_request = EzmaxApi::EzsignfoldertypeEditObjectV1Request.new({obj_ezsignfoldertype: EzmaxApi::EzsignfoldertypeRequestCompound.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_includeproofuser: true, b_ezsignfoldertype_isactive: true})}) # EzsignfoldertypeEditObjectV1Request | 
+ezsignfoldertype_edit_object_v1_request = EzmaxApi::EzsignfoldertypeEditObjectV1Request.new({obj_ezsignfoldertype: EzmaxApi::EzsignfoldertypeRequestCompound.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, e_ezsignfoldertype_completion: EzmaxApi::FieldEEzsignfoldertypeCompletion::PER_EZSIGNDOCUMENT, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_isactive: true})}) # EzsignfoldertypeEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsignfoldertype
@@ -156,13 +157,13 @@ end
 - **Accept**: application/json
 
 
-## ezsignfoldertype_get_autocomplete_v1
+## ezsignfoldertype_edit_object_v2
 
-> <CommonGetAutocompleteV1Response> ezsignfoldertype_get_autocomplete_v1(s_selector, opts)
+> <EzsignfoldertypeEditObjectV2Response> ezsignfoldertype_edit_object_v2(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v2_request)
 
-Retrieve Ezsignfoldertypes and IDs
+Edit an existing Ezsignfoldertype
 
-Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+
 
 ### Examples
 
@@ -178,37 +179,33 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
-s_selector = 'Active' # String | The type of Ezsignfoldertypes to return
-opts = {
-  e_filter_active: 'All', # String | Specify which results we want to display.
-  s_query: 's_query_example', # String | Allow to filter the returned results
-  accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
-}
+pki_ezsignfoldertype_id = 56 # Integer | 
+ezsignfoldertype_edit_object_v2_request = EzmaxApi::EzsignfoldertypeEditObjectV2Request.new({obj_ezsignfoldertype: EzmaxApi::EzsignfoldertypeRequestCompoundV2.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, a_fki_userlogintype_id: [2], e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, e_ezsignfoldertype_completion: EzmaxApi::FieldEEzsignfoldertypeCompletion::PER_EZSIGNDOCUMENT, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_isactive: true})}) # EzsignfoldertypeEditObjectV2Request | 
 
 begin
-  # Retrieve Ezsignfoldertypes and IDs
-  result = api_instance.ezsignfoldertype_get_autocomplete_v1(s_selector, opts)
+  # Edit an existing Ezsignfoldertype
+  result = api_instance.ezsignfoldertype_edit_object_v2(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_autocomplete_v1: #{e}"
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_edit_object_v2: #{e}"
 end
 ```
 
-#### Using the ezsignfoldertype_get_autocomplete_v1_with_http_info variant
+#### Using the ezsignfoldertype_edit_object_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonGetAutocompleteV1Response>, Integer, Hash)> ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts)
+> <Array(<EzsignfoldertypeEditObjectV2Response>, Integer, Hash)> ezsignfoldertype_edit_object_v2_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v2_request)
 
 ```ruby
 begin
-  # Retrieve Ezsignfoldertypes and IDs
-  data, status_code, headers = api_instance.ezsignfoldertype_get_autocomplete_v1_with_http_info(s_selector, opts)
+  # Edit an existing Ezsignfoldertype
+  data, status_code, headers = api_instance.ezsignfoldertype_edit_object_v2_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonGetAutocompleteV1Response>
+  p data # => <EzsignfoldertypeEditObjectV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_autocomplete_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_edit_object_v2_with_http_info: #{e}"
 end
 ```
 
@@ -216,14 +213,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **s_selector** | **String** | The type of Ezsignfoldertypes to return |  |
-| **e_filter_active** | **String** | Specify which results we want to display. | [optional][default to &#39;Active&#39;] |
-| **s_query** | **String** | Allow to filter the returned results | [optional] |
-| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **pki_ezsignfoldertype_id** | **Integer** |  |  |
+| **ezsignfoldertype_edit_object_v2_request** | [**EzsignfoldertypeEditObjectV2Request**](EzsignfoldertypeEditObjectV2Request.md) |  |  |
 
 ### Return type
 
-[**CommonGetAutocompleteV1Response**](CommonGetAutocompleteV1Response.md)
+[**EzsignfoldertypeEditObjectV2Response**](EzsignfoldertypeEditObjectV2Response.md)
 
 ### Authorization
 
@@ -231,7 +226,7 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -455,6 +450,77 @@ end
 ### Return type
 
 [**EzsignfoldertypeGetObjectV2Response**](EzsignfoldertypeGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfoldertype_get_object_v3
+
+> <EzsignfoldertypeGetObjectV3Response> ezsignfoldertype_get_object_v3(pki_ezsignfoldertype_id)
+
+Retrieve an existing Ezsignfoldertype
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
+pki_ezsignfoldertype_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignfoldertype
+  result = api_instance.ezsignfoldertype_get_object_v3(pki_ezsignfoldertype_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignfoldertype_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldertypeGetObjectV3Response>, Integer, Hash)> ezsignfoldertype_get_object_v3_with_http_info(pki_ezsignfoldertype_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignfoldertype
+  data, status_code, headers = api_instance.ezsignfoldertype_get_object_v3_with_http_info(pki_ezsignfoldertype_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldertypeGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfoldertype_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfoldertypeGetObjectV3Response**](EzsignfoldertypeGetObjectV3Response.md)
 
 ### Authorization
 

@@ -19,6 +19,8 @@
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
+| **s_webhook_event** | **String** | The concatenated string to describe the Webhook event | [optional] |
+| **a_obj_webhookheader** | [**Array&lt;WebhookheaderResponseCompound&gt;**](WebhookheaderResponseCompound.md) |  | [optional] |
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
 | **b_webhook_test** | **Boolean** | Wheter the webhook received is a manual test or a real event |  |
 
@@ -43,6 +45,8 @@ instance = EzmaxApi::CustomWebhookResponse.new(
   b_webhook_issigned: true,
   b_webhook_skipsslvalidation: false,
   obj_audit: null,
+  s_webhook_event: Ezsign-DocumentCompleted,
+  a_obj_webhookheader: null,
   pks_customer_code: demo,
   b_webhook_test: null
 )

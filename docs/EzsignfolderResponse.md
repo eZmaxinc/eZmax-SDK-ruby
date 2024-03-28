@@ -7,7 +7,7 @@
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **obj_ezsignfoldertype** | [**CustomEzsignfoldertypeResponse**](CustomEzsignfoldertypeResponse.md) |  | [optional] |
-| **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  | [optional][default to &#39;PerEzsigndocument&#39;] |
+| **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** |  | [optional] |
 | **fki_billingentityinternal_id** | **Integer** | The unique ID of the Billingentityinternal. | [optional] |
 | **s_billingentityinternal_description_x** | **String** | The description of the Billingentityinternal in the language of the requester | [optional] |

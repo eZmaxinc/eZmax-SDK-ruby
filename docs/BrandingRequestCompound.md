@@ -8,12 +8,15 @@
 | **obj_branding_description** | [**MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  |  |
 | **e_branding_logo** | [**FieldEBrandingLogo**](FieldEBrandingLogo.md) |  |  |
 | **s_branding_base64** | **String** | The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogo if you supply an image. If you select &#39;Default&#39;, the logo will be deleted and the default one will be used. | [optional] |
+| **e_branding_logointerface** | [**FieldEBrandingLogointerface**](FieldEBrandingLogointerface.md) |  | [optional][default to &#39;Default&#39;] |
+| **s_branding_logointerface_base64** | **String** | The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select &#39;Default&#39;, the logo will be deleted and the default one will be used. | [optional] |
 | **i_branding_colortext** | **Integer** | The color of the text. This is a RGB color converted into integer |  |
 | **i_branding_colortextlinkbox** | **Integer** | The color of the text in the link box. This is a RGB color converted into integer |  |
 | **i_branding_colortextbutton** | **Integer** | The color of the text in the button. This is a RGB color converted into integer |  |
 | **i_branding_colorbackground** | **Integer** | The color of the background. This is a RGB color converted into integer |  |
 | **i_branding_colorbackgroundbutton** | **Integer** | The color of the background of the button. This is a RGB color converted into integer |  |
 | **i_branding_colorbackgroundsmallbox** | **Integer** | The color of the background of the small box. This is a RGB color converted into integer |  |
+| **i_branding_interfacecolor** | **Integer** | The color of the interface. This is a RGB color converted into integer | [optional] |
 | **s_branding_name** | **String** | The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty | [optional] |
 | **s_email_address** | **String** | The email address. | [optional] |
 | **b_branding_isactive** | **Boolean** | Whether the Branding is active or not |  |
@@ -28,12 +31,15 @@ instance = EzmaxApi::BrandingRequestCompound.new(
   obj_branding_description: null,
   e_branding_logo: null,
   s_branding_base64: eyIkcmVmIjoiIy9jb21wb25lbnRzL2V4YW1wbGVzL1BuZ0FzQmFzZTY0L3ZhbHVlIn0&#x3D;,
+  e_branding_logointerface: null,
+  s_branding_logointerface_base64: eyIkcmVmIjoiIy9jb21wb25lbnRzL2V4YW1wbGVzL1BuZ0FzQmFzZTY0L3ZhbHVlIn0&#x3D;,
   i_branding_colortext: 3752795,
   i_branding_colortextlinkbox: 0,
   i_branding_colortextbutton: 16777215,
   i_branding_colorbackground: 15658734,
   i_branding_colorbackgroundbutton: 13577007,
   i_branding_colorbackgroundsmallbox: 16777215,
+  i_branding_interfacecolor: 15658734,
   s_branding_name: eZmax (Corp),
   s_email_address: email@example.com,
   b_branding_isactive: true

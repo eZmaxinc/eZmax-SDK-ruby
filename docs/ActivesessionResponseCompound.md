@@ -15,6 +15,8 @@
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
 | **fki_systemconfigurationtype_id** | **Integer** | The unique ID of the Systemconfigurationtype |  |
 | **fki_signature_id** | **Integer** | The unique ID of the Signature | [optional] |
+| **b_systemconfiguration_ezsignpaidbyoffice** | **Boolean** | Whether if Ezsign is paid by the company or not | [optional] |
+| **e_systemconfiguration_ezsignofficeplan** | [**FieldESystemconfigurationEzsignofficeplan**](FieldESystemconfigurationEzsignofficeplan.md) |  | [optional] |
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
 | **e_user_ezsignprepaid** | [**FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional] |
 | **dt_user_ezsignprepaidexpiration** | **String** | The eZsign prepaid expiration date | [optional] |
@@ -41,6 +43,8 @@ instance = EzmaxApi::ActivesessionResponseCompound.new(
   pks_customer_code: demo,
   fki_systemconfigurationtype_id: 28,
   fki_signature_id: 12,
+  b_systemconfiguration_ezsignpaidbyoffice: true,
+  e_systemconfiguration_ezsignofficeplan: null,
   e_user_ezsignaccess: null,
   e_user_ezsignprepaid: null,
   dt_user_ezsignprepaidexpiration: 2020-12-31,

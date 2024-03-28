@@ -13,6 +13,7 @@
 | **b_ezsigntemplatepackage_needvalidation** | **Boolean** | Whether the Ezsignbulksend was automatically modified and needs a manual validation |  |
 | **b_ezsigntemplatepackage_isactive** | **Boolean** | Whether the Ezsigntemplatepackage is active or not |  |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester |  |
+| **b_ezsigntemplatepackage_editallowed** | **Boolean** | Whether the Ezsigntemplatepackage if allowed to edit or not |  |
 | **a_obj_ezsigntemplatepackagesigner** | [**Array&lt;EzsigntemplatepackagesignerResponseCompound&gt;**](EzsigntemplatepackagesignerResponseCompound.md) |  |  |
 | **a_obj_ezsigntemplatepackagemembership** | [**Array&lt;EzsigntemplatepackagemembershipResponseCompound&gt;**](EzsigntemplatepackagemembershipResponseCompound.md) |  |  |
 
@@ -31,6 +32,7 @@ instance = EzmaxApi::EzsigntemplatepackageResponseCompound.new(
   b_ezsigntemplatepackage_needvalidation: null,
   b_ezsigntemplatepackage_isactive: true,
   s_ezsignfoldertype_name_x: Default,
+  b_ezsigntemplatepackage_editallowed: null,
   a_obj_ezsigntemplatepackagesigner: null,
   a_obj_ezsigntemplatepackagemembership: null
 )

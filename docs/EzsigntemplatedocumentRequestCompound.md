@@ -14,7 +14,7 @@
 | **s_ezsigntemplatedocument_base64** | **String** | The Base64 encoded binary content of the document.  This field is Required when eEzsigntemplatedocumentSource &#x3D; Base64. | [optional] |
 | **s_ezsigntemplatedocument_url** | **String** | The url where the document content resides.  This field is Required when eEzsigntemplatedocumentSource &#x3D; Url. | [optional] |
 | **b_ezsigntemplatedocument_forcerepair** | **Boolean** | Try to repair the document or flatten it if it cannot be used for electronic signature. | [optional] |
-| **e_ezsigntemplatedocument_form** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID** | [optional] |
+| **e_ezsigntemplatedocument_form** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document | [optional] |
 | **s_ezsigntemplatedocument_password** | **String** | If the source template is password protected, the password to open/modify it. | [optional][default to &#39;&#39;] |
 
 ## Example

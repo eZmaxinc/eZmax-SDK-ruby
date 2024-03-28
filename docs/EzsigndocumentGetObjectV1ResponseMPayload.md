@@ -26,6 +26,7 @@
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_ezsigndocument_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
 | **i_ezsigndocument_ezsignsignatureattachmenttotal** | **Integer** | The number of Ezsigndocumentattachment total |  |
+| **i_ezsigndocument_ezsigndiscussiontotal** | **Integer** | The total number of Ezsigndiscussions |  |
 | **e_ezsigndocument_steptype** | [**ComputedEEzsigndocumentSteptype**](ComputedEEzsigndocumentSteptype.md) |  |  |
 | **i_ezsigndocument_stepformtotal** | **Integer** | The total number of steps in the form filling phase |  |
 | **i_ezsigndocument_stepformcurrent** | **Integer** | The current step in the form filling phase |  |
@@ -61,6 +62,7 @@ instance = EzmaxApi::EzsigndocumentGetObjectV1ResponseMPayload.new(
   obj_audit: null,
   s_ezsigndocument_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]},
   i_ezsigndocument_ezsignsignatureattachmenttotal: 3,
+  i_ezsigndocument_ezsigndiscussiontotal: 14,
   e_ezsigndocument_steptype: null,
   i_ezsigndocument_stepformtotal: 2,
   i_ezsigndocument_stepformcurrent: 1,

@@ -4,7 +4,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**webhook_create_object_v1**](ObjectWebhookApi.md#webhook_create_object_v1) | **POST** /1/object/webhook | Create a new Webhook |
 | [**webhook_create_object_v2**](ObjectWebhookApi.md#webhook_create_object_v2) | **POST** /2/object/webhook | Create a new Webhook |
 | [**webhook_delete_object_v1**](ObjectWebhookApi.md#webhook_delete_object_v1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook |
 | [**webhook_edit_object_v1**](ObjectWebhookApi.md#webhook_edit_object_v1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook |
@@ -13,77 +12,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**webhook_get_object_v2**](ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook |
 | [**webhook_regenerate_apikey_v1**](ObjectWebhookApi.md#webhook_regenerate_apikey_v1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey |
 | [**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url |
-
-
-## webhook_create_object_v1
-
-> <WebhookCreateObjectV1Response> webhook_create_object_v1(webhook_create_object_v1_request)
-
-Create a new Webhook
-
-The endpoint allows to create one or many elements at once.
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectWebhookApi.new
-webhook_create_object_v1_request = EzmaxApi::WebhookCreateObjectV1Request.new({a_obj_webhook: [EzmaxApi::WebhookRequestCompound.new({s_webhook_description: 'Import into our system', e_webhook_module: EzmaxApi::FieldEWebhookModule::EZSIGN, s_webhook_url: 'https://www.example.com', s_webhook_emailfailed: 'email@example.com', b_webhook_isactive: true, b_webhook_skipsslvalidation: false})]}) # WebhookCreateObjectV1Request | 
-
-begin
-  # Create a new Webhook
-  result = api_instance.webhook_create_object_v1(webhook_create_object_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectWebhookApi->webhook_create_object_v1: #{e}"
-end
-```
-
-#### Using the webhook_create_object_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<WebhookCreateObjectV1Response>, Integer, Hash)> webhook_create_object_v1_with_http_info(webhook_create_object_v1_request)
-
-```ruby
-begin
-  # Create a new Webhook
-  data, status_code, headers = api_instance.webhook_create_object_v1_with_http_info(webhook_create_object_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <WebhookCreateObjectV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectWebhookApi->webhook_create_object_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **webhook_create_object_v1_request** | [**WebhookCreateObjectV1Request**](WebhookCreateObjectV1Request.md) |  |  |
-
-### Return type
-
-[**WebhookCreateObjectV1Response**](WebhookCreateObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
 
 
 ## webhook_create_object_v2

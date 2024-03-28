@@ -12,6 +12,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_dispose_ezsignfolders_v1**](ObjectEzsignfolderApi.md#ezsignfolder_dispose_ezsignfolders_v1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders |
 | [**ezsignfolder_dispose_v1**](ObjectEzsignfolderApi.md#ezsignfolder_dispose_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder |
 | [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
+| [**ezsignfolder_end_prematurely_v1**](ObjectEzsignfolderApi.md#ezsignfolder_end_prematurely_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely |
 | [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolder_get_attachment_count_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_attachment_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count |
 | [**ezsignfolder_get_attachments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_attachments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments | Retrieve Ezsignfolder&#39;s Attachments |
@@ -30,7 +31,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_import_ezsigntemplatepackage_v1**](ObjectEzsignfolderApi.md#ezsignfolder_import_ezsigntemplatepackage_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder. |
 | [**ezsignfolder_reorder_v1**](ObjectEzsignfolderApi.md#ezsignfolder_reorder_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder |
 | [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
-| [**ezsignfolder_send_v2**](ObjectEzsignfolderApi.md#ezsignfolder_send_v2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 | [**ezsignfolder_send_v3**](ObjectEzsignfolderApi.md#ezsignfolder_send_v3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature |
 | [**ezsignfolder_unsend_v1**](ObjectEzsignfolderApi.md#ezsignfolder_unsend_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder |
 
@@ -596,6 +596,79 @@ end
 ### Return type
 
 [**EzsignfolderEditObjectV1Response**](EzsignfolderEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsignfolder_end_prematurely_v1
+
+> <EzsignfolderEndPrematurelyV1Response> ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id, body)
+
+End prematurely
+
+End prematurely all Ezsigndocument of Ezsignfolder when some signatures are still required
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+body = { ... } # Object | 
+
+begin
+  # End prematurely
+  result = api_instance.ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id, body)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_end_prematurely_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_end_prematurely_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderEndPrematurelyV1Response>, Integer, Hash)> ezsignfolder_end_prematurely_v1_with_http_info(pki_ezsignfolder_id, body)
+
+```ruby
+begin
+  # End prematurely
+  data, status_code, headers = api_instance.ezsignfolder_end_prematurely_v1_with_http_info(pki_ezsignfolder_id, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderEndPrematurelyV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_end_prematurely_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+| **body** | **Object** |  |  |
+
+### Return type
+
+[**EzsignfolderEndPrematurelyV1Response**](EzsignfolderEndPrematurelyV1Response.md)
 
 ### Authorization
 
@@ -1896,87 +1969,6 @@ end
 ### Return type
 
 [**EzsignfolderSendV1Response**](EzsignfolderSendV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## ezsignfolder_send_v2
-
-> <EzsignfolderSendV2Response> ezsignfolder_send_v2(pki_ezsignfolder_id, ezsignfolder_send_v2_request)
-
-Send the Ezsignfolder to the signatories for signature
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-pki_ezsignfolder_id = 56 # Integer | 
-ezsignfolder_send_v2_request = EzmaxApi::EzsignfolderSendV2Request.new({t_ezsignfolder_message: 'Hi everyone,
-
-This is the document I need you to review.
-
-Could you sign it before Monday please.
-
-Best Regards.
-
-Mary', a_fki_ezsignfoldersignerassociation_id: [20], a_obj_ezsignfoldersignerassociationmessage: [EzmaxApi::CustomEzsignfoldersignerassociationmessageRequest.new({fki_ezsignfoldersignerassociation_id: 20})]}) # EzsignfolderSendV2Request | 
-
-begin
-  # Send the Ezsignfolder to the signatories for signature
-  result = api_instance.ezsignfolder_send_v2(pki_ezsignfolder_id, ezsignfolder_send_v2_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_send_v2: #{e}"
-end
-```
-
-#### Using the ezsignfolder_send_v2_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignfolderSendV2Response>, Integer, Hash)> ezsignfolder_send_v2_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v2_request)
-
-```ruby
-begin
-  # Send the Ezsignfolder to the signatories for signature
-  data, status_code, headers = api_instance.ezsignfolder_send_v2_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v2_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignfolderSendV2Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_send_v2_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignfolder_id** | **Integer** |  |  |
-| **ezsignfolder_send_v2_request** | [**EzsignfolderSendV2Request**](EzsignfolderSendV2Request.md) |  |  |
-
-### Return type
-
-[**EzsignfolderSendV2Response**](EzsignfolderSendV2Response.md)
 
 ### Authorization
 

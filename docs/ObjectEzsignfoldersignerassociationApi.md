@@ -4,6 +4,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**ezsignfoldersignerassociation_create_embedded_url_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_embedded_url_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
 | [**ezsignfoldersignerassociation_create_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_create_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_delete_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_delete_object_v1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation |
@@ -13,6 +14,79 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfoldersignerassociation_get_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_get_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_patch_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_patch_object_v1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation |
+
+
+## ezsignfoldersignerassociation_create_embedded_url_v1
+
+> <EzsignfoldersignerassociationCreateEmbeddedUrlV1Response> ezsignfoldersignerassociation_create_embedded_url_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request)
+
+Creates an Url to allow embedded signing
+
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
+ezsignfoldersignerassociation_create_embedded_url_v1_request = EzmaxApi::EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.new # EzsignfoldersignerassociationCreateEmbeddedUrlV1Request | 
+
+begin
+  # Creates an Url to allow embedded signing
+  result = api_instance.ezsignfoldersignerassociation_create_embedded_url_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_create_embedded_url_v1: #{e}"
+end
+```
+
+#### Using the ezsignfoldersignerassociation_create_embedded_url_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldersignerassociationCreateEmbeddedUrlV1Response>, Integer, Hash)> ezsignfoldersignerassociation_create_embedded_url_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request)
+
+```ruby
+begin
+  # Creates an Url to allow embedded signing
+  data, status_code, headers = api_instance.ezsignfoldersignerassociation_create_embedded_url_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldersignerassociationCreateEmbeddedUrlV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_create_embedded_url_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
+| **ezsignfoldersignerassociation_create_embedded_url_v1_request** | [**EzsignfoldersignerassociationCreateEmbeddedUrlV1Request**](EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.md) |  |  |
+
+### Return type
+
+[**EzsignfoldersignerassociationCreateEmbeddedUrlV1Response**](EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## ezsignfoldersignerassociation_create_object_v1

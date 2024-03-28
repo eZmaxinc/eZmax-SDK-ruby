@@ -18,6 +18,10 @@
 | **i_ezsigndocument_edm** | **Integer** | The total number of Ezsigndocument in the folder that were saved in the edm system |  |
 | **i_ezsignsignature** | **Integer** | The total number of signature blocks in all Ezsigndocuments in the folder |  |
 | **i_ezsignsignature_signed** | **Integer** | The total number of already signed signature blocks in all Ezsigndocuments in the folder |  |
+| **i_ezsignformfieldgroup** | **Integer** | The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder |  |
+| **i_ezsignformfieldgroup_completed** | **Integer** | The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder |  |
+| **b_ezsignform_hasdependencies** | **Boolean** | Whether the Ezsignform/Ezsignsignatures has dependencies or not | [optional] |
+| **d_ezsignfolder_completedpercentage** | **String** | Whether the Ezsignform/Ezsignsignatures has dependencies or not |  |
 
 ## Example
 
@@ -38,7 +42,11 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   i_ezsigndocument: null,
   i_ezsigndocument_edm: null,
   i_ezsignsignature: null,
-  i_ezsignsignature_signed: null
+  i_ezsignsignature_signed: null,
+  i_ezsignformfieldgroup: null,
+  i_ezsignformfieldgroup_completed: null,
+  b_ezsignform_hasdependencies: null,
+  d_ezsignfolder_completedpercentage: null
 )
 ```
 

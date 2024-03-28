@@ -31,6 +31,7 @@ end
 api_instance = EzmaxApi::ObjectUserlogintypeApi.new
 s_selector = 'All' # String | The type of Userlogintypes to return
 opts = {
+  fki_ezsignfoldertype_id: 56, # Integer | 
   e_filter_active: 'All', # String | Specify which results we want to display.
   s_query: 's_query_example', # String | Allow to filter the returned results
   accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
@@ -68,6 +69,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **s_selector** | **String** | The type of Userlogintypes to return |  |
+| **fki_ezsignfoldertype_id** | **Integer** |  | [optional] |
 | **e_filter_active** | **String** | Specify which results we want to display. | [optional][default to &#39;Active&#39;] |
 | **s_query** | **String** | Allow to filter the returned results | [optional] |
 | **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
