@@ -23,14 +23,14 @@ module EzmaxApi
     attr_accessor :s_iframedomain
 
     # Whether the url would be in an iFrame or not
-    attr_accessor :b_isiframe
+    attr_accessor :b_is_iframe
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'s_return_url' => :'sReturnUrl',
         :'s_iframedomain' => :'sIframedomain',
-        :'b_isiframe' => :'bIsiframe'
+        :'b_is_iframe' => :'bIsIframe'
       }
     end
 
@@ -44,7 +44,7 @@ module EzmaxApi
       {
         :'s_return_url' => :'String',
         :'s_iframedomain' => :'String',
-        :'b_isiframe' => :'Boolean'
+        :'b_is_iframe' => :'Boolean'
       }
     end
 
@@ -77,8 +77,8 @@ module EzmaxApi
         self.s_iframedomain = attributes[:'s_iframedomain']
       end
 
-      if attributes.key?(:'b_isiframe')
-        self.b_isiframe = attributes[:'b_isiframe']
+      if attributes.key?(:'b_is_iframe')
+        self.b_is_iframe = attributes[:'b_is_iframe']
       end
     end
 
@@ -146,7 +146,7 @@ module EzmaxApi
       self.class == o.class &&
           s_return_url == o.s_return_url &&
           s_iframedomain == o.s_iframedomain &&
-          b_isiframe == o.b_isiframe
+          b_is_iframe == o.b_is_iframe
     end
 
     # @see the `==` method
@@ -158,7 +158,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_return_url, s_iframedomain, b_isiframe].hash
+      [s_return_url, s_iframedomain, b_is_iframe].hash
     end
 
     # Builds the object from hash

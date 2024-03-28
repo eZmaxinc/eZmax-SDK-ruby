@@ -39,7 +39,7 @@ describe EzmaxApi::EzsignfoldersignerassociationCreateEmbeddedUrlV1Request do
     end
   end
 
-  describe 'test attribute "b_isiframe"' do
+  describe 'test attribute "b_is_iframe"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
