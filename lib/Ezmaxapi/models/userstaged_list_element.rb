@@ -131,6 +131,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       if @s_userstaged_firstname.nil?
         invalid_properties.push('invalid value for "s_userstaged_firstname", s_userstaged_firstname cannot be nil.')
       end
@@ -169,6 +174,7 @@ module EzmaxApi
       return false if @pki_userstaged_id > 65535
       return false if @pki_userstaged_id < 1
       return false if @s_email_address.nil?
+      return false if @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @s_userstaged_firstname.nil?
       return false if @s_userstaged_firstname !~ Regexp.new(/^.{0,20}$/)
       return false if @s_userstaged_lastname.nil?
@@ -194,6 +200,21 @@ module EzmaxApi
       end
 
       @pki_userstaged_id = pki_userstaged_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

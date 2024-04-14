@@ -595,7 +595,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_user_loginname", s_user_loginname cannot be nil.')
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if @s_user_loginname !~ pattern
         invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
       end
@@ -675,7 +675,7 @@ module EzmaxApi
       return false if @s_user_firstname.nil?
       return false if @s_user_lastname.nil?
       return false if @s_user_loginname.nil?
-      return false if @s_user_loginname !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      return false if @s_user_loginname !~ Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       return false if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ Regexp.new(/^.{0,50}$/)
       return false if @e_user_ezsignaccess.nil?
       return false if !@dt_user_lastlogondate.nil? && @dt_user_lastlogondate !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
@@ -870,7 +870,7 @@ module EzmaxApi
         fail ArgumentError, 's_user_loginname cannot be nil'
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if s_user_loginname !~ pattern
         fail ArgumentError, "invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}."
       end

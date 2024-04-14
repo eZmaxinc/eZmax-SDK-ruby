@@ -227,6 +227,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_webhook_url", s_webhook_url cannot be nil.')
       end
 
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if @s_webhook_url !~ pattern
+        invalid_properties.push("invalid value for \"s_webhook_url\", must conform to the pattern #{pattern}.")
+      end
+
       if @s_webhook_emailfailed.nil?
         invalid_properties.push('invalid value for "s_webhook_emailfailed", s_webhook_emailfailed cannot be nil.')
       end
@@ -251,6 +256,7 @@ module EzmaxApi
       return false if @s_webhook_description.nil?
       return false if @e_webhook_module.nil?
       return false if @s_webhook_url.nil?
+      return false if @s_webhook_url !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       return false if @s_webhook_emailfailed.nil?
       return false if @b_webhook_isactive.nil?
       return false if @b_webhook_skipsslvalidation.nil?
@@ -273,6 +279,21 @@ module EzmaxApi
       end
 
       @fki_ezsignfoldertype_id = fki_ezsignfoldertype_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_webhook_url Value to be assigned
+    def s_webhook_url=(s_webhook_url)
+      if s_webhook_url.nil?
+        fail ArgumentError, 's_webhook_url cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if s_webhook_url !~ pattern
+        fail ArgumentError, "invalid value for \"s_webhook_url\", must conform to the pattern #{pattern}."
+      end
+
+      @s_webhook_url = s_webhook_url
     end
 
     # Checks equality by comparing each attribute.

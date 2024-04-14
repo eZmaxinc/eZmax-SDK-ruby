@@ -381,7 +381,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "i_ezsigndocument_signaturetotal", must be greater than or equal to 0.')
       end
 
-      pattern = Regexp.new(/^.{0,64}$/)
+      pattern = Regexp.new(/^.{0,128}$/)
       if !@s_ezsigndocument_externalid.nil? && @s_ezsigndocument_externalid !~ pattern
         invalid_properties.push("invalid value for \"s_ezsigndocument_externalid\", must conform to the pattern #{pattern}.")
       end
@@ -423,7 +423,7 @@ module EzmaxApi
       return false if @i_ezsigndocument_signaturesigned < 0
       return false if @i_ezsigndocument_signaturetotal.nil?
       return false if @i_ezsigndocument_signaturetotal < 0
-      return false if !@s_ezsigndocument_externalid.nil? && @s_ezsigndocument_externalid !~ Regexp.new(/^.{0,64}$/)
+      return false if !@s_ezsigndocument_externalid.nil? && @s_ezsigndocument_externalid !~ Regexp.new(/^.{0,128}$/)
       return false if @i_ezsigndocument_ezsignsignatureattachmenttotal.nil?
       return false if @i_ezsigndocument_ezsignsignatureattachmenttotal < 0
       return false if @i_ezsigndocument_ezsigndiscussiontotal.nil?
@@ -553,7 +553,7 @@ module EzmaxApi
         fail ArgumentError, 's_ezsigndocument_externalid cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,64}$/)
+      pattern = Regexp.new(/^.{0,128}$/)
       if s_ezsigndocument_externalid !~ pattern
         fail ArgumentError, "invalid value for \"s_ezsigndocument_externalid\", must conform to the pattern #{pattern}."
       end

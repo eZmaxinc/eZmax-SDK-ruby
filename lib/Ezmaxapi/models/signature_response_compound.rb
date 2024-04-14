@@ -105,7 +105,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_signature_url", s_signature_url cannot be nil.')
       end
 
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if @s_signature_url !~ pattern
         invalid_properties.push("invalid value for \"s_signature_url\", must conform to the pattern #{pattern}.")
       end
@@ -121,7 +121,7 @@ module EzmaxApi
       return false if @pki_signature_id > 16777215
       return false if @pki_signature_id < 0
       return false if @s_signature_url.nil?
-      return false if @s_signature_url !~ Regexp.new(/^.{0,2048}$/)
+      return false if @s_signature_url !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       true
     end
 
@@ -150,7 +150,7 @@ module EzmaxApi
         fail ArgumentError, 's_signature_url cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if s_signature_url !~ pattern
         fail ArgumentError, "invalid value for \"s_signature_url\", must conform to the pattern #{pattern}."
       end

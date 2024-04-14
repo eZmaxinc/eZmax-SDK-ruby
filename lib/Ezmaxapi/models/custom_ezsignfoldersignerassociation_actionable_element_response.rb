@@ -31,6 +31,9 @@ module EzmaxApi
     # A custom text message that will be added to the email sent.
     attr_accessor :t_ezsignfoldersignerassociation_message
 
+    # If the Ezsignfoldersignerassociation is allowed to sign in person or not
+    attr_accessor :b_ezsignfoldersignerassociation_allowsigninginperson
+
     attr_accessor :obj_ezsignsignergroup
 
     attr_accessor :obj_user
@@ -51,6 +54,7 @@ module EzmaxApi
         :'b_ezsignfoldersignerassociation_delayedsend' => :'bEzsignfoldersignerassociationDelayedsend',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy',
         :'t_ezsignfoldersignerassociation_message' => :'tEzsignfoldersignerassociationMessage',
+        :'b_ezsignfoldersignerassociation_allowsigninginperson' => :'bEzsignfoldersignerassociationAllowsigninginperson',
         :'obj_ezsignsignergroup' => :'objEzsignsignergroup',
         :'obj_user' => :'objUser',
         :'obj_ezsignsigner' => :'objEzsignsigner',
@@ -72,6 +76,7 @@ module EzmaxApi
         :'b_ezsignfoldersignerassociation_delayedsend' => :'Boolean',
         :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean',
         :'t_ezsignfoldersignerassociation_message' => :'String',
+        :'b_ezsignfoldersignerassociation_allowsigninginperson' => :'Boolean',
         :'obj_ezsignsignergroup' => :'EzsignsignergroupResponseCompound',
         :'obj_user' => :'EzsignfoldersignerassociationResponseCompoundUser',
         :'obj_ezsignsigner' => :'EzsignsignerResponseCompound',
@@ -138,6 +143,12 @@ module EzmaxApi
         self.t_ezsignfoldersignerassociation_message = nil
       end
 
+      if attributes.key?(:'b_ezsignfoldersignerassociation_allowsigninginperson')
+        self.b_ezsignfoldersignerassociation_allowsigninginperson = attributes[:'b_ezsignfoldersignerassociation_allowsigninginperson']
+      else
+        self.b_ezsignfoldersignerassociation_allowsigninginperson = nil
+      end
+
       if attributes.key?(:'obj_ezsignsignergroup')
         self.obj_ezsignsignergroup = attributes[:'obj_ezsignsignergroup']
       end
@@ -196,6 +207,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "t_ezsignfoldersignerassociation_message", t_ezsignfoldersignerassociation_message cannot be nil.')
       end
 
+      if @b_ezsignfoldersignerassociation_allowsigninginperson.nil?
+        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_allowsigninginperson", b_ezsignfoldersignerassociation_allowsigninginperson cannot be nil.')
+      end
+
       if @b_ezsignfoldersignerassociation_hasactionableelements_current.nil?
         invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_hasactionableelements_current", b_ezsignfoldersignerassociation_hasactionableelements_current cannot be nil.')
       end
@@ -218,6 +233,7 @@ module EzmaxApi
       return false if @b_ezsignfoldersignerassociation_delayedsend.nil?
       return false if @b_ezsignfoldersignerassociation_receivecopy.nil?
       return false if @t_ezsignfoldersignerassociation_message.nil?
+      return false if @b_ezsignfoldersignerassociation_allowsigninginperson.nil?
       return false if @b_ezsignfoldersignerassociation_hasactionableelements_current.nil?
       return false if @b_ezsignfoldersignerassociation_hasactionableelements_future.nil?
       true
@@ -261,6 +277,7 @@ module EzmaxApi
           b_ezsignfoldersignerassociation_delayedsend == o.b_ezsignfoldersignerassociation_delayedsend &&
           b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy &&
           t_ezsignfoldersignerassociation_message == o.t_ezsignfoldersignerassociation_message &&
+          b_ezsignfoldersignerassociation_allowsigninginperson == o.b_ezsignfoldersignerassociation_allowsigninginperson &&
           obj_ezsignsignergroup == o.obj_ezsignsignergroup &&
           obj_user == o.obj_user &&
           obj_ezsignsigner == o.obj_ezsignsigner &&
@@ -277,7 +294,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_delayedsend, b_ezsignfoldersignerassociation_receivecopy, t_ezsignfoldersignerassociation_message, obj_ezsignsignergroup, obj_user, obj_ezsignsigner, b_ezsignfoldersignerassociation_hasactionableelements_current, b_ezsignfoldersignerassociation_hasactionableelements_future].hash
+      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_delayedsend, b_ezsignfoldersignerassociation_receivecopy, t_ezsignfoldersignerassociation_message, b_ezsignfoldersignerassociation_allowsigninginperson, obj_ezsignsignergroup, obj_user, obj_ezsignsigner, b_ezsignfoldersignerassociation_hasactionableelements_current, b_ezsignfoldersignerassociation_hasactionableelements_future].hash
     end
 
     # Builds the object from hash

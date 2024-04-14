@@ -332,7 +332,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_ezsignfolder_description", s_ezsignfolder_description cannot be nil.')
       end
 
-      pattern = Regexp.new(/^.{0,64}$/)
+      pattern = Regexp.new(/^.{0,128}$/)
       if !@s_ezsignfolder_externalid.nil? && @s_ezsignfolder_externalid !~ pattern
         invalid_properties.push("invalid value for \"s_ezsignfolder_externalid\", must conform to the pattern #{pattern}.")
       end
@@ -353,7 +353,7 @@ module EzmaxApi
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id > 3
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id < 1
       return false if @s_ezsignfolder_description.nil?
-      return false if !@s_ezsignfolder_externalid.nil? && @s_ezsignfolder_externalid !~ Regexp.new(/^.{0,64}$/)
+      return false if !@s_ezsignfolder_externalid.nil? && @s_ezsignfolder_externalid !~ Regexp.new(/^.{0,128}$/)
       true
     end
 
@@ -428,7 +428,7 @@ module EzmaxApi
         fail ArgumentError, 's_ezsignfolder_externalid cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,64}$/)
+      pattern = Regexp.new(/^.{0,128}$/)
       if s_ezsignfolder_externalid !~ pattern
         fail ArgumentError, "invalid value for \"s_ezsignfolder_externalid\", must conform to the pattern #{pattern}."
       end

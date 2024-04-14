@@ -168,6 +168,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address.nil? && @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
       if !@s_phone_e164.nil? && @s_phone_e164 !~ pattern
         invalid_properties.push("invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}.")
@@ -192,6 +197,7 @@ module EzmaxApi
       return false if @fki_language_id.nil?
       return false if @fki_language_id > 2
       return false if @fki_language_id < 1
+      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if !@s_phone_e164.nil? && @s_phone_e164 !~ Regexp.new(/^\+[1-9]\d{1,14}$/)
       return false if !@s_phone_e164_cell.nil? && @s_phone_e164_cell !~ Regexp.new(/^\+[1-9]\d{1,14}$/)
       true
@@ -227,6 +233,21 @@ module EzmaxApi
       end
 
       @fki_language_id = fki_language_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

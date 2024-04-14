@@ -117,7 +117,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_cors_entryurl", s_cors_entryurl cannot be nil.')
       end
 
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if @s_cors_entryurl !~ pattern
         invalid_properties.push("invalid value for \"s_cors_entryurl\", must conform to the pattern #{pattern}.")
       end
@@ -135,7 +135,7 @@ module EzmaxApi
       return false if @fki_apikey_id.nil?
       return false if @fki_apikey_id < 0
       return false if @s_cors_entryurl.nil?
-      return false if @s_cors_entryurl !~ Regexp.new(/^.{0,2048}$/)
+      return false if @s_cors_entryurl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       true
     end
 
@@ -178,7 +178,7 @@ module EzmaxApi
         fail ArgumentError, 's_cors_entryurl cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if s_cors_entryurl !~ pattern
         fail ArgumentError, "invalid value for \"s_cors_entryurl\", must conform to the pattern #{pattern}."
       end

@@ -199,9 +199,14 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_usergroupexternal_id", must be greater than or equal to 0.')
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if !@s_user_loginname.nil? && @s_user_loginname !~ pattern
         invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address.nil? && @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
       end
 
       if @s_usergroup_name_x.nil?
@@ -234,7 +239,8 @@ module EzmaxApi
       return false if !@fki_user_id.nil? && @fki_user_id < 0
       return false if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id > 255
       return false if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id < 0
-      return false if !@s_user_loginname.nil? && @s_user_loginname !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      return false if !@s_user_loginname.nil? && @s_user_loginname !~ Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
+      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @s_usergroup_name_x.nil?
       return false if @s_usergroup_name_x !~ Regexp.new(/^.{0,50}$/)
       return false if !@s_usergroupexternal_name.nil? && @s_usergroupexternal_name !~ Regexp.new(/^.{0,64}$/)
@@ -316,12 +322,27 @@ module EzmaxApi
         fail ArgumentError, 's_user_loginname cannot be nil'
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if s_user_loginname !~ pattern
         fail ArgumentError, "invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}."
       end
 
       @s_user_loginname = s_user_loginname
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

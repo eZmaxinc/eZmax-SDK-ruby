@@ -133,6 +133,11 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address.nil? && @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
       if !@s_phone_e164.nil? && @s_phone_e164 !~ pattern
         invalid_properties.push("invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}.")
@@ -150,9 +155,25 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if !@s_phone_e164.nil? && @s_phone_e164 !~ Regexp.new(/^\+[1-9]\d{1,14}$/)
       return false if !@s_communicationexternalrecipient_name.nil? && @s_communicationexternalrecipient_name !~ Regexp.new(/^.{0,50}$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

@@ -28,6 +28,9 @@ module EzmaxApi
     # Wheter the current route is deprecated or not
     attr_accessor :b_version_deprecated
 
+    # Represent a Date Time. The timezone is the one configured in the User's profile.
+    attr_accessor :dt_response_date
+
     attr_accessor :a_filter
 
     # List of available values for *eOrderBy*
@@ -46,6 +49,7 @@ module EzmaxApi
         :'i_version_max' => :'iVersionMax',
         :'a_required_permission' => :'a_RequiredPermission',
         :'b_version_deprecated' => :'bVersionDeprecated',
+        :'dt_response_date' => :'dtResponseDate',
         :'a_filter' => :'a_Filter',
         :'a_order_by' => :'a_OrderBy',
         :'i_row_max' => :'iRowMax',
@@ -65,6 +69,7 @@ module EzmaxApi
         :'i_version_max' => :'Integer',
         :'a_required_permission' => :'Array<Integer>',
         :'b_version_deprecated' => :'Boolean',
+        :'dt_response_date' => :'String',
         :'a_filter' => :'CommonResponseFilter',
         :'a_order_by' => :'Hash<String, String>',
         :'i_row_max' => :'Integer',
@@ -126,6 +131,12 @@ module EzmaxApi
         self.b_version_deprecated = nil
       end
 
+      if attributes.key?(:'dt_response_date')
+        self.dt_response_date = attributes[:'dt_response_date']
+      else
+        self.dt_response_date = nil
+      end
+
       if attributes.key?(:'a_filter')
         self.a_filter = attributes[:'a_filter']
       else
@@ -174,6 +185,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_version_deprecated", b_version_deprecated cannot be nil.')
       end
 
+      if @dt_response_date.nil?
+        invalid_properties.push('invalid value for "dt_response_date", dt_response_date cannot be nil.')
+      end
+
       if @a_filter.nil?
         invalid_properties.push('invalid value for "a_filter", a_filter cannot be nil.')
       end
@@ -213,6 +228,7 @@ module EzmaxApi
       return false if @i_version_max.nil?
       return false if @a_required_permission.nil?
       return false if @b_version_deprecated.nil?
+      return false if @dt_response_date.nil?
       return false if @a_filter.nil?
       return false if @a_order_by.nil?
       return false if @i_row_max.nil?
@@ -264,6 +280,7 @@ module EzmaxApi
           i_version_max == o.i_version_max &&
           a_required_permission == o.a_required_permission &&
           b_version_deprecated == o.b_version_deprecated &&
+          dt_response_date == o.dt_response_date &&
           a_filter == o.a_filter &&
           a_order_by == o.a_order_by &&
           i_row_max == o.i_row_max &&
@@ -279,7 +296,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_version_min, i_version_max, a_required_permission, b_version_deprecated, a_filter, a_order_by, i_row_max, i_row_offset].hash
+      [i_version_min, i_version_max, a_required_permission, b_version_deprecated, dt_response_date, a_filter, a_order_by, i_row_max, i_row_offset].hash
     end
 
     # Builds the object from hash

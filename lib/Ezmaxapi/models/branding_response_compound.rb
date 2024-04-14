@@ -301,6 +301,11 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"s_branding_name\", must conform to the pattern #{pattern}.")
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address.nil? && @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       if @e_branding_logo.nil?
         invalid_properties.push('invalid value for "e_branding_logo", e_branding_logo cannot be nil.')
       end
@@ -389,6 +394,16 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_branding_isactive", b_branding_isactive cannot be nil.')
       end
 
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if !@s_branding_logourl.nil? && @s_branding_logourl !~ pattern
+        invalid_properties.push("invalid value for \"s_branding_logourl\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if !@s_branding_logointerfaceurl.nil? && @s_branding_logointerfaceurl !~ pattern
+        invalid_properties.push("invalid value for \"s_branding_logointerfaceurl\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -403,6 +418,7 @@ module EzmaxApi
       return false if @obj_branding_description.nil?
       return false if @s_branding_description_x.nil?
       return false if !@s_branding_name.nil? && @s_branding_name !~ Regexp.new(/^.{0,55}$/)
+      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @e_branding_logo.nil?
       return false if @i_branding_colortext.nil?
       return false if @i_branding_colortext > 16777215
@@ -425,6 +441,8 @@ module EzmaxApi
       return false if !@i_branding_interfacecolor.nil? && @i_branding_interfacecolor > 16777215
       return false if !@i_branding_interfacecolor.nil? && @i_branding_interfacecolor < 0
       return false if @b_branding_isactive.nil?
+      return false if !@s_branding_logourl.nil? && @s_branding_logourl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      return false if !@s_branding_logointerfaceurl.nil? && @s_branding_logointerfaceurl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       true
     end
 
@@ -473,6 +491,21 @@ module EzmaxApi
       end
 
       @s_branding_name = s_branding_name
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation
@@ -599,6 +632,36 @@ module EzmaxApi
       end
 
       @i_branding_interfacecolor = i_branding_interfacecolor
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_branding_logourl Value to be assigned
+    def s_branding_logourl=(s_branding_logourl)
+      if s_branding_logourl.nil?
+        fail ArgumentError, 's_branding_logourl cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if s_branding_logourl !~ pattern
+        fail ArgumentError, "invalid value for \"s_branding_logourl\", must conform to the pattern #{pattern}."
+      end
+
+      @s_branding_logourl = s_branding_logourl
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_branding_logointerfaceurl Value to be assigned
+    def s_branding_logointerfaceurl=(s_branding_logointerfaceurl)
+      if s_branding_logointerfaceurl.nil?
+        fail ArgumentError, 's_branding_logointerfaceurl cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if s_branding_logointerfaceurl !~ pattern
+        fail ArgumentError, "invalid value for \"s_branding_logointerfaceurl\", must conform to the pattern #{pattern}."
+      end
+
+      @s_branding_logointerfaceurl = s_branding_logointerfaceurl
     end
 
     # Checks equality by comparing each attribute.

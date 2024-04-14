@@ -216,7 +216,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_user_loginname", s_user_loginname cannot be nil.')
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if @s_user_loginname !~ pattern
         invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
       end
@@ -246,6 +246,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       pattern = Regexp.new(/^.{0,50}$/)
       if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ pattern
         invalid_properties.push("invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}.")
@@ -263,13 +268,14 @@ module EzmaxApi
       return false if @s_user_firstname.nil?
       return false if @s_user_lastname.nil?
       return false if @s_user_loginname.nil?
-      return false if @s_user_loginname !~ Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      return false if @s_user_loginname !~ Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       return false if @b_user_isactive.nil?
       return false if @e_user_type.nil?
       return false if @e_user_origin.nil?
       return false if @e_user_ezsignaccess.nil?
       return false if !@dt_user_ezsignprepaidexpiration.nil? && @dt_user_ezsignprepaidexpiration !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/)
       return false if @s_email_address.nil?
+      return false if @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ Regexp.new(/^.{0,50}$/)
       true
     end
@@ -295,7 +301,7 @@ module EzmaxApi
         fail ArgumentError, 's_user_loginname cannot be nil'
       end
 
-      pattern = Regexp.new(/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/)
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       if s_user_loginname !~ pattern
         fail ArgumentError, "invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}."
       end
@@ -316,6 +322,21 @@ module EzmaxApi
       end
 
       @dt_user_ezsignprepaidexpiration = dt_user_ezsignprepaidexpiration
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

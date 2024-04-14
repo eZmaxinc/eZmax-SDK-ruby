@@ -132,6 +132,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "e_error_code", e_error_code cannot be nil.')
       end
 
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if !@s_temporary_file_url.nil? && @s_temporary_file_url !~ pattern
+        invalid_properties.push("invalid value for \"s_temporary_file_url\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -142,6 +147,7 @@ module EzmaxApi
       return false if @s_error_message.nil?
       return false if @s_error_message !~ Regexp.new(/^.{0,500}$/)
       return false if @e_error_code.nil?
+      return false if !@s_temporary_file_url.nil? && @s_temporary_file_url !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       true
     end
 
@@ -158,6 +164,21 @@ module EzmaxApi
       end
 
       @s_error_message = s_error_message
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_temporary_file_url Value to be assigned
+    def s_temporary_file_url=(s_temporary_file_url)
+      if s_temporary_file_url.nil?
+        fail ArgumentError, 's_temporary_file_url cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if s_temporary_file_url !~ pattern
+        fail ArgumentError, "invalid value for \"s_temporary_file_url\", must conform to the pattern #{pattern}."
+      end
+
+      @s_temporary_file_url = s_temporary_file_url
     end
 
     # Checks equality by comparing each attribute.

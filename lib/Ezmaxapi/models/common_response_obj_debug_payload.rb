@@ -28,13 +28,17 @@ module EzmaxApi
     # Wheter the current route is deprecated or not
     attr_accessor :b_version_deprecated
 
+    # Represent a Date Time. The timezone is the one configured in the User's profile.
+    attr_accessor :dt_response_date
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'i_version_min' => :'iVersionMin',
         :'i_version_max' => :'iVersionMax',
         :'a_required_permission' => :'a_RequiredPermission',
-        :'b_version_deprecated' => :'bVersionDeprecated'
+        :'b_version_deprecated' => :'bVersionDeprecated',
+        :'dt_response_date' => :'dtResponseDate'
       }
     end
 
@@ -49,7 +53,8 @@ module EzmaxApi
         :'i_version_min' => :'Integer',
         :'i_version_max' => :'Integer',
         :'a_required_permission' => :'Array<Integer>',
-        :'b_version_deprecated' => :'Boolean'
+        :'b_version_deprecated' => :'Boolean',
+        :'dt_response_date' => :'String'
       }
     end
 
@@ -99,6 +104,12 @@ module EzmaxApi
       else
         self.b_version_deprecated = nil
       end
+
+      if attributes.key?(:'dt_response_date')
+        self.dt_response_date = attributes[:'dt_response_date']
+      else
+        self.dt_response_date = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -122,6 +133,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "b_version_deprecated", b_version_deprecated cannot be nil.')
       end
 
+      if @dt_response_date.nil?
+        invalid_properties.push('invalid value for "dt_response_date", dt_response_date cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -133,6 +148,7 @@ module EzmaxApi
       return false if @i_version_max.nil?
       return false if @a_required_permission.nil?
       return false if @b_version_deprecated.nil?
+      return false if @dt_response_date.nil?
       true
     end
 
@@ -144,7 +160,8 @@ module EzmaxApi
           i_version_min == o.i_version_min &&
           i_version_max == o.i_version_max &&
           a_required_permission == o.a_required_permission &&
-          b_version_deprecated == o.b_version_deprecated
+          b_version_deprecated == o.b_version_deprecated &&
+          dt_response_date == o.dt_response_date
     end
 
     # @see the `==` method
@@ -156,7 +173,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_version_min, i_version_max, a_required_permission, b_version_deprecated].hash
+      [i_version_min, i_version_max, a_required_permission, b_version_deprecated, dt_response_date].hash
     end
 
     # Builds the object from hash

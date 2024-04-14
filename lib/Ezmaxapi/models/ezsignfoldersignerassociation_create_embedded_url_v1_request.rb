@@ -87,14 +87,9 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if !@s_return_url.nil? && @s_return_url !~ pattern
         invalid_properties.push("invalid value for \"s_return_url\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^.{0,2048}$/)
-      if !@s_iframedomain.nil? && @s_iframedomain !~ pattern
-        invalid_properties.push("invalid value for \"s_iframedomain\", must conform to the pattern #{pattern}.")
       end
 
       invalid_properties
@@ -104,8 +99,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@s_return_url.nil? && @s_return_url !~ Regexp.new(/^.{0,2048}$/)
-      return false if !@s_iframedomain.nil? && @s_iframedomain !~ Regexp.new(/^.{0,2048}$/)
+      return false if !@s_return_url.nil? && @s_return_url !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       true
     end
 
@@ -116,27 +110,12 @@ module EzmaxApi
         fail ArgumentError, 's_return_url cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,2048}$/)
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if s_return_url !~ pattern
         fail ArgumentError, "invalid value for \"s_return_url\", must conform to the pattern #{pattern}."
       end
 
       @s_return_url = s_return_url
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_iframedomain Value to be assigned
-    def s_iframedomain=(s_iframedomain)
-      if s_iframedomain.nil?
-        fail ArgumentError, 's_iframedomain cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,2048}$/)
-      if s_iframedomain !~ pattern
-        fail ArgumentError, "invalid value for \"s_iframedomain\", must conform to the pattern #{pattern}."
-      end
-
-      @s_iframedomain = s_iframedomain
     end
 
     # Checks equality by comparing each attribute.

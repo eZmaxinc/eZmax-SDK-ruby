@@ -203,12 +203,22 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_timezone_id", must be greater than or equal to 0.')
       end
 
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if !@s_avatar_url.nil? && @s_avatar_url !~ pattern
+        invalid_properties.push("invalid value for \"s_avatar_url\", must conform to the pattern #{pattern}.")
+      end
+
       if @s_user_firstname.nil?
         invalid_properties.push('invalid value for "s_user_firstname", s_user_firstname cannot be nil.')
       end
 
       if @s_user_lastname.nil?
         invalid_properties.push('invalid value for "s_user_lastname", s_user_lastname cannot be nil.')
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address.nil? && @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
       end
 
       if @e_user_ezsignsendreminderfrequency.nil?
@@ -250,8 +260,10 @@ module EzmaxApi
       return false if @pki_user_id < 0
       return false if @fki_timezone_id.nil?
       return false if @fki_timezone_id < 0
+      return false if !@s_avatar_url.nil? && @s_avatar_url !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       return false if @s_user_firstname.nil?
       return false if @s_user_lastname.nil?
+      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @e_user_ezsignsendreminderfrequency.nil?
       return false if @i_user_interfacecolor.nil?
       return false if @i_user_interfacecolor < 0
@@ -288,6 +300,36 @@ module EzmaxApi
       end
 
       @fki_timezone_id = fki_timezone_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_avatar_url Value to be assigned
+    def s_avatar_url=(s_avatar_url)
+      if s_avatar_url.nil?
+        fail ArgumentError, 's_avatar_url cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
+      if s_avatar_url !~ pattern
+        fail ArgumentError, "invalid value for \"s_avatar_url\", must conform to the pattern #{pattern}."
+      end
+
+      @s_avatar_url = s_avatar_url
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Custom attribute writer method with validation

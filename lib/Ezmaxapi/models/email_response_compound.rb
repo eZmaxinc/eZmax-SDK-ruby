@@ -124,6 +124,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       invalid_properties
     end
 
@@ -137,6 +142,7 @@ module EzmaxApi
       return false if @fki_emailtype_id.nil?
       return false if @fki_emailtype_id < 0
       return false if @s_email_address.nil?
+      return false if @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       true
     end
 
@@ -170,6 +176,21 @@ module EzmaxApi
       end
 
       @fki_emailtype_id = fki_emailtype_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Checks equality by comparing each attribute.

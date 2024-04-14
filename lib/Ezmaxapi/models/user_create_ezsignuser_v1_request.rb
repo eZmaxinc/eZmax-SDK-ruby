@@ -170,6 +170,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if @s_email_address !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
+      end
+
       if @s_phone_region.nil?
         invalid_properties.push('invalid value for "s_phone_region", s_phone_region cannot be nil.')
       end
@@ -195,6 +200,7 @@ module EzmaxApi
       return false if @s_user_firstname.nil?
       return false if @s_user_lastname.nil?
       return false if @s_email_address.nil?
+      return false if @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @s_phone_region.nil?
       return false if @s_phone_exchange.nil?
       return false if @s_phone_number.nil?
@@ -217,6 +223,21 @@ module EzmaxApi
       end
 
       @fki_language_id = fki_language_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address Value to be assigned
+    def s_email_address=(s_email_address)
+      if s_email_address.nil?
+        fail ArgumentError, 's_email_address cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address = s_email_address
     end
 
     # Checks equality by comparing each attribute.

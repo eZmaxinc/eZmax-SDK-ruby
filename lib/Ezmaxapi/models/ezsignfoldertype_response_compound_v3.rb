@@ -596,6 +596,16 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_branding_description_x", s_branding_description_x cannot be nil.')
       end
 
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address_signed.nil? && @s_email_address_signed !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address_signed\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if !@s_email_address_summary.nil? && @s_email_address_summary !~ pattern
+        invalid_properties.push("invalid value for \"s_email_address_summary\", must conform to the pattern #{pattern}.")
+      end
+
       if @e_ezsignfoldertype_privacylevel.nil?
         invalid_properties.push('invalid value for "e_ezsignfoldertype_privacylevel", e_ezsignfoldertype_privacylevel cannot be nil.')
       end
@@ -689,6 +699,8 @@ module EzmaxApi
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id > 3
       return false if !@fki_ezsigntsarequirement_id.nil? && @fki_ezsigntsarequirement_id < 1
       return false if @s_branding_description_x.nil?
+      return false if !@s_email_address_signed.nil? && @s_email_address_signed !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      return false if !@s_email_address_summary.nil? && @s_email_address_summary !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
       return false if @e_ezsignfoldertype_privacylevel.nil?
       return false if @i_ezsignfoldertype_archivaldays.nil?
       return false if @i_ezsignfoldertype_archivaldays > 180
@@ -773,6 +785,36 @@ module EzmaxApi
       end
 
       @fki_ezsigntsarequirement_id = fki_ezsigntsarequirement_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address_signed Value to be assigned
+    def s_email_address_signed=(s_email_address_signed)
+      if s_email_address_signed.nil?
+        fail ArgumentError, 's_email_address_signed cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address_signed !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address_signed\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address_signed = s_email_address_signed
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_email_address_summary Value to be assigned
+    def s_email_address_summary=(s_email_address_summary)
+      if s_email_address_summary.nil?
+        fail ArgumentError, 's_email_address_summary cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
+      if s_email_address_summary !~ pattern
+        fail ArgumentError, "invalid value for \"s_email_address_summary\", must conform to the pattern #{pattern}."
+      end
+
+      @s_email_address_summary = s_email_address_summary
     end
 
     # Custom attribute writer method with validation
