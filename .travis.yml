@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build Ezmaxapi.gemspec
-  - gem install ./Ezmaxapi-1.2.0.gem
+  - gem install ./Ezmaxapi-1.2.1.gem
