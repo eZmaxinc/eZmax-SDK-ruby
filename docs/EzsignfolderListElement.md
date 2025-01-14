@@ -21,7 +21,10 @@
 | **i_ezsignformfieldgroup** | **Integer** | The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder |  |
 | **i_ezsignformfieldgroup_completed** | **Integer** | The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder |  |
 | **b_ezsignform_hasdependencies** | **Boolean** | Whether the Ezsignform/Ezsignsignatures has dependencies or not | [optional] |
-| **d_ezsignfolder_completedpercentage** | **String** | Whether the Ezsignform/Ezsignsignatures has dependencies or not |  |
+| **d_ezsignfolder_completedpercentage** | **String** | Percentage of Ezsignform/Ezsignsignatures has completed |  |
+| **d_ezsignfolder_formcompletedpercentage** | **String** | Percentage of Ezsignform has completed |  |
+| **d_ezsignfolder_signaturecompletedpercentage** | **String** | Percentage of Ezsignsignatures has signed |  |
+| **b_ezsignfolder_signer** | **Boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] |
 
 ## Example
 
@@ -46,7 +49,10 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   i_ezsignformfieldgroup: null,
   i_ezsignformfieldgroup_completed: null,
   b_ezsignform_hasdependencies: null,
-  d_ezsignfolder_completedpercentage: null
+  d_ezsignfolder_completedpercentage: null,
+  d_ezsignfolder_formcompletedpercentage: null,
+  d_ezsignfolder_signaturecompletedpercentage: null,
+  b_ezsignfolder_signer: true
 )
 ```
 

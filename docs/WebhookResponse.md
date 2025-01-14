@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_webhook_id** | **Integer** | The unique ID of the Webhook |  |
+| **fki_authenticationexternal_id** | **Integer** | The unique ID of the Authenticationexternal | [optional] |
 | **s_webhook_description** | **String** | The description of the Webhook |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester | [optional] |
@@ -18,6 +19,7 @@
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
+| **s_authenticationexternal_description** | **String** | The description of the Authenticationexternal | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
 
 ## Example
@@ -27,6 +29,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::WebhookResponse.new(
   pki_webhook_id: 77,
+  fki_authenticationexternal_id: 56,
   s_webhook_description: Import into our system,
   fki_ezsignfoldertype_id: 5,
   s_ezsignfoldertype_name_x: Default,
@@ -40,6 +43,7 @@ instance = EzmaxApi::WebhookResponse.new(
   b_webhook_isactive: true,
   b_webhook_issigned: true,
   b_webhook_skipsslvalidation: false,
+  s_authenticationexternal_description: Authentification,
   obj_audit: null
 )
 ```

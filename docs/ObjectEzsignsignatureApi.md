@@ -6,11 +6,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_create_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature |
+| [**ezsignsignature_create_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
-| [**ezsignsignature_edit_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
+| [**ezsignsignature_edit_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignature_get_ezsignsignatureattachment_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatureattachment_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature&#39;s Ezsignsignatureattachments |
 | [**ezsignsignature_get_ezsignsignatures_automatic_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures |
-| [**ezsignsignature_get_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v2) | **GET** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
+| [**ezsignsignature_get_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignature_sign_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_sign_v1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature |
 
 
@@ -156,6 +157,77 @@ end
 - **Accept**: application/json
 
 
+## ezsignsignature_create_object_v3
+
+> <EzsignsignatureCreateObjectV3Response> ezsignsignature_create_object_v3(ezsignsignature_create_object_v3_request)
+
+Create a new Ezsignsignature
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
+ezsignsignature_create_object_v3_request = EzmaxApi::EzsignsignatureCreateObjectV3Request.new({a_obj_ezsignsignature: [EzmaxApi::EzsignsignatureRequestCompoundV2.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})]}) # EzsignsignatureCreateObjectV3Request | 
+
+begin
+  # Create a new Ezsignsignature
+  result = api_instance.ezsignsignature_create_object_v3(ezsignsignature_create_object_v3_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_create_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignsignature_create_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignsignatureCreateObjectV3Response>, Integer, Hash)> ezsignsignature_create_object_v3_with_http_info(ezsignsignature_create_object_v3_request)
+
+```ruby
+begin
+  # Create a new Ezsignsignature
+  data, status_code, headers = api_instance.ezsignsignature_create_object_v3_with_http_info(ezsignsignature_create_object_v3_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignsignatureCreateObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_create_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **ezsignsignature_create_object_v3_request** | [**EzsignsignatureCreateObjectV3Request**](EzsignsignatureCreateObjectV3Request.md) |  |  |
+
+### Return type
+
+[**EzsignsignatureCreateObjectV3Response**](EzsignsignatureCreateObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsignsignature_delete_object_v1
 
 > <EzsignsignatureDeleteObjectV1Response> ezsignsignature_delete_object_v1(pki_ezsignsignature_id)
@@ -227,9 +299,9 @@ end
 - **Accept**: application/json
 
 
-## ezsignsignature_edit_object_v1
+## ezsignsignature_edit_object_v2
 
-> <EzsignsignatureEditObjectV1Response> ezsignsignature_edit_object_v1(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+> <EzsignsignatureEditObjectV2Response> ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
 
 Edit an existing Ezsignsignature
 
@@ -250,32 +322,32 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
 pki_ezsignsignature_id = 56 # Integer | 
-ezsignsignature_edit_object_v1_request = EzmaxApi::EzsignsignatureEditObjectV1Request.new({obj_ezsignsignature: EzmaxApi::EzsignsignatureRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})}) # EzsignsignatureEditObjectV1Request | 
+ezsignsignature_edit_object_v2_request = EzmaxApi::EzsignsignatureEditObjectV2Request.new({obj_ezsignsignature: EzmaxApi::EzsignsignatureRequestCompoundV2.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})}) # EzsignsignatureEditObjectV2Request | 
 
 begin
   # Edit an existing Ezsignsignature
-  result = api_instance.ezsignsignature_edit_object_v1(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+  result = api_instance.ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v1: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2: #{e}"
 end
 ```
 
-#### Using the ezsignsignature_edit_object_v1_with_http_info variant
+#### Using the ezsignsignature_edit_object_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsignatureEditObjectV1Response>, Integer, Hash)> ezsignsignature_edit_object_v1_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+> <Array(<EzsignsignatureEditObjectV2Response>, Integer, Hash)> ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
 
 ```ruby
 begin
   # Edit an existing Ezsignsignature
-  data, status_code, headers = api_instance.ezsignsignature_edit_object_v1_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request)
+  data, status_code, headers = api_instance.ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsignatureEditObjectV1Response>
+  p data # => <EzsignsignatureEditObjectV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2_with_http_info: #{e}"
 end
 ```
 
@@ -284,11 +356,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignsignature_id** | **Integer** |  |  |
-| **ezsignsignature_edit_object_v1_request** | [**EzsignsignatureEditObjectV1Request**](EzsignsignatureEditObjectV1Request.md) |  |  |
+| **ezsignsignature_edit_object_v2_request** | [**EzsignsignatureEditObjectV2Request**](EzsignsignatureEditObjectV2Request.md) |  |  |
 
 ### Return type
 
-[**EzsignsignatureEditObjectV1Response**](EzsignsignatureEditObjectV1Response.md)
+[**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
 
 ### Authorization
 
@@ -437,9 +509,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## ezsignsignature_get_object_v2
+## ezsignsignature_get_object_v3
 
-> <EzsignsignatureGetObjectV2Response> ezsignsignature_get_object_v2(pki_ezsignsignature_id)
+> <EzsignsignatureGetObjectV3Response> ezsignsignature_get_object_v3(pki_ezsignsignature_id)
 
 Retrieve an existing Ezsignsignature
 
@@ -463,28 +535,28 @@ pki_ezsignsignature_id = 56 # Integer |
 
 begin
   # Retrieve an existing Ezsignsignature
-  result = api_instance.ezsignsignature_get_object_v2(pki_ezsignsignature_id)
+  result = api_instance.ezsignsignature_get_object_v3(pki_ezsignsignature_id)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v2: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v3: #{e}"
 end
 ```
 
-#### Using the ezsignsignature_get_object_v2_with_http_info variant
+#### Using the ezsignsignature_get_object_v3_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsignatureGetObjectV2Response>, Integer, Hash)> ezsignsignature_get_object_v2_with_http_info(pki_ezsignsignature_id)
+> <Array(<EzsignsignatureGetObjectV3Response>, Integer, Hash)> ezsignsignature_get_object_v3_with_http_info(pki_ezsignsignature_id)
 
 ```ruby
 begin
   # Retrieve an existing Ezsignsignature
-  data, status_code, headers = api_instance.ezsignsignature_get_object_v2_with_http_info(pki_ezsignsignature_id)
+  data, status_code, headers = api_instance.ezsignsignature_get_object_v3_with_http_info(pki_ezsignsignature_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsignatureGetObjectV2Response>
+  p data # => <EzsignsignatureGetObjectV3Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v2_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v3_with_http_info: #{e}"
 end
 ```
 
@@ -496,7 +568,7 @@ end
 
 ### Return type
 
-[**EzsignsignatureGetObjectV2Response**](EzsignsignatureGetObjectV2Response.md)
+[**EzsignsignatureGetObjectV3Response**](EzsignsignatureGetObjectV3Response.md)
 
 ### Authorization
 

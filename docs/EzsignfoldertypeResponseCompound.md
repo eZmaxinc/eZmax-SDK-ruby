@@ -25,10 +25,12 @@
 | **e_ezsignfoldertype_completion** | [**FieldEEzsignfoldertypeCompletion**](FieldEEzsignfoldertypeCompletion.md) |  |  |
 | **i_ezsignfoldertype_disposaldays** | **Integer** | The number of days after the archival before the disposal of the Ezsignfolder | [optional] |
 | **i_ezsignfoldertype_deadlinedays** | **Integer** | The number of days to get all Ezsignsignatures |  |
+| **b_ezsignfoldertype_automaticsignature** | **Boolean** | Whether we allow the automatic signature by an User | [optional] |
 | **b_ezsignfoldertype_delegate** | **Boolean** | Wheter if delegation of signature is allowed to another user or not | [optional] |
 | **b_ezsignfoldertype_discussion** | **Boolean** | Wheter if creating a new Discussion is allowed or not | [optional] |
 | **b_ezsignfoldertype_reassignezsignsigner** | **Boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] |
 | **b_ezsignfoldertype_reassignuser** | **Boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] |
+| **b_ezsignfoldertype_reassigngroup** | **Boolean** | Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself | [optional] |
 | **b_ezsignfoldertype_sendsignedtoezsignsigner** | **Boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] |
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
 | **b_ezsignfoldertype_sendattachmentezsignsigner** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] |
@@ -81,10 +83,12 @@ instance = EzmaxApi::EzsignfoldertypeResponseCompound.new(
   e_ezsignfoldertype_completion: null,
   i_ezsignfoldertype_disposaldays: 365,
   i_ezsignfoldertype_deadlinedays: 5,
+  b_ezsignfoldertype_automaticsignature: false,
   b_ezsignfoldertype_delegate: true,
   b_ezsignfoldertype_discussion: true,
   b_ezsignfoldertype_reassignezsignsigner: true,
   b_ezsignfoldertype_reassignuser: true,
+  b_ezsignfoldertype_reassigngroup: true,
   b_ezsignfoldertype_sendsignedtoezsignsigner: false,
   b_ezsignfoldertype_sendsignedtouser: false,
   b_ezsignfoldertype_sendattachmentezsignsigner: false,

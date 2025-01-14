@@ -4,7 +4,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**ezsignbulksend_create_ezsignbulksendtransmission_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_ezsignbulksendtransmission_v1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
+| [**ezsignbulksend_create_ezsignbulksendtransmission_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_ezsignbulksendtransmission_v2) | **POST** /2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
 | [**ezsignbulksend_create_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksend_delete_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_delete_object_v1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
 | [**ezsignbulksend_edit_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
@@ -17,9 +17,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignbulksend_reorder_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_reorder_v1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend |
 
 
-## ezsignbulksend_create_ezsignbulksendtransmission_v1
+## ezsignbulksend_create_ezsignbulksendtransmission_v2
 
-> <EzsignbulksendCreateEzsignbulksendtransmissionV1Response> ezsignbulksend_create_ezsignbulksendtransmission_v1(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v1_request)
+> <EzsignbulksendCreateEzsignbulksendtransmissionV2Response> ezsignbulksend_create_ezsignbulksendtransmission_v2(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v2_request)
 
 Create a new Ezsignbulksendtransmission in the Ezsignbulksend
 
@@ -38,7 +38,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
 pki_ezsignbulksend_id = 56 # Integer | 
-ezsignbulksend_create_ezsignbulksendtransmission_v1_request = EzmaxApi::EzsignbulksendCreateEzsignbulksendtransmissionV1Request.new({fki_userlogintype_id: 2, s_ezsignbulksendtransmission_description: 'Test eZsign Bulk Send Transmission #1', dt_ezsigndocument_duedate: '2020-12-31 23:59:59', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE, t_extra_message: 'Hi John,
+ezsignbulksend_create_ezsignbulksendtransmission_v2_request = EzmaxApi::EzsignbulksendCreateEzsignbulksendtransmissionV2Request.new({fki_userlogintype_id: 2, s_ezsignbulksendtransmission_description: 'Test eZsign Bulk Send Transmission #1', dt_ezsigndocument_duedate: '2020-12-31 23:59:59', i_ezsignfolder_sendreminderfirstdays: 30, i_ezsignfolder_sendreminderotherdays: 30, t_extra_message: 'Hi John,
 
 This is the document I need you to review.
 
@@ -46,32 +46,32 @@ Could you sign it before Monday please.
 
 Best Regards.
 
-Mary', s_csv_base64: 's_csv_base64_example'}) # EzsignbulksendCreateEzsignbulksendtransmissionV1Request | 
+Mary', s_csv_base64: 's_csv_base64_example'}) # EzsignbulksendCreateEzsignbulksendtransmissionV2Request | 
 
 begin
   # Create a new Ezsignbulksendtransmission in the Ezsignbulksend
-  result = api_instance.ezsignbulksend_create_ezsignbulksendtransmission_v1(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v1_request)
+  result = api_instance.ezsignbulksend_create_ezsignbulksendtransmission_v2(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_ezsignbulksendtransmission_v1: #{e}"
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_ezsignbulksendtransmission_v2: #{e}"
 end
 ```
 
-#### Using the ezsignbulksend_create_ezsignbulksendtransmission_v1_with_http_info variant
+#### Using the ezsignbulksend_create_ezsignbulksendtransmission_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignbulksendCreateEzsignbulksendtransmissionV1Response>, Integer, Hash)> ezsignbulksend_create_ezsignbulksendtransmission_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v1_request)
+> <Array(<EzsignbulksendCreateEzsignbulksendtransmissionV2Response>, Integer, Hash)> ezsignbulksend_create_ezsignbulksendtransmission_v2_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v2_request)
 
 ```ruby
 begin
   # Create a new Ezsignbulksendtransmission in the Ezsignbulksend
-  data, status_code, headers = api_instance.ezsignbulksend_create_ezsignbulksendtransmission_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v1_request)
+  data, status_code, headers = api_instance.ezsignbulksend_create_ezsignbulksendtransmission_v2_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignbulksendCreateEzsignbulksendtransmissionV1Response>
+  p data # => <EzsignbulksendCreateEzsignbulksendtransmissionV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_ezsignbulksendtransmission_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_ezsignbulksendtransmission_v2_with_http_info: #{e}"
 end
 ```
 
@@ -80,11 +80,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignbulksend_id** | **Integer** |  |  |
-| **ezsignbulksend_create_ezsignbulksendtransmission_v1_request** | [**EzsignbulksendCreateEzsignbulksendtransmissionV1Request**](EzsignbulksendCreateEzsignbulksendtransmissionV1Request.md) |  |  |
+| **ezsignbulksend_create_ezsignbulksendtransmission_v2_request** | [**EzsignbulksendCreateEzsignbulksendtransmissionV2Request**](EzsignbulksendCreateEzsignbulksendtransmissionV2Request.md) |  |  |
 
 ### Return type
 
-[**EzsignbulksendCreateEzsignbulksendtransmissionV1Response**](EzsignbulksendCreateEzsignbulksendtransmissionV1Response.md)
+[**EzsignbulksendCreateEzsignbulksendtransmissionV2Response**](EzsignbulksendCreateEzsignbulksendtransmissionV2Response.md)
 
 ### Authorization
 

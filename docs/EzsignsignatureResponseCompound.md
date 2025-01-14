@@ -8,6 +8,7 @@
 | **fki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument |  |
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
 | **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
+| **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
 | **s_ezsignsigningreason_description_x** | **String** | The description of the Ezsignsigningreason in the language of the requester | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
@@ -23,22 +24,29 @@
 | **i_ezsignsignature_validationstep** | **Integer** | The step when the Ezsignsigner will be invited to validate the Ezsignsignature of eEzsignsignatureType Attachments | [optional] |
 | **s_ezsignsignature_attachmentdescription** | **String** | The description attached to the attachment name added in Ezsignsignature of eEzsignsignatureType Attachments | [optional] |
 | **e_ezsignsignature_attachmentnamesource** | [**FieldEEzsignsignatureAttachmentnamesource**](FieldEEzsignsignatureAttachmentnamesource.md) |  | [optional] |
-| **b_ezsignsignature_required** | **Boolean** | Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments. | [optional] |
+| **e_ezsignsignature_consultationtrigger** | [**FieldEEzsignsignatureConsultationtrigger**](FieldEEzsignsignatureConsultationtrigger.md) |  | [optional] |
+| **b_ezsignsignature_handwritten** | **Boolean** | Whether the Ezsignsignature must be handwritten or not when eEzsignsignatureType &#x3D; Signature. | [optional] |
+| **b_ezsignsignature_reason** | **Boolean** | Whether the Ezsignsignature must include a reason or not when eEzsignsignatureType &#x3D; Signature. | [optional] |
+| **b_ezsignsignature_required** | **Boolean** | Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments, Text or Textarea. | [optional] |
 | **fki_ezsignfoldersignerassociation_id_validation** | **Integer** | The unique ID of the Ezsignfoldersignerassociation | [optional] |
 | **dt_ezsignsignature_date** | **String** | The date the Ezsignsignature was signed | [optional] |
 | **i_ezsignsignatureattachment_count** | **Integer** | The count of Ezsignsignatureattachment | [optional] |
 | **s_ezsignsignature_description** | **String** | The value entered while signing Ezsignsignature of eEzsignsignatureType **City**, **FieldText** and **FieldTextarea** | [optional] |
 | **i_ezsignsignature_maxlength** | **Integer** | The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** | [optional] |
 | **e_ezsignsignature_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
+| **s_ezsignsignature_textvalidationcustommessage** | **String** | Description of validation rule. Show by signatory. | [optional] |
 | **e_ezsignsignature_dependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] |
+| **s_ezsignsignature_defaultvalue** | **String** | The default value for the Ezsignsignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 | | [optional] |
 | **s_ezsignsignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional] |
 | **obj_contact_name** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  |  |
 | **obj_contact_name_delegation** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | [optional] |
 | **obj_signature** | [**SignatureResponseCompound**](SignatureResponseCompound.md) |  | [optional] |
+| **dt_ezsignsignature_date_in_folder_timezone** | **String** | The date the Ezsignsignature was signed in folder&#39;s timezone | [optional] |
 | **b_ezsignsignature_customdate** | **Boolean** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional] |
 | **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateResponseCompound&gt;**](EzsignsignaturecustomdateResponseCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **obj_creditcardtransaction** | [**CustomCreditcardtransactionResponse**](CustomCreditcardtransactionResponse.md) |  | [optional] |
 | **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponseCompound.md) |  | [optional] |
+| **obj_timezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] |
 
 ## Example
 
@@ -50,6 +58,7 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   fki_ezsigndocument_id: 97,
   fki_ezsignfoldersignerassociation_id: 20,
   fki_ezsignsigningreason_id: 194,
+  fki_font_id: 1,
   s_ezsignsigningreason_description_x: I approve this document,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,
@@ -65,6 +74,9 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   i_ezsignsignature_validationstep: 1,
   s_ezsignsignature_attachmentdescription: Attachment,
   e_ezsignsignature_attachmentnamesource: null,
+  e_ezsignsignature_consultationtrigger: null,
+  b_ezsignsignature_handwritten: null,
+  b_ezsignsignature_reason: null,
   b_ezsignsignature_required: null,
   fki_ezsignfoldersignerassociation_id_validation: 20,
   dt_ezsignsignature_date: 2020-12-31 23:59:59,
@@ -72,15 +84,19 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   s_ezsignsignature_description: Montreal,
   i_ezsignsignature_maxlength: 75,
   e_ezsignsignature_textvalidation: null,
+  s_ezsignsignature_textvalidationcustommessage: Phone number,
   e_ezsignsignature_dependencyrequirement: null,
+  s_ezsignsignature_defaultvalue: Foo,
   s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
   obj_contact_name: null,
   obj_contact_name_delegation: null,
   obj_signature: null,
+  dt_ezsignsignature_date_in_folder_timezone: 2020-12-31 23:59:59,
   b_ezsignsignature_customdate: null,
   a_obj_ezsignsignaturecustomdate: null,
   obj_creditcardtransaction: null,
-  a_obj_ezsignelementdependency: null
+  a_obj_ezsignelementdependency: null,
+  obj_timezone: null
 )
 ```
 

@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_systemconfiguration_id** | **Integer** | The unique ID of the Systemconfiguration | [optional] |
+| **fki_branding_id** | **Integer** | The unique ID of the Branding | [optional] |
 | **e_systemconfiguration_newexternaluseraction** | [**FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  |  |
 | **e_systemconfiguration_language1** | [**FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  |  |
 | **e_systemconfiguration_language2** | [**FieldESystemconfigurationLanguage2**](FieldESystemconfigurationLanguage2.md) |  |  |
@@ -23,6 +24,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::SystemconfigurationRequest.new(
   pki_systemconfiguration_id: 1,
+  fki_branding_id: 78,
   e_systemconfiguration_newexternaluseraction: null,
   e_systemconfiguration_language1: null,
   e_systemconfiguration_language2: null,

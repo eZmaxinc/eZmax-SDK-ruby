@@ -22,7 +22,7 @@ require 'time'
 require 'Ezmaxapi'
 
 api_instance = EzmaxApi::GlobalEzmaxclientApi.new
-pks_ezmaxclient_os = EzmaxApi::FieldPksEzmaxclientOs::I_OS # FieldPksEzmaxclientOs | 
+pks_ezmaxclient_os = EzmaxApi::FieldPksEzmaxclientOs::ANDROID # FieldPksEzmaxclientOs | 
 
 begin
   # Retrieve the latest version of the Ezmaxclient

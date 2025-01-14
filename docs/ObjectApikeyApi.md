@@ -7,6 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**apikey_create_object_v2**](ObjectApikeyApi.md#apikey_create_object_v2) | **POST** /2/object/apikey | Create a new Apikey |
 | [**apikey_edit_object_v1**](ObjectApikeyApi.md#apikey_edit_object_v1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey |
 | [**apikey_edit_permissions_v1**](ObjectApikeyApi.md#apikey_edit_permissions_v1) | **PUT** /1/object/apikey/{pkiApikeyID}/editPermissions | Edit multiple Permissions |
+| [**apikey_generate_delegated_credentials_v1**](ObjectApikeyApi.md#apikey_generate_delegated_credentials_v1) | **POST** /1/object/apikey/generateDelegatedCredentials | Generate a delegated credentials |
 | [**apikey_get_cors_v1**](ObjectApikeyApi.md#apikey_get_cors_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getCors | Retrieve an existing Apikey&#39;s cors |
 | [**apikey_get_list_v1**](ObjectApikeyApi.md#apikey_get_list_v1) | **GET** /1/object/apikey/getList | Retrieve Apikey list |
 | [**apikey_get_object_v2**](ObjectApikeyApi.md#apikey_get_object_v2) | **GET** /2/object/apikey/{pkiApikeyID} | Retrieve an existing Apikey |
@@ -221,6 +222,77 @@ end
 ### Return type
 
 [**ApikeyEditPermissionsV1Response**](ApikeyEditPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## apikey_generate_delegated_credentials_v1
+
+> <ApikeyGenerateDelegatedCredentialsV1Response> apikey_generate_delegated_credentials_v1(apikey_generate_delegated_credentials_v1_request)
+
+Generate a delegated credentials
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectApikeyApi.new
+apikey_generate_delegated_credentials_v1_request = EzmaxApi::ApikeyGenerateDelegatedCredentialsV1Request.new({i_expiration_minutes: 37}) # ApikeyGenerateDelegatedCredentialsV1Request | 
+
+begin
+  # Generate a delegated credentials
+  result = api_instance.apikey_generate_delegated_credentials_v1(apikey_generate_delegated_credentials_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectApikeyApi->apikey_generate_delegated_credentials_v1: #{e}"
+end
+```
+
+#### Using the apikey_generate_delegated_credentials_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ApikeyGenerateDelegatedCredentialsV1Response>, Integer, Hash)> apikey_generate_delegated_credentials_v1_with_http_info(apikey_generate_delegated_credentials_v1_request)
+
+```ruby
+begin
+  # Generate a delegated credentials
+  data, status_code, headers = api_instance.apikey_generate_delegated_credentials_v1_with_http_info(apikey_generate_delegated_credentials_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ApikeyGenerateDelegatedCredentialsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectApikeyApi->apikey_generate_delegated_credentials_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **apikey_generate_delegated_credentials_v1_request** | [**ApikeyGenerateDelegatedCredentialsV1Request**](ApikeyGenerateDelegatedCredentialsV1Request.md) |  |  |
+
+### Return type
+
+[**ApikeyGenerateDelegatedCredentialsV1Response**](ApikeyGenerateDelegatedCredentialsV1Response.md)
 
 ### Authorization
 

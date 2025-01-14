@@ -4,16 +4,16 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**branding_create_object_v1**](ObjectBrandingApi.md#branding_create_object_v1) | **POST** /1/object/branding | Create a new Branding |
-| [**branding_edit_object_v1**](ObjectBrandingApi.md#branding_edit_object_v1) | **PUT** /1/object/branding/{pkiBrandingID} | Edit an existing Branding |
+| [**branding_create_object_v2**](ObjectBrandingApi.md#branding_create_object_v2) | **POST** /2/object/branding | Create a new Branding |
+| [**branding_edit_object_v2**](ObjectBrandingApi.md#branding_edit_object_v2) | **PUT** /2/object/branding/{pkiBrandingID} | Edit an existing Branding |
 | [**branding_get_autocomplete_v2**](ObjectBrandingApi.md#branding_get_autocomplete_v2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs |
 | [**branding_get_list_v1**](ObjectBrandingApi.md#branding_get_list_v1) | **GET** /1/object/branding/getList | Retrieve Branding list |
-| [**branding_get_object_v2**](ObjectBrandingApi.md#branding_get_object_v2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding |
+| [**branding_get_object_v3**](ObjectBrandingApi.md#branding_get_object_v3) | **GET** /3/object/branding/{pkiBrandingID} | Retrieve an existing Branding |
 
 
-## branding_create_object_v1
+## branding_create_object_v2
 
-> <BrandingCreateObjectV1Response> branding_create_object_v1(branding_create_object_v1_request)
+> <BrandingCreateObjectV2Response> branding_create_object_v2(branding_create_object_v2_request)
 
 Create a new Branding
 
@@ -33,32 +33,32 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectBrandingApi.new
-branding_create_object_v1_request = EzmaxApi::BrandingCreateObjectV1Request.new({a_obj_branding: [EzmaxApi::BrandingRequestCompound.new({obj_branding_description: EzmaxApi::MultilingualBrandingDescription.new, e_branding_logo: EzmaxApi::FieldEBrandingLogo::DEFAULT, i_branding_colortext: 3752795, i_branding_colortextlinkbox: 0, i_branding_colortextbutton: 16777215, i_branding_colorbackground: 15658734, i_branding_colorbackgroundbutton: 13577007, i_branding_colorbackgroundsmallbox: 16777215, b_branding_isactive: true})]}) # BrandingCreateObjectV1Request | 
+branding_create_object_v2_request = EzmaxApi::BrandingCreateObjectV2Request.new({a_obj_branding: [EzmaxApi::BrandingRequestCompoundV2.new({obj_branding_description: EzmaxApi::MultilingualBrandingDescription.new, e_branding_logo: EzmaxApi::FieldEBrandingLogo::DEFAULT, i_branding_color: 15658734, b_branding_isactive: true})]}) # BrandingCreateObjectV2Request | 
 
 begin
   # Create a new Branding
-  result = api_instance.branding_create_object_v1(branding_create_object_v1_request)
+  result = api_instance.branding_create_object_v2(branding_create_object_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_create_object_v1: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_create_object_v2: #{e}"
 end
 ```
 
-#### Using the branding_create_object_v1_with_http_info variant
+#### Using the branding_create_object_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BrandingCreateObjectV1Response>, Integer, Hash)> branding_create_object_v1_with_http_info(branding_create_object_v1_request)
+> <Array(<BrandingCreateObjectV2Response>, Integer, Hash)> branding_create_object_v2_with_http_info(branding_create_object_v2_request)
 
 ```ruby
 begin
   # Create a new Branding
-  data, status_code, headers = api_instance.branding_create_object_v1_with_http_info(branding_create_object_v1_request)
+  data, status_code, headers = api_instance.branding_create_object_v2_with_http_info(branding_create_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <BrandingCreateObjectV1Response>
+  p data # => <BrandingCreateObjectV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_create_object_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_create_object_v2_with_http_info: #{e}"
 end
 ```
 
@@ -66,11 +66,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **branding_create_object_v1_request** | [**BrandingCreateObjectV1Request**](BrandingCreateObjectV1Request.md) |  |  |
+| **branding_create_object_v2_request** | [**BrandingCreateObjectV2Request**](BrandingCreateObjectV2Request.md) |  |  |
 
 ### Return type
 
-[**BrandingCreateObjectV1Response**](BrandingCreateObjectV1Response.md)
+[**BrandingCreateObjectV2Response**](BrandingCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -82,9 +82,9 @@ end
 - **Accept**: application/json
 
 
-## branding_edit_object_v1
+## branding_edit_object_v2
 
-> <BrandingEditObjectV1Response> branding_edit_object_v1(pki_branding_id, branding_edit_object_v1_request)
+> <BrandingEditObjectV2Response> branding_edit_object_v2(pki_branding_id, branding_edit_object_v2_request)
 
 Edit an existing Branding
 
@@ -105,32 +105,32 @@ end
 
 api_instance = EzmaxApi::ObjectBrandingApi.new
 pki_branding_id = 56 # Integer | 
-branding_edit_object_v1_request = EzmaxApi::BrandingEditObjectV1Request.new({obj_branding: EzmaxApi::BrandingRequestCompound.new({obj_branding_description: EzmaxApi::MultilingualBrandingDescription.new, e_branding_logo: EzmaxApi::FieldEBrandingLogo::DEFAULT, i_branding_colortext: 3752795, i_branding_colortextlinkbox: 0, i_branding_colortextbutton: 16777215, i_branding_colorbackground: 15658734, i_branding_colorbackgroundbutton: 13577007, i_branding_colorbackgroundsmallbox: 16777215, b_branding_isactive: true})}) # BrandingEditObjectV1Request | 
+branding_edit_object_v2_request = EzmaxApi::BrandingEditObjectV2Request.new({obj_branding: EzmaxApi::BrandingRequestCompoundV2.new({obj_branding_description: EzmaxApi::MultilingualBrandingDescription.new, e_branding_logo: EzmaxApi::FieldEBrandingLogo::DEFAULT, i_branding_color: 15658734, b_branding_isactive: true})}) # BrandingEditObjectV2Request | 
 
 begin
   # Edit an existing Branding
-  result = api_instance.branding_edit_object_v1(pki_branding_id, branding_edit_object_v1_request)
+  result = api_instance.branding_edit_object_v2(pki_branding_id, branding_edit_object_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_edit_object_v1: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_edit_object_v2: #{e}"
 end
 ```
 
-#### Using the branding_edit_object_v1_with_http_info variant
+#### Using the branding_edit_object_v2_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BrandingEditObjectV1Response>, Integer, Hash)> branding_edit_object_v1_with_http_info(pki_branding_id, branding_edit_object_v1_request)
+> <Array(<BrandingEditObjectV2Response>, Integer, Hash)> branding_edit_object_v2_with_http_info(pki_branding_id, branding_edit_object_v2_request)
 
 ```ruby
 begin
   # Edit an existing Branding
-  data, status_code, headers = api_instance.branding_edit_object_v1_with_http_info(pki_branding_id, branding_edit_object_v1_request)
+  data, status_code, headers = api_instance.branding_edit_object_v2_with_http_info(pki_branding_id, branding_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <BrandingEditObjectV1Response>
+  p data # => <BrandingEditObjectV2Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_edit_object_v1_with_http_info: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_edit_object_v2_with_http_info: #{e}"
 end
 ```
 
@@ -139,11 +139,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_branding_id** | **Integer** |  |  |
-| **branding_edit_object_v1_request** | [**BrandingEditObjectV1Request**](BrandingEditObjectV1Request.md) |  |  |
+| **branding_edit_object_v2_request** | [**BrandingEditObjectV2Request**](BrandingEditObjectV2Request.md) |  |  |
 
 ### Return type
 
-[**BrandingEditObjectV1Response**](BrandingEditObjectV1Response.md)
+[**BrandingEditObjectV2Response**](BrandingEditObjectV2Response.md)
 
 ### Authorization
 
@@ -315,9 +315,9 @@ end
 - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
-## branding_get_object_v2
+## branding_get_object_v3
 
-> <BrandingGetObjectV2Response> branding_get_object_v2(pki_branding_id)
+> <BrandingGetObjectV3Response> branding_get_object_v3(pki_branding_id)
 
 Retrieve an existing Branding
 
@@ -341,28 +341,28 @@ pki_branding_id = 56 # Integer |
 
 begin
   # Retrieve an existing Branding
-  result = api_instance.branding_get_object_v2(pki_branding_id)
+  result = api_instance.branding_get_object_v3(pki_branding_id)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_get_object_v2: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_get_object_v3: #{e}"
 end
 ```
 
-#### Using the branding_get_object_v2_with_http_info variant
+#### Using the branding_get_object_v3_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BrandingGetObjectV2Response>, Integer, Hash)> branding_get_object_v2_with_http_info(pki_branding_id)
+> <Array(<BrandingGetObjectV3Response>, Integer, Hash)> branding_get_object_v3_with_http_info(pki_branding_id)
 
 ```ruby
 begin
   # Retrieve an existing Branding
-  data, status_code, headers = api_instance.branding_get_object_v2_with_http_info(pki_branding_id)
+  data, status_code, headers = api_instance.branding_get_object_v3_with_http_info(pki_branding_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <BrandingGetObjectV2Response>
+  p data # => <BrandingGetObjectV3Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectBrandingApi->branding_get_object_v2_with_http_info: #{e}"
+  puts "Error when calling ObjectBrandingApi->branding_get_object_v3_with_http_info: #{e}"
 end
 ```
 
@@ -374,7 +374,7 @@ end
 
 ### Return type
 
-[**BrandingGetObjectV2Response**](BrandingGetObjectV2Response.md)
+[**BrandingGetObjectV3Response**](BrandingGetObjectV3Response.md)
 
 ### Authorization
 

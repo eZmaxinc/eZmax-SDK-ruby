@@ -11,6 +11,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**webhook_get_list_v1**](ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list |
 | [**webhook_get_object_v2**](ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook |
 | [**webhook_regenerate_apikey_v1**](ObjectWebhookApi.md#webhook_regenerate_apikey_v1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey |
+| [**webhook_send_webhook_v1**](ObjectWebhookApi.md#webhook_send_webhook_v1) | **POST** /1/object/webhook/sendWebhook | Emit a Webhook event |
 | [**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url |
 
 
@@ -516,6 +517,75 @@ end
 ### Return type
 
 [**WebhookRegenerateApikeyV1Response**](WebhookRegenerateApikeyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## webhook_send_webhook_v1
+
+> <WebhookSendWebhookV1Response> webhook_send_webhook_v1(webhook_send_webhook_v1_request)
+
+Emit a Webhook event
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectWebhookApi.new
+webhook_send_webhook_v1_request = EzmaxApi::WebhookSendWebhookV1Request.new({e_webhook_module: EzmaxApi::FieldEWebhookModule::EZSIGN}) # WebhookSendWebhookV1Request | 
+
+begin
+  # Emit a Webhook event
+  result = api_instance.webhook_send_webhook_v1(webhook_send_webhook_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectWebhookApi->webhook_send_webhook_v1: #{e}"
+end
+```
+
+#### Using the webhook_send_webhook_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<WebhookSendWebhookV1Response>, Integer, Hash)> webhook_send_webhook_v1_with_http_info(webhook_send_webhook_v1_request)
+
+```ruby
+begin
+  # Emit a Webhook event
+  data, status_code, headers = api_instance.webhook_send_webhook_v1_with_http_info(webhook_send_webhook_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <WebhookSendWebhookV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectWebhookApi->webhook_send_webhook_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **webhook_send_webhook_v1_request** | [**WebhookSendWebhookV1Request**](WebhookSendWebhookV1Request.md) |  |  |
+
+### Return type
+
+[**WebhookSendWebhookV1Response**](WebhookSendWebhookV1Response.md)
 
 ### Authorization
 

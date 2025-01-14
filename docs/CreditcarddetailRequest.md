@@ -6,9 +6,9 @@
 | ---- | ---- | ----------- | ----- |
 | **i_creditcarddetail_expirationmonth** | **Integer** | The expirationmonth of the Creditcarddetail |  |
 | **i_creditcarddetail_expirationyear** | **Integer** | The expirationyear of the Creditcarddetail |  |
-| **s_creditcarddetail_civic** | **String** | The civic of the Creditcarddetail | [optional] |
-| **s_creditcarddetail_street** | **String** | The street of the Creditcarddetail | [optional] |
-| **s_creditcarddetail_zip** | **String** | The zip of the Creditcarddetail | [optional] |
+| **s_creditcarddetail_civic** | **String** | The civic of the Creditcarddetail |  |
+| **s_creditcarddetail_street** | **String** | The street of the Creditcarddetail |  |
+| **s_creditcarddetail_zip** | **String** | The zip of the Creditcarddetail |  |
 
 ## Example
 

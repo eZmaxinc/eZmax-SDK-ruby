@@ -28,9 +28,9 @@ EzmaxApi.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: Presigned
-  config.api_key['Presigned'] = 'YOUR API KEY'
+  config.api_key['sAuthorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Presigned'] = 'Bearer'
+  # config.api_key_prefix['sAuthorization'] = 'Bearer'
 end
 
 api_instance = EzmaxApi::ModuleReportApi.new

@@ -4,7 +4,81 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**billingentityexternal_generate_federation_token_v1**](ObjectBillingentityexternalApi.md#billingentityexternal_generate_federation_token_v1) | **POST** /1/object/billingentityexternal/{pkiBillingentityexternalID}/generateFederationToken | Generate a federation token |
 | [**billingentityexternal_get_autocomplete_v2**](ObjectBillingentityexternalApi.md#billingentityexternal_get_autocomplete_v2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs |
+
+
+## billingentityexternal_generate_federation_token_v1
+
+> <BillingentityexternalGenerateFederationTokenV1Response> billingentityexternal_generate_federation_token_v1(pki_billingentityexternal_id, billingentityexternal_generate_federation_token_v1_request)
+
+Generate a federation token
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBillingentityexternalApi.new
+pki_billingentityexternal_id = 56 # Integer | 
+billingentityexternal_generate_federation_token_v1_request = EzmaxApi::BillingentityexternalGenerateFederationTokenV1Request.new({fks_ezmaxcustomer_code: 'demo'}) # BillingentityexternalGenerateFederationTokenV1Request | 
+
+begin
+  # Generate a federation token
+  result = api_instance.billingentityexternal_generate_federation_token_v1(pki_billingentityexternal_id, billingentityexternal_generate_federation_token_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBillingentityexternalApi->billingentityexternal_generate_federation_token_v1: #{e}"
+end
+```
+
+#### Using the billingentityexternal_generate_federation_token_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BillingentityexternalGenerateFederationTokenV1Response>, Integer, Hash)> billingentityexternal_generate_federation_token_v1_with_http_info(pki_billingentityexternal_id, billingentityexternal_generate_federation_token_v1_request)
+
+```ruby
+begin
+  # Generate a federation token
+  data, status_code, headers = api_instance.billingentityexternal_generate_federation_token_v1_with_http_info(pki_billingentityexternal_id, billingentityexternal_generate_federation_token_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BillingentityexternalGenerateFederationTokenV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBillingentityexternalApi->billingentityexternal_generate_federation_token_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_billingentityexternal_id** | **Integer** |  |  |
+| **billingentityexternal_generate_federation_token_v1_request** | [**BillingentityexternalGenerateFederationTokenV1Request**](BillingentityexternalGenerateFederationTokenV1Request.md) |  |  |
+
+### Return type
+
+[**BillingentityexternalGenerateFederationTokenV1Response**](BillingentityexternalGenerateFederationTokenV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## billingentityexternal_get_autocomplete_v2

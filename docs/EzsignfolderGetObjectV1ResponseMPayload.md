@@ -7,6 +7,7 @@
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **obj_ezsignfoldertype** | [**CustomEzsignfoldertypeResponse**](CustomEzsignfoldertypeResponse.md) |  | [optional] |
+| **fki_timezone_id** | **Integer** | The unique ID of the Timezone | [optional] |
 | **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** |  | [optional] |
 | **fki_billingentityinternal_id** | **Integer** | The unique ID of the Billingentityinternal. | [optional] |
@@ -17,6 +18,8 @@
 | **t_ezsignfolder_note** | **String** | Note about the Ezsignfolder | [optional] |
 | **b_ezsignfolder_isdisposable** | **Boolean** | If the Ezsigndocument can be disposed | [optional] |
 | **e_ezsignfolder_sendreminderfrequency** | [**FieldEEzsignfolderSendreminderfrequency**](FieldEEzsignfolderSendreminderfrequency.md) |  | [optional] |
+| **i_ezsignfolder_sendreminderfirstdays** | **Integer** | The number of days before the the first reminder sending | [optional] |
+| **i_ezsignfolder_sendreminderotherdays** | **Integer** | The number of days after the first reminder sending | [optional] |
 | **dt_ezsignfolder_delayedsenddate** | **String** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] |
 | **dt_ezsignfolder_duedate** | **String** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] |
 | **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsignfolder was sent the last time. | [optional] |
@@ -27,6 +30,7 @@
 | **t_ezsignfolder_message** | **String** | A custom text message that will be added to the email sent. | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_ezsignfolder_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
+| **obj_timezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] |
 
 ## Example
 
@@ -37,6 +41,7 @@ instance = EzmaxApi::EzsignfolderGetObjectV1ResponseMPayload.new(
   pki_ezsignfolder_id: 33,
   fki_ezsignfoldertype_id: 5,
   obj_ezsignfoldertype: null,
+  fki_timezone_id: 247,
   e_ezsignfolder_completion: null,
   s_ezsignfoldertype_name_x: null,
   fki_billingentityinternal_id: 1,
@@ -47,6 +52,8 @@ instance = EzmaxApi::EzsignfolderGetObjectV1ResponseMPayload.new(
   t_ezsignfolder_note: This is a note,
   b_ezsignfolder_isdisposable: false,
   e_ezsignfolder_sendreminderfrequency: null,
+  i_ezsignfolder_sendreminderfirstdays: 30,
+  i_ezsignfolder_sendreminderotherdays: 30,
   dt_ezsignfolder_delayedsenddate: 2020-12-31T23:59:59.000Z,
   dt_ezsignfolder_duedate: 2020-12-31 23:59:59,
   dt_ezsignfolder_sentdate: 2020-12-31T23:59:59.000Z,
@@ -64,7 +71,8 @@ Best Regards.
 
 Mary,
   obj_audit: null,
-  s_ezsignfolder_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]}
+  s_ezsignfolder_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]},
+  obj_timezone: null
 )
 ```
 

@@ -18,6 +18,7 @@
 | **i_ezsigndocument_pagetotal** | **Integer** | The number of pages in the Ezsigndocument. |  |
 | **i_ezsigndocument_signaturesigned** | **Integer** | The number of signatures that were signed in the document. |  |
 | **i_ezsigndocument_signaturetotal** | **Integer** | The number of total signatures that were requested in the Ezsigndocument. |  |
+| **i_ezsigndocument_formfieldtotal** | **Integer** | The number of total Ezsignformfield that were requested in the Ezsigndocument. |  |
 | **s_ezsigndocument_md5initial** | **String** | MD5 Hash of the initial PDF Document before signatures were applied to it. | [optional] |
 | **t_ezsigndocument_declinedtosignreason** | **String** | A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign | [optional] |
 | **s_ezsigndocument_md5signed** | **String** | MD5 Hash of the final PDF Document after all signatures were applied to it. | [optional] |
@@ -48,6 +49,7 @@ instance = EzmaxApi::EzsigndocumentResponse.new(
   i_ezsigndocument_pagetotal: 4,
   i_ezsigndocument_signaturesigned: 3,
   i_ezsigndocument_signaturetotal: 4,
+  i_ezsigndocument_formfieldtotal: 4,
   s_ezsigndocument_md5initial: 012345678901234567890123456789AB,
   t_ezsigndocument_declinedtosignreason: The conditions in the contract are different than those discuted,
   s_ezsigndocument_md5signed: 012345678901234567890123456789AB,

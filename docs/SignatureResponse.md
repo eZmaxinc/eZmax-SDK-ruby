@@ -5,7 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_signature_id** | **Integer** | The unique ID of the Signature |  |
-| **s_signature_url** | **String** | The URL of the SVG file for the Signature |  |
+| **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
+| **s_signature_url** | **String** | The URL of the SVG file for the Signature | [optional] |
+| **s_signature_urlinitials** | **String** | The URL of the SVG file for the Initials | [optional] |
 
 ## Example
 
@@ -14,7 +16,9 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::SignatureResponse.new(
   pki_signature_id: 12,
-  s_signature_url: https://www.example.com/signature.svg
+  fki_font_id: 1,
+  s_signature_url: https://www.example.com/signature.svg,
+  s_signature_urlinitials: https://www.example.com/signature.svg
 )
 ```
 

@@ -5,7 +5,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**inscription_get_attachments_v1**](ObjectInscriptionApi.md#inscription_get_attachments_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getAttachments | Retrieve Inscription&#39;s Attachments |
+| [**inscription_get_communication_count_v1**](ObjectInscriptionApi.md#inscription_get_communication_count_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationCount | Retrieve Communication count |
 | [**inscription_get_communication_list_v1**](ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list |
+| [**inscription_get_communicationrecipients_v1**](ObjectInscriptionApi.md#inscription_get_communicationrecipients_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription&#39;s Communicationrecipient |
 | [**inscription_get_communicationsenders_v1**](ObjectInscriptionApi.md#inscription_get_communicationsenders_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription&#39;s Communicationsender |
 
 
@@ -80,6 +82,77 @@ end
 - **Accept**: application/json
 
 
+## inscription_get_communication_count_v1
+
+> <InscriptionGetCommunicationCountV1Response> inscription_get_communication_count_v1(pki_inscription_id)
+
+Retrieve Communication count
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionApi.new
+pki_inscription_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.inscription_get_communication_count_v1(pki_inscription_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the inscription_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionGetCommunicationCountV1Response>, Integer, Hash)> inscription_get_communication_count_v1_with_http_info(pki_inscription_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.inscription_get_communication_count_v1_with_http_info(pki_inscription_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscription_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptionGetCommunicationCountV1Response**](InscriptionGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## inscription_get_communication_list_v1
 
 > <InscriptionGetCommunicationListV1Response> inscription_get_communication_list_v1(pki_inscription_id)
@@ -140,6 +213,77 @@ end
 ### Return type
 
 [**InscriptionGetCommunicationListV1Response**](InscriptionGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## inscription_get_communicationrecipients_v1
+
+> <InscriptionGetCommunicationrecipientsV1Response> inscription_get_communicationrecipients_v1(pki_inscription_id)
+
+Retrieve Inscription's Communicationrecipient
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionApi.new
+pki_inscription_id = 56 # Integer | 
+
+begin
+  # Retrieve Inscription's Communicationrecipient
+  result = api_instance.inscription_get_communicationrecipients_v1(pki_inscription_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the inscription_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionGetCommunicationrecipientsV1Response>, Integer, Hash)> inscription_get_communicationrecipients_v1_with_http_info(pki_inscription_id)
+
+```ruby
+begin
+  # Retrieve Inscription's Communicationrecipient
+  data, status_code, headers = api_instance.inscription_get_communicationrecipients_v1_with_http_info(pki_inscription_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscription_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptionGetCommunicationrecipientsV1Response**](InscriptionGetCommunicationrecipientsV1Response.md)
 
 ### Authorization
 

@@ -6,7 +6,9 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsigntemplatepackage_id** | **Integer** | The unique ID of the Ezsigntemplatepackage |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. |  |
+| **fki_ezdoctemplatedocument_id** | **Integer** | The unique ID of the Ezdoctemplatedocument | [optional] |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
+| **s_ezdoctemplatedocument_name_x** | **String** | The name of the Ezdoctemplatedocument in the language of the requester | [optional] |
 | **s_language_name_x** | **String** | The Name of the Language in the language of the requester |  |
 | **s_ezsigntemplatepackage_description** | **String** | The description of the Ezsigntemplatepackage |  |
 | **b_ezsigntemplatepackage_adminonly** | **Boolean** | Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType&#x3D;Normal) |  |
@@ -23,7 +25,9 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzsigntemplatepackageResponse.new(
   pki_ezsigntemplatepackage_id: 99,
   fki_ezsignfoldertype_id: 5,
+  fki_ezdoctemplatedocument_id: 95,
   fki_language_id: 2,
+  s_ezdoctemplatedocument_name_x: Standard Contract,
   s_language_name_x: English,
   s_ezsigntemplatepackage_description: Package for new clients,
   b_ezsigntemplatepackage_adminonly: null,

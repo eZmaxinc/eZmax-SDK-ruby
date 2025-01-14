@@ -4,8 +4,80 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**activesession_generate_federation_token_v1**](ObjectActivesessionApi.md#activesession_generate_federation_token_v1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token |
 | [**activesession_get_current_v1**](ObjectActivesessionApi.md#activesession_get_current_v1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession |
 | [**activesession_get_list_v1**](ObjectActivesessionApi.md#activesession_get_list_v1) | **GET** /1/object/activesession/getList | Retrieve Activesession list |
+
+
+## activesession_generate_federation_token_v1
+
+> <ActivesessionGenerateFederationTokenV1Response> activesession_generate_federation_token_v1(activesession_generate_federation_token_v1_request)
+
+Generate a federation token
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectActivesessionApi.new
+activesession_generate_federation_token_v1_request = EzmaxApi::ActivesessionGenerateFederationTokenV1Request.new({fks_ezmaxcustomer_code: 'demo'}) # ActivesessionGenerateFederationTokenV1Request | 
+
+begin
+  # Generate a federation token
+  result = api_instance.activesession_generate_federation_token_v1(activesession_generate_federation_token_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectActivesessionApi->activesession_generate_federation_token_v1: #{e}"
+end
+```
+
+#### Using the activesession_generate_federation_token_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ActivesessionGenerateFederationTokenV1Response>, Integer, Hash)> activesession_generate_federation_token_v1_with_http_info(activesession_generate_federation_token_v1_request)
+
+```ruby
+begin
+  # Generate a federation token
+  data, status_code, headers = api_instance.activesession_generate_federation_token_v1_with_http_info(activesession_generate_federation_token_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ActivesessionGenerateFederationTokenV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectActivesessionApi->activesession_generate_federation_token_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **activesession_generate_federation_token_v1_request** | [**ActivesessionGenerateFederationTokenV1Request**](ActivesessionGenerateFederationTokenV1Request.md) |  |  |
+
+### Return type
+
+[**ActivesessionGenerateFederationTokenV1Response**](ActivesessionGenerateFederationTokenV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## activesession_get_current_v1

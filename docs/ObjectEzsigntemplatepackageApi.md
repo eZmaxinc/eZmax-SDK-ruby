@@ -327,7 +327,8 @@ s_selector = 'All' # String | The type of Ezsigntemplatepackages to return
 opts = {
   e_filter_active: 'All', # String | Specify which results we want to display.
   s_query: 's_query_example', # String | Allow to filter the returned results
-  accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  fki_ezsignfoldertype_id: 56 # Integer | The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
 }
 
 begin
@@ -365,6 +366,7 @@ end
 | **e_filter_active** | **String** | Specify which results we want to display. | [optional][default to &#39;Active&#39;] |
 | **s_query** | **String** | Allow to filter the returned results | [optional] |
 | **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **fki_ezsignfoldertype_id** | **Integer** | The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic | [optional] |
 
 ### Return type
 

@@ -11,8 +11,8 @@
 | **s_ezsigntemplateformfield_value** | **String** | The value for the Ezsigntemplateformfield | [optional] |
 | **i_ezsigntemplateformfield_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. | [optional] |
 | **i_ezsigntemplateformfield_y** | **Integer** | The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate. | [optional] |
-| **i_ezsigntemplateformfield_width** | **Integer** | The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     | |  |
-| **i_ezsigntemplateformfield_height** | **Integer** | The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     |  |  |
+| **i_ezsigntemplateformfield_width** | **Integer** | The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI |  |
+| **i_ezsigntemplateformfield_height** | **Integer** | The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  |  |
 | **b_ezsigntemplateformfield_autocomplete** | **Boolean** | Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text** | [optional] |
 | **b_ezsigntemplateformfield_selected** | **Boolean** | Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio** | [optional] |
 | **e_ezsigntemplateformfield_dependencyrequirement** | [**FieldEEzsigntemplateformfieldDependencyrequirement**](FieldEEzsigntemplateformfieldDependencyrequirement.md) |  | [optional] |
@@ -20,6 +20,8 @@
 | **i_ezsigntemplateformfield_positioningoffsetx** | **Integer** | The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates** | [optional] |
 | **i_ezsigntemplateformfield_positioningoffsety** | **Integer** | The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates** | [optional] |
 | **e_ezsigntemplateformfield_positioningoccurence** | [**FieldEEzsigntemplateformfieldPositioningoccurence**](FieldEEzsigntemplateformfieldPositioningoccurence.md) |  | [optional] |
+| **e_ezsigntemplateformfield_horizontalalignment** | [**EnumHorizontalalignment**](EnumHorizontalalignment.md) |  | [optional] |
+| **obj_textstylestatic** | [**TextstylestaticResponseCompound**](TextstylestaticResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -42,7 +44,9 @@ instance = EzmaxApi::EzsigntemplateformfieldResponse.new(
   s_ezsigntemplateformfield_positioningpattern: Signature,
   i_ezsigntemplateformfield_positioningoffsetx: 200,
   i_ezsigntemplateformfield_positioningoffsety: 200,
-  e_ezsigntemplateformfield_positioningoccurence: null
+  e_ezsigntemplateformfield_positioningoccurence: null,
+  e_ezsigntemplateformfield_horizontalalignment: null,
+  obj_textstylestatic: null
 )
 ```
 

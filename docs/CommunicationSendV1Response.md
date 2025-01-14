@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
-| **m_payload** | [**CommunicationCreateObjectV1ResponseMPayload**](CommunicationCreateObjectV1ResponseMPayload.md) |  |  |
+| **m_payload** | [**CommunicationSendV1ResponseMPayload**](CommunicationSendV1ResponseMPayload.md) |  |  |
 
 ## Example
 

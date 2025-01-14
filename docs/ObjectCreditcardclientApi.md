@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**creditcardclient_get_autocomplete_v2**](ObjectCreditcardclientApi.md#creditcardclient_get_autocomplete_v2) | **GET** /2/object/creditcardclient/getAutocomplete/{sSelector} | Retrieve Creditcardclients and IDs |
 | [**creditcardclient_get_list_v1**](ObjectCreditcardclientApi.md#creditcardclient_get_list_v1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list |
 | [**creditcardclient_get_object_v2**](ObjectCreditcardclientApi.md#creditcardclient_get_object_v2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient |
+| [**creditcardclient_patch_object_v1**](ObjectCreditcardclientApi.md#creditcardclient_patch_object_v1) | **PATCH** /1/object/creditcardclient/{pkiCreditcardclientID} | Patch an existing Creditcardclient |
 
 
 ## creditcardclient_create_object_v1
@@ -34,7 +35,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectCreditcardclientApi.new
-creditcardclient_create_object_v1_request = EzmaxApi::CreditcardclientCreateObjectV1Request.new({a_obj_creditcardclient: [EzmaxApi::CreditcardclientRequestCompound.new({b_creditcardclientrelation_isdefault: true, s_creditcardclient_description: 'Visa', b_creditcardclient_isactive: true, b_creditcardclient_allowedagencypayment: true, b_creditcardclient_allowedroyallepageprotection: true, b_creditcardclient_allowedtranquillit: true, obj_creditcarddetail: EzmaxApi::CreditcarddetailRequest.new({i_creditcarddetail_expirationmonth: 10, i_creditcarddetail_expirationyear: 2024}), s_creditcardclient_cvv: 's_creditcardclient_cvv_example'})]}) # CreditcardclientCreateObjectV1Request | 
+creditcardclient_create_object_v1_request = EzmaxApi::CreditcardclientCreateObjectV1Request.new({a_obj_creditcardclient: [EzmaxApi::CreditcardclientRequestCompound.new({b_creditcardclientrelation_isdefault: true, s_creditcardclient_description: 'Visa', b_creditcardclient_allowedcompanypayment: true, b_creditcardclient_allowedezsign: true, b_creditcardclient_allowedtranquillit: true, obj_creditcarddetail: EzmaxApi::CreditcarddetailRequest.new({i_creditcarddetail_expirationmonth: 10, i_creditcarddetail_expirationyear: 2024, s_creditcarddetail_civic: '2500', s_creditcarddetail_street: 'Daniel-Johnson Blvd.', s_creditcarddetail_zip: 'H7T 2P6'}), s_creditcardclient_cvv: 's_creditcardclient_cvv_example'})]}) # CreditcardclientCreateObjectV1Request | 
 
 begin
   # Create a new Creditcardclient
@@ -177,7 +178,7 @@ end
 
 api_instance = EzmaxApi::ObjectCreditcardclientApi.new
 pki_creditcardclient_id = 56 # Integer | The unique ID of the Creditcardclient
-creditcardclient_edit_object_v1_request = EzmaxApi::CreditcardclientEditObjectV1Request.new({obj_creditcardclient: EzmaxApi::CreditcardclientRequestCompound.new({b_creditcardclientrelation_isdefault: true, s_creditcardclient_description: 'Visa', b_creditcardclient_isactive: true, b_creditcardclient_allowedagencypayment: true, b_creditcardclient_allowedroyallepageprotection: true, b_creditcardclient_allowedtranquillit: true, obj_creditcarddetail: EzmaxApi::CreditcarddetailRequest.new({i_creditcarddetail_expirationmonth: 10, i_creditcarddetail_expirationyear: 2024}), s_creditcardclient_cvv: 's_creditcardclient_cvv_example'})}) # CreditcardclientEditObjectV1Request | 
+creditcardclient_edit_object_v1_request = EzmaxApi::CreditcardclientEditObjectV1Request.new({obj_creditcardclient: EzmaxApi::CreditcardclientRequestCompound.new({b_creditcardclientrelation_isdefault: true, s_creditcardclient_description: 'Visa', b_creditcardclient_allowedcompanypayment: true, b_creditcardclient_allowedezsign: true, b_creditcardclient_allowedtranquillit: true, obj_creditcarddetail: EzmaxApi::CreditcarddetailRequest.new({i_creditcarddetail_expirationmonth: 10, i_creditcarddetail_expirationyear: 2024, s_creditcarddetail_civic: '2500', s_creditcarddetail_street: 'Daniel-Johnson Blvd.', s_creditcarddetail_zip: 'H7T 2P6'}), s_creditcardclient_cvv: 's_creditcardclient_cvv_example'})}) # CreditcardclientEditObjectV1Request | 
 
 begin
   # Edit an existing Creditcardclient
@@ -455,5 +456,78 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## creditcardclient_patch_object_v1
+
+> <CreditcardclientPatchObjectV1Response> creditcardclient_patch_object_v1(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+
+Patch an existing Creditcardclient
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCreditcardclientApi.new
+pki_creditcardclient_id = 56 # Integer | The unique ID of the Creditcardclient
+creditcardclient_patch_object_v1_request = EzmaxApi::CreditcardclientPatchObjectV1Request.new({obj_creditcardclient: EzmaxApi::CreditcardclientRequestPatch.new}) # CreditcardclientPatchObjectV1Request | 
+
+begin
+  # Patch an existing Creditcardclient
+  result = api_instance.creditcardclient_patch_object_v1(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCreditcardclientApi->creditcardclient_patch_object_v1: #{e}"
+end
+```
+
+#### Using the creditcardclient_patch_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreditcardclientPatchObjectV1Response>, Integer, Hash)> creditcardclient_patch_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+
+```ruby
+begin
+  # Patch an existing Creditcardclient
+  data, status_code, headers = api_instance.creditcardclient_patch_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreditcardclientPatchObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCreditcardclientApi->creditcardclient_patch_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_creditcardclient_id** | **Integer** | The unique ID of the Creditcardclient |  |
+| **creditcardclient_patch_object_v1_request** | [**CreditcardclientPatchObjectV1Request**](CreditcardclientPatchObjectV1Request.md) |  |  |
+
+### Return type
+
+[**CreditcardclientPatchObjectV1Response**](CreditcardclientPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

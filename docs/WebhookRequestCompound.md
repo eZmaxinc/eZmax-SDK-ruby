@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_webhook_id** | **Integer** | The unique ID of the Webhook | [optional] |
+| **fki_authenticationexternal_id** | **Integer** | The unique ID of the Authenticationexternal | [optional] |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **s_webhook_description** | **String** | The description of the Webhook |  |
 | **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  |  |
@@ -24,6 +25,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::WebhookRequestCompound.new(
   pki_webhook_id: 77,
+  fki_authenticationexternal_id: 56,
   fki_ezsignfoldertype_id: 5,
   s_webhook_description: Import into our system,
   e_webhook_module: null,

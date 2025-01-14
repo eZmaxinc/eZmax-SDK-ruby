@@ -6,10 +6,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**user_create_object_v1**](ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User |
 | [**user_create_object_v2**](ObjectUserApi.md#user_create_object_v2) | **POST** /2/object/user | Create a new User |
+| [**user_edit_colleagues_v2**](ObjectUserApi.md#user_edit_colleagues_v2) | **PUT** /2/object/user/{pkiUserID}/editColleagues | Edit multiple Colleagues |
 | [**user_edit_object_v1**](ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User |
 | [**user_edit_permissions_v1**](ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions |
 | [**user_get_apikeys_v1**](ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys |
 | [**user_get_autocomplete_v2**](ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs |
+| [**user_get_colleagues_v2**](ObjectUserApi.md#user_get_colleagues_v2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues |
 | [**user_get_effective_permissions_v1**](ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions |
 | [**user_get_list_v1**](ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list |
 | [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
@@ -151,6 +153,79 @@ end
 ### Return type
 
 [**UserCreateObjectV2Response**](UserCreateObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## user_edit_colleagues_v2
+
+> <UserEditColleaguesV2Response> user_edit_colleagues_v2(pki_user_id, user_edit_colleagues_v2_request)
+
+Edit multiple Colleagues
+
+Using this endpoint, you can edit multiple Colleagues at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+user_edit_colleagues_v2_request = EzmaxApi::UserEditColleaguesV2Request.new({a_obj_colleague: [EzmaxApi::ColleagueRequestCompoundV2.new({fki_user_id: 70, fki_user_id_colleague: 70, b_colleague_ezsignemail: false, b_colleague_financial: true, b_colleague_usecloneemail: true, b_colleague_attachment: true, b_colleague_canafe: true, b_colleague_permission: true, b_colleague_realestatecompleted: true, e_colleague_ezsign: EzmaxApi::FieldEColleagueEzsign::NO, e_colleague_realestateinprogress: EzmaxApi::FieldEColleagueRealestateinprogess::NO})]}) # UserEditColleaguesV2Request | 
+
+begin
+  # Edit multiple Colleagues
+  result = api_instance.user_edit_colleagues_v2(pki_user_id, user_edit_colleagues_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_edit_colleagues_v2: #{e}"
+end
+```
+
+#### Using the user_edit_colleagues_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserEditColleaguesV2Response>, Integer, Hash)> user_edit_colleagues_v2_with_http_info(pki_user_id, user_edit_colleagues_v2_request)
+
+```ruby
+begin
+  # Edit multiple Colleagues
+  data, status_code, headers = api_instance.user_edit_colleagues_v2_with_http_info(pki_user_id, user_edit_colleagues_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserEditColleaguesV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_edit_colleagues_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+| **user_edit_colleagues_v2_request** | [**UserEditColleaguesV2Request**](UserEditColleaguesV2Request.md) |  |  |
+
+### Return type
+
+[**UserEditColleaguesV2Response**](UserEditColleaguesV2Response.md)
 
 ### Authorization
 
@@ -399,7 +474,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectUserApi.new
-s_selector = 'AgentBrokerEmployeeEzsignUserNormal' # String | The type of Users to return
+s_selector = 'AgentBrokerAssistant' # String | The type of Users to return
 opts = {
   e_filter_active: 'All', # String | Specify which results we want to display.
   s_query: 's_query_example', # String | Allow to filter the returned results
@@ -445,6 +520,75 @@ end
 ### Return type
 
 [**UserGetAutocompleteV2Response**](UserGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## user_get_colleagues_v2
+
+> <UserGetColleaguesV2Response> user_get_colleagues_v2(pki_user_id)
+
+Retrieve an existing User's Colleagues
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing User's Colleagues
+  result = api_instance.user_get_colleagues_v2(pki_user_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_colleagues_v2: #{e}"
+end
+```
+
+#### Using the user_get_colleagues_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserGetColleaguesV2Response>, Integer, Hash)> user_get_colleagues_v2_with_http_info(pki_user_id)
+
+```ruby
+begin
+  # Retrieve an existing User's Colleagues
+  data, status_code, headers = api_instance.user_get_colleagues_v2_with_http_info(pki_user_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserGetColleaguesV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_colleagues_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+
+### Return type
+
+[**UserGetColleaguesV2Response**](UserGetColleaguesV2Response.md)
 
 ### Authorization
 
