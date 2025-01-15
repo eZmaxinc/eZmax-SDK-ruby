@@ -55,6 +55,17 @@ describe 'ObjectActivesessionApi' do
     end
   end
 
+  # unit tests for activesession_get_current_v2
+  # Get Current Activesession
+  # Retrieve the details about the current activesession
+  # @param [Hash] opts the optional parameters
+  # @return [ActivesessionGetCurrentV2Response]
+  describe 'activesession_get_current_v2 test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for activesession_get_list_v1
   # Retrieve Activesession list
   # @param [Hash] opts the optional parameters

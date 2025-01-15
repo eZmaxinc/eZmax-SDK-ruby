@@ -14,8 +14,8 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
-  class WebhookGetHistoryV1Response
+  # Response for GET /2/object/activesession/getCurrent
+  class ActivesessionGetCurrentV2Response
     attr_accessor :obj_debug_payload
 
     attr_accessor :obj_debug
@@ -41,7 +41,7 @@ module EzmaxApi
       {
         :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
         :'obj_debug' => :'CommonResponseObjDebug',
-        :'m_payload' => :'WebhookGetHistoryV1ResponseMPayload'
+        :'m_payload' => :'ActivesessionGetCurrentV2ResponseMPayload'
       }
     end
 
@@ -62,13 +62,13 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::WebhookGetHistoryV1Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ActivesessionGetCurrentV2Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::WebhookGetHistoryV1Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ActivesessionGetCurrentV2Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }

@@ -14,20 +14,14 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
-  class WebhookGetHistoryV1Response
-    attr_accessor :obj_debug_payload
-
-    attr_accessor :obj_debug
-
-    attr_accessor :m_payload
+  # Payload for GET /1/object/activesession/getCurrent
+  class ActivesessionGetCurrentV2ResponseMPayload
+    attr_accessor :obj_activesession
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'obj_debug_payload' => :'objDebugPayload',
-        :'obj_debug' => :'objDebug',
-        :'m_payload' => :'mPayload'
+        :'obj_activesession' => :'objActivesession'
       }
     end
 
@@ -39,9 +33,7 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
-        :'obj_debug' => :'CommonResponseObjDebug',
-        :'m_payload' => :'WebhookGetHistoryV1ResponseMPayload'
+        :'obj_activesession' => :'ActivesessionResponseCompound'
       }
     end
 
@@ -51,42 +43,25 @@ module EzmaxApi
       ])
     end
 
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'CommonResponse'
-      ]
-    end
-
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::WebhookGetHistoryV1Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::ActivesessionGetCurrentV2ResponseMPayload` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::WebhookGetHistoryV1Response`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::ActivesessionGetCurrentV2ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'obj_debug_payload')
-        self.obj_debug_payload = attributes[:'obj_debug_payload']
+      if attributes.key?(:'obj_activesession')
+        self.obj_activesession = attributes[:'obj_activesession']
       else
-        self.obj_debug_payload = nil
-      end
-
-      if attributes.key?(:'obj_debug')
-        self.obj_debug = attributes[:'obj_debug']
-      end
-
-      if attributes.key?(:'m_payload')
-        self.m_payload = attributes[:'m_payload']
-      else
-        self.m_payload = nil
+        self.obj_activesession = nil
       end
     end
 
@@ -95,12 +70,8 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @obj_debug_payload.nil?
-        invalid_properties.push('invalid value for "obj_debug_payload", obj_debug_payload cannot be nil.')
-      end
-
-      if @m_payload.nil?
-        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
+      if @obj_activesession.nil?
+        invalid_properties.push('invalid value for "obj_activesession", obj_activesession cannot be nil.')
       end
 
       invalid_properties
@@ -110,8 +81,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @obj_debug_payload.nil?
-      return false if @m_payload.nil?
+      return false if @obj_activesession.nil?
       true
     end
 
@@ -120,9 +90,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          obj_debug_payload == o.obj_debug_payload &&
-          obj_debug == o.obj_debug &&
-          m_payload == o.m_payload
+          obj_activesession == o.obj_activesession
     end
 
     # @see the `==` method
@@ -134,7 +102,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_debug_payload, obj_debug, m_payload].hash
+      [obj_activesession].hash
     end
 
     # Builds the object from hash

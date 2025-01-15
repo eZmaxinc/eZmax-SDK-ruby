@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ModuleUserApi* | [**user_create_ezsignuser_v1**](docs/ModuleUserApi.md#user_create_ezsignuser_v1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *EzmaxApi::ObjectActivesessionApi* | [**activesession_generate_federation_token_v1**](docs/ObjectActivesessionApi.md#activesession_generate_federation_token_v1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token
 *EzmaxApi::ObjectActivesessionApi* | [**activesession_get_current_v1**](docs/ObjectActivesessionApi.md#activesession_get_current_v1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
+*EzmaxApi::ObjectActivesessionApi* | [**activesession_get_current_v2**](docs/ObjectActivesessionApi.md#activesession_get_current_v2) | **GET** /2/object/activesession/getCurrent | Get Current Activesession
 *EzmaxApi::ObjectActivesessionApi* | [**activesession_get_list_v1**](docs/ObjectActivesessionApi.md#activesession_get_list_v1) | **GET** /1/object/activesession/getList | Retrieve Activesession list
 *EzmaxApi::ObjectApikeyApi* | [**apikey_create_object_v2**](docs/ObjectApikeyApi.md#apikey_create_object_v2) | **POST** /2/object/apikey | Create a new Apikey
 *EzmaxApi::ObjectApikeyApi* | [**apikey_edit_object_v1**](docs/ObjectApikeyApi.md#apikey_edit_object_v1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey
@@ -544,6 +545,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::ActivesessionGenerateFederationTokenV1ResponseMPayload](docs/ActivesessionGenerateFederationTokenV1ResponseMPayload.md)
  - [EzmaxApi::ActivesessionGetCurrentV1Response](docs/ActivesessionGetCurrentV1Response.md)
  - [EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload](docs/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [EzmaxApi::ActivesessionGetCurrentV2Response](docs/ActivesessionGetCurrentV2Response.md)
+ - [EzmaxApi::ActivesessionGetCurrentV2ResponseMPayload](docs/ActivesessionGetCurrentV2ResponseMPayload.md)
  - [EzmaxApi::ActivesessionGetListV1Response](docs/ActivesessionGetListV1Response.md)
  - [EzmaxApi::ActivesessionGetListV1ResponseMPayload](docs/ActivesessionGetListV1ResponseMPayload.md)
  - [EzmaxApi::ActivesessionListElement](docs/ActivesessionListElement.md)
