@@ -24,7 +24,7 @@ instance = EzmaxApi::BrandingRequestV2.new(
   obj_branding_description: null,
   e_branding_logo: null,
   e_branding_alignlogo: null,
-  s_branding_base64: [B@47289387,
+  s_branding_base64: [B@4efcf8a,
   i_branding_color: 15658734,
   s_branding_name: eZmax (Corp),
   s_email_address: email@example.com,

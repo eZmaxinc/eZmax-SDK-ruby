@@ -83,7 +83,7 @@ end
 
 ## cors_delete_object_v1
 
-> <CorsDeleteObjectV1Response> cors_delete_object_v1(pki_cors_id)
+> <CommonResponse> cors_delete_object_v1(pki_cors_id)
 
 Delete an existing Cors
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CorsDeleteObjectV1Response>, Integer, Hash)> cors_delete_object_v1_with_http_info(pki_cors_id)
+> <Array(<CommonResponse>, Integer, Hash)> cors_delete_object_v1_with_http_info(pki_cors_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.cors_delete_object_v1_with_http_info(pki_cors_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CorsDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCorsApi->cors_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CorsDeleteObjectV1Response**](CorsDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## cors_edit_object_v1
 
-> <CorsEditObjectV1Response> cors_edit_object_v1(pki_cors_id, cors_edit_object_v1_request)
+> <CommonResponse> cors_edit_object_v1(pki_cors_id, cors_edit_object_v1_request)
 
 Edit an existing Cors
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CorsEditObjectV1Response>, Integer, Hash)> cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CorsEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCorsApi->cors_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CorsEditObjectV1Response**](CorsEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

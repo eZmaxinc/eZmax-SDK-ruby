@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
-| **obj_ezsignfoldertype** | [**CustomEzsignfoldertypeResponse**](CustomEzsignfoldertypeResponse.md) |  | [optional] |
+| **obj_ezsignfoldertype** | **Object** | A Custom Ezsignfoldertype Object | [optional] |
 | **fki_timezone_id** | **Integer** | The unique ID of the Timezone | [optional] |
 | **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** |  | [optional] |

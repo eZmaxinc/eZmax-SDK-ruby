@@ -82,7 +82,7 @@ end
 
 ## ezsigndiscussion_delete_object_v1
 
-> <EzsigndiscussionDeleteObjectV1Response> ezsigndiscussion_delete_object_v1(pki_ezsigndiscussion_id)
+> <CommonResponse> ezsigndiscussion_delete_object_v1(pki_ezsigndiscussion_id)
 
 Delete an existing Ezsigndiscussion
 
@@ -117,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsigndiscussionDeleteObjectV1Response>, Integer, Hash)> ezsigndiscussion_delete_object_v1_with_http_info(pki_ezsigndiscussion_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsigndiscussion_delete_object_v1_with_http_info(pki_ezsigndiscussion_id)
 
 ```ruby
 begin
@@ -125,7 +125,7 @@ begin
   data, status_code, headers = api_instance.ezsigndiscussion_delete_object_v1_with_http_info(pki_ezsigndiscussion_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsigndiscussionDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigndiscussionApi->ezsigndiscussion_delete_object_v1_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**EzsigndiscussionDeleteObjectV1Response**](EzsigndiscussionDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

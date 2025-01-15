@@ -169,7 +169,7 @@ end
 
 ## ezsignbulksend_delete_object_v1
 
-> <EzsignbulksendDeleteObjectV1Response> ezsignbulksend_delete_object_v1(pki_ezsignbulksend_id)
+> <CommonResponse> ezsignbulksend_delete_object_v1(pki_ezsignbulksend_id)
 
 Delete an existing Ezsignbulksend
 
@@ -204,7 +204,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignbulksendDeleteObjectV1Response>, Integer, Hash)> ezsignbulksend_delete_object_v1_with_http_info(pki_ezsignbulksend_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignbulksend_delete_object_v1_with_http_info(pki_ezsignbulksend_id)
 
 ```ruby
 begin
@@ -212,7 +212,7 @@ begin
   data, status_code, headers = api_instance.ezsignbulksend_delete_object_v1_with_http_info(pki_ezsignbulksend_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignbulksendDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_delete_object_v1_with_http_info: #{e}"
 end
@@ -226,7 +226,7 @@ end
 
 ### Return type
 
-[**EzsignbulksendDeleteObjectV1Response**](EzsignbulksendDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ end
 
 ## ezsignbulksend_edit_object_v1
 
-> <EzsignbulksendEditObjectV1Response> ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
+> <CommonResponse> ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
 
 Edit an existing Ezsignbulksend
 
@@ -276,7 +276,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignbulksendEditObjectV1Response>, Integer, Hash)> ezsignbulksend_edit_object_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignbulksend_edit_object_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
 
 ```ruby
 begin
@@ -284,7 +284,7 @@ begin
   data, status_code, headers = api_instance.ezsignbulksend_edit_object_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignbulksendEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v1_with_http_info: #{e}"
 end
@@ -299,7 +299,7 @@ end
 
 ### Return type
 
-[**EzsignbulksendEditObjectV1Response**](EzsignbulksendEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -751,7 +751,7 @@ end
 
 ## ezsignbulksend_reorder_v1
 
-> <EzsignbulksendReorderV1Response> ezsignbulksend_reorder_v1(pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request)
+> <CommonResponse> ezsignbulksend_reorder_v1(pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request)
 
 Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend
 
@@ -785,7 +785,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignbulksendReorderV1Response>, Integer, Hash)> ezsignbulksend_reorder_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignbulksend_reorder_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request)
 
 ```ruby
 begin
@@ -793,7 +793,7 @@ begin
   data, status_code, headers = api_instance.ezsignbulksend_reorder_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignbulksendReorderV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_reorder_v1_with_http_info: #{e}"
 end
@@ -808,7 +808,7 @@ end
 
 ### Return type
 
-[**EzsignbulksendReorderV1Response**](EzsignbulksendReorderV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

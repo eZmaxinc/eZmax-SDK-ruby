@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsignfolder** | [**Array&lt;EzsignfolderRequestCompound&gt;**](EzsignfolderRequestCompound.md) |  |  |
+| **a_obj_ezsignfolder** | [**Array&lt;EzsignfolderRequestCompound&gt;**](EzsignfolderRequest.md) |  |  |
 
 ## Example
 

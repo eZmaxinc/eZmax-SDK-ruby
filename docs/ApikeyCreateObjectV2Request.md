@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_apikey** | [**Array&lt;ApikeyRequestCompound&gt;**](ApikeyRequestCompound.md) |  |  |
+| **a_obj_apikey** | [**Array&lt;ApikeyRequestCompound&gt;**](ApikeyRequest.md) |  |  |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_apikey** | [**ApikeyResponseCompound**](ApikeyResponseCompound.md) |  |  |
+| **obj_apikey** | [**ApikeyResponse**](ApikeyResponse.md) | An Apikey Object and children to create a complete structure |  |
 
 ## Example
 

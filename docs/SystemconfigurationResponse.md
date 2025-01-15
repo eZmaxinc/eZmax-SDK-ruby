@@ -20,7 +20,7 @@
 | **b_systemconfiguration_sspr** | **Boolean** | Whether if we allow SSPR |  |
 | **dt_systemconfiguration_readonlyexpirationstart** | **String** | The start date where the system will be in read only | [optional] |
 | **dt_systemconfiguration_readonlyexpirationend** | **String** | The end date where the system will be in read only | [optional] |
-| **obj_branding** | [**CustomBrandingResponse**](CustomBrandingResponse.md) |  | [optional] |
+| **obj_branding** | **Object** | A Custom Branding Object | [optional] |
 
 ## Example
 

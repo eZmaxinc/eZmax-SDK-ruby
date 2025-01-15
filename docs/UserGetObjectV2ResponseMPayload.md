@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_user** | [**UserResponseCompound**](UserResponseCompound.md) |  |  |
+| **obj_user** | [**UserResponse**](UserResponse.md) | A User Object and children to create a complete structure |  |
 
 ## Example
 

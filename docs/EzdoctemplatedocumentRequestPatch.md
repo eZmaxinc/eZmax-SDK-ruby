@@ -16,7 +16,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzdoctemplatedocumentRequestPatch.new(
   e_ezdoctemplatedocument_format: null,
   s_ezdoctemplatedocument_fields: ,
-  s_ezdoctemplatedocument_base64: [B@12cd9150
+  s_ezdoctemplatedocument_base64: [B@7a138fc5
 )
 ```
 

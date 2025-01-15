@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_userstaged** | [**UserstagedResponseCompound**](UserstagedResponseCompound.md) |  |  |
+| **obj_userstaged** | [**UserstagedResponse**](UserstagedResponse.md) | A Userstaged Object |  |
 
 ## Example
 

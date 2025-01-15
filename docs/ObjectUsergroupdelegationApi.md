@@ -83,7 +83,7 @@ end
 
 ## usergroupdelegation_delete_object_v1
 
-> <UsergroupdelegationDeleteObjectV1Response> usergroupdelegation_delete_object_v1(pki_usergroupdelegation_id)
+> <CommonResponse> usergroupdelegation_delete_object_v1(pki_usergroupdelegation_id)
 
 Delete an existing Usergroupdelegation
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UsergroupdelegationDeleteObjectV1Response>, Integer, Hash)> usergroupdelegation_delete_object_v1_with_http_info(pki_usergroupdelegation_id)
+> <Array(<CommonResponse>, Integer, Hash)> usergroupdelegation_delete_object_v1_with_http_info(pki_usergroupdelegation_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.usergroupdelegation_delete_object_v1_with_http_info(pki_usergroupdelegation_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UsergroupdelegationDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupdelegationApi->usergroupdelegation_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**UsergroupdelegationDeleteObjectV1Response**](UsergroupdelegationDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## usergroupdelegation_edit_object_v1
 
-> <UsergroupdelegationEditObjectV1Response> usergroupdelegation_edit_object_v1(pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request)
+> <CommonResponse> usergroupdelegation_edit_object_v1(pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request)
 
 Edit an existing Usergroupdelegation
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UsergroupdelegationEditObjectV1Response>, Integer, Hash)> usergroupdelegation_edit_object_v1_with_http_info(pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> usergroupdelegation_edit_object_v1_with_http_info(pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.usergroupdelegation_edit_object_v1_with_http_info(pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UsergroupdelegationEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupdelegationApi->usergroupdelegation_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**UsergroupdelegationEditObjectV1Response**](UsergroupdelegationEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

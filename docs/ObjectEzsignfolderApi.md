@@ -40,7 +40,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## ezsignfolder_archive_v1
 
-> <EzsignfolderArchiveV1Response> ezsignfolder_archive_v1(pki_ezsignfolder_id, body)
+> <CommonResponse> ezsignfolder_archive_v1(pki_ezsignfolder_id, body)
 
 Archive the Ezsignfolder
 
@@ -76,7 +76,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderArchiveV1Response>, Integer, Hash)> ezsignfolder_archive_v1_with_http_info(pki_ezsignfolder_id, body)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_archive_v1_with_http_info(pki_ezsignfolder_id, body)
 
 ```ruby
 begin
@@ -84,7 +84,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_archive_v1_with_http_info(pki_ezsignfolder_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderArchiveV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_archive_v1_with_http_info: #{e}"
 end
@@ -99,7 +99,7 @@ end
 
 ### Return type
 
-[**EzsignfolderArchiveV1Response**](EzsignfolderArchiveV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-ezsignfolder_create_object_v2_request = EzmaxApi::EzsignfolderCreateObjectV2Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequestCompound.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})]}) # EzsignfolderCreateObjectV2Request | 
+ezsignfolder_create_object_v2_request = EzmaxApi::EzsignfolderCreateObjectV2Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequest.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', e_ezsignfolder_sendreminderfrequency: EzmaxApi::FieldEEzsignfolderSendreminderfrequency::NONE})]}) # EzsignfolderCreateObjectV2Request | 
 
 begin
   # Create a new Ezsignfolder
@@ -346,7 +346,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
-ezsignfolder_create_object_v3_request = EzmaxApi::EzsignfolderCreateObjectV3Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequestCompoundV3.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', i_ezsignfolder_sendreminderfirstdays: 30, i_ezsignfolder_sendreminderotherdays: 30})]}) # EzsignfolderCreateObjectV3Request | 
+ezsignfolder_create_object_v3_request = EzmaxApi::EzsignfolderCreateObjectV3Request.new({a_obj_ezsignfolder: [EzmaxApi::EzsignfolderRequestV3.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', i_ezsignfolder_sendreminderfirstdays: 30, i_ezsignfolder_sendreminderotherdays: 30})]}) # EzsignfolderCreateObjectV3Request | 
 
 begin
   # Create a new Ezsignfolder
@@ -397,7 +397,7 @@ end
 
 ## ezsignfolder_delete_object_v1
 
-> <EzsignfolderDeleteObjectV1Response> ezsignfolder_delete_object_v1(pki_ezsignfolder_id)
+> <CommonResponse> ezsignfolder_delete_object_v1(pki_ezsignfolder_id)
 
 Delete an existing Ezsignfolder
 
@@ -430,7 +430,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderDeleteObjectV1Response>, Integer, Hash)> ezsignfolder_delete_object_v1_with_http_info(pki_ezsignfolder_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_delete_object_v1_with_http_info(pki_ezsignfolder_id)
 
 ```ruby
 begin
@@ -438,7 +438,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_delete_object_v1_with_http_info(pki_ezsignfolder_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_delete_object_v1_with_http_info: #{e}"
 end
@@ -452,7 +452,7 @@ end
 
 ### Return type
 
-[**EzsignfolderDeleteObjectV1Response**](EzsignfolderDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -466,7 +466,7 @@ end
 
 ## ezsignfolder_dispose_ezsignfolders_v1
 
-> <EzsignfolderDisposeEzsignfoldersV1Response> ezsignfolder_dispose_ezsignfolders_v1(ezsignfolder_dispose_ezsignfolders_v1_request)
+> <CommonResponse> ezsignfolder_dispose_ezsignfolders_v1(ezsignfolder_dispose_ezsignfolders_v1_request)
 
 Dispose Ezsignfolders
 
@@ -501,7 +501,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderDisposeEzsignfoldersV1Response>, Integer, Hash)> ezsignfolder_dispose_ezsignfolders_v1_with_http_info(ezsignfolder_dispose_ezsignfolders_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_dispose_ezsignfolders_v1_with_http_info(ezsignfolder_dispose_ezsignfolders_v1_request)
 
 ```ruby
 begin
@@ -509,7 +509,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_dispose_ezsignfolders_v1_with_http_info(ezsignfolder_dispose_ezsignfolders_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderDisposeEzsignfoldersV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_dispose_ezsignfolders_v1_with_http_info: #{e}"
 end
@@ -523,7 +523,7 @@ end
 
 ### Return type
 
-[**EzsignfolderDisposeEzsignfoldersV1Response**](EzsignfolderDisposeEzsignfoldersV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ end
 
 ## ezsignfolder_dispose_v1
 
-> <EzsignfolderDisposeV1Response> ezsignfolder_dispose_v1(pki_ezsignfolder_id, body)
+> <CommonResponse> ezsignfolder_dispose_v1(pki_ezsignfolder_id, body)
 
 Dispose the Ezsignfolder
 
@@ -573,7 +573,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderDisposeV1Response>, Integer, Hash)> ezsignfolder_dispose_v1_with_http_info(pki_ezsignfolder_id, body)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_dispose_v1_with_http_info(pki_ezsignfolder_id, body)
 
 ```ruby
 begin
@@ -581,7 +581,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_dispose_v1_with_http_info(pki_ezsignfolder_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderDisposeV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_dispose_v1_with_http_info: #{e}"
 end
@@ -596,7 +596,7 @@ end
 
 ### Return type
 
-[**EzsignfolderDisposeV1Response**](EzsignfolderDisposeV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -610,7 +610,7 @@ end
 
 ## ezsignfolder_edit_object_v3
 
-> <EzsignfolderEditObjectV3Response> ezsignfolder_edit_object_v3(pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request)
+> <CommonResponse> ezsignfolder_edit_object_v3(pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request)
 
 Edit an existing Ezsignfolder
 
@@ -631,7 +631,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
-ezsignfolder_edit_object_v3_request = EzmaxApi::EzsignfolderEditObjectV3Request.new({obj_ezsignfolder: EzmaxApi::EzsignfolderRequestCompoundV3.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', i_ezsignfolder_sendreminderfirstdays: 30, i_ezsignfolder_sendreminderotherdays: 30})}) # EzsignfolderEditObjectV3Request | 
+ezsignfolder_edit_object_v3_request = EzmaxApi::EzsignfolderEditObjectV3Request.new({obj_ezsignfolder: EzmaxApi::EzsignfolderRequestV3.new({fki_ezsignfoldertype_id: 5, s_ezsignfolder_description: 'Test eZsign Folder', i_ezsignfolder_sendreminderfirstdays: 30, i_ezsignfolder_sendreminderotherdays: 30})}) # EzsignfolderEditObjectV3Request | 
 
 begin
   # Edit an existing Ezsignfolder
@@ -646,7 +646,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderEditObjectV3Response>, Integer, Hash)> ezsignfolder_edit_object_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_edit_object_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request)
 
 ```ruby
 begin
@@ -654,7 +654,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_edit_object_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderEditObjectV3Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_edit_object_v3_with_http_info: #{e}"
 end
@@ -669,7 +669,7 @@ end
 
 ### Return type
 
-[**EzsignfolderEditObjectV3Response**](EzsignfolderEditObjectV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -683,7 +683,7 @@ end
 
 ## ezsignfolder_end_prematurely_v1
 
-> <EzsignfolderEndPrematurelyV1Response> ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id, body)
+> <CommonResponse> ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id, body)
 
 End prematurely
 
@@ -719,7 +719,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderEndPrematurelyV1Response>, Integer, Hash)> ezsignfolder_end_prematurely_v1_with_http_info(pki_ezsignfolder_id, body)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_end_prematurely_v1_with_http_info(pki_ezsignfolder_id, body)
 
 ```ruby
 begin
@@ -727,7 +727,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_end_prematurely_v1_with_http_info(pki_ezsignfolder_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderEndPrematurelyV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_end_prematurely_v1_with_http_info: #{e}"
 end
@@ -742,7 +742,7 @@ end
 
 ### Return type
 
-[**EzsignfolderEndPrematurelyV1Response**](EzsignfolderEndPrematurelyV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1975,7 +1975,7 @@ end
 
 ## ezsignfolder_reorder_v1
 
-> <EzsignfolderReorderV1Response> ezsignfolder_reorder_v1(pki_ezsignfolder_id, ezsignfolder_reorder_v1_request)
+> <CommonResponse> ezsignfolder_reorder_v1(pki_ezsignfolder_id, ezsignfolder_reorder_v1_request)
 
 Reorder Ezsigndocuments in the Ezsignfolder
 
@@ -2009,7 +2009,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderReorderV1Response>, Integer, Hash)> ezsignfolder_reorder_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_reorder_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v1_request)
 
 ```ruby
 begin
@@ -2017,7 +2017,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_reorder_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderReorderV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_reorder_v1_with_http_info: #{e}"
 end
@@ -2032,7 +2032,7 @@ end
 
 ### Return type
 
-[**EzsignfolderReorderV1Response**](EzsignfolderReorderV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -2046,7 +2046,7 @@ end
 
 ## ezsignfolder_reorder_v2
 
-> <EzsignfolderReorderV2Response> ezsignfolder_reorder_v2(pki_ezsignfolder_id, ezsignfolder_reorder_v2_request)
+> <CommonResponse> ezsignfolder_reorder_v2(pki_ezsignfolder_id, ezsignfolder_reorder_v2_request)
 
 Reorder Ezsigndocuments in the Ezsignfolder
 
@@ -2065,7 +2065,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
-ezsignfolder_reorder_v2_request = EzmaxApi::EzsignfolderReorderV2Request.new({a_obj_ezsigndocument: [EzmaxApi::CustomEzsigndocumentRequest.new({pki_ezsigndocument_id: 97, a_obj_ezsigndocumentdependency: [EzmaxApi::EzsigndocumentdependencyRequestCompound.new({fki_ezsigndocument_i_ddependency: 97})]})]}) # EzsignfolderReorderV2Request | 
+ezsignfolder_reorder_v2_request = EzmaxApi::EzsignfolderReorderV2Request.new({a_obj_ezsigndocument: [EzmaxApi::CustomEzsigndocumentRequest.new({pki_ezsigndocument_id: 97, a_obj_ezsigndocumentdependency: [EzmaxApi::EzsigndocumentdependencyRequest.new({fki_ezsigndocument_i_ddependency: 97})]})]}) # EzsignfolderReorderV2Request | 
 
 begin
   # Reorder Ezsigndocuments in the Ezsignfolder
@@ -2080,7 +2080,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderReorderV2Response>, Integer, Hash)> ezsignfolder_reorder_v2_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v2_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_reorder_v2_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v2_request)
 
 ```ruby
 begin
@@ -2088,7 +2088,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_reorder_v2_with_http_info(pki_ezsignfolder_id, ezsignfolder_reorder_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderReorderV2Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_reorder_v2_with_http_info: #{e}"
 end
@@ -2103,7 +2103,7 @@ end
 
 ### Return type
 
-[**EzsignfolderReorderV2Response**](EzsignfolderReorderV2Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -2117,7 +2117,7 @@ end
 
 ## ezsignfolder_send_v1
 
-> <EzsignfolderSendV1Response> ezsignfolder_send_v1(pki_ezsignfolder_id, ezsignfolder_send_v1_request)
+> <CommonResponse> ezsignfolder_send_v1(pki_ezsignfolder_id, ezsignfolder_send_v1_request)
 
 Send the Ezsignfolder to the signatories for signature
 
@@ -2161,7 +2161,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderSendV1Response>, Integer, Hash)> ezsignfolder_send_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_send_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v1_request)
 
 ```ruby
 begin
@@ -2169,7 +2169,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_send_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderSendV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_send_v1_with_http_info: #{e}"
 end
@@ -2184,7 +2184,7 @@ end
 
 ### Return type
 
-[**EzsignfolderSendV1Response**](EzsignfolderSendV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -2198,7 +2198,7 @@ end
 
 ## ezsignfolder_send_v3
 
-> <EzsignfolderSendV3Response> ezsignfolder_send_v3(pki_ezsignfolder_id, ezsignfolder_send_v3_request)
+> <CommonResponse> ezsignfolder_send_v3(pki_ezsignfolder_id, ezsignfolder_send_v3_request)
 
 Send the Ezsignfolder to the signatories for signature
 
@@ -2234,7 +2234,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderSendV3Response>, Integer, Hash)> ezsignfolder_send_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v3_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_send_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v3_request)
 
 ```ruby
 begin
@@ -2242,7 +2242,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_send_v3_with_http_info(pki_ezsignfolder_id, ezsignfolder_send_v3_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderSendV3Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_send_v3_with_http_info: #{e}"
 end
@@ -2257,7 +2257,7 @@ end
 
 ### Return type
 
-[**EzsignfolderSendV3Response**](EzsignfolderSendV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -2271,7 +2271,7 @@ end
 
 ## ezsignfolder_unsend_v1
 
-> <EzsignfolderUnsendV1Response> ezsignfolder_unsend_v1(pki_ezsignfolder_id, body)
+> <CommonResponse> ezsignfolder_unsend_v1(pki_ezsignfolder_id, body)
 
 Unsend the Ezsignfolder
 
@@ -2307,7 +2307,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfolderUnsendV1Response>, Integer, Hash)> ezsignfolder_unsend_v1_with_http_info(pki_ezsignfolder_id, body)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfolder_unsend_v1_with_http_info(pki_ezsignfolder_id, body)
 
 ```ruby
 begin
@@ -2315,7 +2315,7 @@ begin
   data, status_code, headers = api_instance.ezsignfolder_unsend_v1_with_http_info(pki_ezsignfolder_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfolderUnsendV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_unsend_v1_with_http_info: #{e}"
 end
@@ -2330,7 +2330,7 @@ end
 
 ### Return type
 
-[**EzsignfolderUnsendV1Response**](EzsignfolderUnsendV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
