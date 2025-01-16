@@ -34,7 +34,6 @@ module EzmaxApi
     # The count of Attachment.
     attr_accessor :i_discussionmessage_countunread
 
-    # A Custom Discussionconfiguration Object
     attr_accessor :obj_discussionconfiguration
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -64,7 +63,7 @@ module EzmaxApi
         :'dt_discussion_lastread' => :'String',
         :'i_discussionmessage_count' => :'Integer',
         :'i_discussionmessage_countunread' => :'Integer',
-        :'obj_discussionconfiguration' => :'Object'
+        :'obj_discussionconfiguration' => :'CustomDiscussionconfigurationResponse'
       }
     end
 

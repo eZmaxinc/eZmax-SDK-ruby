@@ -59,7 +59,6 @@ module EzmaxApi
     # The end date where the system will be in read only
     attr_accessor :dt_systemconfiguration_readonlyexpirationend
 
-    # A Custom Branding Object
     attr_accessor :obj_branding
 
     class EnumAttributeValidator
@@ -131,7 +130,7 @@ module EzmaxApi
         :'b_systemconfiguration_sspr' => :'Boolean',
         :'dt_systemconfiguration_readonlyexpirationstart' => :'String',
         :'dt_systemconfiguration_readonlyexpirationend' => :'String',
-        :'obj_branding' => :'Object'
+        :'obj_branding' => :'CustomBrandingResponse'
       }
     end
 

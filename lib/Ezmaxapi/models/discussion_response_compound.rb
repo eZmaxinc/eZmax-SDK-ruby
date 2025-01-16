@@ -34,7 +34,6 @@ module EzmaxApi
     # The count of Attachment.
     attr_accessor :i_discussionmessage_countunread
 
-    # A Custom Discussionconfiguration Object
     attr_accessor :obj_discussionconfiguration
 
     attr_accessor :a_obj_discussionmembership
@@ -70,7 +69,7 @@ module EzmaxApi
         :'dt_discussion_lastread' => :'String',
         :'i_discussionmessage_count' => :'Integer',
         :'i_discussionmessage_countunread' => :'Integer',
-        :'obj_discussionconfiguration' => :'Object',
+        :'obj_discussionconfiguration' => :'CustomDiscussionconfigurationResponse',
         :'a_obj_discussionmembership' => :'Array<DiscussionmembershipResponseCompound>',
         :'a_obj_discussionmessage' => :'Array<DiscussionmessageResponseCompound>'
       }

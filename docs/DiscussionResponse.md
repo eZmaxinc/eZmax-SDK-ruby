@@ -10,7 +10,7 @@
 | **dt_discussion_lastread** | **String** | The date the Discussion was last read | [optional] |
 | **i_discussionmessage_count** | **Integer** | The count of Attachment. |  |
 | **i_discussionmessage_countunread** | **Integer** | The count of Attachment. |  |
-| **obj_discussionconfiguration** | **Object** | A Custom Discussionconfiguration Object | [optional] |
+| **obj_discussionconfiguration** | [**CustomDiscussionconfigurationResponse**](CustomDiscussionconfigurationResponse.md) |  | [optional] |
 
 ## Example
 

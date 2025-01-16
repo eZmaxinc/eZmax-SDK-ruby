@@ -22,7 +22,6 @@ module EzmaxApi
     # The unique ID of the Ezsignfoldertype.
     attr_accessor :fki_ezsignfoldertype_id
 
-    # A Custom Ezsignfoldertype Object
     attr_accessor :obj_ezsignfoldertype
 
     # The unique ID of the Timezone
@@ -156,7 +155,7 @@ module EzmaxApi
       {
         :'pki_ezsignfolder_id' => :'Integer',
         :'fki_ezsignfoldertype_id' => :'Integer',
-        :'obj_ezsignfoldertype' => :'Object',
+        :'obj_ezsignfoldertype' => :'CustomEzsignfoldertypeResponse',
         :'fki_timezone_id' => :'Integer',
         :'e_ezsignfolder_completion' => :'FieldEEzsignfolderCompletion',
         :'s_ezsignfoldertype_name_x' => :'String',
