@@ -27,22 +27,4 @@ describe EzmaxApi::EzsignsigningreasonRequestCompound do
     end
   end
 
-  describe 'test attribute "pki_ezsignsigningreason_id"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "obj_ezsignsigningreason_description"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "b_ezsignsigningreason_isactive"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
 end

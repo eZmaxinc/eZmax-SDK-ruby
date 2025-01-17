@@ -15,34 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Branding Object
-  class BrandingResponseCompoundV3
-    # The unique ID of the Branding
-    attr_accessor :pki_branding_id
-
-    # The unique ID of the Email
-    attr_accessor :fki_email_id
-
-    attr_accessor :obj_branding_description
-
-    # The Description of the Branding in the language of the requester
-    attr_accessor :s_branding_description_x
-
-    # The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
-    attr_accessor :s_branding_name
-
-    # The email address.
-    attr_accessor :s_email_address
-
-    attr_accessor :e_branding_logo
-
-    attr_accessor :e_branding_alignlogo
-
-    # The primary color. This is a RGB color converted into integer
-    attr_accessor :i_branding_color
-
-    # Whether the Branding is active or not
-    attr_accessor :b_branding_isactive
-
+  class BrandingResponseCompoundV3 < BrandingResponseV3
     # The url of the picture used as logo in the Branding
     attr_accessor :s_branding_logourl
 
@@ -77,40 +50,20 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_branding_id' => :'pkiBrandingID',
-        :'fki_email_id' => :'fkiEmailID',
-        :'obj_branding_description' => :'objBrandingDescription',
-        :'s_branding_description_x' => :'sBrandingDescriptionX',
-        :'s_branding_name' => :'sBrandingName',
-        :'s_email_address' => :'sEmailAddress',
-        :'e_branding_logo' => :'eBrandingLogo',
-        :'e_branding_alignlogo' => :'eBrandingAlignlogo',
-        :'i_branding_color' => :'iBrandingColor',
-        :'b_branding_isactive' => :'bBrandingIsactive',
         :'s_branding_logourl' => :'sBrandingLogourl',
         :'s_branding_logoemailurl' => :'sBrandingLogoemailurl',
         :'s_branding_logointerfaceurl' => :'sBrandingLogointerfaceurl'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_branding_id' => :'Integer',
-        :'fki_email_id' => :'Integer',
-        :'obj_branding_description' => :'MultilingualBrandingDescription',
-        :'s_branding_description_x' => :'String',
-        :'s_branding_name' => :'String',
-        :'s_email_address' => :'String',
-        :'e_branding_logo' => :'FieldEBrandingLogo',
-        :'e_branding_alignlogo' => :'FieldEBrandingAlignlogo',
-        :'i_branding_color' => :'Integer',
-        :'b_branding_isactive' => :'Boolean',
         :'s_branding_logourl' => :'String',
         :'s_branding_logoemailurl' => :'String',
         :'s_branding_logointerfaceurl' => :'String'
@@ -145,59 +98,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_branding_id')
-        self.pki_branding_id = attributes[:'pki_branding_id']
-      else
-        self.pki_branding_id = nil
-      end
-
-      if attributes.key?(:'fki_email_id')
-        self.fki_email_id = attributes[:'fki_email_id']
-      end
-
-      if attributes.key?(:'obj_branding_description')
-        self.obj_branding_description = attributes[:'obj_branding_description']
-      else
-        self.obj_branding_description = nil
-      end
-
-      if attributes.key?(:'s_branding_description_x')
-        self.s_branding_description_x = attributes[:'s_branding_description_x']
-      else
-        self.s_branding_description_x = nil
-      end
-
-      if attributes.key?(:'s_branding_name')
-        self.s_branding_name = attributes[:'s_branding_name']
-      end
-
-      if attributes.key?(:'s_email_address')
-        self.s_email_address = attributes[:'s_email_address']
-      end
-
-      if attributes.key?(:'e_branding_logo')
-        self.e_branding_logo = attributes[:'e_branding_logo']
-      else
-        self.e_branding_logo = nil
-      end
-
-      if attributes.key?(:'e_branding_alignlogo')
-        self.e_branding_alignlogo = attributes[:'e_branding_alignlogo']
-      else
-        self.e_branding_alignlogo = nil
-      end
-
-      if attributes.key?(:'i_branding_color')
-        self.i_branding_color = attributes[:'i_branding_color']
-      else
-        self.i_branding_color = nil
-      end
-
-      if attributes.key?(:'b_branding_isactive')
-        self.b_branding_isactive = attributes[:'b_branding_isactive']
-      else
-        self.b_branding_isactive = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'s_branding_logourl')
         self.s_branding_logourl = attributes[:'s_branding_logourl']
@@ -216,65 +118,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_branding_id.nil?
-        invalid_properties.push('invalid value for "pki_branding_id", pki_branding_id cannot be nil.')
-      end
-
-      if @pki_branding_id < 0
-        invalid_properties.push('invalid value for "pki_branding_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_email_id.nil? && @fki_email_id > 16777215
-        invalid_properties.push('invalid value for "fki_email_id", must be smaller than or equal to 16777215.')
-      end
-
-      if !@fki_email_id.nil? && @fki_email_id < 1
-        invalid_properties.push('invalid value for "fki_email_id", must be greater than or equal to 1.')
-      end
-
-      if @obj_branding_description.nil?
-        invalid_properties.push('invalid value for "obj_branding_description", obj_branding_description cannot be nil.')
-      end
-
-      if @s_branding_description_x.nil?
-        invalid_properties.push('invalid value for "s_branding_description_x", s_branding_description_x cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,55}$/)
-      if !@s_branding_name.nil? && @s_branding_name !~ pattern
-        invalid_properties.push("invalid value for \"s_branding_name\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if !@s_email_address.nil? && @s_email_address !~ pattern
-        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
-      end
-
-      if @e_branding_logo.nil?
-        invalid_properties.push('invalid value for "e_branding_logo", e_branding_logo cannot be nil.')
-      end
-
-      if @e_branding_alignlogo.nil?
-        invalid_properties.push('invalid value for "e_branding_alignlogo", e_branding_alignlogo cannot be nil.')
-      end
-
-      if @i_branding_color.nil?
-        invalid_properties.push('invalid value for "i_branding_color", i_branding_color cannot be nil.')
-      end
-
-      if @i_branding_color > 16777215
-        invalid_properties.push('invalid value for "i_branding_color", must be smaller than or equal to 16777215.')
-      end
-
-      if @i_branding_color < 0
-        invalid_properties.push('invalid value for "i_branding_color", must be greater than or equal to 0.')
-      end
-
-      if @b_branding_isactive.nil?
-        invalid_properties.push('invalid value for "b_branding_isactive", b_branding_isactive cannot be nil.')
-      end
-
+      invalid_properties = super
       pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       if !@s_branding_logourl.nil? && @s_branding_logourl !~ pattern
         invalid_properties.push("invalid value for \"s_branding_logourl\", must conform to the pattern #{pattern}.")
@@ -297,104 +141,10 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_branding_id.nil?
-      return false if @pki_branding_id < 0
-      return false if !@fki_email_id.nil? && @fki_email_id > 16777215
-      return false if !@fki_email_id.nil? && @fki_email_id < 1
-      return false if @obj_branding_description.nil?
-      return false if @s_branding_description_x.nil?
-      return false if !@s_branding_name.nil? && @s_branding_name !~ Regexp.new(/^.{0,55}$/)
-      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      return false if @e_branding_logo.nil?
-      return false if @e_branding_alignlogo.nil?
-      return false if @i_branding_color.nil?
-      return false if @i_branding_color > 16777215
-      return false if @i_branding_color < 0
-      return false if @b_branding_isactive.nil?
       return false if !@s_branding_logourl.nil? && @s_branding_logourl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       return false if !@s_branding_logoemailurl.nil? && @s_branding_logoemailurl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
       return false if !@s_branding_logointerfaceurl.nil? && @s_branding_logointerfaceurl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_branding_id Value to be assigned
-    def pki_branding_id=(pki_branding_id)
-      if pki_branding_id.nil?
-        fail ArgumentError, 'pki_branding_id cannot be nil'
-      end
-
-      if pki_branding_id < 0
-        fail ArgumentError, 'invalid value for "pki_branding_id", must be greater than or equal to 0.'
-      end
-
-      @pki_branding_id = pki_branding_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_email_id Value to be assigned
-    def fki_email_id=(fki_email_id)
-      if fki_email_id.nil?
-        fail ArgumentError, 'fki_email_id cannot be nil'
-      end
-
-      if fki_email_id > 16777215
-        fail ArgumentError, 'invalid value for "fki_email_id", must be smaller than or equal to 16777215.'
-      end
-
-      if fki_email_id < 1
-        fail ArgumentError, 'invalid value for "fki_email_id", must be greater than or equal to 1.'
-      end
-
-      @fki_email_id = fki_email_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_branding_name Value to be assigned
-    def s_branding_name=(s_branding_name)
-      if s_branding_name.nil?
-        fail ArgumentError, 's_branding_name cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,55}$/)
-      if s_branding_name !~ pattern
-        fail ArgumentError, "invalid value for \"s_branding_name\", must conform to the pattern #{pattern}."
-      end
-
-      @s_branding_name = s_branding_name
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_email_address Value to be assigned
-    def s_email_address=(s_email_address)
-      if s_email_address.nil?
-        fail ArgumentError, 's_email_address cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if s_email_address !~ pattern
-        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
-      end
-
-      @s_email_address = s_email_address
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_branding_color Value to be assigned
-    def i_branding_color=(i_branding_color)
-      if i_branding_color.nil?
-        fail ArgumentError, 'i_branding_color cannot be nil'
-      end
-
-      if i_branding_color > 16777215
-        fail ArgumentError, 'invalid value for "i_branding_color", must be smaller than or equal to 16777215.'
-      end
-
-      if i_branding_color < 0
-        fail ArgumentError, 'invalid value for "i_branding_color", must be greater than or equal to 0.'
-      end
-
-      @i_branding_color = i_branding_color
+      true && super
     end
 
     # Custom attribute writer method with validation
@@ -447,19 +197,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_branding_id == o.pki_branding_id &&
-          fki_email_id == o.fki_email_id &&
-          obj_branding_description == o.obj_branding_description &&
-          s_branding_description_x == o.s_branding_description_x &&
-          s_branding_name == o.s_branding_name &&
-          s_email_address == o.s_email_address &&
-          e_branding_logo == o.e_branding_logo &&
-          e_branding_alignlogo == o.e_branding_alignlogo &&
-          i_branding_color == o.i_branding_color &&
-          b_branding_isactive == o.b_branding_isactive &&
           s_branding_logourl == o.s_branding_logourl &&
           s_branding_logoemailurl == o.s_branding_logoemailurl &&
-          s_branding_logointerfaceurl == o.s_branding_logointerfaceurl
+          s_branding_logointerfaceurl == o.s_branding_logointerfaceurl && super(o)
     end
 
     # @see the `==` method
@@ -471,7 +211,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_branding_id, fki_email_id, obj_branding_description, s_branding_description_x, s_branding_name, s_email_address, e_branding_logo, e_branding_alignlogo, i_branding_color, b_branding_isactive, s_branding_logourl, s_branding_logoemailurl, s_branding_logointerfaceurl].hash
+      [s_branding_logourl, s_branding_logoemailurl, s_branding_logointerfaceurl].hash
     end
 
     # Builds the object from hash
@@ -479,6 +219,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -555,7 +296,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

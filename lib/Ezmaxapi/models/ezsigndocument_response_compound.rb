@@ -15,77 +15,7 @@ require 'time'
 
 module EzmaxApi
   # An Ezsigndocument Object and children to create a complete structure
-  class EzsigndocumentResponseCompound
-    # The unique ID of the Ezsigndocument
-    attr_accessor :pki_ezsigndocument_id
-
-    # The unique ID of the Ezsignfolder
-    attr_accessor :fki_ezsignfolder_id
-
-    # The unique ID of the Ezsignfoldersignerassociation
-    attr_accessor :fki_ezsignfoldersignerassociation_id_declinedtosign
-
-    # The maximum date and time at which the Ezsigndocument can be signed.
-    attr_accessor :dt_ezsigndocument_duedate
-
-    # The date and time at which the Ezsignform has been completed.
-    attr_accessor :dt_ezsignform_completed
-
-    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-    attr_accessor :fki_language_id
-
-    # The name of the document that will be presented to Ezsignfoldersignerassociations
-    attr_accessor :s_ezsigndocument_name
-
-    attr_accessor :e_ezsigndocument_step
-
-    # The date and time when the Ezsigndocument was first sent.
-    attr_accessor :dt_ezsigndocument_firstsend
-
-    # The date and time when the Ezsigndocument was sent the last time.
-    attr_accessor :dt_ezsigndocument_lastsend
-
-    # The order in which the Ezsigndocument will be presented to the signatory in the Ezsignfolder.
-    attr_accessor :i_ezsigndocument_order
-
-    # The number of pages in the Ezsigndocument.
-    attr_accessor :i_ezsigndocument_pagetotal
-
-    # The number of signatures that were signed in the document.
-    attr_accessor :i_ezsigndocument_signaturesigned
-
-    # The number of total signatures that were requested in the Ezsigndocument.
-    attr_accessor :i_ezsigndocument_signaturetotal
-
-    # The number of total Ezsignformfield that were requested in the Ezsigndocument.
-    attr_accessor :i_ezsigndocument_formfieldtotal
-
-    # MD5 Hash of the initial PDF Document before signatures were applied to it.
-    attr_accessor :s_ezsigndocument_md5initial
-
-    # A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign
-    attr_accessor :t_ezsigndocument_declinedtosignreason
-
-    # MD5 Hash of the final PDF Document after all signatures were applied to it.
-    attr_accessor :s_ezsigndocument_md5signed
-
-    # If the Ezsigndocument contains an Ezsignform or not
-    attr_accessor :b_ezsigndocument_ezsignform
-
-    # If the Ezsigndocument contains signed signatures (From internal or external sources)
-    attr_accessor :b_ezsigndocument_hassignedsignatures
-
-    attr_accessor :obj_audit
-
-    # This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
-    attr_accessor :s_ezsigndocument_externalid
-
-    # The number of Ezsigndocumentattachment total
-    attr_accessor :i_ezsigndocument_ezsignsignatureattachmenttotal
-
-    # The total number of Ezsigndiscussions
-    attr_accessor :i_ezsigndocument_ezsigndiscussiontotal
-
+  class EzsigndocumentResponseCompound < EzsigndocumentResponse
     attr_accessor :e_ezsigndocument_steptype
 
     # The total number of steps in the form filling phase
@@ -129,30 +59,6 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsigndocument_id' => :'pkiEzsigndocumentID',
-        :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
-        :'fki_ezsignfoldersignerassociation_id_declinedtosign' => :'fkiEzsignfoldersignerassociationIDDeclinedtosign',
-        :'dt_ezsigndocument_duedate' => :'dtEzsigndocumentDuedate',
-        :'dt_ezsignform_completed' => :'dtEzsignformCompleted',
-        :'fki_language_id' => :'fkiLanguageID',
-        :'s_ezsigndocument_name' => :'sEzsigndocumentName',
-        :'e_ezsigndocument_step' => :'eEzsigndocumentStep',
-        :'dt_ezsigndocument_firstsend' => :'dtEzsigndocumentFirstsend',
-        :'dt_ezsigndocument_lastsend' => :'dtEzsigndocumentLastsend',
-        :'i_ezsigndocument_order' => :'iEzsigndocumentOrder',
-        :'i_ezsigndocument_pagetotal' => :'iEzsigndocumentPagetotal',
-        :'i_ezsigndocument_signaturesigned' => :'iEzsigndocumentSignaturesigned',
-        :'i_ezsigndocument_signaturetotal' => :'iEzsigndocumentSignaturetotal',
-        :'i_ezsigndocument_formfieldtotal' => :'iEzsigndocumentFormfieldtotal',
-        :'s_ezsigndocument_md5initial' => :'sEzsigndocumentMD5initial',
-        :'t_ezsigndocument_declinedtosignreason' => :'tEzsigndocumentDeclinedtosignreason',
-        :'s_ezsigndocument_md5signed' => :'sEzsigndocumentMD5signed',
-        :'b_ezsigndocument_ezsignform' => :'bEzsigndocumentEzsignform',
-        :'b_ezsigndocument_hassignedsignatures' => :'bEzsigndocumentHassignedsignatures',
-        :'obj_audit' => :'objAudit',
-        :'s_ezsigndocument_externalid' => :'sEzsigndocumentExternalid',
-        :'i_ezsigndocument_ezsignsignatureattachmenttotal' => :'iEzsigndocumentEzsignsignatureattachmenttotal',
-        :'i_ezsigndocument_ezsigndiscussiontotal' => :'iEzsigndocumentEzsigndiscussiontotal',
         :'e_ezsigndocument_steptype' => :'eEzsigndocumentSteptype',
         :'i_ezsigndocument_stepformtotal' => :'iEzsigndocumentStepformtotal',
         :'i_ezsigndocument_stepformcurrent' => :'iEzsigndocumentStepformcurrent',
@@ -163,38 +69,14 @@ module EzmaxApi
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsigndocument_id' => :'Integer',
-        :'fki_ezsignfolder_id' => :'Integer',
-        :'fki_ezsignfoldersignerassociation_id_declinedtosign' => :'Integer',
-        :'dt_ezsigndocument_duedate' => :'String',
-        :'dt_ezsignform_completed' => :'String',
-        :'fki_language_id' => :'Integer',
-        :'s_ezsigndocument_name' => :'String',
-        :'e_ezsigndocument_step' => :'FieldEEzsigndocumentStep',
-        :'dt_ezsigndocument_firstsend' => :'String',
-        :'dt_ezsigndocument_lastsend' => :'String',
-        :'i_ezsigndocument_order' => :'Integer',
-        :'i_ezsigndocument_pagetotal' => :'Integer',
-        :'i_ezsigndocument_signaturesigned' => :'Integer',
-        :'i_ezsigndocument_signaturetotal' => :'Integer',
-        :'i_ezsigndocument_formfieldtotal' => :'Integer',
-        :'s_ezsigndocument_md5initial' => :'String',
-        :'t_ezsigndocument_declinedtosignreason' => :'String',
-        :'s_ezsigndocument_md5signed' => :'String',
-        :'b_ezsigndocument_ezsignform' => :'Boolean',
-        :'b_ezsigndocument_hassignedsignatures' => :'Boolean',
-        :'obj_audit' => :'CommonAudit',
-        :'s_ezsigndocument_externalid' => :'String',
-        :'i_ezsigndocument_ezsignsignatureattachmenttotal' => :'Integer',
-        :'i_ezsigndocument_ezsigndiscussiontotal' => :'Integer',
         :'e_ezsigndocument_steptype' => :'ComputedEEzsigndocumentSteptype',
         :'i_ezsigndocument_stepformtotal' => :'Integer',
         :'i_ezsigndocument_stepformcurrent' => :'Integer',
@@ -233,125 +115,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsigndocument_id')
-        self.pki_ezsigndocument_id = attributes[:'pki_ezsigndocument_id']
-      else
-        self.pki_ezsigndocument_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfolder_id')
-        self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
-      else
-        self.fki_ezsignfolder_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfoldersignerassociation_id_declinedtosign')
-        self.fki_ezsignfoldersignerassociation_id_declinedtosign = attributes[:'fki_ezsignfoldersignerassociation_id_declinedtosign']
-      end
-
-      if attributes.key?(:'dt_ezsigndocument_duedate')
-        self.dt_ezsigndocument_duedate = attributes[:'dt_ezsigndocument_duedate']
-      else
-        self.dt_ezsigndocument_duedate = nil
-      end
-
-      if attributes.key?(:'dt_ezsignform_completed')
-        self.dt_ezsignform_completed = attributes[:'dt_ezsignform_completed']
-      end
-
-      if attributes.key?(:'fki_language_id')
-        self.fki_language_id = attributes[:'fki_language_id']
-      end
-
-      if attributes.key?(:'s_ezsigndocument_name')
-        self.s_ezsigndocument_name = attributes[:'s_ezsigndocument_name']
-      else
-        self.s_ezsigndocument_name = nil
-      end
-
-      if attributes.key?(:'e_ezsigndocument_step')
-        self.e_ezsigndocument_step = attributes[:'e_ezsigndocument_step']
-      else
-        self.e_ezsigndocument_step = nil
-      end
-
-      if attributes.key?(:'dt_ezsigndocument_firstsend')
-        self.dt_ezsigndocument_firstsend = attributes[:'dt_ezsigndocument_firstsend']
-      end
-
-      if attributes.key?(:'dt_ezsigndocument_lastsend')
-        self.dt_ezsigndocument_lastsend = attributes[:'dt_ezsigndocument_lastsend']
-      end
-
-      if attributes.key?(:'i_ezsigndocument_order')
-        self.i_ezsigndocument_order = attributes[:'i_ezsigndocument_order']
-      else
-        self.i_ezsigndocument_order = nil
-      end
-
-      if attributes.key?(:'i_ezsigndocument_pagetotal')
-        self.i_ezsigndocument_pagetotal = attributes[:'i_ezsigndocument_pagetotal']
-      else
-        self.i_ezsigndocument_pagetotal = nil
-      end
-
-      if attributes.key?(:'i_ezsigndocument_signaturesigned')
-        self.i_ezsigndocument_signaturesigned = attributes[:'i_ezsigndocument_signaturesigned']
-      else
-        self.i_ezsigndocument_signaturesigned = nil
-      end
-
-      if attributes.key?(:'i_ezsigndocument_signaturetotal')
-        self.i_ezsigndocument_signaturetotal = attributes[:'i_ezsigndocument_signaturetotal']
-      else
-        self.i_ezsigndocument_signaturetotal = nil
-      end
-
-      if attributes.key?(:'i_ezsigndocument_formfieldtotal')
-        self.i_ezsigndocument_formfieldtotal = attributes[:'i_ezsigndocument_formfieldtotal']
-      else
-        self.i_ezsigndocument_formfieldtotal = nil
-      end
-
-      if attributes.key?(:'s_ezsigndocument_md5initial')
-        self.s_ezsigndocument_md5initial = attributes[:'s_ezsigndocument_md5initial']
-      end
-
-      if attributes.key?(:'t_ezsigndocument_declinedtosignreason')
-        self.t_ezsigndocument_declinedtosignreason = attributes[:'t_ezsigndocument_declinedtosignreason']
-      end
-
-      if attributes.key?(:'s_ezsigndocument_md5signed')
-        self.s_ezsigndocument_md5signed = attributes[:'s_ezsigndocument_md5signed']
-      end
-
-      if attributes.key?(:'b_ezsigndocument_ezsignform')
-        self.b_ezsigndocument_ezsignform = attributes[:'b_ezsigndocument_ezsignform']
-      end
-
-      if attributes.key?(:'b_ezsigndocument_hassignedsignatures')
-        self.b_ezsigndocument_hassignedsignatures = attributes[:'b_ezsigndocument_hassignedsignatures']
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      end
-
-      if attributes.key?(:'s_ezsigndocument_externalid')
-        self.s_ezsigndocument_externalid = attributes[:'s_ezsigndocument_externalid']
-      end
-
-      if attributes.key?(:'i_ezsigndocument_ezsignsignatureattachmenttotal')
-        self.i_ezsigndocument_ezsignsignatureattachmenttotal = attributes[:'i_ezsigndocument_ezsignsignatureattachmenttotal']
-      else
-        self.i_ezsigndocument_ezsignsignatureattachmenttotal = nil
-      end
-
-      if attributes.key?(:'i_ezsigndocument_ezsigndiscussiontotal')
-        self.i_ezsigndocument_ezsigndiscussiontotal = attributes[:'i_ezsigndocument_ezsigndiscussiontotal']
-      else
-        self.i_ezsigndocument_ezsigndiscussiontotal = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'e_ezsigndocument_steptype')
         self.e_ezsigndocument_steptype = attributes[:'e_ezsigndocument_steptype']
@@ -402,104 +167,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsigndocument_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsigndocument_id", pki_ezsigndocument_id cannot be nil.')
-      end
-
-      if @pki_ezsigndocument_id < 0
-        invalid_properties.push('invalid value for "pki_ezsigndocument_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsignfolder_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfolder_id", fki_ezsignfolder_id cannot be nil.')
-      end
-
-      if @fki_ezsignfolder_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezsignfoldersignerassociation_id_declinedtosign.nil? && @fki_ezsignfoldersignerassociation_id_declinedtosign < 0
-        invalid_properties.push('invalid value for "fki_ezsignfoldersignerassociation_id_declinedtosign", must be greater than or equal to 0.')
-      end
-
-      if @dt_ezsigndocument_duedate.nil?
-        invalid_properties.push('invalid value for "dt_ezsigndocument_duedate", dt_ezsigndocument_duedate cannot be nil.')
-      end
-
-      if !@fki_language_id.nil? && @fki_language_id > 2
-        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
-      end
-
-      if !@fki_language_id.nil? && @fki_language_id < 1
-        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
-      end
-
-      if @s_ezsigndocument_name.nil?
-        invalid_properties.push('invalid value for "s_ezsigndocument_name", s_ezsigndocument_name cannot be nil.')
-      end
-
-      if @e_ezsigndocument_step.nil?
-        invalid_properties.push('invalid value for "e_ezsigndocument_step", e_ezsigndocument_step cannot be nil.')
-      end
-
-      if @i_ezsigndocument_order.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_order", i_ezsigndocument_order cannot be nil.')
-      end
-
-      if @i_ezsigndocument_order < 1
-        invalid_properties.push('invalid value for "i_ezsigndocument_order", must be greater than or equal to 1.')
-      end
-
-      if @i_ezsigndocument_pagetotal.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_pagetotal", i_ezsigndocument_pagetotal cannot be nil.')
-      end
-
-      if @i_ezsigndocument_pagetotal < 1
-        invalid_properties.push('invalid value for "i_ezsigndocument_pagetotal", must be greater than or equal to 1.')
-      end
-
-      if @i_ezsigndocument_signaturesigned.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_signaturesigned", i_ezsigndocument_signaturesigned cannot be nil.')
-      end
-
-      if @i_ezsigndocument_signaturesigned < 0
-        invalid_properties.push('invalid value for "i_ezsigndocument_signaturesigned", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigndocument_signaturetotal.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_signaturetotal", i_ezsigndocument_signaturetotal cannot be nil.')
-      end
-
-      if @i_ezsigndocument_signaturetotal < 0
-        invalid_properties.push('invalid value for "i_ezsigndocument_signaturetotal", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigndocument_formfieldtotal.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_formfieldtotal", i_ezsigndocument_formfieldtotal cannot be nil.')
-      end
-
-      if @i_ezsigndocument_formfieldtotal < 0
-        invalid_properties.push('invalid value for "i_ezsigndocument_formfieldtotal", must be greater than or equal to 0.')
-      end
-
-      pattern = Regexp.new(/^.{0,128}$/)
-      if !@s_ezsigndocument_externalid.nil? && @s_ezsigndocument_externalid !~ pattern
-        invalid_properties.push("invalid value for \"s_ezsigndocument_externalid\", must conform to the pattern #{pattern}.")
-      end
-
-      if @i_ezsigndocument_ezsignsignatureattachmenttotal.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_ezsignsignatureattachmenttotal", i_ezsigndocument_ezsignsignatureattachmenttotal cannot be nil.')
-      end
-
-      if @i_ezsigndocument_ezsignsignatureattachmenttotal < 0
-        invalid_properties.push('invalid value for "i_ezsigndocument_ezsignsignatureattachmenttotal", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigndocument_ezsigndiscussiontotal.nil?
-        invalid_properties.push('invalid value for "i_ezsigndocument_ezsigndiscussiontotal", i_ezsigndocument_ezsigndiscussiontotal cannot be nil.')
-      end
-
+      invalid_properties = super
       if @e_ezsigndocument_steptype.nil?
         invalid_properties.push('invalid value for "e_ezsigndocument_steptype", e_ezsigndocument_steptype cannot be nil.')
       end
@@ -531,196 +199,13 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsigndocument_id.nil?
-      return false if @pki_ezsigndocument_id < 0
-      return false if @fki_ezsignfolder_id.nil?
-      return false if @fki_ezsignfolder_id < 0
-      return false if !@fki_ezsignfoldersignerassociation_id_declinedtosign.nil? && @fki_ezsignfoldersignerassociation_id_declinedtosign < 0
-      return false if @dt_ezsigndocument_duedate.nil?
-      return false if !@fki_language_id.nil? && @fki_language_id > 2
-      return false if !@fki_language_id.nil? && @fki_language_id < 1
-      return false if @s_ezsigndocument_name.nil?
-      return false if @e_ezsigndocument_step.nil?
-      return false if @i_ezsigndocument_order.nil?
-      return false if @i_ezsigndocument_order < 1
-      return false if @i_ezsigndocument_pagetotal.nil?
-      return false if @i_ezsigndocument_pagetotal < 1
-      return false if @i_ezsigndocument_signaturesigned.nil?
-      return false if @i_ezsigndocument_signaturesigned < 0
-      return false if @i_ezsigndocument_signaturetotal.nil?
-      return false if @i_ezsigndocument_signaturetotal < 0
-      return false if @i_ezsigndocument_formfieldtotal.nil?
-      return false if @i_ezsigndocument_formfieldtotal < 0
-      return false if !@s_ezsigndocument_externalid.nil? && @s_ezsigndocument_externalid !~ Regexp.new(/^.{0,128}$/)
-      return false if @i_ezsigndocument_ezsignsignatureattachmenttotal.nil?
-      return false if @i_ezsigndocument_ezsignsignatureattachmenttotal < 0
-      return false if @i_ezsigndocument_ezsigndiscussiontotal.nil?
       return false if @e_ezsigndocument_steptype.nil?
       return false if @i_ezsigndocument_stepformtotal.nil?
       return false if @i_ezsigndocument_stepformcurrent.nil?
       return false if @i_ezsigndocument_stepsignaturetotal.nil?
       return false if @i_ezsigndocument_stepsignature_current.nil?
       return false if @a_obj_ezsignfoldersignerassociationstatus.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsigndocument_id Value to be assigned
-    def pki_ezsigndocument_id=(pki_ezsigndocument_id)
-      if pki_ezsigndocument_id.nil?
-        fail ArgumentError, 'pki_ezsigndocument_id cannot be nil'
-      end
-
-      if pki_ezsigndocument_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsigndocument_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsigndocument_id = pki_ezsigndocument_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfolder_id Value to be assigned
-    def fki_ezsignfolder_id=(fki_ezsignfolder_id)
-      if fki_ezsignfolder_id.nil?
-        fail ArgumentError, 'fki_ezsignfolder_id cannot be nil'
-      end
-
-      if fki_ezsignfolder_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfolder_id = fki_ezsignfolder_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfoldersignerassociation_id_declinedtosign Value to be assigned
-    def fki_ezsignfoldersignerassociation_id_declinedtosign=(fki_ezsignfoldersignerassociation_id_declinedtosign)
-      if fki_ezsignfoldersignerassociation_id_declinedtosign.nil?
-        fail ArgumentError, 'fki_ezsignfoldersignerassociation_id_declinedtosign cannot be nil'
-      end
-
-      if fki_ezsignfoldersignerassociation_id_declinedtosign < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldersignerassociation_id_declinedtosign", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfoldersignerassociation_id_declinedtosign = fki_ezsignfoldersignerassociation_id_declinedtosign
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_language_id Value to be assigned
-    def fki_language_id=(fki_language_id)
-      if fki_language_id.nil?
-        fail ArgumentError, 'fki_language_id cannot be nil'
-      end
-
-      if fki_language_id > 2
-        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
-      end
-
-      if fki_language_id < 1
-        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
-      end
-
-      @fki_language_id = fki_language_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_order Value to be assigned
-    def i_ezsigndocument_order=(i_ezsigndocument_order)
-      if i_ezsigndocument_order.nil?
-        fail ArgumentError, 'i_ezsigndocument_order cannot be nil'
-      end
-
-      if i_ezsigndocument_order < 1
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_order", must be greater than or equal to 1.'
-      end
-
-      @i_ezsigndocument_order = i_ezsigndocument_order
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_pagetotal Value to be assigned
-    def i_ezsigndocument_pagetotal=(i_ezsigndocument_pagetotal)
-      if i_ezsigndocument_pagetotal.nil?
-        fail ArgumentError, 'i_ezsigndocument_pagetotal cannot be nil'
-      end
-
-      if i_ezsigndocument_pagetotal < 1
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_pagetotal", must be greater than or equal to 1.'
-      end
-
-      @i_ezsigndocument_pagetotal = i_ezsigndocument_pagetotal
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_signaturesigned Value to be assigned
-    def i_ezsigndocument_signaturesigned=(i_ezsigndocument_signaturesigned)
-      if i_ezsigndocument_signaturesigned.nil?
-        fail ArgumentError, 'i_ezsigndocument_signaturesigned cannot be nil'
-      end
-
-      if i_ezsigndocument_signaturesigned < 0
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_signaturesigned", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigndocument_signaturesigned = i_ezsigndocument_signaturesigned
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_signaturetotal Value to be assigned
-    def i_ezsigndocument_signaturetotal=(i_ezsigndocument_signaturetotal)
-      if i_ezsigndocument_signaturetotal.nil?
-        fail ArgumentError, 'i_ezsigndocument_signaturetotal cannot be nil'
-      end
-
-      if i_ezsigndocument_signaturetotal < 0
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_signaturetotal", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigndocument_signaturetotal = i_ezsigndocument_signaturetotal
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_formfieldtotal Value to be assigned
-    def i_ezsigndocument_formfieldtotal=(i_ezsigndocument_formfieldtotal)
-      if i_ezsigndocument_formfieldtotal.nil?
-        fail ArgumentError, 'i_ezsigndocument_formfieldtotal cannot be nil'
-      end
-
-      if i_ezsigndocument_formfieldtotal < 0
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_formfieldtotal", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigndocument_formfieldtotal = i_ezsigndocument_formfieldtotal
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezsigndocument_externalid Value to be assigned
-    def s_ezsigndocument_externalid=(s_ezsigndocument_externalid)
-      if s_ezsigndocument_externalid.nil?
-        fail ArgumentError, 's_ezsigndocument_externalid cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,128}$/)
-      if s_ezsigndocument_externalid !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezsigndocument_externalid\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezsigndocument_externalid = s_ezsigndocument_externalid
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigndocument_ezsignsignatureattachmenttotal Value to be assigned
-    def i_ezsigndocument_ezsignsignatureattachmenttotal=(i_ezsigndocument_ezsignsignatureattachmenttotal)
-      if i_ezsigndocument_ezsignsignatureattachmenttotal.nil?
-        fail ArgumentError, 'i_ezsigndocument_ezsignsignatureattachmenttotal cannot be nil'
-      end
-
-      if i_ezsigndocument_ezsignsignatureattachmenttotal < 0
-        fail ArgumentError, 'invalid value for "i_ezsigndocument_ezsignsignatureattachmenttotal", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigndocument_ezsignsignatureattachmenttotal = i_ezsigndocument_ezsignsignatureattachmenttotal
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -728,37 +213,13 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsigndocument_id == o.pki_ezsigndocument_id &&
-          fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
-          fki_ezsignfoldersignerassociation_id_declinedtosign == o.fki_ezsignfoldersignerassociation_id_declinedtosign &&
-          dt_ezsigndocument_duedate == o.dt_ezsigndocument_duedate &&
-          dt_ezsignform_completed == o.dt_ezsignform_completed &&
-          fki_language_id == o.fki_language_id &&
-          s_ezsigndocument_name == o.s_ezsigndocument_name &&
-          e_ezsigndocument_step == o.e_ezsigndocument_step &&
-          dt_ezsigndocument_firstsend == o.dt_ezsigndocument_firstsend &&
-          dt_ezsigndocument_lastsend == o.dt_ezsigndocument_lastsend &&
-          i_ezsigndocument_order == o.i_ezsigndocument_order &&
-          i_ezsigndocument_pagetotal == o.i_ezsigndocument_pagetotal &&
-          i_ezsigndocument_signaturesigned == o.i_ezsigndocument_signaturesigned &&
-          i_ezsigndocument_signaturetotal == o.i_ezsigndocument_signaturetotal &&
-          i_ezsigndocument_formfieldtotal == o.i_ezsigndocument_formfieldtotal &&
-          s_ezsigndocument_md5initial == o.s_ezsigndocument_md5initial &&
-          t_ezsigndocument_declinedtosignreason == o.t_ezsigndocument_declinedtosignreason &&
-          s_ezsigndocument_md5signed == o.s_ezsigndocument_md5signed &&
-          b_ezsigndocument_ezsignform == o.b_ezsigndocument_ezsignform &&
-          b_ezsigndocument_hassignedsignatures == o.b_ezsigndocument_hassignedsignatures &&
-          obj_audit == o.obj_audit &&
-          s_ezsigndocument_externalid == o.s_ezsigndocument_externalid &&
-          i_ezsigndocument_ezsignsignatureattachmenttotal == o.i_ezsigndocument_ezsignsignatureattachmenttotal &&
-          i_ezsigndocument_ezsigndiscussiontotal == o.i_ezsigndocument_ezsigndiscussiontotal &&
           e_ezsigndocument_steptype == o.e_ezsigndocument_steptype &&
           i_ezsigndocument_stepformtotal == o.i_ezsigndocument_stepformtotal &&
           i_ezsigndocument_stepformcurrent == o.i_ezsigndocument_stepformcurrent &&
           i_ezsigndocument_stepsignaturetotal == o.i_ezsigndocument_stepsignaturetotal &&
           i_ezsigndocument_stepsignature_current == o.i_ezsigndocument_stepsignature_current &&
           a_obj_ezsignfoldersignerassociationstatus == o.a_obj_ezsignfoldersignerassociationstatus &&
-          a_obj_ezsigndocumentdependency == o.a_obj_ezsigndocumentdependency
+          a_obj_ezsigndocumentdependency == o.a_obj_ezsigndocumentdependency && super(o)
     end
 
     # @see the `==` method
@@ -770,7 +231,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigndocument_id, fki_ezsignfolder_id, fki_ezsignfoldersignerassociation_id_declinedtosign, dt_ezsigndocument_duedate, dt_ezsignform_completed, fki_language_id, s_ezsigndocument_name, e_ezsigndocument_step, dt_ezsigndocument_firstsend, dt_ezsigndocument_lastsend, i_ezsigndocument_order, i_ezsigndocument_pagetotal, i_ezsigndocument_signaturesigned, i_ezsigndocument_signaturetotal, i_ezsigndocument_formfieldtotal, s_ezsigndocument_md5initial, t_ezsigndocument_declinedtosignreason, s_ezsigndocument_md5signed, b_ezsigndocument_ezsignform, b_ezsigndocument_hassignedsignatures, obj_audit, s_ezsigndocument_externalid, i_ezsigndocument_ezsignsignatureattachmenttotal, i_ezsigndocument_ezsigndiscussiontotal, e_ezsigndocument_steptype, i_ezsigndocument_stepformtotal, i_ezsigndocument_stepformcurrent, i_ezsigndocument_stepsignaturetotal, i_ezsigndocument_stepsignature_current, a_obj_ezsignfoldersignerassociationstatus, a_obj_ezsigndocumentdependency].hash
+      [e_ezsigndocument_steptype, i_ezsigndocument_stepformtotal, i_ezsigndocument_stepformcurrent, i_ezsigndocument_stepsignaturetotal, i_ezsigndocument_stepsignature_current, a_obj_ezsignfoldersignerassociationstatus, a_obj_ezsigndocumentdependency].hash
     end
 
     # Builds the object from hash
@@ -778,6 +239,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -854,7 +316,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

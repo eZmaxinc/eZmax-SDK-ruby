@@ -15,19 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezsigntemplatepackagemembership Object
-  class EzsigntemplatepackagemembershipResponseCompound
-    # The unique ID of the Ezsigntemplatepackagemembership
-    attr_accessor :pki_ezsigntemplatepackagemembership_id
-
-    # The unique ID of the Ezsigntemplatepackage
-    attr_accessor :fki_ezsigntemplatepackage_id
-
-    # The unique ID of the Ezsigntemplate
-    attr_accessor :fki_ezsigntemplate_id
-
-    # The order in which the Ezsigntemplate will be imported when using an Ezsigntemplatepackage.
-    attr_accessor :i_ezsigntemplatepackagemembership_order
-
+  class EzsigntemplatepackagemembershipResponseCompound < EzsigntemplatepackagemembershipResponse
     attr_accessor :obj_ezsigntemplate
 
     attr_accessor :a_obj_ezsigntemplatepackagesignermembership
@@ -35,27 +23,19 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsigntemplatepackagemembership_id' => :'pkiEzsigntemplatepackagemembershipID',
-        :'fki_ezsigntemplatepackage_id' => :'fkiEzsigntemplatepackageID',
-        :'fki_ezsigntemplate_id' => :'fkiEzsigntemplateID',
-        :'i_ezsigntemplatepackagemembership_order' => :'iEzsigntemplatepackagemembershipOrder',
         :'obj_ezsigntemplate' => :'objEzsigntemplate',
         :'a_obj_ezsigntemplatepackagesignermembership' => :'a_objEzsigntemplatepackagesignermembership'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsigntemplatepackagemembership_id' => :'Integer',
-        :'fki_ezsigntemplatepackage_id' => :'Integer',
-        :'fki_ezsigntemplate_id' => :'Integer',
-        :'i_ezsigntemplatepackagemembership_order' => :'Integer',
         :'obj_ezsigntemplate' => :'EzsigntemplateResponseCompound',
         :'a_obj_ezsigntemplatepackagesignermembership' => :'Array<EzsigntemplatepackagesignermembershipResponseCompound>'
       }
@@ -89,29 +69,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsigntemplatepackagemembership_id')
-        self.pki_ezsigntemplatepackagemembership_id = attributes[:'pki_ezsigntemplatepackagemembership_id']
-      else
-        self.pki_ezsigntemplatepackagemembership_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplatepackage_id')
-        self.fki_ezsigntemplatepackage_id = attributes[:'fki_ezsigntemplatepackage_id']
-      else
-        self.fki_ezsigntemplatepackage_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplate_id')
-        self.fki_ezsigntemplate_id = attributes[:'fki_ezsigntemplate_id']
-      else
-        self.fki_ezsigntemplate_id = nil
-      end
-
-      if attributes.key?(:'i_ezsigntemplatepackagemembership_order')
-        self.i_ezsigntemplatepackagemembership_order = attributes[:'i_ezsigntemplatepackagemembership_order']
-      else
-        self.i_ezsigntemplatepackagemembership_order = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_ezsigntemplate')
         self.obj_ezsigntemplate = attributes[:'obj_ezsigntemplate']
@@ -132,39 +91,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsigntemplatepackagemembership_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsigntemplatepackagemembership_id", pki_ezsigntemplatepackagemembership_id cannot be nil.')
-      end
-
-      if @pki_ezsigntemplatepackagemembership_id < 0
-        invalid_properties.push('invalid value for "pki_ezsigntemplatepackagemembership_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsigntemplatepackage_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntemplatepackage_id", fki_ezsigntemplatepackage_id cannot be nil.')
-      end
-
-      if @fki_ezsigntemplatepackage_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplatepackage_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsigntemplate_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntemplate_id", fki_ezsigntemplate_id cannot be nil.')
-      end
-
-      if @fki_ezsigntemplate_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplate_id", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigntemplatepackagemembership_order.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatepackagemembership_order", i_ezsigntemplatepackagemembership_order cannot be nil.')
-      end
-
-      if @i_ezsigntemplatepackagemembership_order < 1
-        invalid_properties.push('invalid value for "i_ezsigntemplatepackagemembership_order", must be greater than or equal to 1.')
-      end
-
+      invalid_properties = super
       if @obj_ezsigntemplate.nil?
         invalid_properties.push('invalid value for "obj_ezsigntemplate", obj_ezsigntemplate cannot be nil.')
       end
@@ -180,73 +107,9 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsigntemplatepackagemembership_id.nil?
-      return false if @pki_ezsigntemplatepackagemembership_id < 0
-      return false if @fki_ezsigntemplatepackage_id.nil?
-      return false if @fki_ezsigntemplatepackage_id < 0
-      return false if @fki_ezsigntemplate_id.nil?
-      return false if @fki_ezsigntemplate_id < 0
-      return false if @i_ezsigntemplatepackagemembership_order.nil?
-      return false if @i_ezsigntemplatepackagemembership_order < 1
       return false if @obj_ezsigntemplate.nil?
       return false if @a_obj_ezsigntemplatepackagesignermembership.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsigntemplatepackagemembership_id Value to be assigned
-    def pki_ezsigntemplatepackagemembership_id=(pki_ezsigntemplatepackagemembership_id)
-      if pki_ezsigntemplatepackagemembership_id.nil?
-        fail ArgumentError, 'pki_ezsigntemplatepackagemembership_id cannot be nil'
-      end
-
-      if pki_ezsigntemplatepackagemembership_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsigntemplatepackagemembership_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsigntemplatepackagemembership_id = pki_ezsigntemplatepackagemembership_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplatepackage_id Value to be assigned
-    def fki_ezsigntemplatepackage_id=(fki_ezsigntemplatepackage_id)
-      if fki_ezsigntemplatepackage_id.nil?
-        fail ArgumentError, 'fki_ezsigntemplatepackage_id cannot be nil'
-      end
-
-      if fki_ezsigntemplatepackage_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplatepackage_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplatepackage_id = fki_ezsigntemplatepackage_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplate_id Value to be assigned
-    def fki_ezsigntemplate_id=(fki_ezsigntemplate_id)
-      if fki_ezsigntemplate_id.nil?
-        fail ArgumentError, 'fki_ezsigntemplate_id cannot be nil'
-      end
-
-      if fki_ezsigntemplate_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplate_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplate_id = fki_ezsigntemplate_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatepackagemembership_order Value to be assigned
-    def i_ezsigntemplatepackagemembership_order=(i_ezsigntemplatepackagemembership_order)
-      if i_ezsigntemplatepackagemembership_order.nil?
-        fail ArgumentError, 'i_ezsigntemplatepackagemembership_order cannot be nil'
-      end
-
-      if i_ezsigntemplatepackagemembership_order < 1
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatepackagemembership_order", must be greater than or equal to 1.'
-      end
-
-      @i_ezsigntemplatepackagemembership_order = i_ezsigntemplatepackagemembership_order
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -254,12 +117,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsigntemplatepackagemembership_id == o.pki_ezsigntemplatepackagemembership_id &&
-          fki_ezsigntemplatepackage_id == o.fki_ezsigntemplatepackage_id &&
-          fki_ezsigntemplate_id == o.fki_ezsigntemplate_id &&
-          i_ezsigntemplatepackagemembership_order == o.i_ezsigntemplatepackagemembership_order &&
           obj_ezsigntemplate == o.obj_ezsigntemplate &&
-          a_obj_ezsigntemplatepackagesignermembership == o.a_obj_ezsigntemplatepackagesignermembership
+          a_obj_ezsigntemplatepackagesignermembership == o.a_obj_ezsigntemplatepackagesignermembership && super(o)
     end
 
     # @see the `==` method
@@ -271,7 +130,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatepackagemembership_id, fki_ezsigntemplatepackage_id, fki_ezsigntemplate_id, i_ezsigntemplatepackagemembership_order, obj_ezsigntemplate, a_obj_ezsigntemplatepackagesignermembership].hash
+      [obj_ezsigntemplate, a_obj_ezsigntemplatepackagesignermembership].hash
     end
 
     # Builds the object from hash
@@ -279,6 +138,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -355,7 +215,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

@@ -15,43 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezsigntemplatepackage Object
-  class EzsigntemplatepackageResponseCompound
-    # The unique ID of the Ezsigntemplatepackage
-    attr_accessor :pki_ezsigntemplatepackage_id
-
-    # The unique ID of the Ezsignfoldertype.
-    attr_accessor :fki_ezsignfoldertype_id
-
-    # The unique ID of the Ezdoctemplatedocument
-    attr_accessor :fki_ezdoctemplatedocument_id
-
-    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-    attr_accessor :fki_language_id
-
-    # The name of the Ezdoctemplatedocument in the language of the requester
-    attr_accessor :s_ezdoctemplatedocument_name_x
-
-    # The Name of the Language in the language of the requester
-    attr_accessor :s_language_name_x
-
-    # The description of the Ezsigntemplatepackage
-    attr_accessor :s_ezsigntemplatepackage_description
-
-    # Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType=Normal)
-    attr_accessor :b_ezsigntemplatepackage_adminonly
-
-    # Whether the Ezsignbulksend was automatically modified and needs a manual validation
-    attr_accessor :b_ezsigntemplatepackage_needvalidation
-
-    # Whether the Ezsigntemplatepackage is active or not
-    attr_accessor :b_ezsigntemplatepackage_isactive
-
-    # The name of the Ezsignfoldertype in the language of the requester
-    attr_accessor :s_ezsignfoldertype_name_x
-
-    # Whether the Ezsigntemplatepackage if allowed to edit or not
-    attr_accessor :b_ezsigntemplatepackage_editallowed
-
+  class EzsigntemplatepackageResponseCompound < EzsigntemplatepackageResponse
     attr_accessor :a_obj_ezsigntemplatepackagesigner
 
     attr_accessor :a_obj_ezsigntemplatepackagemembership
@@ -59,43 +23,19 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsigntemplatepackage_id' => :'pkiEzsigntemplatepackageID',
-        :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
-        :'fki_ezdoctemplatedocument_id' => :'fkiEzdoctemplatedocumentID',
-        :'fki_language_id' => :'fkiLanguageID',
-        :'s_ezdoctemplatedocument_name_x' => :'sEzdoctemplatedocumentNameX',
-        :'s_language_name_x' => :'sLanguageNameX',
-        :'s_ezsigntemplatepackage_description' => :'sEzsigntemplatepackageDescription',
-        :'b_ezsigntemplatepackage_adminonly' => :'bEzsigntemplatepackageAdminonly',
-        :'b_ezsigntemplatepackage_needvalidation' => :'bEzsigntemplatepackageNeedvalidation',
-        :'b_ezsigntemplatepackage_isactive' => :'bEzsigntemplatepackageIsactive',
-        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
-        :'b_ezsigntemplatepackage_editallowed' => :'bEzsigntemplatepackageEditallowed',
         :'a_obj_ezsigntemplatepackagesigner' => :'a_objEzsigntemplatepackagesigner',
         :'a_obj_ezsigntemplatepackagemembership' => :'a_objEzsigntemplatepackagemembership'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsigntemplatepackage_id' => :'Integer',
-        :'fki_ezsignfoldertype_id' => :'Integer',
-        :'fki_ezdoctemplatedocument_id' => :'Integer',
-        :'fki_language_id' => :'Integer',
-        :'s_ezdoctemplatedocument_name_x' => :'String',
-        :'s_language_name_x' => :'String',
-        :'s_ezsigntemplatepackage_description' => :'String',
-        :'b_ezsigntemplatepackage_adminonly' => :'Boolean',
-        :'b_ezsigntemplatepackage_needvalidation' => :'Boolean',
-        :'b_ezsigntemplatepackage_isactive' => :'Boolean',
-        :'s_ezsignfoldertype_name_x' => :'String',
-        :'b_ezsigntemplatepackage_editallowed' => :'Boolean',
         :'a_obj_ezsigntemplatepackagesigner' => :'Array<EzsigntemplatepackagesignerResponseCompound>',
         :'a_obj_ezsigntemplatepackagemembership' => :'Array<EzsigntemplatepackagemembershipResponseCompound>'
       }
@@ -129,73 +69,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsigntemplatepackage_id')
-        self.pki_ezsigntemplatepackage_id = attributes[:'pki_ezsigntemplatepackage_id']
-      else
-        self.pki_ezsigntemplatepackage_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfoldertype_id')
-        self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
-      else
-        self.fki_ezsignfoldertype_id = nil
-      end
-
-      if attributes.key?(:'fki_ezdoctemplatedocument_id')
-        self.fki_ezdoctemplatedocument_id = attributes[:'fki_ezdoctemplatedocument_id']
-      end
-
-      if attributes.key?(:'fki_language_id')
-        self.fki_language_id = attributes[:'fki_language_id']
-      else
-        self.fki_language_id = nil
-      end
-
-      if attributes.key?(:'s_ezdoctemplatedocument_name_x')
-        self.s_ezdoctemplatedocument_name_x = attributes[:'s_ezdoctemplatedocument_name_x']
-      end
-
-      if attributes.key?(:'s_language_name_x')
-        self.s_language_name_x = attributes[:'s_language_name_x']
-      else
-        self.s_language_name_x = nil
-      end
-
-      if attributes.key?(:'s_ezsigntemplatepackage_description')
-        self.s_ezsigntemplatepackage_description = attributes[:'s_ezsigntemplatepackage_description']
-      else
-        self.s_ezsigntemplatepackage_description = nil
-      end
-
-      if attributes.key?(:'b_ezsigntemplatepackage_adminonly')
-        self.b_ezsigntemplatepackage_adminonly = attributes[:'b_ezsigntemplatepackage_adminonly']
-      else
-        self.b_ezsigntemplatepackage_adminonly = nil
-      end
-
-      if attributes.key?(:'b_ezsigntemplatepackage_needvalidation')
-        self.b_ezsigntemplatepackage_needvalidation = attributes[:'b_ezsigntemplatepackage_needvalidation']
-      else
-        self.b_ezsigntemplatepackage_needvalidation = nil
-      end
-
-      if attributes.key?(:'b_ezsigntemplatepackage_isactive')
-        self.b_ezsigntemplatepackage_isactive = attributes[:'b_ezsigntemplatepackage_isactive']
-      else
-        self.b_ezsigntemplatepackage_isactive = nil
-      end
-
-      if attributes.key?(:'s_ezsignfoldertype_name_x')
-        self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
-      else
-        self.s_ezsignfoldertype_name_x = nil
-      end
-
-      if attributes.key?(:'b_ezsigntemplatepackage_editallowed')
-        self.b_ezsigntemplatepackage_editallowed = attributes[:'b_ezsigntemplatepackage_editallowed']
-      else
-        self.b_ezsigntemplatepackage_editallowed = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_ezsigntemplatepackagesigner')
         if (value = attributes[:'a_obj_ezsigntemplatepackagesigner']).is_a?(Array)
@@ -218,85 +93,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsigntemplatepackage_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsigntemplatepackage_id", pki_ezsigntemplatepackage_id cannot be nil.')
-      end
-
-      if @pki_ezsigntemplatepackage_id < 0
-        invalid_properties.push('invalid value for "pki_ezsigntemplatepackage_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsignfoldertype_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", fki_ezsignfoldertype_id cannot be nil.')
-      end
-
-      if @fki_ezsignfoldertype_id > 65535
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.')
-      end
-
-      if @fki_ezsignfoldertype_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezdoctemplatedocument_id.nil? && @fki_ezdoctemplatedocument_id > 65535
-        invalid_properties.push('invalid value for "fki_ezdoctemplatedocument_id", must be smaller than or equal to 65535.')
-      end
-
-      if !@fki_ezdoctemplatedocument_id.nil? && @fki_ezdoctemplatedocument_id < 0
-        invalid_properties.push('invalid value for "fki_ezdoctemplatedocument_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_language_id.nil?
-        invalid_properties.push('invalid value for "fki_language_id", fki_language_id cannot be nil.')
-      end
-
-      if @fki_language_id > 2
-        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
-      end
-
-      if @fki_language_id < 1
-        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if !@s_ezdoctemplatedocument_name_x.nil? && @s_ezdoctemplatedocument_name_x !~ pattern
-        invalid_properties.push("invalid value for \"s_ezdoctemplatedocument_name_x\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_language_name_x.nil?
-        invalid_properties.push('invalid value for "s_language_name_x", s_language_name_x cannot be nil.')
-      end
-
-      if @s_ezsigntemplatepackage_description.nil?
-        invalid_properties.push('invalid value for "s_ezsigntemplatepackage_description", s_ezsigntemplatepackage_description cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,80}$/)
-      if @s_ezsigntemplatepackage_description !~ pattern
-        invalid_properties.push("invalid value for \"s_ezsigntemplatepackage_description\", must conform to the pattern #{pattern}.")
-      end
-
-      if @b_ezsigntemplatepackage_adminonly.nil?
-        invalid_properties.push('invalid value for "b_ezsigntemplatepackage_adminonly", b_ezsigntemplatepackage_adminonly cannot be nil.')
-      end
-
-      if @b_ezsigntemplatepackage_needvalidation.nil?
-        invalid_properties.push('invalid value for "b_ezsigntemplatepackage_needvalidation", b_ezsigntemplatepackage_needvalidation cannot be nil.')
-      end
-
-      if @b_ezsigntemplatepackage_isactive.nil?
-        invalid_properties.push('invalid value for "b_ezsigntemplatepackage_isactive", b_ezsigntemplatepackage_isactive cannot be nil.')
-      end
-
-      if @s_ezsignfoldertype_name_x.nil?
-        invalid_properties.push('invalid value for "s_ezsignfoldertype_name_x", s_ezsignfoldertype_name_x cannot be nil.')
-      end
-
-      if @b_ezsigntemplatepackage_editallowed.nil?
-        invalid_properties.push('invalid value for "b_ezsigntemplatepackage_editallowed", b_ezsigntemplatepackage_editallowed cannot be nil.')
-      end
-
+      invalid_properties = super
       if @a_obj_ezsigntemplatepackagesigner.nil?
         invalid_properties.push('invalid value for "a_obj_ezsigntemplatepackagesigner", a_obj_ezsigntemplatepackagesigner cannot be nil.')
       end
@@ -312,126 +109,9 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsigntemplatepackage_id.nil?
-      return false if @pki_ezsigntemplatepackage_id < 0
-      return false if @fki_ezsignfoldertype_id.nil?
-      return false if @fki_ezsignfoldertype_id > 65535
-      return false if @fki_ezsignfoldertype_id < 0
-      return false if !@fki_ezdoctemplatedocument_id.nil? && @fki_ezdoctemplatedocument_id > 65535
-      return false if !@fki_ezdoctemplatedocument_id.nil? && @fki_ezdoctemplatedocument_id < 0
-      return false if @fki_language_id.nil?
-      return false if @fki_language_id > 2
-      return false if @fki_language_id < 1
-      return false if !@s_ezdoctemplatedocument_name_x.nil? && @s_ezdoctemplatedocument_name_x !~ Regexp.new(/^.{0,50}$/)
-      return false if @s_language_name_x.nil?
-      return false if @s_ezsigntemplatepackage_description.nil?
-      return false if @s_ezsigntemplatepackage_description !~ Regexp.new(/^.{0,80}$/)
-      return false if @b_ezsigntemplatepackage_adminonly.nil?
-      return false if @b_ezsigntemplatepackage_needvalidation.nil?
-      return false if @b_ezsigntemplatepackage_isactive.nil?
-      return false if @s_ezsignfoldertype_name_x.nil?
-      return false if @b_ezsigntemplatepackage_editallowed.nil?
       return false if @a_obj_ezsigntemplatepackagesigner.nil?
       return false if @a_obj_ezsigntemplatepackagemembership.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsigntemplatepackage_id Value to be assigned
-    def pki_ezsigntemplatepackage_id=(pki_ezsigntemplatepackage_id)
-      if pki_ezsigntemplatepackage_id.nil?
-        fail ArgumentError, 'pki_ezsigntemplatepackage_id cannot be nil'
-      end
-
-      if pki_ezsigntemplatepackage_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsigntemplatepackage_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsigntemplatepackage_id = pki_ezsigntemplatepackage_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfoldertype_id Value to be assigned
-    def fki_ezsignfoldertype_id=(fki_ezsignfoldertype_id)
-      if fki_ezsignfoldertype_id.nil?
-        fail ArgumentError, 'fki_ezsignfoldertype_id cannot be nil'
-      end
-
-      if fki_ezsignfoldertype_id > 65535
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.'
-      end
-
-      if fki_ezsignfoldertype_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfoldertype_id = fki_ezsignfoldertype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezdoctemplatedocument_id Value to be assigned
-    def fki_ezdoctemplatedocument_id=(fki_ezdoctemplatedocument_id)
-      if fki_ezdoctemplatedocument_id.nil?
-        fail ArgumentError, 'fki_ezdoctemplatedocument_id cannot be nil'
-      end
-
-      if fki_ezdoctemplatedocument_id > 65535
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatedocument_id", must be smaller than or equal to 65535.'
-      end
-
-      if fki_ezdoctemplatedocument_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatedocument_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezdoctemplatedocument_id = fki_ezdoctemplatedocument_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_language_id Value to be assigned
-    def fki_language_id=(fki_language_id)
-      if fki_language_id.nil?
-        fail ArgumentError, 'fki_language_id cannot be nil'
-      end
-
-      if fki_language_id > 2
-        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
-      end
-
-      if fki_language_id < 1
-        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
-      end
-
-      @fki_language_id = fki_language_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezdoctemplatedocument_name_x Value to be assigned
-    def s_ezdoctemplatedocument_name_x=(s_ezdoctemplatedocument_name_x)
-      if s_ezdoctemplatedocument_name_x.nil?
-        fail ArgumentError, 's_ezdoctemplatedocument_name_x cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_ezdoctemplatedocument_name_x !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezdoctemplatedocument_name_x\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezdoctemplatedocument_name_x = s_ezdoctemplatedocument_name_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezsigntemplatepackage_description Value to be assigned
-    def s_ezsigntemplatepackage_description=(s_ezsigntemplatepackage_description)
-      if s_ezsigntemplatepackage_description.nil?
-        fail ArgumentError, 's_ezsigntemplatepackage_description cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,80}$/)
-      if s_ezsigntemplatepackage_description !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezsigntemplatepackage_description\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezsigntemplatepackage_description = s_ezsigntemplatepackage_description
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -439,20 +119,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsigntemplatepackage_id == o.pki_ezsigntemplatepackage_id &&
-          fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
-          fki_ezdoctemplatedocument_id == o.fki_ezdoctemplatedocument_id &&
-          fki_language_id == o.fki_language_id &&
-          s_ezdoctemplatedocument_name_x == o.s_ezdoctemplatedocument_name_x &&
-          s_language_name_x == o.s_language_name_x &&
-          s_ezsigntemplatepackage_description == o.s_ezsigntemplatepackage_description &&
-          b_ezsigntemplatepackage_adminonly == o.b_ezsigntemplatepackage_adminonly &&
-          b_ezsigntemplatepackage_needvalidation == o.b_ezsigntemplatepackage_needvalidation &&
-          b_ezsigntemplatepackage_isactive == o.b_ezsigntemplatepackage_isactive &&
-          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
-          b_ezsigntemplatepackage_editallowed == o.b_ezsigntemplatepackage_editallowed &&
           a_obj_ezsigntemplatepackagesigner == o.a_obj_ezsigntemplatepackagesigner &&
-          a_obj_ezsigntemplatepackagemembership == o.a_obj_ezsigntemplatepackagemembership
+          a_obj_ezsigntemplatepackagemembership == o.a_obj_ezsigntemplatepackagemembership && super(o)
     end
 
     # @see the `==` method
@@ -464,7 +132,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatepackage_id, fki_ezsignfoldertype_id, fki_ezdoctemplatedocument_id, fki_language_id, s_ezdoctemplatedocument_name_x, s_language_name_x, s_ezsigntemplatepackage_description, b_ezsigntemplatepackage_adminonly, b_ezsigntemplatepackage_needvalidation, b_ezsigntemplatepackage_isactive, s_ezsignfoldertype_name_x, b_ezsigntemplatepackage_editallowed, a_obj_ezsigntemplatepackagesigner, a_obj_ezsigntemplatepackagemembership].hash
+      [a_obj_ezsigntemplatepackagesigner, a_obj_ezsigntemplatepackagemembership].hash
     end
 
     # Builds the object from hash
@@ -472,6 +140,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -548,7 +217,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

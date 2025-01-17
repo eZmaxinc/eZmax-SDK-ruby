@@ -27,18 +27,6 @@ describe EzmaxApi::BillingentityinternalResponseCompound do
     end
   end
 
-  describe 'test attribute "pki_billingentityinternal_id"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "obj_billingentityinternal_description"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   describe 'test attribute "a_obj_billingentityinternalproduct"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

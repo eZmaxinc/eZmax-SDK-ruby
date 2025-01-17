@@ -15,64 +15,24 @@ require 'time'
 
 module EzmaxApi
   # A Ezmaxinvoicingcommission Object
-  class EzmaxinvoicingcommissionResponseCompound
-    # The unique ID of the Ezmaxinvoicingcommission
-    attr_accessor :pki_ezmaxinvoicingcommission_id
-
-    # The unique ID of the Ezmaxinvoicingsummaryglobal
-    attr_accessor :fki_ezmaxinvoicingsummaryglobal_id
-
-    # The unique ID of the Ezmaxpartner
-    attr_accessor :fki_ezmaxpartner_id
-
-    # The unique ID of the Ezmaxrepresentative
-    attr_accessor :fki_ezmaxrepresentative_id
-
-    # The start date for the Ezmaxinvoicingcommission
-    attr_accessor :dt_ezmaxinvoicingcommission_start
-
-    # The end date for the Ezmaxinvoicingcommission
-    attr_accessor :dt_ezmaxinvoicingcommission_end
-
-    # This is the number of days during the month on which the Ezmaxinvoigcommission applies
-    attr_accessor :i_ezmaxinvoicingcommission_days
-
-    # The amount of Ezmaxinvoicingcommission
-    attr_accessor :d_ezmaxinvoicingcommission_amount
-
+  class EzmaxinvoicingcommissionResponseCompound < EzmaxinvoicingcommissionResponse
     attr_accessor :obj_contact_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezmaxinvoicingcommission_id' => :'pkiEzmaxinvoicingcommissionID',
-        :'fki_ezmaxinvoicingsummaryglobal_id' => :'fkiEzmaxinvoicingsummaryglobalID',
-        :'fki_ezmaxpartner_id' => :'fkiEzmaxpartnerID',
-        :'fki_ezmaxrepresentative_id' => :'fkiEzmaxrepresentativeID',
-        :'dt_ezmaxinvoicingcommission_start' => :'dtEzmaxinvoicingcommissionStart',
-        :'dt_ezmaxinvoicingcommission_end' => :'dtEzmaxinvoicingcommissionEnd',
-        :'i_ezmaxinvoicingcommission_days' => :'iEzmaxinvoicingcommissionDays',
-        :'d_ezmaxinvoicingcommission_amount' => :'dEzmaxinvoicingcommissionAmount',
         :'obj_contact_name' => :'objContactName'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezmaxinvoicingcommission_id' => :'Integer',
-        :'fki_ezmaxinvoicingsummaryglobal_id' => :'Integer',
-        :'fki_ezmaxpartner_id' => :'Integer',
-        :'fki_ezmaxrepresentative_id' => :'Integer',
-        :'dt_ezmaxinvoicingcommission_start' => :'String',
-        :'dt_ezmaxinvoicingcommission_end' => :'String',
-        :'i_ezmaxinvoicingcommission_days' => :'Integer',
-        :'d_ezmaxinvoicingcommission_amount' => :'String',
         :'obj_contact_name' => :'CustomContactNameResponse'
       }
     end
@@ -105,45 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezmaxinvoicingcommission_id')
-        self.pki_ezmaxinvoicingcommission_id = attributes[:'pki_ezmaxinvoicingcommission_id']
-      end
-
-      if attributes.key?(:'fki_ezmaxinvoicingsummaryglobal_id')
-        self.fki_ezmaxinvoicingsummaryglobal_id = attributes[:'fki_ezmaxinvoicingsummaryglobal_id']
-      end
-
-      if attributes.key?(:'fki_ezmaxpartner_id')
-        self.fki_ezmaxpartner_id = attributes[:'fki_ezmaxpartner_id']
-      end
-
-      if attributes.key?(:'fki_ezmaxrepresentative_id')
-        self.fki_ezmaxrepresentative_id = attributes[:'fki_ezmaxrepresentative_id']
-      end
-
-      if attributes.key?(:'dt_ezmaxinvoicingcommission_start')
-        self.dt_ezmaxinvoicingcommission_start = attributes[:'dt_ezmaxinvoicingcommission_start']
-      else
-        self.dt_ezmaxinvoicingcommission_start = nil
-      end
-
-      if attributes.key?(:'dt_ezmaxinvoicingcommission_end')
-        self.dt_ezmaxinvoicingcommission_end = attributes[:'dt_ezmaxinvoicingcommission_end']
-      else
-        self.dt_ezmaxinvoicingcommission_end = nil
-      end
-
-      if attributes.key?(:'i_ezmaxinvoicingcommission_days')
-        self.i_ezmaxinvoicingcommission_days = attributes[:'i_ezmaxinvoicingcommission_days']
-      else
-        self.i_ezmaxinvoicingcommission_days = nil
-      end
-
-      if attributes.key?(:'d_ezmaxinvoicingcommission_amount')
-        self.d_ezmaxinvoicingcommission_amount = attributes[:'d_ezmaxinvoicingcommission_amount']
-      else
-        self.d_ezmaxinvoicingcommission_amount = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_contact_name')
         self.obj_contact_name = attributes[:'obj_contact_name']
@@ -154,44 +77,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@fki_ezmaxinvoicingsummaryglobal_id.nil? && @fki_ezmaxinvoicingsummaryglobal_id < 0
-        invalid_properties.push('invalid value for "fki_ezmaxinvoicingsummaryglobal_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezmaxpartner_id.nil? && @fki_ezmaxpartner_id < 1
-        invalid_properties.push('invalid value for "fki_ezmaxpartner_id", must be greater than or equal to 1.')
-      end
-
-      if !@fki_ezmaxrepresentative_id.nil? && @fki_ezmaxrepresentative_id < 1
-        invalid_properties.push('invalid value for "fki_ezmaxrepresentative_id", must be greater than or equal to 1.')
-      end
-
-      if @dt_ezmaxinvoicingcommission_start.nil?
-        invalid_properties.push('invalid value for "dt_ezmaxinvoicingcommission_start", dt_ezmaxinvoicingcommission_start cannot be nil.')
-      end
-
-      if @dt_ezmaxinvoicingcommission_end.nil?
-        invalid_properties.push('invalid value for "dt_ezmaxinvoicingcommission_end", dt_ezmaxinvoicingcommission_end cannot be nil.')
-      end
-
-      if @i_ezmaxinvoicingcommission_days.nil?
-        invalid_properties.push('invalid value for "i_ezmaxinvoicingcommission_days", i_ezmaxinvoicingcommission_days cannot be nil.')
-      end
-
-      if @i_ezmaxinvoicingcommission_days < 0
-        invalid_properties.push('invalid value for "i_ezmaxinvoicingcommission_days", must be greater than or equal to 0.')
-      end
-
-      if @d_ezmaxinvoicingcommission_amount.nil?
-        invalid_properties.push('invalid value for "d_ezmaxinvoicingcommission_amount", d_ezmaxinvoicingcommission_amount cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,9}?\.[\d]{2}$/)
-      if @d_ezmaxinvoicingcommission_amount !~ pattern
-        invalid_properties.push("invalid value for \"d_ezmaxinvoicingcommission_amount\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -199,87 +85,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@fki_ezmaxinvoicingsummaryglobal_id.nil? && @fki_ezmaxinvoicingsummaryglobal_id < 0
-      return false if !@fki_ezmaxpartner_id.nil? && @fki_ezmaxpartner_id < 1
-      return false if !@fki_ezmaxrepresentative_id.nil? && @fki_ezmaxrepresentative_id < 1
-      return false if @dt_ezmaxinvoicingcommission_start.nil?
-      return false if @dt_ezmaxinvoicingcommission_end.nil?
-      return false if @i_ezmaxinvoicingcommission_days.nil?
-      return false if @i_ezmaxinvoicingcommission_days < 0
-      return false if @d_ezmaxinvoicingcommission_amount.nil?
-      return false if @d_ezmaxinvoicingcommission_amount !~ Regexp.new(/^-{0,1}[\d]{1,9}?\.[\d]{2}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxinvoicingsummaryglobal_id Value to be assigned
-    def fki_ezmaxinvoicingsummaryglobal_id=(fki_ezmaxinvoicingsummaryglobal_id)
-      if fki_ezmaxinvoicingsummaryglobal_id.nil?
-        fail ArgumentError, 'fki_ezmaxinvoicingsummaryglobal_id cannot be nil'
-      end
-
-      if fki_ezmaxinvoicingsummaryglobal_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezmaxinvoicingsummaryglobal_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezmaxinvoicingsummaryglobal_id = fki_ezmaxinvoicingsummaryglobal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxpartner_id Value to be assigned
-    def fki_ezmaxpartner_id=(fki_ezmaxpartner_id)
-      if fki_ezmaxpartner_id.nil?
-        fail ArgumentError, 'fki_ezmaxpartner_id cannot be nil'
-      end
-
-      if fki_ezmaxpartner_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezmaxpartner_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezmaxpartner_id = fki_ezmaxpartner_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxrepresentative_id Value to be assigned
-    def fki_ezmaxrepresentative_id=(fki_ezmaxrepresentative_id)
-      if fki_ezmaxrepresentative_id.nil?
-        fail ArgumentError, 'fki_ezmaxrepresentative_id cannot be nil'
-      end
-
-      if fki_ezmaxrepresentative_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezmaxrepresentative_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezmaxrepresentative_id = fki_ezmaxrepresentative_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezmaxinvoicingcommission_days Value to be assigned
-    def i_ezmaxinvoicingcommission_days=(i_ezmaxinvoicingcommission_days)
-      if i_ezmaxinvoicingcommission_days.nil?
-        fail ArgumentError, 'i_ezmaxinvoicingcommission_days cannot be nil'
-      end
-
-      if i_ezmaxinvoicingcommission_days < 0
-        fail ArgumentError, 'invalid value for "i_ezmaxinvoicingcommission_days", must be greater than or equal to 0.'
-      end
-
-      @i_ezmaxinvoicingcommission_days = i_ezmaxinvoicingcommission_days
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] d_ezmaxinvoicingcommission_amount Value to be assigned
-    def d_ezmaxinvoicingcommission_amount=(d_ezmaxinvoicingcommission_amount)
-      if d_ezmaxinvoicingcommission_amount.nil?
-        fail ArgumentError, 'd_ezmaxinvoicingcommission_amount cannot be nil'
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,9}?\.[\d]{2}$/)
-      if d_ezmaxinvoicingcommission_amount !~ pattern
-        fail ArgumentError, "invalid value for \"d_ezmaxinvoicingcommission_amount\", must conform to the pattern #{pattern}."
-      end
-
-      @d_ezmaxinvoicingcommission_amount = d_ezmaxinvoicingcommission_amount
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -287,15 +93,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezmaxinvoicingcommission_id == o.pki_ezmaxinvoicingcommission_id &&
-          fki_ezmaxinvoicingsummaryglobal_id == o.fki_ezmaxinvoicingsummaryglobal_id &&
-          fki_ezmaxpartner_id == o.fki_ezmaxpartner_id &&
-          fki_ezmaxrepresentative_id == o.fki_ezmaxrepresentative_id &&
-          dt_ezmaxinvoicingcommission_start == o.dt_ezmaxinvoicingcommission_start &&
-          dt_ezmaxinvoicingcommission_end == o.dt_ezmaxinvoicingcommission_end &&
-          i_ezmaxinvoicingcommission_days == o.i_ezmaxinvoicingcommission_days &&
-          d_ezmaxinvoicingcommission_amount == o.d_ezmaxinvoicingcommission_amount &&
-          obj_contact_name == o.obj_contact_name
+          obj_contact_name == o.obj_contact_name && super(o)
     end
 
     # @see the `==` method
@@ -307,7 +105,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezmaxinvoicingcommission_id, fki_ezmaxinvoicingsummaryglobal_id, fki_ezmaxpartner_id, fki_ezmaxrepresentative_id, dt_ezmaxinvoicingcommission_start, dt_ezmaxinvoicingcommission_end, i_ezmaxinvoicingcommission_days, d_ezmaxinvoicingcommission_amount, obj_contact_name].hash
+      [obj_contact_name].hash
     end
 
     # Builds the object from hash
@@ -315,6 +113,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -391,7 +190,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

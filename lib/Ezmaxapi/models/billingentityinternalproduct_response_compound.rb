@@ -15,56 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Billingentityinternalproduct Object
-  class BillingentityinternalproductResponseCompound
-    # The unique ID of the Billingentityinternalproduct
-    attr_accessor :pki_billingentityinternalproduct_id
-
-    # The unique ID of the Billingentityinternal.
-    attr_accessor :fki_billingentityinternal_id
-
-    # The description of the Billingentityinternal in the language of the requester
-    attr_accessor :s_billingentityinternal_description_x
-
-    # The unique ID of the Ezmaxproduct
-    attr_accessor :fki_ezmaxproduct_id
-
-    # The description of the Ezmaxproduct in the language of the requester
-    attr_accessor :s_ezmaxproduct_description_x
-
-    # The unique ID of the Billingentityexternal
-    attr_accessor :fki_billingentityexternal_id
-
-    # The description of the Billingentityexternal
-    attr_accessor :s_billingentityexternal_description
-
+  class BillingentityinternalproductResponseCompound < BillingentityinternalproductResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_billingentityinternalproduct_id' => :'pkiBillingentityinternalproductID',
-        :'fki_billingentityinternal_id' => :'fkiBillingentityinternalID',
-        :'s_billingentityinternal_description_x' => :'sBillingentityinternalDescriptionX',
-        :'fki_ezmaxproduct_id' => :'fkiEzmaxproductID',
-        :'s_ezmaxproduct_description_x' => :'sEzmaxproductDescriptionX',
-        :'fki_billingentityexternal_id' => :'fkiBillingentityexternalID',
-        :'s_billingentityexternal_description' => :'sBillingentityexternalDescription'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_billingentityinternalproduct_id' => :'Integer',
-        :'fki_billingentityinternal_id' => :'Integer',
-        :'s_billingentityinternal_description_x' => :'String',
-        :'fki_ezmaxproduct_id' => :'Integer',
-        :'s_ezmaxproduct_description_x' => :'String',
-        :'fki_billingentityexternal_id' => :'Integer',
-        :'s_billingentityexternal_description' => :'String'
       }
     end
 
@@ -96,102 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_billingentityinternalproduct_id')
-        self.pki_billingentityinternalproduct_id = attributes[:'pki_billingentityinternalproduct_id']
-      else
-        self.pki_billingentityinternalproduct_id = nil
-      end
-
-      if attributes.key?(:'fki_billingentityinternal_id')
-        self.fki_billingentityinternal_id = attributes[:'fki_billingentityinternal_id']
-      else
-        self.fki_billingentityinternal_id = nil
-      end
-
-      if attributes.key?(:'s_billingentityinternal_description_x')
-        self.s_billingentityinternal_description_x = attributes[:'s_billingentityinternal_description_x']
-      else
-        self.s_billingentityinternal_description_x = nil
-      end
-
-      if attributes.key?(:'fki_ezmaxproduct_id')
-        self.fki_ezmaxproduct_id = attributes[:'fki_ezmaxproduct_id']
-      else
-        self.fki_ezmaxproduct_id = nil
-      end
-
-      if attributes.key?(:'s_ezmaxproduct_description_x')
-        self.s_ezmaxproduct_description_x = attributes[:'s_ezmaxproduct_description_x']
-      else
-        self.s_ezmaxproduct_description_x = nil
-      end
-
-      if attributes.key?(:'fki_billingentityexternal_id')
-        self.fki_billingentityexternal_id = attributes[:'fki_billingentityexternal_id']
-      else
-        self.fki_billingentityexternal_id = nil
-      end
-
-      if attributes.key?(:'s_billingentityexternal_description')
-        self.s_billingentityexternal_description = attributes[:'s_billingentityexternal_description']
-      else
-        self.s_billingentityexternal_description = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_billingentityinternalproduct_id.nil?
-        invalid_properties.push('invalid value for "pki_billingentityinternalproduct_id", pki_billingentityinternalproduct_id cannot be nil.')
-      end
-
-      if @pki_billingentityinternalproduct_id > 255
-        invalid_properties.push('invalid value for "pki_billingentityinternalproduct_id", must be smaller than or equal to 255.')
-      end
-
-      if @pki_billingentityinternalproduct_id < 0
-        invalid_properties.push('invalid value for "pki_billingentityinternalproduct_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_billingentityinternal_id.nil?
-        invalid_properties.push('invalid value for "fki_billingentityinternal_id", fki_billingentityinternal_id cannot be nil.')
-      end
-
-      if @fki_billingentityinternal_id < 0
-        invalid_properties.push('invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.')
-      end
-
-      if @s_billingentityinternal_description_x.nil?
-        invalid_properties.push('invalid value for "s_billingentityinternal_description_x", s_billingentityinternal_description_x cannot be nil.')
-      end
-
-      if @fki_ezmaxproduct_id.nil?
-        invalid_properties.push('invalid value for "fki_ezmaxproduct_id", fki_ezmaxproduct_id cannot be nil.')
-      end
-
-      if @fki_ezmaxproduct_id < 1
-        invalid_properties.push('invalid value for "fki_ezmaxproduct_id", must be greater than or equal to 1.')
-      end
-
-      if @s_ezmaxproduct_description_x.nil?
-        invalid_properties.push('invalid value for "s_ezmaxproduct_description_x", s_ezmaxproduct_description_x cannot be nil.')
-      end
-
-      if @fki_billingentityexternal_id.nil?
-        invalid_properties.push('invalid value for "fki_billingentityexternal_id", fki_billingentityexternal_id cannot be nil.')
-      end
-
-      if @fki_billingentityexternal_id < 1
-        invalid_properties.push('invalid value for "fki_billingentityexternal_id", must be greater than or equal to 1.')
-      end
-
-      if @s_billingentityexternal_description.nil?
-        invalid_properties.push('invalid value for "s_billingentityexternal_description", s_billingentityexternal_description cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -199,93 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_billingentityinternalproduct_id.nil?
-      return false if @pki_billingentityinternalproduct_id > 255
-      return false if @pki_billingentityinternalproduct_id < 0
-      return false if @fki_billingentityinternal_id.nil?
-      return false if @fki_billingentityinternal_id < 0
-      return false if @s_billingentityinternal_description_x.nil?
-      return false if @fki_ezmaxproduct_id.nil?
-      return false if @fki_ezmaxproduct_id < 1
-      return false if @s_ezmaxproduct_description_x.nil?
-      return false if @fki_billingentityexternal_id.nil?
-      return false if @fki_billingentityexternal_id < 1
-      return false if @s_billingentityexternal_description.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_billingentityinternalproduct_id Value to be assigned
-    def pki_billingentityinternalproduct_id=(pki_billingentityinternalproduct_id)
-      if pki_billingentityinternalproduct_id.nil?
-        fail ArgumentError, 'pki_billingentityinternalproduct_id cannot be nil'
-      end
-
-      if pki_billingentityinternalproduct_id > 255
-        fail ArgumentError, 'invalid value for "pki_billingentityinternalproduct_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_billingentityinternalproduct_id < 0
-        fail ArgumentError, 'invalid value for "pki_billingentityinternalproduct_id", must be greater than or equal to 0.'
-      end
-
-      @pki_billingentityinternalproduct_id = pki_billingentityinternalproduct_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_billingentityinternal_id Value to be assigned
-    def fki_billingentityinternal_id=(fki_billingentityinternal_id)
-      if fki_billingentityinternal_id.nil?
-        fail ArgumentError, 'fki_billingentityinternal_id cannot be nil'
-      end
-
-      if fki_billingentityinternal_id < 0
-        fail ArgumentError, 'invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.'
-      end
-
-      @fki_billingentityinternal_id = fki_billingentityinternal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxproduct_id Value to be assigned
-    def fki_ezmaxproduct_id=(fki_ezmaxproduct_id)
-      if fki_ezmaxproduct_id.nil?
-        fail ArgumentError, 'fki_ezmaxproduct_id cannot be nil'
-      end
-
-      if fki_ezmaxproduct_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezmaxproduct_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezmaxproduct_id = fki_ezmaxproduct_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_billingentityexternal_id Value to be assigned
-    def fki_billingentityexternal_id=(fki_billingentityexternal_id)
-      if fki_billingentityexternal_id.nil?
-        fail ArgumentError, 'fki_billingentityexternal_id cannot be nil'
-      end
-
-      if fki_billingentityexternal_id < 1
-        fail ArgumentError, 'invalid value for "fki_billingentityexternal_id", must be greater than or equal to 1.'
-      end
-
-      @fki_billingentityexternal_id = fki_billingentityexternal_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_billingentityinternalproduct_id == o.pki_billingentityinternalproduct_id &&
-          fki_billingentityinternal_id == o.fki_billingentityinternal_id &&
-          s_billingentityinternal_description_x == o.s_billingentityinternal_description_x &&
-          fki_ezmaxproduct_id == o.fki_ezmaxproduct_id &&
-          s_ezmaxproduct_description_x == o.s_ezmaxproduct_description_x &&
-          fki_billingentityexternal_id == o.fki_billingentityexternal_id &&
-          s_billingentityexternal_description == o.s_billingentityexternal_description
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -297,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_billingentityinternalproduct_id, fki_billingentityinternal_id, s_billingentityinternal_description_x, fki_ezmaxproduct_id, s_ezmaxproduct_description_x, fki_billingentityexternal_id, s_billingentityexternal_description].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -305,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -381,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

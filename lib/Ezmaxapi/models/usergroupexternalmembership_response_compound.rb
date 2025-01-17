@@ -15,61 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Usergroupexternalmembership Object
-  class UsergroupexternalmembershipResponseCompound
-    # The unique ID of the Usergroupexternalmembership
-    attr_accessor :pki_usergroupexternalmembership_id
-
-    # The unique ID of the Usergroupexternal
-    attr_accessor :fki_usergroupexternal_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The first name of the user
-    attr_accessor :s_user_firstname
-
-    # The last name of the user
-    attr_accessor :s_user_lastname
-
-    # The login name of the User.
-    attr_accessor :s_user_loginname
-
-    # The email address.
-    attr_accessor :s_email_address
-
-    # The name of the Usergroupexternal
-    attr_accessor :s_usergroupexternal_name
-
+  class UsergroupexternalmembershipResponseCompound < UsergroupexternalmembershipResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_usergroupexternalmembership_id' => :'pkiUsergroupexternalmembershipID',
-        :'fki_usergroupexternal_id' => :'fkiUsergroupexternalID',
-        :'fki_user_id' => :'fkiUserID',
-        :'s_user_firstname' => :'sUserFirstname',
-        :'s_user_lastname' => :'sUserLastname',
-        :'s_user_loginname' => :'sUserLoginname',
-        :'s_email_address' => :'sEmailAddress',
-        :'s_usergroupexternal_name' => :'sUsergroupexternalName'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_usergroupexternalmembership_id' => :'Integer',
-        :'fki_usergroupexternal_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'s_user_firstname' => :'String',
-        :'s_user_lastname' => :'String',
-        :'s_user_loginname' => :'String',
-        :'s_email_address' => :'String',
-        :'s_usergroupexternal_name' => :'String'
       }
     end
 
@@ -101,127 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_usergroupexternalmembership_id')
-        self.pki_usergroupexternalmembership_id = attributes[:'pki_usergroupexternalmembership_id']
-      else
-        self.pki_usergroupexternalmembership_id = nil
-      end
-
-      if attributes.key?(:'fki_usergroupexternal_id')
-        self.fki_usergroupexternal_id = attributes[:'fki_usergroupexternal_id']
-      else
-        self.fki_usergroupexternal_id = nil
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      else
-        self.fki_user_id = nil
-      end
-
-      if attributes.key?(:'s_user_firstname')
-        self.s_user_firstname = attributes[:'s_user_firstname']
-      else
-        self.s_user_firstname = nil
-      end
-
-      if attributes.key?(:'s_user_lastname')
-        self.s_user_lastname = attributes[:'s_user_lastname']
-      else
-        self.s_user_lastname = nil
-      end
-
-      if attributes.key?(:'s_user_loginname')
-        self.s_user_loginname = attributes[:'s_user_loginname']
-      else
-        self.s_user_loginname = nil
-      end
-
-      if attributes.key?(:'s_email_address')
-        self.s_email_address = attributes[:'s_email_address']
-      else
-        self.s_email_address = nil
-      end
-
-      if attributes.key?(:'s_usergroupexternal_name')
-        self.s_usergroupexternal_name = attributes[:'s_usergroupexternal_name']
-      else
-        self.s_usergroupexternal_name = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_usergroupexternalmembership_id.nil?
-        invalid_properties.push('invalid value for "pki_usergroupexternalmembership_id", pki_usergroupexternalmembership_id cannot be nil.')
-      end
-
-      if @pki_usergroupexternalmembership_id > 65535
-        invalid_properties.push('invalid value for "pki_usergroupexternalmembership_id", must be smaller than or equal to 65535.')
-      end
-
-      if @pki_usergroupexternalmembership_id < 0
-        invalid_properties.push('invalid value for "pki_usergroupexternalmembership_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_usergroupexternal_id.nil?
-        invalid_properties.push('invalid value for "fki_usergroupexternal_id", fki_usergroupexternal_id cannot be nil.')
-      end
-
-      if @fki_usergroupexternal_id > 255
-        invalid_properties.push('invalid value for "fki_usergroupexternal_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_usergroupexternal_id < 0
-        invalid_properties.push('invalid value for "fki_usergroupexternal_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_user_id.nil?
-        invalid_properties.push('invalid value for "fki_user_id", fki_user_id cannot be nil.')
-      end
-
-      if @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if @s_user_firstname.nil?
-        invalid_properties.push('invalid value for "s_user_firstname", s_user_firstname cannot be nil.')
-      end
-
-      if @s_user_lastname.nil?
-        invalid_properties.push('invalid value for "s_user_lastname", s_user_lastname cannot be nil.')
-      end
-
-      if @s_user_loginname.nil?
-        invalid_properties.push('invalid value for "s_user_loginname", s_user_loginname cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
-      if @s_user_loginname !~ pattern
-        invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_email_address.nil?
-        invalid_properties.push('invalid value for "s_email_address", s_email_address cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if @s_email_address !~ pattern
-        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_usergroupexternal_name.nil?
-        invalid_properties.push('invalid value for "s_usergroupexternal_name", s_usergroupexternal_name cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if @s_usergroupexternal_name !~ pattern
-        invalid_properties.push("invalid value for \"s_usergroupexternal_name\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -229,133 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_usergroupexternalmembership_id.nil?
-      return false if @pki_usergroupexternalmembership_id > 65535
-      return false if @pki_usergroupexternalmembership_id < 0
-      return false if @fki_usergroupexternal_id.nil?
-      return false if @fki_usergroupexternal_id > 255
-      return false if @fki_usergroupexternal_id < 0
-      return false if @fki_user_id.nil?
-      return false if @fki_user_id < 0
-      return false if @s_user_firstname.nil?
-      return false if @s_user_lastname.nil?
-      return false if @s_user_loginname.nil?
-      return false if @s_user_loginname !~ Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
-      return false if @s_email_address.nil?
-      return false if @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      return false if @s_usergroupexternal_name.nil?
-      return false if @s_usergroupexternal_name !~ Regexp.new(/^.{0,64}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_usergroupexternalmembership_id Value to be assigned
-    def pki_usergroupexternalmembership_id=(pki_usergroupexternalmembership_id)
-      if pki_usergroupexternalmembership_id.nil?
-        fail ArgumentError, 'pki_usergroupexternalmembership_id cannot be nil'
-      end
-
-      if pki_usergroupexternalmembership_id > 65535
-        fail ArgumentError, 'invalid value for "pki_usergroupexternalmembership_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_usergroupexternalmembership_id < 0
-        fail ArgumentError, 'invalid value for "pki_usergroupexternalmembership_id", must be greater than or equal to 0.'
-      end
-
-      @pki_usergroupexternalmembership_id = pki_usergroupexternalmembership_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_usergroupexternal_id Value to be assigned
-    def fki_usergroupexternal_id=(fki_usergroupexternal_id)
-      if fki_usergroupexternal_id.nil?
-        fail ArgumentError, 'fki_usergroupexternal_id cannot be nil'
-      end
-
-      if fki_usergroupexternal_id > 255
-        fail ArgumentError, 'invalid value for "fki_usergroupexternal_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_usergroupexternal_id < 0
-        fail ArgumentError, 'invalid value for "fki_usergroupexternal_id", must be greater than or equal to 0.'
-      end
-
-      @fki_usergroupexternal_id = fki_usergroupexternal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_user_loginname Value to be assigned
-    def s_user_loginname=(s_user_loginname)
-      if s_user_loginname.nil?
-        fail ArgumentError, 's_user_loginname cannot be nil'
-      end
-
-      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
-      if s_user_loginname !~ pattern
-        fail ArgumentError, "invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}."
-      end
-
-      @s_user_loginname = s_user_loginname
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_email_address Value to be assigned
-    def s_email_address=(s_email_address)
-      if s_email_address.nil?
-        fail ArgumentError, 's_email_address cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if s_email_address !~ pattern
-        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
-      end
-
-      @s_email_address = s_email_address
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_usergroupexternal_name Value to be assigned
-    def s_usergroupexternal_name=(s_usergroupexternal_name)
-      if s_usergroupexternal_name.nil?
-        fail ArgumentError, 's_usergroupexternal_name cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if s_usergroupexternal_name !~ pattern
-        fail ArgumentError, "invalid value for \"s_usergroupexternal_name\", must conform to the pattern #{pattern}."
-      end
-
-      @s_usergroupexternal_name = s_usergroupexternal_name
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_usergroupexternalmembership_id == o.pki_usergroupexternalmembership_id &&
-          fki_usergroupexternal_id == o.fki_usergroupexternal_id &&
-          fki_user_id == o.fki_user_id &&
-          s_user_firstname == o.s_user_firstname &&
-          s_user_lastname == o.s_user_lastname &&
-          s_user_loginname == o.s_user_loginname &&
-          s_email_address == o.s_email_address &&
-          s_usergroupexternal_name == o.s_usergroupexternal_name
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -367,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_usergroupexternalmembership_id, fki_usergroupexternal_id, fki_user_id, s_user_firstname, s_user_lastname, s_user_loginname, s_email_address, s_usergroupexternal_name].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -375,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -451,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

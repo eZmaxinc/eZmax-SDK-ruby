@@ -15,21 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Communicationexternalrecipient Object and children
-  class CommunicationexternalrecipientRequestCompound
-    # The unique ID of the Communicationexternalrecipient
-    attr_accessor :pki_communicationexternalrecipient_id
-
-    # The email address.
-    attr_accessor :s_email_address
-
-    # A phone number in E.164 Format
-    attr_accessor :s_phone_e164
-
-    attr_accessor :e_communicationexternalrecipient_type
-
-    # The name of the Communicationexternalrecipient
-    attr_accessor :s_communicationexternalrecipient_name
-
+  class CommunicationexternalrecipientRequestCompound < CommunicationexternalrecipientRequest
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -55,27 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_communicationexternalrecipient_id' => :'pkiCommunicationexternalrecipientID',
-        :'s_email_address' => :'sEmailAddress',
-        :'s_phone_e164' => :'sPhoneE164',
-        :'e_communicationexternalrecipient_type' => :'eCommunicationexternalrecipientType',
-        :'s_communicationexternalrecipient_name' => :'sCommunicationexternalrecipientName'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_communicationexternalrecipient_id' => :'Integer',
-        :'s_email_address' => :'String',
-        :'s_phone_e164' => :'String',
-        :'e_communicationexternalrecipient_type' => :'FieldECommunicationexternalrecipientType',
-        :'s_communicationexternalrecipient_name' => :'String'
       }
     end
 
@@ -107,47 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_communicationexternalrecipient_id')
-        self.pki_communicationexternalrecipient_id = attributes[:'pki_communicationexternalrecipient_id']
-      end
-
-      if attributes.key?(:'s_email_address')
-        self.s_email_address = attributes[:'s_email_address']
-      end
-
-      if attributes.key?(:'s_phone_e164')
-        self.s_phone_e164 = attributes[:'s_phone_e164']
-      end
-
-      if attributes.key?(:'e_communicationexternalrecipient_type')
-        self.e_communicationexternalrecipient_type = attributes[:'e_communicationexternalrecipient_type']
-      end
-
-      if attributes.key?(:'s_communicationexternalrecipient_name')
-        self.s_communicationexternalrecipient_name = attributes[:'s_communicationexternalrecipient_name']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if !@s_email_address.nil? && @s_email_address !~ pattern
-        invalid_properties.push("invalid value for \"s_email_address\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
-      if !@s_phone_e164.nil? && @s_phone_e164 !~ pattern
-        invalid_properties.push("invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}.")
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if !@s_communicationexternalrecipient_name.nil? && @s_communicationexternalrecipient_name !~ pattern
-        invalid_properties.push("invalid value for \"s_communicationexternalrecipient_name\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -155,67 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@s_email_address.nil? && @s_email_address !~ Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      return false if !@s_phone_e164.nil? && @s_phone_e164 !~ Regexp.new(/^\+[1-9]\d{1,14}$/)
-      return false if !@s_communicationexternalrecipient_name.nil? && @s_communicationexternalrecipient_name !~ Regexp.new(/^.{0,50}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_email_address Value to be assigned
-    def s_email_address=(s_email_address)
-      if s_email_address.nil?
-        fail ArgumentError, 's_email_address cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/)
-      if s_email_address !~ pattern
-        fail ArgumentError, "invalid value for \"s_email_address\", must conform to the pattern #{pattern}."
-      end
-
-      @s_email_address = s_email_address
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_phone_e164 Value to be assigned
-    def s_phone_e164=(s_phone_e164)
-      if s_phone_e164.nil?
-        fail ArgumentError, 's_phone_e164 cannot be nil'
-      end
-
-      pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
-      if s_phone_e164 !~ pattern
-        fail ArgumentError, "invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}."
-      end
-
-      @s_phone_e164 = s_phone_e164
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_communicationexternalrecipient_name Value to be assigned
-    def s_communicationexternalrecipient_name=(s_communicationexternalrecipient_name)
-      if s_communicationexternalrecipient_name.nil?
-        fail ArgumentError, 's_communicationexternalrecipient_name cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_communicationexternalrecipient_name !~ pattern
-        fail ArgumentError, "invalid value for \"s_communicationexternalrecipient_name\", must conform to the pattern #{pattern}."
-      end
-
-      @s_communicationexternalrecipient_name = s_communicationexternalrecipient_name
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_communicationexternalrecipient_id == o.pki_communicationexternalrecipient_id &&
-          s_email_address == o.s_email_address &&
-          s_phone_e164 == o.s_phone_e164 &&
-          e_communicationexternalrecipient_type == o.e_communicationexternalrecipient_type &&
-          s_communicationexternalrecipient_name == o.s_communicationexternalrecipient_name
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -227,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_communicationexternalrecipient_id, s_email_address, s_phone_e164, e_communicationexternalrecipient_type, s_communicationexternalrecipient_name].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -235,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -311,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

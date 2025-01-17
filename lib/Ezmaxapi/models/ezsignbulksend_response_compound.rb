@@ -15,38 +15,7 @@ require 'time'
 
 module EzmaxApi
   # An Ezsignbulksend Object and children to create a complete structure
-  class EzsignbulksendResponseCompound
-    # The unique ID of the Ezsignbulksend
-    attr_accessor :pki_ezsignbulksend_id
-
-    # The unique ID of the Ezsignfoldertype.
-    attr_accessor :fki_ezsignfoldertype_id
-
-    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-    attr_accessor :fki_language_id
-
-    # The Name of the Language in the language of the requester
-    attr_accessor :s_language_name_x
-
-    attr_accessor :e_ezsignfoldertype_privacylevel
-
-    # The name of the Ezsignfoldertype in the language of the requester
-    attr_accessor :s_ezsignfoldertype_name_x
-
-    # The description of the Ezsignbulksend
-    attr_accessor :s_ezsignbulksend_description
-
-    # Note about the Ezsignbulksend
-    attr_accessor :t_ezsignbulksend_note
-
-    # Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
-    attr_accessor :b_ezsignbulksend_needvalidation
-
-    # Whether the Ezsignbulksend is active or not
-    attr_accessor :b_ezsignbulksend_isactive
-
-    attr_accessor :obj_audit
-
+  class EzsignbulksendResponseCompound < EzsignbulksendResponse
     attr_accessor :a_obj_ezsignbulksenddocumentmapping
 
     attr_accessor :a_obj_ezsignbulksendsignermapping
@@ -76,41 +45,19 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsignbulksend_id' => :'pkiEzsignbulksendID',
-        :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
-        :'fki_language_id' => :'fkiLanguageID',
-        :'s_language_name_x' => :'sLanguageNameX',
-        :'e_ezsignfoldertype_privacylevel' => :'eEzsignfoldertypePrivacylevel',
-        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
-        :'s_ezsignbulksend_description' => :'sEzsignbulksendDescription',
-        :'t_ezsignbulksend_note' => :'tEzsignbulksendNote',
-        :'b_ezsignbulksend_needvalidation' => :'bEzsignbulksendNeedvalidation',
-        :'b_ezsignbulksend_isactive' => :'bEzsignbulksendIsactive',
-        :'obj_audit' => :'objAudit',
         :'a_obj_ezsignbulksenddocumentmapping' => :'a_objEzsignbulksenddocumentmapping',
         :'a_obj_ezsignbulksendsignermapping' => :'a_objEzsignbulksendsignermapping'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsignbulksend_id' => :'Integer',
-        :'fki_ezsignfoldertype_id' => :'Integer',
-        :'fki_language_id' => :'Integer',
-        :'s_language_name_x' => :'String',
-        :'e_ezsignfoldertype_privacylevel' => :'FieldEEzsignfoldertypePrivacylevel',
-        :'s_ezsignfoldertype_name_x' => :'String',
-        :'s_ezsignbulksend_description' => :'String',
-        :'t_ezsignbulksend_note' => :'String',
-        :'b_ezsignbulksend_needvalidation' => :'Boolean',
-        :'b_ezsignbulksend_isactive' => :'Boolean',
-        :'obj_audit' => :'CommonAudit',
         :'a_obj_ezsignbulksenddocumentmapping' => :'Array<EzsignbulksenddocumentmappingResponseCompound>',
         :'a_obj_ezsignbulksendsignermapping' => :'Array<EzsignbulksendsignermappingResponse>'
       }
@@ -144,71 +91,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsignbulksend_id')
-        self.pki_ezsignbulksend_id = attributes[:'pki_ezsignbulksend_id']
-      else
-        self.pki_ezsignbulksend_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfoldertype_id')
-        self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
-      else
-        self.fki_ezsignfoldertype_id = nil
-      end
-
-      if attributes.key?(:'fki_language_id')
-        self.fki_language_id = attributes[:'fki_language_id']
-      else
-        self.fki_language_id = nil
-      end
-
-      if attributes.key?(:'s_language_name_x')
-        self.s_language_name_x = attributes[:'s_language_name_x']
-      else
-        self.s_language_name_x = nil
-      end
-
-      if attributes.key?(:'e_ezsignfoldertype_privacylevel')
-        self.e_ezsignfoldertype_privacylevel = attributes[:'e_ezsignfoldertype_privacylevel']
-      else
-        self.e_ezsignfoldertype_privacylevel = nil
-      end
-
-      if attributes.key?(:'s_ezsignfoldertype_name_x')
-        self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
-      else
-        self.s_ezsignfoldertype_name_x = nil
-      end
-
-      if attributes.key?(:'s_ezsignbulksend_description')
-        self.s_ezsignbulksend_description = attributes[:'s_ezsignbulksend_description']
-      else
-        self.s_ezsignbulksend_description = nil
-      end
-
-      if attributes.key?(:'t_ezsignbulksend_note')
-        self.t_ezsignbulksend_note = attributes[:'t_ezsignbulksend_note']
-      else
-        self.t_ezsignbulksend_note = nil
-      end
-
-      if attributes.key?(:'b_ezsignbulksend_needvalidation')
-        self.b_ezsignbulksend_needvalidation = attributes[:'b_ezsignbulksend_needvalidation']
-      else
-        self.b_ezsignbulksend_needvalidation = nil
-      end
-
-      if attributes.key?(:'b_ezsignbulksend_isactive')
-        self.b_ezsignbulksend_isactive = attributes[:'b_ezsignbulksend_isactive']
-      else
-        self.b_ezsignbulksend_isactive = nil
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      else
-        self.obj_audit = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_ezsignbulksenddocumentmapping')
         if (value = attributes[:'a_obj_ezsignbulksenddocumentmapping']).is_a?(Array)
@@ -231,71 +115,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsignbulksend_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsignbulksend_id", pki_ezsignbulksend_id cannot be nil.')
-      end
-
-      if @pki_ezsignbulksend_id < 0
-        invalid_properties.push('invalid value for "pki_ezsignbulksend_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsignfoldertype_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", fki_ezsignfoldertype_id cannot be nil.')
-      end
-
-      if @fki_ezsignfoldertype_id > 65535
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.')
-      end
-
-      if @fki_ezsignfoldertype_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_language_id.nil?
-        invalid_properties.push('invalid value for "fki_language_id", fki_language_id cannot be nil.')
-      end
-
-      if @fki_language_id > 2
-        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
-      end
-
-      if @fki_language_id < 1
-        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
-      end
-
-      if @s_language_name_x.nil?
-        invalid_properties.push('invalid value for "s_language_name_x", s_language_name_x cannot be nil.')
-      end
-
-      if @e_ezsignfoldertype_privacylevel.nil?
-        invalid_properties.push('invalid value for "e_ezsignfoldertype_privacylevel", e_ezsignfoldertype_privacylevel cannot be nil.')
-      end
-
-      if @s_ezsignfoldertype_name_x.nil?
-        invalid_properties.push('invalid value for "s_ezsignfoldertype_name_x", s_ezsignfoldertype_name_x cannot be nil.')
-      end
-
-      if @s_ezsignbulksend_description.nil?
-        invalid_properties.push('invalid value for "s_ezsignbulksend_description", s_ezsignbulksend_description cannot be nil.')
-      end
-
-      if @t_ezsignbulksend_note.nil?
-        invalid_properties.push('invalid value for "t_ezsignbulksend_note", t_ezsignbulksend_note cannot be nil.')
-      end
-
-      if @b_ezsignbulksend_needvalidation.nil?
-        invalid_properties.push('invalid value for "b_ezsignbulksend_needvalidation", b_ezsignbulksend_needvalidation cannot be nil.')
-      end
-
-      if @b_ezsignbulksend_isactive.nil?
-        invalid_properties.push('invalid value for "b_ezsignbulksend_isactive", b_ezsignbulksend_isactive cannot be nil.')
-      end
-
-      if @obj_audit.nil?
-        invalid_properties.push('invalid value for "obj_audit", obj_audit cannot be nil.')
-      end
-
+      invalid_properties = super
       if @a_obj_ezsignbulksenddocumentmapping.nil?
         invalid_properties.push('invalid value for "a_obj_ezsignbulksenddocumentmapping", a_obj_ezsignbulksenddocumentmapping cannot be nil.')
       end
@@ -311,75 +131,9 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsignbulksend_id.nil?
-      return false if @pki_ezsignbulksend_id < 0
-      return false if @fki_ezsignfoldertype_id.nil?
-      return false if @fki_ezsignfoldertype_id > 65535
-      return false if @fki_ezsignfoldertype_id < 0
-      return false if @fki_language_id.nil?
-      return false if @fki_language_id > 2
-      return false if @fki_language_id < 1
-      return false if @s_language_name_x.nil?
-      return false if @e_ezsignfoldertype_privacylevel.nil?
-      return false if @s_ezsignfoldertype_name_x.nil?
-      return false if @s_ezsignbulksend_description.nil?
-      return false if @t_ezsignbulksend_note.nil?
-      return false if @b_ezsignbulksend_needvalidation.nil?
-      return false if @b_ezsignbulksend_isactive.nil?
-      return false if @obj_audit.nil?
       return false if @a_obj_ezsignbulksenddocumentmapping.nil?
       return false if @a_obj_ezsignbulksendsignermapping.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsignbulksend_id Value to be assigned
-    def pki_ezsignbulksend_id=(pki_ezsignbulksend_id)
-      if pki_ezsignbulksend_id.nil?
-        fail ArgumentError, 'pki_ezsignbulksend_id cannot be nil'
-      end
-
-      if pki_ezsignbulksend_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsignbulksend_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsignbulksend_id = pki_ezsignbulksend_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfoldertype_id Value to be assigned
-    def fki_ezsignfoldertype_id=(fki_ezsignfoldertype_id)
-      if fki_ezsignfoldertype_id.nil?
-        fail ArgumentError, 'fki_ezsignfoldertype_id cannot be nil'
-      end
-
-      if fki_ezsignfoldertype_id > 65535
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.'
-      end
-
-      if fki_ezsignfoldertype_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfoldertype_id = fki_ezsignfoldertype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_language_id Value to be assigned
-    def fki_language_id=(fki_language_id)
-      if fki_language_id.nil?
-        fail ArgumentError, 'fki_language_id cannot be nil'
-      end
-
-      if fki_language_id > 2
-        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
-      end
-
-      if fki_language_id < 1
-        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
-      end
-
-      @fki_language_id = fki_language_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -387,19 +141,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsignbulksend_id == o.pki_ezsignbulksend_id &&
-          fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
-          fki_language_id == o.fki_language_id &&
-          s_language_name_x == o.s_language_name_x &&
-          e_ezsignfoldertype_privacylevel == o.e_ezsignfoldertype_privacylevel &&
-          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
-          s_ezsignbulksend_description == o.s_ezsignbulksend_description &&
-          t_ezsignbulksend_note == o.t_ezsignbulksend_note &&
-          b_ezsignbulksend_needvalidation == o.b_ezsignbulksend_needvalidation &&
-          b_ezsignbulksend_isactive == o.b_ezsignbulksend_isactive &&
-          obj_audit == o.obj_audit &&
           a_obj_ezsignbulksenddocumentmapping == o.a_obj_ezsignbulksenddocumentmapping &&
-          a_obj_ezsignbulksendsignermapping == o.a_obj_ezsignbulksendsignermapping
+          a_obj_ezsignbulksendsignermapping == o.a_obj_ezsignbulksendsignermapping && super(o)
     end
 
     # @see the `==` method
@@ -411,7 +154,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignbulksend_id, fki_ezsignfoldertype_id, fki_language_id, s_language_name_x, e_ezsignfoldertype_privacylevel, s_ezsignfoldertype_name_x, s_ezsignbulksend_description, t_ezsignbulksend_note, b_ezsignbulksend_needvalidation, b_ezsignbulksend_isactive, obj_audit, a_obj_ezsignbulksenddocumentmapping, a_obj_ezsignbulksendsignermapping].hash
+      [a_obj_ezsignbulksenddocumentmapping, a_obj_ezsignbulksendsignermapping].hash
     end
 
     # Builds the object from hash
@@ -419,6 +162,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -495,7 +239,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

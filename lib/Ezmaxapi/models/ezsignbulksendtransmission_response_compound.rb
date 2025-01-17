@@ -15,48 +15,24 @@ require 'time'
 
 module EzmaxApi
   # An Ezsignbulksendtransmission Object and children to create a complete structure
-  class EzsignbulksendtransmissionResponseCompound
-    # The unique ID of the Ezsignbulksendtransmission
-    attr_accessor :pki_ezsignbulksendtransmission_id
-
-    # The unique ID of the Ezsignbulksend
-    attr_accessor :fki_ezsignbulksend_id
-
-    # The description of the Ezsignbulksendtransmission
-    attr_accessor :s_ezsignbulksendtransmission_description
-
-    # The number of errors during the Ezsignbulksendtransmission
-    attr_accessor :i_ezsignbulksendtransmission_errors
-
-    attr_accessor :obj_audit
-
+  class EzsignbulksendtransmissionResponseCompound < EzsignbulksendtransmissionResponse
     attr_accessor :a_obj_ezsignfoldertransmission
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsignbulksendtransmission_id' => :'pkiEzsignbulksendtransmissionID',
-        :'fki_ezsignbulksend_id' => :'fkiEzsignbulksendID',
-        :'s_ezsignbulksendtransmission_description' => :'sEzsignbulksendtransmissionDescription',
-        :'i_ezsignbulksendtransmission_errors' => :'iEzsignbulksendtransmissionErrors',
-        :'obj_audit' => :'objAudit',
         :'a_obj_ezsignfoldertransmission' => :'a_objEzsignfoldertransmission'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsignbulksendtransmission_id' => :'Integer',
-        :'fki_ezsignbulksend_id' => :'Integer',
-        :'s_ezsignbulksendtransmission_description' => :'String',
-        :'i_ezsignbulksendtransmission_errors' => :'Integer',
-        :'obj_audit' => :'CommonAudit',
         :'a_obj_ezsignfoldertransmission' => :'Array<CustomEzsignfoldertransmissionResponse>'
       }
     end
@@ -89,35 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsignbulksendtransmission_id')
-        self.pki_ezsignbulksendtransmission_id = attributes[:'pki_ezsignbulksendtransmission_id']
-      else
-        self.pki_ezsignbulksendtransmission_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignbulksend_id')
-        self.fki_ezsignbulksend_id = attributes[:'fki_ezsignbulksend_id']
-      else
-        self.fki_ezsignbulksend_id = nil
-      end
-
-      if attributes.key?(:'s_ezsignbulksendtransmission_description')
-        self.s_ezsignbulksendtransmission_description = attributes[:'s_ezsignbulksendtransmission_description']
-      else
-        self.s_ezsignbulksendtransmission_description = nil
-      end
-
-      if attributes.key?(:'i_ezsignbulksendtransmission_errors')
-        self.i_ezsignbulksendtransmission_errors = attributes[:'i_ezsignbulksendtransmission_errors']
-      else
-        self.i_ezsignbulksendtransmission_errors = nil
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      else
-        self.obj_audit = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_ezsignfoldertransmission')
         if (value = attributes[:'a_obj_ezsignfoldertransmission']).is_a?(Array)
@@ -132,39 +81,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsignbulksendtransmission_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsignbulksendtransmission_id", pki_ezsignbulksendtransmission_id cannot be nil.')
-      end
-
-      if @pki_ezsignbulksendtransmission_id < 0
-        invalid_properties.push('invalid value for "pki_ezsignbulksendtransmission_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsignbulksend_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignbulksend_id", fki_ezsignbulksend_id cannot be nil.')
-      end
-
-      if @fki_ezsignbulksend_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignbulksend_id", must be greater than or equal to 0.')
-      end
-
-      if @s_ezsignbulksendtransmission_description.nil?
-        invalid_properties.push('invalid value for "s_ezsignbulksendtransmission_description", s_ezsignbulksendtransmission_description cannot be nil.')
-      end
-
-      if @i_ezsignbulksendtransmission_errors.nil?
-        invalid_properties.push('invalid value for "i_ezsignbulksendtransmission_errors", i_ezsignbulksendtransmission_errors cannot be nil.')
-      end
-
-      if @i_ezsignbulksendtransmission_errors < 0
-        invalid_properties.push('invalid value for "i_ezsignbulksendtransmission_errors", must be greater than or equal to 0.')
-      end
-
-      if @obj_audit.nil?
-        invalid_properties.push('invalid value for "obj_audit", obj_audit cannot be nil.')
-      end
-
+      invalid_properties = super
       if @a_obj_ezsignfoldertransmission.nil?
         invalid_properties.push('invalid value for "a_obj_ezsignfoldertransmission", a_obj_ezsignfoldertransmission cannot be nil.')
       end
@@ -176,58 +93,8 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsignbulksendtransmission_id.nil?
-      return false if @pki_ezsignbulksendtransmission_id < 0
-      return false if @fki_ezsignbulksend_id.nil?
-      return false if @fki_ezsignbulksend_id < 0
-      return false if @s_ezsignbulksendtransmission_description.nil?
-      return false if @i_ezsignbulksendtransmission_errors.nil?
-      return false if @i_ezsignbulksendtransmission_errors < 0
-      return false if @obj_audit.nil?
       return false if @a_obj_ezsignfoldertransmission.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsignbulksendtransmission_id Value to be assigned
-    def pki_ezsignbulksendtransmission_id=(pki_ezsignbulksendtransmission_id)
-      if pki_ezsignbulksendtransmission_id.nil?
-        fail ArgumentError, 'pki_ezsignbulksendtransmission_id cannot be nil'
-      end
-
-      if pki_ezsignbulksendtransmission_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsignbulksendtransmission_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsignbulksendtransmission_id = pki_ezsignbulksendtransmission_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignbulksend_id Value to be assigned
-    def fki_ezsignbulksend_id=(fki_ezsignbulksend_id)
-      if fki_ezsignbulksend_id.nil?
-        fail ArgumentError, 'fki_ezsignbulksend_id cannot be nil'
-      end
-
-      if fki_ezsignbulksend_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignbulksend_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignbulksend_id = fki_ezsignbulksend_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignbulksendtransmission_errors Value to be assigned
-    def i_ezsignbulksendtransmission_errors=(i_ezsignbulksendtransmission_errors)
-      if i_ezsignbulksendtransmission_errors.nil?
-        fail ArgumentError, 'i_ezsignbulksendtransmission_errors cannot be nil'
-      end
-
-      if i_ezsignbulksendtransmission_errors < 0
-        fail ArgumentError, 'invalid value for "i_ezsignbulksendtransmission_errors", must be greater than or equal to 0.'
-      end
-
-      @i_ezsignbulksendtransmission_errors = i_ezsignbulksendtransmission_errors
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -235,12 +102,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsignbulksendtransmission_id == o.pki_ezsignbulksendtransmission_id &&
-          fki_ezsignbulksend_id == o.fki_ezsignbulksend_id &&
-          s_ezsignbulksendtransmission_description == o.s_ezsignbulksendtransmission_description &&
-          i_ezsignbulksendtransmission_errors == o.i_ezsignbulksendtransmission_errors &&
-          obj_audit == o.obj_audit &&
-          a_obj_ezsignfoldertransmission == o.a_obj_ezsignfoldertransmission
+          a_obj_ezsignfoldertransmission == o.a_obj_ezsignfoldertransmission && super(o)
     end
 
     # @see the `==` method
@@ -252,7 +114,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignbulksendtransmission_id, fki_ezsignbulksend_id, s_ezsignbulksendtransmission_description, i_ezsignbulksendtransmission_errors, obj_audit, a_obj_ezsignfoldertransmission].hash
+      [a_obj_ezsignfoldertransmission].hash
     end
 
     # Builds the object from hash
@@ -260,6 +122,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -336,7 +199,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

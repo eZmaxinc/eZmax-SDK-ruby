@@ -15,34 +15,25 @@ require 'time'
 
 module EzmaxApi
   # This is the base Webhook object
-  class WebhookUserstagedUserstagedCreated
-    attr_accessor :obj_webhook
-
-    # An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
-    attr_accessor :a_obj_attempt
-
+  class WebhookUserstagedUserstagedCreated < CommonWebhook
     # A Userstaged Object
     attr_accessor :obj_userstaged
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'obj_webhook' => :'objWebhook',
-        :'a_obj_attempt' => :'a_objAttempt',
         :'obj_userstaged' => :'objUserstaged'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'obj_webhook' => :'CustomWebhookResponse',
-        :'a_obj_attempt' => :'Array<AttemptResponseCompound>',
         :'obj_userstaged' => :'UserstagedResponse'
       }
     end
@@ -75,19 +66,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'obj_webhook')
-        self.obj_webhook = attributes[:'obj_webhook']
-      else
-        self.obj_webhook = nil
-      end
-
-      if attributes.key?(:'a_obj_attempt')
-        if (value = attributes[:'a_obj_attempt']).is_a?(Array)
-          self.a_obj_attempt = value
-        end
-      else
-        self.a_obj_attempt = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_userstaged')
         self.obj_userstaged = attributes[:'obj_userstaged']
@@ -100,15 +80,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @obj_webhook.nil?
-        invalid_properties.push('invalid value for "obj_webhook", obj_webhook cannot be nil.')
-      end
-
-      if @a_obj_attempt.nil?
-        invalid_properties.push('invalid value for "a_obj_attempt", a_obj_attempt cannot be nil.')
-      end
-
+      invalid_properties = super
       if @obj_userstaged.nil?
         invalid_properties.push('invalid value for "obj_userstaged", obj_userstaged cannot be nil.')
       end
@@ -120,10 +92,8 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @obj_webhook.nil?
-      return false if @a_obj_attempt.nil?
       return false if @obj_userstaged.nil?
-      true
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -131,9 +101,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          obj_webhook == o.obj_webhook &&
-          a_obj_attempt == o.a_obj_attempt &&
-          obj_userstaged == o.obj_userstaged
+          obj_userstaged == o.obj_userstaged && super(o)
     end
 
     # @see the `==` method
@@ -145,7 +113,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_webhook, a_obj_attempt, obj_userstaged].hash
+      [obj_userstaged].hash
     end
 
     # Builds the object from hash
@@ -153,6 +121,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -229,7 +198,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

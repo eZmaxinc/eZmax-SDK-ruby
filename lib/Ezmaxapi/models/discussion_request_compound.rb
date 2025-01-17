@@ -15,36 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Discussion Object and children
-  class DiscussionRequestCompound
-    # The unique ID of the Discussion
-    attr_accessor :pki_discussion_id
-
-    # The description of the Discussion
-    attr_accessor :s_discussion_description
-
-    # Whether if it's an closed
-    attr_accessor :b_discussion_closed
-
+  class DiscussionRequestCompound < DiscussionRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_discussion_id' => :'pkiDiscussionID',
-        :'s_discussion_description' => :'sDiscussionDescription',
-        :'b_discussion_closed' => :'bDiscussionClosed'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_discussion_id' => :'Integer',
-        :'s_discussion_description' => :'String',
-        :'b_discussion_closed' => :'Boolean'
       }
     end
 
@@ -76,43 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_discussion_id')
-        self.pki_discussion_id = attributes[:'pki_discussion_id']
-      end
-
-      if attributes.key?(:'s_discussion_description')
-        self.s_discussion_description = attributes[:'s_discussion_description']
-      else
-        self.s_discussion_description = nil
-      end
-
-      if attributes.key?(:'b_discussion_closed')
-        self.b_discussion_closed = attributes[:'b_discussion_closed']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_discussion_id.nil? && @pki_discussion_id > 16777215
-        invalid_properties.push('invalid value for "pki_discussion_id", must be smaller than or equal to 16777215.')
-      end
-
-      if !@pki_discussion_id.nil? && @pki_discussion_id < 0
-        invalid_properties.push('invalid value for "pki_discussion_id", must be greater than or equal to 0.')
-      end
-
-      if @s_discussion_description.nil?
-        invalid_properties.push('invalid value for "s_discussion_description", s_discussion_description cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,75}$/)
-      if @s_discussion_description !~ pattern
-        invalid_properties.push("invalid value for \"s_discussion_description\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -120,54 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_discussion_id.nil? && @pki_discussion_id > 16777215
-      return false if !@pki_discussion_id.nil? && @pki_discussion_id < 0
-      return false if @s_discussion_description.nil?
-      return false if @s_discussion_description !~ Regexp.new(/^.{0,75}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_discussion_id Value to be assigned
-    def pki_discussion_id=(pki_discussion_id)
-      if pki_discussion_id.nil?
-        fail ArgumentError, 'pki_discussion_id cannot be nil'
-      end
-
-      if pki_discussion_id > 16777215
-        fail ArgumentError, 'invalid value for "pki_discussion_id", must be smaller than or equal to 16777215.'
-      end
-
-      if pki_discussion_id < 0
-        fail ArgumentError, 'invalid value for "pki_discussion_id", must be greater than or equal to 0.'
-      end
-
-      @pki_discussion_id = pki_discussion_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_discussion_description Value to be assigned
-    def s_discussion_description=(s_discussion_description)
-      if s_discussion_description.nil?
-        fail ArgumentError, 's_discussion_description cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,75}$/)
-      if s_discussion_description !~ pattern
-        fail ArgumentError, "invalid value for \"s_discussion_description\", must conform to the pattern #{pattern}."
-      end
-
-      @s_discussion_description = s_discussion_description
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_discussion_id == o.pki_discussion_id &&
-          s_discussion_description == o.s_discussion_description &&
-          b_discussion_closed == o.b_discussion_closed
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -179,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_discussion_id, s_discussion_description, b_discussion_closed].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -187,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -263,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

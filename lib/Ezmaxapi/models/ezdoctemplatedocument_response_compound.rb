@@ -15,41 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezdoctemplatedocument Object
-  class EzdoctemplatedocumentResponseCompound
-    # The unique ID of the Ezdoctemplatedocument
-    attr_accessor :pki_ezdoctemplatedocument_id
-
-    # The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-    attr_accessor :fki_language_id
-
-    # The unique ID of the Ezsignfoldertype.
-    attr_accessor :fki_ezsignfoldertype_id
-
-    # The unique ID of the Ezdoctemplatetype
-    attr_accessor :fki_ezdoctemplatetype_id
-
-    # The unique ID of the Ezdoctemplatefieldtypecategory
-    attr_accessor :fki_ezdoctemplatefieldtypecategory_id
-
-    attr_accessor :e_ezdoctemplatedocument_privacylevel
-
-    # Whether the ezdoctemplatedocument is active or not
-    attr_accessor :b_ezdoctemplatedocument_isactive
-
-    attr_accessor :obj_ezdoctemplatedocument_name
-
-    # The name of the Ezdoctemplatedocument in the language of the requester
-    attr_accessor :s_ezdoctemplatedocument_name_x
-
-    # The name of the Ezsignfoldertype in the language of the requester
-    attr_accessor :s_ezsignfoldertype_name_x
-
-    # The description of the Ezdoctemplatefieldtypecategory in the language of the requester
-    attr_accessor :s_ezdoctemplatefieldtypecategory_description_x
-
-    # The description of the Ezdoctemplatetype in the language of the requester
-    attr_accessor :s_ezdoctemplatetype_description_x
-
+  class EzdoctemplatedocumentResponseCompound < EzdoctemplatedocumentResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -75,41 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezdoctemplatedocument_id' => :'pkiEzdoctemplatedocumentID',
-        :'fki_language_id' => :'fkiLanguageID',
-        :'fki_ezsignfoldertype_id' => :'fkiEzsignfoldertypeID',
-        :'fki_ezdoctemplatetype_id' => :'fkiEzdoctemplatetypeID',
-        :'fki_ezdoctemplatefieldtypecategory_id' => :'fkiEzdoctemplatefieldtypecategoryID',
-        :'e_ezdoctemplatedocument_privacylevel' => :'eEzdoctemplatedocumentPrivacylevel',
-        :'b_ezdoctemplatedocument_isactive' => :'bEzdoctemplatedocumentIsactive',
-        :'obj_ezdoctemplatedocument_name' => :'objEzdoctemplatedocumentName',
-        :'s_ezdoctemplatedocument_name_x' => :'sEzdoctemplatedocumentNameX',
-        :'s_ezsignfoldertype_name_x' => :'sEzsignfoldertypeNameX',
-        :'s_ezdoctemplatefieldtypecategory_description_x' => :'sEzdoctemplatefieldtypecategoryDescriptionX',
-        :'s_ezdoctemplatetype_description_x' => :'sEzdoctemplatetypeDescriptionX'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezdoctemplatedocument_id' => :'Integer',
-        :'fki_language_id' => :'Integer',
-        :'fki_ezsignfoldertype_id' => :'Integer',
-        :'fki_ezdoctemplatetype_id' => :'Integer',
-        :'fki_ezdoctemplatefieldtypecategory_id' => :'Integer',
-        :'e_ezdoctemplatedocument_privacylevel' => :'FieldEEzdoctemplatedocumentPrivacylevel',
-        :'b_ezdoctemplatedocument_isactive' => :'Boolean',
-        :'obj_ezdoctemplatedocument_name' => :'MultilingualEzdoctemplatedocumentName',
-        :'s_ezdoctemplatedocument_name_x' => :'String',
-        :'s_ezsignfoldertype_name_x' => :'String',
-        :'s_ezdoctemplatefieldtypecategory_description_x' => :'String',
-        :'s_ezdoctemplatetype_description_x' => :'String'
       }
     end
 
@@ -141,163 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezdoctemplatedocument_id')
-        self.pki_ezdoctemplatedocument_id = attributes[:'pki_ezdoctemplatedocument_id']
-      else
-        self.pki_ezdoctemplatedocument_id = nil
-      end
-
-      if attributes.key?(:'fki_language_id')
-        self.fki_language_id = attributes[:'fki_language_id']
-      else
-        self.fki_language_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfoldertype_id')
-        self.fki_ezsignfoldertype_id = attributes[:'fki_ezsignfoldertype_id']
-      end
-
-      if attributes.key?(:'fki_ezdoctemplatetype_id')
-        self.fki_ezdoctemplatetype_id = attributes[:'fki_ezdoctemplatetype_id']
-      else
-        self.fki_ezdoctemplatetype_id = nil
-      end
-
-      if attributes.key?(:'fki_ezdoctemplatefieldtypecategory_id')
-        self.fki_ezdoctemplatefieldtypecategory_id = attributes[:'fki_ezdoctemplatefieldtypecategory_id']
-      else
-        self.fki_ezdoctemplatefieldtypecategory_id = nil
-      end
-
-      if attributes.key?(:'e_ezdoctemplatedocument_privacylevel')
-        self.e_ezdoctemplatedocument_privacylevel = attributes[:'e_ezdoctemplatedocument_privacylevel']
-      end
-
-      if attributes.key?(:'b_ezdoctemplatedocument_isactive')
-        self.b_ezdoctemplatedocument_isactive = attributes[:'b_ezdoctemplatedocument_isactive']
-      else
-        self.b_ezdoctemplatedocument_isactive = nil
-      end
-
-      if attributes.key?(:'obj_ezdoctemplatedocument_name')
-        self.obj_ezdoctemplatedocument_name = attributes[:'obj_ezdoctemplatedocument_name']
-      else
-        self.obj_ezdoctemplatedocument_name = nil
-      end
-
-      if attributes.key?(:'s_ezdoctemplatedocument_name_x')
-        self.s_ezdoctemplatedocument_name_x = attributes[:'s_ezdoctemplatedocument_name_x']
-      end
-
-      if attributes.key?(:'s_ezsignfoldertype_name_x')
-        self.s_ezsignfoldertype_name_x = attributes[:'s_ezsignfoldertype_name_x']
-      end
-
-      if attributes.key?(:'s_ezdoctemplatefieldtypecategory_description_x')
-        self.s_ezdoctemplatefieldtypecategory_description_x = attributes[:'s_ezdoctemplatefieldtypecategory_description_x']
-      else
-        self.s_ezdoctemplatefieldtypecategory_description_x = nil
-      end
-
-      if attributes.key?(:'s_ezdoctemplatetype_description_x')
-        self.s_ezdoctemplatetype_description_x = attributes[:'s_ezdoctemplatetype_description_x']
-      else
-        self.s_ezdoctemplatetype_description_x = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezdoctemplatedocument_id.nil?
-        invalid_properties.push('invalid value for "pki_ezdoctemplatedocument_id", pki_ezdoctemplatedocument_id cannot be nil.')
-      end
-
-      if @pki_ezdoctemplatedocument_id > 65535
-        invalid_properties.push('invalid value for "pki_ezdoctemplatedocument_id", must be smaller than or equal to 65535.')
-      end
-
-      if @pki_ezdoctemplatedocument_id < 0
-        invalid_properties.push('invalid value for "pki_ezdoctemplatedocument_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_language_id.nil?
-        invalid_properties.push('invalid value for "fki_language_id", fki_language_id cannot be nil.')
-      end
-
-      if @fki_language_id > 2
-        invalid_properties.push('invalid value for "fki_language_id", must be smaller than or equal to 2.')
-      end
-
-      if @fki_language_id < 1
-        invalid_properties.push('invalid value for "fki_language_id", must be greater than or equal to 1.')
-      end
-
-      if !@fki_ezsignfoldertype_id.nil? && @fki_ezsignfoldertype_id > 65535
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.')
-      end
-
-      if !@fki_ezsignfoldertype_id.nil? && @fki_ezsignfoldertype_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezdoctemplatetype_id.nil?
-        invalid_properties.push('invalid value for "fki_ezdoctemplatetype_id", fki_ezdoctemplatetype_id cannot be nil.')
-      end
-
-      if @fki_ezdoctemplatetype_id > 255
-        invalid_properties.push('invalid value for "fki_ezdoctemplatetype_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_ezdoctemplatetype_id < 0
-        invalid_properties.push('invalid value for "fki_ezdoctemplatetype_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezdoctemplatefieldtypecategory_id.nil?
-        invalid_properties.push('invalid value for "fki_ezdoctemplatefieldtypecategory_id", fki_ezdoctemplatefieldtypecategory_id cannot be nil.')
-      end
-
-      if @fki_ezdoctemplatefieldtypecategory_id > 255
-        invalid_properties.push('invalid value for "fki_ezdoctemplatefieldtypecategory_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_ezdoctemplatefieldtypecategory_id < 0
-        invalid_properties.push('invalid value for "fki_ezdoctemplatefieldtypecategory_id", must be greater than or equal to 0.')
-      end
-
-      if @b_ezdoctemplatedocument_isactive.nil?
-        invalid_properties.push('invalid value for "b_ezdoctemplatedocument_isactive", b_ezdoctemplatedocument_isactive cannot be nil.')
-      end
-
-      if @obj_ezdoctemplatedocument_name.nil?
-        invalid_properties.push('invalid value for "obj_ezdoctemplatedocument_name", obj_ezdoctemplatedocument_name cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if !@s_ezdoctemplatedocument_name_x.nil? && @s_ezdoctemplatedocument_name_x !~ pattern
-        invalid_properties.push("invalid value for \"s_ezdoctemplatedocument_name_x\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_ezdoctemplatefieldtypecategory_description_x.nil?
-        invalid_properties.push('invalid value for "s_ezdoctemplatefieldtypecategory_description_x", s_ezdoctemplatefieldtypecategory_description_x cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,55}$/)
-      if @s_ezdoctemplatefieldtypecategory_description_x !~ pattern
-        invalid_properties.push("invalid value for \"s_ezdoctemplatefieldtypecategory_description_x\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_ezdoctemplatetype_description_x.nil?
-        invalid_properties.push('invalid value for "s_ezdoctemplatetype_description_x", s_ezdoctemplatetype_description_x cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if @s_ezdoctemplatetype_description_x !~ pattern
-        invalid_properties.push("invalid value for \"s_ezdoctemplatetype_description_x\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -305,182 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezdoctemplatedocument_id.nil?
-      return false if @pki_ezdoctemplatedocument_id > 65535
-      return false if @pki_ezdoctemplatedocument_id < 0
-      return false if @fki_language_id.nil?
-      return false if @fki_language_id > 2
-      return false if @fki_language_id < 1
-      return false if !@fki_ezsignfoldertype_id.nil? && @fki_ezsignfoldertype_id > 65535
-      return false if !@fki_ezsignfoldertype_id.nil? && @fki_ezsignfoldertype_id < 0
-      return false if @fki_ezdoctemplatetype_id.nil?
-      return false if @fki_ezdoctemplatetype_id > 255
-      return false if @fki_ezdoctemplatetype_id < 0
-      return false if @fki_ezdoctemplatefieldtypecategory_id.nil?
-      return false if @fki_ezdoctemplatefieldtypecategory_id > 255
-      return false if @fki_ezdoctemplatefieldtypecategory_id < 0
-      return false if @b_ezdoctemplatedocument_isactive.nil?
-      return false if @obj_ezdoctemplatedocument_name.nil?
-      return false if !@s_ezdoctemplatedocument_name_x.nil? && @s_ezdoctemplatedocument_name_x !~ Regexp.new(/^.{0,50}$/)
-      return false if @s_ezdoctemplatefieldtypecategory_description_x.nil?
-      return false if @s_ezdoctemplatefieldtypecategory_description_x !~ Regexp.new(/^.{0,55}$/)
-      return false if @s_ezdoctemplatetype_description_x.nil?
-      return false if @s_ezdoctemplatetype_description_x !~ Regexp.new(/^.{0,50}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezdoctemplatedocument_id Value to be assigned
-    def pki_ezdoctemplatedocument_id=(pki_ezdoctemplatedocument_id)
-      if pki_ezdoctemplatedocument_id.nil?
-        fail ArgumentError, 'pki_ezdoctemplatedocument_id cannot be nil'
-      end
-
-      if pki_ezdoctemplatedocument_id > 65535
-        fail ArgumentError, 'invalid value for "pki_ezdoctemplatedocument_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_ezdoctemplatedocument_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezdoctemplatedocument_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezdoctemplatedocument_id = pki_ezdoctemplatedocument_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_language_id Value to be assigned
-    def fki_language_id=(fki_language_id)
-      if fki_language_id.nil?
-        fail ArgumentError, 'fki_language_id cannot be nil'
-      end
-
-      if fki_language_id > 2
-        fail ArgumentError, 'invalid value for "fki_language_id", must be smaller than or equal to 2.'
-      end
-
-      if fki_language_id < 1
-        fail ArgumentError, 'invalid value for "fki_language_id", must be greater than or equal to 1.'
-      end
-
-      @fki_language_id = fki_language_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfoldertype_id Value to be assigned
-    def fki_ezsignfoldertype_id=(fki_ezsignfoldertype_id)
-      if fki_ezsignfoldertype_id.nil?
-        fail ArgumentError, 'fki_ezsignfoldertype_id cannot be nil'
-      end
-
-      if fki_ezsignfoldertype_id > 65535
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be smaller than or equal to 65535.'
-      end
-
-      if fki_ezsignfoldertype_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfoldertype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfoldertype_id = fki_ezsignfoldertype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezdoctemplatetype_id Value to be assigned
-    def fki_ezdoctemplatetype_id=(fki_ezdoctemplatetype_id)
-      if fki_ezdoctemplatetype_id.nil?
-        fail ArgumentError, 'fki_ezdoctemplatetype_id cannot be nil'
-      end
-
-      if fki_ezdoctemplatetype_id > 255
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatetype_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_ezdoctemplatetype_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatetype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezdoctemplatetype_id = fki_ezdoctemplatetype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezdoctemplatefieldtypecategory_id Value to be assigned
-    def fki_ezdoctemplatefieldtypecategory_id=(fki_ezdoctemplatefieldtypecategory_id)
-      if fki_ezdoctemplatefieldtypecategory_id.nil?
-        fail ArgumentError, 'fki_ezdoctemplatefieldtypecategory_id cannot be nil'
-      end
-
-      if fki_ezdoctemplatefieldtypecategory_id > 255
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatefieldtypecategory_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_ezdoctemplatefieldtypecategory_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezdoctemplatefieldtypecategory_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezdoctemplatefieldtypecategory_id = fki_ezdoctemplatefieldtypecategory_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezdoctemplatedocument_name_x Value to be assigned
-    def s_ezdoctemplatedocument_name_x=(s_ezdoctemplatedocument_name_x)
-      if s_ezdoctemplatedocument_name_x.nil?
-        fail ArgumentError, 's_ezdoctemplatedocument_name_x cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_ezdoctemplatedocument_name_x !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezdoctemplatedocument_name_x\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezdoctemplatedocument_name_x = s_ezdoctemplatedocument_name_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezdoctemplatefieldtypecategory_description_x Value to be assigned
-    def s_ezdoctemplatefieldtypecategory_description_x=(s_ezdoctemplatefieldtypecategory_description_x)
-      if s_ezdoctemplatefieldtypecategory_description_x.nil?
-        fail ArgumentError, 's_ezdoctemplatefieldtypecategory_description_x cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,55}$/)
-      if s_ezdoctemplatefieldtypecategory_description_x !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezdoctemplatefieldtypecategory_description_x\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezdoctemplatefieldtypecategory_description_x = s_ezdoctemplatefieldtypecategory_description_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezdoctemplatetype_description_x Value to be assigned
-    def s_ezdoctemplatetype_description_x=(s_ezdoctemplatetype_description_x)
-      if s_ezdoctemplatetype_description_x.nil?
-        fail ArgumentError, 's_ezdoctemplatetype_description_x cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_ezdoctemplatetype_description_x !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezdoctemplatetype_description_x\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezdoctemplatetype_description_x = s_ezdoctemplatetype_description_x
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_ezdoctemplatedocument_id == o.pki_ezdoctemplatedocument_id &&
-          fki_language_id == o.fki_language_id &&
-          fki_ezsignfoldertype_id == o.fki_ezsignfoldertype_id &&
-          fki_ezdoctemplatetype_id == o.fki_ezdoctemplatetype_id &&
-          fki_ezdoctemplatefieldtypecategory_id == o.fki_ezdoctemplatefieldtypecategory_id &&
-          e_ezdoctemplatedocument_privacylevel == o.e_ezdoctemplatedocument_privacylevel &&
-          b_ezdoctemplatedocument_isactive == o.b_ezdoctemplatedocument_isactive &&
-          obj_ezdoctemplatedocument_name == o.obj_ezdoctemplatedocument_name &&
-          s_ezdoctemplatedocument_name_x == o.s_ezdoctemplatedocument_name_x &&
-          s_ezsignfoldertype_name_x == o.s_ezsignfoldertype_name_x &&
-          s_ezdoctemplatefieldtypecategory_description_x == o.s_ezdoctemplatefieldtypecategory_description_x &&
-          s_ezdoctemplatetype_description_x == o.s_ezdoctemplatetype_description_x
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -492,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezdoctemplatedocument_id, fki_language_id, fki_ezsignfoldertype_id, fki_ezdoctemplatetype_id, fki_ezdoctemplatefieldtypecategory_id, e_ezdoctemplatedocument_privacylevel, b_ezdoctemplatedocument_isactive, obj_ezdoctemplatedocument_name, s_ezdoctemplatedocument_name_x, s_ezsignfoldertype_name_x, s_ezdoctemplatefieldtypecategory_description_x, s_ezdoctemplatetype_description_x].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -500,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -576,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

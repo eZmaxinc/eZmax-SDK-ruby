@@ -15,21 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Notificationtest Object in the context of getNotificationtests
-  class CustomNotificationtestgetnotificationtestsResponse
-    # The unique ID of the Notificationtest
-    attr_accessor :pki_notificationtest_id
-
-    attr_accessor :obj_notificationtest_name
-
-    # The unique ID of the Notificationsubsection
-    attr_accessor :fki_notificationsubsection_id
-
-    # The function name of the Notificationtest
-    attr_accessor :s_notificationtest_function
-
-    # The name of the Notificationtest in the language of the requester
-    attr_accessor :s_notificationtest_name_x
-
+  class CustomNotificationtestgetnotificationtestsResponse < NotificationtestResponse
     attr_accessor :e_notificationpreference_status
 
     # The number of elements returned by the Notificationtest
@@ -60,29 +46,19 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_notificationtest_id' => :'pkiNotificationtestID',
-        :'obj_notificationtest_name' => :'objNotificationtestName',
-        :'fki_notificationsubsection_id' => :'fkiNotificationsubsectionID',
-        :'s_notificationtest_function' => :'sNotificationtestFunction',
-        :'s_notificationtest_name_x' => :'sNotificationtestNameX',
         :'e_notificationpreference_status' => :'eNotificationpreferenceStatus',
         :'i_notificationtest' => :'iNotificationtest'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_notificationtest_id' => :'Integer',
-        :'obj_notificationtest_name' => :'MultilingualNotificationtestName',
-        :'fki_notificationsubsection_id' => :'Integer',
-        :'s_notificationtest_function' => :'String',
-        :'s_notificationtest_name_x' => :'String',
         :'e_notificationpreference_status' => :'FieldENotificationpreferenceStatus',
         :'i_notificationtest' => :'Integer'
       }
@@ -116,35 +92,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_notificationtest_id')
-        self.pki_notificationtest_id = attributes[:'pki_notificationtest_id']
-      else
-        self.pki_notificationtest_id = nil
-      end
-
-      if attributes.key?(:'obj_notificationtest_name')
-        self.obj_notificationtest_name = attributes[:'obj_notificationtest_name']
-      else
-        self.obj_notificationtest_name = nil
-      end
-
-      if attributes.key?(:'fki_notificationsubsection_id')
-        self.fki_notificationsubsection_id = attributes[:'fki_notificationsubsection_id']
-      else
-        self.fki_notificationsubsection_id = nil
-      end
-
-      if attributes.key?(:'s_notificationtest_function')
-        self.s_notificationtest_function = attributes[:'s_notificationtest_function']
-      else
-        self.s_notificationtest_function = nil
-      end
-
-      if attributes.key?(:'s_notificationtest_name_x')
-        self.s_notificationtest_name_x = attributes[:'s_notificationtest_name_x']
-      else
-        self.s_notificationtest_name_x = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'e_notificationpreference_status')
         self.e_notificationpreference_status = attributes[:'e_notificationpreference_status']
@@ -163,35 +112,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_notificationtest_id.nil?
-        invalid_properties.push('invalid value for "pki_notificationtest_id", pki_notificationtest_id cannot be nil.')
-      end
-
-      if @pki_notificationtest_id < 0
-        invalid_properties.push('invalid value for "pki_notificationtest_id", must be greater than or equal to 0.')
-      end
-
-      if @obj_notificationtest_name.nil?
-        invalid_properties.push('invalid value for "obj_notificationtest_name", obj_notificationtest_name cannot be nil.')
-      end
-
-      if @fki_notificationsubsection_id.nil?
-        invalid_properties.push('invalid value for "fki_notificationsubsection_id", fki_notificationsubsection_id cannot be nil.')
-      end
-
-      if @fki_notificationsubsection_id < 0
-        invalid_properties.push('invalid value for "fki_notificationsubsection_id", must be greater than or equal to 0.')
-      end
-
-      if @s_notificationtest_function.nil?
-        invalid_properties.push('invalid value for "s_notificationtest_function", s_notificationtest_function cannot be nil.')
-      end
-
-      if @s_notificationtest_name_x.nil?
-        invalid_properties.push('invalid value for "s_notificationtest_name_x", s_notificationtest_name_x cannot be nil.')
-      end
-
+      invalid_properties = super
       if @e_notificationpreference_status.nil?
         invalid_properties.push('invalid value for "e_notificationpreference_status", e_notificationpreference_status cannot be nil.')
       end
@@ -207,44 +128,9 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_notificationtest_id.nil?
-      return false if @pki_notificationtest_id < 0
-      return false if @obj_notificationtest_name.nil?
-      return false if @fki_notificationsubsection_id.nil?
-      return false if @fki_notificationsubsection_id < 0
-      return false if @s_notificationtest_function.nil?
-      return false if @s_notificationtest_name_x.nil?
       return false if @e_notificationpreference_status.nil?
       return false if @i_notificationtest.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_notificationtest_id Value to be assigned
-    def pki_notificationtest_id=(pki_notificationtest_id)
-      if pki_notificationtest_id.nil?
-        fail ArgumentError, 'pki_notificationtest_id cannot be nil'
-      end
-
-      if pki_notificationtest_id < 0
-        fail ArgumentError, 'invalid value for "pki_notificationtest_id", must be greater than or equal to 0.'
-      end
-
-      @pki_notificationtest_id = pki_notificationtest_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_notificationsubsection_id Value to be assigned
-    def fki_notificationsubsection_id=(fki_notificationsubsection_id)
-      if fki_notificationsubsection_id.nil?
-        fail ArgumentError, 'fki_notificationsubsection_id cannot be nil'
-      end
-
-      if fki_notificationsubsection_id < 0
-        fail ArgumentError, 'invalid value for "fki_notificationsubsection_id", must be greater than or equal to 0.'
-      end
-
-      @fki_notificationsubsection_id = fki_notificationsubsection_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -252,13 +138,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_notificationtest_id == o.pki_notificationtest_id &&
-          obj_notificationtest_name == o.obj_notificationtest_name &&
-          fki_notificationsubsection_id == o.fki_notificationsubsection_id &&
-          s_notificationtest_function == o.s_notificationtest_function &&
-          s_notificationtest_name_x == o.s_notificationtest_name_x &&
           e_notificationpreference_status == o.e_notificationpreference_status &&
-          i_notificationtest == o.i_notificationtest
+          i_notificationtest == o.i_notificationtest && super(o)
     end
 
     # @see the `==` method
@@ -270,7 +151,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_notificationtest_id, obj_notificationtest_name, fki_notificationsubsection_id, s_notificationtest_function, s_notificationtest_name_x, e_notificationpreference_status, i_notificationtest].hash
+      [e_notificationpreference_status, i_notificationtest].hash
     end
 
     # Builds the object from hash
@@ -278,6 +159,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -354,7 +236,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

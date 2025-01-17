@@ -15,51 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Communicationrecipient Object and children
-  class CommunicationrecipientRequestCompound
-    # The unique ID of the Communicationrecipient.
-    attr_accessor :pki_communicationrecipient_id
-
-    # The unique ID of the Agent.
-    attr_accessor :fki_agent_id
-
-    # The unique ID of the Broker.
-    attr_accessor :fki_broker_id
-
-    # The unique ID of the Contact
-    attr_accessor :fki_contact_id
-
-    # The unique ID of the Customer.
-    attr_accessor :fki_customer_id
-
-    # The unique ID of the Employee.
-    attr_accessor :fki_employee_id
-
-    # The unique ID of the Assistant.
-    attr_accessor :fki_assistant_id
-
-    # The unique ID of the Externalbroker.
-    attr_accessor :fki_externalbroker_id
-
-    # The unique ID of the Ezsignsigner
-    attr_accessor :fki_ezsignsigner_id
-
-    # The unique ID of the Notary.
-    attr_accessor :fki_notary_id
-
-    # The unique ID of the Supplier.
-    attr_accessor :fki_supplier_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The unique ID of the Mailboxshared
-    attr_accessor :fki_mailboxshared_id
-
-    # The unique ID of the Phonelineshared
-    attr_accessor :fki_phonelineshared_id
-
-    attr_accessor :e_communicationrecipient_type
-
+  class CommunicationrecipientRequestCompound < CommunicationrecipientRequest
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -85,47 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_communicationrecipient_id' => :'pkiCommunicationrecipientID',
-        :'fki_agent_id' => :'fkiAgentID',
-        :'fki_broker_id' => :'fkiBrokerID',
-        :'fki_contact_id' => :'fkiContactID',
-        :'fki_customer_id' => :'fkiCustomerID',
-        :'fki_employee_id' => :'fkiEmployeeID',
-        :'fki_assistant_id' => :'fkiAssistantID',
-        :'fki_externalbroker_id' => :'fkiExternalbrokerID',
-        :'fki_ezsignsigner_id' => :'fkiEzsignsignerID',
-        :'fki_notary_id' => :'fkiNotaryID',
-        :'fki_supplier_id' => :'fkiSupplierID',
-        :'fki_user_id' => :'fkiUserID',
-        :'fki_mailboxshared_id' => :'fkiMailboxsharedID',
-        :'fki_phonelineshared_id' => :'fkiPhonelinesharedID',
-        :'e_communicationrecipient_type' => :'eCommunicationrecipientType'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_communicationrecipient_id' => :'Integer',
-        :'fki_agent_id' => :'Integer',
-        :'fki_broker_id' => :'Integer',
-        :'fki_contact_id' => :'Integer',
-        :'fki_customer_id' => :'Integer',
-        :'fki_employee_id' => :'Integer',
-        :'fki_assistant_id' => :'Integer',
-        :'fki_externalbroker_id' => :'Integer',
-        :'fki_ezsignsigner_id' => :'Integer',
-        :'fki_notary_id' => :'Integer',
-        :'fki_supplier_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'fki_mailboxshared_id' => :'Integer',
-        :'fki_phonelineshared_id' => :'Integer',
-        :'e_communicationrecipient_type' => :'FieldECommunicationrecipientType'
       }
     end
 
@@ -157,136 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_communicationrecipient_id')
-        self.pki_communicationrecipient_id = attributes[:'pki_communicationrecipient_id']
-      end
-
-      if attributes.key?(:'fki_agent_id')
-        self.fki_agent_id = attributes[:'fki_agent_id']
-      end
-
-      if attributes.key?(:'fki_broker_id')
-        self.fki_broker_id = attributes[:'fki_broker_id']
-      end
-
-      if attributes.key?(:'fki_contact_id')
-        self.fki_contact_id = attributes[:'fki_contact_id']
-      end
-
-      if attributes.key?(:'fki_customer_id')
-        self.fki_customer_id = attributes[:'fki_customer_id']
-      end
-
-      if attributes.key?(:'fki_employee_id')
-        self.fki_employee_id = attributes[:'fki_employee_id']
-      end
-
-      if attributes.key?(:'fki_assistant_id')
-        self.fki_assistant_id = attributes[:'fki_assistant_id']
-      end
-
-      if attributes.key?(:'fki_externalbroker_id')
-        self.fki_externalbroker_id = attributes[:'fki_externalbroker_id']
-      end
-
-      if attributes.key?(:'fki_ezsignsigner_id')
-        self.fki_ezsignsigner_id = attributes[:'fki_ezsignsigner_id']
-      end
-
-      if attributes.key?(:'fki_notary_id')
-        self.fki_notary_id = attributes[:'fki_notary_id']
-      end
-
-      if attributes.key?(:'fki_supplier_id')
-        self.fki_supplier_id = attributes[:'fki_supplier_id']
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      end
-
-      if attributes.key?(:'fki_mailboxshared_id')
-        self.fki_mailboxshared_id = attributes[:'fki_mailboxshared_id']
-      end
-
-      if attributes.key?(:'fki_phonelineshared_id')
-        self.fki_phonelineshared_id = attributes[:'fki_phonelineshared_id']
-      end
-
-      if attributes.key?(:'e_communicationrecipient_type')
-        self.e_communicationrecipient_type = attributes[:'e_communicationrecipient_type']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_communicationrecipient_id.nil? && @pki_communicationrecipient_id < 0
-        invalid_properties.push('invalid value for "pki_communicationrecipient_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_agent_id.nil? && @fki_agent_id < 0
-        invalid_properties.push('invalid value for "fki_agent_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_broker_id.nil? && @fki_broker_id < 0
-        invalid_properties.push('invalid value for "fki_broker_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_contact_id.nil? && @fki_contact_id < 0
-        invalid_properties.push('invalid value for "fki_contact_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_customer_id.nil? && @fki_customer_id < 0
-        invalid_properties.push('invalid value for "fki_customer_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_employee_id.nil? && @fki_employee_id < 0
-        invalid_properties.push('invalid value for "fki_employee_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_assistant_id.nil? && @fki_assistant_id < 0
-        invalid_properties.push('invalid value for "fki_assistant_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_externalbroker_id.nil? && @fki_externalbroker_id < 0
-        invalid_properties.push('invalid value for "fki_externalbroker_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezsignsigner_id.nil? && @fki_ezsignsigner_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignsigner_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_notary_id.nil? && @fki_notary_id < 0
-        invalid_properties.push('invalid value for "fki_notary_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_supplier_id.nil? && @fki_supplier_id < 0
-        invalid_properties.push('invalid value for "fki_supplier_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_user_id.nil? && @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_mailboxshared_id.nil? && @fki_mailboxshared_id > 255
-        invalid_properties.push('invalid value for "fki_mailboxshared_id", must be smaller than or equal to 255.')
-      end
-
-      if !@fki_mailboxshared_id.nil? && @fki_mailboxshared_id < 0
-        invalid_properties.push('invalid value for "fki_mailboxshared_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_phonelineshared_id.nil? && @fki_phonelineshared_id > 255
-        invalid_properties.push('invalid value for "fki_phonelineshared_id", must be smaller than or equal to 255.')
-      end
-
-      if !@fki_phonelineshared_id.nil? && @fki_phonelineshared_id < 0
-        invalid_properties.push('invalid value for "fki_phonelineshared_id", must be greater than or equal to 0.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -294,249 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_communicationrecipient_id.nil? && @pki_communicationrecipient_id < 0
-      return false if !@fki_agent_id.nil? && @fki_agent_id < 0
-      return false if !@fki_broker_id.nil? && @fki_broker_id < 0
-      return false if !@fki_contact_id.nil? && @fki_contact_id < 0
-      return false if !@fki_customer_id.nil? && @fki_customer_id < 0
-      return false if !@fki_employee_id.nil? && @fki_employee_id < 0
-      return false if !@fki_assistant_id.nil? && @fki_assistant_id < 0
-      return false if !@fki_externalbroker_id.nil? && @fki_externalbroker_id < 0
-      return false if !@fki_ezsignsigner_id.nil? && @fki_ezsignsigner_id < 0
-      return false if !@fki_notary_id.nil? && @fki_notary_id < 0
-      return false if !@fki_supplier_id.nil? && @fki_supplier_id < 0
-      return false if !@fki_user_id.nil? && @fki_user_id < 0
-      return false if !@fki_mailboxshared_id.nil? && @fki_mailboxshared_id > 255
-      return false if !@fki_mailboxshared_id.nil? && @fki_mailboxshared_id < 0
-      return false if !@fki_phonelineshared_id.nil? && @fki_phonelineshared_id > 255
-      return false if !@fki_phonelineshared_id.nil? && @fki_phonelineshared_id < 0
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_communicationrecipient_id Value to be assigned
-    def pki_communicationrecipient_id=(pki_communicationrecipient_id)
-      if pki_communicationrecipient_id.nil?
-        fail ArgumentError, 'pki_communicationrecipient_id cannot be nil'
-      end
-
-      if pki_communicationrecipient_id < 0
-        fail ArgumentError, 'invalid value for "pki_communicationrecipient_id", must be greater than or equal to 0.'
-      end
-
-      @pki_communicationrecipient_id = pki_communicationrecipient_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_agent_id Value to be assigned
-    def fki_agent_id=(fki_agent_id)
-      if fki_agent_id.nil?
-        fail ArgumentError, 'fki_agent_id cannot be nil'
-      end
-
-      if fki_agent_id < 0
-        fail ArgumentError, 'invalid value for "fki_agent_id", must be greater than or equal to 0.'
-      end
-
-      @fki_agent_id = fki_agent_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_broker_id Value to be assigned
-    def fki_broker_id=(fki_broker_id)
-      if fki_broker_id.nil?
-        fail ArgumentError, 'fki_broker_id cannot be nil'
-      end
-
-      if fki_broker_id < 0
-        fail ArgumentError, 'invalid value for "fki_broker_id", must be greater than or equal to 0.'
-      end
-
-      @fki_broker_id = fki_broker_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_contact_id Value to be assigned
-    def fki_contact_id=(fki_contact_id)
-      if fki_contact_id.nil?
-        fail ArgumentError, 'fki_contact_id cannot be nil'
-      end
-
-      if fki_contact_id < 0
-        fail ArgumentError, 'invalid value for "fki_contact_id", must be greater than or equal to 0.'
-      end
-
-      @fki_contact_id = fki_contact_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_customer_id Value to be assigned
-    def fki_customer_id=(fki_customer_id)
-      if fki_customer_id.nil?
-        fail ArgumentError, 'fki_customer_id cannot be nil'
-      end
-
-      if fki_customer_id < 0
-        fail ArgumentError, 'invalid value for "fki_customer_id", must be greater than or equal to 0.'
-      end
-
-      @fki_customer_id = fki_customer_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_employee_id Value to be assigned
-    def fki_employee_id=(fki_employee_id)
-      if fki_employee_id.nil?
-        fail ArgumentError, 'fki_employee_id cannot be nil'
-      end
-
-      if fki_employee_id < 0
-        fail ArgumentError, 'invalid value for "fki_employee_id", must be greater than or equal to 0.'
-      end
-
-      @fki_employee_id = fki_employee_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_assistant_id Value to be assigned
-    def fki_assistant_id=(fki_assistant_id)
-      if fki_assistant_id.nil?
-        fail ArgumentError, 'fki_assistant_id cannot be nil'
-      end
-
-      if fki_assistant_id < 0
-        fail ArgumentError, 'invalid value for "fki_assistant_id", must be greater than or equal to 0.'
-      end
-
-      @fki_assistant_id = fki_assistant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_externalbroker_id Value to be assigned
-    def fki_externalbroker_id=(fki_externalbroker_id)
-      if fki_externalbroker_id.nil?
-        fail ArgumentError, 'fki_externalbroker_id cannot be nil'
-      end
-
-      if fki_externalbroker_id < 0
-        fail ArgumentError, 'invalid value for "fki_externalbroker_id", must be greater than or equal to 0.'
-      end
-
-      @fki_externalbroker_id = fki_externalbroker_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignsigner_id Value to be assigned
-    def fki_ezsignsigner_id=(fki_ezsignsigner_id)
-      if fki_ezsignsigner_id.nil?
-        fail ArgumentError, 'fki_ezsignsigner_id cannot be nil'
-      end
-
-      if fki_ezsignsigner_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignsigner_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignsigner_id = fki_ezsignsigner_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_notary_id Value to be assigned
-    def fki_notary_id=(fki_notary_id)
-      if fki_notary_id.nil?
-        fail ArgumentError, 'fki_notary_id cannot be nil'
-      end
-
-      if fki_notary_id < 0
-        fail ArgumentError, 'invalid value for "fki_notary_id", must be greater than or equal to 0.'
-      end
-
-      @fki_notary_id = fki_notary_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_supplier_id Value to be assigned
-    def fki_supplier_id=(fki_supplier_id)
-      if fki_supplier_id.nil?
-        fail ArgumentError, 'fki_supplier_id cannot be nil'
-      end
-
-      if fki_supplier_id < 0
-        fail ArgumentError, 'invalid value for "fki_supplier_id", must be greater than or equal to 0.'
-      end
-
-      @fki_supplier_id = fki_supplier_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_mailboxshared_id Value to be assigned
-    def fki_mailboxshared_id=(fki_mailboxshared_id)
-      if fki_mailboxshared_id.nil?
-        fail ArgumentError, 'fki_mailboxshared_id cannot be nil'
-      end
-
-      if fki_mailboxshared_id > 255
-        fail ArgumentError, 'invalid value for "fki_mailboxshared_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_mailboxshared_id < 0
-        fail ArgumentError, 'invalid value for "fki_mailboxshared_id", must be greater than or equal to 0.'
-      end
-
-      @fki_mailboxshared_id = fki_mailboxshared_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_phonelineshared_id Value to be assigned
-    def fki_phonelineshared_id=(fki_phonelineshared_id)
-      if fki_phonelineshared_id.nil?
-        fail ArgumentError, 'fki_phonelineshared_id cannot be nil'
-      end
-
-      if fki_phonelineshared_id > 255
-        fail ArgumentError, 'invalid value for "fki_phonelineshared_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_phonelineshared_id < 0
-        fail ArgumentError, 'invalid value for "fki_phonelineshared_id", must be greater than or equal to 0.'
-      end
-
-      @fki_phonelineshared_id = fki_phonelineshared_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_communicationrecipient_id == o.pki_communicationrecipient_id &&
-          fki_agent_id == o.fki_agent_id &&
-          fki_broker_id == o.fki_broker_id &&
-          fki_contact_id == o.fki_contact_id &&
-          fki_customer_id == o.fki_customer_id &&
-          fki_employee_id == o.fki_employee_id &&
-          fki_assistant_id == o.fki_assistant_id &&
-          fki_externalbroker_id == o.fki_externalbroker_id &&
-          fki_ezsignsigner_id == o.fki_ezsignsigner_id &&
-          fki_notary_id == o.fki_notary_id &&
-          fki_supplier_id == o.fki_supplier_id &&
-          fki_user_id == o.fki_user_id &&
-          fki_mailboxshared_id == o.fki_mailboxshared_id &&
-          fki_phonelineshared_id == o.fki_phonelineshared_id &&
-          e_communicationrecipient_type == o.e_communicationrecipient_type
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -548,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_communicationrecipient_id, fki_agent_id, fki_broker_id, fki_contact_id, fki_customer_id, fki_employee_id, fki_assistant_id, fki_externalbroker_id, fki_ezsignsigner_id, fki_notary_id, fki_supplier_id, fki_user_id, fki_mailboxshared_id, fki_phonelineshared_id, e_communicationrecipient_type].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -556,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -632,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

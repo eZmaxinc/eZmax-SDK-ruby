@@ -15,22 +15,7 @@ require 'time'
 
 module EzmaxApi
   # This is a debug object containing debugging information on the actual function
-  class CommonResponseObjDebugPayloadGetList
-    # The minimum version of the function that can be called
-    attr_accessor :i_version_min
-
-    # The maximum version of the function that can be called
-    attr_accessor :i_version_max
-
-    # An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-    attr_accessor :a_required_permission
-
-    # Wheter the current route is deprecated or not
-    attr_accessor :b_version_deprecated
-
-    # Represent a Date Time. The timezone is the one configured in the User's profile.
-    attr_accessor :dt_response_date
-
+  class CommonResponseObjDebugPayloadGetList < CommonResponseObjDebugPayload
     attr_accessor :a_filter
 
     # List of available values for *eOrderBy*
@@ -45,11 +30,6 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'i_version_min' => :'iVersionMin',
-        :'i_version_max' => :'iVersionMax',
-        :'a_required_permission' => :'a_RequiredPermission',
-        :'b_version_deprecated' => :'bVersionDeprecated',
-        :'dt_response_date' => :'dtResponseDate',
         :'a_filter' => :'a_Filter',
         :'a_order_by' => :'a_OrderBy',
         :'i_row_max' => :'iRowMax',
@@ -57,19 +37,14 @@ module EzmaxApi
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'i_version_min' => :'Integer',
-        :'i_version_max' => :'Integer',
-        :'a_required_permission' => :'Array<Integer>',
-        :'b_version_deprecated' => :'Boolean',
-        :'dt_response_date' => :'String',
         :'a_filter' => :'CommonResponseFilter',
         :'a_order_by' => :'Hash<String, String>',
         :'i_row_max' => :'Integer',
@@ -105,37 +80,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'i_version_min')
-        self.i_version_min = attributes[:'i_version_min']
-      else
-        self.i_version_min = nil
-      end
-
-      if attributes.key?(:'i_version_max')
-        self.i_version_max = attributes[:'i_version_max']
-      else
-        self.i_version_max = nil
-      end
-
-      if attributes.key?(:'a_required_permission')
-        if (value = attributes[:'a_required_permission']).is_a?(Array)
-          self.a_required_permission = value
-        end
-      else
-        self.a_required_permission = nil
-      end
-
-      if attributes.key?(:'b_version_deprecated')
-        self.b_version_deprecated = attributes[:'b_version_deprecated']
-      else
-        self.b_version_deprecated = nil
-      end
-
-      if attributes.key?(:'dt_response_date')
-        self.dt_response_date = attributes[:'dt_response_date']
-      else
-        self.dt_response_date = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_filter')
         self.a_filter = attributes[:'a_filter']
@@ -168,27 +114,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @i_version_min.nil?
-        invalid_properties.push('invalid value for "i_version_min", i_version_min cannot be nil.')
-      end
-
-      if @i_version_max.nil?
-        invalid_properties.push('invalid value for "i_version_max", i_version_max cannot be nil.')
-      end
-
-      if @a_required_permission.nil?
-        invalid_properties.push('invalid value for "a_required_permission", a_required_permission cannot be nil.')
-      end
-
-      if @b_version_deprecated.nil?
-        invalid_properties.push('invalid value for "b_version_deprecated", b_version_deprecated cannot be nil.')
-      end
-
-      if @dt_response_date.nil?
-        invalid_properties.push('invalid value for "dt_response_date", dt_response_date cannot be nil.')
-      end
-
+      invalid_properties = super
       if @a_filter.nil?
         invalid_properties.push('invalid value for "a_filter", a_filter cannot be nil.')
       end
@@ -224,11 +150,6 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @i_version_min.nil?
-      return false if @i_version_max.nil?
-      return false if @a_required_permission.nil?
-      return false if @b_version_deprecated.nil?
-      return false if @dt_response_date.nil?
       return false if @a_filter.nil?
       return false if @a_order_by.nil?
       return false if @i_row_max.nil?
@@ -236,7 +157,7 @@ module EzmaxApi
       return false if @i_row_max < 1
       return false if @i_row_offset.nil?
       return false if @i_row_offset < 0
-      true
+      true && super
     end
 
     # Custom attribute writer method with validation
@@ -276,15 +197,10 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          i_version_min == o.i_version_min &&
-          i_version_max == o.i_version_max &&
-          a_required_permission == o.a_required_permission &&
-          b_version_deprecated == o.b_version_deprecated &&
-          dt_response_date == o.dt_response_date &&
           a_filter == o.a_filter &&
           a_order_by == o.a_order_by &&
           i_row_max == o.i_row_max &&
-          i_row_offset == o.i_row_offset
+          i_row_offset == o.i_row_offset && super(o)
     end
 
     # @see the `==` method
@@ -296,7 +212,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_version_min, i_version_max, a_required_permission, b_version_deprecated, dt_response_date, a_filter, a_order_by, i_row_max, i_row_offset].hash
+      [a_filter, a_order_by, i_row_max, i_row_offset].hash
     end
 
     # Builds the object from hash
@@ -304,6 +220,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -380,7 +297,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

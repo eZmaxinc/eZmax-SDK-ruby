@@ -27,22 +27,4 @@ describe EzmaxApi::EzsigntemplateglobalsignerResponseCompound do
     end
   end
 
-  describe 'test attribute "pki_ezsigntemplateglobalsigner_id"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "fki_ezsigntemplateglobal_id"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "s_ezsigntemplateglobalsigner_description"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
 end

@@ -33,7 +33,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectBillingentityinternalApi.new
-billingentityinternal_create_object_v1_request = EzmaxApi::BillingentityinternalCreateObjectV1Request.new({a_obj_billingentityinternal: [EzmaxApi::BillingentityinternalRequestCompound.new({obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new, a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})]})]}) # BillingentityinternalCreateObjectV1Request | 
+billingentityinternal_create_object_v1_request = EzmaxApi::BillingentityinternalCreateObjectV1Request.new({a_obj_billingentityinternal: [EzmaxApi::BillingentityinternalRequestCompound.new({a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})], obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new})]}) # BillingentityinternalCreateObjectV1Request | 
 
 begin
   # Create a new Billingentityinternal
@@ -105,7 +105,7 @@ end
 
 api_instance = EzmaxApi::ObjectBillingentityinternalApi.new
 pki_billingentityinternal_id = 56 # Integer | 
-billingentityinternal_edit_object_v1_request = EzmaxApi::BillingentityinternalEditObjectV1Request.new({obj_billingentityinternal: EzmaxApi::BillingentityinternalRequestCompound.new({obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new, a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})]})}) # BillingentityinternalEditObjectV1Request | 
+billingentityinternal_edit_object_v1_request = EzmaxApi::BillingentityinternalEditObjectV1Request.new({obj_billingentityinternal: EzmaxApi::BillingentityinternalRequestCompound.new({a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})], obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new})}) # BillingentityinternalEditObjectV1Request | 
 
 begin
   # Edit an existing Billingentityinternal

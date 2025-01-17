@@ -15,21 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Contactinformations Object and children to create a complete structure
-  class ContactinformationsRequestCompoundV2
-    attr_accessor :e_contactinformations_type
-
-    # The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
-    attr_accessor :i_address_default
-
-    # The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
-    attr_accessor :i_phone_default
-
-    # The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
-    attr_accessor :i_email_default
-
-    # The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
-    attr_accessor :i_website_default
-
+  class ContactinformationsRequestCompoundV2 < ContactinformationsRequestV2
     attr_accessor :a_obj_address
 
     attr_accessor :a_obj_phone
@@ -63,11 +49,6 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'e_contactinformations_type' => :'eContactinformationsType',
-        :'i_address_default' => :'iAddressDefault',
-        :'i_phone_default' => :'iPhoneDefault',
-        :'i_email_default' => :'iEmailDefault',
-        :'i_website_default' => :'iWebsiteDefault',
         :'a_obj_address' => :'a_objAddress',
         :'a_obj_phone' => :'a_objPhone',
         :'a_obj_email' => :'a_objEmail',
@@ -75,19 +56,14 @@ module EzmaxApi
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'e_contactinformations_type' => :'FieldEContactinformationsType',
-        :'i_address_default' => :'Integer',
-        :'i_phone_default' => :'Integer',
-        :'i_email_default' => :'Integer',
-        :'i_website_default' => :'Integer',
         :'a_obj_address' => :'Array<AddressRequestCompound>',
         :'a_obj_phone' => :'Array<PhoneRequestCompound>',
         :'a_obj_email' => :'Array<EmailRequestCompound>',
@@ -123,35 +99,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'e_contactinformations_type')
-        self.e_contactinformations_type = attributes[:'e_contactinformations_type']
-      else
-        self.e_contactinformations_type = nil
-      end
-
-      if attributes.key?(:'i_address_default')
-        self.i_address_default = attributes[:'i_address_default']
-      else
-        self.i_address_default = nil
-      end
-
-      if attributes.key?(:'i_phone_default')
-        self.i_phone_default = attributes[:'i_phone_default']
-      else
-        self.i_phone_default = nil
-      end
-
-      if attributes.key?(:'i_email_default')
-        self.i_email_default = attributes[:'i_email_default']
-      else
-        self.i_email_default = nil
-      end
-
-      if attributes.key?(:'i_website_default')
-        self.i_website_default = attributes[:'i_website_default']
-      else
-        self.i_website_default = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_address')
         if (value = attributes[:'a_obj_address']).is_a?(Array)
@@ -190,27 +139,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @e_contactinformations_type.nil?
-        invalid_properties.push('invalid value for "e_contactinformations_type", e_contactinformations_type cannot be nil.')
-      end
-
-      if @i_address_default.nil?
-        invalid_properties.push('invalid value for "i_address_default", i_address_default cannot be nil.')
-      end
-
-      if @i_phone_default.nil?
-        invalid_properties.push('invalid value for "i_phone_default", i_phone_default cannot be nil.')
-      end
-
-      if @i_email_default.nil?
-        invalid_properties.push('invalid value for "i_email_default", i_email_default cannot be nil.')
-      end
-
-      if @i_website_default.nil?
-        invalid_properties.push('invalid value for "i_website_default", i_website_default cannot be nil.')
-      end
-
+      invalid_properties = super
       if @a_obj_address.nil?
         invalid_properties.push('invalid value for "a_obj_address", a_obj_address cannot be nil.')
       end
@@ -234,16 +163,11 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @e_contactinformations_type.nil?
-      return false if @i_address_default.nil?
-      return false if @i_phone_default.nil?
-      return false if @i_email_default.nil?
-      return false if @i_website_default.nil?
       return false if @a_obj_address.nil?
       return false if @a_obj_phone.nil?
       return false if @a_obj_email.nil?
       return false if @a_obj_website.nil?
-      true
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -251,15 +175,10 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          e_contactinformations_type == o.e_contactinformations_type &&
-          i_address_default == o.i_address_default &&
-          i_phone_default == o.i_phone_default &&
-          i_email_default == o.i_email_default &&
-          i_website_default == o.i_website_default &&
           a_obj_address == o.a_obj_address &&
           a_obj_phone == o.a_obj_phone &&
           a_obj_email == o.a_obj_email &&
-          a_obj_website == o.a_obj_website
+          a_obj_website == o.a_obj_website && super(o)
     end
 
     # @see the `==` method
@@ -271,7 +190,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [e_contactinformations_type, i_address_default, i_phone_default, i_email_default, i_website_default, a_obj_address, a_obj_phone, a_obj_email, a_obj_website].hash
+      [a_obj_address, a_obj_phone, a_obj_email, a_obj_website].hash
     end
 
     # Builds the object from hash
@@ -279,6 +198,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -355,7 +275,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

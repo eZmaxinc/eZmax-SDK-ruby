@@ -15,33 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezmaxinvoicinguser Object
-  class EzmaxinvoicinguserResponseCompound
-    # The unique ID of the Ezmaxinvoicinguser
-    attr_accessor :pki_ezmaxinvoicinguser_id
-
-    # The unique ID of the Ezmaxinvoicing
-    attr_accessor :fki_ezmaxinvoicing_id
-
-    # The unique ID of the Billingentityinternal.
-    attr_accessor :fki_billingentityinternal_id
-
-    # The description of the Billingentityinternal in the language of the requester
-    attr_accessor :s_billingentityinternal_description_x
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The number of ezsign documents
-    attr_accessor :i_ezmaxinvoicinguser_ezsigndocument
-
-    # Whether there is an eZsign account
-    attr_accessor :b_ezmaxinvoicinguser_ezsignaccount
-
-    # Whether it is billable for eZsign
-    attr_accessor :b_ezmaxinvoicinguser_billableezsign
-
-    attr_accessor :e_ezmaxinvoicinguser_variationezsign
-
+  class EzmaxinvoicinguserResponseCompound < EzmaxinvoicinguserResponse
     attr_accessor :obj_contact_name
 
     class EnumAttributeValidator
@@ -69,36 +43,18 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezmaxinvoicinguser_id' => :'pkiEzmaxinvoicinguserID',
-        :'fki_ezmaxinvoicing_id' => :'fkiEzmaxinvoicingID',
-        :'fki_billingentityinternal_id' => :'fkiBillingentityinternalID',
-        :'s_billingentityinternal_description_x' => :'sBillingentityinternalDescriptionX',
-        :'fki_user_id' => :'fkiUserID',
-        :'i_ezmaxinvoicinguser_ezsigndocument' => :'iEzmaxinvoicinguserEzsigndocument',
-        :'b_ezmaxinvoicinguser_ezsignaccount' => :'bEzmaxinvoicinguserEzsignaccount',
-        :'b_ezmaxinvoicinguser_billableezsign' => :'bEzmaxinvoicinguserBillableezsign',
-        :'e_ezmaxinvoicinguser_variationezsign' => :'eEzmaxinvoicinguserVariationezsign',
         :'obj_contact_name' => :'objContactName'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezmaxinvoicinguser_id' => :'Integer',
-        :'fki_ezmaxinvoicing_id' => :'Integer',
-        :'fki_billingentityinternal_id' => :'Integer',
-        :'s_billingentityinternal_description_x' => :'String',
-        :'fki_user_id' => :'Integer',
-        :'i_ezmaxinvoicinguser_ezsigndocument' => :'Integer',
-        :'b_ezmaxinvoicinguser_ezsignaccount' => :'Boolean',
-        :'b_ezmaxinvoicinguser_billableezsign' => :'Boolean',
-        :'e_ezmaxinvoicinguser_variationezsign' => :'FieldEEzmaxinvoicinguserVariationezsign',
         :'obj_contact_name' => :'CustomContactNameResponse'
       }
     end
@@ -131,55 +87,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezmaxinvoicinguser_id')
-        self.pki_ezmaxinvoicinguser_id = attributes[:'pki_ezmaxinvoicinguser_id']
-      end
-
-      if attributes.key?(:'fki_ezmaxinvoicing_id')
-        self.fki_ezmaxinvoicing_id = attributes[:'fki_ezmaxinvoicing_id']
-      end
-
-      if attributes.key?(:'fki_billingentityinternal_id')
-        self.fki_billingentityinternal_id = attributes[:'fki_billingentityinternal_id']
-      else
-        self.fki_billingentityinternal_id = nil
-      end
-
-      if attributes.key?(:'s_billingentityinternal_description_x')
-        self.s_billingentityinternal_description_x = attributes[:'s_billingentityinternal_description_x']
-      else
-        self.s_billingentityinternal_description_x = nil
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      else
-        self.fki_user_id = nil
-      end
-
-      if attributes.key?(:'i_ezmaxinvoicinguser_ezsigndocument')
-        self.i_ezmaxinvoicinguser_ezsigndocument = attributes[:'i_ezmaxinvoicinguser_ezsigndocument']
-      else
-        self.i_ezmaxinvoicinguser_ezsigndocument = nil
-      end
-
-      if attributes.key?(:'b_ezmaxinvoicinguser_ezsignaccount')
-        self.b_ezmaxinvoicinguser_ezsignaccount = attributes[:'b_ezmaxinvoicinguser_ezsignaccount']
-      else
-        self.b_ezmaxinvoicinguser_ezsignaccount = nil
-      end
-
-      if attributes.key?(:'b_ezmaxinvoicinguser_billableezsign')
-        self.b_ezmaxinvoicinguser_billableezsign = attributes[:'b_ezmaxinvoicinguser_billableezsign']
-      else
-        self.b_ezmaxinvoicinguser_billableezsign = nil
-      end
-
-      if attributes.key?(:'e_ezmaxinvoicinguser_variationezsign')
-        self.e_ezmaxinvoicinguser_variationezsign = attributes[:'e_ezmaxinvoicinguser_variationezsign']
-      else
-        self.e_ezmaxinvoicinguser_variationezsign = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_contact_name')
         self.obj_contact_name = attributes[:'obj_contact_name']
@@ -192,55 +101,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_ezmaxinvoicinguser_id.nil? && @pki_ezmaxinvoicinguser_id < 0
-        invalid_properties.push('invalid value for "pki_ezmaxinvoicinguser_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezmaxinvoicing_id.nil? && @fki_ezmaxinvoicing_id < 0
-        invalid_properties.push('invalid value for "fki_ezmaxinvoicing_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_billingentityinternal_id.nil?
-        invalid_properties.push('invalid value for "fki_billingentityinternal_id", fki_billingentityinternal_id cannot be nil.')
-      end
-
-      if @fki_billingentityinternal_id < 0
-        invalid_properties.push('invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.')
-      end
-
-      if @s_billingentityinternal_description_x.nil?
-        invalid_properties.push('invalid value for "s_billingentityinternal_description_x", s_billingentityinternal_description_x cannot be nil.')
-      end
-
-      if @fki_user_id.nil?
-        invalid_properties.push('invalid value for "fki_user_id", fki_user_id cannot be nil.')
-      end
-
-      if @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if @i_ezmaxinvoicinguser_ezsigndocument.nil?
-        invalid_properties.push('invalid value for "i_ezmaxinvoicinguser_ezsigndocument", i_ezmaxinvoicinguser_ezsigndocument cannot be nil.')
-      end
-
-      if @i_ezmaxinvoicinguser_ezsigndocument < 0
-        invalid_properties.push('invalid value for "i_ezmaxinvoicinguser_ezsigndocument", must be greater than or equal to 0.')
-      end
-
-      if @b_ezmaxinvoicinguser_ezsignaccount.nil?
-        invalid_properties.push('invalid value for "b_ezmaxinvoicinguser_ezsignaccount", b_ezmaxinvoicinguser_ezsignaccount cannot be nil.')
-      end
-
-      if @b_ezmaxinvoicinguser_billableezsign.nil?
-        invalid_properties.push('invalid value for "b_ezmaxinvoicinguser_billableezsign", b_ezmaxinvoicinguser_billableezsign cannot be nil.')
-      end
-
-      if @e_ezmaxinvoicinguser_variationezsign.nil?
-        invalid_properties.push('invalid value for "e_ezmaxinvoicinguser_variationezsign", e_ezmaxinvoicinguser_variationezsign cannot be nil.')
-      end
-
+      invalid_properties = super
       if @obj_contact_name.nil?
         invalid_properties.push('invalid value for "obj_contact_name", obj_contact_name cannot be nil.')
       end
@@ -252,90 +113,8 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_ezmaxinvoicinguser_id.nil? && @pki_ezmaxinvoicinguser_id < 0
-      return false if !@fki_ezmaxinvoicing_id.nil? && @fki_ezmaxinvoicing_id < 0
-      return false if @fki_billingentityinternal_id.nil?
-      return false if @fki_billingentityinternal_id < 0
-      return false if @s_billingentityinternal_description_x.nil?
-      return false if @fki_user_id.nil?
-      return false if @fki_user_id < 0
-      return false if @i_ezmaxinvoicinguser_ezsigndocument.nil?
-      return false if @i_ezmaxinvoicinguser_ezsigndocument < 0
-      return false if @b_ezmaxinvoicinguser_ezsignaccount.nil?
-      return false if @b_ezmaxinvoicinguser_billableezsign.nil?
-      return false if @e_ezmaxinvoicinguser_variationezsign.nil?
       return false if @obj_contact_name.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezmaxinvoicinguser_id Value to be assigned
-    def pki_ezmaxinvoicinguser_id=(pki_ezmaxinvoicinguser_id)
-      if pki_ezmaxinvoicinguser_id.nil?
-        fail ArgumentError, 'pki_ezmaxinvoicinguser_id cannot be nil'
-      end
-
-      if pki_ezmaxinvoicinguser_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezmaxinvoicinguser_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezmaxinvoicinguser_id = pki_ezmaxinvoicinguser_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxinvoicing_id Value to be assigned
-    def fki_ezmaxinvoicing_id=(fki_ezmaxinvoicing_id)
-      if fki_ezmaxinvoicing_id.nil?
-        fail ArgumentError, 'fki_ezmaxinvoicing_id cannot be nil'
-      end
-
-      if fki_ezmaxinvoicing_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezmaxinvoicing_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezmaxinvoicing_id = fki_ezmaxinvoicing_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_billingentityinternal_id Value to be assigned
-    def fki_billingentityinternal_id=(fki_billingentityinternal_id)
-      if fki_billingentityinternal_id.nil?
-        fail ArgumentError, 'fki_billingentityinternal_id cannot be nil'
-      end
-
-      if fki_billingentityinternal_id < 0
-        fail ArgumentError, 'invalid value for "fki_billingentityinternal_id", must be greater than or equal to 0.'
-      end
-
-      @fki_billingentityinternal_id = fki_billingentityinternal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezmaxinvoicinguser_ezsigndocument Value to be assigned
-    def i_ezmaxinvoicinguser_ezsigndocument=(i_ezmaxinvoicinguser_ezsigndocument)
-      if i_ezmaxinvoicinguser_ezsigndocument.nil?
-        fail ArgumentError, 'i_ezmaxinvoicinguser_ezsigndocument cannot be nil'
-      end
-
-      if i_ezmaxinvoicinguser_ezsigndocument < 0
-        fail ArgumentError, 'invalid value for "i_ezmaxinvoicinguser_ezsigndocument", must be greater than or equal to 0.'
-      end
-
-      @i_ezmaxinvoicinguser_ezsigndocument = i_ezmaxinvoicinguser_ezsigndocument
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -343,16 +122,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezmaxinvoicinguser_id == o.pki_ezmaxinvoicinguser_id &&
-          fki_ezmaxinvoicing_id == o.fki_ezmaxinvoicing_id &&
-          fki_billingentityinternal_id == o.fki_billingentityinternal_id &&
-          s_billingentityinternal_description_x == o.s_billingentityinternal_description_x &&
-          fki_user_id == o.fki_user_id &&
-          i_ezmaxinvoicinguser_ezsigndocument == o.i_ezmaxinvoicinguser_ezsigndocument &&
-          b_ezmaxinvoicinguser_ezsignaccount == o.b_ezmaxinvoicinguser_ezsignaccount &&
-          b_ezmaxinvoicinguser_billableezsign == o.b_ezmaxinvoicinguser_billableezsign &&
-          e_ezmaxinvoicinguser_variationezsign == o.e_ezmaxinvoicinguser_variationezsign &&
-          obj_contact_name == o.obj_contact_name
+          obj_contact_name == o.obj_contact_name && super(o)
     end
 
     # @see the `==` method
@@ -364,7 +134,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezmaxinvoicinguser_id, fki_ezmaxinvoicing_id, fki_billingentityinternal_id, s_billingentityinternal_description_x, fki_user_id, i_ezmaxinvoicinguser_ezsigndocument, b_ezmaxinvoicinguser_ezsignaccount, b_ezmaxinvoicinguser_billableezsign, e_ezmaxinvoicinguser_variationezsign, obj_contact_name].hash
+      [obj_contact_name].hash
     end
 
     # Builds the object from hash
@@ -372,6 +142,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -448,7 +219,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

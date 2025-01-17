@@ -15,49 +15,24 @@ require 'time'
 
 module EzmaxApi
   # An Ezsignsigner Object and children to create a complete structure
-  class EzsignsignerResponseCompound
-    # The unique ID of the Ezsignsigner
-    attr_accessor :pki_ezsignsigner_id
-
-    # The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
-    attr_accessor :fki_taxassignment_id
-
-    # The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father's middle name| |15|Your mother's maiden name| |16|Name of your eldest child| |17|Your spouse's middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat's name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
-    attr_accessor :fki_secretquestion_id
-
-    # The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**| |6|**Embedded**|The Ezsignsigner will only be able to sign in the embedded solution. No email will be sent for invitation to sign. **Additional fee applies**|   |7|**Embedded with phone or SMS**|The Ezsignsigner will only be able to sign in the embedded solution and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|   |8|**No validation**|The Ezsignsigner will not receive an email and won't have to validate his connection using 2 factor. **Additional fee applies**|      |9|**Sms only**|The Ezsignsigner will not receive an email but will will need to authenticate using SMS. **Additional fee applies**|     
-    attr_accessor :fki_userlogintype_id
-
-    # The description of the Userlogintype in the language of the requester
-    attr_accessor :s_userlogintype_description_x
-
+  class EzsignsignerResponseCompound < EzsignsignerResponse
     attr_accessor :obj_contact
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsignsigner_id' => :'pkiEzsignsignerID',
-        :'fki_taxassignment_id' => :'fkiTaxassignmentID',
-        :'fki_secretquestion_id' => :'fkiSecretquestionID',
-        :'fki_userlogintype_id' => :'fkiUserlogintypeID',
-        :'s_userlogintype_description_x' => :'sUserlogintypeDescriptionX',
         :'obj_contact' => :'objContact'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsignsigner_id' => :'Integer',
-        :'fki_taxassignment_id' => :'Integer',
-        :'fki_secretquestion_id' => :'Integer',
-        :'fki_userlogintype_id' => :'Integer',
-        :'s_userlogintype_description_x' => :'String',
         :'obj_contact' => :'EzsignsignerResponseCompoundContact'
       }
     end
@@ -90,33 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsignsigner_id')
-        self.pki_ezsignsigner_id = attributes[:'pki_ezsignsigner_id']
-      else
-        self.pki_ezsignsigner_id = nil
-      end
-
-      if attributes.key?(:'fki_taxassignment_id')
-        self.fki_taxassignment_id = attributes[:'fki_taxassignment_id']
-      else
-        self.fki_taxassignment_id = nil
-      end
-
-      if attributes.key?(:'fki_secretquestion_id')
-        self.fki_secretquestion_id = attributes[:'fki_secretquestion_id']
-      end
-
-      if attributes.key?(:'fki_userlogintype_id')
-        self.fki_userlogintype_id = attributes[:'fki_userlogintype_id']
-      else
-        self.fki_userlogintype_id = nil
-      end
-
-      if attributes.key?(:'s_userlogintype_description_x')
-        self.s_userlogintype_description_x = attributes[:'s_userlogintype_description_x']
-      else
-        self.s_userlogintype_description_x = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_contact')
         self.obj_contact = attributes[:'obj_contact']
@@ -129,43 +79,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsignsigner_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsignsigner_id", pki_ezsignsigner_id cannot be nil.')
-      end
-
-      if @pki_ezsignsigner_id < 0
-        invalid_properties.push('invalid value for "pki_ezsignsigner_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_taxassignment_id.nil?
-        invalid_properties.push('invalid value for "fki_taxassignment_id", fki_taxassignment_id cannot be nil.')
-      end
-
-      if @fki_taxassignment_id > 15
-        invalid_properties.push('invalid value for "fki_taxassignment_id", must be smaller than or equal to 15.')
-      end
-
-      if @fki_taxassignment_id < 0
-        invalid_properties.push('invalid value for "fki_taxassignment_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_secretquestion_id.nil? && @fki_secretquestion_id < 0
-        invalid_properties.push('invalid value for "fki_secretquestion_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_userlogintype_id.nil?
-        invalid_properties.push('invalid value for "fki_userlogintype_id", fki_userlogintype_id cannot be nil.')
-      end
-
-      if @fki_userlogintype_id < 0
-        invalid_properties.push('invalid value for "fki_userlogintype_id", must be greater than or equal to 0.')
-      end
-
-      if @s_userlogintype_description_x.nil?
-        invalid_properties.push('invalid value for "s_userlogintype_description_x", s_userlogintype_description_x cannot be nil.')
-      end
-
+      invalid_properties = super
       if @obj_contact.nil?
         invalid_properties.push('invalid value for "obj_contact", obj_contact cannot be nil.')
       end
@@ -177,77 +91,8 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsignsigner_id.nil?
-      return false if @pki_ezsignsigner_id < 0
-      return false if @fki_taxassignment_id.nil?
-      return false if @fki_taxassignment_id > 15
-      return false if @fki_taxassignment_id < 0
-      return false if !@fki_secretquestion_id.nil? && @fki_secretquestion_id < 0
-      return false if @fki_userlogintype_id.nil?
-      return false if @fki_userlogintype_id < 0
-      return false if @s_userlogintype_description_x.nil?
       return false if @obj_contact.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsignsigner_id Value to be assigned
-    def pki_ezsignsigner_id=(pki_ezsignsigner_id)
-      if pki_ezsignsigner_id.nil?
-        fail ArgumentError, 'pki_ezsignsigner_id cannot be nil'
-      end
-
-      if pki_ezsignsigner_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsignsigner_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsignsigner_id = pki_ezsignsigner_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_taxassignment_id Value to be assigned
-    def fki_taxassignment_id=(fki_taxassignment_id)
-      if fki_taxassignment_id.nil?
-        fail ArgumentError, 'fki_taxassignment_id cannot be nil'
-      end
-
-      if fki_taxassignment_id > 15
-        fail ArgumentError, 'invalid value for "fki_taxassignment_id", must be smaller than or equal to 15.'
-      end
-
-      if fki_taxassignment_id < 0
-        fail ArgumentError, 'invalid value for "fki_taxassignment_id", must be greater than or equal to 0.'
-      end
-
-      @fki_taxassignment_id = fki_taxassignment_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_secretquestion_id Value to be assigned
-    def fki_secretquestion_id=(fki_secretquestion_id)
-      if fki_secretquestion_id.nil?
-        fail ArgumentError, 'fki_secretquestion_id cannot be nil'
-      end
-
-      if fki_secretquestion_id < 0
-        fail ArgumentError, 'invalid value for "fki_secretquestion_id", must be greater than or equal to 0.'
-      end
-
-      @fki_secretquestion_id = fki_secretquestion_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_userlogintype_id Value to be assigned
-    def fki_userlogintype_id=(fki_userlogintype_id)
-      if fki_userlogintype_id.nil?
-        fail ArgumentError, 'fki_userlogintype_id cannot be nil'
-      end
-
-      if fki_userlogintype_id < 0
-        fail ArgumentError, 'invalid value for "fki_userlogintype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_userlogintype_id = fki_userlogintype_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -255,12 +100,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsignsigner_id == o.pki_ezsignsigner_id &&
-          fki_taxassignment_id == o.fki_taxassignment_id &&
-          fki_secretquestion_id == o.fki_secretquestion_id &&
-          fki_userlogintype_id == o.fki_userlogintype_id &&
-          s_userlogintype_description_x == o.s_userlogintype_description_x &&
-          obj_contact == o.obj_contact
+          obj_contact == o.obj_contact && super(o)
     end
 
     # @see the `==` method
@@ -272,7 +112,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignsigner_id, fki_taxassignment_id, fki_secretquestion_id, fki_userlogintype_id, s_userlogintype_description_x, obj_contact].hash
+      [obj_contact].hash
     end
 
     # Builds the object from hash
@@ -280,6 +120,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -356,7 +197,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

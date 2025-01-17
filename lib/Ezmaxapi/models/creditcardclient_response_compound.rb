@@ -15,55 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Creditcardclient Object
-  class CreditcardclientResponseCompound
-    # The unique ID of the Creditcardclient
-    attr_accessor :pki_creditcardclient_id
-
-    # The unique ID of the Creditcarddetail
-    attr_accessor :fki_creditcarddetail_id
-
-    # Whether if it's the creditcardclient is the default one
-    attr_accessor :b_creditcardclientrelation_isdefault
-
-    # The description of the Creditcardclient
-    attr_accessor :s_creditcardclient_description
-
-    # Whether if it's an allowedagencypayment
-    attr_accessor :b_creditcardclient_allowedcompanypayment
-
-    # Whether if it's an allowedtranquillit
-    attr_accessor :b_creditcardclient_allowedtranquillit
-
-    attr_accessor :obj_creditcarddetail
-
+  class CreditcardclientResponseCompound < CreditcardclientResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_creditcardclient_id' => :'pkiCreditcardclientID',
-        :'fki_creditcarddetail_id' => :'fkiCreditcarddetailID',
-        :'b_creditcardclientrelation_isdefault' => :'bCreditcardclientrelationIsdefault',
-        :'s_creditcardclient_description' => :'sCreditcardclientDescription',
-        :'b_creditcardclient_allowedcompanypayment' => :'bCreditcardclientAllowedcompanypayment',
-        :'b_creditcardclient_allowedtranquillit' => :'bCreditcardclientAllowedtranquillit',
-        :'obj_creditcarddetail' => :'objCreditcarddetail'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_creditcardclient_id' => :'Integer',
-        :'fki_creditcarddetail_id' => :'Integer',
-        :'b_creditcardclientrelation_isdefault' => :'Boolean',
-        :'s_creditcardclient_description' => :'String',
-        :'b_creditcardclient_allowedcompanypayment' => :'Boolean',
-        :'b_creditcardclient_allowedtranquillit' => :'Boolean',
-        :'obj_creditcarddetail' => :'CreditcarddetailResponseCompound'
       }
     end
 
@@ -95,103 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_creditcardclient_id')
-        self.pki_creditcardclient_id = attributes[:'pki_creditcardclient_id']
-      else
-        self.pki_creditcardclient_id = nil
-      end
-
-      if attributes.key?(:'fki_creditcarddetail_id')
-        self.fki_creditcarddetail_id = attributes[:'fki_creditcarddetail_id']
-      else
-        self.fki_creditcarddetail_id = nil
-      end
-
-      if attributes.key?(:'b_creditcardclientrelation_isdefault')
-        self.b_creditcardclientrelation_isdefault = attributes[:'b_creditcardclientrelation_isdefault']
-      else
-        self.b_creditcardclientrelation_isdefault = nil
-      end
-
-      if attributes.key?(:'s_creditcardclient_description')
-        self.s_creditcardclient_description = attributes[:'s_creditcardclient_description']
-      else
-        self.s_creditcardclient_description = nil
-      end
-
-      if attributes.key?(:'b_creditcardclient_allowedcompanypayment')
-        self.b_creditcardclient_allowedcompanypayment = attributes[:'b_creditcardclient_allowedcompanypayment']
-      else
-        self.b_creditcardclient_allowedcompanypayment = nil
-      end
-
-      if attributes.key?(:'b_creditcardclient_allowedtranquillit')
-        self.b_creditcardclient_allowedtranquillit = attributes[:'b_creditcardclient_allowedtranquillit']
-      else
-        self.b_creditcardclient_allowedtranquillit = nil
-      end
-
-      if attributes.key?(:'obj_creditcarddetail')
-        self.obj_creditcarddetail = attributes[:'obj_creditcarddetail']
-      else
-        self.obj_creditcarddetail = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_creditcardclient_id.nil?
-        invalid_properties.push('invalid value for "pki_creditcardclient_id", pki_creditcardclient_id cannot be nil.')
-      end
-
-      if @pki_creditcardclient_id > 65535
-        invalid_properties.push('invalid value for "pki_creditcardclient_id", must be smaller than or equal to 65535.')
-      end
-
-      if @pki_creditcardclient_id < 0
-        invalid_properties.push('invalid value for "pki_creditcardclient_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_creditcarddetail_id.nil?
-        invalid_properties.push('invalid value for "fki_creditcarddetail_id", fki_creditcarddetail_id cannot be nil.')
-      end
-
-      if @fki_creditcarddetail_id > 65535
-        invalid_properties.push('invalid value for "fki_creditcarddetail_id", must be smaller than or equal to 65535.')
-      end
-
-      if @fki_creditcarddetail_id < 0
-        invalid_properties.push('invalid value for "fki_creditcarddetail_id", must be greater than or equal to 0.')
-      end
-
-      if @b_creditcardclientrelation_isdefault.nil?
-        invalid_properties.push('invalid value for "b_creditcardclientrelation_isdefault", b_creditcardclientrelation_isdefault cannot be nil.')
-      end
-
-      if @s_creditcardclient_description.nil?
-        invalid_properties.push('invalid value for "s_creditcardclient_description", s_creditcardclient_description cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if @s_creditcardclient_description !~ pattern
-        invalid_properties.push("invalid value for \"s_creditcardclient_description\", must conform to the pattern #{pattern}.")
-      end
-
-      if @b_creditcardclient_allowedcompanypayment.nil?
-        invalid_properties.push('invalid value for "b_creditcardclient_allowedcompanypayment", b_creditcardclient_allowedcompanypayment cannot be nil.')
-      end
-
-      if @b_creditcardclient_allowedtranquillit.nil?
-        invalid_properties.push('invalid value for "b_creditcardclient_allowedtranquillit", b_creditcardclient_allowedtranquillit cannot be nil.')
-      end
-
-      if @obj_creditcarddetail.nil?
-        invalid_properties.push('invalid value for "obj_creditcarddetail", obj_creditcarddetail cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -199,84 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_creditcardclient_id.nil?
-      return false if @pki_creditcardclient_id > 65535
-      return false if @pki_creditcardclient_id < 0
-      return false if @fki_creditcarddetail_id.nil?
-      return false if @fki_creditcarddetail_id > 65535
-      return false if @fki_creditcarddetail_id < 0
-      return false if @b_creditcardclientrelation_isdefault.nil?
-      return false if @s_creditcardclient_description.nil?
-      return false if @s_creditcardclient_description !~ Regexp.new(/^.{0,50}$/)
-      return false if @b_creditcardclient_allowedcompanypayment.nil?
-      return false if @b_creditcardclient_allowedtranquillit.nil?
-      return false if @obj_creditcarddetail.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_creditcardclient_id Value to be assigned
-    def pki_creditcardclient_id=(pki_creditcardclient_id)
-      if pki_creditcardclient_id.nil?
-        fail ArgumentError, 'pki_creditcardclient_id cannot be nil'
-      end
-
-      if pki_creditcardclient_id > 65535
-        fail ArgumentError, 'invalid value for "pki_creditcardclient_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_creditcardclient_id < 0
-        fail ArgumentError, 'invalid value for "pki_creditcardclient_id", must be greater than or equal to 0.'
-      end
-
-      @pki_creditcardclient_id = pki_creditcardclient_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_creditcarddetail_id Value to be assigned
-    def fki_creditcarddetail_id=(fki_creditcarddetail_id)
-      if fki_creditcarddetail_id.nil?
-        fail ArgumentError, 'fki_creditcarddetail_id cannot be nil'
-      end
-
-      if fki_creditcarddetail_id > 65535
-        fail ArgumentError, 'invalid value for "fki_creditcarddetail_id", must be smaller than or equal to 65535.'
-      end
-
-      if fki_creditcarddetail_id < 0
-        fail ArgumentError, 'invalid value for "fki_creditcarddetail_id", must be greater than or equal to 0.'
-      end
-
-      @fki_creditcarddetail_id = fki_creditcarddetail_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_creditcardclient_description Value to be assigned
-    def s_creditcardclient_description=(s_creditcardclient_description)
-      if s_creditcardclient_description.nil?
-        fail ArgumentError, 's_creditcardclient_description cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_creditcardclient_description !~ pattern
-        fail ArgumentError, "invalid value for \"s_creditcardclient_description\", must conform to the pattern #{pattern}."
-      end
-
-      @s_creditcardclient_description = s_creditcardclient_description
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_creditcardclient_id == o.pki_creditcardclient_id &&
-          fki_creditcarddetail_id == o.fki_creditcarddetail_id &&
-          b_creditcardclientrelation_isdefault == o.b_creditcardclientrelation_isdefault &&
-          s_creditcardclient_description == o.s_creditcardclient_description &&
-          b_creditcardclient_allowedcompanypayment == o.b_creditcardclient_allowedcompanypayment &&
-          b_creditcardclient_allowedtranquillit == o.b_creditcardclient_allowedtranquillit &&
-          obj_creditcarddetail == o.obj_creditcarddetail
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -288,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_creditcardclient_id, fki_creditcarddetail_id, b_creditcardclientrelation_isdefault, s_creditcardclient_description, b_creditcardclient_allowedcompanypayment, b_creditcardclient_allowedtranquillit, obj_creditcarddetail].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -296,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -372,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

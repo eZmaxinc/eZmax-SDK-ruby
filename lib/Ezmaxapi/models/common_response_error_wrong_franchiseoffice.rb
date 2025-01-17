@@ -15,15 +15,7 @@ require 'time'
 
 module EzmaxApi
   # Error Message when a Franchisebroker is not in this Franchiseoffice.
-  class CommonResponseErrorWrongFranchiseoffice
-    # The message giving details about the error
-    attr_accessor :s_error_message
-
-    attr_accessor :e_error_code
-
-    # More error message detail
-    attr_accessor :a_s_error_messagedetail
-
+  class CommonResponseErrorWrongFranchiseoffice < CommonResponseError
     # The unique ID of the Franchiseagence
     attr_accessor :fki_franchiseagence_id
 
@@ -61,9 +53,6 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'s_error_message' => :'sErrorMessage',
-        :'e_error_code' => :'eErrorCode',
-        :'a_s_error_messagedetail' => :'a_sErrorMessagedetail',
         :'fki_franchiseagence_id' => :'fkiFranchiseagenceID',
         :'s_franchiseagence_name' => :'sFranchiseagenceName',
         :'fki_franchiseoffice_id' => :'fkiFranchiseofficeID',
@@ -71,17 +60,14 @@ module EzmaxApi
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'s_error_message' => :'String',
-        :'e_error_code' => :'FieldEErrorCode',
-        :'a_s_error_messagedetail' => :'Array<String>',
         :'fki_franchiseagence_id' => :'Integer',
         :'s_franchiseagence_name' => :'String',
         :'fki_franchiseoffice_id' => :'Integer',
@@ -117,23 +103,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'s_error_message')
-        self.s_error_message = attributes[:'s_error_message']
-      else
-        self.s_error_message = nil
-      end
-
-      if attributes.key?(:'e_error_code')
-        self.e_error_code = attributes[:'e_error_code']
-      else
-        self.e_error_code = nil
-      end
-
-      if attributes.key?(:'a_s_error_messagedetail')
-        if (value = attributes[:'a_s_error_messagedetail']).is_a?(Array)
-          self.a_s_error_messagedetail = value
-        end
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'fki_franchiseagence_id')
         self.fki_franchiseagence_id = attributes[:'fki_franchiseagence_id']
@@ -164,20 +135,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @s_error_message.nil?
-        invalid_properties.push('invalid value for "s_error_message", s_error_message cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,500}$/)
-      if @s_error_message !~ pattern
-        invalid_properties.push("invalid value for \"s_error_message\", must conform to the pattern #{pattern}.")
-      end
-
-      if @e_error_code.nil?
-        invalid_properties.push('invalid value for "e_error_code", e_error_code cannot be nil.')
-      end
-
+      invalid_properties = super
       if @fki_franchiseagence_id.nil?
         invalid_properties.push('invalid value for "fki_franchiseagence_id", fki_franchiseagence_id cannot be nil.')
       end
@@ -213,9 +171,6 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @s_error_message.nil?
-      return false if @s_error_message !~ Regexp.new(/^.{0,500}$/)
-      return false if @e_error_code.nil?
       return false if @fki_franchiseagence_id.nil?
       return false if @fki_franchiseagence_id > 65535
       return false if @fki_franchiseagence_id < 0
@@ -223,22 +178,7 @@ module EzmaxApi
       return false if @fki_franchiseoffice_id.nil?
       return false if @fki_franchiseoffice_id < 0
       return false if @i_franchiseoffice_code.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_error_message Value to be assigned
-    def s_error_message=(s_error_message)
-      if s_error_message.nil?
-        fail ArgumentError, 's_error_message cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,500}$/)
-      if s_error_message !~ pattern
-        fail ArgumentError, "invalid value for \"s_error_message\", must conform to the pattern #{pattern}."
-      end
-
-      @s_error_message = s_error_message
+      true && super
     end
 
     # Custom attribute writer method with validation
@@ -278,13 +218,10 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          s_error_message == o.s_error_message &&
-          e_error_code == o.e_error_code &&
-          a_s_error_messagedetail == o.a_s_error_messagedetail &&
           fki_franchiseagence_id == o.fki_franchiseagence_id &&
           s_franchiseagence_name == o.s_franchiseagence_name &&
           fki_franchiseoffice_id == o.fki_franchiseoffice_id &&
-          i_franchiseoffice_code == o.i_franchiseoffice_code
+          i_franchiseoffice_code == o.i_franchiseoffice_code && super(o)
     end
 
     # @see the `==` method
@@ -296,7 +233,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_error_message, e_error_code, a_s_error_messagedetail, fki_franchiseagence_id, s_franchiseagence_name, fki_franchiseoffice_id, i_franchiseoffice_code].hash
+      [fki_franchiseagence_id, s_franchiseagence_name, fki_franchiseoffice_id, i_franchiseoffice_code].hash
     end
 
     # Builds the object from hash
@@ -304,6 +241,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -380,7 +318,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

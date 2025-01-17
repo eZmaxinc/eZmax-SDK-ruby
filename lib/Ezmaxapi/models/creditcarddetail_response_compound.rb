@@ -15,61 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Creditcarddetail Object
-  class CreditcarddetailResponseCompound
-    # The unique ID of the Creditcarddetail
-    attr_accessor :pki_creditcarddetail_id
-
-    # The unique ID of the Creditcardtype
-    attr_accessor :fki_creditcardtype_id
-
-    # The last digits of the Creditcarddetail
-    attr_accessor :i_creditcarddetail_lastdigits
-
-    # The expirationmonth of the Creditcarddetail
-    attr_accessor :i_creditcarddetail_expirationmonth
-
-    # The expirationyear of the Creditcarddetail
-    attr_accessor :i_creditcarddetail_expirationyear
-
-    # The civic of the Creditcarddetail
-    attr_accessor :s_creditcarddetail_civic
-
-    # The street of the Creditcarddetail
-    attr_accessor :s_creditcarddetail_street
-
-    # The zip of the Creditcarddetail
-    attr_accessor :s_creditcarddetail_zip
-
+  class CreditcarddetailResponseCompound < CreditcarddetailResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_creditcarddetail_id' => :'pkiCreditcarddetailID',
-        :'fki_creditcardtype_id' => :'fkiCreditcardtypeID',
-        :'i_creditcarddetail_lastdigits' => :'iCreditcarddetailLastdigits',
-        :'i_creditcarddetail_expirationmonth' => :'iCreditcarddetailExpirationmonth',
-        :'i_creditcarddetail_expirationyear' => :'iCreditcarddetailExpirationyear',
-        :'s_creditcarddetail_civic' => :'sCreditcarddetailCivic',
-        :'s_creditcarddetail_street' => :'sCreditcarddetailStreet',
-        :'s_creditcarddetail_zip' => :'sCreditcarddetailZip'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_creditcarddetail_id' => :'Integer',
-        :'fki_creditcardtype_id' => :'Integer',
-        :'i_creditcarddetail_lastdigits' => :'Integer',
-        :'i_creditcarddetail_expirationmonth' => :'Integer',
-        :'i_creditcarddetail_expirationyear' => :'Integer',
-        :'s_creditcarddetail_civic' => :'String',
-        :'s_creditcarddetail_street' => :'String',
-        :'s_creditcarddetail_zip' => :'String'
       }
     end
 
@@ -101,147 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_creditcarddetail_id')
-        self.pki_creditcarddetail_id = attributes[:'pki_creditcarddetail_id']
-      else
-        self.pki_creditcarddetail_id = nil
-      end
-
-      if attributes.key?(:'fki_creditcardtype_id')
-        self.fki_creditcardtype_id = attributes[:'fki_creditcardtype_id']
-      else
-        self.fki_creditcardtype_id = nil
-      end
-
-      if attributes.key?(:'i_creditcarddetail_lastdigits')
-        self.i_creditcarddetail_lastdigits = attributes[:'i_creditcarddetail_lastdigits']
-      else
-        self.i_creditcarddetail_lastdigits = nil
-      end
-
-      if attributes.key?(:'i_creditcarddetail_expirationmonth')
-        self.i_creditcarddetail_expirationmonth = attributes[:'i_creditcarddetail_expirationmonth']
-      else
-        self.i_creditcarddetail_expirationmonth = nil
-      end
-
-      if attributes.key?(:'i_creditcarddetail_expirationyear')
-        self.i_creditcarddetail_expirationyear = attributes[:'i_creditcarddetail_expirationyear']
-      else
-        self.i_creditcarddetail_expirationyear = nil
-      end
-
-      if attributes.key?(:'s_creditcarddetail_civic')
-        self.s_creditcarddetail_civic = attributes[:'s_creditcarddetail_civic']
-      else
-        self.s_creditcarddetail_civic = nil
-      end
-
-      if attributes.key?(:'s_creditcarddetail_street')
-        self.s_creditcarddetail_street = attributes[:'s_creditcarddetail_street']
-      else
-        self.s_creditcarddetail_street = nil
-      end
-
-      if attributes.key?(:'s_creditcarddetail_zip')
-        self.s_creditcarddetail_zip = attributes[:'s_creditcarddetail_zip']
-      else
-        self.s_creditcarddetail_zip = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_creditcarddetail_id.nil?
-        invalid_properties.push('invalid value for "pki_creditcarddetail_id", pki_creditcarddetail_id cannot be nil.')
-      end
-
-      if @pki_creditcarddetail_id > 65535
-        invalid_properties.push('invalid value for "pki_creditcarddetail_id", must be smaller than or equal to 65535.')
-      end
-
-      if @pki_creditcarddetail_id < 0
-        invalid_properties.push('invalid value for "pki_creditcarddetail_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_creditcardtype_id.nil?
-        invalid_properties.push('invalid value for "fki_creditcardtype_id", fki_creditcardtype_id cannot be nil.')
-      end
-
-      if @fki_creditcardtype_id > 255
-        invalid_properties.push('invalid value for "fki_creditcardtype_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_creditcardtype_id < 0
-        invalid_properties.push('invalid value for "fki_creditcardtype_id", must be greater than or equal to 0.')
-      end
-
-      if @i_creditcarddetail_lastdigits.nil?
-        invalid_properties.push('invalid value for "i_creditcarddetail_lastdigits", i_creditcarddetail_lastdigits cannot be nil.')
-      end
-
-      if @i_creditcarddetail_lastdigits > 9999
-        invalid_properties.push('invalid value for "i_creditcarddetail_lastdigits", must be smaller than or equal to 9999.')
-      end
-
-      if @i_creditcarddetail_lastdigits < 0
-        invalid_properties.push('invalid value for "i_creditcarddetail_lastdigits", must be greater than or equal to 0.')
-      end
-
-      if @i_creditcarddetail_expirationmonth.nil?
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationmonth", i_creditcarddetail_expirationmonth cannot be nil.')
-      end
-
-      if @i_creditcarddetail_expirationmonth > 12
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationmonth", must be smaller than or equal to 12.')
-      end
-
-      if @i_creditcarddetail_expirationmonth < 0
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationmonth", must be greater than or equal to 0.')
-      end
-
-      if @i_creditcarddetail_expirationyear.nil?
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationyear", i_creditcarddetail_expirationyear cannot be nil.')
-      end
-
-      if @i_creditcarddetail_expirationyear > 2200
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationyear", must be smaller than or equal to 2200.')
-      end
-
-      if @i_creditcarddetail_expirationyear < 0
-        invalid_properties.push('invalid value for "i_creditcarddetail_expirationyear", must be greater than or equal to 0.')
-      end
-
-      if @s_creditcarddetail_civic.nil?
-        invalid_properties.push('invalid value for "s_creditcarddetail_civic", s_creditcarddetail_civic cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^[\d]{1,8}$/)
-      if @s_creditcarddetail_civic !~ pattern
-        invalid_properties.push("invalid value for \"s_creditcarddetail_civic\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_creditcarddetail_street.nil?
-        invalid_properties.push('invalid value for "s_creditcarddetail_street", s_creditcarddetail_street cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{1,19}$/)
-      if @s_creditcarddetail_street !~ pattern
-        invalid_properties.push("invalid value for \"s_creditcarddetail_street\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_creditcarddetail_zip.nil?
-        invalid_properties.push('invalid value for "s_creditcarddetail_zip", s_creditcarddetail_zip cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,9}$/)
-      if @s_creditcarddetail_zip !~ pattern
-        invalid_properties.push("invalid value for \"s_creditcarddetail_zip\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -249,178 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_creditcarddetail_id.nil?
-      return false if @pki_creditcarddetail_id > 65535
-      return false if @pki_creditcarddetail_id < 0
-      return false if @fki_creditcardtype_id.nil?
-      return false if @fki_creditcardtype_id > 255
-      return false if @fki_creditcardtype_id < 0
-      return false if @i_creditcarddetail_lastdigits.nil?
-      return false if @i_creditcarddetail_lastdigits > 9999
-      return false if @i_creditcarddetail_lastdigits < 0
-      return false if @i_creditcarddetail_expirationmonth.nil?
-      return false if @i_creditcarddetail_expirationmonth > 12
-      return false if @i_creditcarddetail_expirationmonth < 0
-      return false if @i_creditcarddetail_expirationyear.nil?
-      return false if @i_creditcarddetail_expirationyear > 2200
-      return false if @i_creditcarddetail_expirationyear < 0
-      return false if @s_creditcarddetail_civic.nil?
-      return false if @s_creditcarddetail_civic !~ Regexp.new(/^[\d]{1,8}$/)
-      return false if @s_creditcarddetail_street.nil?
-      return false if @s_creditcarddetail_street !~ Regexp.new(/^.{1,19}$/)
-      return false if @s_creditcarddetail_zip.nil?
-      return false if @s_creditcarddetail_zip !~ Regexp.new(/^.{0,9}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_creditcarddetail_id Value to be assigned
-    def pki_creditcarddetail_id=(pki_creditcarddetail_id)
-      if pki_creditcarddetail_id.nil?
-        fail ArgumentError, 'pki_creditcarddetail_id cannot be nil'
-      end
-
-      if pki_creditcarddetail_id > 65535
-        fail ArgumentError, 'invalid value for "pki_creditcarddetail_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_creditcarddetail_id < 0
-        fail ArgumentError, 'invalid value for "pki_creditcarddetail_id", must be greater than or equal to 0.'
-      end
-
-      @pki_creditcarddetail_id = pki_creditcarddetail_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_creditcardtype_id Value to be assigned
-    def fki_creditcardtype_id=(fki_creditcardtype_id)
-      if fki_creditcardtype_id.nil?
-        fail ArgumentError, 'fki_creditcardtype_id cannot be nil'
-      end
-
-      if fki_creditcardtype_id > 255
-        fail ArgumentError, 'invalid value for "fki_creditcardtype_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_creditcardtype_id < 0
-        fail ArgumentError, 'invalid value for "fki_creditcardtype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_creditcardtype_id = fki_creditcardtype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_creditcarddetail_lastdigits Value to be assigned
-    def i_creditcarddetail_lastdigits=(i_creditcarddetail_lastdigits)
-      if i_creditcarddetail_lastdigits.nil?
-        fail ArgumentError, 'i_creditcarddetail_lastdigits cannot be nil'
-      end
-
-      if i_creditcarddetail_lastdigits > 9999
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_lastdigits", must be smaller than or equal to 9999.'
-      end
-
-      if i_creditcarddetail_lastdigits < 0
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_lastdigits", must be greater than or equal to 0.'
-      end
-
-      @i_creditcarddetail_lastdigits = i_creditcarddetail_lastdigits
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_creditcarddetail_expirationmonth Value to be assigned
-    def i_creditcarddetail_expirationmonth=(i_creditcarddetail_expirationmonth)
-      if i_creditcarddetail_expirationmonth.nil?
-        fail ArgumentError, 'i_creditcarddetail_expirationmonth cannot be nil'
-      end
-
-      if i_creditcarddetail_expirationmonth > 12
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_expirationmonth", must be smaller than or equal to 12.'
-      end
-
-      if i_creditcarddetail_expirationmonth < 0
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_expirationmonth", must be greater than or equal to 0.'
-      end
-
-      @i_creditcarddetail_expirationmonth = i_creditcarddetail_expirationmonth
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_creditcarddetail_expirationyear Value to be assigned
-    def i_creditcarddetail_expirationyear=(i_creditcarddetail_expirationyear)
-      if i_creditcarddetail_expirationyear.nil?
-        fail ArgumentError, 'i_creditcarddetail_expirationyear cannot be nil'
-      end
-
-      if i_creditcarddetail_expirationyear > 2200
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_expirationyear", must be smaller than or equal to 2200.'
-      end
-
-      if i_creditcarddetail_expirationyear < 0
-        fail ArgumentError, 'invalid value for "i_creditcarddetail_expirationyear", must be greater than or equal to 0.'
-      end
-
-      @i_creditcarddetail_expirationyear = i_creditcarddetail_expirationyear
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_creditcarddetail_civic Value to be assigned
-    def s_creditcarddetail_civic=(s_creditcarddetail_civic)
-      if s_creditcarddetail_civic.nil?
-        fail ArgumentError, 's_creditcarddetail_civic cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[\d]{1,8}$/)
-      if s_creditcarddetail_civic !~ pattern
-        fail ArgumentError, "invalid value for \"s_creditcarddetail_civic\", must conform to the pattern #{pattern}."
-      end
-
-      @s_creditcarddetail_civic = s_creditcarddetail_civic
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_creditcarddetail_street Value to be assigned
-    def s_creditcarddetail_street=(s_creditcarddetail_street)
-      if s_creditcarddetail_street.nil?
-        fail ArgumentError, 's_creditcarddetail_street cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{1,19}$/)
-      if s_creditcarddetail_street !~ pattern
-        fail ArgumentError, "invalid value for \"s_creditcarddetail_street\", must conform to the pattern #{pattern}."
-      end
-
-      @s_creditcarddetail_street = s_creditcarddetail_street
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_creditcarddetail_zip Value to be assigned
-    def s_creditcarddetail_zip=(s_creditcarddetail_zip)
-      if s_creditcarddetail_zip.nil?
-        fail ArgumentError, 's_creditcarddetail_zip cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,9}$/)
-      if s_creditcarddetail_zip !~ pattern
-        fail ArgumentError, "invalid value for \"s_creditcarddetail_zip\", must conform to the pattern #{pattern}."
-      end
-
-      @s_creditcarddetail_zip = s_creditcarddetail_zip
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_creditcarddetail_id == o.pki_creditcarddetail_id &&
-          fki_creditcardtype_id == o.fki_creditcardtype_id &&
-          i_creditcarddetail_lastdigits == o.i_creditcarddetail_lastdigits &&
-          i_creditcarddetail_expirationmonth == o.i_creditcarddetail_expirationmonth &&
-          i_creditcarddetail_expirationyear == o.i_creditcarddetail_expirationyear &&
-          s_creditcarddetail_civic == o.s_creditcarddetail_civic &&
-          s_creditcarddetail_street == o.s_creditcarddetail_street &&
-          s_creditcarddetail_zip == o.s_creditcarddetail_zip
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -432,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_creditcarddetail_id, fki_creditcardtype_id, i_creditcarddetail_lastdigits, i_creditcarddetail_expirationmonth, i_creditcarddetail_expirationyear, s_creditcarddetail_civic, s_creditcarddetail_street, s_creditcarddetail_zip].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -440,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -516,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

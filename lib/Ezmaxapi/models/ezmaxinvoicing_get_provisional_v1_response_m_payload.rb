@@ -15,62 +15,7 @@ require 'time'
 
 module EzmaxApi
   # Payload for GET /1/object/ezmaxinvoicing/getProvisional
-  class EzmaxinvoicingGetProvisionalV1ResponseMPayload
-    # The unique ID of the Ezmaxinvoicing
-    attr_accessor :pki_ezmaxinvoicing_id
-
-    # The unique ID of the Ezmaxinvoicingcontract
-    attr_accessor :fki_ezmaxinvoicingcontract_id
-
-    # The unique ID of the Ezmaxpricing
-    attr_accessor :fki_ezmaxpricing_id
-
-    # The unique ID of the Systemconfigurationtype
-    attr_accessor :fki_systemconfigurationtype_id
-
-    # The description of the Systemconfigurationtype in the language of the requester
-    attr_accessor :s_systemconfigurationtype_description_x
-
-    # The YYYYMM period of the Ezmaxinvoicing
-    attr_accessor :yyyymm_ezmaxinvoicing
-
-    # The number of days invoiced
-    attr_accessor :i_ezmaxinvoicing_days
-
-    attr_accessor :e_ezmaxinvoicing_paymenttype
-
-    # The percentage of rebate depending of the payment type
-    attr_accessor :d_ezmaxinvoicing_rebatepaymenttype
-
-    # The length of the contract in years
-    attr_accessor :i_ezmaxinvoicing_contractlength
-
-    # The percentage of rebate depending of the contract length
-    attr_accessor :d_ezmaxinvoicing_rebatecontractlength
-
-    # Whether the rebate for eZsign is for all agents
-    attr_accessor :b_ezmaxinvoicing_rebate_ezsignallagents
-
-    attr_accessor :obj_audit
-
-    attr_accessor :obj_ezmaxinvoicingcontract
-
-    attr_accessor :obj_ezmaxpricing
-
-    attr_accessor :a_obj_ezmaxinvoicingsummaryglobal
-
-    attr_accessor :a_obj_ezmaxinvoicingsummaryexternal
-
-    attr_accessor :a_obj_ezmaxinvoicingsummaryinternal
-
-    attr_accessor :a_obj_ezmaxinvoicingagent
-
-    attr_accessor :a_obj_ezmaxinvoicinguser
-
-    attr_accessor :a_obj_ezmaxinvoicingezsignfolder
-
-    attr_accessor :a_obj_ezmaxinvoicingezsigndocument
-
+  class EzmaxinvoicingGetProvisionalV1ResponseMPayload < EzmaxinvoicingResponseCompound
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -96,61 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezmaxinvoicing_id' => :'pkiEzmaxinvoicingID',
-        :'fki_ezmaxinvoicingcontract_id' => :'fkiEzmaxinvoicingcontractID',
-        :'fki_ezmaxpricing_id' => :'fkiEzmaxpricingID',
-        :'fki_systemconfigurationtype_id' => :'fkiSystemconfigurationtypeID',
-        :'s_systemconfigurationtype_description_x' => :'sSystemconfigurationtypeDescriptionX',
-        :'yyyymm_ezmaxinvoicing' => :'yyyymmEzmaxinvoicing',
-        :'i_ezmaxinvoicing_days' => :'iEzmaxinvoicingDays',
-        :'e_ezmaxinvoicing_paymenttype' => :'eEzmaxinvoicingPaymenttype',
-        :'d_ezmaxinvoicing_rebatepaymenttype' => :'dEzmaxinvoicingRebatepaymenttype',
-        :'i_ezmaxinvoicing_contractlength' => :'iEzmaxinvoicingContractlength',
-        :'d_ezmaxinvoicing_rebatecontractlength' => :'dEzmaxinvoicingRebatecontractlength',
-        :'b_ezmaxinvoicing_rebate_ezsignallagents' => :'bEzmaxinvoicingRebateEzsignallagents',
-        :'obj_audit' => :'objAudit',
-        :'obj_ezmaxinvoicingcontract' => :'objEzmaxinvoicingcontract',
-        :'obj_ezmaxpricing' => :'objEzmaxpricing',
-        :'a_obj_ezmaxinvoicingsummaryglobal' => :'a_objEzmaxinvoicingsummaryglobal',
-        :'a_obj_ezmaxinvoicingsummaryexternal' => :'a_objEzmaxinvoicingsummaryexternal',
-        :'a_obj_ezmaxinvoicingsummaryinternal' => :'a_objEzmaxinvoicingsummaryinternal',
-        :'a_obj_ezmaxinvoicingagent' => :'a_objEzmaxinvoicingagent',
-        :'a_obj_ezmaxinvoicinguser' => :'a_objEzmaxinvoicinguser',
-        :'a_obj_ezmaxinvoicingezsignfolder' => :'a_objEzmaxinvoicingezsignfolder',
-        :'a_obj_ezmaxinvoicingezsigndocument' => :'a_objEzmaxinvoicingezsigndocument'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezmaxinvoicing_id' => :'Integer',
-        :'fki_ezmaxinvoicingcontract_id' => :'Integer',
-        :'fki_ezmaxpricing_id' => :'Integer',
-        :'fki_systemconfigurationtype_id' => :'Integer',
-        :'s_systemconfigurationtype_description_x' => :'String',
-        :'yyyymm_ezmaxinvoicing' => :'String',
-        :'i_ezmaxinvoicing_days' => :'Integer',
-        :'e_ezmaxinvoicing_paymenttype' => :'FieldEEzmaxinvoicingPaymenttype',
-        :'d_ezmaxinvoicing_rebatepaymenttype' => :'String',
-        :'i_ezmaxinvoicing_contractlength' => :'Integer',
-        :'d_ezmaxinvoicing_rebatecontractlength' => :'String',
-        :'b_ezmaxinvoicing_rebate_ezsignallagents' => :'Boolean',
-        :'obj_audit' => :'CommonAudit',
-        :'obj_ezmaxinvoicingcontract' => :'EzmaxinvoicingcontractResponseCompound',
-        :'obj_ezmaxpricing' => :'CustomEzmaxpricingResponse',
-        :'a_obj_ezmaxinvoicingsummaryglobal' => :'Array<EzmaxinvoicingsummaryglobalResponseCompound>',
-        :'a_obj_ezmaxinvoicingsummaryexternal' => :'Array<EzmaxinvoicingsummaryexternalResponseCompound>',
-        :'a_obj_ezmaxinvoicingsummaryinternal' => :'Array<EzmaxinvoicingsummaryinternalResponseCompound>',
-        :'a_obj_ezmaxinvoicingagent' => :'Array<EzmaxinvoicingagentResponseCompound>',
-        :'a_obj_ezmaxinvoicinguser' => :'Array<EzmaxinvoicinguserResponseCompound>',
-        :'a_obj_ezmaxinvoicingezsignfolder' => :'Array<CustomEzmaxinvoicingEzsignfolderResponse>',
-        :'a_obj_ezmaxinvoicingezsigndocument' => :'Array<CustomEzmaxinvoicingEzsigndocumentResponse>'
       }
     end
 
@@ -182,272 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezmaxinvoicing_id')
-        self.pki_ezmaxinvoicing_id = attributes[:'pki_ezmaxinvoicing_id']
-      end
-
-      if attributes.key?(:'fki_ezmaxinvoicingcontract_id')
-        self.fki_ezmaxinvoicingcontract_id = attributes[:'fki_ezmaxinvoicingcontract_id']
-      else
-        self.fki_ezmaxinvoicingcontract_id = nil
-      end
-
-      if attributes.key?(:'fki_ezmaxpricing_id')
-        self.fki_ezmaxpricing_id = attributes[:'fki_ezmaxpricing_id']
-      else
-        self.fki_ezmaxpricing_id = nil
-      end
-
-      if attributes.key?(:'fki_systemconfigurationtype_id')
-        self.fki_systemconfigurationtype_id = attributes[:'fki_systemconfigurationtype_id']
-      else
-        self.fki_systemconfigurationtype_id = nil
-      end
-
-      if attributes.key?(:'s_systemconfigurationtype_description_x')
-        self.s_systemconfigurationtype_description_x = attributes[:'s_systemconfigurationtype_description_x']
-      else
-        self.s_systemconfigurationtype_description_x = nil
-      end
-
-      if attributes.key?(:'yyyymm_ezmaxinvoicing')
-        self.yyyymm_ezmaxinvoicing = attributes[:'yyyymm_ezmaxinvoicing']
-      else
-        self.yyyymm_ezmaxinvoicing = nil
-      end
-
-      if attributes.key?(:'i_ezmaxinvoicing_days')
-        self.i_ezmaxinvoicing_days = attributes[:'i_ezmaxinvoicing_days']
-      else
-        self.i_ezmaxinvoicing_days = nil
-      end
-
-      if attributes.key?(:'e_ezmaxinvoicing_paymenttype')
-        self.e_ezmaxinvoicing_paymenttype = attributes[:'e_ezmaxinvoicing_paymenttype']
-      else
-        self.e_ezmaxinvoicing_paymenttype = nil
-      end
-
-      if attributes.key?(:'d_ezmaxinvoicing_rebatepaymenttype')
-        self.d_ezmaxinvoicing_rebatepaymenttype = attributes[:'d_ezmaxinvoicing_rebatepaymenttype']
-      else
-        self.d_ezmaxinvoicing_rebatepaymenttype = nil
-      end
-
-      if attributes.key?(:'i_ezmaxinvoicing_contractlength')
-        self.i_ezmaxinvoicing_contractlength = attributes[:'i_ezmaxinvoicing_contractlength']
-      else
-        self.i_ezmaxinvoicing_contractlength = nil
-      end
-
-      if attributes.key?(:'d_ezmaxinvoicing_rebatecontractlength')
-        self.d_ezmaxinvoicing_rebatecontractlength = attributes[:'d_ezmaxinvoicing_rebatecontractlength']
-      else
-        self.d_ezmaxinvoicing_rebatecontractlength = nil
-      end
-
-      if attributes.key?(:'b_ezmaxinvoicing_rebate_ezsignallagents')
-        self.b_ezmaxinvoicing_rebate_ezsignallagents = attributes[:'b_ezmaxinvoicing_rebate_ezsignallagents']
-      else
-        self.b_ezmaxinvoicing_rebate_ezsignallagents = nil
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      end
-
-      if attributes.key?(:'obj_ezmaxinvoicingcontract')
-        self.obj_ezmaxinvoicingcontract = attributes[:'obj_ezmaxinvoicingcontract']
-      else
-        self.obj_ezmaxinvoicingcontract = nil
-      end
-
-      if attributes.key?(:'obj_ezmaxpricing')
-        self.obj_ezmaxpricing = attributes[:'obj_ezmaxpricing']
-      else
-        self.obj_ezmaxpricing = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingsummaryglobal')
-        if (value = attributes[:'a_obj_ezmaxinvoicingsummaryglobal']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingsummaryglobal = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingsummaryglobal = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingsummaryexternal')
-        if (value = attributes[:'a_obj_ezmaxinvoicingsummaryexternal']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingsummaryexternal = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingsummaryexternal = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingsummaryinternal')
-        if (value = attributes[:'a_obj_ezmaxinvoicingsummaryinternal']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingsummaryinternal = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingsummaryinternal = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingagent')
-        if (value = attributes[:'a_obj_ezmaxinvoicingagent']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingagent = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingagent = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicinguser')
-        if (value = attributes[:'a_obj_ezmaxinvoicinguser']).is_a?(Array)
-          self.a_obj_ezmaxinvoicinguser = value
-        end
-      else
-        self.a_obj_ezmaxinvoicinguser = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingezsignfolder')
-        if (value = attributes[:'a_obj_ezmaxinvoicingezsignfolder']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingezsignfolder = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingezsignfolder = nil
-      end
-
-      if attributes.key?(:'a_obj_ezmaxinvoicingezsigndocument')
-        if (value = attributes[:'a_obj_ezmaxinvoicingezsigndocument']).is_a?(Array)
-          self.a_obj_ezmaxinvoicingezsigndocument = value
-        end
-      else
-        self.a_obj_ezmaxinvoicingezsigndocument = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_ezmaxinvoicing_id.nil? && @pki_ezmaxinvoicing_id < 0
-        invalid_properties.push('invalid value for "pki_ezmaxinvoicing_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezmaxinvoicingcontract_id.nil?
-        invalid_properties.push('invalid value for "fki_ezmaxinvoicingcontract_id", fki_ezmaxinvoicingcontract_id cannot be nil.')
-      end
-
-      if @fki_ezmaxinvoicingcontract_id < 1
-        invalid_properties.push('invalid value for "fki_ezmaxinvoicingcontract_id", must be greater than or equal to 1.')
-      end
-
-      if @fki_ezmaxpricing_id.nil?
-        invalid_properties.push('invalid value for "fki_ezmaxpricing_id", fki_ezmaxpricing_id cannot be nil.')
-      end
-
-      if @fki_ezmaxpricing_id < 1
-        invalid_properties.push('invalid value for "fki_ezmaxpricing_id", must be greater than or equal to 1.')
-      end
-
-      if @fki_systemconfigurationtype_id.nil?
-        invalid_properties.push('invalid value for "fki_systemconfigurationtype_id", fki_systemconfigurationtype_id cannot be nil.')
-      end
-
-      if @fki_systemconfigurationtype_id < 1
-        invalid_properties.push('invalid value for "fki_systemconfigurationtype_id", must be greater than or equal to 1.')
-      end
-
-      if @s_systemconfigurationtype_description_x.nil?
-        invalid_properties.push('invalid value for "s_systemconfigurationtype_description_x", s_systemconfigurationtype_description_x cannot be nil.')
-      end
-
-      if @yyyymm_ezmaxinvoicing.nil?
-        invalid_properties.push('invalid value for "yyyymm_ezmaxinvoicing", yyyymm_ezmaxinvoicing cannot be nil.')
-      end
-
-      if @yyyymm_ezmaxinvoicing.to_s.length > 7
-        invalid_properties.push('invalid value for "yyyymm_ezmaxinvoicing", the character length must be smaller than or equal to 7.')
-      end
-
-      if @i_ezmaxinvoicing_days.nil?
-        invalid_properties.push('invalid value for "i_ezmaxinvoicing_days", i_ezmaxinvoicing_days cannot be nil.')
-      end
-
-      if @i_ezmaxinvoicing_days < 1
-        invalid_properties.push('invalid value for "i_ezmaxinvoicing_days", must be greater than or equal to 1.')
-      end
-
-      if @e_ezmaxinvoicing_paymenttype.nil?
-        invalid_properties.push('invalid value for "e_ezmaxinvoicing_paymenttype", e_ezmaxinvoicing_paymenttype cannot be nil.')
-      end
-
-      if @d_ezmaxinvoicing_rebatepaymenttype.nil?
-        invalid_properties.push('invalid value for "d_ezmaxinvoicing_rebatepaymenttype", d_ezmaxinvoicing_rebatepaymenttype cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      if @d_ezmaxinvoicing_rebatepaymenttype !~ pattern
-        invalid_properties.push("invalid value for \"d_ezmaxinvoicing_rebatepaymenttype\", must conform to the pattern #{pattern}.")
-      end
-
-      if @i_ezmaxinvoicing_contractlength.nil?
-        invalid_properties.push('invalid value for "i_ezmaxinvoicing_contractlength", i_ezmaxinvoicing_contractlength cannot be nil.')
-      end
-
-      if @i_ezmaxinvoicing_contractlength < 1
-        invalid_properties.push('invalid value for "i_ezmaxinvoicing_contractlength", must be greater than or equal to 1.')
-      end
-
-      if @d_ezmaxinvoicing_rebatecontractlength.nil?
-        invalid_properties.push('invalid value for "d_ezmaxinvoicing_rebatecontractlength", d_ezmaxinvoicing_rebatecontractlength cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      if @d_ezmaxinvoicing_rebatecontractlength !~ pattern
-        invalid_properties.push("invalid value for \"d_ezmaxinvoicing_rebatecontractlength\", must conform to the pattern #{pattern}.")
-      end
-
-      if @b_ezmaxinvoicing_rebate_ezsignallagents.nil?
-        invalid_properties.push('invalid value for "b_ezmaxinvoicing_rebate_ezsignallagents", b_ezmaxinvoicing_rebate_ezsignallagents cannot be nil.')
-      end
-
-      if @obj_ezmaxinvoicingcontract.nil?
-        invalid_properties.push('invalid value for "obj_ezmaxinvoicingcontract", obj_ezmaxinvoicingcontract cannot be nil.')
-      end
-
-      if @obj_ezmaxpricing.nil?
-        invalid_properties.push('invalid value for "obj_ezmaxpricing", obj_ezmaxpricing cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingsummaryglobal.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingsummaryglobal", a_obj_ezmaxinvoicingsummaryglobal cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingsummaryexternal.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingsummaryexternal", a_obj_ezmaxinvoicingsummaryexternal cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingsummaryinternal.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingsummaryinternal", a_obj_ezmaxinvoicingsummaryinternal cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingagent.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingagent", a_obj_ezmaxinvoicingagent cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicinguser.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicinguser", a_obj_ezmaxinvoicinguser cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingezsignfolder.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingezsignfolder", a_obj_ezmaxinvoicingezsignfolder cannot be nil.')
-      end
-
-      if @a_obj_ezmaxinvoicingezsigndocument.nil?
-        invalid_properties.push('invalid value for "a_obj_ezmaxinvoicingezsigndocument", a_obj_ezmaxinvoicingezsigndocument cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -455,193 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_ezmaxinvoicing_id.nil? && @pki_ezmaxinvoicing_id < 0
-      return false if @fki_ezmaxinvoicingcontract_id.nil?
-      return false if @fki_ezmaxinvoicingcontract_id < 1
-      return false if @fki_ezmaxpricing_id.nil?
-      return false if @fki_ezmaxpricing_id < 1
-      return false if @fki_systemconfigurationtype_id.nil?
-      return false if @fki_systemconfigurationtype_id < 1
-      return false if @s_systemconfigurationtype_description_x.nil?
-      return false if @yyyymm_ezmaxinvoicing.nil?
-      return false if @yyyymm_ezmaxinvoicing.to_s.length > 7
-      return false if @i_ezmaxinvoicing_days.nil?
-      return false if @i_ezmaxinvoicing_days < 1
-      return false if @e_ezmaxinvoicing_paymenttype.nil?
-      return false if @d_ezmaxinvoicing_rebatepaymenttype.nil?
-      return false if @d_ezmaxinvoicing_rebatepaymenttype !~ Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      return false if @i_ezmaxinvoicing_contractlength.nil?
-      return false if @i_ezmaxinvoicing_contractlength < 1
-      return false if @d_ezmaxinvoicing_rebatecontractlength.nil?
-      return false if @d_ezmaxinvoicing_rebatecontractlength !~ Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      return false if @b_ezmaxinvoicing_rebate_ezsignallagents.nil?
-      return false if @obj_ezmaxinvoicingcontract.nil?
-      return false if @obj_ezmaxpricing.nil?
-      return false if @a_obj_ezmaxinvoicingsummaryglobal.nil?
-      return false if @a_obj_ezmaxinvoicingsummaryexternal.nil?
-      return false if @a_obj_ezmaxinvoicingsummaryinternal.nil?
-      return false if @a_obj_ezmaxinvoicingagent.nil?
-      return false if @a_obj_ezmaxinvoicinguser.nil?
-      return false if @a_obj_ezmaxinvoicingezsignfolder.nil?
-      return false if @a_obj_ezmaxinvoicingezsigndocument.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezmaxinvoicing_id Value to be assigned
-    def pki_ezmaxinvoicing_id=(pki_ezmaxinvoicing_id)
-      if pki_ezmaxinvoicing_id.nil?
-        fail ArgumentError, 'pki_ezmaxinvoicing_id cannot be nil'
-      end
-
-      if pki_ezmaxinvoicing_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezmaxinvoicing_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezmaxinvoicing_id = pki_ezmaxinvoicing_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxinvoicingcontract_id Value to be assigned
-    def fki_ezmaxinvoicingcontract_id=(fki_ezmaxinvoicingcontract_id)
-      if fki_ezmaxinvoicingcontract_id.nil?
-        fail ArgumentError, 'fki_ezmaxinvoicingcontract_id cannot be nil'
-      end
-
-      if fki_ezmaxinvoicingcontract_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezmaxinvoicingcontract_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezmaxinvoicingcontract_id = fki_ezmaxinvoicingcontract_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezmaxpricing_id Value to be assigned
-    def fki_ezmaxpricing_id=(fki_ezmaxpricing_id)
-      if fki_ezmaxpricing_id.nil?
-        fail ArgumentError, 'fki_ezmaxpricing_id cannot be nil'
-      end
-
-      if fki_ezmaxpricing_id < 1
-        fail ArgumentError, 'invalid value for "fki_ezmaxpricing_id", must be greater than or equal to 1.'
-      end
-
-      @fki_ezmaxpricing_id = fki_ezmaxpricing_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_systemconfigurationtype_id Value to be assigned
-    def fki_systemconfigurationtype_id=(fki_systemconfigurationtype_id)
-      if fki_systemconfigurationtype_id.nil?
-        fail ArgumentError, 'fki_systemconfigurationtype_id cannot be nil'
-      end
-
-      if fki_systemconfigurationtype_id < 1
-        fail ArgumentError, 'invalid value for "fki_systemconfigurationtype_id", must be greater than or equal to 1.'
-      end
-
-      @fki_systemconfigurationtype_id = fki_systemconfigurationtype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] yyyymm_ezmaxinvoicing Value to be assigned
-    def yyyymm_ezmaxinvoicing=(yyyymm_ezmaxinvoicing)
-      if yyyymm_ezmaxinvoicing.nil?
-        fail ArgumentError, 'yyyymm_ezmaxinvoicing cannot be nil'
-      end
-
-      if yyyymm_ezmaxinvoicing.to_s.length > 7
-        fail ArgumentError, 'invalid value for "yyyymm_ezmaxinvoicing", the character length must be smaller than or equal to 7.'
-      end
-
-      @yyyymm_ezmaxinvoicing = yyyymm_ezmaxinvoicing
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezmaxinvoicing_days Value to be assigned
-    def i_ezmaxinvoicing_days=(i_ezmaxinvoicing_days)
-      if i_ezmaxinvoicing_days.nil?
-        fail ArgumentError, 'i_ezmaxinvoicing_days cannot be nil'
-      end
-
-      if i_ezmaxinvoicing_days < 1
-        fail ArgumentError, 'invalid value for "i_ezmaxinvoicing_days", must be greater than or equal to 1.'
-      end
-
-      @i_ezmaxinvoicing_days = i_ezmaxinvoicing_days
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] d_ezmaxinvoicing_rebatepaymenttype Value to be assigned
-    def d_ezmaxinvoicing_rebatepaymenttype=(d_ezmaxinvoicing_rebatepaymenttype)
-      if d_ezmaxinvoicing_rebatepaymenttype.nil?
-        fail ArgumentError, 'd_ezmaxinvoicing_rebatepaymenttype cannot be nil'
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      if d_ezmaxinvoicing_rebatepaymenttype !~ pattern
-        fail ArgumentError, "invalid value for \"d_ezmaxinvoicing_rebatepaymenttype\", must conform to the pattern #{pattern}."
-      end
-
-      @d_ezmaxinvoicing_rebatepaymenttype = d_ezmaxinvoicing_rebatepaymenttype
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezmaxinvoicing_contractlength Value to be assigned
-    def i_ezmaxinvoicing_contractlength=(i_ezmaxinvoicing_contractlength)
-      if i_ezmaxinvoicing_contractlength.nil?
-        fail ArgumentError, 'i_ezmaxinvoicing_contractlength cannot be nil'
-      end
-
-      if i_ezmaxinvoicing_contractlength < 1
-        fail ArgumentError, 'invalid value for "i_ezmaxinvoicing_contractlength", must be greater than or equal to 1.'
-      end
-
-      @i_ezmaxinvoicing_contractlength = i_ezmaxinvoicing_contractlength
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] d_ezmaxinvoicing_rebatecontractlength Value to be assigned
-    def d_ezmaxinvoicing_rebatecontractlength=(d_ezmaxinvoicing_rebatecontractlength)
-      if d_ezmaxinvoicing_rebatecontractlength.nil?
-        fail ArgumentError, 'd_ezmaxinvoicing_rebatecontractlength cannot be nil'
-      end
-
-      pattern = Regexp.new(/^-{0,1}[\d]{1,3}?\.[\d]{2}$/)
-      if d_ezmaxinvoicing_rebatecontractlength !~ pattern
-        fail ArgumentError, "invalid value for \"d_ezmaxinvoicing_rebatecontractlength\", must conform to the pattern #{pattern}."
-      end
-
-      @d_ezmaxinvoicing_rebatecontractlength = d_ezmaxinvoicing_rebatecontractlength
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_ezmaxinvoicing_id == o.pki_ezmaxinvoicing_id &&
-          fki_ezmaxinvoicingcontract_id == o.fki_ezmaxinvoicingcontract_id &&
-          fki_ezmaxpricing_id == o.fki_ezmaxpricing_id &&
-          fki_systemconfigurationtype_id == o.fki_systemconfigurationtype_id &&
-          s_systemconfigurationtype_description_x == o.s_systemconfigurationtype_description_x &&
-          yyyymm_ezmaxinvoicing == o.yyyymm_ezmaxinvoicing &&
-          i_ezmaxinvoicing_days == o.i_ezmaxinvoicing_days &&
-          e_ezmaxinvoicing_paymenttype == o.e_ezmaxinvoicing_paymenttype &&
-          d_ezmaxinvoicing_rebatepaymenttype == o.d_ezmaxinvoicing_rebatepaymenttype &&
-          i_ezmaxinvoicing_contractlength == o.i_ezmaxinvoicing_contractlength &&
-          d_ezmaxinvoicing_rebatecontractlength == o.d_ezmaxinvoicing_rebatecontractlength &&
-          b_ezmaxinvoicing_rebate_ezsignallagents == o.b_ezmaxinvoicing_rebate_ezsignallagents &&
-          obj_audit == o.obj_audit &&
-          obj_ezmaxinvoicingcontract == o.obj_ezmaxinvoicingcontract &&
-          obj_ezmaxpricing == o.obj_ezmaxpricing &&
-          a_obj_ezmaxinvoicingsummaryglobal == o.a_obj_ezmaxinvoicingsummaryglobal &&
-          a_obj_ezmaxinvoicingsummaryexternal == o.a_obj_ezmaxinvoicingsummaryexternal &&
-          a_obj_ezmaxinvoicingsummaryinternal == o.a_obj_ezmaxinvoicingsummaryinternal &&
-          a_obj_ezmaxinvoicingagent == o.a_obj_ezmaxinvoicingagent &&
-          a_obj_ezmaxinvoicinguser == o.a_obj_ezmaxinvoicinguser &&
-          a_obj_ezmaxinvoicingezsignfolder == o.a_obj_ezmaxinvoicingezsignfolder &&
-          a_obj_ezmaxinvoicingezsigndocument == o.a_obj_ezmaxinvoicingezsigndocument
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -653,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezmaxinvoicing_id, fki_ezmaxinvoicingcontract_id, fki_ezmaxpricing_id, fki_systemconfigurationtype_id, s_systemconfigurationtype_description_x, yyyymm_ezmaxinvoicing, i_ezmaxinvoicing_days, e_ezmaxinvoicing_paymenttype, d_ezmaxinvoicing_rebatepaymenttype, i_ezmaxinvoicing_contractlength, d_ezmaxinvoicing_rebatecontractlength, b_ezmaxinvoicing_rebate_ezsignallagents, obj_audit, obj_ezmaxinvoicingcontract, obj_ezmaxpricing, a_obj_ezmaxinvoicingsummaryglobal, a_obj_ezmaxinvoicingsummaryexternal, a_obj_ezmaxinvoicingsummaryinternal, a_obj_ezmaxinvoicingagent, a_obj_ezmaxinvoicinguser, a_obj_ezmaxinvoicingezsignfolder, a_obj_ezmaxinvoicingezsigndocument].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -661,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -737,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

@@ -15,20 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Variableexpense Object
-  class VariableexpenseResponseCompound
-    # The unique ID of the Variableexpense
-    attr_accessor :pki_variableexpense_id
-
-    # The code of the Variableexpense
-    attr_accessor :s_variableexpense_code
-
-    attr_accessor :obj_variableexpense_description
-
-    attr_accessor :e_variableexpense_taxable
-
-    # Whether the variableexpense is active or not
-    attr_accessor :b_variableexpense_isactive
-
+  class VariableexpenseResponseCompound < VariableexpenseResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -54,27 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_variableexpense_id' => :'pkiVariableexpenseID',
-        :'s_variableexpense_code' => :'sVariableexpenseCode',
-        :'obj_variableexpense_description' => :'objVariableexpenseDescription',
-        :'e_variableexpense_taxable' => :'eVariableexpenseTaxable',
-        :'b_variableexpense_isactive' => :'bVariableexpenseIsactive'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_variableexpense_id' => :'Integer',
-        :'s_variableexpense_code' => :'String',
-        :'obj_variableexpense_description' => :'MultilingualVariableexpenseDescription',
-        :'e_variableexpense_taxable' => :'FieldEVariableexpenseTaxable',
-        :'b_variableexpense_isactive' => :'Boolean'
       }
     end
 
@@ -106,57 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_variableexpense_id')
-        self.pki_variableexpense_id = attributes[:'pki_variableexpense_id']
-      else
-        self.pki_variableexpense_id = nil
-      end
-
-      if attributes.key?(:'s_variableexpense_code')
-        self.s_variableexpense_code = attributes[:'s_variableexpense_code']
-      end
-
-      if attributes.key?(:'obj_variableexpense_description')
-        self.obj_variableexpense_description = attributes[:'obj_variableexpense_description']
-      else
-        self.obj_variableexpense_description = nil
-      end
-
-      if attributes.key?(:'e_variableexpense_taxable')
-        self.e_variableexpense_taxable = attributes[:'e_variableexpense_taxable']
-      end
-
-      if attributes.key?(:'b_variableexpense_isactive')
-        self.b_variableexpense_isactive = attributes[:'b_variableexpense_isactive']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_variableexpense_id.nil?
-        invalid_properties.push('invalid value for "pki_variableexpense_id", pki_variableexpense_id cannot be nil.')
-      end
-
-      if @pki_variableexpense_id > 255
-        invalid_properties.push('invalid value for "pki_variableexpense_id", must be smaller than or equal to 255.')
-      end
-
-      if @pki_variableexpense_id < 1
-        invalid_properties.push('invalid value for "pki_variableexpense_id", must be greater than or equal to 1.')
-      end
-
-      pattern = Regexp.new(/^.{0,5}$/)
-      if !@s_variableexpense_code.nil? && @s_variableexpense_code !~ pattern
-        invalid_properties.push("invalid value for \"s_variableexpense_code\", must conform to the pattern #{pattern}.")
-      end
-
-      if @obj_variableexpense_description.nil?
-        invalid_properties.push('invalid value for "obj_variableexpense_description", obj_variableexpense_description cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -164,57 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_variableexpense_id.nil?
-      return false if @pki_variableexpense_id > 255
-      return false if @pki_variableexpense_id < 1
-      return false if !@s_variableexpense_code.nil? && @s_variableexpense_code !~ Regexp.new(/^.{0,5}$/)
-      return false if @obj_variableexpense_description.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_variableexpense_id Value to be assigned
-    def pki_variableexpense_id=(pki_variableexpense_id)
-      if pki_variableexpense_id.nil?
-        fail ArgumentError, 'pki_variableexpense_id cannot be nil'
-      end
-
-      if pki_variableexpense_id > 255
-        fail ArgumentError, 'invalid value for "pki_variableexpense_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_variableexpense_id < 1
-        fail ArgumentError, 'invalid value for "pki_variableexpense_id", must be greater than or equal to 1.'
-      end
-
-      @pki_variableexpense_id = pki_variableexpense_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_variableexpense_code Value to be assigned
-    def s_variableexpense_code=(s_variableexpense_code)
-      if s_variableexpense_code.nil?
-        fail ArgumentError, 's_variableexpense_code cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,5}$/)
-      if s_variableexpense_code !~ pattern
-        fail ArgumentError, "invalid value for \"s_variableexpense_code\", must conform to the pattern #{pattern}."
-      end
-
-      @s_variableexpense_code = s_variableexpense_code
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_variableexpense_id == o.pki_variableexpense_id &&
-          s_variableexpense_code == o.s_variableexpense_code &&
-          obj_variableexpense_description == o.obj_variableexpense_description &&
-          e_variableexpense_taxable == o.e_variableexpense_taxable &&
-          b_variableexpense_isactive == o.b_variableexpense_isactive
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -226,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_variableexpense_id, s_variableexpense_code, obj_variableexpense_description, e_variableexpense_taxable, b_variableexpense_isactive].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -234,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -310,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

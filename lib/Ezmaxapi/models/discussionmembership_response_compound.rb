@@ -15,56 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Discussionmembership Object and children
-  class DiscussionmembershipResponseCompound
-    # The unique ID of the Discussionmembership
-    attr_accessor :pki_discussionmembership_id
-
-    # The unique ID of the Discussion
-    attr_accessor :fki_discussion_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The unique ID of the Usergroup
-    attr_accessor :fki_usergroup_id
-
-    # The unique ID of the Modulesection
-    attr_accessor :fki_modulesection_id
-
-    # The Description containing the detail of who the Discussionmembership refers to
-    attr_accessor :s_discussionmembership_description
-
-    # The joined date of the Discussionmembership
-    attr_accessor :dt_discussionmembership_joined
-
+  class DiscussionmembershipResponseCompound < DiscussionmembershipResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_discussionmembership_id' => :'pkiDiscussionmembershipID',
-        :'fki_discussion_id' => :'fkiDiscussionID',
-        :'fki_user_id' => :'fkiUserID',
-        :'fki_usergroup_id' => :'fkiUsergroupID',
-        :'fki_modulesection_id' => :'fkiModulesectionID',
-        :'s_discussionmembership_description' => :'sDiscussionmembershipDescription',
-        :'dt_discussionmembership_joined' => :'dtDiscussionmembershipJoined'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_discussionmembership_id' => :'Integer',
-        :'fki_discussion_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'fki_usergroup_id' => :'Integer',
-        :'fki_modulesection_id' => :'Integer',
-        :'s_discussionmembership_description' => :'String',
-        :'dt_discussionmembership_joined' => :'String'
       }
     end
 
@@ -96,106 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_discussionmembership_id')
-        self.pki_discussionmembership_id = attributes[:'pki_discussionmembership_id']
-      else
-        self.pki_discussionmembership_id = nil
-      end
-
-      if attributes.key?(:'fki_discussion_id')
-        self.fki_discussion_id = attributes[:'fki_discussion_id']
-      else
-        self.fki_discussion_id = nil
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      end
-
-      if attributes.key?(:'fki_usergroup_id')
-        self.fki_usergroup_id = attributes[:'fki_usergroup_id']
-      end
-
-      if attributes.key?(:'fki_modulesection_id')
-        self.fki_modulesection_id = attributes[:'fki_modulesection_id']
-      end
-
-      if attributes.key?(:'s_discussionmembership_description')
-        self.s_discussionmembership_description = attributes[:'s_discussionmembership_description']
-      else
-        self.s_discussionmembership_description = nil
-      end
-
-      if attributes.key?(:'dt_discussionmembership_joined')
-        self.dt_discussionmembership_joined = attributes[:'dt_discussionmembership_joined']
-      else
-        self.dt_discussionmembership_joined = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_discussionmembership_id.nil?
-        invalid_properties.push('invalid value for "pki_discussionmembership_id", pki_discussionmembership_id cannot be nil.')
-      end
-
-      if @pki_discussionmembership_id > 16777215
-        invalid_properties.push('invalid value for "pki_discussionmembership_id", must be smaller than or equal to 16777215.')
-      end
-
-      if @pki_discussionmembership_id < 0
-        invalid_properties.push('invalid value for "pki_discussionmembership_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_discussion_id.nil?
-        invalid_properties.push('invalid value for "fki_discussion_id", fki_discussion_id cannot be nil.')
-      end
-
-      if @fki_discussion_id > 16777215
-        invalid_properties.push('invalid value for "fki_discussion_id", must be smaller than or equal to 16777215.')
-      end
-
-      if @fki_discussion_id < 0
-        invalid_properties.push('invalid value for "fki_discussion_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_user_id.nil? && @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_usergroup_id.nil? && @fki_usergroup_id > 255
-        invalid_properties.push('invalid value for "fki_usergroup_id", must be smaller than or equal to 255.')
-      end
-
-      if !@fki_usergroup_id.nil? && @fki_usergroup_id < 0
-        invalid_properties.push('invalid value for "fki_usergroup_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_modulesection_id.nil? && @fki_modulesection_id < 0
-        invalid_properties.push('invalid value for "fki_modulesection_id", must be greater than or equal to 0.')
-      end
-
-      if @s_discussionmembership_description.nil?
-        invalid_properties.push('invalid value for "s_discussionmembership_description", s_discussionmembership_description cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,100}$/)
-      if @s_discussionmembership_description !~ pattern
-        invalid_properties.push("invalid value for \"s_discussionmembership_description\", must conform to the pattern #{pattern}.")
-      end
-
-      if @dt_discussionmembership_joined.nil?
-        invalid_properties.push('invalid value for "dt_discussionmembership_joined", dt_discussionmembership_joined cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
-      if @dt_discussionmembership_joined !~ pattern
-        invalid_properties.push("invalid value for \"dt_discussionmembership_joined\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -203,147 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_discussionmembership_id.nil?
-      return false if @pki_discussionmembership_id > 16777215
-      return false if @pki_discussionmembership_id < 0
-      return false if @fki_discussion_id.nil?
-      return false if @fki_discussion_id > 16777215
-      return false if @fki_discussion_id < 0
-      return false if !@fki_user_id.nil? && @fki_user_id < 0
-      return false if !@fki_usergroup_id.nil? && @fki_usergroup_id > 255
-      return false if !@fki_usergroup_id.nil? && @fki_usergroup_id < 0
-      return false if !@fki_modulesection_id.nil? && @fki_modulesection_id < 0
-      return false if @s_discussionmembership_description.nil?
-      return false if @s_discussionmembership_description !~ Regexp.new(/^.{0,100}$/)
-      return false if @dt_discussionmembership_joined.nil?
-      return false if @dt_discussionmembership_joined !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_discussionmembership_id Value to be assigned
-    def pki_discussionmembership_id=(pki_discussionmembership_id)
-      if pki_discussionmembership_id.nil?
-        fail ArgumentError, 'pki_discussionmembership_id cannot be nil'
-      end
-
-      if pki_discussionmembership_id > 16777215
-        fail ArgumentError, 'invalid value for "pki_discussionmembership_id", must be smaller than or equal to 16777215.'
-      end
-
-      if pki_discussionmembership_id < 0
-        fail ArgumentError, 'invalid value for "pki_discussionmembership_id", must be greater than or equal to 0.'
-      end
-
-      @pki_discussionmembership_id = pki_discussionmembership_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_discussion_id Value to be assigned
-    def fki_discussion_id=(fki_discussion_id)
-      if fki_discussion_id.nil?
-        fail ArgumentError, 'fki_discussion_id cannot be nil'
-      end
-
-      if fki_discussion_id > 16777215
-        fail ArgumentError, 'invalid value for "fki_discussion_id", must be smaller than or equal to 16777215.'
-      end
-
-      if fki_discussion_id < 0
-        fail ArgumentError, 'invalid value for "fki_discussion_id", must be greater than or equal to 0.'
-      end
-
-      @fki_discussion_id = fki_discussion_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_usergroup_id Value to be assigned
-    def fki_usergroup_id=(fki_usergroup_id)
-      if fki_usergroup_id.nil?
-        fail ArgumentError, 'fki_usergroup_id cannot be nil'
-      end
-
-      if fki_usergroup_id > 255
-        fail ArgumentError, 'invalid value for "fki_usergroup_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_usergroup_id < 0
-        fail ArgumentError, 'invalid value for "fki_usergroup_id", must be greater than or equal to 0.'
-      end
-
-      @fki_usergroup_id = fki_usergroup_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_modulesection_id Value to be assigned
-    def fki_modulesection_id=(fki_modulesection_id)
-      if fki_modulesection_id.nil?
-        fail ArgumentError, 'fki_modulesection_id cannot be nil'
-      end
-
-      if fki_modulesection_id < 0
-        fail ArgumentError, 'invalid value for "fki_modulesection_id", must be greater than or equal to 0.'
-      end
-
-      @fki_modulesection_id = fki_modulesection_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_discussionmembership_description Value to be assigned
-    def s_discussionmembership_description=(s_discussionmembership_description)
-      if s_discussionmembership_description.nil?
-        fail ArgumentError, 's_discussionmembership_description cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,100}$/)
-      if s_discussionmembership_description !~ pattern
-        fail ArgumentError, "invalid value for \"s_discussionmembership_description\", must conform to the pattern #{pattern}."
-      end
-
-      @s_discussionmembership_description = s_discussionmembership_description
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] dt_discussionmembership_joined Value to be assigned
-    def dt_discussionmembership_joined=(dt_discussionmembership_joined)
-      if dt_discussionmembership_joined.nil?
-        fail ArgumentError, 'dt_discussionmembership_joined cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
-      if dt_discussionmembership_joined !~ pattern
-        fail ArgumentError, "invalid value for \"dt_discussionmembership_joined\", must conform to the pattern #{pattern}."
-      end
-
-      @dt_discussionmembership_joined = dt_discussionmembership_joined
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_discussionmembership_id == o.pki_discussionmembership_id &&
-          fki_discussion_id == o.fki_discussion_id &&
-          fki_user_id == o.fki_user_id &&
-          fki_usergroup_id == o.fki_usergroup_id &&
-          fki_modulesection_id == o.fki_modulesection_id &&
-          s_discussionmembership_description == o.s_discussionmembership_description &&
-          dt_discussionmembership_joined == o.dt_discussionmembership_joined
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -355,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_discussionmembership_id, fki_discussion_id, fki_user_id, fki_usergroup_id, fki_modulesection_id, s_discussionmembership_description, dt_discussionmembership_joined].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -363,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -439,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

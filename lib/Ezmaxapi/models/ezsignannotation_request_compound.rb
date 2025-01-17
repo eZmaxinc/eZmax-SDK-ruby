@@ -15,37 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezsignannotation Object and children
-  class EzsignannotationRequestCompound
-    # The unique ID of the Ezsignannotation
-    attr_accessor :pki_ezsignannotation_id
-
-    # The unique ID of the Ezsigndocument
-    attr_accessor :fki_ezsigndocument_id
-
-    attr_accessor :e_ezsignannotation_horizontalalignment
-
-    attr_accessor :e_ezsignannotation_verticalalignment
-
-    attr_accessor :e_ezsignannotation_type
-
-    # The X coordinate (Horizontal) where to put the Ezsignannotation on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignannotation 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-    attr_accessor :i_ezsignannotation_x
-
-    # The Y coordinate (Vertical) where to put the Ezsignannotation on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignannotation 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-    attr_accessor :i_ezsignannotation_y
-
-    # The Width of the Ezsignannotation.  Width is calculated at 100dpi (dot per inch). So for example, if you want to have the width of the Ezsignannotation to be 3 inches, you would use \"300\" for the Width.
-    attr_accessor :i_ezsignannotation_width
-
-    # The Height of the Ezsignannotation.  Height is calculated at 100dpi (dot per inch). So for example, if you want to have the height of the Ezsignannotation to be 2 inches, you would use \"200\" for the Height.  This can only be set if eEzsignannotationType is **StrikethroughBlock** or **Text**
-    attr_accessor :i_ezsignannotation_height
-
-    # The Text of the Ezsignannotation
-    attr_accessor :s_ezsignannotation_text
-
-    # The page number in the Ezsigndocument
-    attr_accessor :i_ezsignpage_pagenumber
-
+  class EzsignannotationRequestCompound < EzsignannotationRequest
     attr_accessor :obj_textstylestatic
 
     class EnumAttributeValidator
@@ -73,40 +43,18 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsignannotation_id' => :'pkiEzsignannotationID',
-        :'fki_ezsigndocument_id' => :'fkiEzsigndocumentID',
-        :'e_ezsignannotation_horizontalalignment' => :'eEzsignannotationHorizontalalignment',
-        :'e_ezsignannotation_verticalalignment' => :'eEzsignannotationVerticalalignment',
-        :'e_ezsignannotation_type' => :'eEzsignannotationType',
-        :'i_ezsignannotation_x' => :'iEzsignannotationX',
-        :'i_ezsignannotation_y' => :'iEzsignannotationY',
-        :'i_ezsignannotation_width' => :'iEzsignannotationWidth',
-        :'i_ezsignannotation_height' => :'iEzsignannotationHeight',
-        :'s_ezsignannotation_text' => :'sEzsignannotationText',
-        :'i_ezsignpage_pagenumber' => :'iEzsignpagePagenumber',
         :'obj_textstylestatic' => :'objTextstylestatic'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsignannotation_id' => :'Integer',
-        :'fki_ezsigndocument_id' => :'Integer',
-        :'e_ezsignannotation_horizontalalignment' => :'EnumHorizontalalignment',
-        :'e_ezsignannotation_verticalalignment' => :'EnumVerticalalignment',
-        :'e_ezsignannotation_type' => :'FieldEEzsignannotationType',
-        :'i_ezsignannotation_x' => :'Integer',
-        :'i_ezsignannotation_y' => :'Integer',
-        :'i_ezsignannotation_width' => :'Integer',
-        :'i_ezsignannotation_height' => :'Integer',
-        :'s_ezsignannotation_text' => :'String',
-        :'i_ezsignpage_pagenumber' => :'Integer',
         :'obj_textstylestatic' => :'TextstylestaticRequestCompound'
       }
     end
@@ -139,59 +87,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsignannotation_id')
-        self.pki_ezsignannotation_id = attributes[:'pki_ezsignannotation_id']
-      end
-
-      if attributes.key?(:'fki_ezsigndocument_id')
-        self.fki_ezsigndocument_id = attributes[:'fki_ezsigndocument_id']
-      else
-        self.fki_ezsigndocument_id = nil
-      end
-
-      if attributes.key?(:'e_ezsignannotation_horizontalalignment')
-        self.e_ezsignannotation_horizontalalignment = attributes[:'e_ezsignannotation_horizontalalignment']
-      end
-
-      if attributes.key?(:'e_ezsignannotation_verticalalignment')
-        self.e_ezsignannotation_verticalalignment = attributes[:'e_ezsignannotation_verticalalignment']
-      end
-
-      if attributes.key?(:'e_ezsignannotation_type')
-        self.e_ezsignannotation_type = attributes[:'e_ezsignannotation_type']
-      else
-        self.e_ezsignannotation_type = nil
-      end
-
-      if attributes.key?(:'i_ezsignannotation_x')
-        self.i_ezsignannotation_x = attributes[:'i_ezsignannotation_x']
-      else
-        self.i_ezsignannotation_x = nil
-      end
-
-      if attributes.key?(:'i_ezsignannotation_y')
-        self.i_ezsignannotation_y = attributes[:'i_ezsignannotation_y']
-      else
-        self.i_ezsignannotation_y = nil
-      end
-
-      if attributes.key?(:'i_ezsignannotation_width')
-        self.i_ezsignannotation_width = attributes[:'i_ezsignannotation_width']
-      end
-
-      if attributes.key?(:'i_ezsignannotation_height')
-        self.i_ezsignannotation_height = attributes[:'i_ezsignannotation_height']
-      end
-
-      if attributes.key?(:'s_ezsignannotation_text')
-        self.s_ezsignannotation_text = attributes[:'s_ezsignannotation_text']
-      end
-
-      if attributes.key?(:'i_ezsignpage_pagenumber')
-        self.i_ezsignpage_pagenumber = attributes[:'i_ezsignpage_pagenumber']
-      else
-        self.i_ezsignpage_pagenumber = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'obj_textstylestatic')
         self.obj_textstylestatic = attributes[:'obj_textstylestatic']
@@ -202,51 +99,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @fki_ezsigndocument_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigndocument_id", fki_ezsigndocument_id cannot be nil.')
-      end
-
-      if @fki_ezsigndocument_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigndocument_id", must be greater than or equal to 0.')
-      end
-
-      if @e_ezsignannotation_type.nil?
-        invalid_properties.push('invalid value for "e_ezsignannotation_type", e_ezsignannotation_type cannot be nil.')
-      end
-
-      if @i_ezsignannotation_x.nil?
-        invalid_properties.push('invalid value for "i_ezsignannotation_x", i_ezsignannotation_x cannot be nil.')
-      end
-
-      if @i_ezsignannotation_x < 0
-        invalid_properties.push('invalid value for "i_ezsignannotation_x", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsignannotation_y.nil?
-        invalid_properties.push('invalid value for "i_ezsignannotation_y", i_ezsignannotation_y cannot be nil.')
-      end
-
-      if @i_ezsignannotation_y < 0
-        invalid_properties.push('invalid value for "i_ezsignannotation_y", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsignannotation_width.nil? && @i_ezsignannotation_width < 0
-        invalid_properties.push('invalid value for "i_ezsignannotation_width", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsignannotation_height.nil? && @i_ezsignannotation_height < 0
-        invalid_properties.push('invalid value for "i_ezsignannotation_height", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsignpage_pagenumber.nil?
-        invalid_properties.push('invalid value for "i_ezsignpage_pagenumber", i_ezsignpage_pagenumber cannot be nil.')
-      end
-
-      if @i_ezsignpage_pagenumber < 1
-        invalid_properties.push('invalid value for "i_ezsignpage_pagenumber", must be greater than or equal to 1.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -254,102 +107,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @fki_ezsigndocument_id.nil?
-      return false if @fki_ezsigndocument_id < 0
-      return false if @e_ezsignannotation_type.nil?
-      return false if @i_ezsignannotation_x.nil?
-      return false if @i_ezsignannotation_x < 0
-      return false if @i_ezsignannotation_y.nil?
-      return false if @i_ezsignannotation_y < 0
-      return false if !@i_ezsignannotation_width.nil? && @i_ezsignannotation_width < 0
-      return false if !@i_ezsignannotation_height.nil? && @i_ezsignannotation_height < 0
-      return false if @i_ezsignpage_pagenumber.nil?
-      return false if @i_ezsignpage_pagenumber < 1
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigndocument_id Value to be assigned
-    def fki_ezsigndocument_id=(fki_ezsigndocument_id)
-      if fki_ezsigndocument_id.nil?
-        fail ArgumentError, 'fki_ezsigndocument_id cannot be nil'
-      end
-
-      if fki_ezsigndocument_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigndocument_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigndocument_id = fki_ezsigndocument_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignannotation_x Value to be assigned
-    def i_ezsignannotation_x=(i_ezsignannotation_x)
-      if i_ezsignannotation_x.nil?
-        fail ArgumentError, 'i_ezsignannotation_x cannot be nil'
-      end
-
-      if i_ezsignannotation_x < 0
-        fail ArgumentError, 'invalid value for "i_ezsignannotation_x", must be greater than or equal to 0.'
-      end
-
-      @i_ezsignannotation_x = i_ezsignannotation_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignannotation_y Value to be assigned
-    def i_ezsignannotation_y=(i_ezsignannotation_y)
-      if i_ezsignannotation_y.nil?
-        fail ArgumentError, 'i_ezsignannotation_y cannot be nil'
-      end
-
-      if i_ezsignannotation_y < 0
-        fail ArgumentError, 'invalid value for "i_ezsignannotation_y", must be greater than or equal to 0.'
-      end
-
-      @i_ezsignannotation_y = i_ezsignannotation_y
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignannotation_width Value to be assigned
-    def i_ezsignannotation_width=(i_ezsignannotation_width)
-      if i_ezsignannotation_width.nil?
-        fail ArgumentError, 'i_ezsignannotation_width cannot be nil'
-      end
-
-      if i_ezsignannotation_width < 0
-        fail ArgumentError, 'invalid value for "i_ezsignannotation_width", must be greater than or equal to 0.'
-      end
-
-      @i_ezsignannotation_width = i_ezsignannotation_width
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignannotation_height Value to be assigned
-    def i_ezsignannotation_height=(i_ezsignannotation_height)
-      if i_ezsignannotation_height.nil?
-        fail ArgumentError, 'i_ezsignannotation_height cannot be nil'
-      end
-
-      if i_ezsignannotation_height < 0
-        fail ArgumentError, 'invalid value for "i_ezsignannotation_height", must be greater than or equal to 0.'
-      end
-
-      @i_ezsignannotation_height = i_ezsignannotation_height
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsignpage_pagenumber Value to be assigned
-    def i_ezsignpage_pagenumber=(i_ezsignpage_pagenumber)
-      if i_ezsignpage_pagenumber.nil?
-        fail ArgumentError, 'i_ezsignpage_pagenumber cannot be nil'
-      end
-
-      if i_ezsignpage_pagenumber < 1
-        fail ArgumentError, 'invalid value for "i_ezsignpage_pagenumber", must be greater than or equal to 1.'
-      end
-
-      @i_ezsignpage_pagenumber = i_ezsignpage_pagenumber
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -357,18 +115,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsignannotation_id == o.pki_ezsignannotation_id &&
-          fki_ezsigndocument_id == o.fki_ezsigndocument_id &&
-          e_ezsignannotation_horizontalalignment == o.e_ezsignannotation_horizontalalignment &&
-          e_ezsignannotation_verticalalignment == o.e_ezsignannotation_verticalalignment &&
-          e_ezsignannotation_type == o.e_ezsignannotation_type &&
-          i_ezsignannotation_x == o.i_ezsignannotation_x &&
-          i_ezsignannotation_y == o.i_ezsignannotation_y &&
-          i_ezsignannotation_width == o.i_ezsignannotation_width &&
-          i_ezsignannotation_height == o.i_ezsignannotation_height &&
-          s_ezsignannotation_text == o.s_ezsignannotation_text &&
-          i_ezsignpage_pagenumber == o.i_ezsignpage_pagenumber &&
-          obj_textstylestatic == o.obj_textstylestatic
+          obj_textstylestatic == o.obj_textstylestatic && super(o)
     end
 
     # @see the `==` method
@@ -380,7 +127,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignannotation_id, fki_ezsigndocument_id, e_ezsignannotation_horizontalalignment, e_ezsignannotation_verticalalignment, e_ezsignannotation_type, i_ezsignannotation_x, i_ezsignannotation_y, i_ezsignannotation_width, i_ezsignannotation_height, s_ezsignannotation_text, i_ezsignpage_pagenumber, obj_textstylestatic].hash
+      [obj_textstylestatic].hash
     end
 
     # Builds the object from hash
@@ -388,6 +135,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -464,7 +212,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

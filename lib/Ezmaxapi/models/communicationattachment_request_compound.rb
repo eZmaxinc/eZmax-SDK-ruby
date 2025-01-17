@@ -15,41 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Communicationattachment Object and children
-  class CommunicationattachmentRequestCompound
-    # The unique ID of the Communicationattachment
-    attr_accessor :pki_communicationattachment_id
-
-    # The unique ID of the Attachment.
-    attr_accessor :fki_attachment_id
-
-    # The unique ID of the Invoice.
-    attr_accessor :fki_invoice_id
-
-    # The unique ID of the Salarypreparation.
-    attr_accessor :fki_salarypreparation_id
-
+  class CommunicationattachmentRequestCompound < CommunicationattachmentRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_communicationattachment_id' => :'pkiCommunicationattachmentID',
-        :'fki_attachment_id' => :'fkiAttachmentID',
-        :'fki_invoice_id' => :'fkiInvoiceID',
-        :'fki_salarypreparation_id' => :'fkiSalarypreparationID'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_communicationattachment_id' => :'Integer',
-        :'fki_attachment_id' => :'Integer',
-        :'fki_invoice_id' => :'Integer',
-        :'fki_salarypreparation_id' => :'Integer'
       }
     end
 
@@ -81,40 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_communicationattachment_id')
-        self.pki_communicationattachment_id = attributes[:'pki_communicationattachment_id']
-      end
-
-      if attributes.key?(:'fki_attachment_id')
-        self.fki_attachment_id = attributes[:'fki_attachment_id']
-      end
-
-      if attributes.key?(:'fki_invoice_id')
-        self.fki_invoice_id = attributes[:'fki_invoice_id']
-      end
-
-      if attributes.key?(:'fki_salarypreparation_id')
-        self.fki_salarypreparation_id = attributes[:'fki_salarypreparation_id']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@fki_attachment_id.nil? && @fki_attachment_id < 0
-        invalid_properties.push('invalid value for "fki_attachment_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_invoice_id.nil? && @fki_invoice_id < 0
-        invalid_properties.push('invalid value for "fki_invoice_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_salarypreparation_id.nil? && @fki_salarypreparation_id < 0
-        invalid_properties.push('invalid value for "fki_salarypreparation_id", must be greater than or equal to 0.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -122,63 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@fki_attachment_id.nil? && @fki_attachment_id < 0
-      return false if !@fki_invoice_id.nil? && @fki_invoice_id < 0
-      return false if !@fki_salarypreparation_id.nil? && @fki_salarypreparation_id < 0
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_attachment_id Value to be assigned
-    def fki_attachment_id=(fki_attachment_id)
-      if fki_attachment_id.nil?
-        fail ArgumentError, 'fki_attachment_id cannot be nil'
-      end
-
-      if fki_attachment_id < 0
-        fail ArgumentError, 'invalid value for "fki_attachment_id", must be greater than or equal to 0.'
-      end
-
-      @fki_attachment_id = fki_attachment_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_invoice_id Value to be assigned
-    def fki_invoice_id=(fki_invoice_id)
-      if fki_invoice_id.nil?
-        fail ArgumentError, 'fki_invoice_id cannot be nil'
-      end
-
-      if fki_invoice_id < 0
-        fail ArgumentError, 'invalid value for "fki_invoice_id", must be greater than or equal to 0.'
-      end
-
-      @fki_invoice_id = fki_invoice_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_salarypreparation_id Value to be assigned
-    def fki_salarypreparation_id=(fki_salarypreparation_id)
-      if fki_salarypreparation_id.nil?
-        fail ArgumentError, 'fki_salarypreparation_id cannot be nil'
-      end
-
-      if fki_salarypreparation_id < 0
-        fail ArgumentError, 'invalid value for "fki_salarypreparation_id", must be greater than or equal to 0.'
-      end
-
-      @fki_salarypreparation_id = fki_salarypreparation_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_communicationattachment_id == o.pki_communicationattachment_id &&
-          fki_attachment_id == o.fki_attachment_id &&
-          fki_invoice_id == o.fki_invoice_id &&
-          fki_salarypreparation_id == o.fki_salarypreparation_id
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -190,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_communicationattachment_id, fki_attachment_id, fki_invoice_id, fki_salarypreparation_id].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -198,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -274,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

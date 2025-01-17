@@ -15,94 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezsigntemplatesignature Object
-  class EzsigntemplatesignatureResponseCompoundV3
-    # The unique ID of the Ezsigntemplatesignature
-    attr_accessor :pki_ezsigntemplatesignature_id
-
-    # The unique ID of the Ezsigntemplatedocument
-    attr_accessor :fki_ezsigntemplatedocument_id
-
-    # The unique ID of the Ezsigntemplatesigner
-    attr_accessor :fki_ezsigntemplatesigner_id
-
-    # The unique ID of the Ezsigntemplatesigner
-    attr_accessor :fki_ezsigntemplatesigner_id_validation
-
-    # Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType = Signature.
-    attr_accessor :b_ezsigntemplatesignature_handwritten
-
-    # Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType = Signature.
-    attr_accessor :b_ezsigntemplatesignature_reason
-
-    attr_accessor :e_ezsigntemplatesignature_positioning
-
-    # The page number in the Ezsigntemplatedocument
-    attr_accessor :i_ezsigntemplatedocumentpage_pagenumber
-
-    # The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-    attr_accessor :i_ezsigntemplatesignature_x
-
-    # The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-    attr_accessor :i_ezsigntemplatesignature_y
-
-    # The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
-    attr_accessor :i_ezsigntemplatesignature_width
-
-    # The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
-    attr_accessor :i_ezsigntemplatesignature_height
-
-    # The step when the Ezsigntemplatesigner will be invited to sign
-    attr_accessor :i_ezsigntemplatesignature_step
-
-    attr_accessor :e_ezsigntemplatesignature_type
-
-    attr_accessor :e_ezsigntemplatesignature_consultationtrigger
-
-    # A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature
-    attr_accessor :t_ezsigntemplatesignature_tooltip
-
-    attr_accessor :e_ezsigntemplatesignature_tooltipposition
-
-    attr_accessor :e_ezsigntemplatesignature_font
-
-    # The step when the Ezsigntemplatesigner will be invited to validate the Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments
-    attr_accessor :i_ezsigntemplatesignature_validationstep
-
-    # The description attached to the attachment name added in Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments
-    attr_accessor :s_ezsigntemplatesignature_attachmentdescription
-
-    attr_accessor :e_ezsigntemplatesignature_attachmentnamesource
-
-    # Whether the Ezsigntemplatesignature is required or not. This field is relevant only with Ezsigntemplatesignature with eEzsigntemplatesignatureType = Attachments.
-    attr_accessor :b_ezsigntemplatesignature_required
-
-    # The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
-    attr_accessor :i_ezsigntemplatesignature_maxlength
-
-    # The default value for the Ezsigntemplatesignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
-    attr_accessor :s_ezsigntemplatesignature_defaultvalue
-
-    # A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
-    attr_accessor :s_ezsigntemplatesignature_regexp
-
-    attr_accessor :e_ezsigntemplatesignature_textvalidation
-
-    # Description of validation rule. Show by signatory.
-    attr_accessor :s_ezsigntemplatesignature_textvalidationcustommessage
-
-    attr_accessor :e_ezsigntemplatesignature_dependencyrequirement
-
-    # The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
-    attr_accessor :s_ezsigntemplatesignature_positioningpattern
-
-    # The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
-    attr_accessor :i_ezsigntemplatesignature_positioningoffsetx
-
-    # The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
-    attr_accessor :i_ezsigntemplatesignature_positioningoffsety
-
-    attr_accessor :e_ezsigntemplatesignature_positioningoccurence
-
+  class EzsigntemplatesignatureResponseCompoundV3 < EzsigntemplatesignatureResponse
     # Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
     attr_accessor :b_ezsigntemplatesignature_customdate
 
@@ -136,84 +49,20 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsigntemplatesignature_id' => :'pkiEzsigntemplatesignatureID',
-        :'fki_ezsigntemplatedocument_id' => :'fkiEzsigntemplatedocumentID',
-        :'fki_ezsigntemplatesigner_id' => :'fkiEzsigntemplatesignerID',
-        :'fki_ezsigntemplatesigner_id_validation' => :'fkiEzsigntemplatesignerIDValidation',
-        :'b_ezsigntemplatesignature_handwritten' => :'bEzsigntemplatesignatureHandwritten',
-        :'b_ezsigntemplatesignature_reason' => :'bEzsigntemplatesignatureReason',
-        :'e_ezsigntemplatesignature_positioning' => :'eEzsigntemplatesignaturePositioning',
-        :'i_ezsigntemplatedocumentpage_pagenumber' => :'iEzsigntemplatedocumentpagePagenumber',
-        :'i_ezsigntemplatesignature_x' => :'iEzsigntemplatesignatureX',
-        :'i_ezsigntemplatesignature_y' => :'iEzsigntemplatesignatureY',
-        :'i_ezsigntemplatesignature_width' => :'iEzsigntemplatesignatureWidth',
-        :'i_ezsigntemplatesignature_height' => :'iEzsigntemplatesignatureHeight',
-        :'i_ezsigntemplatesignature_step' => :'iEzsigntemplatesignatureStep',
-        :'e_ezsigntemplatesignature_type' => :'eEzsigntemplatesignatureType',
-        :'e_ezsigntemplatesignature_consultationtrigger' => :'eEzsigntemplatesignatureConsultationtrigger',
-        :'t_ezsigntemplatesignature_tooltip' => :'tEzsigntemplatesignatureTooltip',
-        :'e_ezsigntemplatesignature_tooltipposition' => :'eEzsigntemplatesignatureTooltipposition',
-        :'e_ezsigntemplatesignature_font' => :'eEzsigntemplatesignatureFont',
-        :'i_ezsigntemplatesignature_validationstep' => :'iEzsigntemplatesignatureValidationstep',
-        :'s_ezsigntemplatesignature_attachmentdescription' => :'sEzsigntemplatesignatureAttachmentdescription',
-        :'e_ezsigntemplatesignature_attachmentnamesource' => :'eEzsigntemplatesignatureAttachmentnamesource',
-        :'b_ezsigntemplatesignature_required' => :'bEzsigntemplatesignatureRequired',
-        :'i_ezsigntemplatesignature_maxlength' => :'iEzsigntemplatesignatureMaxlength',
-        :'s_ezsigntemplatesignature_defaultvalue' => :'sEzsigntemplatesignatureDefaultvalue',
-        :'s_ezsigntemplatesignature_regexp' => :'sEzsigntemplatesignatureRegexp',
-        :'e_ezsigntemplatesignature_textvalidation' => :'eEzsigntemplatesignatureTextvalidation',
-        :'s_ezsigntemplatesignature_textvalidationcustommessage' => :'sEzsigntemplatesignatureTextvalidationcustommessage',
-        :'e_ezsigntemplatesignature_dependencyrequirement' => :'eEzsigntemplatesignatureDependencyrequirement',
-        :'s_ezsigntemplatesignature_positioningpattern' => :'sEzsigntemplatesignaturePositioningpattern',
-        :'i_ezsigntemplatesignature_positioningoffsetx' => :'iEzsigntemplatesignaturePositioningoffsetx',
-        :'i_ezsigntemplatesignature_positioningoffsety' => :'iEzsigntemplatesignaturePositioningoffsety',
-        :'e_ezsigntemplatesignature_positioningoccurence' => :'eEzsigntemplatesignaturePositioningoccurence',
         :'b_ezsigntemplatesignature_customdate' => :'bEzsigntemplatesignatureCustomdate',
         :'a_obj_ezsigntemplatesignaturecustomdate' => :'a_objEzsigntemplatesignaturecustomdate',
         :'a_obj_ezsigntemplateelementdependency' => :'a_objEzsigntemplateelementdependency'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsigntemplatesignature_id' => :'Integer',
-        :'fki_ezsigntemplatedocument_id' => :'Integer',
-        :'fki_ezsigntemplatesigner_id' => :'Integer',
-        :'fki_ezsigntemplatesigner_id_validation' => :'Integer',
-        :'b_ezsigntemplatesignature_handwritten' => :'Boolean',
-        :'b_ezsigntemplatesignature_reason' => :'Boolean',
-        :'e_ezsigntemplatesignature_positioning' => :'FieldEEzsigntemplatesignaturePositioning',
-        :'i_ezsigntemplatedocumentpage_pagenumber' => :'Integer',
-        :'i_ezsigntemplatesignature_x' => :'Integer',
-        :'i_ezsigntemplatesignature_y' => :'Integer',
-        :'i_ezsigntemplatesignature_width' => :'Integer',
-        :'i_ezsigntemplatesignature_height' => :'Integer',
-        :'i_ezsigntemplatesignature_step' => :'Integer',
-        :'e_ezsigntemplatesignature_type' => :'FieldEEzsigntemplatesignatureType',
-        :'e_ezsigntemplatesignature_consultationtrigger' => :'FieldEEzsigntemplatesignatureConsultationtrigger',
-        :'t_ezsigntemplatesignature_tooltip' => :'String',
-        :'e_ezsigntemplatesignature_tooltipposition' => :'FieldEEzsigntemplatesignatureTooltipposition',
-        :'e_ezsigntemplatesignature_font' => :'FieldEEzsigntemplatesignatureFont',
-        :'i_ezsigntemplatesignature_validationstep' => :'Integer',
-        :'s_ezsigntemplatesignature_attachmentdescription' => :'String',
-        :'e_ezsigntemplatesignature_attachmentnamesource' => :'FieldEEzsigntemplatesignatureAttachmentnamesource',
-        :'b_ezsigntemplatesignature_required' => :'Boolean',
-        :'i_ezsigntemplatesignature_maxlength' => :'Integer',
-        :'s_ezsigntemplatesignature_defaultvalue' => :'String',
-        :'s_ezsigntemplatesignature_regexp' => :'String',
-        :'e_ezsigntemplatesignature_textvalidation' => :'EnumTextvalidation',
-        :'s_ezsigntemplatesignature_textvalidationcustommessage' => :'String',
-        :'e_ezsigntemplatesignature_dependencyrequirement' => :'FieldEEzsigntemplatesignatureDependencyrequirement',
-        :'s_ezsigntemplatesignature_positioningpattern' => :'String',
-        :'i_ezsigntemplatesignature_positioningoffsetx' => :'Integer',
-        :'i_ezsigntemplatesignature_positioningoffsety' => :'Integer',
-        :'e_ezsigntemplatesignature_positioningoccurence' => :'FieldEEzsigntemplatesignaturePositioningoccurence',
         :'b_ezsigntemplatesignature_customdate' => :'Boolean',
         :'a_obj_ezsigntemplatesignaturecustomdate' => :'Array<EzsigntemplatesignaturecustomdateResponseCompoundV2>',
         :'a_obj_ezsigntemplateelementdependency' => :'Array<EzsigntemplateelementdependencyResponseCompound>'
@@ -248,145 +97,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsigntemplatesignature_id')
-        self.pki_ezsigntemplatesignature_id = attributes[:'pki_ezsigntemplatesignature_id']
-      else
-        self.pki_ezsigntemplatesignature_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplatedocument_id')
-        self.fki_ezsigntemplatedocument_id = attributes[:'fki_ezsigntemplatedocument_id']
-      else
-        self.fki_ezsigntemplatedocument_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplatesigner_id')
-        self.fki_ezsigntemplatesigner_id = attributes[:'fki_ezsigntemplatesigner_id']
-      else
-        self.fki_ezsigntemplatesigner_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplatesigner_id_validation')
-        self.fki_ezsigntemplatesigner_id_validation = attributes[:'fki_ezsigntemplatesigner_id_validation']
-      end
-
-      if attributes.key?(:'b_ezsigntemplatesignature_handwritten')
-        self.b_ezsigntemplatesignature_handwritten = attributes[:'b_ezsigntemplatesignature_handwritten']
-      end
-
-      if attributes.key?(:'b_ezsigntemplatesignature_reason')
-        self.b_ezsigntemplatesignature_reason = attributes[:'b_ezsigntemplatesignature_reason']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_positioning')
-        self.e_ezsigntemplatesignature_positioning = attributes[:'e_ezsigntemplatesignature_positioning']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpage_pagenumber')
-        self.i_ezsigntemplatedocumentpage_pagenumber = attributes[:'i_ezsigntemplatedocumentpage_pagenumber']
-      else
-        self.i_ezsigntemplatedocumentpage_pagenumber = nil
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_x')
-        self.i_ezsigntemplatesignature_x = attributes[:'i_ezsigntemplatesignature_x']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_y')
-        self.i_ezsigntemplatesignature_y = attributes[:'i_ezsigntemplatesignature_y']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_width')
-        self.i_ezsigntemplatesignature_width = attributes[:'i_ezsigntemplatesignature_width']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_height')
-        self.i_ezsigntemplatesignature_height = attributes[:'i_ezsigntemplatesignature_height']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_step')
-        self.i_ezsigntemplatesignature_step = attributes[:'i_ezsigntemplatesignature_step']
-      else
-        self.i_ezsigntemplatesignature_step = nil
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_type')
-        self.e_ezsigntemplatesignature_type = attributes[:'e_ezsigntemplatesignature_type']
-      else
-        self.e_ezsigntemplatesignature_type = nil
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_consultationtrigger')
-        self.e_ezsigntemplatesignature_consultationtrigger = attributes[:'e_ezsigntemplatesignature_consultationtrigger']
-      end
-
-      if attributes.key?(:'t_ezsigntemplatesignature_tooltip')
-        self.t_ezsigntemplatesignature_tooltip = attributes[:'t_ezsigntemplatesignature_tooltip']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_tooltipposition')
-        self.e_ezsigntemplatesignature_tooltipposition = attributes[:'e_ezsigntemplatesignature_tooltipposition']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_font')
-        self.e_ezsigntemplatesignature_font = attributes[:'e_ezsigntemplatesignature_font']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_validationstep')
-        self.i_ezsigntemplatesignature_validationstep = attributes[:'i_ezsigntemplatesignature_validationstep']
-      end
-
-      if attributes.key?(:'s_ezsigntemplatesignature_attachmentdescription')
-        self.s_ezsigntemplatesignature_attachmentdescription = attributes[:'s_ezsigntemplatesignature_attachmentdescription']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_attachmentnamesource')
-        self.e_ezsigntemplatesignature_attachmentnamesource = attributes[:'e_ezsigntemplatesignature_attachmentnamesource']
-      end
-
-      if attributes.key?(:'b_ezsigntemplatesignature_required')
-        self.b_ezsigntemplatesignature_required = attributes[:'b_ezsigntemplatesignature_required']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_maxlength')
-        self.i_ezsigntemplatesignature_maxlength = attributes[:'i_ezsigntemplatesignature_maxlength']
-      end
-
-      if attributes.key?(:'s_ezsigntemplatesignature_defaultvalue')
-        self.s_ezsigntemplatesignature_defaultvalue = attributes[:'s_ezsigntemplatesignature_defaultvalue']
-      end
-
-      if attributes.key?(:'s_ezsigntemplatesignature_regexp')
-        self.s_ezsigntemplatesignature_regexp = attributes[:'s_ezsigntemplatesignature_regexp']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_textvalidation')
-        self.e_ezsigntemplatesignature_textvalidation = attributes[:'e_ezsigntemplatesignature_textvalidation']
-      end
-
-      if attributes.key?(:'s_ezsigntemplatesignature_textvalidationcustommessage')
-        self.s_ezsigntemplatesignature_textvalidationcustommessage = attributes[:'s_ezsigntemplatesignature_textvalidationcustommessage']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_dependencyrequirement')
-        self.e_ezsigntemplatesignature_dependencyrequirement = attributes[:'e_ezsigntemplatesignature_dependencyrequirement']
-      end
-
-      if attributes.key?(:'s_ezsigntemplatesignature_positioningpattern')
-        self.s_ezsigntemplatesignature_positioningpattern = attributes[:'s_ezsigntemplatesignature_positioningpattern']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_positioningoffsetx')
-        self.i_ezsigntemplatesignature_positioningoffsetx = attributes[:'i_ezsigntemplatesignature_positioningoffsetx']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatesignature_positioningoffsety')
-        self.i_ezsigntemplatesignature_positioningoffsety = attributes[:'i_ezsigntemplatesignature_positioningoffsety']
-      end
-
-      if attributes.key?(:'e_ezsigntemplatesignature_positioningoccurence')
-        self.e_ezsigntemplatesignature_positioningoccurence = attributes[:'e_ezsigntemplatesignature_positioningoccurence']
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'b_ezsigntemplatesignature_customdate')
         self.b_ezsigntemplatesignature_customdate = attributes[:'b_ezsigntemplatesignature_customdate']
@@ -409,97 +121,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsigntemplatesignature_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsigntemplatesignature_id", pki_ezsigntemplatesignature_id cannot be nil.')
-      end
-
-      if @pki_ezsigntemplatesignature_id < 0
-        invalid_properties.push('invalid value for "pki_ezsigntemplatesignature_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsigntemplatedocument_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntemplatedocument_id", fki_ezsigntemplatedocument_id cannot be nil.')
-      end
-
-      if @fki_ezsigntemplatedocument_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplatedocument_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsigntemplatesigner_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntemplatesigner_id", fki_ezsigntemplatesigner_id cannot be nil.')
-      end
-
-      if @fki_ezsigntemplatesigner_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplatesigner_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_ezsigntemplatesigner_id_validation.nil? && @fki_ezsigntemplatesigner_id_validation < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplatesigner_id_validation", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigntemplatedocumentpage_pagenumber.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpage_pagenumber", i_ezsigntemplatedocumentpage_pagenumber cannot be nil.')
-      end
-
-      if @i_ezsigntemplatedocumentpage_pagenumber < 1
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpage_pagenumber", must be greater than or equal to 1.')
-      end
-
-      if !@i_ezsigntemplatesignature_x.nil? && @i_ezsigntemplatesignature_x < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_x", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatesignature_y.nil? && @i_ezsigntemplatesignature_y < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_y", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatesignature_width.nil? && @i_ezsigntemplatesignature_width < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_width", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatesignature_height.nil? && @i_ezsigntemplatesignature_height < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_height", must be greater than or equal to 0.')
-      end
-
-      if @i_ezsigntemplatesignature_step.nil?
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_step", i_ezsigntemplatesignature_step cannot be nil.')
-      end
-
-      if @i_ezsigntemplatesignature_step < 1
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_step", must be greater than or equal to 1.')
-      end
-
-      if @e_ezsigntemplatesignature_type.nil?
-        invalid_properties.push('invalid value for "e_ezsigntemplatesignature_type", e_ezsigntemplatesignature_type cannot be nil.')
-      end
-
-      if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength > 65535
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_maxlength", must be smaller than or equal to 65535.')
-      end
-
-      if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatesignature_maxlength", must be greater than or equal to 0.')
-      end
-
-      pattern = Regexp.new(/^\^.*\$$|^$/)
-      if !@s_ezsigntemplatesignature_regexp.nil? && @s_ezsigntemplatesignature_regexp !~ pattern
-        invalid_properties.push("invalid value for \"s_ezsigntemplatesignature_regexp\", must conform to the pattern #{pattern}.")
-      end
-
-      if !@s_ezsigntemplatesignature_textvalidationcustommessage.nil? && @s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length > 50
-        invalid_properties.push('invalid value for "s_ezsigntemplatesignature_textvalidationcustommessage", the character length must be smaller than or equal to 50.')
-      end
-
-      if !@s_ezsigntemplatesignature_textvalidationcustommessage.nil? && @s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length < 0
-        invalid_properties.push('invalid value for "s_ezsigntemplatesignature_textvalidationcustommessage", the character length must be great than or equal to 0.')
-      end
-
-      pattern = Regexp.new(/^.{0,30}$/)
-      if !@s_ezsigntemplatesignature_positioningpattern.nil? && @s_ezsigntemplatesignature_positioningpattern !~ pattern
-        invalid_properties.push("invalid value for \"s_ezsigntemplatesignature_positioningpattern\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -507,235 +129,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsigntemplatesignature_id.nil?
-      return false if @pki_ezsigntemplatesignature_id < 0
-      return false if @fki_ezsigntemplatedocument_id.nil?
-      return false if @fki_ezsigntemplatedocument_id < 0
-      return false if @fki_ezsigntemplatesigner_id.nil?
-      return false if @fki_ezsigntemplatesigner_id < 0
-      return false if !@fki_ezsigntemplatesigner_id_validation.nil? && @fki_ezsigntemplatesigner_id_validation < 0
-      return false if @i_ezsigntemplatedocumentpage_pagenumber.nil?
-      return false if @i_ezsigntemplatedocumentpage_pagenumber < 1
-      return false if !@i_ezsigntemplatesignature_x.nil? && @i_ezsigntemplatesignature_x < 0
-      return false if !@i_ezsigntemplatesignature_y.nil? && @i_ezsigntemplatesignature_y < 0
-      return false if !@i_ezsigntemplatesignature_width.nil? && @i_ezsigntemplatesignature_width < 0
-      return false if !@i_ezsigntemplatesignature_height.nil? && @i_ezsigntemplatesignature_height < 0
-      return false if @i_ezsigntemplatesignature_step.nil?
-      return false if @i_ezsigntemplatesignature_step < 1
-      return false if @e_ezsigntemplatesignature_type.nil?
-      return false if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength > 65535
-      return false if !@i_ezsigntemplatesignature_maxlength.nil? && @i_ezsigntemplatesignature_maxlength < 0
-      return false if !@s_ezsigntemplatesignature_regexp.nil? && @s_ezsigntemplatesignature_regexp !~ Regexp.new(/^\^.*\$$|^$/)
-      return false if !@s_ezsigntemplatesignature_textvalidationcustommessage.nil? && @s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length > 50
-      return false if !@s_ezsigntemplatesignature_textvalidationcustommessage.nil? && @s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length < 0
-      return false if !@s_ezsigntemplatesignature_positioningpattern.nil? && @s_ezsigntemplatesignature_positioningpattern !~ Regexp.new(/^.{0,30}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsigntemplatesignature_id Value to be assigned
-    def pki_ezsigntemplatesignature_id=(pki_ezsigntemplatesignature_id)
-      if pki_ezsigntemplatesignature_id.nil?
-        fail ArgumentError, 'pki_ezsigntemplatesignature_id cannot be nil'
-      end
-
-      if pki_ezsigntemplatesignature_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsigntemplatesignature_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsigntemplatesignature_id = pki_ezsigntemplatesignature_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplatedocument_id Value to be assigned
-    def fki_ezsigntemplatedocument_id=(fki_ezsigntemplatedocument_id)
-      if fki_ezsigntemplatedocument_id.nil?
-        fail ArgumentError, 'fki_ezsigntemplatedocument_id cannot be nil'
-      end
-
-      if fki_ezsigntemplatedocument_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplatedocument_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplatedocument_id = fki_ezsigntemplatedocument_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplatesigner_id Value to be assigned
-    def fki_ezsigntemplatesigner_id=(fki_ezsigntemplatesigner_id)
-      if fki_ezsigntemplatesigner_id.nil?
-        fail ArgumentError, 'fki_ezsigntemplatesigner_id cannot be nil'
-      end
-
-      if fki_ezsigntemplatesigner_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplatesigner_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplatesigner_id = fki_ezsigntemplatesigner_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplatesigner_id_validation Value to be assigned
-    def fki_ezsigntemplatesigner_id_validation=(fki_ezsigntemplatesigner_id_validation)
-      if fki_ezsigntemplatesigner_id_validation.nil?
-        fail ArgumentError, 'fki_ezsigntemplatesigner_id_validation cannot be nil'
-      end
-
-      if fki_ezsigntemplatesigner_id_validation < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplatesigner_id_validation", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplatesigner_id_validation = fki_ezsigntemplatesigner_id_validation
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpage_pagenumber Value to be assigned
-    def i_ezsigntemplatedocumentpage_pagenumber=(i_ezsigntemplatedocumentpage_pagenumber)
-      if i_ezsigntemplatedocumentpage_pagenumber.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpage_pagenumber cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpage_pagenumber < 1
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpage_pagenumber", must be greater than or equal to 1.'
-      end
-
-      @i_ezsigntemplatedocumentpage_pagenumber = i_ezsigntemplatedocumentpage_pagenumber
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_x Value to be assigned
-    def i_ezsigntemplatesignature_x=(i_ezsigntemplatesignature_x)
-      if i_ezsigntemplatesignature_x.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_x cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_x < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_x", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatesignature_x = i_ezsigntemplatesignature_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_y Value to be assigned
-    def i_ezsigntemplatesignature_y=(i_ezsigntemplatesignature_y)
-      if i_ezsigntemplatesignature_y.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_y cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_y < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_y", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatesignature_y = i_ezsigntemplatesignature_y
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_width Value to be assigned
-    def i_ezsigntemplatesignature_width=(i_ezsigntemplatesignature_width)
-      if i_ezsigntemplatesignature_width.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_width cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_width < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_width", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatesignature_width = i_ezsigntemplatesignature_width
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_height Value to be assigned
-    def i_ezsigntemplatesignature_height=(i_ezsigntemplatesignature_height)
-      if i_ezsigntemplatesignature_height.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_height cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_height < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_height", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatesignature_height = i_ezsigntemplatesignature_height
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_step Value to be assigned
-    def i_ezsigntemplatesignature_step=(i_ezsigntemplatesignature_step)
-      if i_ezsigntemplatesignature_step.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_step cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_step < 1
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_step", must be greater than or equal to 1.'
-      end
-
-      @i_ezsigntemplatesignature_step = i_ezsigntemplatesignature_step
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatesignature_maxlength Value to be assigned
-    def i_ezsigntemplatesignature_maxlength=(i_ezsigntemplatesignature_maxlength)
-      if i_ezsigntemplatesignature_maxlength.nil?
-        fail ArgumentError, 'i_ezsigntemplatesignature_maxlength cannot be nil'
-      end
-
-      if i_ezsigntemplatesignature_maxlength > 65535
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_maxlength", must be smaller than or equal to 65535.'
-      end
-
-      if i_ezsigntemplatesignature_maxlength < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatesignature_maxlength", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatesignature_maxlength = i_ezsigntemplatesignature_maxlength
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezsigntemplatesignature_regexp Value to be assigned
-    def s_ezsigntemplatesignature_regexp=(s_ezsigntemplatesignature_regexp)
-      if s_ezsigntemplatesignature_regexp.nil?
-        fail ArgumentError, 's_ezsigntemplatesignature_regexp cannot be nil'
-      end
-
-      pattern = Regexp.new(/^\^.*\$$|^$/)
-      if s_ezsigntemplatesignature_regexp !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezsigntemplatesignature_regexp\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezsigntemplatesignature_regexp = s_ezsigntemplatesignature_regexp
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezsigntemplatesignature_textvalidationcustommessage Value to be assigned
-    def s_ezsigntemplatesignature_textvalidationcustommessage=(s_ezsigntemplatesignature_textvalidationcustommessage)
-      if s_ezsigntemplatesignature_textvalidationcustommessage.nil?
-        fail ArgumentError, 's_ezsigntemplatesignature_textvalidationcustommessage cannot be nil'
-      end
-
-      if s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length > 50
-        fail ArgumentError, 'invalid value for "s_ezsigntemplatesignature_textvalidationcustommessage", the character length must be smaller than or equal to 50.'
-      end
-
-      if s_ezsigntemplatesignature_textvalidationcustommessage.to_s.length < 0
-        fail ArgumentError, 'invalid value for "s_ezsigntemplatesignature_textvalidationcustommessage", the character length must be great than or equal to 0.'
-      end
-
-      @s_ezsigntemplatesignature_textvalidationcustommessage = s_ezsigntemplatesignature_textvalidationcustommessage
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_ezsigntemplatesignature_positioningpattern Value to be assigned
-    def s_ezsigntemplatesignature_positioningpattern=(s_ezsigntemplatesignature_positioningpattern)
-      if s_ezsigntemplatesignature_positioningpattern.nil?
-        fail ArgumentError, 's_ezsigntemplatesignature_positioningpattern cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,30}$/)
-      if s_ezsigntemplatesignature_positioningpattern !~ pattern
-        fail ArgumentError, "invalid value for \"s_ezsigntemplatesignature_positioningpattern\", must conform to the pattern #{pattern}."
-      end
-
-      @s_ezsigntemplatesignature_positioningpattern = s_ezsigntemplatesignature_positioningpattern
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -743,41 +137,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_ezsigntemplatesignature_id == o.pki_ezsigntemplatesignature_id &&
-          fki_ezsigntemplatedocument_id == o.fki_ezsigntemplatedocument_id &&
-          fki_ezsigntemplatesigner_id == o.fki_ezsigntemplatesigner_id &&
-          fki_ezsigntemplatesigner_id_validation == o.fki_ezsigntemplatesigner_id_validation &&
-          b_ezsigntemplatesignature_handwritten == o.b_ezsigntemplatesignature_handwritten &&
-          b_ezsigntemplatesignature_reason == o.b_ezsigntemplatesignature_reason &&
-          e_ezsigntemplatesignature_positioning == o.e_ezsigntemplatesignature_positioning &&
-          i_ezsigntemplatedocumentpage_pagenumber == o.i_ezsigntemplatedocumentpage_pagenumber &&
-          i_ezsigntemplatesignature_x == o.i_ezsigntemplatesignature_x &&
-          i_ezsigntemplatesignature_y == o.i_ezsigntemplatesignature_y &&
-          i_ezsigntemplatesignature_width == o.i_ezsigntemplatesignature_width &&
-          i_ezsigntemplatesignature_height == o.i_ezsigntemplatesignature_height &&
-          i_ezsigntemplatesignature_step == o.i_ezsigntemplatesignature_step &&
-          e_ezsigntemplatesignature_type == o.e_ezsigntemplatesignature_type &&
-          e_ezsigntemplatesignature_consultationtrigger == o.e_ezsigntemplatesignature_consultationtrigger &&
-          t_ezsigntemplatesignature_tooltip == o.t_ezsigntemplatesignature_tooltip &&
-          e_ezsigntemplatesignature_tooltipposition == o.e_ezsigntemplatesignature_tooltipposition &&
-          e_ezsigntemplatesignature_font == o.e_ezsigntemplatesignature_font &&
-          i_ezsigntemplatesignature_validationstep == o.i_ezsigntemplatesignature_validationstep &&
-          s_ezsigntemplatesignature_attachmentdescription == o.s_ezsigntemplatesignature_attachmentdescription &&
-          e_ezsigntemplatesignature_attachmentnamesource == o.e_ezsigntemplatesignature_attachmentnamesource &&
-          b_ezsigntemplatesignature_required == o.b_ezsigntemplatesignature_required &&
-          i_ezsigntemplatesignature_maxlength == o.i_ezsigntemplatesignature_maxlength &&
-          s_ezsigntemplatesignature_defaultvalue == o.s_ezsigntemplatesignature_defaultvalue &&
-          s_ezsigntemplatesignature_regexp == o.s_ezsigntemplatesignature_regexp &&
-          e_ezsigntemplatesignature_textvalidation == o.e_ezsigntemplatesignature_textvalidation &&
-          s_ezsigntemplatesignature_textvalidationcustommessage == o.s_ezsigntemplatesignature_textvalidationcustommessage &&
-          e_ezsigntemplatesignature_dependencyrequirement == o.e_ezsigntemplatesignature_dependencyrequirement &&
-          s_ezsigntemplatesignature_positioningpattern == o.s_ezsigntemplatesignature_positioningpattern &&
-          i_ezsigntemplatesignature_positioningoffsetx == o.i_ezsigntemplatesignature_positioningoffsetx &&
-          i_ezsigntemplatesignature_positioningoffsety == o.i_ezsigntemplatesignature_positioningoffsety &&
-          e_ezsigntemplatesignature_positioningoccurence == o.e_ezsigntemplatesignature_positioningoccurence &&
           b_ezsigntemplatesignature_customdate == o.b_ezsigntemplatesignature_customdate &&
           a_obj_ezsigntemplatesignaturecustomdate == o.a_obj_ezsigntemplatesignaturecustomdate &&
-          a_obj_ezsigntemplateelementdependency == o.a_obj_ezsigntemplateelementdependency
+          a_obj_ezsigntemplateelementdependency == o.a_obj_ezsigntemplateelementdependency && super(o)
     end
 
     # @see the `==` method
@@ -789,7 +151,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatesignature_id, fki_ezsigntemplatedocument_id, fki_ezsigntemplatesigner_id, fki_ezsigntemplatesigner_id_validation, b_ezsigntemplatesignature_handwritten, b_ezsigntemplatesignature_reason, e_ezsigntemplatesignature_positioning, i_ezsigntemplatedocumentpage_pagenumber, i_ezsigntemplatesignature_x, i_ezsigntemplatesignature_y, i_ezsigntemplatesignature_width, i_ezsigntemplatesignature_height, i_ezsigntemplatesignature_step, e_ezsigntemplatesignature_type, e_ezsigntemplatesignature_consultationtrigger, t_ezsigntemplatesignature_tooltip, e_ezsigntemplatesignature_tooltipposition, e_ezsigntemplatesignature_font, i_ezsigntemplatesignature_validationstep, s_ezsigntemplatesignature_attachmentdescription, e_ezsigntemplatesignature_attachmentnamesource, b_ezsigntemplatesignature_required, i_ezsigntemplatesignature_maxlength, s_ezsigntemplatesignature_defaultvalue, s_ezsigntemplatesignature_regexp, e_ezsigntemplatesignature_textvalidation, s_ezsigntemplatesignature_textvalidationcustommessage, e_ezsigntemplatesignature_dependencyrequirement, s_ezsigntemplatesignature_positioningpattern, i_ezsigntemplatesignature_positioningoffsetx, i_ezsigntemplatesignature_positioningoffsety, e_ezsigntemplatesignature_positioningoccurence, b_ezsigntemplatesignature_customdate, a_obj_ezsigntemplatesignaturecustomdate, a_obj_ezsigntemplateelementdependency].hash
+      [b_ezsigntemplatesignature_customdate, a_obj_ezsigntemplatesignaturecustomdate, a_obj_ezsigntemplateelementdependency].hash
     end
 
     # Builds the object from hash
@@ -797,6 +159,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -873,7 +236,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

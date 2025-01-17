@@ -15,34 +15,24 @@ require 'time'
 
 module EzmaxApi
   # A Modulegroup Object
-  class ModulegroupResponseCompound
-    # The unique ID of the Modulegroup
-    attr_accessor :pki_modulegroup_id
-
-    # The name of the Modulegroup in the language of the requester
-    attr_accessor :s_modulegroup_name_x
-
+  class ModulegroupResponseCompound < ModulegroupResponse
     attr_accessor :a_obj_module
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_modulegroup_id' => :'pkiModulegroupID',
-        :'s_modulegroup_name_x' => :'sModulegroupNameX',
         :'a_obj_module' => :'a_objModule'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_modulegroup_id' => :'Integer',
-        :'s_modulegroup_name_x' => :'String',
         :'a_obj_module' => :'Array<ModuleResponseCompound>'
       }
     end
@@ -75,17 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_modulegroup_id')
-        self.pki_modulegroup_id = attributes[:'pki_modulegroup_id']
-      else
-        self.pki_modulegroup_id = nil
-      end
-
-      if attributes.key?(:'s_modulegroup_name_x')
-        self.s_modulegroup_name_x = attributes[:'s_modulegroup_name_x']
-      else
-        self.s_modulegroup_name_x = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_module')
         if (value = attributes[:'a_obj_module']).is_a?(Array)
@@ -98,28 +79,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_modulegroup_id.nil?
-        invalid_properties.push('invalid value for "pki_modulegroup_id", pki_modulegroup_id cannot be nil.')
-      end
-
-      if @pki_modulegroup_id > 255
-        invalid_properties.push('invalid value for "pki_modulegroup_id", must be smaller than or equal to 255.')
-      end
-
-      if @pki_modulegroup_id < 1
-        invalid_properties.push('invalid value for "pki_modulegroup_id", must be greater than or equal to 1.')
-      end
-
-      if @s_modulegroup_name_x.nil?
-        invalid_properties.push('invalid value for "s_modulegroup_name_x", s_modulegroup_name_x cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,25}$/)
-      if @s_modulegroup_name_x !~ pattern
-        invalid_properties.push("invalid value for \"s_modulegroup_name_x\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -127,45 +87,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_modulegroup_id.nil?
-      return false if @pki_modulegroup_id > 255
-      return false if @pki_modulegroup_id < 1
-      return false if @s_modulegroup_name_x.nil?
-      return false if @s_modulegroup_name_x !~ Regexp.new(/^.{0,25}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_modulegroup_id Value to be assigned
-    def pki_modulegroup_id=(pki_modulegroup_id)
-      if pki_modulegroup_id.nil?
-        fail ArgumentError, 'pki_modulegroup_id cannot be nil'
-      end
-
-      if pki_modulegroup_id > 255
-        fail ArgumentError, 'invalid value for "pki_modulegroup_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_modulegroup_id < 1
-        fail ArgumentError, 'invalid value for "pki_modulegroup_id", must be greater than or equal to 1.'
-      end
-
-      @pki_modulegroup_id = pki_modulegroup_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_modulegroup_name_x Value to be assigned
-    def s_modulegroup_name_x=(s_modulegroup_name_x)
-      if s_modulegroup_name_x.nil?
-        fail ArgumentError, 's_modulegroup_name_x cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,25}$/)
-      if s_modulegroup_name_x !~ pattern
-        fail ArgumentError, "invalid value for \"s_modulegroup_name_x\", must conform to the pattern #{pattern}."
-      end
-
-      @s_modulegroup_name_x = s_modulegroup_name_x
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -173,9 +95,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_modulegroup_id == o.pki_modulegroup_id &&
-          s_modulegroup_name_x == o.s_modulegroup_name_x &&
-          a_obj_module == o.a_obj_module
+          a_obj_module == o.a_obj_module && super(o)
     end
 
     # @see the `==` method
@@ -187,7 +107,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_modulegroup_id, s_modulegroup_name_x, a_obj_module].hash
+      [a_obj_module].hash
     end
 
     # Builds the object from hash
@@ -195,6 +115,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -271,7 +192,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

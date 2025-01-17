@@ -15,34 +15,7 @@ require 'time'
 
 module EzmaxApi
   # Request for POST /1/object/communication
-  class CommunicationRequestCompound
-    # The unique ID of the Communication.
-    attr_accessor :pki_communication_id
-
-    attr_accessor :e_communication_importance
-
-    attr_accessor :e_communication_type
-
-    attr_accessor :obj_communicationsender
-
-    # The subject of the Communication
-    attr_accessor :s_communication_subject
-
-    # The Body of the Communication
-    attr_accessor :t_communication_body
-
-    # Whether the Communication is private or not
-    attr_accessor :b_communication_private
-
-    # How the attachment should be included in the email.   Only used if eCommunicationType is **Email**
-    attr_accessor :e_communication_attachmenttype
-
-    # The number of days before the attachment link expired.   Only used if eCommunicationType is **Email** and eCommunicationattachmentType is **Link**
-    attr_accessor :i_communication_attachmentlinkexpiration
-
-    # Whether we ask for a read receipt or not.
-    attr_accessor :b_communication_readreceipt
-
+  class CommunicationRequestCompound < CommunicationRequest
     attr_accessor :a_obj_communicationattachment
 
     attr_accessor :a_obj_communicationrecipient
@@ -76,16 +49,6 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_communication_id' => :'pkiCommunicationID',
-        :'e_communication_importance' => :'eCommunicationImportance',
-        :'e_communication_type' => :'eCommunicationType',
-        :'obj_communicationsender' => :'objCommunicationsender',
-        :'s_communication_subject' => :'sCommunicationSubject',
-        :'t_communication_body' => :'tCommunicationBody',
-        :'b_communication_private' => :'bCommunicationPrivate',
-        :'e_communication_attachmenttype' => :'eCommunicationAttachmenttype',
-        :'i_communication_attachmentlinkexpiration' => :'iCommunicationAttachmentlinkexpiration',
-        :'b_communication_readreceipt' => :'bCommunicationReadreceipt',
         :'a_obj_communicationattachment' => :'a_objCommunicationattachment',
         :'a_obj_communicationrecipient' => :'a_objCommunicationrecipient',
         :'a_obj_communicationreference' => :'a_objCommunicationreference',
@@ -93,24 +56,14 @@ module EzmaxApi
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_communication_id' => :'Integer',
-        :'e_communication_importance' => :'FieldECommunicationImportance',
-        :'e_communication_type' => :'FieldECommunicationType',
-        :'obj_communicationsender' => :'CustomCommunicationsenderRequest',
-        :'s_communication_subject' => :'String',
-        :'t_communication_body' => :'String',
-        :'b_communication_private' => :'Boolean',
-        :'e_communication_attachmenttype' => :'String',
-        :'i_communication_attachmentlinkexpiration' => :'Integer',
-        :'b_communication_readreceipt' => :'Boolean',
         :'a_obj_communicationattachment' => :'Array<CustomCommunicationattachmentRequest>',
         :'a_obj_communicationrecipient' => :'Array<CommunicationrecipientRequestCompound>',
         :'a_obj_communicationreference' => :'Array<CommunicationreferenceRequestCompound>',
@@ -146,51 +99,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_communication_id')
-        self.pki_communication_id = attributes[:'pki_communication_id']
-      end
-
-      if attributes.key?(:'e_communication_importance')
-        self.e_communication_importance = attributes[:'e_communication_importance']
-      end
-
-      if attributes.key?(:'e_communication_type')
-        self.e_communication_type = attributes[:'e_communication_type']
-      else
-        self.e_communication_type = nil
-      end
-
-      if attributes.key?(:'obj_communicationsender')
-        self.obj_communicationsender = attributes[:'obj_communicationsender']
-      end
-
-      if attributes.key?(:'s_communication_subject')
-        self.s_communication_subject = attributes[:'s_communication_subject']
-      end
-
-      if attributes.key?(:'t_communication_body')
-        self.t_communication_body = attributes[:'t_communication_body']
-      else
-        self.t_communication_body = nil
-      end
-
-      if attributes.key?(:'b_communication_private')
-        self.b_communication_private = attributes[:'b_communication_private']
-      else
-        self.b_communication_private = nil
-      end
-
-      if attributes.key?(:'e_communication_attachmenttype')
-        self.e_communication_attachmenttype = attributes[:'e_communication_attachmenttype']
-      end
-
-      if attributes.key?(:'i_communication_attachmentlinkexpiration')
-        self.i_communication_attachmentlinkexpiration = attributes[:'i_communication_attachmentlinkexpiration']
-      end
-
-      if attributes.key?(:'b_communication_readreceipt')
-        self.b_communication_readreceipt = attributes[:'b_communication_readreceipt']
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_communicationattachment')
         if (value = attributes[:'a_obj_communicationattachment']).is_a?(Array)
@@ -229,36 +139,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_communication_id.nil? && @pki_communication_id < 0
-        invalid_properties.push('invalid value for "pki_communication_id", must be greater than or equal to 0.')
-      end
-
-      if @e_communication_type.nil?
-        invalid_properties.push('invalid value for "e_communication_type", e_communication_type cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,200}$/)
-      if !@s_communication_subject.nil? && @s_communication_subject !~ pattern
-        invalid_properties.push("invalid value for \"s_communication_subject\", must conform to the pattern #{pattern}.")
-      end
-
-      if @t_communication_body.nil?
-        invalid_properties.push('invalid value for "t_communication_body", t_communication_body cannot be nil.')
-      end
-
-      if @b_communication_private.nil?
-        invalid_properties.push('invalid value for "b_communication_private", b_communication_private cannot be nil.')
-      end
-
-      if !@i_communication_attachmentlinkexpiration.nil? && @i_communication_attachmentlinkexpiration > 30
-        invalid_properties.push('invalid value for "i_communication_attachmentlinkexpiration", must be smaller than or equal to 30.')
-      end
-
-      if !@i_communication_attachmentlinkexpiration.nil? && @i_communication_attachmentlinkexpiration < 1
-        invalid_properties.push('invalid value for "i_communication_attachmentlinkexpiration", must be greater than or equal to 1.')
-      end
-
+      invalid_properties = super
       if @a_obj_communicationattachment.nil?
         invalid_properties.push('invalid value for "a_obj_communicationattachment", a_obj_communicationattachment cannot be nil.')
       end
@@ -298,15 +179,6 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_communication_id.nil? && @pki_communication_id < 0
-      return false if @e_communication_type.nil?
-      return false if !@s_communication_subject.nil? && @s_communication_subject !~ Regexp.new(/^.{0,200}$/)
-      return false if @t_communication_body.nil?
-      return false if @b_communication_private.nil?
-      e_communication_attachmenttype_validator = EnumAttributeValidator.new('String', ["Attachment", "Url"])
-      return false unless e_communication_attachmenttype_validator.valid?(@e_communication_attachmenttype)
-      return false if !@i_communication_attachmentlinkexpiration.nil? && @i_communication_attachmentlinkexpiration > 30
-      return false if !@i_communication_attachmentlinkexpiration.nil? && @i_communication_attachmentlinkexpiration < 1
       return false if @a_obj_communicationattachment.nil?
       return false if @a_obj_communicationattachment.length < 0
       return false if @a_obj_communicationrecipient.nil?
@@ -315,64 +187,7 @@ module EzmaxApi
       return false if @a_obj_communicationreference.length < 0
       return false if @a_obj_communicationexternalrecipient.nil?
       return false if @a_obj_communicationexternalrecipient.length < 0
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_communication_id Value to be assigned
-    def pki_communication_id=(pki_communication_id)
-      if pki_communication_id.nil?
-        fail ArgumentError, 'pki_communication_id cannot be nil'
-      end
-
-      if pki_communication_id < 0
-        fail ArgumentError, 'invalid value for "pki_communication_id", must be greater than or equal to 0.'
-      end
-
-      @pki_communication_id = pki_communication_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_communication_subject Value to be assigned
-    def s_communication_subject=(s_communication_subject)
-      if s_communication_subject.nil?
-        fail ArgumentError, 's_communication_subject cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,200}$/)
-      if s_communication_subject !~ pattern
-        fail ArgumentError, "invalid value for \"s_communication_subject\", must conform to the pattern #{pattern}."
-      end
-
-      @s_communication_subject = s_communication_subject
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] e_communication_attachmenttype Object to be assigned
-    def e_communication_attachmenttype=(e_communication_attachmenttype)
-      validator = EnumAttributeValidator.new('String', ["Attachment", "Url"])
-      unless validator.valid?(e_communication_attachmenttype)
-        fail ArgumentError, "invalid value for \"e_communication_attachmenttype\", must be one of #{validator.allowable_values}."
-      end
-      @e_communication_attachmenttype = e_communication_attachmenttype
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_communication_attachmentlinkexpiration Value to be assigned
-    def i_communication_attachmentlinkexpiration=(i_communication_attachmentlinkexpiration)
-      if i_communication_attachmentlinkexpiration.nil?
-        fail ArgumentError, 'i_communication_attachmentlinkexpiration cannot be nil'
-      end
-
-      if i_communication_attachmentlinkexpiration > 30
-        fail ArgumentError, 'invalid value for "i_communication_attachmentlinkexpiration", must be smaller than or equal to 30.'
-      end
-
-      if i_communication_attachmentlinkexpiration < 1
-        fail ArgumentError, 'invalid value for "i_communication_attachmentlinkexpiration", must be greater than or equal to 1.'
-      end
-
-      @i_communication_attachmentlinkexpiration = i_communication_attachmentlinkexpiration
+      true && super
     end
 
     # Custom attribute writer method with validation
@@ -436,20 +251,10 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_communication_id == o.pki_communication_id &&
-          e_communication_importance == o.e_communication_importance &&
-          e_communication_type == o.e_communication_type &&
-          obj_communicationsender == o.obj_communicationsender &&
-          s_communication_subject == o.s_communication_subject &&
-          t_communication_body == o.t_communication_body &&
-          b_communication_private == o.b_communication_private &&
-          e_communication_attachmenttype == o.e_communication_attachmenttype &&
-          i_communication_attachmentlinkexpiration == o.i_communication_attachmentlinkexpiration &&
-          b_communication_readreceipt == o.b_communication_readreceipt &&
           a_obj_communicationattachment == o.a_obj_communicationattachment &&
           a_obj_communicationrecipient == o.a_obj_communicationrecipient &&
           a_obj_communicationreference == o.a_obj_communicationreference &&
-          a_obj_communicationexternalrecipient == o.a_obj_communicationexternalrecipient
+          a_obj_communicationexternalrecipient == o.a_obj_communicationexternalrecipient && super(o)
     end
 
     # @see the `==` method
@@ -461,7 +266,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_communication_id, e_communication_importance, e_communication_type, obj_communicationsender, s_communication_subject, t_communication_body, b_communication_private, e_communication_attachmenttype, i_communication_attachmentlinkexpiration, b_communication_readreceipt, a_obj_communicationattachment, a_obj_communicationrecipient, a_obj_communicationreference, a_obj_communicationexternalrecipient].hash
+      [a_obj_communicationattachment, a_obj_communicationrecipient, a_obj_communicationreference, a_obj_communicationexternalrecipient].hash
     end
 
     # Builds the object from hash
@@ -469,6 +274,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -545,7 +351,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

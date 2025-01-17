@@ -15,63 +15,21 @@ require 'time'
 
 module EzmaxApi
   # Payload for GET /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
-  class EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-    # The unique ID of the Ezsignfoldersignerassociation
-    attr_accessor :pki_ezsignfoldersignerassociation_id
-
-    # The unique ID of the Ezsignfolder
-    attr_accessor :fki_ezsignfolder_id
-
-    # If this flag is true the signatory is part of a delayed send.
-    attr_accessor :b_ezsignfoldersignerassociation_delayedsend
-
-    # If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
-    attr_accessor :b_ezsignfoldersignerassociation_receivecopy
-
-    # A custom text message that will be added to the email sent.
-    attr_accessor :t_ezsignfoldersignerassociation_message
-
-    # If the Ezsignfoldersignerassociation is allowed to sign in person or not
-    attr_accessor :b_ezsignfoldersignerassociation_allowsigninginperson
-
-    attr_accessor :obj_ezsignsignergroup
-
-    attr_accessor :obj_user
-
-    attr_accessor :obj_ezsignsigner
-
+  class EzsignfoldersignerassociationGetObjectV1ResponseMPayload < EzsignfoldersignerassociationResponseCompound
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsignfoldersignerassociation_id' => :'pkiEzsignfoldersignerassociationID',
-        :'fki_ezsignfolder_id' => :'fkiEzsignfolderID',
-        :'b_ezsignfoldersignerassociation_delayedsend' => :'bEzsignfoldersignerassociationDelayedsend',
-        :'b_ezsignfoldersignerassociation_receivecopy' => :'bEzsignfoldersignerassociationReceivecopy',
-        :'t_ezsignfoldersignerassociation_message' => :'tEzsignfoldersignerassociationMessage',
-        :'b_ezsignfoldersignerassociation_allowsigninginperson' => :'bEzsignfoldersignerassociationAllowsigninginperson',
-        :'obj_ezsignsignergroup' => :'objEzsignsignergroup',
-        :'obj_user' => :'objUser',
-        :'obj_ezsignsigner' => :'objEzsignsigner'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsignfoldersignerassociation_id' => :'Integer',
-        :'fki_ezsignfolder_id' => :'Integer',
-        :'b_ezsignfoldersignerassociation_delayedsend' => :'Boolean',
-        :'b_ezsignfoldersignerassociation_receivecopy' => :'Boolean',
-        :'t_ezsignfoldersignerassociation_message' => :'String',
-        :'b_ezsignfoldersignerassociation_allowsigninginperson' => :'Boolean',
-        :'obj_ezsignsignergroup' => :'EzsignsignergroupResponseCompound',
-        :'obj_user' => :'EzsignfoldersignerassociationResponseCompoundUser',
-        :'obj_ezsignsigner' => :'EzsignsignerResponseCompound'
       }
     end
 
@@ -103,92 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsignfoldersignerassociation_id')
-        self.pki_ezsignfoldersignerassociation_id = attributes[:'pki_ezsignfoldersignerassociation_id']
-      else
-        self.pki_ezsignfoldersignerassociation_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsignfolder_id')
-        self.fki_ezsignfolder_id = attributes[:'fki_ezsignfolder_id']
-      else
-        self.fki_ezsignfolder_id = nil
-      end
-
-      if attributes.key?(:'b_ezsignfoldersignerassociation_delayedsend')
-        self.b_ezsignfoldersignerassociation_delayedsend = attributes[:'b_ezsignfoldersignerassociation_delayedsend']
-      else
-        self.b_ezsignfoldersignerassociation_delayedsend = nil
-      end
-
-      if attributes.key?(:'b_ezsignfoldersignerassociation_receivecopy')
-        self.b_ezsignfoldersignerassociation_receivecopy = attributes[:'b_ezsignfoldersignerassociation_receivecopy']
-      else
-        self.b_ezsignfoldersignerassociation_receivecopy = nil
-      end
-
-      if attributes.key?(:'t_ezsignfoldersignerassociation_message')
-        self.t_ezsignfoldersignerassociation_message = attributes[:'t_ezsignfoldersignerassociation_message']
-      else
-        self.t_ezsignfoldersignerassociation_message = nil
-      end
-
-      if attributes.key?(:'b_ezsignfoldersignerassociation_allowsigninginperson')
-        self.b_ezsignfoldersignerassociation_allowsigninginperson = attributes[:'b_ezsignfoldersignerassociation_allowsigninginperson']
-      else
-        self.b_ezsignfoldersignerassociation_allowsigninginperson = nil
-      end
-
-      if attributes.key?(:'obj_ezsignsignergroup')
-        self.obj_ezsignsignergroup = attributes[:'obj_ezsignsignergroup']
-      end
-
-      if attributes.key?(:'obj_user')
-        self.obj_user = attributes[:'obj_user']
-      end
-
-      if attributes.key?(:'obj_ezsignsigner')
-        self.obj_ezsignsigner = attributes[:'obj_ezsignsigner']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsignfoldersignerassociation_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsignfoldersignerassociation_id", pki_ezsignfoldersignerassociation_id cannot be nil.')
-      end
-
-      if @pki_ezsignfoldersignerassociation_id < 0
-        invalid_properties.push('invalid value for "pki_ezsignfoldersignerassociation_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsignfolder_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsignfolder_id", fki_ezsignfolder_id cannot be nil.')
-      end
-
-      if @fki_ezsignfolder_id < 0
-        invalid_properties.push('invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.')
-      end
-
-      if @b_ezsignfoldersignerassociation_delayedsend.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_delayedsend", b_ezsignfoldersignerassociation_delayedsend cannot be nil.')
-      end
-
-      if @b_ezsignfoldersignerassociation_receivecopy.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_receivecopy", b_ezsignfoldersignerassociation_receivecopy cannot be nil.')
-      end
-
-      if @t_ezsignfoldersignerassociation_message.nil?
-        invalid_properties.push('invalid value for "t_ezsignfoldersignerassociation_message", t_ezsignfoldersignerassociation_message cannot be nil.')
-      end
-
-      if @b_ezsignfoldersignerassociation_allowsigninginperson.nil?
-        invalid_properties.push('invalid value for "b_ezsignfoldersignerassociation_allowsigninginperson", b_ezsignfoldersignerassociation_allowsigninginperson cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -196,59 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsignfoldersignerassociation_id.nil?
-      return false if @pki_ezsignfoldersignerassociation_id < 0
-      return false if @fki_ezsignfolder_id.nil?
-      return false if @fki_ezsignfolder_id < 0
-      return false if @b_ezsignfoldersignerassociation_delayedsend.nil?
-      return false if @b_ezsignfoldersignerassociation_receivecopy.nil?
-      return false if @t_ezsignfoldersignerassociation_message.nil?
-      return false if @b_ezsignfoldersignerassociation_allowsigninginperson.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsignfoldersignerassociation_id Value to be assigned
-    def pki_ezsignfoldersignerassociation_id=(pki_ezsignfoldersignerassociation_id)
-      if pki_ezsignfoldersignerassociation_id.nil?
-        fail ArgumentError, 'pki_ezsignfoldersignerassociation_id cannot be nil'
-      end
-
-      if pki_ezsignfoldersignerassociation_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsignfoldersignerassociation_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsignfoldersignerassociation_id = pki_ezsignfoldersignerassociation_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsignfolder_id Value to be assigned
-    def fki_ezsignfolder_id=(fki_ezsignfolder_id)
-      if fki_ezsignfolder_id.nil?
-        fail ArgumentError, 'fki_ezsignfolder_id cannot be nil'
-      end
-
-      if fki_ezsignfolder_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsignfolder_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsignfolder_id = fki_ezsignfolder_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_ezsignfoldersignerassociation_id == o.pki_ezsignfoldersignerassociation_id &&
-          fki_ezsignfolder_id == o.fki_ezsignfolder_id &&
-          b_ezsignfoldersignerassociation_delayedsend == o.b_ezsignfoldersignerassociation_delayedsend &&
-          b_ezsignfoldersignerassociation_receivecopy == o.b_ezsignfoldersignerassociation_receivecopy &&
-          t_ezsignfoldersignerassociation_message == o.t_ezsignfoldersignerassociation_message &&
-          b_ezsignfoldersignerassociation_allowsigninginperson == o.b_ezsignfoldersignerassociation_allowsigninginperson &&
-          obj_ezsignsignergroup == o.obj_ezsignsignergroup &&
-          obj_user == o.obj_user &&
-          obj_ezsignsigner == o.obj_ezsignsigner
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -260,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignfoldersignerassociation_id, fki_ezsignfolder_id, b_ezsignfoldersignerassociation_delayedsend, b_ezsignfoldersignerassociation_receivecopy, t_ezsignfoldersignerassociation_message, b_ezsignfoldersignerassociation_allowsigninginperson, obj_ezsignsignergroup, obj_user, obj_ezsignsigner].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -268,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -344,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

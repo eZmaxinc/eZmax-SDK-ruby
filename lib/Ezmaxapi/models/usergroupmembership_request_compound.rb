@@ -15,41 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Usergroupmembership Object and children
-  class UsergroupmembershipRequestCompound
-    # The unique ID of the Usergroupmembership
-    attr_accessor :pki_usergroupmembership_id
-
-    # The unique ID of the Usergroup
-    attr_accessor :fki_usergroup_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The unique ID of the Usergroupexternal
-    attr_accessor :fki_usergroupexternal_id
-
+  class UsergroupmembershipRequestCompound < UsergroupmembershipRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_usergroupmembership_id' => :'pkiUsergroupmembershipID',
-        :'fki_usergroup_id' => :'fkiUsergroupID',
-        :'fki_user_id' => :'fkiUserID',
-        :'fki_usergroupexternal_id' => :'fkiUsergroupexternalID'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_usergroupmembership_id' => :'Integer',
-        :'fki_usergroup_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'fki_usergroupexternal_id' => :'Integer'
       }
     end
 
@@ -81,62 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_usergroupmembership_id')
-        self.pki_usergroupmembership_id = attributes[:'pki_usergroupmembership_id']
-      end
-
-      if attributes.key?(:'fki_usergroup_id')
-        self.fki_usergroup_id = attributes[:'fki_usergroup_id']
-      else
-        self.fki_usergroup_id = nil
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      end
-
-      if attributes.key?(:'fki_usergroupexternal_id')
-        self.fki_usergroupexternal_id = attributes[:'fki_usergroupexternal_id']
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_usergroupmembership_id.nil? && @pki_usergroupmembership_id > 65535
-        invalid_properties.push('invalid value for "pki_usergroupmembership_id", must be smaller than or equal to 65535.')
-      end
-
-      if !@pki_usergroupmembership_id.nil? && @pki_usergroupmembership_id < 0
-        invalid_properties.push('invalid value for "pki_usergroupmembership_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_usergroup_id.nil?
-        invalid_properties.push('invalid value for "fki_usergroup_id", fki_usergroup_id cannot be nil.')
-      end
-
-      if @fki_usergroup_id > 255
-        invalid_properties.push('invalid value for "fki_usergroup_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_usergroup_id < 0
-        invalid_properties.push('invalid value for "fki_usergroup_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_user_id.nil? && @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id > 255
-        invalid_properties.push('invalid value for "fki_usergroupexternal_id", must be smaller than or equal to 255.')
-      end
-
-      if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id < 0
-        invalid_properties.push('invalid value for "fki_usergroupexternal_id", must be greater than or equal to 0.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -144,94 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_usergroupmembership_id.nil? && @pki_usergroupmembership_id > 65535
-      return false if !@pki_usergroupmembership_id.nil? && @pki_usergroupmembership_id < 0
-      return false if @fki_usergroup_id.nil?
-      return false if @fki_usergroup_id > 255
-      return false if @fki_usergroup_id < 0
-      return false if !@fki_user_id.nil? && @fki_user_id < 0
-      return false if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id > 255
-      return false if !@fki_usergroupexternal_id.nil? && @fki_usergroupexternal_id < 0
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_usergroupmembership_id Value to be assigned
-    def pki_usergroupmembership_id=(pki_usergroupmembership_id)
-      if pki_usergroupmembership_id.nil?
-        fail ArgumentError, 'pki_usergroupmembership_id cannot be nil'
-      end
-
-      if pki_usergroupmembership_id > 65535
-        fail ArgumentError, 'invalid value for "pki_usergroupmembership_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_usergroupmembership_id < 0
-        fail ArgumentError, 'invalid value for "pki_usergroupmembership_id", must be greater than or equal to 0.'
-      end
-
-      @pki_usergroupmembership_id = pki_usergroupmembership_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_usergroup_id Value to be assigned
-    def fki_usergroup_id=(fki_usergroup_id)
-      if fki_usergroup_id.nil?
-        fail ArgumentError, 'fki_usergroup_id cannot be nil'
-      end
-
-      if fki_usergroup_id > 255
-        fail ArgumentError, 'invalid value for "fki_usergroup_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_usergroup_id < 0
-        fail ArgumentError, 'invalid value for "fki_usergroup_id", must be greater than or equal to 0.'
-      end
-
-      @fki_usergroup_id = fki_usergroup_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_usergroupexternal_id Value to be assigned
-    def fki_usergroupexternal_id=(fki_usergroupexternal_id)
-      if fki_usergroupexternal_id.nil?
-        fail ArgumentError, 'fki_usergroupexternal_id cannot be nil'
-      end
-
-      if fki_usergroupexternal_id > 255
-        fail ArgumentError, 'invalid value for "fki_usergroupexternal_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_usergroupexternal_id < 0
-        fail ArgumentError, 'invalid value for "fki_usergroupexternal_id", must be greater than or equal to 0.'
-      end
-
-      @fki_usergroupexternal_id = fki_usergroupexternal_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_usergroupmembership_id == o.pki_usergroupmembership_id &&
-          fki_usergroup_id == o.fki_usergroup_id &&
-          fki_user_id == o.fki_user_id &&
-          fki_usergroupexternal_id == o.fki_usergroupexternal_id
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -243,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_usergroupmembership_id, fki_usergroup_id, fki_user_id, fki_usergroupexternal_id].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -251,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -327,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

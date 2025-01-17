@@ -15,25 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Paymentterm Object
-  class PaymenttermResponseCompound
-    # The unique ID of the Paymentterm
-    attr_accessor :pki_paymentterm_id
-
-    # The code of the Paymentterm
-    attr_accessor :s_paymentterm_code
-
-    attr_accessor :e_paymentterm_type
-
-    # The day of the Paymentterm
-    attr_accessor :i_paymentterm_day
-
-    attr_accessor :obj_paymentterm_description
-
-    # Whether the Paymentterm is active or not
-    attr_accessor :b_paymentterm_isactive
-
-    attr_accessor :obj_audit
-
+  class PaymenttermResponseCompound < PaymenttermResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -59,31 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_paymentterm_id' => :'pkiPaymenttermID',
-        :'s_paymentterm_code' => :'sPaymenttermCode',
-        :'e_paymentterm_type' => :'ePaymenttermType',
-        :'i_paymentterm_day' => :'iPaymenttermDay',
-        :'obj_paymentterm_description' => :'objPaymenttermDescription',
-        :'b_paymentterm_isactive' => :'bPaymenttermIsactive',
-        :'obj_audit' => :'objAudit'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_paymentterm_id' => :'Integer',
-        :'s_paymentterm_code' => :'String',
-        :'e_paymentterm_type' => :'FieldEPaymenttermType',
-        :'i_paymentterm_day' => :'Integer',
-        :'obj_paymentterm_description' => :'MultilingualPaymenttermDescription',
-        :'b_paymentterm_isactive' => :'Boolean',
-        :'obj_audit' => :'CommonAudit'
       }
     end
 
@@ -115,95 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_paymentterm_id')
-        self.pki_paymentterm_id = attributes[:'pki_paymentterm_id']
-      else
-        self.pki_paymentterm_id = nil
-      end
-
-      if attributes.key?(:'s_paymentterm_code')
-        self.s_paymentterm_code = attributes[:'s_paymentterm_code']
-      else
-        self.s_paymentterm_code = nil
-      end
-
-      if attributes.key?(:'e_paymentterm_type')
-        self.e_paymentterm_type = attributes[:'e_paymentterm_type']
-      else
-        self.e_paymentterm_type = nil
-      end
-
-      if attributes.key?(:'i_paymentterm_day')
-        self.i_paymentterm_day = attributes[:'i_paymentterm_day']
-      else
-        self.i_paymentterm_day = nil
-      end
-
-      if attributes.key?(:'obj_paymentterm_description')
-        self.obj_paymentterm_description = attributes[:'obj_paymentterm_description']
-      else
-        self.obj_paymentterm_description = nil
-      end
-
-      if attributes.key?(:'b_paymentterm_isactive')
-        self.b_paymentterm_isactive = attributes[:'b_paymentterm_isactive']
-      else
-        self.b_paymentterm_isactive = nil
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      else
-        self.obj_audit = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_paymentterm_id.nil?
-        invalid_properties.push('invalid value for "pki_paymentterm_id", pki_paymentterm_id cannot be nil.')
-      end
-
-      if @s_paymentterm_code.nil?
-        invalid_properties.push('invalid value for "s_paymentterm_code", s_paymentterm_code cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^[A-Z0-9]{1,4}$/)
-      if @s_paymentterm_code !~ pattern
-        invalid_properties.push("invalid value for \"s_paymentterm_code\", must conform to the pattern #{pattern}.")
-      end
-
-      if @e_paymentterm_type.nil?
-        invalid_properties.push('invalid value for "e_paymentterm_type", e_paymentterm_type cannot be nil.')
-      end
-
-      if @i_paymentterm_day.nil?
-        invalid_properties.push('invalid value for "i_paymentterm_day", i_paymentterm_day cannot be nil.')
-      end
-
-      if @i_paymentterm_day > 255
-        invalid_properties.push('invalid value for "i_paymentterm_day", must be smaller than or equal to 255.')
-      end
-
-      if @i_paymentterm_day < 0
-        invalid_properties.push('invalid value for "i_paymentterm_day", must be greater than or equal to 0.')
-      end
-
-      if @obj_paymentterm_description.nil?
-        invalid_properties.push('invalid value for "obj_paymentterm_description", obj_paymentterm_description cannot be nil.')
-      end
-
-      if @b_paymentterm_isactive.nil?
-        invalid_properties.push('invalid value for "b_paymentterm_isactive", b_paymentterm_isactive cannot be nil.')
-      end
-
-      if @obj_audit.nil?
-        invalid_properties.push('invalid value for "obj_audit", obj_audit cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -211,64 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_paymentterm_id.nil?
-      return false if @s_paymentterm_code.nil?
-      return false if @s_paymentterm_code !~ Regexp.new(/^[A-Z0-9]{1,4}$/)
-      return false if @e_paymentterm_type.nil?
-      return false if @i_paymentterm_day.nil?
-      return false if @i_paymentterm_day > 255
-      return false if @i_paymentterm_day < 0
-      return false if @obj_paymentterm_description.nil?
-      return false if @b_paymentterm_isactive.nil?
-      return false if @obj_audit.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_paymentterm_code Value to be assigned
-    def s_paymentterm_code=(s_paymentterm_code)
-      if s_paymentterm_code.nil?
-        fail ArgumentError, 's_paymentterm_code cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[A-Z0-9]{1,4}$/)
-      if s_paymentterm_code !~ pattern
-        fail ArgumentError, "invalid value for \"s_paymentterm_code\", must conform to the pattern #{pattern}."
-      end
-
-      @s_paymentterm_code = s_paymentterm_code
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_paymentterm_day Value to be assigned
-    def i_paymentterm_day=(i_paymentterm_day)
-      if i_paymentterm_day.nil?
-        fail ArgumentError, 'i_paymentterm_day cannot be nil'
-      end
-
-      if i_paymentterm_day > 255
-        fail ArgumentError, 'invalid value for "i_paymentterm_day", must be smaller than or equal to 255.'
-      end
-
-      if i_paymentterm_day < 0
-        fail ArgumentError, 'invalid value for "i_paymentterm_day", must be greater than or equal to 0.'
-      end
-
-      @i_paymentterm_day = i_paymentterm_day
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_paymentterm_id == o.pki_paymentterm_id &&
-          s_paymentterm_code == o.s_paymentterm_code &&
-          e_paymentterm_type == o.e_paymentterm_type &&
-          i_paymentterm_day == o.i_paymentterm_day &&
-          obj_paymentterm_description == o.obj_paymentterm_description &&
-          b_paymentterm_isactive == o.b_paymentterm_isactive &&
-          obj_audit == o.obj_audit
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -280,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_paymentterm_id, s_paymentterm_code, e_paymentterm_type, i_paymentterm_day, obj_paymentterm_description, b_paymentterm_isactive, obj_audit].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -288,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -364,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

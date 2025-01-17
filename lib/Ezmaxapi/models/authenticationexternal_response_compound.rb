@@ -15,23 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Authenticationexternal Object
-  class AuthenticationexternalResponseCompound
-    # The unique ID of the Authenticationexternal
-    attr_accessor :pki_authenticationexternal_id
-
-    # The description of the Authenticationexternal
-    attr_accessor :s_authenticationexternal_description
-
-    attr_accessor :e_authenticationexternal_type
-
-    # Whether the Authenticationexternal has been connected or not
-    attr_accessor :b_authenticationexternal_connected
-
-    # The url to authorize the Authenticationexternal
-    attr_accessor :s_authenticationexternal_authorizationurl
-
-    attr_accessor :obj_audit
-
+  class AuthenticationexternalResponseCompound < AuthenticationexternalResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -57,29 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_authenticationexternal_id' => :'pkiAuthenticationexternalID',
-        :'s_authenticationexternal_description' => :'sAuthenticationexternalDescription',
-        :'e_authenticationexternal_type' => :'eAuthenticationexternalType',
-        :'b_authenticationexternal_connected' => :'bAuthenticationexternalConnected',
-        :'s_authenticationexternal_authorizationurl' => :'sAuthenticationexternalAuthorizationurl',
-        :'obj_audit' => :'objAudit'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_authenticationexternal_id' => :'Integer',
-        :'s_authenticationexternal_description' => :'String',
-        :'e_authenticationexternal_type' => :'FieldEAuthenticationexternalType',
-        :'b_authenticationexternal_connected' => :'Boolean',
-        :'s_authenticationexternal_authorizationurl' => :'String',
-        :'obj_audit' => :'CommonAudit'
       }
     end
 
@@ -111,78 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_authenticationexternal_id')
-        self.pki_authenticationexternal_id = attributes[:'pki_authenticationexternal_id']
-      else
-        self.pki_authenticationexternal_id = nil
-      end
-
-      if attributes.key?(:'s_authenticationexternal_description')
-        self.s_authenticationexternal_description = attributes[:'s_authenticationexternal_description']
-      else
-        self.s_authenticationexternal_description = nil
-      end
-
-      if attributes.key?(:'e_authenticationexternal_type')
-        self.e_authenticationexternal_type = attributes[:'e_authenticationexternal_type']
-      else
-        self.e_authenticationexternal_type = nil
-      end
-
-      if attributes.key?(:'b_authenticationexternal_connected')
-        self.b_authenticationexternal_connected = attributes[:'b_authenticationexternal_connected']
-      end
-
-      if attributes.key?(:'s_authenticationexternal_authorizationurl')
-        self.s_authenticationexternal_authorizationurl = attributes[:'s_authenticationexternal_authorizationurl']
-      end
-
-      if attributes.key?(:'obj_audit')
-        self.obj_audit = attributes[:'obj_audit']
-      else
-        self.obj_audit = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_authenticationexternal_id.nil?
-        invalid_properties.push('invalid value for "pki_authenticationexternal_id", pki_authenticationexternal_id cannot be nil.')
-      end
-
-      if @pki_authenticationexternal_id > 255
-        invalid_properties.push('invalid value for "pki_authenticationexternal_id", must be smaller than or equal to 255.')
-      end
-
-      if @pki_authenticationexternal_id < 0
-        invalid_properties.push('invalid value for "pki_authenticationexternal_id", must be greater than or equal to 0.')
-      end
-
-      if @s_authenticationexternal_description.nil?
-        invalid_properties.push('invalid value for "s_authenticationexternal_description", s_authenticationexternal_description cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if @s_authenticationexternal_description !~ pattern
-        invalid_properties.push("invalid value for \"s_authenticationexternal_description\", must conform to the pattern #{pattern}.")
-      end
-
-      if @e_authenticationexternal_type.nil?
-        invalid_properties.push('invalid value for "e_authenticationexternal_type", e_authenticationexternal_type cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
-      if !@s_authenticationexternal_authorizationurl.nil? && @s_authenticationexternal_authorizationurl !~ pattern
-        invalid_properties.push("invalid value for \"s_authenticationexternal_authorizationurl\", must conform to the pattern #{pattern}.")
-      end
-
-      if @obj_audit.nil?
-        invalid_properties.push('invalid value for "obj_audit", obj_audit cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -190,76 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_authenticationexternal_id.nil?
-      return false if @pki_authenticationexternal_id > 255
-      return false if @pki_authenticationexternal_id < 0
-      return false if @s_authenticationexternal_description.nil?
-      return false if @s_authenticationexternal_description !~ Regexp.new(/^.{0,50}$/)
-      return false if @e_authenticationexternal_type.nil?
-      return false if !@s_authenticationexternal_authorizationurl.nil? && @s_authenticationexternal_authorizationurl !~ Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
-      return false if @obj_audit.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_authenticationexternal_id Value to be assigned
-    def pki_authenticationexternal_id=(pki_authenticationexternal_id)
-      if pki_authenticationexternal_id.nil?
-        fail ArgumentError, 'pki_authenticationexternal_id cannot be nil'
-      end
-
-      if pki_authenticationexternal_id > 255
-        fail ArgumentError, 'invalid value for "pki_authenticationexternal_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_authenticationexternal_id < 0
-        fail ArgumentError, 'invalid value for "pki_authenticationexternal_id", must be greater than or equal to 0.'
-      end
-
-      @pki_authenticationexternal_id = pki_authenticationexternal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_authenticationexternal_description Value to be assigned
-    def s_authenticationexternal_description=(s_authenticationexternal_description)
-      if s_authenticationexternal_description.nil?
-        fail ArgumentError, 's_authenticationexternal_description cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_authenticationexternal_description !~ pattern
-        fail ArgumentError, "invalid value for \"s_authenticationexternal_description\", must conform to the pattern #{pattern}."
-      end
-
-      @s_authenticationexternal_description = s_authenticationexternal_description
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_authenticationexternal_authorizationurl Value to be assigned
-    def s_authenticationexternal_authorizationurl=(s_authenticationexternal_authorizationurl)
-      if s_authenticationexternal_authorizationurl.nil?
-        fail ArgumentError, 's_authenticationexternal_authorizationurl cannot be nil'
-      end
-
-      pattern = Regexp.new(/^(https|http):\/\/[^\s\/$.?#].[^\s]*$/)
-      if s_authenticationexternal_authorizationurl !~ pattern
-        fail ArgumentError, "invalid value for \"s_authenticationexternal_authorizationurl\", must conform to the pattern #{pattern}."
-      end
-
-      @s_authenticationexternal_authorizationurl = s_authenticationexternal_authorizationurl
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_authenticationexternal_id == o.pki_authenticationexternal_id &&
-          s_authenticationexternal_description == o.s_authenticationexternal_description &&
-          e_authenticationexternal_type == o.e_authenticationexternal_type &&
-          b_authenticationexternal_connected == o.b_authenticationexternal_connected &&
-          s_authenticationexternal_authorizationurl == o.s_authenticationexternal_authorizationurl &&
-          obj_audit == o.obj_audit
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -271,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_authenticationexternal_id, s_authenticationexternal_description, e_authenticationexternal_type, b_authenticationexternal_connected, s_authenticationexternal_authorizationurl, obj_audit].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -279,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -355,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

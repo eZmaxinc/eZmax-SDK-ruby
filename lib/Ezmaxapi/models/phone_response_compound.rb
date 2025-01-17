@@ -15,21 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Phone Object and children to create a complete structure
-  class PhoneResponseCompound
-    # The unique ID of the Phone.
-    attr_accessor :pki_phone_id
-
-    # The unique ID of the Phonetype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Mobile| |4|Fax| |5|Pager| |6|Toll Free|
-    attr_accessor :fki_phonetype_id
-
-    attr_accessor :e_phone_type
-
-    # A phone number in E.164 Format
-    attr_accessor :s_phone_e164
-
-    # The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
-    attr_accessor :s_phone_extension
-
+  class PhoneResponseCompound < PhoneResponse
     # Indicate the phone number is an international phone number.
     attr_accessor :b_phone_international
 
@@ -58,28 +44,18 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_phone_id' => :'pkiPhoneID',
-        :'fki_phonetype_id' => :'fkiPhonetypeID',
-        :'e_phone_type' => :'ePhoneType',
-        :'s_phone_e164' => :'sPhoneE164',
-        :'s_phone_extension' => :'sPhoneExtension',
         :'b_phone_international' => :'bPhoneInternational'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_phone_id' => :'Integer',
-        :'fki_phonetype_id' => :'Integer',
-        :'e_phone_type' => :'FieldEPhoneType',
-        :'s_phone_e164' => :'String',
-        :'s_phone_extension' => :'String',
         :'b_phone_international' => :'Boolean'
       }
     end
@@ -112,29 +88,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_phone_id')
-        self.pki_phone_id = attributes[:'pki_phone_id']
-      else
-        self.pki_phone_id = nil
-      end
-
-      if attributes.key?(:'fki_phonetype_id')
-        self.fki_phonetype_id = attributes[:'fki_phonetype_id']
-      else
-        self.fki_phonetype_id = nil
-      end
-
-      if attributes.key?(:'e_phone_type')
-        self.e_phone_type = attributes[:'e_phone_type']
-      end
-
-      if attributes.key?(:'s_phone_e164')
-        self.s_phone_e164 = attributes[:'s_phone_e164']
-      end
-
-      if attributes.key?(:'s_phone_extension')
-        self.s_phone_extension = attributes[:'s_phone_extension']
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'b_phone_international')
         self.b_phone_international = attributes[:'b_phone_international']
@@ -145,28 +100,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_phone_id.nil?
-        invalid_properties.push('invalid value for "pki_phone_id", pki_phone_id cannot be nil.')
-      end
-
-      if @pki_phone_id < 0
-        invalid_properties.push('invalid value for "pki_phone_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_phonetype_id.nil?
-        invalid_properties.push('invalid value for "fki_phonetype_id", fki_phonetype_id cannot be nil.')
-      end
-
-      if @fki_phonetype_id < 0
-        invalid_properties.push('invalid value for "fki_phonetype_id", must be greater than or equal to 0.')
-      end
-
-      pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
-      if !@s_phone_e164.nil? && @s_phone_e164 !~ pattern
-        invalid_properties.push("invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -174,55 +108,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_phone_id.nil?
-      return false if @pki_phone_id < 0
-      return false if @fki_phonetype_id.nil?
-      return false if @fki_phonetype_id < 0
-      return false if !@s_phone_e164.nil? && @s_phone_e164 !~ Regexp.new(/^\+[1-9]\d{1,14}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_phone_id Value to be assigned
-    def pki_phone_id=(pki_phone_id)
-      if pki_phone_id.nil?
-        fail ArgumentError, 'pki_phone_id cannot be nil'
-      end
-
-      if pki_phone_id < 0
-        fail ArgumentError, 'invalid value for "pki_phone_id", must be greater than or equal to 0.'
-      end
-
-      @pki_phone_id = pki_phone_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_phonetype_id Value to be assigned
-    def fki_phonetype_id=(fki_phonetype_id)
-      if fki_phonetype_id.nil?
-        fail ArgumentError, 'fki_phonetype_id cannot be nil'
-      end
-
-      if fki_phonetype_id < 0
-        fail ArgumentError, 'invalid value for "fki_phonetype_id", must be greater than or equal to 0.'
-      end
-
-      @fki_phonetype_id = fki_phonetype_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_phone_e164 Value to be assigned
-    def s_phone_e164=(s_phone_e164)
-      if s_phone_e164.nil?
-        fail ArgumentError, 's_phone_e164 cannot be nil'
-      end
-
-      pattern = Regexp.new(/^\+[1-9]\d{1,14}$/)
-      if s_phone_e164 !~ pattern
-        fail ArgumentError, "invalid value for \"s_phone_e164\", must conform to the pattern #{pattern}."
-      end
-
-      @s_phone_e164 = s_phone_e164
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -230,12 +116,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_phone_id == o.pki_phone_id &&
-          fki_phonetype_id == o.fki_phonetype_id &&
-          e_phone_type == o.e_phone_type &&
-          s_phone_e164 == o.s_phone_e164 &&
-          s_phone_extension == o.s_phone_extension &&
-          b_phone_international == o.b_phone_international
+          b_phone_international == o.b_phone_international && super(o)
     end
 
     # @see the `==` method
@@ -247,7 +128,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_phone_id, fki_phonetype_id, e_phone_type, s_phone_e164, s_phone_extension, b_phone_international].hash
+      [b_phone_international].hash
     end
 
     # Builds the object from hash
@@ -255,6 +136,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -331,7 +213,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

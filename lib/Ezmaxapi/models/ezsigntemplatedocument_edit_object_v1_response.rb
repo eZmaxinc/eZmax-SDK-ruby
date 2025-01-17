@@ -15,32 +15,24 @@ require 'time'
 
 module EzmaxApi
   # Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
-  class EzsigntemplatedocumentEditObjectV1Response
-    attr_accessor :obj_debug_payload
-
-    attr_accessor :obj_debug
-
+  class EzsigntemplatedocumentEditObjectV1Response < CommonResponse
     attr_accessor :a_obj_warning
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'obj_debug_payload' => :'objDebugPayload',
-        :'obj_debug' => :'objDebug',
         :'a_obj_warning' => :'a_objWarning'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
-        :'obj_debug' => :'CommonResponseObjDebug',
         :'a_obj_warning' => :'Array<CommonResponseWarning>'
       }
     end
@@ -73,15 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'obj_debug_payload')
-        self.obj_debug_payload = attributes[:'obj_debug_payload']
-      else
-        self.obj_debug_payload = nil
-      end
-
-      if attributes.key?(:'obj_debug')
-        self.obj_debug = attributes[:'obj_debug']
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_warning')
         if (value = attributes[:'a_obj_warning']).is_a?(Array)
@@ -94,11 +79,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @obj_debug_payload.nil?
-        invalid_properties.push('invalid value for "obj_debug_payload", obj_debug_payload cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -106,8 +87,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @obj_debug_payload.nil?
-      true
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -115,9 +95,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          obj_debug_payload == o.obj_debug_payload &&
-          obj_debug == o.obj_debug &&
-          a_obj_warning == o.a_obj_warning
+          a_obj_warning == o.a_obj_warning && super(o)
     end
 
     # @see the `==` method
@@ -129,7 +107,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_debug_payload, obj_debug, a_obj_warning].hash
+      [a_obj_warning].hash
     end
 
     # Builds the object from hash
@@ -137,6 +115,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -213,7 +192,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

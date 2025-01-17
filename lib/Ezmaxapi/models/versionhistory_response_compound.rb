@@ -15,37 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Versionhistory Object
-  class VersionhistoryResponseCompound
-    # The unique ID of the Versionhistory
-    attr_accessor :pki_versionhistory_id
-
-    # The unique ID of the Module
-    attr_accessor :fki_module_id
-
-    # The unique ID of the Modulesection
-    attr_accessor :fki_modulesection_id
-
-    # The Name of the Module in the language of the requester
-    attr_accessor :s_module_name_x
-
-    # The Name of the Modulesection in the language of the requester
-    attr_accessor :s_modulesection_name_x
-
-    attr_accessor :e_versionhistory_usertype
-
-    attr_accessor :obj_versionhistory_detail
-
-    # The date  at which the Versionhistory was published or should be published
-    attr_accessor :dt_versionhistory_date
-
-    # The date  at which the Versionhistory will no longer be visible
-    attr_accessor :dt_versionhistory_dateend
-
-    attr_accessor :e_versionhistory_type
-
-    # Whether the Versionhistory is published or still a draft
-    attr_accessor :b_versionhistory_draft
-
+  class VersionhistoryResponseCompound < VersionhistoryResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -71,39 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_versionhistory_id' => :'pkiVersionhistoryID',
-        :'fki_module_id' => :'fkiModuleID',
-        :'fki_modulesection_id' => :'fkiModulesectionID',
-        :'s_module_name_x' => :'sModuleNameX',
-        :'s_modulesection_name_x' => :'sModulesectionNameX',
-        :'e_versionhistory_usertype' => :'eVersionhistoryUsertype',
-        :'obj_versionhistory_detail' => :'objVersionhistoryDetail',
-        :'dt_versionhistory_date' => :'dtVersionhistoryDate',
-        :'dt_versionhistory_dateend' => :'dtVersionhistoryDateend',
-        :'e_versionhistory_type' => :'eVersionhistoryType',
-        :'b_versionhistory_draft' => :'bVersionhistoryDraft'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_versionhistory_id' => :'Integer',
-        :'fki_module_id' => :'Integer',
-        :'fki_modulesection_id' => :'Integer',
-        :'s_module_name_x' => :'String',
-        :'s_modulesection_name_x' => :'String',
-        :'e_versionhistory_usertype' => :'FieldEVersionhistoryUsertype',
-        :'obj_versionhistory_detail' => :'MultilingualVersionhistoryDetail',
-        :'dt_versionhistory_date' => :'String',
-        :'dt_versionhistory_dateend' => :'String',
-        :'e_versionhistory_type' => :'FieldEVersionhistoryType',
-        :'b_versionhistory_draft' => :'Boolean'
       }
     end
 
@@ -135,98 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_versionhistory_id')
-        self.pki_versionhistory_id = attributes[:'pki_versionhistory_id']
-      else
-        self.pki_versionhistory_id = nil
-      end
-
-      if attributes.key?(:'fki_module_id')
-        self.fki_module_id = attributes[:'fki_module_id']
-      end
-
-      if attributes.key?(:'fki_modulesection_id')
-        self.fki_modulesection_id = attributes[:'fki_modulesection_id']
-      end
-
-      if attributes.key?(:'s_module_name_x')
-        self.s_module_name_x = attributes[:'s_module_name_x']
-      end
-
-      if attributes.key?(:'s_modulesection_name_x')
-        self.s_modulesection_name_x = attributes[:'s_modulesection_name_x']
-      end
-
-      if attributes.key?(:'e_versionhistory_usertype')
-        self.e_versionhistory_usertype = attributes[:'e_versionhistory_usertype']
-      end
-
-      if attributes.key?(:'obj_versionhistory_detail')
-        self.obj_versionhistory_detail = attributes[:'obj_versionhistory_detail']
-      else
-        self.obj_versionhistory_detail = nil
-      end
-
-      if attributes.key?(:'dt_versionhistory_date')
-        self.dt_versionhistory_date = attributes[:'dt_versionhistory_date']
-      else
-        self.dt_versionhistory_date = nil
-      end
-
-      if attributes.key?(:'dt_versionhistory_dateend')
-        self.dt_versionhistory_dateend = attributes[:'dt_versionhistory_dateend']
-      end
-
-      if attributes.key?(:'e_versionhistory_type')
-        self.e_versionhistory_type = attributes[:'e_versionhistory_type']
-      else
-        self.e_versionhistory_type = nil
-      end
-
-      if attributes.key?(:'b_versionhistory_draft')
-        self.b_versionhistory_draft = attributes[:'b_versionhistory_draft']
-      else
-        self.b_versionhistory_draft = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_versionhistory_id.nil?
-        invalid_properties.push('invalid value for "pki_versionhistory_id", pki_versionhistory_id cannot be nil.')
-      end
-
-      if @pki_versionhistory_id < 0
-        invalid_properties.push('invalid value for "pki_versionhistory_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_module_id.nil? && @fki_module_id < 0
-        invalid_properties.push('invalid value for "fki_module_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_modulesection_id.nil? && @fki_modulesection_id < 0
-        invalid_properties.push('invalid value for "fki_modulesection_id", must be greater than or equal to 0.')
-      end
-
-      if @obj_versionhistory_detail.nil?
-        invalid_properties.push('invalid value for "obj_versionhistory_detail", obj_versionhistory_detail cannot be nil.')
-      end
-
-      if @dt_versionhistory_date.nil?
-        invalid_properties.push('invalid value for "dt_versionhistory_date", dt_versionhistory_date cannot be nil.')
-      end
-
-      if @e_versionhistory_type.nil?
-        invalid_properties.push('invalid value for "e_versionhistory_type", e_versionhistory_type cannot be nil.')
-      end
-
-      if @b_versionhistory_draft.nil?
-        invalid_properties.push('invalid value for "b_versionhistory_draft", b_versionhistory_draft cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -234,75 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_versionhistory_id.nil?
-      return false if @pki_versionhistory_id < 0
-      return false if !@fki_module_id.nil? && @fki_module_id < 0
-      return false if !@fki_modulesection_id.nil? && @fki_modulesection_id < 0
-      return false if @obj_versionhistory_detail.nil?
-      return false if @dt_versionhistory_date.nil?
-      return false if @e_versionhistory_type.nil?
-      return false if @b_versionhistory_draft.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_versionhistory_id Value to be assigned
-    def pki_versionhistory_id=(pki_versionhistory_id)
-      if pki_versionhistory_id.nil?
-        fail ArgumentError, 'pki_versionhistory_id cannot be nil'
-      end
-
-      if pki_versionhistory_id < 0
-        fail ArgumentError, 'invalid value for "pki_versionhistory_id", must be greater than or equal to 0.'
-      end
-
-      @pki_versionhistory_id = pki_versionhistory_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_module_id Value to be assigned
-    def fki_module_id=(fki_module_id)
-      if fki_module_id.nil?
-        fail ArgumentError, 'fki_module_id cannot be nil'
-      end
-
-      if fki_module_id < 0
-        fail ArgumentError, 'invalid value for "fki_module_id", must be greater than or equal to 0.'
-      end
-
-      @fki_module_id = fki_module_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_modulesection_id Value to be assigned
-    def fki_modulesection_id=(fki_modulesection_id)
-      if fki_modulesection_id.nil?
-        fail ArgumentError, 'fki_modulesection_id cannot be nil'
-      end
-
-      if fki_modulesection_id < 0
-        fail ArgumentError, 'invalid value for "fki_modulesection_id", must be greater than or equal to 0.'
-      end
-
-      @fki_modulesection_id = fki_modulesection_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_versionhistory_id == o.pki_versionhistory_id &&
-          fki_module_id == o.fki_module_id &&
-          fki_modulesection_id == o.fki_modulesection_id &&
-          s_module_name_x == o.s_module_name_x &&
-          s_modulesection_name_x == o.s_modulesection_name_x &&
-          e_versionhistory_usertype == o.e_versionhistory_usertype &&
-          obj_versionhistory_detail == o.obj_versionhistory_detail &&
-          dt_versionhistory_date == o.dt_versionhistory_date &&
-          dt_versionhistory_dateend == o.dt_versionhistory_dateend &&
-          e_versionhistory_type == o.e_versionhistory_type &&
-          b_versionhistory_draft == o.b_versionhistory_draft
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -314,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_versionhistory_id, fki_module_id, fki_modulesection_id, s_module_name_x, s_modulesection_name_x, e_versionhistory_usertype, obj_versionhistory_detail, dt_versionhistory_date, dt_versionhistory_dateend, e_versionhistory_type, b_versionhistory_draft].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -322,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -398,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

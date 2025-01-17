@@ -15,66 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Textstylestatic Object
-  class TextstylestaticResponseCompound
-    # The unique ID of the Textstylestatic
-    attr_accessor :pki_textstylestatic_id
-
-    # The unique ID of the Font
-    attr_accessor :fki_font_id
-
-    # The name of the Font
-    attr_accessor :s_font_name
-
-    # Whether the Textstylestatic is Bold or not
-    attr_accessor :b_textstylestatic_bold
-
-    # Whether the Textstylestatic is Underline or not
-    attr_accessor :b_textstylestatic_underline
-
-    # Whether the Textstylestatic is Italic or not
-    attr_accessor :b_textstylestatic_italic
-
-    # Whether the Textstylestatic is Strikethrough or not
-    attr_accessor :b_textstylestatic_strikethrough
-
-    # The int32 representation of the Fontcolor. For example, RGB color #39435B would be 3752795
-    attr_accessor :i_textstylestatic_fontcolor
-
-    # The Size for the Font of the Textstylestatic
-    attr_accessor :i_textstylestatic_size
-
+  class TextstylestaticResponseCompound < TextstylestaticResponse
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_textstylestatic_id' => :'pkiTextstylestaticID',
-        :'fki_font_id' => :'fkiFontID',
-        :'s_font_name' => :'sFontName',
-        :'b_textstylestatic_bold' => :'bTextstylestaticBold',
-        :'b_textstylestatic_underline' => :'bTextstylestaticUnderline',
-        :'b_textstylestatic_italic' => :'bTextstylestaticItalic',
-        :'b_textstylestatic_strikethrough' => :'bTextstylestaticStrikethrough',
-        :'i_textstylestatic_fontcolor' => :'iTextstylestaticFontcolor',
-        :'i_textstylestatic_size' => :'iTextstylestaticSize'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_textstylestatic_id' => :'Integer',
-        :'fki_font_id' => :'Integer',
-        :'s_font_name' => :'String',
-        :'b_textstylestatic_bold' => :'Boolean',
-        :'b_textstylestatic_underline' => :'Boolean',
-        :'b_textstylestatic_italic' => :'Boolean',
-        :'b_textstylestatic_strikethrough' => :'Boolean',
-        :'i_textstylestatic_fontcolor' => :'Integer',
-        :'i_textstylestatic_size' => :'Integer'
       }
     end
 
@@ -106,125 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_textstylestatic_id')
-        self.pki_textstylestatic_id = attributes[:'pki_textstylestatic_id']
-      end
-
-      if attributes.key?(:'fki_font_id')
-        self.fki_font_id = attributes[:'fki_font_id']
-      else
-        self.fki_font_id = nil
-      end
-
-      if attributes.key?(:'s_font_name')
-        self.s_font_name = attributes[:'s_font_name']
-      else
-        self.s_font_name = nil
-      end
-
-      if attributes.key?(:'b_textstylestatic_bold')
-        self.b_textstylestatic_bold = attributes[:'b_textstylestatic_bold']
-      else
-        self.b_textstylestatic_bold = nil
-      end
-
-      if attributes.key?(:'b_textstylestatic_underline')
-        self.b_textstylestatic_underline = attributes[:'b_textstylestatic_underline']
-      else
-        self.b_textstylestatic_underline = nil
-      end
-
-      if attributes.key?(:'b_textstylestatic_italic')
-        self.b_textstylestatic_italic = attributes[:'b_textstylestatic_italic']
-      else
-        self.b_textstylestatic_italic = nil
-      end
-
-      if attributes.key?(:'b_textstylestatic_strikethrough')
-        self.b_textstylestatic_strikethrough = attributes[:'b_textstylestatic_strikethrough']
-      else
-        self.b_textstylestatic_strikethrough = nil
-      end
-
-      if attributes.key?(:'i_textstylestatic_fontcolor')
-        self.i_textstylestatic_fontcolor = attributes[:'i_textstylestatic_fontcolor']
-      else
-        self.i_textstylestatic_fontcolor = nil
-      end
-
-      if attributes.key?(:'i_textstylestatic_size')
-        self.i_textstylestatic_size = attributes[:'i_textstylestatic_size']
-      else
-        self.i_textstylestatic_size = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_textstylestatic_id.nil? && @pki_textstylestatic_id < 0
-        invalid_properties.push('invalid value for "pki_textstylestatic_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_font_id.nil?
-        invalid_properties.push('invalid value for "fki_font_id", fki_font_id cannot be nil.')
-      end
-
-      if @fki_font_id < 0
-        invalid_properties.push('invalid value for "fki_font_id", must be greater than or equal to 0.')
-      end
-
-      if @s_font_name.nil?
-        invalid_properties.push('invalid value for "s_font_name", s_font_name cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if @s_font_name !~ pattern
-        invalid_properties.push("invalid value for \"s_font_name\", must conform to the pattern #{pattern}.")
-      end
-
-      if @b_textstylestatic_bold.nil?
-        invalid_properties.push('invalid value for "b_textstylestatic_bold", b_textstylestatic_bold cannot be nil.')
-      end
-
-      if @b_textstylestatic_underline.nil?
-        invalid_properties.push('invalid value for "b_textstylestatic_underline", b_textstylestatic_underline cannot be nil.')
-      end
-
-      if @b_textstylestatic_italic.nil?
-        invalid_properties.push('invalid value for "b_textstylestatic_italic", b_textstylestatic_italic cannot be nil.')
-      end
-
-      if @b_textstylestatic_strikethrough.nil?
-        invalid_properties.push('invalid value for "b_textstylestatic_strikethrough", b_textstylestatic_strikethrough cannot be nil.')
-      end
-
-      if @i_textstylestatic_fontcolor.nil?
-        invalid_properties.push('invalid value for "i_textstylestatic_fontcolor", i_textstylestatic_fontcolor cannot be nil.')
-      end
-
-      if @i_textstylestatic_fontcolor > 16777215
-        invalid_properties.push('invalid value for "i_textstylestatic_fontcolor", must be smaller than or equal to 16777215.')
-      end
-
-      if @i_textstylestatic_fontcolor < 0
-        invalid_properties.push('invalid value for "i_textstylestatic_fontcolor", must be greater than or equal to 0.')
-      end
-
-      if @i_textstylestatic_size.nil?
-        invalid_properties.push('invalid value for "i_textstylestatic_size", i_textstylestatic_size cannot be nil.')
-      end
-
-      if @i_textstylestatic_size > 255
-        invalid_properties.push('invalid value for "i_textstylestatic_size", must be smaller than or equal to 255.')
-      end
-
-      if @i_textstylestatic_size < 1
-        invalid_properties.push('invalid value for "i_textstylestatic_size", must be greater than or equal to 1.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -232,117 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_textstylestatic_id.nil? && @pki_textstylestatic_id < 0
-      return false if @fki_font_id.nil?
-      return false if @fki_font_id < 0
-      return false if @s_font_name.nil?
-      return false if @s_font_name !~ Regexp.new(/^.{0,50}$/)
-      return false if @b_textstylestatic_bold.nil?
-      return false if @b_textstylestatic_underline.nil?
-      return false if @b_textstylestatic_italic.nil?
-      return false if @b_textstylestatic_strikethrough.nil?
-      return false if @i_textstylestatic_fontcolor.nil?
-      return false if @i_textstylestatic_fontcolor > 16777215
-      return false if @i_textstylestatic_fontcolor < 0
-      return false if @i_textstylestatic_size.nil?
-      return false if @i_textstylestatic_size > 255
-      return false if @i_textstylestatic_size < 1
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_textstylestatic_id Value to be assigned
-    def pki_textstylestatic_id=(pki_textstylestatic_id)
-      if pki_textstylestatic_id.nil?
-        fail ArgumentError, 'pki_textstylestatic_id cannot be nil'
-      end
-
-      if pki_textstylestatic_id < 0
-        fail ArgumentError, 'invalid value for "pki_textstylestatic_id", must be greater than or equal to 0.'
-      end
-
-      @pki_textstylestatic_id = pki_textstylestatic_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_font_id Value to be assigned
-    def fki_font_id=(fki_font_id)
-      if fki_font_id.nil?
-        fail ArgumentError, 'fki_font_id cannot be nil'
-      end
-
-      if fki_font_id < 0
-        fail ArgumentError, 'invalid value for "fki_font_id", must be greater than or equal to 0.'
-      end
-
-      @fki_font_id = fki_font_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_font_name Value to be assigned
-    def s_font_name=(s_font_name)
-      if s_font_name.nil?
-        fail ArgumentError, 's_font_name cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,50}$/)
-      if s_font_name !~ pattern
-        fail ArgumentError, "invalid value for \"s_font_name\", must conform to the pattern #{pattern}."
-      end
-
-      @s_font_name = s_font_name
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_textstylestatic_fontcolor Value to be assigned
-    def i_textstylestatic_fontcolor=(i_textstylestatic_fontcolor)
-      if i_textstylestatic_fontcolor.nil?
-        fail ArgumentError, 'i_textstylestatic_fontcolor cannot be nil'
-      end
-
-      if i_textstylestatic_fontcolor > 16777215
-        fail ArgumentError, 'invalid value for "i_textstylestatic_fontcolor", must be smaller than or equal to 16777215.'
-      end
-
-      if i_textstylestatic_fontcolor < 0
-        fail ArgumentError, 'invalid value for "i_textstylestatic_fontcolor", must be greater than or equal to 0.'
-      end
-
-      @i_textstylestatic_fontcolor = i_textstylestatic_fontcolor
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_textstylestatic_size Value to be assigned
-    def i_textstylestatic_size=(i_textstylestatic_size)
-      if i_textstylestatic_size.nil?
-        fail ArgumentError, 'i_textstylestatic_size cannot be nil'
-      end
-
-      if i_textstylestatic_size > 255
-        fail ArgumentError, 'invalid value for "i_textstylestatic_size", must be smaller than or equal to 255.'
-      end
-
-      if i_textstylestatic_size < 1
-        fail ArgumentError, 'invalid value for "i_textstylestatic_size", must be greater than or equal to 1.'
-      end
-
-      @i_textstylestatic_size = i_textstylestatic_size
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_textstylestatic_id == o.pki_textstylestatic_id &&
-          fki_font_id == o.fki_font_id &&
-          s_font_name == o.s_font_name &&
-          b_textstylestatic_bold == o.b_textstylestatic_bold &&
-          b_textstylestatic_underline == o.b_textstylestatic_underline &&
-          b_textstylestatic_italic == o.b_textstylestatic_italic &&
-          b_textstylestatic_strikethrough == o.b_textstylestatic_strikethrough &&
-          i_textstylestatic_fontcolor == o.i_textstylestatic_fontcolor &&
-          i_textstylestatic_size == o.i_textstylestatic_size
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -354,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_textstylestatic_id, fki_font_id, s_font_name, b_textstylestatic_bold, b_textstylestatic_underline, b_textstylestatic_italic, b_textstylestatic_strikethrough, i_textstylestatic_fontcolor, i_textstylestatic_size].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -362,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -438,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

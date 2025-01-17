@@ -15,50 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Subnet Object and children
-  class SubnetRequestCompound
-    # The unique ID of the Subnet
-    attr_accessor :pki_subnet_id
-
-    # The unique ID of the User
-    attr_accessor :fki_user_id
-
-    # The unique ID of the Apikey
-    attr_accessor :fki_apikey_id
-
-    attr_accessor :obj_subnet_description
-
-    # The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064
-    attr_accessor :i_subnet_network
-
-    # The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040
-    attr_accessor :i_subnet_mask
-
+  class SubnetRequestCompound < SubnetRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_subnet_id' => :'pkiSubnetID',
-        :'fki_user_id' => :'fkiUserID',
-        :'fki_apikey_id' => :'fkiApikeyID',
-        :'obj_subnet_description' => :'objSubnetDescription',
-        :'i_subnet_network' => :'iSubnetNetwork',
-        :'i_subnet_mask' => :'iSubnetMask'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_subnet_id' => :'Integer',
-        :'fki_user_id' => :'Integer',
-        :'fki_apikey_id' => :'Integer',
-        :'obj_subnet_description' => :'MultilingualSubnetDescription',
-        :'i_subnet_network' => :'Integer',
-        :'i_subnet_mask' => :'Integer'
       }
     end
 
@@ -90,86 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_subnet_id')
-        self.pki_subnet_id = attributes[:'pki_subnet_id']
-      end
-
-      if attributes.key?(:'fki_user_id')
-        self.fki_user_id = attributes[:'fki_user_id']
-      end
-
-      if attributes.key?(:'fki_apikey_id')
-        self.fki_apikey_id = attributes[:'fki_apikey_id']
-      end
-
-      if attributes.key?(:'obj_subnet_description')
-        self.obj_subnet_description = attributes[:'obj_subnet_description']
-      else
-        self.obj_subnet_description = nil
-      end
-
-      if attributes.key?(:'i_subnet_network')
-        self.i_subnet_network = attributes[:'i_subnet_network']
-      else
-        self.i_subnet_network = nil
-      end
-
-      if attributes.key?(:'i_subnet_mask')
-        self.i_subnet_mask = attributes[:'i_subnet_mask']
-      else
-        self.i_subnet_mask = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_subnet_id.nil? && @pki_subnet_id > 65535
-        invalid_properties.push('invalid value for "pki_subnet_id", must be smaller than or equal to 65535.')
-      end
-
-      if !@pki_subnet_id.nil? && @pki_subnet_id < 0
-        invalid_properties.push('invalid value for "pki_subnet_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_user_id.nil? && @fki_user_id < 0
-        invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
-      end
-
-      if !@fki_apikey_id.nil? && @fki_apikey_id < 0
-        invalid_properties.push('invalid value for "fki_apikey_id", must be greater than or equal to 0.')
-      end
-
-      if @obj_subnet_description.nil?
-        invalid_properties.push('invalid value for "obj_subnet_description", obj_subnet_description cannot be nil.')
-      end
-
-      if @i_subnet_network.nil?
-        invalid_properties.push('invalid value for "i_subnet_network", i_subnet_network cannot be nil.')
-      end
-
-      if @i_subnet_network > 4294967295
-        invalid_properties.push('invalid value for "i_subnet_network", must be smaller than or equal to 4294967295.')
-      end
-
-      if @i_subnet_network < 0
-        invalid_properties.push('invalid value for "i_subnet_network", must be greater than or equal to 0.')
-      end
-
-      if @i_subnet_mask.nil?
-        invalid_properties.push('invalid value for "i_subnet_mask", i_subnet_mask cannot be nil.')
-      end
-
-      if @i_subnet_mask > 4294967295
-        invalid_properties.push('invalid value for "i_subnet_mask", must be smaller than or equal to 4294967295.')
-      end
-
-      if @i_subnet_mask < 0
-        invalid_properties.push('invalid value for "i_subnet_mask", must be greater than or equal to 0.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -177,113 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_subnet_id.nil? && @pki_subnet_id > 65535
-      return false if !@pki_subnet_id.nil? && @pki_subnet_id < 0
-      return false if !@fki_user_id.nil? && @fki_user_id < 0
-      return false if !@fki_apikey_id.nil? && @fki_apikey_id < 0
-      return false if @obj_subnet_description.nil?
-      return false if @i_subnet_network.nil?
-      return false if @i_subnet_network > 4294967295
-      return false if @i_subnet_network < 0
-      return false if @i_subnet_mask.nil?
-      return false if @i_subnet_mask > 4294967295
-      return false if @i_subnet_mask < 0
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_subnet_id Value to be assigned
-    def pki_subnet_id=(pki_subnet_id)
-      if pki_subnet_id.nil?
-        fail ArgumentError, 'pki_subnet_id cannot be nil'
-      end
-
-      if pki_subnet_id > 65535
-        fail ArgumentError, 'invalid value for "pki_subnet_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_subnet_id < 0
-        fail ArgumentError, 'invalid value for "pki_subnet_id", must be greater than or equal to 0.'
-      end
-
-      @pki_subnet_id = pki_subnet_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_user_id Value to be assigned
-    def fki_user_id=(fki_user_id)
-      if fki_user_id.nil?
-        fail ArgumentError, 'fki_user_id cannot be nil'
-      end
-
-      if fki_user_id < 0
-        fail ArgumentError, 'invalid value for "fki_user_id", must be greater than or equal to 0.'
-      end
-
-      @fki_user_id = fki_user_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_apikey_id Value to be assigned
-    def fki_apikey_id=(fki_apikey_id)
-      if fki_apikey_id.nil?
-        fail ArgumentError, 'fki_apikey_id cannot be nil'
-      end
-
-      if fki_apikey_id < 0
-        fail ArgumentError, 'invalid value for "fki_apikey_id", must be greater than or equal to 0.'
-      end
-
-      @fki_apikey_id = fki_apikey_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_subnet_network Value to be assigned
-    def i_subnet_network=(i_subnet_network)
-      if i_subnet_network.nil?
-        fail ArgumentError, 'i_subnet_network cannot be nil'
-      end
-
-      if i_subnet_network > 4294967295
-        fail ArgumentError, 'invalid value for "i_subnet_network", must be smaller than or equal to 4294967295.'
-      end
-
-      if i_subnet_network < 0
-        fail ArgumentError, 'invalid value for "i_subnet_network", must be greater than or equal to 0.'
-      end
-
-      @i_subnet_network = i_subnet_network
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_subnet_mask Value to be assigned
-    def i_subnet_mask=(i_subnet_mask)
-      if i_subnet_mask.nil?
-        fail ArgumentError, 'i_subnet_mask cannot be nil'
-      end
-
-      if i_subnet_mask > 4294967295
-        fail ArgumentError, 'invalid value for "i_subnet_mask", must be smaller than or equal to 4294967295.'
-      end
-
-      if i_subnet_mask < 0
-        fail ArgumentError, 'invalid value for "i_subnet_mask", must be greater than or equal to 0.'
-      end
-
-      @i_subnet_mask = i_subnet_mask
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_subnet_id == o.pki_subnet_id &&
-          fki_user_id == o.fki_user_id &&
-          fki_apikey_id == o.fki_apikey_id &&
-          obj_subnet_description == o.obj_subnet_description &&
-          i_subnet_network == o.i_subnet_network &&
-          i_subnet_mask == o.i_subnet_mask
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -295,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_subnet_id, fki_user_id, fki_apikey_id, obj_subnet_description, i_subnet_network, i_subnet_mask].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -303,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -379,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

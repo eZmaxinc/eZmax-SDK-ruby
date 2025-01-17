@@ -15,36 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Usergroupexternal Object and children
-  class UsergroupexternalRequestCompound
-    # The unique ID of the Usergroupexternal
-    attr_accessor :pki_usergroupexternal_id
-
-    # The name of the Usergroupexternal
-    attr_accessor :s_usergroupexternal_name
-
-    # The id of the Usergroupexternal
-    attr_accessor :s_usergroupexternal_id
-
+  class UsergroupexternalRequestCompound < UsergroupexternalRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_usergroupexternal_id' => :'pkiUsergroupexternalID',
-        :'s_usergroupexternal_name' => :'sUsergroupexternalName',
-        :'s_usergroupexternal_id' => :'sUsergroupexternalID'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_usergroupexternal_id' => :'Integer',
-        :'s_usergroupexternal_name' => :'String',
-        :'s_usergroupexternal_id' => :'String'
       }
     end
 
@@ -76,54 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_usergroupexternal_id')
-        self.pki_usergroupexternal_id = attributes[:'pki_usergroupexternal_id']
-      end
-
-      if attributes.key?(:'s_usergroupexternal_name')
-        self.s_usergroupexternal_name = attributes[:'s_usergroupexternal_name']
-      else
-        self.s_usergroupexternal_name = nil
-      end
-
-      if attributes.key?(:'s_usergroupexternal_id')
-        self.s_usergroupexternal_id = attributes[:'s_usergroupexternal_id']
-      else
-        self.s_usergroupexternal_id = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_usergroupexternal_id.nil? && @pki_usergroupexternal_id > 255
-        invalid_properties.push('invalid value for "pki_usergroupexternal_id", must be smaller than or equal to 255.')
-      end
-
-      if !@pki_usergroupexternal_id.nil? && @pki_usergroupexternal_id < 0
-        invalid_properties.push('invalid value for "pki_usergroupexternal_id", must be greater than or equal to 0.')
-      end
-
-      if @s_usergroupexternal_name.nil?
-        invalid_properties.push('invalid value for "s_usergroupexternal_name", s_usergroupexternal_name cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if @s_usergroupexternal_name !~ pattern
-        invalid_properties.push("invalid value for \"s_usergroupexternal_name\", must conform to the pattern #{pattern}.")
-      end
-
-      if @s_usergroupexternal_id.nil?
-        invalid_properties.push('invalid value for "s_usergroupexternal_id", s_usergroupexternal_id cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if @s_usergroupexternal_id !~ pattern
-        invalid_properties.push("invalid value for \"s_usergroupexternal_id\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -131,71 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_usergroupexternal_id.nil? && @pki_usergroupexternal_id > 255
-      return false if !@pki_usergroupexternal_id.nil? && @pki_usergroupexternal_id < 0
-      return false if @s_usergroupexternal_name.nil?
-      return false if @s_usergroupexternal_name !~ Regexp.new(/^.{0,64}$/)
-      return false if @s_usergroupexternal_id.nil?
-      return false if @s_usergroupexternal_id !~ Regexp.new(/^.{0,64}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_usergroupexternal_id Value to be assigned
-    def pki_usergroupexternal_id=(pki_usergroupexternal_id)
-      if pki_usergroupexternal_id.nil?
-        fail ArgumentError, 'pki_usergroupexternal_id cannot be nil'
-      end
-
-      if pki_usergroupexternal_id > 255
-        fail ArgumentError, 'invalid value for "pki_usergroupexternal_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_usergroupexternal_id < 0
-        fail ArgumentError, 'invalid value for "pki_usergroupexternal_id", must be greater than or equal to 0.'
-      end
-
-      @pki_usergroupexternal_id = pki_usergroupexternal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_usergroupexternal_name Value to be assigned
-    def s_usergroupexternal_name=(s_usergroupexternal_name)
-      if s_usergroupexternal_name.nil?
-        fail ArgumentError, 's_usergroupexternal_name cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if s_usergroupexternal_name !~ pattern
-        fail ArgumentError, "invalid value for \"s_usergroupexternal_name\", must conform to the pattern #{pattern}."
-      end
-
-      @s_usergroupexternal_name = s_usergroupexternal_name
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] s_usergroupexternal_id Value to be assigned
-    def s_usergroupexternal_id=(s_usergroupexternal_id)
-      if s_usergroupexternal_id.nil?
-        fail ArgumentError, 's_usergroupexternal_id cannot be nil'
-      end
-
-      pattern = Regexp.new(/^.{0,64}$/)
-      if s_usergroupexternal_id !~ pattern
-        fail ArgumentError, "invalid value for \"s_usergroupexternal_id\", must conform to the pattern #{pattern}."
-      end
-
-      @s_usergroupexternal_id = s_usergroupexternal_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_usergroupexternal_id == o.pki_usergroupexternal_id &&
-          s_usergroupexternal_name == o.s_usergroupexternal_name &&
-          s_usergroupexternal_id == o.s_usergroupexternal_id
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -207,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_usergroupexternal_id, s_usergroupexternal_name, s_usergroupexternal_id].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -215,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -291,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

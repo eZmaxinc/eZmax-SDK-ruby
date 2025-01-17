@@ -15,54 +15,24 @@ require 'time'
 
 module EzmaxApi
   # A Module Object
-  class ModuleResponseCompound
-    # The unique ID of the Module
-    attr_accessor :pki_module_id
-
-    # The unique ID of the Modulegroup
-    attr_accessor :fki_modulegroup_id
-
-    # The Internal name of the Module.  This is theoretically an enum field but there are so many possibles values we decided not to list them all.
-    attr_accessor :e_module_internalname
-
-    # The Name of the Module in the language of the requester
-    attr_accessor :s_module_name_x
-
-    # Whether the Module is registered or not
-    attr_accessor :b_module_registered
-
-    # Whether the Module is registered or not for api use
-    attr_accessor :b_module_registeredapi
-
+  class ModuleResponseCompound < ModuleResponse
     attr_accessor :a_obj_modulesection
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_module_id' => :'pkiModuleID',
-        :'fki_modulegroup_id' => :'fkiModulegroupID',
-        :'e_module_internalname' => :'eModuleInternalname',
-        :'s_module_name_x' => :'sModuleNameX',
-        :'b_module_registered' => :'bModuleRegistered',
-        :'b_module_registeredapi' => :'bModuleRegisteredapi',
         :'a_obj_modulesection' => :'a_objModulesection'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_module_id' => :'Integer',
-        :'fki_modulegroup_id' => :'Integer',
-        :'e_module_internalname' => :'String',
-        :'s_module_name_x' => :'String',
-        :'b_module_registered' => :'Boolean',
-        :'b_module_registeredapi' => :'Boolean',
         :'a_obj_modulesection' => :'Array<ModulesectionResponseCompound>'
       }
     end
@@ -95,41 +65,8 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_module_id')
-        self.pki_module_id = attributes[:'pki_module_id']
-      else
-        self.pki_module_id = nil
-      end
-
-      if attributes.key?(:'fki_modulegroup_id')
-        self.fki_modulegroup_id = attributes[:'fki_modulegroup_id']
-      else
-        self.fki_modulegroup_id = nil
-      end
-
-      if attributes.key?(:'e_module_internalname')
-        self.e_module_internalname = attributes[:'e_module_internalname']
-      else
-        self.e_module_internalname = nil
-      end
-
-      if attributes.key?(:'s_module_name_x')
-        self.s_module_name_x = attributes[:'s_module_name_x']
-      else
-        self.s_module_name_x = nil
-      end
-
-      if attributes.key?(:'b_module_registered')
-        self.b_module_registered = attributes[:'b_module_registered']
-      else
-        self.b_module_registered = nil
-      end
-
-      if attributes.key?(:'b_module_registeredapi')
-        self.b_module_registeredapi = attributes[:'b_module_registeredapi']
-      else
-        self.b_module_registeredapi = nil
-      end
+      # call parent's initialize
+      super(attributes)
 
       if attributes.key?(:'a_obj_modulesection')
         if (value = attributes[:'a_obj_modulesection']).is_a?(Array)
@@ -142,43 +79,7 @@ module EzmaxApi
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_module_id.nil?
-        invalid_properties.push('invalid value for "pki_module_id", pki_module_id cannot be nil.')
-      end
-
-      if @pki_module_id < 0
-        invalid_properties.push('invalid value for "pki_module_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_modulegroup_id.nil?
-        invalid_properties.push('invalid value for "fki_modulegroup_id", fki_modulegroup_id cannot be nil.')
-      end
-
-      if @fki_modulegroup_id > 255
-        invalid_properties.push('invalid value for "fki_modulegroup_id", must be smaller than or equal to 255.')
-      end
-
-      if @fki_modulegroup_id < 1
-        invalid_properties.push('invalid value for "fki_modulegroup_id", must be greater than or equal to 1.')
-      end
-
-      if @e_module_internalname.nil?
-        invalid_properties.push('invalid value for "e_module_internalname", e_module_internalname cannot be nil.')
-      end
-
-      if @s_module_name_x.nil?
-        invalid_properties.push('invalid value for "s_module_name_x", s_module_name_x cannot be nil.')
-      end
-
-      if @b_module_registered.nil?
-        invalid_properties.push('invalid value for "b_module_registered", b_module_registered cannot be nil.')
-      end
-
-      if @b_module_registeredapi.nil?
-        invalid_properties.push('invalid value for "b_module_registeredapi", b_module_registeredapi cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -186,48 +87,7 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_module_id.nil?
-      return false if @pki_module_id < 0
-      return false if @fki_modulegroup_id.nil?
-      return false if @fki_modulegroup_id > 255
-      return false if @fki_modulegroup_id < 1
-      return false if @e_module_internalname.nil?
-      return false if @s_module_name_x.nil?
-      return false if @b_module_registered.nil?
-      return false if @b_module_registeredapi.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_module_id Value to be assigned
-    def pki_module_id=(pki_module_id)
-      if pki_module_id.nil?
-        fail ArgumentError, 'pki_module_id cannot be nil'
-      end
-
-      if pki_module_id < 0
-        fail ArgumentError, 'invalid value for "pki_module_id", must be greater than or equal to 0.'
-      end
-
-      @pki_module_id = pki_module_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_modulegroup_id Value to be assigned
-    def fki_modulegroup_id=(fki_modulegroup_id)
-      if fki_modulegroup_id.nil?
-        fail ArgumentError, 'fki_modulegroup_id cannot be nil'
-      end
-
-      if fki_modulegroup_id > 255
-        fail ArgumentError, 'invalid value for "fki_modulegroup_id", must be smaller than or equal to 255.'
-      end
-
-      if fki_modulegroup_id < 1
-        fail ArgumentError, 'invalid value for "fki_modulegroup_id", must be greater than or equal to 1.'
-      end
-
-      @fki_modulegroup_id = fki_modulegroup_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
@@ -235,13 +95,7 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          pki_module_id == o.pki_module_id &&
-          fki_modulegroup_id == o.fki_modulegroup_id &&
-          e_module_internalname == o.e_module_internalname &&
-          s_module_name_x == o.s_module_name_x &&
-          b_module_registered == o.b_module_registered &&
-          b_module_registeredapi == o.b_module_registeredapi &&
-          a_obj_modulesection == o.a_obj_modulesection
+          a_obj_modulesection == o.a_obj_modulesection && super(o)
     end
 
     # @see the `==` method
@@ -253,7 +107,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_module_id, fki_modulegroup_id, e_module_internalname, s_module_name_x, b_module_registered, b_module_registeredapi, a_obj_modulesection].hash
+      [a_obj_modulesection].hash
     end
 
     # Builds the object from hash
@@ -261,6 +115,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -337,7 +192,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

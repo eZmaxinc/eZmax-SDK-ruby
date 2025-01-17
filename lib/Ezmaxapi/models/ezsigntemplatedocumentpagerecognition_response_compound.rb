@@ -15,35 +15,7 @@ require 'time'
 
 module EzmaxApi
   # A Ezsigntemplatedocumentpagerecognition Object
-  class EzsigntemplatedocumentpagerecognitionResponseCompound
-    # The unique ID of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :pki_ezsigntemplatedocumentpagerecognition_id
-
-    # The unique ID of the Ezsigntemplatedocumentpage
-    attr_accessor :fki_ezsigntemplatedocumentpage_id
-
-    attr_accessor :e_ezsigntemplatedocumentpagerecognition_operator
-
-    attr_accessor :e_ezsigntemplatedocumentpagerecognition_section
-
-    # The similarpercentage of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :i_ezsigntemplatedocumentpagerecognition_similarpercentage
-
-    # The x of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :i_ezsigntemplatedocumentpagerecognition_x
-
-    # The y of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :i_ezsigntemplatedocumentpagerecognition_y
-
-    # The width of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :i_ezsigntemplatedocumentpagerecognition_width
-
-    # The height of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :i_ezsigntemplatedocumentpagerecognition_height
-
-    # The text of the Ezsigntemplatedocumentpagerecognition
-    attr_accessor :t_ezsigntemplatedocumentpagerecognition_text
-
+  class EzsigntemplatedocumentpagerecognitionResponseCompound < EzsigntemplatedocumentpagerecognitionResponse
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -69,37 +41,17 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_ezsigntemplatedocumentpagerecognition_id' => :'pkiEzsigntemplatedocumentpagerecognitionID',
-        :'fki_ezsigntemplatedocumentpage_id' => :'fkiEzsigntemplatedocumentpageID',
-        :'e_ezsigntemplatedocumentpagerecognition_operator' => :'eEzsigntemplatedocumentpagerecognitionOperator',
-        :'e_ezsigntemplatedocumentpagerecognition_section' => :'eEzsigntemplatedocumentpagerecognitionSection',
-        :'i_ezsigntemplatedocumentpagerecognition_similarpercentage' => :'iEzsigntemplatedocumentpagerecognitionSimilarpercentage',
-        :'i_ezsigntemplatedocumentpagerecognition_x' => :'iEzsigntemplatedocumentpagerecognitionX',
-        :'i_ezsigntemplatedocumentpagerecognition_y' => :'iEzsigntemplatedocumentpagerecognitionY',
-        :'i_ezsigntemplatedocumentpagerecognition_width' => :'iEzsigntemplatedocumentpagerecognitionWidth',
-        :'i_ezsigntemplatedocumentpagerecognition_height' => :'iEzsigntemplatedocumentpagerecognitionHeight',
-        :'t_ezsigntemplatedocumentpagerecognition_text' => :'tEzsigntemplatedocumentpagerecognitionText'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_ezsigntemplatedocumentpagerecognition_id' => :'Integer',
-        :'fki_ezsigntemplatedocumentpage_id' => :'Integer',
-        :'e_ezsigntemplatedocumentpagerecognition_operator' => :'FieldEEzsigntemplatedocumentpagerecognitionOperator',
-        :'e_ezsigntemplatedocumentpagerecognition_section' => :'FieldEEzsigntemplatedocumentpagerecognitionSection',
-        :'i_ezsigntemplatedocumentpagerecognition_similarpercentage' => :'Integer',
-        :'i_ezsigntemplatedocumentpagerecognition_x' => :'Integer',
-        :'i_ezsigntemplatedocumentpagerecognition_y' => :'Integer',
-        :'i_ezsigntemplatedocumentpagerecognition_width' => :'Integer',
-        :'i_ezsigntemplatedocumentpagerecognition_height' => :'Integer',
-        :'t_ezsigntemplatedocumentpagerecognition_text' => :'String'
       }
     end
 
@@ -131,139 +83,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_ezsigntemplatedocumentpagerecognition_id')
-        self.pki_ezsigntemplatedocumentpagerecognition_id = attributes[:'pki_ezsigntemplatedocumentpagerecognition_id']
-      else
-        self.pki_ezsigntemplatedocumentpagerecognition_id = nil
-      end
-
-      if attributes.key?(:'fki_ezsigntemplatedocumentpage_id')
-        self.fki_ezsigntemplatedocumentpage_id = attributes[:'fki_ezsigntemplatedocumentpage_id']
-      else
-        self.fki_ezsigntemplatedocumentpage_id = nil
-      end
-
-      if attributes.key?(:'e_ezsigntemplatedocumentpagerecognition_operator')
-        self.e_ezsigntemplatedocumentpagerecognition_operator = attributes[:'e_ezsigntemplatedocumentpagerecognition_operator']
-      else
-        self.e_ezsigntemplatedocumentpagerecognition_operator = nil
-      end
-
-      if attributes.key?(:'e_ezsigntemplatedocumentpagerecognition_section')
-        self.e_ezsigntemplatedocumentpagerecognition_section = attributes[:'e_ezsigntemplatedocumentpagerecognition_section']
-      else
-        self.e_ezsigntemplatedocumentpagerecognition_section = nil
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpagerecognition_similarpercentage')
-        self.i_ezsigntemplatedocumentpagerecognition_similarpercentage = attributes[:'i_ezsigntemplatedocumentpagerecognition_similarpercentage']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpagerecognition_x')
-        self.i_ezsigntemplatedocumentpagerecognition_x = attributes[:'i_ezsigntemplatedocumentpagerecognition_x']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpagerecognition_y')
-        self.i_ezsigntemplatedocumentpagerecognition_y = attributes[:'i_ezsigntemplatedocumentpagerecognition_y']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpagerecognition_width')
-        self.i_ezsigntemplatedocumentpagerecognition_width = attributes[:'i_ezsigntemplatedocumentpagerecognition_width']
-      end
-
-      if attributes.key?(:'i_ezsigntemplatedocumentpagerecognition_height')
-        self.i_ezsigntemplatedocumentpagerecognition_height = attributes[:'i_ezsigntemplatedocumentpagerecognition_height']
-      end
-
-      if attributes.key?(:'t_ezsigntemplatedocumentpagerecognition_text')
-        self.t_ezsigntemplatedocumentpagerecognition_text = attributes[:'t_ezsigntemplatedocumentpagerecognition_text']
-      else
-        self.t_ezsigntemplatedocumentpagerecognition_text = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if @pki_ezsigntemplatedocumentpagerecognition_id.nil?
-        invalid_properties.push('invalid value for "pki_ezsigntemplatedocumentpagerecognition_id", pki_ezsigntemplatedocumentpagerecognition_id cannot be nil.')
-      end
-
-      if @pki_ezsigntemplatedocumentpagerecognition_id > 65535
-        invalid_properties.push('invalid value for "pki_ezsigntemplatedocumentpagerecognition_id", must be smaller than or equal to 65535.')
-      end
-
-      if @pki_ezsigntemplatedocumentpagerecognition_id < 0
-        invalid_properties.push('invalid value for "pki_ezsigntemplatedocumentpagerecognition_id", must be greater than or equal to 0.')
-      end
-
-      if @fki_ezsigntemplatedocumentpage_id.nil?
-        invalid_properties.push('invalid value for "fki_ezsigntemplatedocumentpage_id", fki_ezsigntemplatedocumentpage_id cannot be nil.')
-      end
-
-      if @fki_ezsigntemplatedocumentpage_id < 0
-        invalid_properties.push('invalid value for "fki_ezsigntemplatedocumentpage_id", must be greater than or equal to 0.')
-      end
-
-      if @e_ezsigntemplatedocumentpagerecognition_operator.nil?
-        invalid_properties.push('invalid value for "e_ezsigntemplatedocumentpagerecognition_operator", e_ezsigntemplatedocumentpagerecognition_operator cannot be nil.')
-      end
-
-      if @e_ezsigntemplatedocumentpagerecognition_section.nil?
-        invalid_properties.push('invalid value for "e_ezsigntemplatedocumentpagerecognition_section", e_ezsigntemplatedocumentpagerecognition_section cannot be nil.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_similarpercentage.nil? && @i_ezsigntemplatedocumentpagerecognition_similarpercentage > 100
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_similarpercentage", must be smaller than or equal to 100.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_similarpercentage.nil? && @i_ezsigntemplatedocumentpagerecognition_similarpercentage < 60
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_similarpercentage", must be greater than or equal to 60.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_x.nil? && @i_ezsigntemplatedocumentpagerecognition_x > 65535
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_x", must be smaller than or equal to 65535.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_x.nil? && @i_ezsigntemplatedocumentpagerecognition_x < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_x", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_y.nil? && @i_ezsigntemplatedocumentpagerecognition_y > 65535
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_y", must be smaller than or equal to 65535.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_y.nil? && @i_ezsigntemplatedocumentpagerecognition_y < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_y", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_width.nil? && @i_ezsigntemplatedocumentpagerecognition_width > 65535
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_width", must be smaller than or equal to 65535.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_width.nil? && @i_ezsigntemplatedocumentpagerecognition_width < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_width", must be greater than or equal to 0.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_height.nil? && @i_ezsigntemplatedocumentpagerecognition_height > 65535
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_height", must be smaller than or equal to 65535.')
-      end
-
-      if !@i_ezsigntemplatedocumentpagerecognition_height.nil? && @i_ezsigntemplatedocumentpagerecognition_height < 0
-        invalid_properties.push('invalid value for "i_ezsigntemplatedocumentpagerecognition_height", must be greater than or equal to 0.')
-      end
-
-      if @t_ezsigntemplatedocumentpagerecognition_text.nil?
-        invalid_properties.push('invalid value for "t_ezsigntemplatedocumentpagerecognition_text", t_ezsigntemplatedocumentpagerecognition_text cannot be nil.')
-      end
-
-      pattern = Regexp.new(/^[.\D\d]{0,65535}$/)
-      if @t_ezsigntemplatedocumentpagerecognition_text !~ pattern
-        invalid_properties.push("invalid value for \"t_ezsigntemplatedocumentpagerecognition_text\", must conform to the pattern #{pattern}.")
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -271,180 +99,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pki_ezsigntemplatedocumentpagerecognition_id.nil?
-      return false if @pki_ezsigntemplatedocumentpagerecognition_id > 65535
-      return false if @pki_ezsigntemplatedocumentpagerecognition_id < 0
-      return false if @fki_ezsigntemplatedocumentpage_id.nil?
-      return false if @fki_ezsigntemplatedocumentpage_id < 0
-      return false if @e_ezsigntemplatedocumentpagerecognition_operator.nil?
-      return false if @e_ezsigntemplatedocumentpagerecognition_section.nil?
-      return false if !@i_ezsigntemplatedocumentpagerecognition_similarpercentage.nil? && @i_ezsigntemplatedocumentpagerecognition_similarpercentage > 100
-      return false if !@i_ezsigntemplatedocumentpagerecognition_similarpercentage.nil? && @i_ezsigntemplatedocumentpagerecognition_similarpercentage < 60
-      return false if !@i_ezsigntemplatedocumentpagerecognition_x.nil? && @i_ezsigntemplatedocumentpagerecognition_x > 65535
-      return false if !@i_ezsigntemplatedocumentpagerecognition_x.nil? && @i_ezsigntemplatedocumentpagerecognition_x < 0
-      return false if !@i_ezsigntemplatedocumentpagerecognition_y.nil? && @i_ezsigntemplatedocumentpagerecognition_y > 65535
-      return false if !@i_ezsigntemplatedocumentpagerecognition_y.nil? && @i_ezsigntemplatedocumentpagerecognition_y < 0
-      return false if !@i_ezsigntemplatedocumentpagerecognition_width.nil? && @i_ezsigntemplatedocumentpagerecognition_width > 65535
-      return false if !@i_ezsigntemplatedocumentpagerecognition_width.nil? && @i_ezsigntemplatedocumentpagerecognition_width < 0
-      return false if !@i_ezsigntemplatedocumentpagerecognition_height.nil? && @i_ezsigntemplatedocumentpagerecognition_height > 65535
-      return false if !@i_ezsigntemplatedocumentpagerecognition_height.nil? && @i_ezsigntemplatedocumentpagerecognition_height < 0
-      return false if @t_ezsigntemplatedocumentpagerecognition_text.nil?
-      return false if @t_ezsigntemplatedocumentpagerecognition_text !~ Regexp.new(/^[.\D\d]{0,65535}$/)
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_ezsigntemplatedocumentpagerecognition_id Value to be assigned
-    def pki_ezsigntemplatedocumentpagerecognition_id=(pki_ezsigntemplatedocumentpagerecognition_id)
-      if pki_ezsigntemplatedocumentpagerecognition_id.nil?
-        fail ArgumentError, 'pki_ezsigntemplatedocumentpagerecognition_id cannot be nil'
-      end
-
-      if pki_ezsigntemplatedocumentpagerecognition_id > 65535
-        fail ArgumentError, 'invalid value for "pki_ezsigntemplatedocumentpagerecognition_id", must be smaller than or equal to 65535.'
-      end
-
-      if pki_ezsigntemplatedocumentpagerecognition_id < 0
-        fail ArgumentError, 'invalid value for "pki_ezsigntemplatedocumentpagerecognition_id", must be greater than or equal to 0.'
-      end
-
-      @pki_ezsigntemplatedocumentpagerecognition_id = pki_ezsigntemplatedocumentpagerecognition_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] fki_ezsigntemplatedocumentpage_id Value to be assigned
-    def fki_ezsigntemplatedocumentpage_id=(fki_ezsigntemplatedocumentpage_id)
-      if fki_ezsigntemplatedocumentpage_id.nil?
-        fail ArgumentError, 'fki_ezsigntemplatedocumentpage_id cannot be nil'
-      end
-
-      if fki_ezsigntemplatedocumentpage_id < 0
-        fail ArgumentError, 'invalid value for "fki_ezsigntemplatedocumentpage_id", must be greater than or equal to 0.'
-      end
-
-      @fki_ezsigntemplatedocumentpage_id = fki_ezsigntemplatedocumentpage_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpagerecognition_similarpercentage Value to be assigned
-    def i_ezsigntemplatedocumentpagerecognition_similarpercentage=(i_ezsigntemplatedocumentpagerecognition_similarpercentage)
-      if i_ezsigntemplatedocumentpagerecognition_similarpercentage.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpagerecognition_similarpercentage cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_similarpercentage > 100
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_similarpercentage", must be smaller than or equal to 100.'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_similarpercentage < 60
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_similarpercentage", must be greater than or equal to 60.'
-      end
-
-      @i_ezsigntemplatedocumentpagerecognition_similarpercentage = i_ezsigntemplatedocumentpagerecognition_similarpercentage
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpagerecognition_x Value to be assigned
-    def i_ezsigntemplatedocumentpagerecognition_x=(i_ezsigntemplatedocumentpagerecognition_x)
-      if i_ezsigntemplatedocumentpagerecognition_x.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpagerecognition_x cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_x > 65535
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_x", must be smaller than or equal to 65535.'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_x < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_x", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatedocumentpagerecognition_x = i_ezsigntemplatedocumentpagerecognition_x
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpagerecognition_y Value to be assigned
-    def i_ezsigntemplatedocumentpagerecognition_y=(i_ezsigntemplatedocumentpagerecognition_y)
-      if i_ezsigntemplatedocumentpagerecognition_y.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpagerecognition_y cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_y > 65535
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_y", must be smaller than or equal to 65535.'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_y < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_y", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatedocumentpagerecognition_y = i_ezsigntemplatedocumentpagerecognition_y
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpagerecognition_width Value to be assigned
-    def i_ezsigntemplatedocumentpagerecognition_width=(i_ezsigntemplatedocumentpagerecognition_width)
-      if i_ezsigntemplatedocumentpagerecognition_width.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpagerecognition_width cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_width > 65535
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_width", must be smaller than or equal to 65535.'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_width < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_width", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatedocumentpagerecognition_width = i_ezsigntemplatedocumentpagerecognition_width
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] i_ezsigntemplatedocumentpagerecognition_height Value to be assigned
-    def i_ezsigntemplatedocumentpagerecognition_height=(i_ezsigntemplatedocumentpagerecognition_height)
-      if i_ezsigntemplatedocumentpagerecognition_height.nil?
-        fail ArgumentError, 'i_ezsigntemplatedocumentpagerecognition_height cannot be nil'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_height > 65535
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_height", must be smaller than or equal to 65535.'
-      end
-
-      if i_ezsigntemplatedocumentpagerecognition_height < 0
-        fail ArgumentError, 'invalid value for "i_ezsigntemplatedocumentpagerecognition_height", must be greater than or equal to 0.'
-      end
-
-      @i_ezsigntemplatedocumentpagerecognition_height = i_ezsigntemplatedocumentpagerecognition_height
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] t_ezsigntemplatedocumentpagerecognition_text Value to be assigned
-    def t_ezsigntemplatedocumentpagerecognition_text=(t_ezsigntemplatedocumentpagerecognition_text)
-      if t_ezsigntemplatedocumentpagerecognition_text.nil?
-        fail ArgumentError, 't_ezsigntemplatedocumentpagerecognition_text cannot be nil'
-      end
-
-      pattern = Regexp.new(/^[.\D\d]{0,65535}$/)
-      if t_ezsigntemplatedocumentpagerecognition_text !~ pattern
-        fail ArgumentError, "invalid value for \"t_ezsigntemplatedocumentpagerecognition_text\", must conform to the pattern #{pattern}."
-      end
-
-      @t_ezsigntemplatedocumentpagerecognition_text = t_ezsigntemplatedocumentpagerecognition_text
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_ezsigntemplatedocumentpagerecognition_id == o.pki_ezsigntemplatedocumentpagerecognition_id &&
-          fki_ezsigntemplatedocumentpage_id == o.fki_ezsigntemplatedocumentpage_id &&
-          e_ezsigntemplatedocumentpagerecognition_operator == o.e_ezsigntemplatedocumentpagerecognition_operator &&
-          e_ezsigntemplatedocumentpagerecognition_section == o.e_ezsigntemplatedocumentpagerecognition_section &&
-          i_ezsigntemplatedocumentpagerecognition_similarpercentage == o.i_ezsigntemplatedocumentpagerecognition_similarpercentage &&
-          i_ezsigntemplatedocumentpagerecognition_x == o.i_ezsigntemplatedocumentpagerecognition_x &&
-          i_ezsigntemplatedocumentpagerecognition_y == o.i_ezsigntemplatedocumentpagerecognition_y &&
-          i_ezsigntemplatedocumentpagerecognition_width == o.i_ezsigntemplatedocumentpagerecognition_width &&
-          i_ezsigntemplatedocumentpagerecognition_height == o.i_ezsigntemplatedocumentpagerecognition_height &&
-          t_ezsigntemplatedocumentpagerecognition_text == o.t_ezsigntemplatedocumentpagerecognition_text
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -456,7 +118,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsigntemplatedocumentpagerecognition_id, fki_ezsigntemplatedocumentpage_id, e_ezsigntemplatedocumentpagerecognition_operator, e_ezsigntemplatedocumentpagerecognition_section, i_ezsigntemplatedocumentpagerecognition_similarpercentage, i_ezsigntemplatedocumentpagerecognition_x, i_ezsigntemplatedocumentpagerecognition_y, i_ezsigntemplatedocumentpagerecognition_width, i_ezsigntemplatedocumentpagerecognition_height, t_ezsigntemplatedocumentpagerecognition_text].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -464,6 +126,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -540,7 +203,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

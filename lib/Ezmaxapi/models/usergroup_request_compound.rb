@@ -15,34 +15,21 @@ require 'time'
 
 module EzmaxApi
   # A Usergroup Object and children
-  class UsergroupRequestCompound
-    # The unique ID of the Usergroup
-    attr_accessor :pki_usergroup_id
-
-    attr_accessor :obj_email
-
-    attr_accessor :obj_usergroup_name
-
+  class UsergroupRequestCompound < UsergroupRequest
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'pki_usergroup_id' => :'pkiUsergroupID',
-        :'obj_email' => :'objEmail',
-        :'obj_usergroup_name' => :'objUsergroupName'
       }
     end
 
-    # Returns all the JSON keys this model knows about
+    # Returns all the JSON keys this model knows about, including the ones defined in its parent(s)
     def self.acceptable_attributes
-      attribute_map.values
+      attribute_map.values.concat(superclass.acceptable_attributes)
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'pki_usergroup_id' => :'Integer',
-        :'obj_email' => :'EmailRequest',
-        :'obj_usergroup_name' => :'MultilingualUsergroupName'
       }
     end
 
@@ -74,38 +61,15 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'pki_usergroup_id')
-        self.pki_usergroup_id = attributes[:'pki_usergroup_id']
-      end
-
-      if attributes.key?(:'obj_email')
-        self.obj_email = attributes[:'obj_email']
-      end
-
-      if attributes.key?(:'obj_usergroup_name')
-        self.obj_usergroup_name = attributes[:'obj_usergroup_name']
-      else
-        self.obj_usergroup_name = nil
-      end
+      # call parent's initialize
+      super(attributes)
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
-      invalid_properties = Array.new
-      if !@pki_usergroup_id.nil? && @pki_usergroup_id > 255
-        invalid_properties.push('invalid value for "pki_usergroup_id", must be smaller than or equal to 255.')
-      end
-
-      if !@pki_usergroup_id.nil? && @pki_usergroup_id < 0
-        invalid_properties.push('invalid value for "pki_usergroup_id", must be greater than or equal to 0.')
-      end
-
-      if @obj_usergroup_name.nil?
-        invalid_properties.push('invalid value for "obj_usergroup_name", obj_usergroup_name cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
@@ -113,38 +77,14 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@pki_usergroup_id.nil? && @pki_usergroup_id > 255
-      return false if !@pki_usergroup_id.nil? && @pki_usergroup_id < 0
-      return false if @obj_usergroup_name.nil?
-      true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] pki_usergroup_id Value to be assigned
-    def pki_usergroup_id=(pki_usergroup_id)
-      if pki_usergroup_id.nil?
-        fail ArgumentError, 'pki_usergroup_id cannot be nil'
-      end
-
-      if pki_usergroup_id > 255
-        fail ArgumentError, 'invalid value for "pki_usergroup_id", must be smaller than or equal to 255.'
-      end
-
-      if pki_usergroup_id < 0
-        fail ArgumentError, 'invalid value for "pki_usergroup_id", must be greater than or equal to 0.'
-      end
-
-      @pki_usergroup_id = pki_usergroup_id
+      true && super
     end
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class &&
-          pki_usergroup_id == o.pki_usergroup_id &&
-          obj_email == o.obj_email &&
-          obj_usergroup_name == o.obj_usergroup_name
+      self.class == o.class && super(o)
     end
 
     # @see the `==` method
@@ -156,7 +96,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_usergroup_id, obj_email, obj_usergroup_name].hash
+      [].hash
     end
 
     # Builds the object from hash
@@ -164,6 +104,7 @@ module EzmaxApi
     # @return [Object] Returns the model itself
     def self.build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
+      super(attributes)
       attributes = attributes.transform_keys(&:to_sym)
       transformed_hash = {}
       openapi_types.each_pair do |key, type|
@@ -240,7 +181,7 @@ module EzmaxApi
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = {}
+      hash = super
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?
