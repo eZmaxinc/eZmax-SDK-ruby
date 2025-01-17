@@ -33,7 +33,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectBillingentityinternalApi.new
-billingentityinternal_create_object_v1_request = EzmaxApi::BillingentityinternalCreateObjectV1Request.new({a_obj_billingentityinternal: [EzmaxApi::BillingentityinternalRequestCompound.new({a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})], obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new})]}) # BillingentityinternalCreateObjectV1Request | 
+billingentityinternal_create_object_v1_request = EzmaxApi::BillingentityinternalCreateObjectV1Request.new({a_obj_billingentityinternal: [EzmaxApi::BillingentityinternalRequestCompound.new({obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new, a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})]})]}) # BillingentityinternalCreateObjectV1Request | 
 
 begin
   # Create a new Billingentityinternal
@@ -84,7 +84,7 @@ end
 
 ## billingentityinternal_edit_object_v1
 
-> <CommonResponse> billingentityinternal_edit_object_v1(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
+> <BillingentityinternalEditObjectV1Response> billingentityinternal_edit_object_v1(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
 
 Edit an existing Billingentityinternal
 
@@ -105,7 +105,7 @@ end
 
 api_instance = EzmaxApi::ObjectBillingentityinternalApi.new
 pki_billingentityinternal_id = 56 # Integer | 
-billingentityinternal_edit_object_v1_request = EzmaxApi::BillingentityinternalEditObjectV1Request.new({obj_billingentityinternal: EzmaxApi::BillingentityinternalRequestCompound.new({a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})], obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new})}) # BillingentityinternalEditObjectV1Request | 
+billingentityinternal_edit_object_v1_request = EzmaxApi::BillingentityinternalEditObjectV1Request.new({obj_billingentityinternal: EzmaxApi::BillingentityinternalRequestCompound.new({obj_billingentityinternal_description: EzmaxApi::MultilingualBillingentityinternalDescription.new, a_obj_billingentityinternalproduct: [EzmaxApi::BillingentityinternalproductRequestCompound.new({fki_ezmaxproduct_id: 172, fki_billingentityexternal_id: 83})]})}) # BillingentityinternalEditObjectV1Request | 
 
 begin
   # Edit an existing Billingentityinternal
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
+> <Array(<BillingentityinternalEditObjectV1Response>, Integer, Hash)> billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <BillingentityinternalEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectBillingentityinternalApi->billingentityinternal_edit_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**BillingentityinternalEditObjectV1Response**](BillingentityinternalEditObjectV1Response.md)
 
 ### Authorization
 

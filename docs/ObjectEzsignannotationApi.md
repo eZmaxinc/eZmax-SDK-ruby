@@ -83,7 +83,7 @@ end
 
 ## ezsignannotation_delete_object_v1
 
-> <CommonResponse> ezsignannotation_delete_object_v1(pki_ezsignannotation_id)
+> <EzsignannotationDeleteObjectV1Response> ezsignannotation_delete_object_v1(pki_ezsignannotation_id)
 
 Delete an existing Ezsignannotation
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignannotation_delete_object_v1_with_http_info(pki_ezsignannotation_id)
+> <Array(<EzsignannotationDeleteObjectV1Response>, Integer, Hash)> ezsignannotation_delete_object_v1_with_http_info(pki_ezsignannotation_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.ezsignannotation_delete_object_v1_with_http_info(pki_ezsignannotation_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignannotationDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignannotationApi->ezsignannotation_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignannotationDeleteObjectV1Response**](EzsignannotationDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## ezsignannotation_edit_object_v1
 
-> <CommonResponse> ezsignannotation_edit_object_v1(pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request)
+> <EzsignannotationEditObjectV1Response> ezsignannotation_edit_object_v1(pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request)
 
 Edit an existing Ezsignannotation
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignannotation_edit_object_v1_with_http_info(pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request)
+> <Array(<EzsignannotationEditObjectV1Response>, Integer, Hash)> ezsignannotation_edit_object_v1_with_http_info(pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.ezsignannotation_edit_object_v1_with_http_info(pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignannotationEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignannotationApi->ezsignannotation_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignannotationEditObjectV1Response**](EzsignannotationEditObjectV1Response.md)
 
 ### Authorization
 

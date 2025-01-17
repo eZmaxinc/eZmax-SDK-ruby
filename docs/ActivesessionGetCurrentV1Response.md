@@ -4,7 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **m_payload** | [**ActivesessionResponseCompound**](ActivesessionResponseCompound.md) | Payload for GET /1/object/activesession/getCurrent |  |
+| **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
+| **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
+| **m_payload** | [**ActivesessionGetCurrentV1ResponseMPayload**](ActivesessionGetCurrentV1ResponseMPayload.md) |  |  |
 
 ## Example
 
@@ -12,6 +14,8 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::ActivesessionGetCurrentV1Response.new(
+  obj_debug_payload: null,
+  obj_debug: null,
   m_payload: null
 )
 ```

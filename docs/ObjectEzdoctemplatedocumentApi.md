@@ -161,7 +161,7 @@ nil (empty response body)
 
 ## ezdoctemplatedocument_edit_object_v1
 
-> <CommonResponse> ezdoctemplatedocument_edit_object_v1(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request)
+> <EzdoctemplatedocumentEditObjectV1Response> ezdoctemplatedocument_edit_object_v1(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request)
 
 Edit an existing Ezdoctemplatedocument
 
@@ -197,7 +197,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezdoctemplatedocument_edit_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request)
+> <Array(<EzdoctemplatedocumentEditObjectV1Response>, Integer, Hash)> ezdoctemplatedocument_edit_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request)
 
 ```ruby
 begin
@@ -205,7 +205,7 @@ begin
   data, status_code, headers = api_instance.ezdoctemplatedocument_edit_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzdoctemplatedocumentEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzdoctemplatedocumentApi->ezdoctemplatedocument_edit_object_v1_with_http_info: #{e}"
 end
@@ -220,7 +220,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzdoctemplatedocumentEditObjectV1Response**](EzdoctemplatedocumentEditObjectV1Response.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ end
 
 ## ezdoctemplatedocument_patch_object_v1
 
-> <CommonResponse> ezdoctemplatedocument_patch_object_v1(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request)
+> <EzdoctemplatedocumentPatchObjectV1Response> ezdoctemplatedocument_patch_object_v1(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request)
 
 Patch an existing Ezdoctemplatedocument
 
@@ -505,7 +505,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezdoctemplatedocument_patch_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request)
+> <Array(<EzdoctemplatedocumentPatchObjectV1Response>, Integer, Hash)> ezdoctemplatedocument_patch_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request)
 
 ```ruby
 begin
@@ -513,7 +513,7 @@ begin
   data, status_code, headers = api_instance.ezdoctemplatedocument_patch_object_v1_with_http_info(pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzdoctemplatedocumentPatchObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzdoctemplatedocumentApi->ezdoctemplatedocument_patch_object_v1_with_http_info: #{e}"
 end
@@ -528,7 +528,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzdoctemplatedocumentPatchObjectV1Response**](EzdoctemplatedocumentPatchObjectV1Response.md)
 
 ### Authorization
 

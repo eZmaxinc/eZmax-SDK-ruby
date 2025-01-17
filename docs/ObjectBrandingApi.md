@@ -84,7 +84,7 @@ end
 
 ## branding_edit_object_v2
 
-> <CommonResponse> branding_edit_object_v2(pki_branding_id, branding_edit_object_v2_request)
+> <BrandingEditObjectV2Response> branding_edit_object_v2(pki_branding_id, branding_edit_object_v2_request)
 
 Edit an existing Branding
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> branding_edit_object_v2_with_http_info(pki_branding_id, branding_edit_object_v2_request)
+> <Array(<BrandingEditObjectV2Response>, Integer, Hash)> branding_edit_object_v2_with_http_info(pki_branding_id, branding_edit_object_v2_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.branding_edit_object_v2_with_http_info(pki_branding_id, branding_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <BrandingEditObjectV2Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectBrandingApi->branding_edit_object_v2_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**BrandingEditObjectV2Response**](BrandingEditObjectV2Response.md)
 
 ### Authorization
 

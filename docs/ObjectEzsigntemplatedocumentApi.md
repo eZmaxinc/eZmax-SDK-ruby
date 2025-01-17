@@ -187,7 +187,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi.new
 pki_ezsigntemplatedocument_id = 56 # Integer | 
-ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1_request = EzmaxApi::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request.new({a_obj_ezsigntemplateformfieldgroup: [EzmaxApi::EzsigntemplateformfieldgroupRequestCompound.new({a_obj_ezsigntemplateformfieldgroupsigner: [EzmaxApi::EzsigntemplateformfieldgroupsignerRequest.new({fki_ezsigntemplatesigner_id: 9})], a_obj_ezsigntemplateformfield: [EzmaxApi::EzsigntemplateformfieldRequestCompound.new({i_ezsigntemplatedocumentpage_pagenumber: 1, s_ezsigntemplateformfield_label: 'Peanuts', i_ezsigntemplateformfield_width: 102, i_ezsigntemplateformfield_height: 22})], fki_ezsigntemplatedocument_id: 133, e_ezsigntemplateformfieldgroup_type: EzmaxApi::FieldEEzsigntemplateformfieldgroupType::TEXT, s_ezsigntemplateformfieldgroup_label: 'Allergies', i_ezsigntemplateformfieldgroup_step: 1, s_ezsigntemplateformfieldgroup_defaultvalue: 'Foo', i_ezsigntemplateformfieldgroup_filledmin: 1, i_ezsigntemplateformfieldgroup_filledmax: 2, b_ezsigntemplateformfieldgroup_readonly: false})]}) # EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request | 
+ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1_request = EzmaxApi::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request.new({a_obj_ezsigntemplateformfieldgroup: [EzmaxApi::EzsigntemplateformfieldgroupRequestCompound.new({fki_ezsigntemplatedocument_id: 133, e_ezsigntemplateformfieldgroup_type: EzmaxApi::FieldEEzsigntemplateformfieldgroupType::TEXT, s_ezsigntemplateformfieldgroup_label: 'Allergies', i_ezsigntemplateformfieldgroup_step: 1, s_ezsigntemplateformfieldgroup_defaultvalue: 'Foo', i_ezsigntemplateformfieldgroup_filledmin: 1, i_ezsigntemplateformfieldgroup_filledmax: 2, b_ezsigntemplateformfieldgroup_readonly: false, a_obj_ezsigntemplateformfieldgroupsigner: [EzmaxApi::EzsigntemplateformfieldgroupsignerRequestCompound.new({fki_ezsigntemplatesigner_id: 9})], a_obj_ezsigntemplateformfield: [EzmaxApi::EzsigntemplateformfieldRequestCompound.new({i_ezsigntemplatedocumentpage_pagenumber: 1, s_ezsigntemplateformfield_label: 'Peanuts', i_ezsigntemplateformfield_width: 102, i_ezsigntemplateformfield_height: 22})]})]}) # EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request | 
 
 begin
   # Edit multiple Ezsigntemplateformfieldgroups
@@ -458,7 +458,7 @@ end
 
 ## ezsigntemplatedocument_flatten_v1
 
-> <CommonResponse> ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id, body)
+> <EzsigntemplatedocumentFlattenV1Response> ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id, body)
 
 Flatten
 
@@ -494,7 +494,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatedocument_flatten_v1_with_http_info(pki_ezsigntemplatedocument_id, body)
+> <Array(<EzsigntemplatedocumentFlattenV1Response>, Integer, Hash)> ezsigntemplatedocument_flatten_v1_with_http_info(pki_ezsigntemplatedocument_id, body)
 
 ```ruby
 begin
@@ -502,7 +502,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatedocument_flatten_v1_with_http_info(pki_ezsigntemplatedocument_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatedocumentFlattenV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_flatten_v1_with_http_info: #{e}"
 end
@@ -517,7 +517,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentFlattenV1Response**](EzsigntemplatedocumentFlattenV1Response.md)
 
 ### Authorization
 
@@ -959,7 +959,7 @@ end
 
 ## ezsigntemplatedocument_patch_object_v1
 
-> <CommonResponse> ezsigntemplatedocument_patch_object_v1(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request)
+> <EzsigntemplatedocumentPatchObjectV1Response> ezsigntemplatedocument_patch_object_v1(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request)
 
 Patch an existing Ezsigntemplatedocument
 
@@ -995,7 +995,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatedocument_patch_object_v1_with_http_info(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request)
+> <Array(<EzsigntemplatedocumentPatchObjectV1Response>, Integer, Hash)> ezsigntemplatedocument_patch_object_v1_with_http_info(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request)
 
 ```ruby
 begin
@@ -1003,7 +1003,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatedocument_patch_object_v1_with_http_info(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatedocumentPatchObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_patch_object_v1_with_http_info: #{e}"
 end
@@ -1018,7 +1018,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentPatchObjectV1Response**](EzsigntemplatedocumentPatchObjectV1Response.md)
 
 ### Authorization
 

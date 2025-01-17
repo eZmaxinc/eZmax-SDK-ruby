@@ -32,7 +32,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectPermissionApi.new
-permission_create_object_v1_request = EzmaxApi::PermissionCreateObjectV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequest.new({fki_modulesection_id: 53})]}) # PermissionCreateObjectV1Request | 
+permission_create_object_v1_request = EzmaxApi::PermissionCreateObjectV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequestCompound.new({fki_modulesection_id: 53})]}) # PermissionCreateObjectV1Request | 
 
 begin
   # Create a new Permission
@@ -83,7 +83,7 @@ end
 
 ## permission_delete_object_v1
 
-> <CommonResponse> permission_delete_object_v1(pki_permission_id)
+> <PermissionDeleteObjectV1Response> permission_delete_object_v1(pki_permission_id)
 
 Delete an existing Permission
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> permission_delete_object_v1_with_http_info(pki_permission_id)
+> <Array(<PermissionDeleteObjectV1Response>, Integer, Hash)> permission_delete_object_v1_with_http_info(pki_permission_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.permission_delete_object_v1_with_http_info(pki_permission_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <PermissionDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectPermissionApi->permission_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**PermissionDeleteObjectV1Response**](PermissionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## permission_edit_object_v1
 
-> <CommonResponse> permission_edit_object_v1(pki_permission_id, permission_edit_object_v1_request)
+> <PermissionEditObjectV1Response> permission_edit_object_v1(pki_permission_id, permission_edit_object_v1_request)
 
 Edit an existing Permission
 
@@ -175,7 +175,7 @@ end
 
 api_instance = EzmaxApi::ObjectPermissionApi.new
 pki_permission_id = 56 # Integer | The unique ID of the Permission
-permission_edit_object_v1_request = EzmaxApi::PermissionEditObjectV1Request.new({obj_permission: EzmaxApi::PermissionRequest.new({fki_modulesection_id: 53})}) # PermissionEditObjectV1Request | 
+permission_edit_object_v1_request = EzmaxApi::PermissionEditObjectV1Request.new({obj_permission: EzmaxApi::PermissionRequestCompound.new({fki_modulesection_id: 53})}) # PermissionEditObjectV1Request | 
 
 begin
   # Edit an existing Permission
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> permission_edit_object_v1_with_http_info(pki_permission_id, permission_edit_object_v1_request)
+> <Array(<PermissionEditObjectV1Response>, Integer, Hash)> permission_edit_object_v1_with_http_info(pki_permission_id, permission_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.permission_edit_object_v1_with_http_info(pki_permission_id, permission_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <PermissionEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectPermissionApi->permission_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**PermissionEditObjectV1Response**](PermissionEditObjectV1Response.md)
 
 ### Authorization
 
