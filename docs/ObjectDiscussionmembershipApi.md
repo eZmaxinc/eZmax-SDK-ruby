@@ -81,7 +81,7 @@ end
 
 ## discussionmembership_delete_object_v1
 
-> <DiscussionmembershipDeleteObjectV1Response> discussionmembership_delete_object_v1(pki_discussionmembership_id)
+> <CommonResponse> discussionmembership_delete_object_v1(pki_discussionmembership_id)
 
 Delete an existing Discussionmembership
 
@@ -116,7 +116,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DiscussionmembershipDeleteObjectV1Response>, Integer, Hash)> discussionmembership_delete_object_v1_with_http_info(pki_discussionmembership_id)
+> <Array(<CommonResponse>, Integer, Hash)> discussionmembership_delete_object_v1_with_http_info(pki_discussionmembership_id)
 
 ```ruby
 begin
@@ -124,7 +124,7 @@ begin
   data, status_code, headers = api_instance.discussionmembership_delete_object_v1_with_http_info(pki_discussionmembership_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DiscussionmembershipDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionmembershipApi->discussionmembership_delete_object_v1_with_http_info: #{e}"
 end
@@ -138,7 +138,7 @@ end
 
 ### Return type
 
-[**DiscussionmembershipDeleteObjectV1Response**](DiscussionmembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **b_ezsignform_isdraft** | **Boolean** | Whether the Ezsignform submitted is a draft or not. |  |
-| **a_obj_ezsignformfieldgroup** | [**Array&lt;CustomEzsignformfieldgroupRequest&gt;**](CustomEzsignformfieldgroupRequest.md) |  |  |
+| **a_obj_ezsignformfieldgroup** | **Array&lt;CustomEzsignformfieldgroupRequest&gt;** |  |  |
 
 ## Example
 

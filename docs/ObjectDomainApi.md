@@ -83,7 +83,7 @@ end
 
 ## domain_delete_object_v1
 
-> <DomainDeleteObjectV1Response> domain_delete_object_v1(pki_domain_id)
+> <CommonResponse> domain_delete_object_v1(pki_domain_id)
 
 Delete an existing Domain
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DomainDeleteObjectV1Response>, Integer, Hash)> domain_delete_object_v1_with_http_info(pki_domain_id)
+> <Array(<CommonResponse>, Integer, Hash)> domain_delete_object_v1_with_http_info(pki_domain_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.domain_delete_object_v1_with_http_info(pki_domain_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DomainDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDomainApi->domain_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**DomainDeleteObjectV1Response**](DomainDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

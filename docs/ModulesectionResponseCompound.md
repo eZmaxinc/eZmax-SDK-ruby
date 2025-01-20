@@ -8,7 +8,7 @@
 | **fki_module_id** | **Integer** | The unique ID of the Module |  |
 | **s_modulesection_internalname** | **String** | The Internal name of the Module section. |  |
 | **s_modulesection_name_x** | **String** | The Name of the Modulesection in the language of the requester |  |
-| **a_obj_permission** | [**Array&lt;PermissionResponseCompound&gt;**](PermissionResponseCompound.md) |  | [optional] |
+| **a_obj_permission** | [**Array&lt;PermissionResponseCompound&gt;**](PermissionResponse.md) |  | [optional] |
 
 ## Example
 

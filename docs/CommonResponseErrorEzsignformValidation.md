@@ -7,7 +7,7 @@
 | **s_error_message** | **String** | The message giving details about the error |  |
 | **e_error_code** | [**FieldEErrorCode**](FieldEErrorCode.md) |  |  |
 | **a_s_error_messagedetail** | **Array&lt;String&gt;** | More error message detail | [optional] |
-| **a_obj_ezsignformfielderror** | [**Array&lt;CustomEzsignformfielderrorResponse&gt;**](CustomEzsignformfielderrorResponse.md) |  |  |
+| **a_obj_ezsignformfielderror** | **Array&lt;CustomEzsignformfielderrorResponse&gt;** |  |  |
 
 ## Example
 

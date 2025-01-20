@@ -10,7 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## systemconfiguration_edit_object_v1
 
-> <SystemconfigurationEditObjectV1Response> systemconfiguration_edit_object_v1(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
+> <CommonResponse> systemconfiguration_edit_object_v1(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
 
 Edit an existing Systemconfiguration
 
@@ -46,7 +46,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SystemconfigurationEditObjectV1Response>, Integer, Hash)> systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
 
 ```ruby
 begin
@@ -54,7 +54,7 @@ begin
   data, status_code, headers = api_instance.systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SystemconfigurationEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSystemconfigurationApi->systemconfiguration_edit_object_v1_with_http_info: #{e}"
 end
@@ -69,7 +69,7 @@ end
 
 ### Return type
 
-[**SystemconfigurationEditObjectV1Response**](SystemconfigurationEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

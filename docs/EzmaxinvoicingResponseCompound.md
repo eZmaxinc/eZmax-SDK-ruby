@@ -24,8 +24,8 @@
 | **a_obj_ezmaxinvoicingsummaryinternal** | [**Array&lt;EzmaxinvoicingsummaryinternalResponseCompound&gt;**](EzmaxinvoicingsummaryinternalResponseCompound.md) |  |  |
 | **a_obj_ezmaxinvoicingagent** | [**Array&lt;EzmaxinvoicingagentResponseCompound&gt;**](EzmaxinvoicingagentResponseCompound.md) |  |  |
 | **a_obj_ezmaxinvoicinguser** | [**Array&lt;EzmaxinvoicinguserResponseCompound&gt;**](EzmaxinvoicinguserResponseCompound.md) |  |  |
-| **a_obj_ezmaxinvoicingezsignfolder** | [**Array&lt;CustomEzmaxinvoicingEzsignfolderResponse&gt;**](CustomEzmaxinvoicingEzsignfolderResponse.md) |  |  |
-| **a_obj_ezmaxinvoicingezsigndocument** | [**Array&lt;CustomEzmaxinvoicingEzsigndocumentResponse&gt;**](CustomEzmaxinvoicingEzsigndocumentResponse.md) |  |  |
+| **a_obj_ezmaxinvoicingezsignfolder** | **Array&lt;CustomEzmaxinvoicingEzsignfolderResponse&gt;** |  |  |
+| **a_obj_ezmaxinvoicingezsigndocument** | **Array&lt;CustomEzmaxinvoicingEzsigndocumentResponse&gt;** |  |  |
 
 ## Example
 

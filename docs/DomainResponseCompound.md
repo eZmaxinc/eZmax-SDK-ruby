@@ -10,7 +10,7 @@
 | **b_domain_validmailfrom** | **Boolean** | Whether the mail from is valid or not |  |
 | **b_domain_validcustomer** | **Boolean** | Whether the customer has access to it or not |  |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
-| **a_obj_dnsrecord** | [**Array&lt;CustomDnsrecordResponse&gt;**](CustomDnsrecordResponse.md) |  |  |
+| **a_obj_dnsrecord** | **Array&lt;CustomDnsrecordResponse&gt;** |  |  |
 
 ## Example
 

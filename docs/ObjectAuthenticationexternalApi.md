@@ -86,7 +86,7 @@ end
 
 ## authenticationexternal_delete_object_v1
 
-> <AuthenticationexternalDeleteObjectV1Response> authenticationexternal_delete_object_v1(pki_authenticationexternal_id)
+> <CommonResponse> authenticationexternal_delete_object_v1(pki_authenticationexternal_id)
 
 Delete an existing Authenticationexternal
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AuthenticationexternalDeleteObjectV1Response>, Integer, Hash)> authenticationexternal_delete_object_v1_with_http_info(pki_authenticationexternal_id)
+> <Array(<CommonResponse>, Integer, Hash)> authenticationexternal_delete_object_v1_with_http_info(pki_authenticationexternal_id)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.authenticationexternal_delete_object_v1_with_http_info(pki_authenticationexternal_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AuthenticationexternalDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectAuthenticationexternalApi->authenticationexternal_delete_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**AuthenticationexternalDeleteObjectV1Response**](AuthenticationexternalDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ end
 
 ## authenticationexternal_edit_object_v1
 
-> <AuthenticationexternalEditObjectV1Response> authenticationexternal_edit_object_v1(pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request)
+> <CommonResponse> authenticationexternal_edit_object_v1(pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request)
 
 Edit an existing Authenticationexternal
 
@@ -193,7 +193,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AuthenticationexternalEditObjectV1Response>, Integer, Hash)> authenticationexternal_edit_object_v1_with_http_info(pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> authenticationexternal_edit_object_v1_with_http_info(pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request)
 
 ```ruby
 begin
@@ -201,7 +201,7 @@ begin
   data, status_code, headers = api_instance.authenticationexternal_edit_object_v1_with_http_info(pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AuthenticationexternalEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectAuthenticationexternalApi->authenticationexternal_edit_object_v1_with_http_info: #{e}"
 end
@@ -216,7 +216,7 @@ end
 
 ### Return type
 
-[**AuthenticationexternalEditObjectV1Response**](AuthenticationexternalEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ end
 
 ## authenticationexternal_reset_authorization_v1
 
-> <AuthenticationexternalResetAuthorizationV1Response> authenticationexternal_reset_authorization_v1(pki_authenticationexternal_id, body)
+> <CommonResponse> authenticationexternal_reset_authorization_v1(pki_authenticationexternal_id, body)
 
 Reset the Authenticationexternal authorization
 
@@ -497,7 +497,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AuthenticationexternalResetAuthorizationV1Response>, Integer, Hash)> authenticationexternal_reset_authorization_v1_with_http_info(pki_authenticationexternal_id, body)
+> <Array(<CommonResponse>, Integer, Hash)> authenticationexternal_reset_authorization_v1_with_http_info(pki_authenticationexternal_id, body)
 
 ```ruby
 begin
@@ -505,7 +505,7 @@ begin
   data, status_code, headers = api_instance.authenticationexternal_reset_authorization_v1_with_http_info(pki_authenticationexternal_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AuthenticationexternalResetAuthorizationV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectAuthenticationexternalApi->authenticationexternal_reset_authorization_v1_with_http_info: #{e}"
 end
@@ -520,7 +520,7 @@ end
 
 ### Return type
 
-[**AuthenticationexternalResetAuthorizationV1Response**](AuthenticationexternalResetAuthorizationV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

@@ -84,7 +84,7 @@ end
 
 ## variableexpense_edit_object_v1
 
-> <VariableexpenseEditObjectV1Response> variableexpense_edit_object_v1(pki_variableexpense_id, variableexpense_edit_object_v1_request)
+> <CommonResponse> variableexpense_edit_object_v1(pki_variableexpense_id, variableexpense_edit_object_v1_request)
 
 Edit an existing Variableexpense
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<VariableexpenseEditObjectV1Response>, Integer, Hash)> variableexpense_edit_object_v1_with_http_info(pki_variableexpense_id, variableexpense_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> variableexpense_edit_object_v1_with_http_info(pki_variableexpense_id, variableexpense_edit_object_v1_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.variableexpense_edit_object_v1_with_http_info(pki_variableexpense_id, variableexpense_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <VariableexpenseEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectVariableexpenseApi->variableexpense_edit_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**VariableexpenseEditObjectV1Response**](VariableexpenseEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

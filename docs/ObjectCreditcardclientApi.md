@@ -86,7 +86,7 @@ end
 
 ## creditcardclient_delete_object_v1
 
-> <CreditcardclientDeleteObjectV1Response> creditcardclient_delete_object_v1(pki_creditcardclient_id)
+> <CommonResponse> creditcardclient_delete_object_v1(pki_creditcardclient_id)
 
 Delete an existing Creditcardclient
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreditcardclientDeleteObjectV1Response>, Integer, Hash)> creditcardclient_delete_object_v1_with_http_info(pki_creditcardclient_id)
+> <Array(<CommonResponse>, Integer, Hash)> creditcardclient_delete_object_v1_with_http_info(pki_creditcardclient_id)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.creditcardclient_delete_object_v1_with_http_info(pki_creditcardclient_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreditcardclientDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCreditcardclientApi->creditcardclient_delete_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CreditcardclientDeleteObjectV1Response**](CreditcardclientDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ end
 
 ## creditcardclient_edit_object_v1
 
-> <CreditcardclientEditObjectV1Response> creditcardclient_edit_object_v1(pki_creditcardclient_id, creditcardclient_edit_object_v1_request)
+> <CommonResponse> creditcardclient_edit_object_v1(pki_creditcardclient_id, creditcardclient_edit_object_v1_request)
 
 Edit an existing Creditcardclient
 
@@ -193,7 +193,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreditcardclientEditObjectV1Response>, Integer, Hash)> creditcardclient_edit_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> creditcardclient_edit_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_edit_object_v1_request)
 
 ```ruby
 begin
@@ -201,7 +201,7 @@ begin
   data, status_code, headers = api_instance.creditcardclient_edit_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreditcardclientEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCreditcardclientApi->creditcardclient_edit_object_v1_with_http_info: #{e}"
 end
@@ -216,7 +216,7 @@ end
 
 ### Return type
 
-[**CreditcardclientEditObjectV1Response**](CreditcardclientEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -461,7 +461,7 @@ end
 
 ## creditcardclient_patch_object_v1
 
-> <CreditcardclientPatchObjectV1Response> creditcardclient_patch_object_v1(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+> <CommonResponse> creditcardclient_patch_object_v1(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
 
 Patch an existing Creditcardclient
 
@@ -497,7 +497,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreditcardclientPatchObjectV1Response>, Integer, Hash)> creditcardclient_patch_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> creditcardclient_patch_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
 
 ```ruby
 begin
@@ -505,7 +505,7 @@ begin
   data, status_code, headers = api_instance.creditcardclient_patch_object_v1_with_http_info(pki_creditcardclient_id, creditcardclient_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreditcardclientPatchObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCreditcardclientApi->creditcardclient_patch_object_v1_with_http_info: #{e}"
 end
@@ -520,7 +520,7 @@ end
 
 ### Return type
 
-[**CreditcardclientPatchObjectV1Response**](CreditcardclientPatchObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

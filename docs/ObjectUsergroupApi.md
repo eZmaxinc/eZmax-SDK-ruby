@@ -90,7 +90,7 @@ end
 
 ## usergroup_edit_object_v1
 
-> <UsergroupEditObjectV1Response> usergroup_edit_object_v1(pki_usergroup_id, usergroup_edit_object_v1_request)
+> <CommonResponse> usergroup_edit_object_v1(pki_usergroup_id, usergroup_edit_object_v1_request)
 
 Edit an existing Usergroup
 
@@ -126,7 +126,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UsergroupEditObjectV1Response>, Integer, Hash)> usergroup_edit_object_v1_with_http_info(pki_usergroup_id, usergroup_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> usergroup_edit_object_v1_with_http_info(pki_usergroup_id, usergroup_edit_object_v1_request)
 
 ```ruby
 begin
@@ -134,7 +134,7 @@ begin
   data, status_code, headers = api_instance.usergroup_edit_object_v1_with_http_info(pki_usergroup_id, usergroup_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UsergroupEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupApi->usergroup_edit_object_v1_with_http_info: #{e}"
 end
@@ -149,7 +149,7 @@ end
 
 ### Return type
 
-[**UsergroupEditObjectV1Response**](UsergroupEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ end
 
 api_instance = EzmaxApi::ObjectUsergroupApi.new
 pki_usergroup_id = 56 # Integer | 
-usergroup_edit_permissions_v1_request = EzmaxApi::UsergroupEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequestCompound.new({fki_modulesection_id: 53})]}) # UsergroupEditPermissionsV1Request | 
+usergroup_edit_permissions_v1_request = EzmaxApi::UsergroupEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequest.new({fki_modulesection_id: 53})]}) # UsergroupEditPermissionsV1Request | 
 
 begin
   # Edit multiple Permissions
