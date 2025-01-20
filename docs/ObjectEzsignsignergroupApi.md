@@ -85,7 +85,7 @@ end
 
 ## ezsignsignergroup_delete_object_v1
 
-> <CommonResponse> ezsignsignergroup_delete_object_v1(pki_ezsignsignergroup_id)
+> <EzsignsignergroupDeleteObjectV1Response> ezsignsignergroup_delete_object_v1(pki_ezsignsignergroup_id)
 
 Delete an existing Ezsignsignergroup
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignsignergroup_delete_object_v1_with_http_info(pki_ezsignsignergroup_id)
+> <Array(<EzsignsignergroupDeleteObjectV1Response>, Integer, Hash)> ezsignsignergroup_delete_object_v1_with_http_info(pki_ezsignsignergroup_id)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.ezsignsignergroup_delete_object_v1_with_http_info(pki_ezsignsignergroup_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignsignergroupDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsignergroupApi->ezsignsignergroup_delete_object_v1_with_http_info: #{e}"
 end
@@ -142,7 +142,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignergroupDeleteObjectV1Response**](EzsignsignergroupDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ end
 
 ## ezsignsignergroup_edit_object_v1
 
-> <CommonResponse> ezsignsignergroup_edit_object_v1(pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request)
+> <EzsignsignergroupEditObjectV1Response> ezsignsignergroup_edit_object_v1(pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request)
 
 Edit an existing Ezsignsignergroup
 
@@ -265,7 +265,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignsignergroup_edit_object_v1_with_http_info(pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request)
+> <Array(<EzsignsignergroupEditObjectV1Response>, Integer, Hash)> ezsignsignergroup_edit_object_v1_with_http_info(pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request)
 
 ```ruby
 begin
@@ -273,7 +273,7 @@ begin
   data, status_code, headers = api_instance.ezsignsignergroup_edit_object_v1_with_http_info(pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignsignergroupEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsignergroupApi->ezsignsignergroup_edit_object_v1_with_http_info: #{e}"
 end
@@ -288,7 +288,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignergroupEditObjectV1Response**](EzsignsignergroupEditObjectV1Response.md)
 
 ### Authorization
 

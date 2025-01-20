@@ -22,8 +22,8 @@
 | **t_ezsignformfieldgroup_tooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] |
 | **e_ezsignformfieldgroup_tooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] |
 | **a_obj_ezsignformfield** | [**Array&lt;EzsignformfieldResponseCompound&gt;**](EzsignformfieldResponseCompound.md) |  |  |
-| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementResponseCompound&gt;**](CustomDropdownElementResponse.md) |  | [optional] |
-| **a_obj_ezsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerResponseCompound&gt;**](EzsignformfieldgroupsignerResponse.md) |  |  |
+| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementResponseCompound&gt;**](CustomDropdownElementResponseCompound.md) |  | [optional] |
+| **a_obj_ezsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerResponseCompound&gt;**](EzsignformfieldgroupsignerResponseCompound.md) |  |  |
 
 ## Example
 

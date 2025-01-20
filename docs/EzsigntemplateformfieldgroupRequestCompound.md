@@ -21,8 +21,8 @@
 | **e_ezsigntemplateformfieldgroup_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
 | **t_ezsigntemplateformfieldgroup_tooltip** | **String** | A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup | [optional] |
 | **e_ezsigntemplateformfieldgroup_tooltipposition** | [**FieldEEzsigntemplateformfieldgroupTooltipposition**](FieldEEzsigntemplateformfieldgroupTooltipposition.md) |  | [optional] |
-| **a_obj_ezsigntemplateformfieldgroupsigner** | [**Array&lt;EzsigntemplateformfieldgroupsignerRequestCompound&gt;**](EzsigntemplateformfieldgroupsignerRequest.md) |  |  |
-| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequest.md) |  | [optional] |
+| **a_obj_ezsigntemplateformfieldgroupsigner** | [**Array&lt;EzsigntemplateformfieldgroupsignerRequestCompound&gt;**](EzsigntemplateformfieldgroupsignerRequestCompound.md) |  |  |
+| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequestCompound.md) |  | [optional] |
 | **a_obj_ezsigntemplateformfield** | [**Array&lt;EzsigntemplateformfieldRequestCompound&gt;**](EzsigntemplateformfieldRequestCompound.md) |  |  |
 
 ## Example

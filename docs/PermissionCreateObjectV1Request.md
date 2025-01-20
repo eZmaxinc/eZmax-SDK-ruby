@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_permission** | [**Array&lt;PermissionRequestCompound&gt;**](PermissionRequest.md) |  |  |
+| **a_obj_permission** | [**Array&lt;PermissionRequestCompound&gt;**](PermissionRequestCompound.md) |  |  |
 
 ## Example
 

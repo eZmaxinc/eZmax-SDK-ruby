@@ -86,7 +86,7 @@ end
 
 ## signature_delete_object_v1
 
-> <CommonResponse> signature_delete_object_v1(pki_signature_id)
+> <SignatureDeleteObjectV1Response> signature_delete_object_v1(pki_signature_id)
 
 Delete an existing Signature
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> signature_delete_object_v1_with_http_info(pki_signature_id)
+> <Array(<SignatureDeleteObjectV1Response>, Integer, Hash)> signature_delete_object_v1_with_http_info(pki_signature_id)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.signature_delete_object_v1_with_http_info(pki_signature_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <SignatureDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSignatureApi->signature_delete_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SignatureDeleteObjectV1Response**](SignatureDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ end
 
 ## signature_edit_object_v1
 
-> <CommonResponse> signature_edit_object_v1(pki_signature_id, signature_edit_object_v1_request)
+> <SignatureEditObjectV1Response> signature_edit_object_v1(pki_signature_id, signature_edit_object_v1_request)
 
 Edit an existing Signature
 
@@ -193,7 +193,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> signature_edit_object_v1_with_http_info(pki_signature_id, signature_edit_object_v1_request)
+> <Array(<SignatureEditObjectV1Response>, Integer, Hash)> signature_edit_object_v1_with_http_info(pki_signature_id, signature_edit_object_v1_request)
 
 ```ruby
 begin
@@ -201,7 +201,7 @@ begin
   data, status_code, headers = api_instance.signature_edit_object_v1_with_http_info(pki_signature_id, signature_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <SignatureEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSignatureApi->signature_edit_object_v1_with_http_info: #{e}"
 end
@@ -216,7 +216,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SignatureEditObjectV1Response**](SignatureEditObjectV1Response.md)
 
 ### Authorization
 

@@ -82,7 +82,7 @@ end
 
 ## ezsignbulksenddocumentmapping_delete_object_v1
 
-> <CommonResponse> ezsignbulksenddocumentmapping_delete_object_v1(pki_ezsignbulksenddocumentmapping_id)
+> <EzsignbulksenddocumentmappingDeleteObjectV1Response> ezsignbulksenddocumentmapping_delete_object_v1(pki_ezsignbulksenddocumentmapping_id)
 
 Delete an existing Ezsignbulksenddocumentmapping
 
@@ -117,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignbulksenddocumentmapping_delete_object_v1_with_http_info(pki_ezsignbulksenddocumentmapping_id)
+> <Array(<EzsignbulksenddocumentmappingDeleteObjectV1Response>, Integer, Hash)> ezsignbulksenddocumentmapping_delete_object_v1_with_http_info(pki_ezsignbulksenddocumentmapping_id)
 
 ```ruby
 begin
@@ -125,7 +125,7 @@ begin
   data, status_code, headers = api_instance.ezsignbulksenddocumentmapping_delete_object_v1_with_http_info(pki_ezsignbulksenddocumentmapping_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignbulksenddocumentmappingDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignbulksenddocumentmappingApi->ezsignbulksenddocumentmapping_delete_object_v1_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignbulksenddocumentmappingDeleteObjectV1Response**](EzsignbulksenddocumentmappingDeleteObjectV1Response.md)
 
 ### Authorization
 

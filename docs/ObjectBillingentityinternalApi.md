@@ -84,7 +84,7 @@ end
 
 ## billingentityinternal_edit_object_v1
 
-> <CommonResponse> billingentityinternal_edit_object_v1(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
+> <BillingentityinternalEditObjectV1Response> billingentityinternal_edit_object_v1(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
 
 Edit an existing Billingentityinternal
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
+> <Array(<BillingentityinternalEditObjectV1Response>, Integer, Hash)> billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.billingentityinternal_edit_object_v1_with_http_info(pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <BillingentityinternalEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectBillingentityinternalApi->billingentityinternal_edit_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**BillingentityinternalEditObjectV1Response**](BillingentityinternalEditObjectV1Response.md)
 
 ### Authorization
 

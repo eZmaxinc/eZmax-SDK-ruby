@@ -83,7 +83,7 @@ end
 
 ## ezsigntemplatesignature_delete_object_v1
 
-> <CommonResponse> ezsigntemplatesignature_delete_object_v1(pki_ezsigntemplatesignature_id)
+> <EzsigntemplatesignatureDeleteObjectV1Response> ezsigntemplatesignature_delete_object_v1(pki_ezsigntemplatesignature_id)
 
 Delete an existing Ezsigntemplatesignature
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatesignature_delete_object_v1_with_http_info(pki_ezsigntemplatesignature_id)
+> <Array(<EzsigntemplatesignatureDeleteObjectV1Response>, Integer, Hash)> ezsigntemplatesignature_delete_object_v1_with_http_info(pki_ezsigntemplatesignature_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatesignature_delete_object_v1_with_http_info(pki_ezsigntemplatesignature_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatesignatureDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatesignatureDeleteObjectV1Response**](EzsigntemplatesignatureDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## ezsigntemplatesignature_edit_object_v2
 
-> <CommonResponse> ezsigntemplatesignature_edit_object_v2(pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request)
+> <EzsigntemplatesignatureEditObjectV2Response> ezsigntemplatesignature_edit_object_v2(pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request)
 
 Edit an existing Ezsigntemplatesignature
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatesignature_edit_object_v2_with_http_info(pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request)
+> <Array(<EzsigntemplatesignatureEditObjectV2Response>, Integer, Hash)> ezsigntemplatesignature_edit_object_v2_with_http_info(pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatesignature_edit_object_v2_with_http_info(pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatesignatureEditObjectV2Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_edit_object_v2_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatesignatureEditObjectV2Response**](EzsigntemplatesignatureEditObjectV2Response.md)
 
 ### Authorization
 

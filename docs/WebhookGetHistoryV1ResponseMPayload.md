@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_webhooklog** | **Array&lt;CustomWebhooklogResponse&gt;** |  |  |
+| **a_obj_webhooklog** | [**Array&lt;CustomWebhooklogResponse&gt;**](CustomWebhooklogResponse.md) |  |  |
 
 ## Example
 

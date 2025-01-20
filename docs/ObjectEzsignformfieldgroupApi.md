@@ -32,7 +32,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsignformfieldgroupApi.new
-ezsignformfieldgroup_create_object_v1_request = EzmaxApi::EzsignformfieldgroupCreateObjectV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequest.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})]}) # EzsignformfieldgroupCreateObjectV1Request | 
+ezsignformfieldgroup_create_object_v1_request = EzmaxApi::EzsignformfieldgroupCreateObjectV1Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})]}) # EzsignformfieldgroupCreateObjectV1Request | 
 
 begin
   # Create a new Ezsignformfieldgroup
@@ -83,7 +83,7 @@ end
 
 ## ezsignformfieldgroup_delete_object_v1
 
-> <CommonResponse> ezsignformfieldgroup_delete_object_v1(pki_ezsignformfieldgroup_id)
+> <EzsignformfieldgroupDeleteObjectV1Response> ezsignformfieldgroup_delete_object_v1(pki_ezsignformfieldgroup_id)
 
 Delete an existing Ezsignformfieldgroup
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignformfieldgroup_delete_object_v1_with_http_info(pki_ezsignformfieldgroup_id)
+> <Array(<EzsignformfieldgroupDeleteObjectV1Response>, Integer, Hash)> ezsignformfieldgroup_delete_object_v1_with_http_info(pki_ezsignformfieldgroup_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.ezsignformfieldgroup_delete_object_v1_with_http_info(pki_ezsignformfieldgroup_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignformfieldgroupDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignformfieldgroupApi->ezsignformfieldgroup_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignformfieldgroupDeleteObjectV1Response**](EzsignformfieldgroupDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## ezsignformfieldgroup_edit_object_v1
 
-> <CommonResponse> ezsignformfieldgroup_edit_object_v1(pki_ezsignformfieldgroup_id, ezsignformfieldgroup_edit_object_v1_request)
+> <EzsignformfieldgroupEditObjectV1Response> ezsignformfieldgroup_edit_object_v1(pki_ezsignformfieldgroup_id, ezsignformfieldgroup_edit_object_v1_request)
 
 Edit an existing Ezsignformfieldgroup
 
@@ -175,7 +175,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignformfieldgroupApi.new
 pki_ezsignformfieldgroup_id = 56 # Integer | 
-ezsignformfieldgroup_edit_object_v1_request = EzmaxApi::EzsignformfieldgroupEditObjectV1Request.new({obj_ezsignformfieldgroup: EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequest.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})}) # EzsignformfieldgroupEditObjectV1Request | 
+ezsignformfieldgroup_edit_object_v1_request = EzmaxApi::EzsignformfieldgroupEditObjectV1Request.new({obj_ezsignformfieldgroup: EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})}) # EzsignformfieldgroupEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsignformfieldgroup
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignformfieldgroup_edit_object_v1_with_http_info(pki_ezsignformfieldgroup_id, ezsignformfieldgroup_edit_object_v1_request)
+> <Array(<EzsignformfieldgroupEditObjectV1Response>, Integer, Hash)> ezsignformfieldgroup_edit_object_v1_with_http_info(pki_ezsignformfieldgroup_id, ezsignformfieldgroup_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.ezsignformfieldgroup_edit_object_v1_with_http_info(pki_ezsignformfieldgroup_id, ezsignformfieldgroup_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignformfieldgroupEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignformfieldgroupApi->ezsignformfieldgroup_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignformfieldgroupEditObjectV1Response**](EzsignformfieldgroupEditObjectV1Response.md)
 
 ### Authorization
 

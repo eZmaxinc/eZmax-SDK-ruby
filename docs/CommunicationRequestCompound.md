@@ -16,7 +16,7 @@
 | **b_communication_readreceipt** | **Boolean** | Whether we ask for a read receipt or not. | [optional] |
 | **a_obj_communicationattachment** | [**Array&lt;CustomCommunicationattachmentRequest&gt;**](CustomCommunicationattachmentRequest.md) |  |  |
 | **a_obj_communicationrecipient** | [**Array&lt;CommunicationrecipientRequestCompound&gt;**](CommunicationrecipientRequestCompound.md) |  |  |
-| **a_obj_communicationreference** | [**Array&lt;CommunicationreferenceRequestCompound&gt;**](CommunicationreferenceRequest.md) |  |  |
+| **a_obj_communicationreference** | [**Array&lt;CommunicationreferenceRequestCompound&gt;**](CommunicationreferenceRequestCompound.md) |  |  |
 | **a_obj_communicationexternalrecipient** | [**Array&lt;CommunicationexternalrecipientRequestCompound&gt;**](CommunicationexternalrecipientRequestCompound.md) |  |  |
 
 ## Example

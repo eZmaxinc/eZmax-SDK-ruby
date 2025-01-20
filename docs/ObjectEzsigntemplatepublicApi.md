@@ -159,7 +159,7 @@ end
 
 ## ezsigntemplatepublic_edit_object_v1
 
-> <CommonResponse> ezsigntemplatepublic_edit_object_v1(pki_ezsigntemplatepublic_id, ezsigntemplatepublic_edit_object_v1_request)
+> <EzsigntemplatepublicEditObjectV1Response> ezsigntemplatepublic_edit_object_v1(pki_ezsigntemplatepublic_id, ezsigntemplatepublic_edit_object_v1_request)
 
 Edit an existing Ezsigntemplatepublic
 
@@ -195,7 +195,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatepublic_edit_object_v1_with_http_info(pki_ezsigntemplatepublic_id, ezsigntemplatepublic_edit_object_v1_request)
+> <Array(<EzsigntemplatepublicEditObjectV1Response>, Integer, Hash)> ezsigntemplatepublic_edit_object_v1_with_http_info(pki_ezsigntemplatepublic_id, ezsigntemplatepublic_edit_object_v1_request)
 
 ```ruby
 begin
@@ -203,7 +203,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatepublic_edit_object_v1_with_http_info(pki_ezsigntemplatepublic_id, ezsigntemplatepublic_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatepublicEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatepublicApi->ezsigntemplatepublic_edit_object_v1_with_http_info: #{e}"
 end
@@ -218,7 +218,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatepublicEditObjectV1Response**](EzsigntemplatepublicEditObjectV1Response.md)
 
 ### Authorization
 
