@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsigndocument** | [**Array&lt;EzsigndocumentRequestCompound&gt;**](EzsigndocumentRequestCompound.md) |  |  |
+| **a_obj_ezsigndocument** | [**Array&lt;EzsigndocumentRequestCompound&gt;**](EzsigndocumentRequest.md) |  |  |
 
 ## Example
 

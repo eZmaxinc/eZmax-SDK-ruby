@@ -84,7 +84,7 @@ end
 
 ## paymentterm_edit_object_v1
 
-> <PaymenttermEditObjectV1Response> paymentterm_edit_object_v1(pki_paymentterm_id, paymentterm_edit_object_v1_request)
+> <CommonResponse> paymentterm_edit_object_v1(pki_paymentterm_id, paymentterm_edit_object_v1_request)
 
 Edit an existing Paymentterm
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymenttermEditObjectV1Response>, Integer, Hash)> paymentterm_edit_object_v1_with_http_info(pki_paymentterm_id, paymentterm_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> paymentterm_edit_object_v1_with_http_info(pki_paymentterm_id, paymentterm_edit_object_v1_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.paymentterm_edit_object_v1_with_http_info(pki_paymentterm_id, paymentterm_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PaymenttermEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectPaymenttermApi->paymentterm_edit_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**PaymenttermEditObjectV1Response**](PaymenttermEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

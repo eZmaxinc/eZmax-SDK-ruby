@@ -84,7 +84,7 @@ end
 
 ## ezsignsigningreason_edit_object_v1
 
-> <EzsignsigningreasonEditObjectV1Response> ezsignsigningreason_edit_object_v1(pki_ezsignsigningreason_id, ezsignsigningreason_edit_object_v1_request)
+> <CommonResponse> ezsignsigningreason_edit_object_v1(pki_ezsignsigningreason_id, ezsignsigningreason_edit_object_v1_request)
 
 Edit an existing Ezsignsigningreason
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsigningreasonEditObjectV1Response>, Integer, Hash)> ezsignsigningreason_edit_object_v1_with_http_info(pki_ezsignsigningreason_id, ezsignsigningreason_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignsigningreason_edit_object_v1_with_http_info(pki_ezsignsigningreason_id, ezsignsigningreason_edit_object_v1_request)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.ezsignsigningreason_edit_object_v1_with_http_info(pki_ezsignsigningreason_id, ezsignsigningreason_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsigningreasonEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsigningreasonApi->ezsignsigningreason_edit_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**EzsignsigningreasonEditObjectV1Response**](EzsignsigningreasonEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

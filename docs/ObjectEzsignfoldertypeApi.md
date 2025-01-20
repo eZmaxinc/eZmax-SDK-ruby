@@ -85,7 +85,7 @@ end
 
 ## ezsignfoldertype_edit_object_v3
 
-> <EzsignfoldertypeEditObjectV3Response> ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
+> <CommonResponse> ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
 
 Edit an existing Ezsignfoldertype
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignfoldertypeEditObjectV3Response>, Integer, Hash)> ezsignfoldertype_edit_object_v3_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldertype_edit_object_v3_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldertype_edit_object_v3_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignfoldertypeEditObjectV3Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_edit_object_v3_with_http_info: #{e}"
 end
@@ -144,7 +144,7 @@ end
 
 ### Return type
 
-[**EzsignfoldertypeEditObjectV3Response**](EzsignfoldertypeEditObjectV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

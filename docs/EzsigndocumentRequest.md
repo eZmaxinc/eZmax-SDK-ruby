@@ -33,7 +33,7 @@ instance = EzmaxApi::EzsigndocumentRequest.new(
   fki_language_id: 2,
   e_ezsigndocument_source: null,
   e_ezsigndocument_format: null,
-  s_ezsigndocument_base64: [B@114a85c2,
+  s_ezsigndocument_base64: [B@379ab47b,
   s_ezsigndocument_url: http://www.example.com/document.pdf,
   b_ezsigndocument_forcerepair: null,
   s_ezsigndocument_password: SecretPassword123,

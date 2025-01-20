@@ -10,7 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## ezsignuser_edit_object_v1
 
-> <EzsignuserEditObjectV1Response> ezsignuser_edit_object_v1(pki_ezsignuser_id, ezsignuser_edit_object_v1_request)
+> <CommonResponse> ezsignuser_edit_object_v1(pki_ezsignuser_id, ezsignuser_edit_object_v1_request)
 
 Edit an existing Ezsignuser
 
@@ -31,7 +31,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsignuserApi.new
 pki_ezsignuser_id = 56 # Integer | The unique ID of the Ezsignuser
-ezsignuser_edit_object_v1_request = EzmaxApi::EzsignuserEditObjectV1Request.new({obj_ezsignuser: EzmaxApi::EzsignuserRequestCompound.new({fki_contact_id: 21, obj_contact: EzmaxApi::ContactRequestCompoundV2.new({fki_contacttitle_id: 2, fki_language_id: 2, e_contact_type: EzmaxApi::FieldEContactType::AGENT, s_contact_firstname: 'John', s_contact_lastname: 'Doe', obj_contactinformations: EzmaxApi::ContactinformationsRequestCompoundV2.new({e_contactinformations_type: EzmaxApi::FieldEContactinformationsType::BANK_ACCOUNT, i_address_default: 37, i_phone_default: 37, i_email_default: 37, i_website_default: 37, a_obj_address: [EzmaxApi::AddressRequestCompound.new({fki_addresstype_id: 1, s_address_civic: '2540', s_address_street: 'Daniel-Johnson Blvd.', s_address_city: 'Laval', fki_province_id: 11, fki_country_id: 1, s_address_zip: 'H7T2S3'})], a_obj_phone: [EzmaxApi::PhoneRequestCompound.new({fki_phonetype_id: 1})], a_obj_email: [EzmaxApi::EmailRequestCompound.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'})], a_obj_website: [EzmaxApi::WebsiteRequestCompound.new({fki_websitetype_id: 1, s_website_address: 'https://www.example.com'})]})})})}) # EzsignuserEditObjectV1Request | 
+ezsignuser_edit_object_v1_request = EzmaxApi::EzsignuserEditObjectV1Request.new({obj_ezsignuser: EzmaxApi::EzsignuserRequestCompound.new({fki_contact_id: 21, obj_contact: EzmaxApi::ContactRequestCompoundV2.new({fki_contacttitle_id: 2, fki_language_id: 2, e_contact_type: EzmaxApi::FieldEContactType::AGENT, s_contact_firstname: 'John', s_contact_lastname: 'Doe', obj_contactinformations: EzmaxApi::ContactinformationsRequestCompoundV2.new({e_contactinformations_type: EzmaxApi::FieldEContactinformationsType::BANK_ACCOUNT, i_address_default: 37, i_phone_default: 37, i_email_default: 37, i_website_default: 37, a_obj_address: [EzmaxApi::AddressRequest.new({fki_addresstype_id: 1, s_address_civic: '2540', s_address_street: 'Daniel-Johnson Blvd.', s_address_city: 'Laval', fki_province_id: 11, fki_country_id: 1, s_address_zip: 'H7T2S3'})], a_obj_phone: [EzmaxApi::PhoneRequest.new({fki_phonetype_id: 1})], a_obj_email: [EzmaxApi::EmailRequest.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'})], a_obj_website: [EzmaxApi::WebsiteRequest.new({fki_websitetype_id: 1, s_website_address: 'https://www.example.com'})]})})})}) # EzsignuserEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsignuser
@@ -46,7 +46,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignuserEditObjectV1Response>, Integer, Hash)> ezsignuser_edit_object_v1_with_http_info(pki_ezsignuser_id, ezsignuser_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignuser_edit_object_v1_with_http_info(pki_ezsignuser_id, ezsignuser_edit_object_v1_request)
 
 ```ruby
 begin
@@ -54,7 +54,7 @@ begin
   data, status_code, headers = api_instance.ezsignuser_edit_object_v1_with_http_info(pki_ezsignuser_id, ezsignuser_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignuserEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignuserApi->ezsignuser_edit_object_v1_with_http_info: #{e}"
 end
@@ -69,7 +69,7 @@ end
 
 ### Return type
 
-[**EzsignuserEditObjectV1Response**](EzsignuserEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

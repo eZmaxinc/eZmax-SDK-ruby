@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsigndocumentlog** | [**Array&lt;EzsigndocumentlogResponseCompound&gt;**](EzsigndocumentlogResponseCompound.md) |  |  |
+| **a_obj_ezsigndocumentlog** | [**Array&lt;EzsigndocumentlogResponseCompound&gt;**](EzsigndocumentlogResponse.md) |  |  |
 
 ## Example
 

@@ -100,7 +100,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectCommunicationApi.new
-communication_send_v1_request = EzmaxApi::CommunicationSendV1Request.new({a_obj_communication: [EzmaxApi::CommunicationRequestCompound.new({e_communication_type: EzmaxApi::FieldECommunicationType::EMAIL, t_communication_body: 't_communication_body_example', b_communication_private: false, a_obj_communicationattachment: [EzmaxApi::CustomCommunicationattachmentRequest.new], a_obj_communicationrecipient: [EzmaxApi::CommunicationrecipientRequestCompound.new], a_obj_communicationreference: [EzmaxApi::CommunicationreferenceRequestCompound.new], a_obj_communicationexternalrecipient: [EzmaxApi::CommunicationexternalrecipientRequestCompound.new]})]}) # CommunicationSendV1Request | 
+communication_send_v1_request = EzmaxApi::CommunicationSendV1Request.new({a_obj_communication: [EzmaxApi::CommunicationRequestCompound.new({e_communication_type: EzmaxApi::FieldECommunicationType::EMAIL, t_communication_body: 't_communication_body_example', b_communication_private: false, a_obj_communicationattachment: [EzmaxApi::CustomCommunicationattachmentRequest.new], a_obj_communicationrecipient: [EzmaxApi::CommunicationrecipientRequestCompound.new], a_obj_communicationreference: [EzmaxApi::CommunicationreferenceRequest.new], a_obj_communicationexternalrecipient: [EzmaxApi::CommunicationexternalrecipientRequestCompound.new]})]}) # CommunicationSendV1Request | 
 
 begin
   # Send a new Communication

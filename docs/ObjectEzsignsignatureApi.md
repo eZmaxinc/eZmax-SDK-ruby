@@ -230,7 +230,7 @@ end
 
 ## ezsignsignature_delete_object_v1
 
-> <EzsignsignatureDeleteObjectV1Response> ezsignsignature_delete_object_v1(pki_ezsignsignature_id)
+> <CommonResponse> ezsignsignature_delete_object_v1(pki_ezsignsignature_id)
 
 Delete an existing Ezsignsignature
 
@@ -265,7 +265,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsignatureDeleteObjectV1Response>, Integer, Hash)> ezsignsignature_delete_object_v1_with_http_info(pki_ezsignsignature_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignsignature_delete_object_v1_with_http_info(pki_ezsignsignature_id)
 
 ```ruby
 begin
@@ -273,7 +273,7 @@ begin
   data, status_code, headers = api_instance.ezsignsignature_delete_object_v1_with_http_info(pki_ezsignsignature_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsignatureDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_delete_object_v1_with_http_info: #{e}"
 end
@@ -287,7 +287,7 @@ end
 
 ### Return type
 
-[**EzsignsignatureDeleteObjectV1Response**](EzsignsignatureDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ end
 
 ## ezsignsignature_edit_object_v2
 
-> <EzsignsignatureEditObjectV2Response> ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
+> <CommonResponse> ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
 
 Edit an existing Ezsignsignature
 
@@ -337,7 +337,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsignatureEditObjectV2Response>, Integer, Hash)> ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
 
 ```ruby
 begin
@@ -345,7 +345,7 @@ begin
   data, status_code, headers = api_instance.ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsignatureEditObjectV2Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2_with_http_info: #{e}"
 end
@@ -360,7 +360,7 @@ end
 
 ### Return type
 
-[**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

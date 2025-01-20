@@ -38,7 +38,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectApikeyApi.new
-apikey_create_object_v2_request = EzmaxApi::ApikeyCreateObjectV2Request.new({a_obj_apikey: [EzmaxApi::ApikeyRequestCompound.new({fki_user_id: 70, obj_apikey_description: EzmaxApi::MultilingualApikeyDescription.new})]}) # ApikeyCreateObjectV2Request | 
+apikey_create_object_v2_request = EzmaxApi::ApikeyCreateObjectV2Request.new({a_obj_apikey: [EzmaxApi::ApikeyRequest.new({fki_user_id: 70, obj_apikey_description: EzmaxApi::MultilingualApikeyDescription.new})]}) # ApikeyCreateObjectV2Request | 
 
 begin
   # Create a new Apikey
@@ -89,7 +89,7 @@ end
 
 ## apikey_edit_object_v1
 
-> <ApikeyEditObjectV1Response> apikey_edit_object_v1(pki_apikey_id, apikey_edit_object_v1_request)
+> <CommonResponse> apikey_edit_object_v1(pki_apikey_id, apikey_edit_object_v1_request)
 
 Edit an existing Apikey
 
@@ -110,7 +110,7 @@ end
 
 api_instance = EzmaxApi::ObjectApikeyApi.new
 pki_apikey_id = 56 # Integer | The unique ID of the Apikey
-apikey_edit_object_v1_request = EzmaxApi::ApikeyEditObjectV1Request.new({obj_apikey: EzmaxApi::ApikeyRequestCompound.new({fki_user_id: 70, obj_apikey_description: EzmaxApi::MultilingualApikeyDescription.new})}) # ApikeyEditObjectV1Request | 
+apikey_edit_object_v1_request = EzmaxApi::ApikeyEditObjectV1Request.new({obj_apikey: EzmaxApi::ApikeyRequest.new({fki_user_id: 70, obj_apikey_description: EzmaxApi::MultilingualApikeyDescription.new})}) # ApikeyEditObjectV1Request | 
 
 begin
   # Edit an existing Apikey
@@ -125,7 +125,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ApikeyEditObjectV1Response>, Integer, Hash)> apikey_edit_object_v1_with_http_info(pki_apikey_id, apikey_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> apikey_edit_object_v1_with_http_info(pki_apikey_id, apikey_edit_object_v1_request)
 
 ```ruby
 begin
@@ -133,7 +133,7 @@ begin
   data, status_code, headers = api_instance.apikey_edit_object_v1_with_http_info(pki_apikey_id, apikey_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ApikeyEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectApikeyApi->apikey_edit_object_v1_with_http_info: #{e}"
 end
@@ -148,7 +148,7 @@ end
 
 ### Return type
 
-[**ApikeyEditObjectV1Response**](ApikeyEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ end
 
 api_instance = EzmaxApi::ObjectApikeyApi.new
 pki_apikey_id = 56 # Integer | 
-apikey_edit_permissions_v1_request = EzmaxApi::ApikeyEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequestCompound.new({fki_modulesection_id: 53})]}) # ApikeyEditPermissionsV1Request | 
+apikey_edit_permissions_v1_request = EzmaxApi::ApikeyEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequest.new({fki_modulesection_id: 53})]}) # ApikeyEditPermissionsV1Request | 
 
 begin
   # Edit multiple Permissions

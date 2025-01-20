@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obj_permission** | [**PermissionResponseCompound**](PermissionResponseCompound.md) |  |  |
+| **obj_permission** | [**PermissionResponse**](PermissionResponse.md) | A Permission Object and children to create a complete structure |  |
 
 ## Example
 

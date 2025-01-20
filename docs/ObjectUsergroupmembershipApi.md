@@ -83,7 +83,7 @@ end
 
 ## usergroupmembership_delete_object_v1
 
-> <UsergroupmembershipDeleteObjectV1Response> usergroupmembership_delete_object_v1(pki_usergroupmembership_id)
+> <CommonResponse> usergroupmembership_delete_object_v1(pki_usergroupmembership_id)
 
 Delete an existing Usergroupmembership
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UsergroupmembershipDeleteObjectV1Response>, Integer, Hash)> usergroupmembership_delete_object_v1_with_http_info(pki_usergroupmembership_id)
+> <Array(<CommonResponse>, Integer, Hash)> usergroupmembership_delete_object_v1_with_http_info(pki_usergroupmembership_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.usergroupmembership_delete_object_v1_with_http_info(pki_usergroupmembership_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UsergroupmembershipDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupmembershipApi->usergroupmembership_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**UsergroupmembershipDeleteObjectV1Response**](UsergroupmembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## usergroupmembership_edit_object_v1
 
-> <UsergroupmembershipEditObjectV1Response> usergroupmembership_edit_object_v1(pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request)
+> <CommonResponse> usergroupmembership_edit_object_v1(pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request)
 
 Edit an existing Usergroupmembership
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UsergroupmembershipEditObjectV1Response>, Integer, Hash)> usergroupmembership_edit_object_v1_with_http_info(pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> usergroupmembership_edit_object_v1_with_http_info(pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.usergroupmembership_edit_object_v1_with_http_info(pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UsergroupmembershipEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupmembershipApi->usergroupmembership_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**UsergroupmembershipEditObjectV1Response**](UsergroupmembershipEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

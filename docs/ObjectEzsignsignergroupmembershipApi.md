@@ -82,7 +82,7 @@ end
 
 ## ezsignsignergroupmembership_delete_object_v1
 
-> <EzsignsignergroupmembershipDeleteObjectV1Response> ezsignsignergroupmembership_delete_object_v1(pki_ezsignsignergroupmembership_id)
+> <CommonResponse> ezsignsignergroupmembership_delete_object_v1(pki_ezsignsignergroupmembership_id)
 
 Delete an existing Ezsignsignergroupmembership
 
@@ -117,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsignsignergroupmembershipDeleteObjectV1Response>, Integer, Hash)> ezsignsignergroupmembership_delete_object_v1_with_http_info(pki_ezsignsignergroupmembership_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsignsignergroupmembership_delete_object_v1_with_http_info(pki_ezsignsignergroupmembership_id)
 
 ```ruby
 begin
@@ -125,7 +125,7 @@ begin
   data, status_code, headers = api_instance.ezsignsignergroupmembership_delete_object_v1_with_http_info(pki_ezsignsignergroupmembership_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsignsignergroupmembershipDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignsignergroupmembershipApi->ezsignsignergroupmembership_delete_object_v1_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**EzsignsignergroupmembershipDeleteObjectV1Response**](EzsignsignergroupmembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

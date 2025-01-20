@@ -82,7 +82,7 @@ end
 
 ## ezsigntemplatepackagemembership_delete_object_v1
 
-> <EzsigntemplatepackagemembershipDeleteObjectV1Response> ezsigntemplatepackagemembership_delete_object_v1(pki_ezsigntemplatepackagemembership_id)
+> <CommonResponse> ezsigntemplatepackagemembership_delete_object_v1(pki_ezsigntemplatepackagemembership_id)
 
 Delete an existing Ezsigntemplatepackagemembership
 
@@ -117,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EzsigntemplatepackagemembershipDeleteObjectV1Response>, Integer, Hash)> ezsigntemplatepackagemembership_delete_object_v1_with_http_info(pki_ezsigntemplatepackagemembership_id)
+> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatepackagemembership_delete_object_v1_with_http_info(pki_ezsigntemplatepackagemembership_id)
 
 ```ruby
 begin
@@ -125,7 +125,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatepackagemembership_delete_object_v1_with_http_info(pki_ezsigntemplatepackagemembership_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <EzsigntemplatepackagemembershipDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatepackagemembershipApi->ezsigntemplatepackagemembership_delete_object_v1_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**EzsigntemplatepackagemembershipDeleteObjectV1Response**](EzsigntemplatepackagemembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

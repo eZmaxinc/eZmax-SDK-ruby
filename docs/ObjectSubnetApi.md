@@ -83,7 +83,7 @@ end
 
 ## subnet_delete_object_v1
 
-> <SubnetDeleteObjectV1Response> subnet_delete_object_v1(pki_subnet_id)
+> <CommonResponse> subnet_delete_object_v1(pki_subnet_id)
 
 Delete an existing Subnet
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SubnetDeleteObjectV1Response>, Integer, Hash)> subnet_delete_object_v1_with_http_info(pki_subnet_id)
+> <Array(<CommonResponse>, Integer, Hash)> subnet_delete_object_v1_with_http_info(pki_subnet_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.subnet_delete_object_v1_with_http_info(pki_subnet_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SubnetDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSubnetApi->subnet_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**SubnetDeleteObjectV1Response**](SubnetDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## subnet_edit_object_v1
 
-> <SubnetEditObjectV1Response> subnet_edit_object_v1(pki_subnet_id, subnet_edit_object_v1_request)
+> <CommonResponse> subnet_edit_object_v1(pki_subnet_id, subnet_edit_object_v1_request)
 
 Edit an existing Subnet
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SubnetEditObjectV1Response>, Integer, Hash)> subnet_edit_object_v1_with_http_info(pki_subnet_id, subnet_edit_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> subnet_edit_object_v1_with_http_info(pki_subnet_id, subnet_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.subnet_edit_object_v1_with_http_info(pki_subnet_id, subnet_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SubnetEditObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSubnetApi->subnet_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**SubnetEditObjectV1Response**](SubnetEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

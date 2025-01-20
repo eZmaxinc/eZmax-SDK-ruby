@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignformfieldgroup_id** | **Integer** | The unique ID of the Ezsignformfieldgroup | [optional] |
 | **s_ezsignformfieldgroup_label** | **String** | The Label for the Ezsignformfieldgroup | [optional] |
-| **a_obj_ezsignformfield** | [**Array&lt;CustomEzsignformfieldRequest&gt;**](CustomEzsignformfieldRequest.md) | An array containing all the values to fill the Ezsignform. |  |
+| **a_obj_ezsignformfield** | **Array&lt;CustomEzsignformfieldRequest&gt;** | An array containing all the values to fill the Ezsignform. |  |
 
 ## Example
 

@@ -82,7 +82,7 @@ end
 
 ## discussionmessage_delete_object_v1
 
-> <DiscussionmessageDeleteObjectV1Response> discussionmessage_delete_object_v1(pki_discussionmessage_id)
+> <CommonResponse> discussionmessage_delete_object_v1(pki_discussionmessage_id)
 
 Delete an existing Discussionmessage
 
@@ -117,7 +117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DiscussionmessageDeleteObjectV1Response>, Integer, Hash)> discussionmessage_delete_object_v1_with_http_info(pki_discussionmessage_id)
+> <Array(<CommonResponse>, Integer, Hash)> discussionmessage_delete_object_v1_with_http_info(pki_discussionmessage_id)
 
 ```ruby
 begin
@@ -125,7 +125,7 @@ begin
   data, status_code, headers = api_instance.discussionmessage_delete_object_v1_with_http_info(pki_discussionmessage_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DiscussionmessageDeleteObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionmessageApi->discussionmessage_delete_object_v1_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**DiscussionmessageDeleteObjectV1Response**](DiscussionmessageDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ end
 
 ## discussionmessage_patch_object_v1
 
-> <DiscussionmessagePatchObjectV1Response> discussionmessage_patch_object_v1(pki_discussionmessage_id, discussionmessage_patch_object_v1_request)
+> <CommonResponse> discussionmessage_patch_object_v1(pki_discussionmessage_id, discussionmessage_patch_object_v1_request)
 
 Patch an existing Discussionmessage
 
@@ -189,7 +189,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DiscussionmessagePatchObjectV1Response>, Integer, Hash)> discussionmessage_patch_object_v1_with_http_info(pki_discussionmessage_id, discussionmessage_patch_object_v1_request)
+> <Array(<CommonResponse>, Integer, Hash)> discussionmessage_patch_object_v1_with_http_info(pki_discussionmessage_id, discussionmessage_patch_object_v1_request)
 
 ```ruby
 begin
@@ -197,7 +197,7 @@ begin
   data, status_code, headers = api_instance.discussionmessage_patch_object_v1_with_http_info(pki_discussionmessage_id, discussionmessage_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DiscussionmessagePatchObjectV1Response>
+  p data # => <CommonResponse>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionmessageApi->discussionmessage_patch_object_v1_with_http_info: #{e}"
 end
@@ -212,7 +212,7 @@ end
 
 ### Return type
 
-[**DiscussionmessagePatchObjectV1Response**](DiscussionmessagePatchObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
