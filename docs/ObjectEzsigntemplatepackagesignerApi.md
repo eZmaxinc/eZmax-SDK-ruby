@@ -154,7 +154,7 @@ end
 
 ## ezsigntemplatepackagesigner_edit_object_v1
 
-> <CommonResponse> ezsigntemplatepackagesigner_edit_object_v1(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request)
+> <EzsigntemplatepackagesignerEditObjectV1Response> ezsigntemplatepackagesigner_edit_object_v1(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request)
 
 Edit an existing Ezsigntemplatepackagesigner
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatepackagesigner_edit_object_v1_with_http_info(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request)
+> <Array(<EzsigntemplatepackagesignerEditObjectV1Response>, Integer, Hash)> ezsigntemplatepackagesigner_edit_object_v1_with_http_info(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatepackagesigner_edit_object_v1_with_http_info(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatepackagesignerEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatepackagesignerEditObjectV1Response**](EzsigntemplatepackagesignerEditObjectV1Response.md)
 
 ### Authorization
 

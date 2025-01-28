@@ -14,7 +14,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.new(
-  s_return_url: Https://www.example.com,
+  s_return_url: https://www.example.com,
   s_iframedomain: *.example.com,
   b_is_iframe: null
 )

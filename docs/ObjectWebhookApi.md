@@ -88,7 +88,7 @@ end
 
 ## webhook_delete_object_v1
 
-> <CommonResponse> webhook_delete_object_v1(pki_webhook_id)
+> <WebhookDeleteObjectV1Response> webhook_delete_object_v1(pki_webhook_id)
 
 Delete an existing Webhook
 
@@ -123,7 +123,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> webhook_delete_object_v1_with_http_info(pki_webhook_id)
+> <Array(<WebhookDeleteObjectV1Response>, Integer, Hash)> webhook_delete_object_v1_with_http_info(pki_webhook_id)
 
 ```ruby
 begin
@@ -131,7 +131,7 @@ begin
   data, status_code, headers = api_instance.webhook_delete_object_v1_with_http_info(pki_webhook_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <WebhookDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectWebhookApi->webhook_delete_object_v1_with_http_info: #{e}"
 end
@@ -145,7 +145,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookDeleteObjectV1Response**](WebhookDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ end
 
 ## webhook_edit_object_v1
 
-> <CommonResponse> webhook_edit_object_v1(pki_webhook_id, webhook_edit_object_v1_request)
+> <WebhookEditObjectV1Response> webhook_edit_object_v1(pki_webhook_id, webhook_edit_object_v1_request)
 
 Edit an existing Webhook
 
@@ -195,7 +195,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> webhook_edit_object_v1_with_http_info(pki_webhook_id, webhook_edit_object_v1_request)
+> <Array(<WebhookEditObjectV1Response>, Integer, Hash)> webhook_edit_object_v1_with_http_info(pki_webhook_id, webhook_edit_object_v1_request)
 
 ```ruby
 begin
@@ -203,7 +203,7 @@ begin
   data, status_code, headers = api_instance.webhook_edit_object_v1_with_http_info(pki_webhook_id, webhook_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <WebhookEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectWebhookApi->webhook_edit_object_v1_with_http_info: #{e}"
 end
@@ -218,7 +218,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookEditObjectV1Response**](WebhookEditObjectV1Response.md)
 
 ### Authorization
 
@@ -530,7 +530,7 @@ end
 
 ## webhook_send_webhook_v1
 
-> <CommonResponse> webhook_send_webhook_v1(webhook_send_webhook_v1_request)
+> <WebhookSendWebhookV1Response> webhook_send_webhook_v1(webhook_send_webhook_v1_request)
 
 Emit a Webhook event
 
@@ -563,7 +563,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> webhook_send_webhook_v1_with_http_info(webhook_send_webhook_v1_request)
+> <Array(<WebhookSendWebhookV1Response>, Integer, Hash)> webhook_send_webhook_v1_with_http_info(webhook_send_webhook_v1_request)
 
 ```ruby
 begin
@@ -571,7 +571,7 @@ begin
   data, status_code, headers = api_instance.webhook_send_webhook_v1_with_http_info(webhook_send_webhook_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <WebhookSendWebhookV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectWebhookApi->webhook_send_webhook_v1_with_http_info: #{e}"
 end
@@ -585,7 +585,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookSendWebhookV1Response**](WebhookSendWebhookV1Response.md)
 
 ### Authorization
 
@@ -599,7 +599,7 @@ end
 
 ## webhook_test_v1
 
-> <CommonResponse> webhook_test_v1(pki_webhook_id, body)
+> <WebhookTestV1Response> webhook_test_v1(pki_webhook_id, body)
 
 Test the Webhook by calling the Url
 
@@ -635,7 +635,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> webhook_test_v1_with_http_info(pki_webhook_id, body)
+> <Array(<WebhookTestV1Response>, Integer, Hash)> webhook_test_v1_with_http_info(pki_webhook_id, body)
 
 ```ruby
 begin
@@ -643,7 +643,7 @@ begin
   data, status_code, headers = api_instance.webhook_test_v1_with_http_info(pki_webhook_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <WebhookTestV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectWebhookApi->webhook_test_v1_with_http_info: #{e}"
 end
@@ -658,7 +658,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookTestV1Response**](WebhookTestV1Response.md)
 
 ### Authorization
 

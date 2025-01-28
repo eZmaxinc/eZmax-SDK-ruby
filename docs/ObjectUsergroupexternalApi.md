@@ -87,7 +87,7 @@ end
 
 ## usergroupexternal_delete_object_v1
 
-> <CommonResponse> usergroupexternal_delete_object_v1(pki_usergroupexternal_id)
+> <UsergroupexternalDeleteObjectV1Response> usergroupexternal_delete_object_v1(pki_usergroupexternal_id)
 
 Delete an existing Usergroupexternal
 
@@ -122,7 +122,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> usergroupexternal_delete_object_v1_with_http_info(pki_usergroupexternal_id)
+> <Array(<UsergroupexternalDeleteObjectV1Response>, Integer, Hash)> usergroupexternal_delete_object_v1_with_http_info(pki_usergroupexternal_id)
 
 ```ruby
 begin
@@ -130,7 +130,7 @@ begin
   data, status_code, headers = api_instance.usergroupexternal_delete_object_v1_with_http_info(pki_usergroupexternal_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UsergroupexternalDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupexternalApi->usergroupexternal_delete_object_v1_with_http_info: #{e}"
 end
@@ -144,7 +144,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UsergroupexternalDeleteObjectV1Response**](UsergroupexternalDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ end
 
 ## usergroupexternal_edit_object_v1
 
-> <CommonResponse> usergroupexternal_edit_object_v1(pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request)
+> <UsergroupexternalEditObjectV1Response> usergroupexternal_edit_object_v1(pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request)
 
 Edit an existing Usergroupexternal
 
@@ -194,7 +194,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> usergroupexternal_edit_object_v1_with_http_info(pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request)
+> <Array(<UsergroupexternalEditObjectV1Response>, Integer, Hash)> usergroupexternal_edit_object_v1_with_http_info(pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request)
 
 ```ruby
 begin
@@ -202,7 +202,7 @@ begin
   data, status_code, headers = api_instance.usergroupexternal_edit_object_v1_with_http_info(pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UsergroupexternalEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUsergroupexternalApi->usergroupexternal_edit_object_v1_with_http_info: #{e}"
 end
@@ -217,7 +217,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UsergroupexternalEditObjectV1Response**](UsergroupexternalEditObjectV1Response.md)
 
 ### Authorization
 

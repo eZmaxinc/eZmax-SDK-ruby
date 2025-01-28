@@ -43,9 +43,9 @@
 | **obj_signature** | [**SignatureResponseCompound**](SignatureResponseCompound.md) |  | [optional] |
 | **dt_ezsignsignature_date_in_folder_timezone** | **String** | The date the Ezsignsignature was signed in folder&#39;s timezone | [optional] |
 | **b_ezsignsignature_customdate** | **Boolean** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional] |
-| **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateResponseCompound&gt;**](EzsignsignaturecustomdateResponse.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
+| **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateResponseCompound&gt;**](EzsignsignaturecustomdateResponseCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **obj_creditcardtransaction** | [**CustomCreditcardtransactionResponse**](CustomCreditcardtransactionResponse.md) |  | [optional] |
-| **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponse.md) |  | [optional] |
+| **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponseCompound.md) |  | [optional] |
 | **obj_timezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] |
 
 ## Example
@@ -87,7 +87,7 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   s_ezsignsignature_textvalidationcustommessage: Phone number,
   e_ezsignsignature_dependencyrequirement: null,
   s_ezsignsignature_defaultvalue: Foo,
-  s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsignsignature_regexp: ^[0-9]{9}$,
   obj_contact_name: null,
   obj_contact_name_delegation: null,
   obj_signature: null,

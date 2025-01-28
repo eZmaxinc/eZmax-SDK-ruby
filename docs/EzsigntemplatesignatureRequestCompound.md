@@ -37,8 +37,8 @@
 | **i_ezsigntemplatesignature_positioningoffsety** | **Integer** | The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] |
 | **e_ezsigntemplatesignature_positioningoccurence** | [**FieldEEzsigntemplatesignaturePositioningoccurence**](FieldEEzsigntemplatesignaturePositioningoccurence.md) |  | [optional] |
 | **b_ezsigntemplatesignature_customdate** | **Boolean** | Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**) | [optional] |
-| **a_obj_ezsigntemplatesignaturecustomdate** | [**Array&lt;EzsigntemplatesignaturecustomdateRequestCompound&gt;**](EzsigntemplatesignaturecustomdateRequest.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
-| **a_obj_ezsigntemplateelementdependency** | [**Array&lt;EzsigntemplateelementdependencyRequestCompound&gt;**](EzsigntemplateelementdependencyRequest.md) |  | [optional] |
+| **a_obj_ezsigntemplatesignaturecustomdate** | [**Array&lt;EzsigntemplatesignaturecustomdateRequestCompound&gt;**](EzsigntemplatesignaturecustomdateRequestCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
+| **a_obj_ezsigntemplateelementdependency** | [**Array&lt;EzsigntemplateelementdependencyRequestCompound&gt;**](EzsigntemplateelementdependencyRequestCompound.md) |  | [optional] |
 
 ## Example
 
@@ -70,7 +70,7 @@ instance = EzmaxApi::EzsigntemplatesignatureRequestCompound.new(
   i_ezsigntemplatesignature_validationstep: 1,
   i_ezsigntemplatesignature_maxlength: 75,
   s_ezsigntemplatesignature_defaultvalue: Foo,
-  s_ezsigntemplatesignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsigntemplatesignature_regexp: ^.{0,30}$,
   e_ezsigntemplatesignature_textvalidation: null,
   s_ezsigntemplatesignature_textvalidationcustommessage: Phone number,
   e_ezsigntemplatesignature_dependencyrequirement: null,

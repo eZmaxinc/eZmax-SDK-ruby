@@ -29,7 +29,7 @@ instance = EzmaxApi::SupplyListElement.new(
   fki_variableexpense_id: 2,
   s_supply_code: PPLET,
   s_supply_description_x: Letter paper package,
-  d_supply_unitprice: 8,
+  d_supply_unitprice: 8.00,
   b_supply_isactive: true,
   b_supply_variableprice: true,
   s_glaccount_description_x: Supplies income,

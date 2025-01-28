@@ -16,7 +16,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::CorsResponse.new(
   pki_cors_id: 228,
   fki_apikey_id: 99,
-  s_cors_entryurl: Https://www.example.com
+  s_cors_entryurl: https://www.example.com
 )
 ```
 

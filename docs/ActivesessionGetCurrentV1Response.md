@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
-| **m_payload** | [**ActivesessionResponseCompound**](ActivesessionResponseCompound.md) | Payload for GET /1/object/activesession/getCurrent |  |
+| **m_payload** | [**ActivesessionGetCurrentV1ResponseMPayload**](ActivesessionGetCurrentV1ResponseMPayload.md) |  |  |
 
 ## Example
 

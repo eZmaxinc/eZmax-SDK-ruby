@@ -10,7 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## systemconfiguration_edit_object_v1
 
-> <CommonResponse> systemconfiguration_edit_object_v1(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
+> <SystemconfigurationEditObjectV1Response> systemconfiguration_edit_object_v1(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
 
 Edit an existing Systemconfiguration
 
@@ -31,7 +31,7 @@ end
 
 api_instance = EzmaxApi::ObjectSystemconfigurationApi.new
 pki_systemconfiguration_id = 56 # Integer | The unique ID of the Systemconfiguration
-systemconfiguration_edit_object_v1_request = EzmaxApi::SystemconfigurationEditObjectV1Request.new({obj_systemconfiguration: EzmaxApi::SystemconfigurationRequestCompound.new({e_systemconfiguration_newexternaluseraction: EzmaxApi::FieldESystemconfigurationNewexternaluseraction::STAGE, e_systemconfiguration_language1: EzmaxApi::FieldESystemconfigurationLanguage1::FR_QC, e_systemconfiguration_language2: EzmaxApi::FieldESystemconfigurationLanguage2::CA, b_systemconfiguration_ezsignpersonnal: true, b_systemconfiguration_sspr: true})}) # SystemconfigurationEditObjectV1Request | 
+systemconfiguration_edit_object_v1_request = EzmaxApi::SystemconfigurationEditObjectV1Request.new({obj_systemconfiguration: EzmaxApi::SystemconfigurationRequestCompound.new({e_systemconfiguration_newexternaluseraction: EzmaxApi::FieldESystemconfigurationNewexternaluseraction::STAGE, e_systemconfiguration_language1: EzmaxApi::FieldESystemconfigurationLanguage1::FR_QC, e_systemconfiguration_language2: EzmaxApi::FieldESystemconfigurationLanguage2::EN_CA, b_systemconfiguration_ezsignpersonnal: true, b_systemconfiguration_sspr: true})}) # SystemconfigurationEditObjectV1Request | 
 
 begin
   # Edit an existing Systemconfiguration
@@ -46,7 +46,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
+> <Array(<SystemconfigurationEditObjectV1Response>, Integer, Hash)> systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
 
 ```ruby
 begin
@@ -54,7 +54,7 @@ begin
   data, status_code, headers = api_instance.systemconfiguration_edit_object_v1_with_http_info(pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <SystemconfigurationEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSystemconfigurationApi->systemconfiguration_edit_object_v1_with_http_info: #{e}"
 end
@@ -69,7 +69,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SystemconfigurationEditObjectV1Response**](SystemconfigurationEditObjectV1Response.md)
 
 ### Authorization
 

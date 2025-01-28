@@ -9,7 +9,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 ## ezsignpage_consult_v1
 
-> <CommonResponse> ezsignpage_consult_v1(pki_ezsignpage_id, body)
+> <EzsignpageConsultV1Response> ezsignpage_consult_v1(pki_ezsignpage_id, body)
 
 Consult an Ezsignpage
 
@@ -43,7 +43,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignpage_consult_v1_with_http_info(pki_ezsignpage_id, body)
+> <Array(<EzsignpageConsultV1Response>, Integer, Hash)> ezsignpage_consult_v1_with_http_info(pki_ezsignpage_id, body)
 
 ```ruby
 begin
@@ -51,7 +51,7 @@ begin
   data, status_code, headers = api_instance.ezsignpage_consult_v1_with_http_info(pki_ezsignpage_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignpageConsultV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignpageApi->ezsignpage_consult_v1_with_http_info: #{e}"
 end
@@ -66,7 +66,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignpageConsultV1Response**](EzsignpageConsultV1Response.md)
 
 ### Authorization
 

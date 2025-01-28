@@ -44,7 +44,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectUserApi.new
-user_create_object_v1_request = EzmaxApi::UserCreateObjectV1Request.new({a_obj_user: [EzmaxApi::UserRequestCompound.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequest.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})]}) # UserCreateObjectV1Request | 
+user_create_object_v1_request = EzmaxApi::UserCreateObjectV1Request.new({a_obj_user: [EzmaxApi::UserRequestCompound.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequestCompound.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})]}) # UserCreateObjectV1Request | 
 
 begin
   # Create a new User
@@ -115,7 +115,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectUserApi.new
-user_create_object_v2_request = EzmaxApi::UserCreateObjectV2Request.new({a_obj_user: [EzmaxApi::UserRequestCompoundV2.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequest.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})]}) # UserCreateObjectV2Request | 
+user_create_object_v2_request = EzmaxApi::UserCreateObjectV2Request.new({a_obj_user: [EzmaxApi::UserRequestCompoundV2.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequestCompound.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})]}) # UserCreateObjectV2Request | 
 
 begin
   # Create a new User
@@ -239,7 +239,7 @@ end
 
 ## user_edit_object_v1
 
-> <CommonResponse> user_edit_object_v1(pki_user_id, user_edit_object_v1_request)
+> <UserEditObjectV1Response> user_edit_object_v1(pki_user_id, user_edit_object_v1_request)
 
 Edit an existing User
 
@@ -260,7 +260,7 @@ end
 
 api_instance = EzmaxApi::ObjectUserApi.new
 pki_user_id = 56 # Integer | The unique ID of the User
-user_edit_object_v1_request = EzmaxApi::UserEditObjectV1Request.new({obj_user: EzmaxApi::UserRequestCompound.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequest.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})}) # UserEditObjectV1Request | 
+user_edit_object_v1_request = EzmaxApi::UserEditObjectV1Request.new({obj_user: EzmaxApi::UserRequestCompound.new({fki_company_id_default: 1, fki_department_id_default: 21, fki_timezone_id: 247, fki_language_id: 2, obj_email: EzmaxApi::EmailRequestCompound.new({fki_emailtype_id: 1, s_email_address: 'email@example.com'}), fki_billingentityinternal_id: 1, e_user_type: EzmaxApi::FieldEUserType::AGENT_BROKER, e_user_logintype: EzmaxApi::FieldEUserLogintype::PASSWORD, s_user_firstname: 'John', s_user_lastname: 'Doe', s_user_loginname: 'JohnDoe', e_user_ezsignaccess: EzmaxApi::FieldEUserEzsignaccess::NO, b_user_isactive: true})}) # UserEditObjectV1Request | 
 
 begin
   # Edit an existing User
@@ -275,7 +275,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> user_edit_object_v1_with_http_info(pki_user_id, user_edit_object_v1_request)
+> <Array(<UserEditObjectV1Response>, Integer, Hash)> user_edit_object_v1_with_http_info(pki_user_id, user_edit_object_v1_request)
 
 ```ruby
 begin
@@ -283,7 +283,7 @@ begin
   data, status_code, headers = api_instance.user_edit_object_v1_with_http_info(pki_user_id, user_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UserEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUserApi->user_edit_object_v1_with_http_info: #{e}"
 end
@@ -298,7 +298,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserEditObjectV1Response**](UserEditObjectV1Response.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ end
 
 api_instance = EzmaxApi::ObjectUserApi.new
 pki_user_id = 56 # Integer | 
-user_edit_permissions_v1_request = EzmaxApi::UserEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequest.new({fki_modulesection_id: 53})]}) # UserEditPermissionsV1Request | 
+user_edit_permissions_v1_request = EzmaxApi::UserEditPermissionsV1Request.new({a_obj_permission: [EzmaxApi::PermissionRequestCompound.new({fki_modulesection_id: 53})]}) # UserEditPermissionsV1Request | 
 
 begin
   # Edit multiple Permissions
@@ -1101,7 +1101,7 @@ end
 
 ## user_send_password_reset_v1
 
-> <CommonResponse> user_send_password_reset_v1(pki_user_id, body)
+> <UserSendPasswordResetV1Response> user_send_password_reset_v1(pki_user_id, body)
 
 Send password reset
 
@@ -1137,7 +1137,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> user_send_password_reset_v1_with_http_info(pki_user_id, body)
+> <Array(<UserSendPasswordResetV1Response>, Integer, Hash)> user_send_password_reset_v1_with_http_info(pki_user_id, body)
 
 ```ruby
 begin
@@ -1145,7 +1145,7 @@ begin
   data, status_code, headers = api_instance.user_send_password_reset_v1_with_http_info(pki_user_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UserSendPasswordResetV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUserApi->user_send_password_reset_v1_with_http_info: #{e}"
 end
@@ -1160,7 +1160,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserSendPasswordResetV1Response**](UserSendPasswordResetV1Response.md)
 
 ### Authorization
 

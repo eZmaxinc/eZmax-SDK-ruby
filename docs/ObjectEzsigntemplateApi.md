@@ -159,7 +159,7 @@ end
 
 ## ezsigntemplate_delete_object_v1
 
-> <CommonResponse> ezsigntemplate_delete_object_v1(pki_ezsigntemplate_id)
+> <EzsigntemplateDeleteObjectV1Response> ezsigntemplate_delete_object_v1(pki_ezsigntemplate_id)
 
 Delete an existing Ezsigntemplate
 
@@ -194,7 +194,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplate_delete_object_v1_with_http_info(pki_ezsigntemplate_id)
+> <Array(<EzsigntemplateDeleteObjectV1Response>, Integer, Hash)> ezsigntemplate_delete_object_v1_with_http_info(pki_ezsigntemplate_id)
 
 ```ruby
 begin
@@ -202,7 +202,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplate_delete_object_v1_with_http_info(pki_ezsigntemplate_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplateDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplateApi->ezsigntemplate_delete_object_v1_with_http_info: #{e}"
 end
@@ -216,7 +216,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplateDeleteObjectV1Response**](EzsigntemplateDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ end
 
 ## ezsigntemplate_edit_object_v3
 
-> <CommonResponse> ezsigntemplate_edit_object_v3(pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request)
+> <EzsigntemplateEditObjectV3Response> ezsigntemplate_edit_object_v3(pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request)
 
 Edit an existing Ezsigntemplate
 
@@ -266,7 +266,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplate_edit_object_v3_with_http_info(pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request)
+> <Array(<EzsigntemplateEditObjectV3Response>, Integer, Hash)> ezsigntemplate_edit_object_v3_with_http_info(pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request)
 
 ```ruby
 begin
@@ -274,7 +274,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplate_edit_object_v3_with_http_info(pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplateEditObjectV3Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplateApi->ezsigntemplate_edit_object_v3_with_http_info: #{e}"
 end
@@ -289,7 +289,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplateEditObjectV3Response**](EzsigntemplateEditObjectV3Response.md)
 
 ### Authorization
 

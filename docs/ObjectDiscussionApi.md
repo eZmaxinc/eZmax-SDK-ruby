@@ -84,7 +84,7 @@ end
 
 ## discussion_delete_object_v1
 
-> <CommonResponse> discussion_delete_object_v1(pki_discussion_id)
+> <DiscussionDeleteObjectV1Response> discussion_delete_object_v1(pki_discussion_id)
 
 Delete an existing Discussion
 
@@ -119,7 +119,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> discussion_delete_object_v1_with_http_info(pki_discussion_id)
+> <Array(<DiscussionDeleteObjectV1Response>, Integer, Hash)> discussion_delete_object_v1_with_http_info(pki_discussion_id)
 
 ```ruby
 begin
@@ -127,7 +127,7 @@ begin
   data, status_code, headers = api_instance.discussion_delete_object_v1_with_http_info(pki_discussion_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <DiscussionDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionApi->discussion_delete_object_v1_with_http_info: #{e}"
 end
@@ -141,7 +141,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionDeleteObjectV1Response**](DiscussionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ end
 
 ## discussion_patch_object_v1
 
-> <CommonResponse> discussion_patch_object_v1(pki_discussion_id, discussion_patch_object_v1_request)
+> <DiscussionPatchObjectV1Response> discussion_patch_object_v1(pki_discussion_id, discussion_patch_object_v1_request)
 
 Patch an existing Discussion
 
@@ -262,7 +262,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> discussion_patch_object_v1_with_http_info(pki_discussion_id, discussion_patch_object_v1_request)
+> <Array(<DiscussionPatchObjectV1Response>, Integer, Hash)> discussion_patch_object_v1_with_http_info(pki_discussion_id, discussion_patch_object_v1_request)
 
 ```ruby
 begin
@@ -270,7 +270,7 @@ begin
   data, status_code, headers = api_instance.discussion_patch_object_v1_with_http_info(pki_discussion_id, discussion_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <DiscussionPatchObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionApi->discussion_patch_object_v1_with_http_info: #{e}"
 end
@@ -285,7 +285,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionPatchObjectV1Response**](DiscussionPatchObjectV1Response.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ end
 
 ## discussion_update_discussionreadstatus_v1
 
-> <CommonResponse> discussion_update_discussionreadstatus_v1(pki_discussion_id, discussion_update_discussionreadstatus_v1_request)
+> <DiscussionUpdateDiscussionreadstatusV1Response> discussion_update_discussionreadstatus_v1(pki_discussion_id, discussion_update_discussionreadstatus_v1_request)
 
 Update the read status of the discussion
 
@@ -333,7 +333,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> discussion_update_discussionreadstatus_v1_with_http_info(pki_discussion_id, discussion_update_discussionreadstatus_v1_request)
+> <Array(<DiscussionUpdateDiscussionreadstatusV1Response>, Integer, Hash)> discussion_update_discussionreadstatus_v1_with_http_info(pki_discussion_id, discussion_update_discussionreadstatus_v1_request)
 
 ```ruby
 begin
@@ -341,7 +341,7 @@ begin
   data, status_code, headers = api_instance.discussion_update_discussionreadstatus_v1_with_http_info(pki_discussion_id, discussion_update_discussionreadstatus_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <DiscussionUpdateDiscussionreadstatusV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectDiscussionApi->discussion_update_discussionreadstatus_v1_with_http_info: #{e}"
 end
@@ -356,7 +356,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionUpdateDiscussionreadstatusV1Response**](DiscussionUpdateDiscussionreadstatusV1Response.md)
 
 ### Authorization
 

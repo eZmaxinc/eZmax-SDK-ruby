@@ -40,7 +40,7 @@ instance = EzmaxApi::EzsigntemplateformfieldgroupResponse.new(
   b_ezsigntemplateformfieldgroup_readonly: null,
   i_ezsigntemplateformfieldgroup_maxlength: 75,
   b_ezsigntemplateformfieldgroup_encrypted: null,
-  s_ezsigntemplateformfieldgroup_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsigntemplateformfieldgroup_regexp: ^.{0,30}$,
   s_ezsigntemplateformfieldgroup_textvalidationcustommessage: Phone number,
   e_ezsigntemplateformfieldgroup_textvalidation: null,
   t_ezsigntemplateformfieldgroup_tooltip: Please enter a valid email address,

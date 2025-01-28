@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_obj_ezsigntemplatedocumentpage** | [**Array&lt;EzsigntemplatedocumentpageResponseCompound&gt;**](EzsigntemplatedocumentpageResponse.md) |  |  |
+| **a_obj_ezsigntemplatedocumentpage** | [**Array&lt;EzsigntemplatedocumentpageResponseCompound&gt;**](EzsigntemplatedocumentpageResponseCompound.md) |  |  |
 
 ## Example
 

@@ -25,7 +25,7 @@ instance = EzmaxApi::EzsigntemplatedocumentpagerecognitionResponseCompound.new(
   fki_ezsigntemplatedocumentpage_id: 85,
   e_ezsigntemplatedocumentpagerecognition_operator: null,
   e_ezsigntemplatedocumentpagerecognition_section: null,
-  i_ezsigntemplatedocumentpagerecognition_similarpercentage: 50,
+  i_ezsigntemplatedocumentpagerecognition_similarpercentage: 75,
   i_ezsigntemplatedocumentpagerecognition_x: 36325,
   i_ezsigntemplatedocumentpagerecognition_y: 407,
   i_ezsigntemplatedocumentpagerecognition_width: 29232,

@@ -11,10 +11,10 @@
 | **fki_website_id_default** | **Integer** | The unique ID of the Website Default | [optional] |
 | **e_contactinformations_type** | [**FieldEContactinformationsType**](FieldEContactinformationsType.md) |  |  |
 | **s_contactinformations_url** | **String** | The url of the Contactinformations | [optional] |
-| **obj_address_default** | [**AddressResponse**](AddressResponse.md) | An Address Object and children to create a complete structure | [optional] |
+| **obj_address_default** | [**AddressResponseCompound**](AddressResponseCompound.md) |  | [optional] |
 | **obj_phone_default** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] |
-| **obj_email_default** | [**EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure | [optional] |
-| **obj_website_default** | [**WebsiteResponse**](WebsiteResponse.md) | A Website Object and children to create a complete structure | [optional] |
+| **obj_email_default** | [**EmailResponseCompound**](EmailResponseCompound.md) |  | [optional] |
+| **obj_website_default** | [**WebsiteResponseCompound**](WebsiteResponseCompound.md) |  | [optional] |
 
 ## Example
 

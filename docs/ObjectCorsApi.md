@@ -32,7 +32,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectCorsApi.new
-cors_create_object_v1_request = EzmaxApi::CorsCreateObjectV1Request.new({a_obj_cors: [EzmaxApi::CorsRequestCompound.new({fki_apikey_id: 99, s_cors_entryurl: 'Https://www.example.com'})]}) # CorsCreateObjectV1Request | 
+cors_create_object_v1_request = EzmaxApi::CorsCreateObjectV1Request.new({a_obj_cors: [EzmaxApi::CorsRequestCompound.new({fki_apikey_id: 99, s_cors_entryurl: 'https://www.example.com'})]}) # CorsCreateObjectV1Request | 
 
 begin
   # Create a new Cors
@@ -83,7 +83,7 @@ end
 
 ## cors_delete_object_v1
 
-> <CommonResponse> cors_delete_object_v1(pki_cors_id)
+> <CorsDeleteObjectV1Response> cors_delete_object_v1(pki_cors_id)
 
 Delete an existing Cors
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> cors_delete_object_v1_with_http_info(pki_cors_id)
+> <Array(<CorsDeleteObjectV1Response>, Integer, Hash)> cors_delete_object_v1_with_http_info(pki_cors_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.cors_delete_object_v1_with_http_info(pki_cors_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <CorsDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCorsApi->cors_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CorsDeleteObjectV1Response**](CorsDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## cors_edit_object_v1
 
-> <CommonResponse> cors_edit_object_v1(pki_cors_id, cors_edit_object_v1_request)
+> <CorsEditObjectV1Response> cors_edit_object_v1(pki_cors_id, cors_edit_object_v1_request)
 
 Edit an existing Cors
 
@@ -175,7 +175,7 @@ end
 
 api_instance = EzmaxApi::ObjectCorsApi.new
 pki_cors_id = 56 # Integer | The unique ID of the Cors
-cors_edit_object_v1_request = EzmaxApi::CorsEditObjectV1Request.new({obj_cors: EzmaxApi::CorsRequestCompound.new({fki_apikey_id: 99, s_cors_entryurl: 'Https://www.example.com'})}) # CorsEditObjectV1Request | 
+cors_edit_object_v1_request = EzmaxApi::CorsEditObjectV1Request.new({obj_cors: EzmaxApi::CorsRequestCompound.new({fki_apikey_id: 99, s_cors_entryurl: 'https://www.example.com'})}) # CorsEditObjectV1Request | 
 
 begin
   # Edit an existing Cors
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
+> <Array(<CorsEditObjectV1Response>, Integer, Hash)> cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.cors_edit_object_v1_with_http_info(pki_cors_id, cors_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <CorsEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectCorsApi->cors_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CorsEditObjectV1Response**](CorsEditObjectV1Response.md)
 
 ### Authorization
 

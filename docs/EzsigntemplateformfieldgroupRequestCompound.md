@@ -21,8 +21,8 @@
 | **e_ezsigntemplateformfieldgroup_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
 | **t_ezsigntemplateformfieldgroup_tooltip** | **String** | A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup | [optional] |
 | **e_ezsigntemplateformfieldgroup_tooltipposition** | [**FieldEEzsigntemplateformfieldgroupTooltipposition**](FieldEEzsigntemplateformfieldgroupTooltipposition.md) |  | [optional] |
-| **a_obj_ezsigntemplateformfieldgroupsigner** | [**Array&lt;EzsigntemplateformfieldgroupsignerRequestCompound&gt;**](EzsigntemplateformfieldgroupsignerRequest.md) |  |  |
-| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequest.md) |  | [optional] |
+| **a_obj_ezsigntemplateformfieldgroupsigner** | [**Array&lt;EzsigntemplateformfieldgroupsignerRequestCompound&gt;**](EzsigntemplateformfieldgroupsignerRequestCompound.md) |  |  |
+| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequestCompound.md) |  | [optional] |
 | **a_obj_ezsigntemplateformfield** | [**Array&lt;EzsigntemplateformfieldRequestCompound&gt;**](EzsigntemplateformfieldRequestCompound.md) |  |  |
 
 ## Example
@@ -43,7 +43,7 @@ instance = EzmaxApi::EzsigntemplateformfieldgroupRequestCompound.new(
   b_ezsigntemplateformfieldgroup_readonly: null,
   i_ezsigntemplateformfieldgroup_maxlength: 75,
   b_ezsigntemplateformfieldgroup_encrypted: null,
-  s_ezsigntemplateformfieldgroup_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsigntemplateformfieldgroup_regexp: ^.{0,30}$,
   s_ezsigntemplateformfieldgroup_textvalidationcustommessage: Phone number,
   e_ezsigntemplateformfieldgroup_textvalidation: null,
   t_ezsigntemplateformfieldgroup_tooltip: Please enter a valid email address,

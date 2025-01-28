@@ -32,8 +32,8 @@
 | **s_ezsignsignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional] |
 | **e_ezsignsignature_dependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] |
 | **b_ezsignsignature_customdate** | **Boolean** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional] |
-| **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateRequestCompoundV2&gt;**](EzsignsignaturecustomdateRequestV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
-| **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyRequestCompound&gt;**](EzsignelementdependencyRequest.md) |  | [optional] |
+| **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateRequestCompoundV2&gt;**](EzsignsignaturecustomdateRequestCompoundV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
+| **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyRequestCompound&gt;**](EzsignelementdependencyRequestCompound.md) |  | [optional] |
 
 ## Example
 
@@ -66,7 +66,7 @@ instance = EzmaxApi::EzsignsignatureRequestCompoundV2.new(
   s_ezsignsignature_defaultvalue: Foo,
   e_ezsignsignature_textvalidation: null,
   s_ezsignsignature_textvalidationcustommessage: Phone number,
-  s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsignsignature_regexp: ^[0-9]{9}$,
   e_ezsignsignature_dependencyrequirement: null,
   b_ezsignsignature_customdate: null,
   a_obj_ezsignsignaturecustomdate: null,

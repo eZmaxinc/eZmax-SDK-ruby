@@ -83,7 +83,7 @@ end
 
 ## ezsigntemplatedocumentpagerecognition_delete_object_v1
 
-> <CommonResponse> ezsigntemplatedocumentpagerecognition_delete_object_v1(pki_ezsigntemplatedocumentpagerecognition_id)
+> <EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response> ezsigntemplatedocumentpagerecognition_delete_object_v1(pki_ezsigntemplatedocumentpagerecognition_id)
 
 Delete an existing Ezsigntemplatedocumentpagerecognition
 
@@ -118,7 +118,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatedocumentpagerecognition_delete_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id)
+> <Array(<EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response>, Integer, Hash)> ezsigntemplatedocumentpagerecognition_delete_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id)
 
 ```ruby
 begin
@@ -126,7 +126,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatedocumentpagerecognition_delete_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatedocumentpagerecognitionApi->ezsigntemplatedocumentpagerecognition_delete_object_v1_with_http_info: #{e}"
 end
@@ -140,7 +140,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response**](EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ end
 
 ## ezsigntemplatedocumentpagerecognition_edit_object_v1
 
-> <CommonResponse> ezsigntemplatedocumentpagerecognition_edit_object_v1(pki_ezsigntemplatedocumentpagerecognition_id, ezsigntemplatedocumentpagerecognition_edit_object_v1_request)
+> <EzsigntemplatedocumentpagerecognitionEditObjectV1Response> ezsigntemplatedocumentpagerecognition_edit_object_v1(pki_ezsigntemplatedocumentpagerecognition_id, ezsigntemplatedocumentpagerecognition_edit_object_v1_request)
 
 Edit an existing Ezsigntemplatedocumentpagerecognition
 
@@ -190,7 +190,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsigntemplatedocumentpagerecognition_edit_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id, ezsigntemplatedocumentpagerecognition_edit_object_v1_request)
+> <Array(<EzsigntemplatedocumentpagerecognitionEditObjectV1Response>, Integer, Hash)> ezsigntemplatedocumentpagerecognition_edit_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id, ezsigntemplatedocumentpagerecognition_edit_object_v1_request)
 
 ```ruby
 begin
@@ -198,7 +198,7 @@ begin
   data, status_code, headers = api_instance.ezsigntemplatedocumentpagerecognition_edit_object_v1_with_http_info(pki_ezsigntemplatedocumentpagerecognition_id, ezsigntemplatedocumentpagerecognition_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsigntemplatedocumentpagerecognitionEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsigntemplatedocumentpagerecognitionApi->ezsigntemplatedocumentpagerecognition_edit_object_v1_with_http_info: #{e}"
 end
@@ -213,7 +213,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentpagerecognitionEditObjectV1Response**](EzsigntemplatedocumentpagerecognitionEditObjectV1Response.md)
 
 ### Authorization
 

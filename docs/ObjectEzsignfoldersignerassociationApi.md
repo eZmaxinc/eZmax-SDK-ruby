@@ -234,7 +234,7 @@ end
 
 ## ezsignfoldersignerassociation_delete_object_v1
 
-> <CommonResponse> ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id)
+> <EzsignfoldersignerassociationDeleteObjectV1Response> ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id)
 
 Delete an existing Ezsignfoldersignerassociation
 
@@ -269,7 +269,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldersignerassociation_delete_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id)
+> <Array(<EzsignfoldersignerassociationDeleteObjectV1Response>, Integer, Hash)> ezsignfoldersignerassociation_delete_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id)
 
 ```ruby
 begin
@@ -277,7 +277,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldersignerassociation_delete_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignfoldersignerassociationDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_delete_object_v1_with_http_info: #{e}"
 end
@@ -291,7 +291,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignfoldersignerassociationDeleteObjectV1Response**](EzsignfoldersignerassociationDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ end
 
 ## ezsignfoldersignerassociation_edit_object_v1
 
-> <CommonResponse> ezsignfoldersignerassociation_edit_object_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request)
+> <EzsignfoldersignerassociationEditObjectV1Response> ezsignfoldersignerassociation_edit_object_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request)
 
 Edit an existing Ezsignfoldersignerassociation
 
@@ -341,7 +341,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldersignerassociation_edit_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request)
+> <Array(<EzsignfoldersignerassociationEditObjectV1Response>, Integer, Hash)> ezsignfoldersignerassociation_edit_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request)
 
 ```ruby
 begin
@@ -349,7 +349,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldersignerassociation_edit_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignfoldersignerassociationEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_edit_object_v1_with_http_info: #{e}"
 end
@@ -364,7 +364,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignfoldersignerassociationEditObjectV1Response**](EzsignfoldersignerassociationEditObjectV1Response.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ end
 
 ## ezsignfoldersignerassociation_force_disconnect_v1
 
-> <CommonResponse> ezsignfoldersignerassociation_force_disconnect_v1(pki_ezsignfoldersignerassociation_id, body)
+> <EzsignfoldersignerassociationForceDisconnectV1Response> ezsignfoldersignerassociation_force_disconnect_v1(pki_ezsignfoldersignerassociation_id, body)
 
 Disconnects the Ezsignfoldersignerassociation
 
@@ -414,7 +414,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldersignerassociation_force_disconnect_v1_with_http_info(pki_ezsignfoldersignerassociation_id, body)
+> <Array(<EzsignfoldersignerassociationForceDisconnectV1Response>, Integer, Hash)> ezsignfoldersignerassociation_force_disconnect_v1_with_http_info(pki_ezsignfoldersignerassociation_id, body)
 
 ```ruby
 begin
@@ -422,7 +422,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldersignerassociation_force_disconnect_v1_with_http_info(pki_ezsignfoldersignerassociation_id, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignfoldersignerassociationForceDisconnectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_force_disconnect_v1_with_http_info: #{e}"
 end
@@ -437,7 +437,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignfoldersignerassociationForceDisconnectV1Response**](EzsignfoldersignerassociationForceDisconnectV1Response.md)
 
 ### Authorization
 
@@ -664,7 +664,7 @@ end
 
 ## ezsignfoldersignerassociation_patch_object_v1
 
-> <CommonResponse> ezsignfoldersignerassociation_patch_object_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request)
+> <EzsignfoldersignerassociationPatchObjectV1Response> ezsignfoldersignerassociation_patch_object_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request)
 
 Patch an existing Ezsignfoldersignerassociation
 
@@ -698,7 +698,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldersignerassociation_patch_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request)
+> <Array(<EzsignfoldersignerassociationPatchObjectV1Response>, Integer, Hash)> ezsignfoldersignerassociation_patch_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request)
 
 ```ruby
 begin
@@ -706,7 +706,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldersignerassociation_patch_object_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignfoldersignerassociationPatchObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_patch_object_v1_with_http_info: #{e}"
 end
@@ -721,7 +721,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignfoldersignerassociationPatchObjectV1Response**](EzsignfoldersignerassociationPatchObjectV1Response.md)
 
 ### Authorization
 
@@ -735,7 +735,7 @@ end
 
 ## ezsignfoldersignerassociation_reassign_v1
 
-> <CommonResponse> ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request)
+> <EzsignfoldersignerassociationReassignV1Response> ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request)
 
 Reassign remaining unsigned signatures and forms
 
@@ -771,7 +771,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> ezsignfoldersignerassociation_reassign_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request)
+> <Array(<EzsignfoldersignerassociationReassignV1Response>, Integer, Hash)> ezsignfoldersignerassociation_reassign_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request)
 
 ```ruby
 begin
@@ -779,7 +779,7 @@ begin
   data, status_code, headers = api_instance.ezsignfoldersignerassociation_reassign_v1_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <EzsignfoldersignerassociationReassignV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_reassign_v1_with_http_info: #{e}"
 end
@@ -794,7 +794,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignfoldersignerassociationReassignV1Response**](EzsignfoldersignerassociationReassignV1Response.md)
 
 ### Authorization
 

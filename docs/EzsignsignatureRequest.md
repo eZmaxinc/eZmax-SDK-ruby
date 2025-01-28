@@ -63,7 +63,7 @@ instance = EzmaxApi::EzsignsignatureRequest.new(
   s_ezsignsignature_defaultvalue: Foo,
   e_ezsignsignature_textvalidation: null,
   s_ezsignsignature_textvalidationcustommessage: Phone number,
-  s_ezsignsignature_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsignsignature_regexp: ^[0-9]{9}$,
   e_ezsignsignature_dependencyrequirement: null
 )
 ```

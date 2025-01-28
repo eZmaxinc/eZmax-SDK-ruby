@@ -15,7 +15,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::WebsocketResponseInformationV1.new(
   e_websocket_messagetype: null,
-  s_websocket_channel: Ch@nnel_1.0,
+  s_websocket_channel: Ch@nnel_1.0_124547_3453_4563_567,
   m_payload: null
 )
 ```

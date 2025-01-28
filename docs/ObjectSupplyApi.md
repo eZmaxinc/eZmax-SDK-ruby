@@ -34,7 +34,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectSupplyApi.new
-supply_create_object_v1_request = EzmaxApi::SupplyCreateObjectV1Request.new({a_obj_supply: [EzmaxApi::SupplyRequestCompound.new({fki_variableexpense_id: 2, s_supply_code: 'PPLET', obj_supply_description: EzmaxApi::MultilingualSupplyDescription.new, d_supply_unitprice: '8', b_supply_isactive: true, b_supply_variableprice: true})]}) # SupplyCreateObjectV1Request | 
+supply_create_object_v1_request = EzmaxApi::SupplyCreateObjectV1Request.new({a_obj_supply: [EzmaxApi::SupplyRequestCompound.new({fki_variableexpense_id: 2, s_supply_code: 'PPLET', obj_supply_description: EzmaxApi::MultilingualSupplyDescription.new, d_supply_unitprice: '8.00', b_supply_isactive: true, b_supply_variableprice: true})]}) # SupplyCreateObjectV1Request | 
 
 begin
   # Create a new Supply
@@ -85,7 +85,7 @@ end
 
 ## supply_delete_object_v1
 
-> <CommonResponse> supply_delete_object_v1(pki_supply_id)
+> <SupplyDeleteObjectV1Response> supply_delete_object_v1(pki_supply_id)
 
 Delete an existing Supply
 
@@ -120,7 +120,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> supply_delete_object_v1_with_http_info(pki_supply_id)
+> <Array(<SupplyDeleteObjectV1Response>, Integer, Hash)> supply_delete_object_v1_with_http_info(pki_supply_id)
 
 ```ruby
 begin
@@ -128,7 +128,7 @@ begin
   data, status_code, headers = api_instance.supply_delete_object_v1_with_http_info(pki_supply_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <SupplyDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSupplyApi->supply_delete_object_v1_with_http_info: #{e}"
 end
@@ -142,7 +142,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SupplyDeleteObjectV1Response**](SupplyDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ end
 
 ## supply_edit_object_v1
 
-> <CommonResponse> supply_edit_object_v1(pki_supply_id, supply_edit_object_v1_request)
+> <SupplyEditObjectV1Response> supply_edit_object_v1(pki_supply_id, supply_edit_object_v1_request)
 
 Edit an existing Supply
 
@@ -177,7 +177,7 @@ end
 
 api_instance = EzmaxApi::ObjectSupplyApi.new
 pki_supply_id = 56 # Integer | The unique ID of the Supply
-supply_edit_object_v1_request = EzmaxApi::SupplyEditObjectV1Request.new({obj_supply: EzmaxApi::SupplyRequestCompound.new({fki_variableexpense_id: 2, s_supply_code: 'PPLET', obj_supply_description: EzmaxApi::MultilingualSupplyDescription.new, d_supply_unitprice: '8', b_supply_isactive: true, b_supply_variableprice: true})}) # SupplyEditObjectV1Request | 
+supply_edit_object_v1_request = EzmaxApi::SupplyEditObjectV1Request.new({obj_supply: EzmaxApi::SupplyRequestCompound.new({fki_variableexpense_id: 2, s_supply_code: 'PPLET', obj_supply_description: EzmaxApi::MultilingualSupplyDescription.new, d_supply_unitprice: '8.00', b_supply_isactive: true, b_supply_variableprice: true})}) # SupplyEditObjectV1Request | 
 
 begin
   # Edit an existing Supply
@@ -192,7 +192,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> supply_edit_object_v1_with_http_info(pki_supply_id, supply_edit_object_v1_request)
+> <Array(<SupplyEditObjectV1Response>, Integer, Hash)> supply_edit_object_v1_with_http_info(pki_supply_id, supply_edit_object_v1_request)
 
 ```ruby
 begin
@@ -200,7 +200,7 @@ begin
   data, status_code, headers = api_instance.supply_edit_object_v1_with_http_info(pki_supply_id, supply_edit_object_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <SupplyEditObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectSupplyApi->supply_edit_object_v1_with_http_info: #{e}"
 end
@@ -215,7 +215,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SupplyEditObjectV1Response**](SupplyEditObjectV1Response.md)
 
 ### Authorization
 

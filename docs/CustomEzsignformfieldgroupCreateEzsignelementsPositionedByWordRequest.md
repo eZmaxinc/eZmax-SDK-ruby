@@ -21,8 +21,8 @@
 | **t_ezsignformfieldgroup_tooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] |
 | **e_ezsignformfieldgroup_tooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] |
 | **e_ezsignformfieldgroup_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] |
-| **a_obj_ezsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerRequestCompound&gt;**](EzsignformfieldgroupsignerRequest.md) |  |  |
-| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequest.md) |  | [optional] |
+| **a_obj_ezsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerRequestCompound&gt;**](EzsignformfieldgroupsignerRequestCompound.md) |  |  |
+| **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementRequestCompound&gt;**](CustomDropdownElementRequestCompound.md) |  | [optional] |
 | **a_obj_ezsignformfield** | [**Array&lt;EzsignformfieldRequestCompound&gt;**](EzsignformfieldRequestCompound.md) |  |  |
 | **obj_createezsignelementspositionedbyword** | [**CustomCreateEzsignelementsPositionedByWordRequest**](CustomCreateEzsignelementsPositionedByWordRequest.md) |  |  |
 
@@ -44,7 +44,7 @@ instance = EzmaxApi::CustomEzsignformfieldgroupCreateEzsignelementsPositionedByW
   b_ezsignformfieldgroup_readonly: null,
   i_ezsignformfieldgroup_maxlength: 75,
   b_ezsignformfieldgroup_encrypted: null,
-  s_ezsignformfieldgroup_regexp: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/,
+  s_ezsignformfieldgroup_regexp: ^[0-9]{9}$,
   s_ezsignformfieldgroup_textvalidationcustommessage: Phone number,
   t_ezsignformfieldgroup_tooltip: Please enter a valid email address,
   e_ezsignformfieldgroup_tooltipposition: null,

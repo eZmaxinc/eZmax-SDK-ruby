@@ -29,7 +29,7 @@ instance = EzmaxApi::SupplyResponseCompound.new(
   fki_variableexpense_id: 2,
   s_supply_code: PPLET,
   obj_supply_description: null,
-  d_supply_unitprice: 8,
+  d_supply_unitprice: 8.00,
   b_supply_isactive: true,
   b_supply_variableprice: true,
   s_glaccount_description_x: Supplies income,

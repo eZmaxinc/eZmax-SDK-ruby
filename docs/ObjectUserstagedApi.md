@@ -86,7 +86,7 @@ end
 
 ## userstaged_delete_object_v1
 
-> <CommonResponse> userstaged_delete_object_v1(pki_userstaged_id)
+> <UserstagedDeleteObjectV1Response> userstaged_delete_object_v1(pki_userstaged_id)
 
 Delete an existing Userstaged
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> userstaged_delete_object_v1_with_http_info(pki_userstaged_id)
+> <Array(<UserstagedDeleteObjectV1Response>, Integer, Hash)> userstaged_delete_object_v1_with_http_info(pki_userstaged_id)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.userstaged_delete_object_v1_with_http_info(pki_userstaged_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UserstagedDeleteObjectV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUserstagedApi->userstaged_delete_object_v1_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserstagedDeleteObjectV1Response**](UserstagedDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ end
 
 ## userstaged_map_v1
 
-> <CommonResponse> userstaged_map_v1(pki_userstaged_id, userstaged_map_v1_request)
+> <UserstagedMapV1Response> userstaged_map_v1(pki_userstaged_id, userstaged_map_v1_request)
 
 Map the Userstaged to an existing user
 
@@ -345,7 +345,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CommonResponse>, Integer, Hash)> userstaged_map_v1_with_http_info(pki_userstaged_id, userstaged_map_v1_request)
+> <Array(<UserstagedMapV1Response>, Integer, Hash)> userstaged_map_v1_with_http_info(pki_userstaged_id, userstaged_map_v1_request)
 
 ```ruby
 begin
@@ -353,7 +353,7 @@ begin
   data, status_code, headers = api_instance.userstaged_map_v1_with_http_info(pki_userstaged_id, userstaged_map_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CommonResponse>
+  p data # => <UserstagedMapV1Response>
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectUserstagedApi->userstaged_map_v1_with_http_info: #{e}"
 end
@@ -368,7 +368,7 @@ end
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserstagedMapV1Response**](UserstagedMapV1Response.md)
 
 ### Authorization
 
