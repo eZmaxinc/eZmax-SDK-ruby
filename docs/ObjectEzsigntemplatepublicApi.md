@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsigntemplatepublic_create_ezsignfolder_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_ezsignfolder_v1) | **POST** /1/object/ezsigntemplatepublic/createEzsignfolder | Create an Ezsignfolder |
 | [**ezsigntemplatepublic_create_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_object_v1) | **POST** /1/object/ezsigntemplatepublic | Create a new Ezsigntemplatepublic |
+| [**ezsigntemplatepublic_delete_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Delete an existing Ezsigntemplatepublic |
 | [**ezsigntemplatepublic_edit_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_edit_object_v1) | **PUT** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Edit an existing Ezsigntemplatepublic |
 | [**ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1) | **POST** /1/object/ezsigntemplatepublic/getEzsigntemplatepublicDetails | Retrieve the Ezsigntemplatepublic details |
 | [**ezsigntemplatepublic_get_forms_data_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_forms_data_v1) | **GET** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData | Retrieve an existing Ezsigntemplatepublic&#39;s forms data |
@@ -154,6 +155,77 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigntemplatepublic_delete_object_v1
+
+> <EzsigntemplatepublicDeleteObjectV1Response> ezsigntemplatepublic_delete_object_v1(pki_ezsigntemplatepublic_id)
+
+Delete an existing Ezsigntemplatepublic
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepublicApi.new
+pki_ezsigntemplatepublic_id = 56 # Integer | The unique ID of the Ezsigntemplatepublic
+
+begin
+  # Delete an existing Ezsigntemplatepublic
+  result = api_instance.ezsigntemplatepublic_delete_object_v1(pki_ezsigntemplatepublic_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepublicApi->ezsigntemplatepublic_delete_object_v1: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepublic_delete_object_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepublicDeleteObjectV1Response>, Integer, Hash)> ezsigntemplatepublic_delete_object_v1_with_http_info(pki_ezsigntemplatepublic_id)
+
+```ruby
+begin
+  # Delete an existing Ezsigntemplatepublic
+  data, status_code, headers = api_instance.ezsigntemplatepublic_delete_object_v1_with_http_info(pki_ezsigntemplatepublic_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepublicDeleteObjectV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepublicApi->ezsigntemplatepublic_delete_object_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatepublic_id** | **Integer** | The unique ID of the Ezsigntemplatepublic |  |
+
+### Return type
+
+[**EzsigntemplatepublicDeleteObjectV1Response**](EzsigntemplatepublicDeleteObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

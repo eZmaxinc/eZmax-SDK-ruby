@@ -1034,6 +1034,7 @@ require 'Ezmaxapi/models/ezsigntemplatepublic_create_ezsignfolder_v1_response_m_
 require 'Ezmaxapi/models/ezsigntemplatepublic_create_object_v1_request'
 require 'Ezmaxapi/models/ezsigntemplatepublic_create_object_v1_response'
 require 'Ezmaxapi/models/ezsigntemplatepublic_create_object_v1_response_m_payload'
+require 'Ezmaxapi/models/ezsigntemplatepublic_delete_object_v1_response'
 require 'Ezmaxapi/models/ezsigntemplatepublic_edit_object_v1_request'
 require 'Ezmaxapi/models/ezsigntemplatepublic_edit_object_v1_response'
 require 'Ezmaxapi/models/ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1_request'

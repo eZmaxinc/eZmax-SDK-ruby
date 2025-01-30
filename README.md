@@ -373,6 +373,7 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEzsigntemplatepackagesignermembershipApi* | [**ezsigntemplatepackagesignermembership_get_object_v2**](docs/ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembership_get_object_v2) | **GET** /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership
 *EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_create_ezsignfolder_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_ezsignfolder_v1) | **POST** /1/object/ezsigntemplatepublic/createEzsignfolder | Create an Ezsignfolder
 *EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_create_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_object_v1) | **POST** /1/object/ezsigntemplatepublic | Create a new Ezsigntemplatepublic
+*EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_delete_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Delete an existing Ezsigntemplatepublic
 *EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_edit_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_edit_object_v1) | **PUT** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Edit an existing Ezsigntemplatepublic
 *EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1) | **POST** /1/object/ezsigntemplatepublic/getEzsigntemplatepublicDetails | Retrieve the Ezsigntemplatepublic details
 *EzmaxApi::ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_get_forms_data_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_forms_data_v1) | **GET** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData | Retrieve an existing Ezsigntemplatepublic's forms data
@@ -1564,6 +1565,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzsigntemplatepublicCreateObjectV1Request](docs/EzsigntemplatepublicCreateObjectV1Request.md)
  - [EzmaxApi::EzsigntemplatepublicCreateObjectV1Response](docs/EzsigntemplatepublicCreateObjectV1Response.md)
  - [EzmaxApi::EzsigntemplatepublicCreateObjectV1ResponseMPayload](docs/EzsigntemplatepublicCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::EzsigntemplatepublicDeleteObjectV1Response](docs/EzsigntemplatepublicDeleteObjectV1Response.md)
  - [EzmaxApi::EzsigntemplatepublicEditObjectV1Request](docs/EzsigntemplatepublicEditObjectV1Request.md)
  - [EzmaxApi::EzsigntemplatepublicEditObjectV1Response](docs/EzsigntemplatepublicEditObjectV1Response.md)
  - [EzmaxApi::EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request](docs/EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request.md)
