@@ -42,6 +42,7 @@
 | **obj_contact_name_delegation** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | [optional] |
 | **obj_signature** | [**SignatureResponseCompound**](SignatureResponseCompound.md) |  | [optional] |
 | **dt_ezsignsignature_date_in_folder_timezone** | **String** | The date the Ezsignsignature was signed in folder&#39;s timezone | [optional] |
+| **s_ezsignsignergroup_description_x** | **String** | The Description of the Ezsignsignergroup in the language of the requester | [optional] |
 | **b_ezsignsignature_customdate** | **Boolean** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional] |
 | **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateResponseCompound&gt;**](EzsignsignaturecustomdateResponseCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **obj_creditcardtransaction** | [**CustomCreditcardtransactionResponse**](CustomCreditcardtransactionResponse.md) |  | [optional] |
@@ -92,6 +93,7 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   obj_contact_name_delegation: null,
   obj_signature: null,
   dt_ezsignsignature_date_in_folder_timezone: 2020-12-31 23:59:59,
+  s_ezsignsignergroup_description_x: HR,
   b_ezsignsignature_customdate: null,
   a_obj_ezsignsignaturecustomdate: null,
   obj_creditcardtransaction: null,
