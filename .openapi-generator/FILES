@@ -269,6 +269,9 @@ docs/CreditcardmerchantResponseCompound.md
 docs/CreditcardtypeAutocompleteElementResponse.md
 docs/CreditcardtypeGetAutocompleteV2Response.md
 docs/CreditcardtypeGetAutocompleteV2ResponseMPayload.md
+docs/CurrencyAutocompleteElementResponse.md
+docs/CurrencyGetAutocompleteV2Response.md
+docs/CurrencyGetAutocompleteV2ResponseMPayload.md
 docs/CustomApikey.md
 docs/CustomApikeyfederation.md
 docs/CustomAttachmentResponse.md
@@ -1323,6 +1326,7 @@ docs/ObjectCountryApi.md
 docs/ObjectCreditcardclientApi.md
 docs/ObjectCreditcardmerchantApi.md
 docs/ObjectCreditcardtypeApi.md
+docs/ObjectCurrencyApi.md
 docs/ObjectCustomerApi.md
 docs/ObjectDepartmentApi.md
 docs/ObjectDiscussionApi.md
@@ -1803,6 +1807,7 @@ lib/Ezmaxapi/api/object_country_api.rb
 lib/Ezmaxapi/api/object_creditcardclient_api.rb
 lib/Ezmaxapi/api/object_creditcardmerchant_api.rb
 lib/Ezmaxapi/api/object_creditcardtype_api.rb
+lib/Ezmaxapi/api/object_currency_api.rb
 lib/Ezmaxapi/api/object_customer_api.rb
 lib/Ezmaxapi/api/object_department_api.rb
 lib/Ezmaxapi/api/object_discussion_api.rb
@@ -2155,6 +2160,9 @@ lib/Ezmaxapi/models/creditcardmerchant_response_compound.rb
 lib/Ezmaxapi/models/creditcardtype_autocomplete_element_response.rb
 lib/Ezmaxapi/models/creditcardtype_get_autocomplete_v2_response.rb
 lib/Ezmaxapi/models/creditcardtype_get_autocomplete_v2_response_m_payload.rb
+lib/Ezmaxapi/models/currency_autocomplete_element_response.rb
+lib/Ezmaxapi/models/currency_get_autocomplete_v2_response.rb
+lib/Ezmaxapi/models/currency_get_autocomplete_v2_response_m_payload.rb
 lib/Ezmaxapi/models/custom_apikey.rb
 lib/Ezmaxapi/models/custom_apikeyfederation.rb
 lib/Ezmaxapi/models/custom_attachment_response.rb
