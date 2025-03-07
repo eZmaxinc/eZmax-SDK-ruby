@@ -27,6 +27,8 @@
 | **dt_ezsignfolder_scheduleddispose** | **String** | The scheduled date at which the Ezsignfolder should be Disposed. | [optional] |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | [optional] |
 | **dt_ezsignfolder_close** | **String** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional] |
+| **dt_ezsignfolder_archive** | **String** | The date and time at which the Ezsignfolder was archived. | [optional] |
+| **dt_ezsignfolder_dispose** | **String** | The date and time at which the Ezsignfolder was disposed. | [optional] |
 | **t_ezsignfolder_message** | **String** | A custom text message that will be added to the email sent. | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_ezsignfolder_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
@@ -62,6 +64,8 @@ instance = EzmaxApi::EzsignfolderResponseCompoundV3.new(
   dt_ezsignfolder_scheduleddispose: 2020-12-31,
   e_ezsignfolder_step: null,
   dt_ezsignfolder_close: 2020-12-31 23:59:59,
+  dt_ezsignfolder_archive: 2020-12-31 23:59:59,
+  dt_ezsignfolder_dispose: 2020-12-31 23:59:59,
   t_ezsignfolder_message: Hi everyone,
 
 This is the document I need you to review.

@@ -46,7 +46,6 @@
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
 | **b_ezsignfoldertype_sendattachmentezsignsigner** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] |
 | **b_ezsignfoldertype_sendproofezsignsigner** | **Boolean** | Whether we send the proof in the email to Ezsignsigner | [optional] |
-| **b_ezsignfoldertype_sendattachmentreceivecopy** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner or User when bEzsignfoldersignerassociationReceivecopy &#x3D; 1 | [optional] |
 | **b_ezsignfoldertype_sendattachmentuser** | **Boolean** | Whether we send the Ezsigndocument in the email to User | [optional] |
 | **b_ezsignfoldertype_sendproofuser** | **Boolean** | Whether we send the proof in the email to User | [optional] |
 | **b_ezsignfoldertype_sendproofemail** | **Boolean** | Whether we send the proof in the email to external recipient | [optional] |
@@ -114,7 +113,6 @@ instance = EzmaxApi::EzsignfoldertypeRequestV3.new(
   b_ezsignfoldertype_sendsignedtouser: false,
   b_ezsignfoldertype_sendattachmentezsignsigner: false,
   b_ezsignfoldertype_sendproofezsignsigner: false,
-  b_ezsignfoldertype_sendattachmentreceivecopy: false,
   b_ezsignfoldertype_sendattachmentuser: false,
   b_ezsignfoldertype_sendproofuser: false,
   b_ezsignfoldertype_sendproofemail: false,

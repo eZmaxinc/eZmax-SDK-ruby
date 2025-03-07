@@ -9,6 +9,7 @@
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
 | **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
 | **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
+| **s_currency_description_x** | **String** | The description of the Currency in the language of the requester | [optional] |
 | **s_ezsignsigningreason_description_x** | **String** | The description of the Ezsignsigningreason in the language of the requester | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
@@ -53,6 +54,7 @@ instance = EzmaxApi::EzsignsignatureResponse.new(
   fki_ezsignfoldersignerassociation_id: 20,
   fki_ezsignsigningreason_id: 194,
   fki_font_id: 1,
+  s_currency_description_x: Canadian,
   s_ezsignsigningreason_description_x: I approve this document,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,

@@ -8,6 +8,7 @@
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsigntemplate_id** | **Integer** | The unique ID of the Ezsigntemplate | [optional] |
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation | [optional] |
+| **fki_ezsignimportdocument_id** | **Integer** | The unique ID of the Ezsignimportdocument | [optional] |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
 | **e_ezsigndocument_source** | **String** | Indicates where to look for the document binary content. |  |
 | **e_ezsigndocument_format** | **String** | Indicates the format of the document. | [optional] |
@@ -30,6 +31,7 @@ instance = EzmaxApi::EzsigndocumentRequestCompound.new(
   fki_ezsignfolder_id: 33,
   fki_ezsigntemplate_id: 36,
   fki_ezsignfoldersignerassociation_id: 20,
+  fki_ezsignimportdocument_id: 40,
   fki_language_id: 2,
   e_ezsigndocument_source: null,
   e_ezsigndocument_format: null,

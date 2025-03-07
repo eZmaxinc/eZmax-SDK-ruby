@@ -9,6 +9,7 @@
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
 | **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
 | **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
+| **s_currency_description_x** | **String** | The description of the Currency in the language of the requester | [optional] |
 | **s_ezsignsigningreason_description_x** | **String** | The description of the Ezsignsigningreason in the language of the requester | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
@@ -46,6 +47,7 @@
 | **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateResponseCompoundV2&gt;**](EzsignsignaturecustomdateResponseCompoundV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **obj_creditcardtransaction** | [**CustomCreditcardtransactionResponse**](CustomCreditcardtransactionResponse.md) |  | [optional] |
 | **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponseCompound.md) |  | [optional] |
+| **a_obj_ezsignsignaturepaymentdetail** | [**Array&lt;EzsignsignaturepaymentdetailResponseCompound&gt;**](EzsignsignaturepaymentdetailResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -58,6 +60,7 @@ instance = EzmaxApi::EzsignsignatureResponseCompoundV3.new(
   fki_ezsignfoldersignerassociation_id: 20,
   fki_ezsignsigningreason_id: 194,
   fki_font_id: 1,
+  s_currency_description_x: Canadian,
   s_ezsignsigningreason_description_x: I approve this document,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,
@@ -94,7 +97,8 @@ instance = EzmaxApi::EzsignsignatureResponseCompoundV3.new(
   b_ezsignsignature_customdate: null,
   a_obj_ezsignsignaturecustomdate: null,
   obj_creditcardtransaction: null,
-  a_obj_ezsignelementdependency: null
+  a_obj_ezsignelementdependency: null,
+  a_obj_ezsignsignaturepaymentdetail: null
 )
 ```
 

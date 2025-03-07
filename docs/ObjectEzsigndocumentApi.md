@@ -36,6 +36,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_get_temporary_proof_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_temporary_proof_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof |
 | [**ezsigndocument_get_words_positions_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument |
 | [**ezsigndocument_patch_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_patch_object_v1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument |
+| [**ezsigndocument_prefill_ezsignform_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_prefill_ezsignform_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/prefillEzsignform | Prefill an Ezsignform |
 | [**ezsigndocument_submit_ezsignform_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_submit_ezsignform_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/submitEzsignform | Submit the Ezsignform |
 | [**ezsigndocument_unsend_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_unsend_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend | Unsend the Ezsigndocument |
 
@@ -2329,6 +2330,79 @@ end
 ### Return type
 
 [**EzsigndocumentPatchObjectV1Response**](EzsigndocumentPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocument_prefill_ezsignform_v1
+
+> <EzsigndocumentPrefillEzsignformV1Response> ezsigndocument_prefill_ezsignform_v1(pki_ezsigndocument_id, ezsigndocument_prefill_ezsignform_v1_request)
+
+Prefill an Ezsignform
+
+Using this endpoint, you can prefill an Ezsignform.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_prefill_ezsignform_v1_request = EzmaxApi::EzsigndocumentPrefillEzsignformV1Request.new({a_obj_prefillezsignformvalue: [EzmaxApi::CustomPrefillEzsignformValueRequest.new({s_ezsignformfieldgroup_label: 'Allergies'})]}) # EzsigndocumentPrefillEzsignformV1Request | 
+
+begin
+  # Prefill an Ezsignform
+  result = api_instance.ezsigndocument_prefill_ezsignform_v1(pki_ezsigndocument_id, ezsigndocument_prefill_ezsignform_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_prefill_ezsignform_v1: #{e}"
+end
+```
+
+#### Using the ezsigndocument_prefill_ezsignform_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentPrefillEzsignformV1Response>, Integer, Hash)> ezsigndocument_prefill_ezsignform_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_prefill_ezsignform_v1_request)
+
+```ruby
+begin
+  # Prefill an Ezsignform
+  data, status_code, headers = api_instance.ezsigndocument_prefill_ezsignform_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_prefill_ezsignform_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentPrefillEzsignformV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_prefill_ezsignform_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_prefill_ezsignform_v1_request** | [**EzsigndocumentPrefillEzsignformV1Request**](EzsigndocumentPrefillEzsignformV1Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentPrefillEzsignformV1Response**](EzsigndocumentPrefillEzsignformV1Response.md)
 
 ### Authorization
 

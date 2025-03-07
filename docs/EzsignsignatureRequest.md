@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignsignature_id** | **Integer** | The unique ID of the Ezsignsignature | [optional] |
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
+| **fki_paymentgateway_id** | **Integer** | The unique ID of the Paymentgateway | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
 | **i_ezsignsignature_y** | **Integer** | The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate. |  |
@@ -40,6 +41,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzsignsignatureRequest.new(
   pki_ezsignsignature_id: 49,
   fki_ezsignfoldersignerassociation_id: 20,
+  fki_paymentgateway_id: 235,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,
   i_ezsignsignature_y: 300,

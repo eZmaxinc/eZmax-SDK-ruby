@@ -24,6 +24,9 @@
 | **d_ezsignfolder_completedpercentage** | **String** | Percentage of Ezsignform/Ezsignsignatures has completed |  |
 | **d_ezsignfolder_formcompletedpercentage** | **String** | Percentage of Ezsignform has completed |  |
 | **d_ezsignfolder_signaturecompletedpercentage** | **String** | Percentage of Ezsignsignatures has signed |  |
+| **dt_ezsignfolder_close** | **String** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional] |
+| **dt_ezsignfolder_archive** | **String** | The date and time at which the Ezsignfolder was archived. | [optional] |
+| **dt_ezsignfolder_dispose** | **String** | The date and time at which the Ezsignfolder was disposed. | [optional] |
 | **b_ezsignfolder_signer** | **Boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] |
 
 ## Example
@@ -52,6 +55,9 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   d_ezsignfolder_completedpercentage: null,
   d_ezsignfolder_formcompletedpercentage: null,
   d_ezsignfolder_signaturecompletedpercentage: null,
+  dt_ezsignfolder_close: 2020-12-31 23:59:59,
+  dt_ezsignfolder_archive: 2020-12-31 23:59:59,
+  dt_ezsignfolder_dispose: 2020-12-31 23:59:59,
   b_ezsignfolder_signer: true
 )
 ```

@@ -9,6 +9,7 @@
 | **e_reportsection_horizontalalignment** | [**EnumHorizontalalignment**](EnumHorizontalalignment.md) |  |  |
 | **i_reportsection_columncount** | **Integer** | The number of Reportcolumns in the Reportsection |  |
 | **i_reportsection_width** | **Integer** | The combined width of all the Reportcolumns in the Reportsection |  |
+| **s_reportsection_title** | **String** | The title of this Reportsection | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = EzmaxApi::CommonReportsection.new(
   a_obj_reportcolumn: null,
   e_reportsection_horizontalalignment: null,
   i_reportsection_columncount: 5,
-  i_reportsection_width: 1200
+  i_reportsection_width: 1200,
+  s_reportsection_title: text
 )
 ```
 

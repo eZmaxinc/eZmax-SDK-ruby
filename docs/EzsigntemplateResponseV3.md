@@ -7,6 +7,7 @@
 | **pki_ezsigntemplate_id** | **Integer** | The unique ID of the Ezsigntemplate |  |
 | **fki_ezsigntemplatedocument_id** | **Integer** | The unique ID of the Ezsigntemplatedocument | [optional] |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
+| **obj_ezsignfoldertype** | [**CustomEzsignfoldertypeTemplateResponse**](CustomEzsignfoldertypeTemplateResponse.md) |  | [optional] |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
 | **fki_ezdoctemplatedocument_id** | **Integer** | The unique ID of the Ezdoctemplatedocument | [optional] |
 | **s_ezdoctemplatedocument_name_x** | **String** | The name of the Ezdoctemplatedocument in the language of the requester | [optional] |
@@ -31,6 +32,7 @@ instance = EzmaxApi::EzsigntemplateResponseV3.new(
   pki_ezsigntemplate_id: 36,
   fki_ezsigntemplatedocument_id: 133,
   fki_ezsignfoldertype_id: 5,
+  obj_ezsignfoldertype: null,
   fki_language_id: 2,
   fki_ezdoctemplatedocument_id: 95,
   s_ezdoctemplatedocument_name_x: Standard Contract,
