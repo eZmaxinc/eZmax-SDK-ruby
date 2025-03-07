@@ -438,9 +438,6 @@ docs/EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload.md
 docs/EzdoctemplatetypeAutocompleteElementResponse.md
 docs/EzdoctemplatetypeGetAutocompleteV2Response.md
 docs/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.md
-docs/EzmaxcasePatchObjectV1Request.md
-docs/EzmaxcasePatchObjectV1Response.md
-docs/EzmaxcaseRequestPatch.md
 docs/EzmaxinvoicingAutocompleteElementResponse.md
 docs/EzmaxinvoicingGetAutocompleteV2Response.md
 docs/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md
@@ -1363,7 +1360,6 @@ docs/ObjectEmailtypeApi.md
 docs/ObjectEzdoctemplatedocumentApi.md
 docs/ObjectEzdoctemplatefieldtypecategoryApi.md
 docs/ObjectEzdoctemplatetypeApi.md
-docs/ObjectEzmaxcaseApi.md
 docs/ObjectEzmaxinvoicingApi.md
 docs/ObjectEzmaxproductApi.md
 docs/ObjectEzsignannotationApi.md
@@ -1865,7 +1861,6 @@ lib/Ezmaxapi/api/object_emailtype_api.rb
 lib/Ezmaxapi/api/object_ezdoctemplatedocument_api.rb
 lib/Ezmaxapi/api/object_ezdoctemplatefieldtypecategory_api.rb
 lib/Ezmaxapi/api/object_ezdoctemplatetype_api.rb
-lib/Ezmaxapi/api/object_ezmaxcase_api.rb
 lib/Ezmaxapi/api/object_ezmaxinvoicing_api.rb
 lib/Ezmaxapi/api/object_ezmaxproduct_api.rb
 lib/Ezmaxapi/api/object_ezsignannotation_api.rb
@@ -2379,9 +2374,6 @@ lib/Ezmaxapi/models/ezdoctemplatefieldtypecategory_get_autocomplete_v2_response_
 lib/Ezmaxapi/models/ezdoctemplatetype_autocomplete_element_response.rb
 lib/Ezmaxapi/models/ezdoctemplatetype_get_autocomplete_v2_response.rb
 lib/Ezmaxapi/models/ezdoctemplatetype_get_autocomplete_v2_response_m_payload.rb
-lib/Ezmaxapi/models/ezmaxcase_patch_object_v1_request.rb
-lib/Ezmaxapi/models/ezmaxcase_patch_object_v1_response.rb
-lib/Ezmaxapi/models/ezmaxcase_request_patch.rb
 lib/Ezmaxapi/models/ezmaxinvoicing_autocomplete_element_response.rb
 lib/Ezmaxapi/models/ezmaxinvoicing_get_autocomplete_v2_response.rb
 lib/Ezmaxapi/models/ezmaxinvoicing_get_autocomplete_v2_response_m_payload.rb
