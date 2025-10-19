@@ -21,6 +21,7 @@
 | **i_ezsignfoldertype_deadlinedays** | **Integer** | The number of days to get all Ezsignsignatures | [optional] |
 | **i_ezsignfoldertype_fontsizeannotation** | **Integer** | Font size for annotations | [optional] |
 | **i_ezsignfoldertype_fontsizeformfield** | **Integer** | Font size for form fields | [optional] |
+| **e_ezsignfoldertype_documentmerge** | [**FieldEEzsignfoldertypeDocumentmerge**](FieldEEzsignfoldertypeDocumentmerge.md) |  | [optional][default to &#39;No&#39;] |
 
 ## Example
 
@@ -44,7 +45,8 @@ instance = EzmaxApi::CustomEzsignfoldertypeResponse.new(
   b_ezsignfoldertype_reassigngroup: true,
   i_ezsignfoldertype_deadlinedays: 5,
   i_ezsignfoldertype_fontsizeannotation: 10,
-  i_ezsignfoldertype_fontsizeformfield: 12
+  i_ezsignfoldertype_fontsizeformfield: 12,
+  e_ezsignfoldertype_documentmerge: null
 )
 ```
 

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignsignaturepaymentdetail_id** | **Integer** | The unique ID of the Ezsignsignaturepaymentdetail | [optional] |
-| **fki_glaccountcontainer_id** | **Integer** | The unique ID of the Glaccountcontainer | [optional] |
+| **fki_glaccountcontainer_id** | **Integer** | The unique ID of the Glaccountcontainer |  |
 | **t_ezsignsignaturepaymentdetail_description** | **String** | A description for the Ezsignsignaturepaymentdetail. |  |
 | **d_ezsignsignaturepaymentdetail_amount** | **String** | The amount of the for the Ezsignsignaturepaymentdetail |  |
 | **e_ezsignsignaturepaymentdetail_taxable** | [**FieldEEzsignsignaturepaymentdetailTaxable**](FieldEEzsignsignaturepaymentdetailTaxable.md) |  |  |

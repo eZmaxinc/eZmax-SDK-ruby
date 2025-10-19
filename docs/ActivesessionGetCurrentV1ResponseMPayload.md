@@ -30,6 +30,7 @@
 | **e_user_ezsignprepaid** | [**FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional] |
 | **b_user_ezsigntrial** | **Boolean** | Whether the User&#39;s eZsign subscription is a trial | [optional] |
 | **dt_user_ezsignprepaidexpiration** | **String** | The eZsign prepaid expiration date | [optional] |
+| **dt_user_npsrequest** | **String** | The date at which the NPS questionnaire will be show | [optional] |
 | **a_pki_permission_id** | **Array&lt;Integer&gt;** | An array of permissions granted to the user or api key |  |
 | **obj_user_real** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  |  |
 | **obj_user_cloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] |
@@ -68,6 +69,7 @@ instance = EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload.new(
   e_user_ezsignprepaid: null,
   b_user_ezsigntrial: false,
   dt_user_ezsignprepaidexpiration: 2020-12-31,
+  dt_user_npsrequest: 2020-12-31 23:59:59,
   a_pki_permission_id: null,
   obj_user_real: null,
   obj_user_cloned: null,

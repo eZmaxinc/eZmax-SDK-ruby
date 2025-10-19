@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_branding_id** | **Integer** | The unique ID of the Branding | [optional] |
+| **fki_domain_id** | **Integer** | The unique ID of the Domain | [optional] |
 | **obj_branding_description** | [**MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  |  |
 | **e_branding_logo** | [**FieldEBrandingLogo**](FieldEBrandingLogo.md) |  |  |
 | **e_branding_alignlogo** | [**FieldEBrandingAlignlogo**](FieldEBrandingAlignlogo.md) |  | [optional] |
@@ -21,10 +22,11 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::BrandingRequestV2.new(
   pki_branding_id: 78,
+  fki_domain_id: 96,
   obj_branding_description: null,
   e_branding_logo: null,
   e_branding_alignlogo: null,
-  s_branding_base64: [B@307765b4,
+  s_branding_base64: [B@3b366632,
   i_branding_color: 15658734,
   s_branding_name: eZmax (Corp),
   s_email_address: email@example.com,

@@ -7,6 +7,7 @@
 | **a_obj_reportcell** | [**Array&lt;CommonReportcell&gt;**](CommonReportcell.md) |  |  |
 | **obj_variableobject** | **Hash&lt;String, Object&gt;** | A Variable object without predefined property names |  |
 | **i_reportrow_height** | **Integer** | The reportrow height in pixels |  |
+| **obj_reportcellstyle_custom** | [**CommonReportcellstylecustom**](CommonReportcellstylecustom.md) |  | [optional] |
 
 ## Example
 
@@ -16,7 +17,8 @@ require 'Ezmaxapi'
 instance = EzmaxApi::CommonReportrow.new(
   a_obj_reportcell: null,
   obj_variableobject: null,
-  i_reportrow_height: 20
+  i_reportrow_height: 20,
+  obj_reportcellstyle_custom: null
 )
 ```
 

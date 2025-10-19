@@ -6,14 +6,18 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsignbulksend_create_ezsignbulksendtransmission_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_ezsignbulksendtransmission_v2) | **POST** /2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission | Create a new Ezsignbulksendtransmission in the Ezsignbulksend |
 | [**ezsignbulksend_create_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
+| [**ezsignbulksend_create_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v2) | **POST** /2/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksend_delete_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_delete_object_v1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
 | [**ezsignbulksend_edit_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
+| [**ezsignbulksend_edit_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v2) | **PUT** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
+| [**ezsignbulksend_get_batch_file_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_batch_file_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile | Retrieve file to download documents in batch |
 | [**ezsignbulksend_get_csv_template_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_csv_template_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template |
 | [**ezsignbulksend_get_ezsignbulksendtransmissions_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_ezsignbulksendtransmissions_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions | Retrieve an existing Ezsignbulksend&#39;s Ezsignbulksendtransmissions |
 | [**ezsignbulksend_get_ezsignsignatures_automatic_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignbulksend&#39;s automatic Ezsignsignatures |
 | [**ezsignbulksend_get_forms_data_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_forms_data_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData | Retrieve an existing Ezsignbulksend&#39;s forms data |
 | [**ezsignbulksend_get_list_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_list_v1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list |
 | [**ezsignbulksend_get_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v2) | **GET** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
+| [**ezsignbulksend_get_object_v3**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v3) | **GET** /3/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
 | [**ezsignbulksend_reorder_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_reorder_v1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend |
 
 
@@ -167,6 +171,77 @@ end
 - **Accept**: application/json
 
 
+## ezsignbulksend_create_object_v2
+
+> <EzsignbulksendCreateObjectV2Response> ezsignbulksend_create_object_v2(ezsignbulksend_create_object_v2_request)
+
+Create a new Ezsignbulksend
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
+ezsignbulksend_create_object_v2_request = EzmaxApi::EzsignbulksendCreateObjectV2Request.new({a_obj_ezsignbulksend: [EzmaxApi::EzsignbulksendRequestCompoundV2.new({fki_ezsignfoldertype_id: 5, fki_language_id: 2, e_ezsignbulksend_ezsignformfieldorder: EzmaxApi::FieldEEzsignbulksendEzsignformfieldorder::POSITION, s_ezsignbulksend_description: 'Test eZsign Bulk Send', t_ezsignbulksend_note: 'This is a note', b_ezsignbulksend_needvalidation: false, b_ezsignbulksend_isactive: true})]}) # EzsignbulksendCreateObjectV2Request | 
+
+begin
+  # Create a new Ezsignbulksend
+  result = api_instance.ezsignbulksend_create_object_v2(ezsignbulksend_create_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_object_v2: #{e}"
+end
+```
+
+#### Using the ezsignbulksend_create_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignbulksendCreateObjectV2Response>, Integer, Hash)> ezsignbulksend_create_object_v2_with_http_info(ezsignbulksend_create_object_v2_request)
+
+```ruby
+begin
+  # Create a new Ezsignbulksend
+  data, status_code, headers = api_instance.ezsignbulksend_create_object_v2_with_http_info(ezsignbulksend_create_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignbulksendCreateObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_create_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **ezsignbulksend_create_object_v2_request** | [**EzsignbulksendCreateObjectV2Request**](EzsignbulksendCreateObjectV2Request.md) |  |  |
+
+### Return type
+
+[**EzsignbulksendCreateObjectV2Response**](EzsignbulksendCreateObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsignbulksend_delete_object_v1
 
 > <EzsignbulksendDeleteObjectV1Response> ezsignbulksend_delete_object_v1(pki_ezsignbulksend_id)
@@ -309,6 +384,158 @@ end
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+
+## ezsignbulksend_edit_object_v2
+
+> <EzsignbulksendEditObjectV2Response> ezsignbulksend_edit_object_v2(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v2_request)
+
+Edit an existing Ezsignbulksend
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
+pki_ezsignbulksend_id = 56 # Integer | 
+ezsignbulksend_edit_object_v2_request = EzmaxApi::EzsignbulksendEditObjectV2Request.new({obj_ezsignbulksend: EzmaxApi::EzsignbulksendRequestCompoundV2.new({fki_ezsignfoldertype_id: 5, fki_language_id: 2, e_ezsignbulksend_ezsignformfieldorder: EzmaxApi::FieldEEzsignbulksendEzsignformfieldorder::POSITION, s_ezsignbulksend_description: 'Test eZsign Bulk Send', t_ezsignbulksend_note: 'This is a note', b_ezsignbulksend_needvalidation: false, b_ezsignbulksend_isactive: true})}) # EzsignbulksendEditObjectV2Request | 
+
+begin
+  # Edit an existing Ezsignbulksend
+  result = api_instance.ezsignbulksend_edit_object_v2(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v2: #{e}"
+end
+```
+
+#### Using the ezsignbulksend_edit_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignbulksendEditObjectV2Response>, Integer, Hash)> ezsignbulksend_edit_object_v2_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v2_request)
+
+```ruby
+begin
+  # Edit an existing Ezsignbulksend
+  data, status_code, headers = api_instance.ezsignbulksend_edit_object_v2_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignbulksendEditObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignbulksend_id** | **Integer** |  |  |
+| **ezsignbulksend_edit_object_v2_request** | [**EzsignbulksendEditObjectV2Request**](EzsignbulksendEditObjectV2Request.md) |  |  |
+
+### Return type
+
+[**EzsignbulksendEditObjectV2Response**](EzsignbulksendEditObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsignbulksend_get_batch_file_v1
+
+> File ezsignbulksend_get_batch_file_v1(pki_ezsignbulksend_id, opts)
+
+Retrieve file to download documents in batch
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
+pki_ezsignbulksend_id = 56 # Integer | 
+opts = {
+  b_include_signed: true, # Boolean | Include final document once all signatures were applied
+  b_include_attachment: true, # Boolean | Include attached files in signatures
+  b_include_proofdocument: true, # Boolean | Include the evidence report
+  b_include_proof: true # Boolean | include the complete evidence archive including all of the above and more
+}
+
+begin
+  # Retrieve file to download documents in batch
+  result = api_instance.ezsignbulksend_get_batch_file_v1(pki_ezsignbulksend_id, opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_batch_file_v1: #{e}"
+end
+```
+
+#### Using the ezsignbulksend_get_batch_file_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> ezsignbulksend_get_batch_file_v1_with_http_info(pki_ezsignbulksend_id, opts)
+
+```ruby
+begin
+  # Retrieve file to download documents in batch
+  data, status_code, headers = api_instance.ezsignbulksend_get_batch_file_v1_with_http_info(pki_ezsignbulksend_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_batch_file_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignbulksend_id** | **Integer** |  |  |
+| **b_include_signed** | **Boolean** | Include final document once all signatures were applied | [optional] |
+| **b_include_attachment** | **Boolean** | Include attached files in signatures | [optional] |
+| **b_include_proofdocument** | **Boolean** | Include the evidence report | [optional] |
+| **b_include_proof** | **Boolean** | include the complete evidence archive including all of the above and more | [optional] |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/xml, application/json
 
 
 ## ezsignbulksend_get_csv_template_v1
@@ -738,6 +965,77 @@ end
 ### Return type
 
 [**EzsignbulksendGetObjectV2Response**](EzsignbulksendGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignbulksend_get_object_v3
+
+> <EzsignbulksendGetObjectV3Response> ezsignbulksend_get_object_v3(pki_ezsignbulksend_id)
+
+Retrieve an existing Ezsignbulksend
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
+pki_ezsignbulksend_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignbulksend
+  result = api_instance.ezsignbulksend_get_object_v3(pki_ezsignbulksend_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignbulksend_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignbulksendGetObjectV3Response>, Integer, Hash)> ezsignbulksend_get_object_v3_with_http_info(pki_ezsignbulksend_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignbulksend
+  data, status_code, headers = api_instance.ezsignbulksend_get_object_v3_with_http_info(pki_ezsignbulksend_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignbulksendGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignbulksend_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignbulksendGetObjectV3Response**](EzsignbulksendGetObjectV3Response.md)
 
 ### Authorization
 

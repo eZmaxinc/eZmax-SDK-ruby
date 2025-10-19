@@ -5,8 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_creditcardmerchant_id** | **Integer** | The unique ID of the Creditcardmerchant | [optional] |
-| **fki_bankaccount_id** | **Integer** | The unique ID of the Bankaccount |  |
-| **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | [optional] |
+| **fki_bankaccount_id** | **Integer** | The unique ID of the Bankaccount | [optional] |
+| **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
+| **fki_currency_id** | **Integer** | The unique ID of the Currency. |  |
 | **b_creditcardmerchant_denyvisa** | **Boolean** | Whether if visa are denied |  |
 | **b_creditcardmerchant_denymastercard** | **Boolean** | Whether if mastercard are denied |  |
 | **b_creditcardmerchant_denyamex** | **Boolean** | Whether if amex are denied |  |
@@ -24,6 +25,7 @@ instance = EzmaxApi::CreditcardmerchantRequestCompound.new(
   pki_creditcardmerchant_id: 30,
   fki_bankaccount_id: 46,
   fki_language_id: 2,
+  fki_currency_id: 1,
   b_creditcardmerchant_denyvisa: true,
   b_creditcardmerchant_denymastercard: true,
   b_creditcardmerchant_denyamex: true,

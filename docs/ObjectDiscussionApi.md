@@ -4,11 +4,83 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**discussion_chat_v1**](ObjectDiscussionApi.md#discussion_chat_v1) | **POST** /1/object/discussion/chat | Have a Discussion with the AI Chatbot |
 | [**discussion_create_object_v1**](ObjectDiscussionApi.md#discussion_create_object_v1) | **POST** /1/object/discussion | Create a new Discussion |
 | [**discussion_delete_object_v1**](ObjectDiscussionApi.md#discussion_delete_object_v1) | **DELETE** /1/object/discussion/{pkiDiscussionID} | Delete an existing Discussion |
 | [**discussion_get_object_v2**](ObjectDiscussionApi.md#discussion_get_object_v2) | **GET** /2/object/discussion/{pkiDiscussionID} | Retrieve an existing Discussion |
 | [**discussion_patch_object_v1**](ObjectDiscussionApi.md#discussion_patch_object_v1) | **PATCH** /1/object/discussion/{pkiDiscussionID} | Patch an existing Discussion |
 | [**discussion_update_discussionreadstatus_v1**](ObjectDiscussionApi.md#discussion_update_discussionreadstatus_v1) | **POST** /1/object/discussion/{pkiDiscussionID}/updateDiscussionreadstatus | Update the read status of the discussion |
+
+
+## discussion_chat_v1
+
+> <DiscussionChatV1200Response> discussion_chat_v1(discussion_chat_v1_request)
+
+Have a Discussion with the AI Chatbot
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDiscussionApi.new
+discussion_chat_v1_request = EzmaxApi::DiscussionChatV1Request.new({e_discussion_robot: EzmaxApi::FieldEDiscussionRobot::ADVANCED, t_discussion_message: 'Hello, this is an example of content in a message'}) # DiscussionChatV1Request | 
+
+begin
+  # Have a Discussion with the AI Chatbot
+  result = api_instance.discussion_chat_v1(discussion_chat_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDiscussionApi->discussion_chat_v1: #{e}"
+end
+```
+
+#### Using the discussion_chat_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DiscussionChatV1200Response>, Integer, Hash)> discussion_chat_v1_with_http_info(discussion_chat_v1_request)
+
+```ruby
+begin
+  # Have a Discussion with the AI Chatbot
+  data, status_code, headers = api_instance.discussion_chat_v1_with_http_info(discussion_chat_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DiscussionChatV1200Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDiscussionApi->discussion_chat_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **discussion_chat_v1_request** | [**DiscussionChatV1Request**](DiscussionChatV1Request.md) |  |  |
+
+### Return type
+
+[**DiscussionChatV1200Response**](DiscussionChatV1200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: text/event-stream
 
 
 ## discussion_create_object_v1

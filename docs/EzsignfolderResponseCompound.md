@@ -26,6 +26,7 @@
 | **dt_ezsignfolder_scheduledarchive** | **String** | The scheduled date and time at which the Ezsignfolder should be archived. | [optional] |
 | **dt_ezsignfolder_scheduleddispose** | **String** | The scheduled date at which the Ezsignfolder should be Disposed. | [optional] |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | [optional] |
+| **e_ezsignfolder_messageorder** | [**FieldEEzsignfolderMessageorder**](FieldEEzsignfolderMessageorder.md) |  | [optional][default to &#39;GlobalFirst&#39;] |
 | **dt_ezsignfolder_close** | **String** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional] |
 | **t_ezsignfolder_message** | **String** | A custom text message that will be added to the email sent. | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
@@ -60,6 +61,7 @@ instance = EzmaxApi::EzsignfolderResponseCompound.new(
   dt_ezsignfolder_scheduledarchive: 2020-12-31 23:59:59,
   dt_ezsignfolder_scheduleddispose: 2020-12-31,
   e_ezsignfolder_step: null,
+  e_ezsignfolder_messageorder: null,
   dt_ezsignfolder_close: 2020-12-31 23:59:59,
   t_ezsignfolder_message: Hi everyone,
 

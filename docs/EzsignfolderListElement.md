@@ -10,6 +10,7 @@
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester |  |
 | **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  |  |
+| **e_ezsignfolder_completion** | [**FieldEEzsignfolderCompletion**](FieldEEzsignfolderCompletion.md) |  |  |
 | **dt_created_date** | **String** | The date and time at which the object was created |  |
 | **dt_ezsignfolder_delayedsenddate** | **String** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] |
 | **dt_ezsignfolder_sentdate** | **String** | The date and time at which the Ezsignfolder was sent the last time. | [optional] |
@@ -41,6 +42,7 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   s_ezsignfoldertype_name_x: Default,
   s_ezsignfolder_description: Test eZsign Folder,
   e_ezsignfolder_step: null,
+  e_ezsignfolder_completion: null,
   dt_created_date: 2020-12-31 23:59:59,
   dt_ezsignfolder_delayedsenddate: 2020-12-31T23:59:59.000Z,
   dt_ezsignfolder_sentdate: 2020-12-31T23:59:59.000Z,

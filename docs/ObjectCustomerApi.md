@@ -6,7 +6,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**customer_create_object_v1**](ObjectCustomerApi.md#customer_create_object_v1) | **POST** /1/object/customer | Create a new Customer |
 | [**customer_get_autocomplete_v2**](ObjectCustomerApi.md#customer_get_autocomplete_v2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs |
+| [**customer_get_list_v1**](ObjectCustomerApi.md#customer_get_list_v1) | **GET** /1/object/customer/getList | Retrieve Customer list |
 | [**customer_get_object_v2**](ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer |
+| [**customer_import_into_edmv1**](ObjectCustomerApi.md#customer_import_into_edmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Buyercontract |
 
 
 ## customer_create_object_v1
@@ -159,6 +161,87 @@ end
 - **Accept**: application/json
 
 
+## customer_get_list_v1
+
+> <CustomerGetListV1Response> customer_get_list_v1(opts)
+
+Retrieve Customer list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+opts = {
+  e_order_by: 'pkiCustomerID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Customer list
+  result = api_instance.customer_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_list_v1: #{e}"
+end
+```
+
+#### Using the customer_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetListV1Response>, Integer, Hash)> customer_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Customer list
+  data, status_code, headers = api_instance.customer_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**CustomerGetListV1Response**](CustomerGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+
 ## customer_get_object_v2
 
 > <CustomerGetObjectV2Response> customer_get_object_v2(pki_customer_id)
@@ -227,5 +310,78 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## customer_import_into_edmv1
+
+> <CustomerImportIntoEDMV1Response> customer_import_into_edmv1(pki_customer_id, customer_import_into_edmv1_request)
+
+Import attachments into the Buyercontract
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+customer_import_into_edmv1_request = EzmaxApi::CustomerImportIntoEDMV1Request.new({a_obj_attachment: [EzmaxApi::CustomAttachmentImportIntoEDMRequest.new({e_attachment_source: 'Attachment', s_attachment_name: 'Document.pdf', s_attachment_category: 'Inscription', e_attachment_privacy: EzmaxApi::FieldEAttachmentPrivacy::ALL})]}) # CustomerImportIntoEDMV1Request | 
+
+begin
+  # Import attachments into the Buyercontract
+  result = api_instance.customer_import_into_edmv1(pki_customer_id, customer_import_into_edmv1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_import_into_edmv1: #{e}"
+end
+```
+
+#### Using the customer_import_into_edmv1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerImportIntoEDMV1Response>, Integer, Hash)> customer_import_into_edmv1_with_http_info(pki_customer_id, customer_import_into_edmv1_request)
+
+```ruby
+begin
+  # Import attachments into the Buyercontract
+  data, status_code, headers = api_instance.customer_import_into_edmv1_with_http_info(pki_customer_id, customer_import_into_edmv1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerImportIntoEDMV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_import_into_edmv1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+| **customer_import_into_edmv1_request** | [**CustomerImportIntoEDMV1Request**](CustomerImportIntoEDMV1Request.md) |  |  |
+
+### Return type
+
+[**CustomerImportIntoEDMV1Response**](CustomerImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

@@ -4,10 +4,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**ezsigndocument_apply_ezsigntemplate_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
-| [**ezsigndocument_apply_ezsigntemplate_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument. |
-| [**ezsigndocument_apply_ezsigntemplateglobal_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplateglobal_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument. |
+| [**ezsigndocument_apply_ezsigntemplate_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument |
+| [**ezsigndocument_apply_ezsigntemplate_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument |
+| [**ezsigndocument_apply_ezsigntemplateglobal_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplateglobal_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument |
 | [**ezsigndocument_create_ezsignelements_positioned_by_word_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_ezsignelements_positioned_by_word_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups |
+| [**ezsigndocument_create_ezsignelements_positioned_by_word_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_create_ezsignelements_positioned_by_word_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups |
 | [**ezsigndocument_create_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocument_create_object_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument |
 | [**ezsigndocument_create_object_v3**](ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v3) | **POST** /3/object/ezsigndocument | Create a new Ezsigndocument |
@@ -16,23 +17,28 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_edit_ezsignannotations_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignannotations_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations |
 | [**ezsigndocument_edit_ezsignformfieldgroups_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignformfieldgroups_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
 | [**ezsigndocument_edit_ezsignsignatures_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
+| [**ezsigndocument_edit_ezsignsignatures_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocument_edit_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_object_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument |
 | [**ezsigndocument_end_prematurely_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_end_prematurely_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely |
 | [**ezsigndocument_extract_text_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_extract_text_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area |
 | [**ezsigndocument_flatten_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
 | [**ezsigndocument_get_actionable_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocument_get_actionable_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocument_get_attachments_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_attachments_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument&#39;s Attachments |
 | [**ezsigndocument_get_completed_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
-| [**ezsigndocument_get_download_url_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents. |
+| [**ezsigndocument_get_completed_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
+| [**ezsigndocument_get_download_url_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents |
 | [**ezsigndocument_get_ezsignannotations_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignannotations_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations | Retrieve an existing Ezsigndocument&#39;s Ezsignannotations |
 | [**ezsigndocument_get_ezsigndiscussions_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsigndiscussions_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions | Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions |
 | [**ezsigndocument_get_ezsignformfieldgroups_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignformfieldgroups_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups |
 | [**ezsigndocument_get_ezsignpages_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignpages_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages |
 | [**ezsigndocument_get_ezsignsignatures_automatic_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsigndocument&#39;s automatic Ezsignsignatures |
 | [**ezsigndocument_get_ezsignsignatures_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignsignatures_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures |
+| [**ezsigndocument_get_ezsignsignatures_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignsignatures_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures |
 | [**ezsigndocument_get_form_data_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data |
 | [**ezsigndocument_get_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
 | [**ezsigndocument_get_object_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
+| [**ezsigndocument_get_object_v3**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument |
 | [**ezsigndocument_get_temporary_proof_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_temporary_proof_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof |
 | [**ezsigndocument_get_words_positions_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument |
 | [**ezsigndocument_patch_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_patch_object_v1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument |
@@ -45,7 +51,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 > <EzsigndocumentApplyEzsigntemplateV1Response> ezsigndocument_apply_ezsigntemplate_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v1_request)
 
-Apply an Ezsigntemplate to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument
 
 This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \"E\" to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -64,10 +70,10 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_apply_ezsigntemplate_v1_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateV1Request.new({fki_ezsigntemplate_id: 36, a_s_ezsigntemplatesigner: ['John'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateV1Request | 
+ezsigndocument_apply_ezsigntemplate_v1_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateV1Request.new({fki_ezsigntemplate_id: 36, a_s_ezsigntemplatesigner: ['Buyer'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateV1Request | 
 
 begin
-  # Apply an Ezsigntemplate to the Ezsigndocument.
+  # Apply an Ezsigntemplate to the Ezsigndocument
   result = api_instance.ezsigndocument_apply_ezsigntemplate_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
@@ -83,7 +89,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Apply an Ezsigntemplate to the Ezsigndocument.
+  # Apply an Ezsigntemplate to the Ezsigndocument
   data, status_code, headers = api_instance.ezsigndocument_apply_ezsigntemplate_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
@@ -118,7 +124,7 @@ end
 
 > <EzsigndocumentApplyEzsigntemplateV2Response> ezsigndocument_apply_ezsigntemplate_v2(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
 
-Apply an Ezsigntemplate to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument
 
 This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -137,10 +143,10 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_apply_ezsigntemplate_v2_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateV2Request.new({fki_ezsigntemplate_id: 36, a_s_ezsigntemplatesigner: ['John'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateV2Request | 
+ezsigndocument_apply_ezsigntemplate_v2_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateV2Request.new({fki_ezsigntemplate_id: 36, a_s_ezsigntemplatesigner: ['Buyer'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateV2Request | 
 
 begin
-  # Apply an Ezsigntemplate to the Ezsigndocument.
+  # Apply an Ezsigntemplate to the Ezsigndocument
   result = api_instance.ezsigndocument_apply_ezsigntemplate_v2(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
   p result
 rescue EzmaxApi::ApiError => e
@@ -156,7 +162,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Apply an Ezsigntemplate to the Ezsigndocument.
+  # Apply an Ezsigntemplate to the Ezsigndocument
   data, status_code, headers = api_instance.ezsigndocument_apply_ezsigntemplate_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request)
   p status_code # => 2xx
   p headers # => { ... }
@@ -191,7 +197,7 @@ end
 
 > <EzsigndocumentApplyEzsigntemplateglobalV1Response> ezsigndocument_apply_ezsigntemplateglobal_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
 
-Apply an Ezsigntemplateglobal to the Ezsigndocument.
+Apply an Ezsigntemplateglobal to the Ezsigndocument
 
 This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
@@ -213,7 +219,7 @@ pki_ezsigndocument_id = 56 # Integer |
 ezsigndocument_apply_ezsigntemplateglobal_v1_request = EzmaxApi::EzsigndocumentApplyEzsigntemplateglobalV1Request.new({fki_ezsigntemplateglobal_id: 36, a_s_ezsigntemplateglobalsigner: ['John'], a_pki_ezsignfoldersignerassociation_id: [20]}) # EzsigndocumentApplyEzsigntemplateglobalV1Request | 
 
 begin
-  # Apply an Ezsigntemplateglobal to the Ezsigndocument.
+  # Apply an Ezsigntemplateglobal to the Ezsigndocument
   result = api_instance.ezsigndocument_apply_ezsigntemplateglobal_v1(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
@@ -229,7 +235,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Apply an Ezsigntemplateglobal to the Ezsigndocument.
+  # Apply an Ezsigntemplateglobal to the Ezsigndocument
   data, status_code, headers = api_instance.ezsigndocument_apply_ezsigntemplateglobal_v1_with_http_info(pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplateglobal_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
@@ -266,7 +272,7 @@ end
 
 Create multiple Ezsignsignatures/Ezsignformfieldgroups
 
-Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Examples
 
@@ -322,6 +328,79 @@ end
 ### Return type
 
 [**EzsigndocumentCreateEzsignelementsPositionedByWordV1Response**](EzsigndocumentCreateEzsignelementsPositionedByWordV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocument_create_ezsignelements_positioned_by_word_v2
+
+> <EzsigndocumentCreateEzsignelementsPositionedByWordV2Response> ezsigndocument_create_ezsignelements_positioned_by_word_v2(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v2_request)
+
+Create multiple Ezsignsignatures/Ezsignformfieldgroups
+
+Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_create_ezsignelements_positioned_by_word_v2_request = EzmaxApi::EzsigndocumentCreateEzsignelementsPositionedByWordV2Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})], obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})], a_obj_ezsignsignature: [EzmaxApi::CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97, obj_createezsignelementspositionedbyword: EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest.new({s_createezsignelementspositionedbyword_pattern: 's_createezsignelementspositionedbyword_pattern_example', i_createezsignelementspositionedbyword_offsetx: 37, i_createezsignelementspositionedbyword_offsety: 37, e_createezsignelementspositionedbyword_occurance: 'All'})})]}) # EzsigndocumentCreateEzsignelementsPositionedByWordV2Request | 
+
+begin
+  # Create multiple Ezsignsignatures/Ezsignformfieldgroups
+  result = api_instance.ezsigndocument_create_ezsignelements_positioned_by_word_v2(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_create_ezsignelements_positioned_by_word_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_create_ezsignelements_positioned_by_word_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentCreateEzsignelementsPositionedByWordV2Response>, Integer, Hash)> ezsigndocument_create_ezsignelements_positioned_by_word_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v2_request)
+
+```ruby
+begin
+  # Create multiple Ezsignsignatures/Ezsignformfieldgroups
+  data, status_code, headers = api_instance.ezsigndocument_create_ezsignelements_positioned_by_word_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentCreateEzsignelementsPositionedByWordV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_create_ezsignelements_positioned_by_word_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_create_ezsignelements_positioned_by_word_v2_request** | [**EzsigndocumentCreateEzsignelementsPositionedByWordV2Request**](EzsigndocumentCreateEzsignelementsPositionedByWordV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentCreateEzsignelementsPositionedByWordV2Response**](EzsigndocumentCreateEzsignelementsPositionedByWordV2Response.md)
 
 ### Authorization
 
@@ -842,7 +921,7 @@ end
 
 Edit multiple Ezsignsignatures
 
-Using this endpoint, you can edit multiple Ezsignsignatures at the same time.
+Using this endpoint, you can edit multiple Ezsignsignatures at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Examples
 
@@ -898,6 +977,79 @@ end
 ### Return type
 
 [**EzsigndocumentEditEzsignsignaturesV1Response**](EzsigndocumentEditEzsignsignaturesV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocument_edit_ezsignsignatures_v2
+
+> <EzsigndocumentEditEzsignsignaturesV2Response> ezsigndocument_edit_ezsignsignatures_v2(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v2_request)
+
+Edit multiple Ezsignsignatures
+
+Using this endpoint, you can edit multiple Ezsignsignatures at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_edit_ezsignsignatures_v2_request = EzmaxApi::EzsigndocumentEditEzsignsignaturesV2Request.new({a_obj_ezsignsignature: [EzmaxApi::EzsignsignatureRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})]}) # EzsigndocumentEditEzsignsignaturesV2Request | 
+
+begin
+  # Edit multiple Ezsignsignatures
+  result = api_instance.ezsigndocument_edit_ezsignsignatures_v2(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignsignatures_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_edit_ezsignsignatures_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentEditEzsignsignaturesV2Response>, Integer, Hash)> ezsigndocument_edit_ezsignsignatures_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v2_request)
+
+```ruby
+begin
+  # Edit multiple Ezsignsignatures
+  data, status_code, headers = api_instance.ezsigndocument_edit_ezsignsignatures_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentEditEzsignsignaturesV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignsignatures_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_edit_ezsignsignatures_v2_request** | [**EzsigndocumentEditEzsignsignaturesV2Request**](EzsigndocumentEditEzsignsignaturesV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentEditEzsignsignaturesV2Response**](EzsigndocumentEditEzsignsignaturesV2Response.md)
 
 ### Authorization
 
@@ -1207,7 +1359,7 @@ end
 
 Retrieve actionable elements for the Ezsigndocument
 
-Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3. 
 
 ### Examples
 
@@ -1261,6 +1413,77 @@ end
 ### Return type
 
 [**EzsigndocumentGetActionableElementsV1Response**](EzsigndocumentGetActionableElementsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocument_get_actionable_elements_v2
+
+> <EzsigndocumentGetActionableElementsV2Response> ezsigndocument_get_actionable_elements_v2(pki_ezsigndocument_id)
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+
+begin
+  # Retrieve actionable elements for the Ezsigndocument
+  result = api_instance.ezsigndocument_get_actionable_elements_v2(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_actionable_elements_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetActionableElementsV2Response>, Integer, Hash)> ezsigndocument_get_actionable_elements_v2_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve actionable elements for the Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_actionable_elements_v2_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetActionableElementsV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigndocumentGetActionableElementsV2Response**](EzsigndocumentGetActionableElementsV2Response.md)
 
 ### Authorization
 
@@ -1349,7 +1572,7 @@ end
 
 Retrieve completed elements for the Ezsigndocument
 
-Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Examples
 
@@ -1414,11 +1637,82 @@ end
 - **Accept**: application/json
 
 
+## ezsigndocument_get_completed_elements_v2
+
+> <EzsigndocumentGetCompletedElementsV2Response> ezsigndocument_get_completed_elements_v2(pki_ezsigndocument_id)
+
+Retrieve completed elements for the Ezsigndocument
+
+Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+
+begin
+  # Retrieve completed elements for the Ezsigndocument
+  result = api_instance.ezsigndocument_get_completed_elements_v2(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_completed_elements_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_completed_elements_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetCompletedElementsV2Response>, Integer, Hash)> ezsigndocument_get_completed_elements_v2_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve completed elements for the Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_completed_elements_v2_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetCompletedElementsV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_completed_elements_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigndocumentGetCompletedElementsV2Response**](EzsigndocumentGetCompletedElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## ezsigndocument_get_download_url_v1
 
 > <EzsigndocumentGetDownloadUrlV1Response> ezsigndocument_get_download_url_v1(pki_ezsigndocument_id, e_document_type)
 
-Retrieve a URL to download documents.
+Retrieve a URL to download documents
 
 This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
 
@@ -1437,10 +1731,10 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-e_document_type = 'Initial' # String | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.<br>     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+e_document_type = 'Original' # String | The type of document to retrieve.  1. **original** Is the original document before any repair or conversion were applied. **Initial** Is the initial document after initial signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.<br>     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
 
 begin
-  # Retrieve a URL to download documents.
+  # Retrieve a URL to download documents
   result = api_instance.ezsigndocument_get_download_url_v1(pki_ezsigndocument_id, e_document_type)
   p result
 rescue EzmaxApi::ApiError => e
@@ -1456,7 +1750,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Retrieve a URL to download documents.
+  # Retrieve a URL to download documents
   data, status_code, headers = api_instance.ezsigndocument_get_download_url_v1_with_http_info(pki_ezsigndocument_id, e_document_type)
   p status_code # => 2xx
   p headers # => { ... }
@@ -1471,7 +1765,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsigndocument_id** | **Integer** |  |  |
-| **e_document_type** | **String** | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.  |  |
+| **e_document_type** | **String** | The type of document to retrieve.  1. **original** Is the original document before any repair or conversion were applied. **Initial** Is the initial document after initial signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.  |  |
 
 ### Return type
 
@@ -1848,7 +2142,7 @@ end
 
 Retrieve an existing Ezsigndocument's Ezsignsignatures
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Examples
 
@@ -1902,6 +2196,77 @@ end
 ### Return type
 
 [**EzsigndocumentGetEzsignsignaturesV1Response**](EzsigndocumentGetEzsignsignaturesV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocument_get_ezsignsignatures_v2
+
+> <EzsigndocumentGetEzsignsignaturesV2Response> ezsigndocument_get_ezsignsignatures_v2(pki_ezsigndocument_id)
+
+Retrieve an existing Ezsigndocument's Ezsignsignatures
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigndocument's Ezsignsignatures
+  result = api_instance.ezsigndocument_get_ezsignsignatures_v2(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_ezsignsignatures_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_ezsignsignatures_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetEzsignsignaturesV2Response>, Integer, Hash)> ezsigndocument_get_ezsignsignatures_v2_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigndocument's Ezsignsignatures
+  data, status_code, headers = api_instance.ezsigndocument_get_ezsignsignatures_v2_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetEzsignsignaturesV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_ezsignsignatures_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigndocumentGetEzsignsignaturesV2Response**](EzsigndocumentGetEzsignsignaturesV2Response.md)
 
 ### Authorization
 
@@ -1990,6 +2355,8 @@ end
 
 Retrieve an existing Ezsigndocument
 
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
+
 ### Examples
 
 ```ruby
@@ -2059,7 +2426,7 @@ end
 
 Retrieve an existing Ezsigndocument
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Examples
 
@@ -2113,6 +2480,77 @@ end
 ### Return type
 
 [**EzsigndocumentGetObjectV2Response**](EzsigndocumentGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocument_get_object_v3
+
+> <EzsigndocumentGetObjectV3Response> ezsigndocument_get_object_v3(pki_ezsigndocument_id)
+
+Retrieve an existing Ezsigndocument
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigndocument
+  result = api_instance.ezsigndocument_get_object_v3(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetObjectV3Response>, Integer, Hash)> ezsigndocument_get_object_v3_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_object_v3_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigndocumentGetObjectV3Response**](EzsigndocumentGetObjectV3Response.md)
 
 ### Authorization
 
@@ -2347,7 +2785,7 @@ end
 
 Prefill an Ezsignform
 
-Using this endpoint, you can prefill an Ezsignform.
+Using this endpoint, you can prefill an Ezsignform.  To fill Ezsignformfield with type **Dropdown**, **Text**, **Textarea**, **Checkbox**, **Date**, **Number**, you must provide properties sEzsignformfieldgroupLabel and sEzsignformfieldLabel.  To fill Ezsignformfield with type **Radio**, you must provide only the property sEzsignformfieldgroupLabel.  In **PowerAutomate** if you need to add a line feed in sEzsignformfieldEnteredvalue, you should do it like this: concat('string1',decodeUriComponent('%0A'),'string2',decodeUriComponent('%0A'),'string3')
 
 ### Examples
 

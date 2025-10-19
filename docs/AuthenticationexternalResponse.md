@@ -21,7 +21,7 @@ instance = EzmaxApi::AuthenticationexternalResponse.new(
   s_authenticationexternal_description: Authentification,
   e_authenticationexternal_type: null,
   b_authenticationexternal_connected: true,
-  s_authenticationexternal_authorizationurl: http://www.website.com/authorize.php,
+  s_authenticationexternal_authorizationurl: https://www.website.com/authorize.php,
   obj_audit: null
 )
 ```

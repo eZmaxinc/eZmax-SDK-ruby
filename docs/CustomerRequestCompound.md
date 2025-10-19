@@ -8,6 +8,7 @@
 | **fki_company_id** | **Integer** | The unique ID of the Company |  |
 | **fki_customergroup_id** | **Integer** | The unique ID of the Customergroup |  |
 | **s_customer_name** | **String** | The name of the Customer |  |
+| **s_customer_note** | **String** | A note for the Customer | [optional] |
 | **fki_contactinformations_id** | **Integer** | The unique ID of the Contactinformations |  |
 | **fki_contactcontainer_id** | **Integer** | The unique ID of the Contactcontainer |  |
 | **fki_image_id** | **Integer** | The unique ID of the Image |  |
@@ -66,6 +67,7 @@ instance = EzmaxApi::CustomerRequestCompound.new(
   fki_company_id: 1,
   fki_customergroup_id: 229,
   s_customer_name: eZmax Solutions,
+  s_customer_note: This is a note,
   fki_contactinformations_id: 55,
   fki_contactcontainer_id: 150,
   fki_image_id: 164,

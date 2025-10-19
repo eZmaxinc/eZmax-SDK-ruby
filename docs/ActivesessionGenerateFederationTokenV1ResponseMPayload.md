@@ -14,7 +14,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::ActivesessionGenerateFederationTokenV1ResponseMPayload.new(
   obj_apikeyfederation: null,
-  s_ezmaxcustomercode_url: http://www.website.com/avatar.jpg
+  s_ezmaxcustomercode_url: https://www.website.com/avatar.jpg
 )
 ```
 

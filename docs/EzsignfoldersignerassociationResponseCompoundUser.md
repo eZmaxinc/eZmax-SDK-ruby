@@ -9,6 +9,7 @@
 | **s_user_firstname** | **String** | The first name of the user |  |
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_email_address** | **String** | The email address. |  |
+| **e_user_type** | [**FieldEUserType**](FieldEUserType.md) |  |  |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = EzmaxApi::EzsignfoldersignerassociationResponseCompoundUser.new(
   fki_language_id: 2,
   s_user_firstname: John,
   s_user_lastname: Doe,
-  s_email_address: email@example.com
+  s_email_address: email@example.com,
+  e_user_type: null
 )
 ```
 

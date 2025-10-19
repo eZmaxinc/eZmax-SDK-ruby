@@ -32,6 +32,8 @@
 | **s_ezsignsignature_textvalidationcustommessage** | **String** | Description of validation rule. Show by signatory. | [optional] |
 | **s_ezsignsignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional] |
 | **e_ezsignsignature_dependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] |
+| **s_ezsignsignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
+| **d_ezsignsignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 
 ## Example
 
@@ -66,7 +68,9 @@ instance = EzmaxApi::EzsignsignatureRequest.new(
   e_ezsignsignature_textvalidation: null,
   s_ezsignsignature_textvalidationcustommessage: Phone number,
   s_ezsignsignature_regexp: ^[0-9]{9}$,
-  e_ezsignsignature_dependencyrequirement: null
+  e_ezsignsignature_dependencyrequirement: null,
+  s_ezsignsignature_creditcardamountdescription: Invoice #123,
+  d_ezsignsignature_creditcardamount: 100.00
 )
 ```
 

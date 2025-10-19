@@ -22,6 +22,7 @@
 | **s_authenticationexternal_description** | **String** | The description of the Authenticationexternal | [optional] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
 | **s_webhook_event** | **String** | The concatenated string to describe the Webhook event | [optional] |
+| **s_webhook_authentificationexternalerror** | **String** | Error message when token renewal failed or is not configured. Only if an Authenticationexternal is set. | [optional] |
 | **a_obj_webhookheader** | [**Array&lt;WebhookheaderResponseCompound&gt;**](WebhookheaderResponseCompound.md) |  | [optional] |
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
 | **b_webhook_test** | **Boolean** | Wheter the webhook received is a manual test or a real event |  |
@@ -51,6 +52,7 @@ instance = EzmaxApi::CustomWebhookResponse.new(
   s_authenticationexternal_description: Authentification,
   obj_audit: null,
   s_webhook_event: Ezsign-DocumentCompleted,
+  s_webhook_authentificationexternalerror: expired access/refresh token,
   a_obj_webhookheader: null,
   pks_customer_code: demo,
   b_webhook_test: null,

@@ -8,6 +8,7 @@
 | **fki_ezsigntemplatedocument_id** | **Integer** | The unique ID of the Ezsigntemplatedocument |  |
 | **fki_ezsigntemplatesigner_id** | **Integer** | The unique ID of the Ezsigntemplatesigner |  |
 | **fki_ezsigntemplatesigner_id_validation** | **Integer** | The unique ID of the Ezsigntemplatesigner | [optional] |
+| **fki_paymentgateway_id** | **Integer** | The unique ID of the Paymentgateway | [optional] |
 | **b_ezsigntemplatesignature_handwritten** | **Boolean** | Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] |
 | **b_ezsigntemplatesignature_reason** | **Boolean** | Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] |
 | **e_ezsigntemplatesignature_positioning** | [**FieldEEzsigntemplatesignaturePositioning**](FieldEEzsigntemplatesignaturePositioning.md) |  | [optional] |
@@ -36,9 +37,12 @@
 | **i_ezsigntemplatesignature_positioningoffsetx** | **Integer** | The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] |
 | **i_ezsigntemplatesignature_positioningoffsety** | **Integer** | The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] |
 | **e_ezsigntemplatesignature_positioningoccurence** | [**FieldEEzsigntemplatesignaturePositioningoccurence**](FieldEEzsigntemplatesignaturePositioningoccurence.md) |  | [optional] |
+| **s_ezsigntemplatesignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
+| **d_ezsigntemplatesignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 | **b_ezsigntemplatesignature_customdate** | **Boolean** | Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**) | [optional] |
 | **a_obj_ezsigntemplatesignaturecustomdate** | [**Array&lt;EzsigntemplatesignaturecustomdateResponseCompoundV2&gt;**](EzsigntemplatesignaturecustomdateResponseCompoundV2.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **a_obj_ezsigntemplateelementdependency** | [**Array&lt;EzsigntemplateelementdependencyResponseCompound&gt;**](EzsigntemplateelementdependencyResponseCompound.md) |  | [optional] |
+| **a_obj_ezsigntemplatesignaturepaymentdetail** | [**Array&lt;EzsigntemplatesignaturepaymentdetailResponseCompound&gt;**](EzsigntemplatesignaturepaymentdetailResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -50,6 +54,7 @@ instance = EzmaxApi::EzsigntemplatesignatureResponseCompoundV3.new(
   fki_ezsigntemplatedocument_id: 133,
   fki_ezsigntemplatesigner_id: 9,
   fki_ezsigntemplatesigner_id_validation: 9,
+  fki_paymentgateway_id: 235,
   b_ezsigntemplatesignature_handwritten: null,
   b_ezsigntemplatesignature_reason: null,
   e_ezsigntemplatesignature_positioning: null,
@@ -78,9 +83,12 @@ instance = EzmaxApi::EzsigntemplatesignatureResponseCompoundV3.new(
   i_ezsigntemplatesignature_positioningoffsetx: 200,
   i_ezsigntemplatesignature_positioningoffsety: 200,
   e_ezsigntemplatesignature_positioningoccurence: null,
+  s_ezsigntemplatesignature_creditcardamountdescription: Invoice #123,
+  d_ezsigntemplatesignature_creditcardamount: 100.00,
   b_ezsigntemplatesignature_customdate: null,
   a_obj_ezsigntemplatesignaturecustomdate: null,
-  a_obj_ezsigntemplateelementdependency: null
+  a_obj_ezsigntemplateelementdependency: null,
+  a_obj_ezsigntemplatesignaturepaymentdetail: null
 )
 ```
 

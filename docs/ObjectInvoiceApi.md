@@ -9,6 +9,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**invoice_get_communication_list_v1**](ObjectInvoiceApi.md#invoice_get_communication_list_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list |
 | [**invoice_get_communicationrecipients_v1**](ObjectInvoiceApi.md#invoice_get_communicationrecipients_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationrecipients | Retrieve Invoice&#39;s Communicationrecipient |
 | [**invoice_get_communicationsenders_v1**](ObjectInvoiceApi.md#invoice_get_communicationsenders_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationsenders | Retrieve Invoice&#39;s Communicationsender |
+| [**invoice_import_into_edmv1**](ObjectInvoiceApi.md#invoice_import_into_edmv1) | **POST** /1/object/invoice/{pkiInvoiceID}/importIntoEDM | Import attachments into the Invoice |
 
 
 ## invoice_get_attachments_v1
@@ -363,5 +364,78 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## invoice_import_into_edmv1
+
+> <InvoiceImportIntoEDMV1Response> invoice_import_into_edmv1(pki_invoice_id, invoice_import_into_edmv1_request)
+
+Import attachments into the Invoice
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInvoiceApi.new
+pki_invoice_id = 56 # Integer | 
+invoice_import_into_edmv1_request = EzmaxApi::InvoiceImportIntoEDMV1Request.new({a_obj_attachment: [EzmaxApi::CustomAttachmentImportIntoEDMRequest.new({e_attachment_source: 'Attachment', s_attachment_name: 'Document.pdf', s_attachment_category: 'Inscription', e_attachment_privacy: EzmaxApi::FieldEAttachmentPrivacy::ALL})]}) # InvoiceImportIntoEDMV1Request | 
+
+begin
+  # Import attachments into the Invoice
+  result = api_instance.invoice_import_into_edmv1(pki_invoice_id, invoice_import_into_edmv1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInvoiceApi->invoice_import_into_edmv1: #{e}"
+end
+```
+
+#### Using the invoice_import_into_edmv1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InvoiceImportIntoEDMV1Response>, Integer, Hash)> invoice_import_into_edmv1_with_http_info(pki_invoice_id, invoice_import_into_edmv1_request)
+
+```ruby
+begin
+  # Import attachments into the Invoice
+  data, status_code, headers = api_instance.invoice_import_into_edmv1_with_http_info(pki_invoice_id, invoice_import_into_edmv1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InvoiceImportIntoEDMV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInvoiceApi->invoice_import_into_edmv1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_invoice_id** | **Integer** |  |  |
+| **invoice_import_into_edmv1_request** | [**InvoiceImportIntoEDMV1Request**](InvoiceImportIntoEDMV1Request.md) |  |  |
+
+### Return type
+
+[**InvoiceImportIntoEDMV1Response**](InvoiceImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

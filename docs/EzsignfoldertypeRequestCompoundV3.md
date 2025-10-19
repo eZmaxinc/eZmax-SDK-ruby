@@ -19,6 +19,7 @@
 | **a_fki_usergroup_id_restricted** | **Array&lt;Integer&gt;** |  | [optional] |
 | **a_fki_usergroup_id_template** | **Array&lt;Integer&gt;** |  | [optional] |
 | **e_ezsignfoldertype_documentdependency** | [**FieldEEzsignfoldertypeDocumentdependency**](FieldEEzsignfoldertypeDocumentdependency.md) |  | [optional] |
+| **e_ezsignfoldertype_documentmerge** | [**FieldEEzsignfoldertypeDocumentmerge**](FieldEEzsignfoldertypeDocumentmerge.md) |  | [optional][default to &#39;No&#39;] |
 | **s_email_address_signed** | **String** | The email address. | [optional] |
 | **s_email_address_summary** | **String** | The email address. | [optional] |
 | **e_ezsignfoldertype_pdfarequirement** | [**FieldEEzsignfoldertypePdfarequirement**](FieldEEzsignfoldertypePdfarequirement.md) |  | [optional] |
@@ -45,13 +46,18 @@
 | **b_ezsignfoldertype_sendsignedtoezsignsigner** | **Boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] |
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
 | **b_ezsignfoldertype_sendattachmentezsignsigner** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] |
+| **b_ezsignfoldertype_sendsignatureattachmentezsignsigner** | **Boolean** | Whether we send the attachments contained in the Ezsignsignatures in the email to Ezsignsigner | [optional] |
+| **b_ezsignfoldertype_sendsignatureattachment** | **Boolean** | Whether we send the attachments contained in the Ezsignsignatures in the email to external recipient | [optional] |
 | **b_ezsignfoldertype_sendproofezsignsigner** | **Boolean** | Whether we send the proof in the email to Ezsignsigner | [optional] |
 | **b_ezsignfoldertype_sendattachmentuser** | **Boolean** | Whether we send the Ezsigndocument in the email to User | [optional] |
+| **b_ezsignfoldertype_sendsignatureattachmentuser** | **Boolean** | Whether we send the attachments contained in the Ezsignsignatures in the email to User | [optional] |
 | **b_ezsignfoldertype_sendproofuser** | **Boolean** | Whether we send the proof in the email to User | [optional] |
 | **b_ezsignfoldertype_sendproofemail** | **Boolean** | Whether we send the proof in the email to external recipient | [optional] |
 | **b_ezsignfoldertype_allowdownloadattachmentezsignsigner** | **Boolean** | Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner | [optional] |
+| **b_ezsignfoldertype_allowdownloadsignatureattachmentezsignsigner** | **Boolean** | Whether we allow the attachments in the Ezsignsignatures to be downloaded by an Ezsignsigner | [optional] |
 | **b_ezsignfoldertype_allowdownloadproofezsignsigner** | **Boolean** | Whether we allow the proof to be downloaded by an Ezsignsigner | [optional] |
 | **b_ezsignfoldertype_sendproofreceivealldocument** | **Boolean** | Whether we send the proof to user and Ezsignsigner who receive all documents. | [optional] |
+| **b_ezsignfoldertype_sendsignatureattachmentreceivealldocument** | **Boolean** | Whether we send the attachments contained in the Ezsignsignatures to user and Ezsignsigner who receive all documents. | [optional] |
 | **b_ezsignfoldertype_sendsignedtodocumentowner** | **Boolean** | Whether we send the signed Ezsigndocument to the Ezsigndocument&#39;s owner |  |
 | **b_ezsignfoldertype_sendsignedtofolderowner** | **Boolean** | Whether we send the signed Ezsigndocument to the Ezsignfolder&#39;s owner |  |
 | **b_ezsignfoldertype_sendsignedtofullgroup** | **Boolean** | Whether we send the signed Ezsigndocument to the Usergroup that has acces to all Ezsignfolders | [optional] |
@@ -88,6 +94,7 @@ instance = EzmaxApi::EzsignfoldertypeRequestCompoundV3.new(
   a_fki_usergroup_id_restricted: null,
   a_fki_usergroup_id_template: null,
   e_ezsignfoldertype_documentdependency: null,
+  e_ezsignfoldertype_documentmerge: null,
   s_email_address_signed: email@example.com,
   s_email_address_summary: email@example.com,
   e_ezsignfoldertype_pdfarequirement: null,
@@ -114,13 +121,18 @@ instance = EzmaxApi::EzsignfoldertypeRequestCompoundV3.new(
   b_ezsignfoldertype_sendsignedtoezsignsigner: false,
   b_ezsignfoldertype_sendsignedtouser: false,
   b_ezsignfoldertype_sendattachmentezsignsigner: false,
+  b_ezsignfoldertype_sendsignatureattachmentezsignsigner: false,
+  b_ezsignfoldertype_sendsignatureattachment: false,
   b_ezsignfoldertype_sendproofezsignsigner: false,
   b_ezsignfoldertype_sendattachmentuser: false,
+  b_ezsignfoldertype_sendsignatureattachmentuser: false,
   b_ezsignfoldertype_sendproofuser: false,
   b_ezsignfoldertype_sendproofemail: false,
   b_ezsignfoldertype_allowdownloadattachmentezsignsigner: false,
+  b_ezsignfoldertype_allowdownloadsignatureattachmentezsignsigner: false,
   b_ezsignfoldertype_allowdownloadproofezsignsigner: false,
   b_ezsignfoldertype_sendproofreceivealldocument: false,
+  b_ezsignfoldertype_sendsignatureattachmentreceivealldocument: false,
   b_ezsignfoldertype_sendsignedtodocumentowner: false,
   b_ezsignfoldertype_sendsignedtofolderowner: false,
   b_ezsignfoldertype_sendsignedtofullgroup: false,

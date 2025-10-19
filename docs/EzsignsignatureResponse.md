@@ -9,7 +9,10 @@
 | **fki_ezsignfoldersignerassociation_id** | **Integer** | The unique ID of the Ezsignfoldersignerassociation |  |
 | **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
 | **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
+| **fki_paymentgateway_id** | **Integer** | The unique ID of the Paymentgateway | [optional] |
 | **s_currency_description_x** | **String** | The description of the Currency in the language of the requester | [optional] |
+| **d_ezsignsignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
+| **s_ezsignsignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
 | **s_ezsignsigningreason_description_x** | **String** | The description of the Ezsignsigningreason in the language of the requester | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
@@ -54,7 +57,10 @@ instance = EzmaxApi::EzsignsignatureResponse.new(
   fki_ezsignfoldersignerassociation_id: 20,
   fki_ezsignsigningreason_id: 194,
   fki_font_id: 1,
+  fki_paymentgateway_id: 235,
   s_currency_description_x: Canadian,
+  d_ezsignsignature_creditcardamount: 100.00,
+  s_ezsignsignature_creditcardamountdescription: Invoice #123,
   s_ezsignsigningreason_description_x: I approve this document,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,

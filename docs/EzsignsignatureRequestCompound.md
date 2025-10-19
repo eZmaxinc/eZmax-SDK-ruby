@@ -32,9 +32,12 @@
 | **s_ezsignsignature_textvalidationcustommessage** | **String** | Description of validation rule. Show by signatory. | [optional] |
 | **s_ezsignsignature_regexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom** | [optional] |
 | **e_ezsignsignature_dependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] |
+| **s_ezsignsignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
+| **d_ezsignsignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 | **b_ezsignsignature_customdate** | **Boolean** | Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**) | [optional] |
 | **a_obj_ezsignsignaturecustomdate** | [**Array&lt;EzsignsignaturecustomdateRequestCompound&gt;**](EzsignsignaturecustomdateRequestCompound.md) | An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all. | [optional] |
 | **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyRequestCompound&gt;**](EzsignelementdependencyRequestCompound.md) |  | [optional] |
+| **a_obj_ezsignsignaturepaymentdetail** | [**Array&lt;EzsignsignaturepaymentdetailRequestCompound&gt;**](EzsignsignaturepaymentdetailRequestCompound.md) |  | [optional] |
 
 ## Example
 
@@ -70,9 +73,12 @@ instance = EzmaxApi::EzsignsignatureRequestCompound.new(
   s_ezsignsignature_textvalidationcustommessage: Phone number,
   s_ezsignsignature_regexp: ^[0-9]{9}$,
   e_ezsignsignature_dependencyrequirement: null,
+  s_ezsignsignature_creditcardamountdescription: Invoice #123,
+  d_ezsignsignature_creditcardamount: 100.00,
   b_ezsignsignature_customdate: null,
   a_obj_ezsignsignaturecustomdate: null,
-  a_obj_ezsignelementdependency: null
+  a_obj_ezsignelementdependency: null,
+  a_obj_ezsignsignaturepaymentdetail: null
 )
 ```
 

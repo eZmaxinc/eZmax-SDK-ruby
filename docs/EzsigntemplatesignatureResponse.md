@@ -8,6 +8,7 @@
 | **fki_ezsigntemplatedocument_id** | **Integer** | The unique ID of the Ezsigntemplatedocument |  |
 | **fki_ezsigntemplatesigner_id** | **Integer** | The unique ID of the Ezsigntemplatesigner |  |
 | **fki_ezsigntemplatesigner_id_validation** | **Integer** | The unique ID of the Ezsigntemplatesigner | [optional] |
+| **fki_paymentgateway_id** | **Integer** | The unique ID of the Paymentgateway | [optional] |
 | **b_ezsigntemplatesignature_handwritten** | **Boolean** | Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] |
 | **b_ezsigntemplatesignature_reason** | **Boolean** | Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] |
 | **e_ezsigntemplatesignature_positioning** | [**FieldEEzsigntemplatesignaturePositioning**](FieldEEzsigntemplatesignaturePositioning.md) |  | [optional] |
@@ -36,6 +37,8 @@
 | **i_ezsigntemplatesignature_positioningoffsetx** | **Integer** | The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] |
 | **i_ezsigntemplatesignature_positioningoffsety** | **Integer** | The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] |
 | **e_ezsigntemplatesignature_positioningoccurence** | [**FieldEEzsigntemplatesignaturePositioningoccurence**](FieldEEzsigntemplatesignaturePositioningoccurence.md) |  | [optional] |
+| **s_ezsigntemplatesignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
+| **d_ezsigntemplatesignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 
 ## Example
 
@@ -47,6 +50,7 @@ instance = EzmaxApi::EzsigntemplatesignatureResponse.new(
   fki_ezsigntemplatedocument_id: 133,
   fki_ezsigntemplatesigner_id: 9,
   fki_ezsigntemplatesigner_id_validation: 9,
+  fki_paymentgateway_id: 235,
   b_ezsigntemplatesignature_handwritten: null,
   b_ezsigntemplatesignature_reason: null,
   e_ezsigntemplatesignature_positioning: null,
@@ -74,7 +78,9 @@ instance = EzmaxApi::EzsigntemplatesignatureResponse.new(
   s_ezsigntemplatesignature_positioningpattern: Signature,
   i_ezsigntemplatesignature_positioningoffsetx: 200,
   i_ezsigntemplatesignature_positioningoffsety: 200,
-  e_ezsigntemplatesignature_positioningoccurence: null
+  e_ezsigntemplatesignature_positioningoccurence: null,
+  s_ezsigntemplatesignature_creditcardamountdescription: Invoice #123,
+  d_ezsigntemplatesignature_creditcardamount: 100.00
 )
 ```
 
