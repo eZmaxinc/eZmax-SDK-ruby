@@ -8,7 +8,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignbulksend_create_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksend_create_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v2) | **POST** /2/object/ezsignbulksend | Create a new Ezsignbulksend |
 | [**ezsignbulksend_delete_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_delete_object_v1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend |
-| [**ezsignbulksend_edit_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
 | [**ezsignbulksend_edit_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v2) | **PUT** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend |
 | [**ezsignbulksend_get_batch_file_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_batch_file_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile | Retrieve file to download documents in batch |
 | [**ezsignbulksend_get_csv_template_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_csv_template_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template |
@@ -310,79 +309,6 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsignbulksend_edit_object_v1
-
-> <EzsignbulksendEditObjectV1Response> ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
-
-Edit an existing Ezsignbulksend
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
-pki_ezsignbulksend_id = 56 # Integer | 
-ezsignbulksend_edit_object_v1_request = EzmaxApi::EzsignbulksendEditObjectV1Request.new({obj_ezsignbulksend: EzmaxApi::EzsignbulksendRequestCompound.new({fki_ezsignfoldertype_id: 5, fki_language_id: 2, s_ezsignbulksend_description: 'Test eZsign Bulk Send', t_ezsignbulksend_note: 'This is a note', b_ezsignbulksend_needvalidation: false, b_ezsignbulksend_isactive: true})}) # EzsignbulksendEditObjectV1Request | 
-
-begin
-  # Edit an existing Ezsignbulksend
-  result = api_instance.ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v1: #{e}"
-end
-```
-
-#### Using the ezsignbulksend_edit_object_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignbulksendEditObjectV1Response>, Integer, Hash)> ezsignbulksend_edit_object_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
-
-```ruby
-begin
-  # Edit an existing Ezsignbulksend
-  data, status_code, headers = api_instance.ezsignbulksend_edit_object_v1_with_http_info(pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignbulksendEditObjectV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignbulksend_id** | **Integer** |  |  |
-| **ezsignbulksend_edit_object_v1_request** | [**EzsignbulksendEditObjectV1Request**](EzsignbulksendEditObjectV1Request.md) |  |  |
-
-### Return type
-
-[**EzsignbulksendEditObjectV1Response**](EzsignbulksendEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 

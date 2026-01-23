@@ -11,6 +11,7 @@
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_user_loginname** | **String** | The login name of the User. |  |
 | **s_email_address** | **String** | The email address. | [optional] |
+| **b_user_isactive** | **Boolean** | Whether the User is active or not |  |
 | **s_usergroup_name_x** | **String** | The Name of the Usergroup in the language of the requester |  |
 
 ## Example
@@ -26,6 +27,7 @@ instance = EzmaxApi::UsergroupdelegationResponseCompound.new(
   s_user_lastname: Doe,
   s_user_loginname: JohnDoe,
   s_email_address: email@example.com,
+  b_user_isactive: true,
   s_usergroup_name_x: Administration
 )
 ```

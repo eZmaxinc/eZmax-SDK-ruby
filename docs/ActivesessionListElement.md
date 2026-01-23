@@ -6,13 +6,13 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_activesession_id** | **Integer** | The unique ID of the Activesession |  |
 | **fki_user_id** | **Integer** | The unique ID of the User |  |
-| **fki_computer_id** | **Integer** | The unique ID of the Computer |  |
+| **fki_computer_id** | **Integer** | The unique ID of the Computer | [optional] |
 | **fki_company_id** | **Integer** | The unique ID of the Company |  |
 | **fki_department_id** | **Integer** | The unique ID of the Department |  |
 | **s_company_name_x** | **String** | The Name of the Company in the language of the requester |  |
 | **s_department_name_x** | **String** | The Name of the Department in the language of the requester |  |
 | **s_activesession_loginname** | **String** | The loginname of the Activesession |  |
-| **s_computer_description** | **String** | The description of the Computer |  |
+| **s_computer_description** | **String** | The description of the Computer | [optional] |
 | **dt_activesession_firsthit** | **String** | The first hit of the Activesession |  |
 | **dt_activesession_lasthit** | **String** | The last hit of the Activesession |  |
 | **s_activesession_ip** | **String** | Represent an IP address. |  |

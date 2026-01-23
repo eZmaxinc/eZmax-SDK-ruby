@@ -7,7 +7,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**signature_create_object_v1**](ObjectSignatureApi.md#signature_create_object_v1) | **POST** /1/object/signature | Create a new Signature |
 | [**signature_delete_object_v1**](ObjectSignatureApi.md#signature_delete_object_v1) | **DELETE** /1/object/signature/{pkiSignatureID} | Delete an existing Signature |
 | [**signature_edit_object_v1**](ObjectSignatureApi.md#signature_edit_object_v1) | **PUT** /1/object/signature/{pkiSignatureID} | Edit an existing Signature |
-| [**signature_get_object_v2**](ObjectSignatureApi.md#signature_get_object_v2) | **GET** /2/object/signature/{pkiSignatureID} | Retrieve an existing Signature |
 | [**signature_get_object_v3**](ObjectSignatureApi.md#signature_get_object_v3) | **GET** /3/object/signature/{pkiSignatureID} | Retrieve an existing Signature |
 | [**signature_get_svg_initials_v1**](ObjectSignatureApi.md#signature_get_svg_initials_v1) | **GET** /1/object/signature/{pkiSignatureID}/getSVGInitials | Retrieve an existing Signature initial SVG |
 | [**signature_get_svg_signature_v1**](ObjectSignatureApi.md#signature_get_svg_signature_v1) | **GET** /1/object/signature/{pkiSignatureID}/getSVGSignature | Retrieve an existing Signature SVG |
@@ -225,77 +224,6 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## signature_get_object_v2
-
-> <SignatureGetObjectV2Response> signature_get_object_v2(pki_signature_id)
-
-Retrieve an existing Signature
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectSignatureApi.new
-pki_signature_id = 56 # Integer | The unique ID of the Signature
-
-begin
-  # Retrieve an existing Signature
-  result = api_instance.signature_get_object_v2(pki_signature_id)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectSignatureApi->signature_get_object_v2: #{e}"
-end
-```
-
-#### Using the signature_get_object_v2_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<SignatureGetObjectV2Response>, Integer, Hash)> signature_get_object_v2_with_http_info(pki_signature_id)
-
-```ruby
-begin
-  # Retrieve an existing Signature
-  data, status_code, headers = api_instance.signature_get_object_v2_with_http_info(pki_signature_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <SignatureGetObjectV2Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectSignatureApi->signature_get_object_v2_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_signature_id** | **Integer** | The unique ID of the Signature |  |
-
-### Return type
-
-[**SignatureGetObjectV2Response**](SignatureGetObjectV2Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

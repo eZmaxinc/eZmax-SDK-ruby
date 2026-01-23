@@ -30,6 +30,7 @@
 | **dt_ezsignfolder_archive** | **String** | The date and time at which the Ezsignfolder was archived. | [optional] |
 | **dt_ezsignfolder_dispose** | **String** | The date and time at which the Ezsignfolder was disposed. | [optional] |
 | **t_ezsignfolder_message** | **String** | A custom text message that will be added to the email sent. | [optional] |
+| **e_ezsignfolder_messageorder** | [**FieldEEzsignfolderMessageorder**](FieldEEzsignfolderMessageorder.md) |  | [optional][default to &#39;GlobalFirst&#39;] |
 | **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_ezsignfolder_externalid** | **String** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] |
 | **e_ezsignfolder_access** | [**ComputedEEzsignfolderAccess**](ComputedEEzsignfolderAccess.md) |  | [optional] |
@@ -75,6 +76,7 @@ Could you sign it before Monday please.
 Best Regards.
 
 Mary,
+  e_ezsignfolder_messageorder: null,
   obj_audit: null,
   s_ezsignfolder_externalid: {&quot;ID&quot;: 1234, &quot;TAGS&quot;: [&quot;tag1&quot;, &quot;tag2&quot;, &quot;tag3&quot;]},
   e_ezsignfolder_access: null,

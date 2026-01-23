@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **fki_ezsignsigningreason_id** | **Integer** | The unique ID of the Ezsignsigningreason | [optional] |
 | **fki_font_id** | **Integer** | The unique ID of the Font | [optional] |
+| **d_ezsignsignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 | **s_value** | **String** | The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea** | [optional] |
 | **e_attachments_confirmation_decision** | **String** | Whether the attachment are accepted or refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] |
 | **s_attachments_refusal_reason** | **String** | The reason of refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] |
@@ -22,6 +23,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzsignsignatureSignV1Request.new(
   fki_ezsignsigningreason_id: 194,
   fki_font_id: 1,
+  d_ezsignsignature_creditcardamount: 100.00,
   s_value: null,
   e_attachments_confirmation_decision: null,
   s_attachments_refusal_reason: null,

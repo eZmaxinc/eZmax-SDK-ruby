@@ -7,6 +7,7 @@
 | **pki_usergroup_id** | **Integer** | The unique ID of the Usergroup |  |
 | **s_usergroup_name_x** | **String** | The Name of the Usergroup in the language of the requester |  |
 | **i_count_user** | **Integer** | Number of users in group |  |
+| **i_count_inactiveuser** | **Integer** | Number of inactive users in group |  |
 
 ## Example
 
@@ -16,7 +17,8 @@ require 'Ezmaxapi'
 instance = EzmaxApi::UsergroupListElement.new(
   pki_usergroup_id: 2,
   s_usergroup_name_x: Administration,
-  i_count_user: 15
+  i_count_user: 15,
+  i_count_inactiveuser: 15
 )
 ```
 

@@ -13,6 +13,7 @@
 | **s_currency_description_x** | **String** | The description of the Currency in the language of the requester | [optional] |
 | **d_ezsignsignature_creditcardamount** | **String** | The amount of the Creditcard signature | [optional] |
 | **s_ezsignsignature_creditcardamountdescription** | **String** | The description of the Creditcard signature | [optional] |
+| **b_ezsignsignature_creditcardcustomamount** | **Boolean** | Whether we can enter a custom amount while signing an Ezsignsignature &#39;Creditcard&#39; or not | [optional] |
 | **s_ezsignsigningreason_description_x** | **String** | The description of the Ezsignsigningreason in the language of the requester | [optional] |
 | **i_ezsignpage_pagenumber** | **Integer** | The page number in the Ezsigndocument |  |
 | **i_ezsignsignature_x** | **Integer** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. |  |
@@ -22,6 +23,8 @@
 | **i_ezsignsignature_step** | **Integer** | The step when the Ezsignsigner will be invited to sign |  |
 | **i_ezsignsignature_stepadjusted** | **Integer** | The step when the Ezsignsigner will be invited to sign | [optional] |
 | **e_ezsignsignature_type** | [**FieldEEzsignsignatureType**](FieldEEzsignsignatureType.md) |  |  |
+| **e_ezsignsignature_signaturepad** | [**FieldEEzsignsignatureSignaturepad**](FieldEEzsignsignatureSignaturepad.md) |  | [optional] |
+| **e_ezsignsignature_signaturepadrequired** | [**FieldEEzsignsignatureSignaturepadrequired**](FieldEEzsignsignatureSignaturepadrequired.md) |  | [optional] |
 | **t_ezsignsignature_tooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignsignature | [optional] |
 | **e_ezsignsignature_tooltipposition** | [**FieldEEzsignsignatureTooltipposition**](FieldEEzsignsignatureTooltipposition.md) |  | [optional] |
 | **e_ezsignsignature_font** | [**FieldEEzsignsignatureFont**](FieldEEzsignsignatureFont.md) |  | [optional] |
@@ -69,6 +72,7 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   s_currency_description_x: Canadian,
   d_ezsignsignature_creditcardamount: 100.00,
   s_ezsignsignature_creditcardamountdescription: Invoice #123,
+  b_ezsignsignature_creditcardcustomamount: false,
   s_ezsignsigningreason_description_x: I approve this document,
   i_ezsignpage_pagenumber: 1,
   i_ezsignsignature_x: 200,
@@ -78,6 +82,8 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   i_ezsignsignature_step: 1,
   i_ezsignsignature_stepadjusted: 1,
   e_ezsignsignature_type: null,
+  e_ezsignsignature_signaturepad: null,
+  e_ezsignsignature_signaturepadrequired: null,
   t_ezsignsignature_tooltip: Please sign here if you agree to the terms,
   e_ezsignsignature_tooltipposition: null,
   e_ezsignsignature_font: null,

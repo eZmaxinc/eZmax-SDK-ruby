@@ -69,7 +69,7 @@ instance = EzmaxApi::ActivesessionGetCurrentV1ResponseMPayload.new(
   e_user_ezsignprepaid: null,
   b_user_ezsigntrial: false,
   dt_user_ezsignprepaidexpiration: 2020-12-31,
-  dt_user_npsrequest: 2020-12-31 23:59:59,
+  dt_user_npsrequest: 2020-12-31,
   a_pki_permission_id: null,
   obj_user_real: null,
   obj_user_cloned: null,

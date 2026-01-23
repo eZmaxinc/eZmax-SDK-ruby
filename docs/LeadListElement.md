@@ -11,6 +11,7 @@
 | **dt_lead_expiration** | **String** | The expiration of the Lead |  |
 | **b_lead_isactive** | **Boolean** | Whether the lead is active or not |  |
 | **s_lead_code** | **String** | The code of the Lead |  |
+| **s_lead_contacts** | **String** | The contacts&#39; name of the Lead | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = EzmaxApi::LeadListElement.new(
   e_lead_status: null,
   dt_lead_expiration: 2020-12-31,
   b_lead_isactive: true,
-  s_lead_code: Recommandation de clients
+  s_lead_code: Recommandation de clients,
+  s_lead_contacts: Jane Doe
 )
 ```
 

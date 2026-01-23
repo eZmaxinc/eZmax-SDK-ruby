@@ -16,6 +16,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument |
 | [**ezsigndocument_edit_ezsignannotations_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignannotations_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations |
 | [**ezsigndocument_edit_ezsignformfieldgroups_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignformfieldgroups_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
+| [**ezsigndocument_edit_ezsignformfieldgroups_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignformfieldgroups_v2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups |
 | [**ezsigndocument_edit_ezsignsignatures_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocument_edit_ezsignsignatures_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures |
 | [**ezsigndocument_edit_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_object_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument |
@@ -24,6 +25,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_flatten_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
 | [**ezsigndocument_get_actionable_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocument_get_actionable_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
+| [**ezsigndocument_get_actionable_elements_v3**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocument_get_attachments_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_attachments_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument&#39;s Attachments |
 | [**ezsigndocument_get_completed_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
 | [**ezsigndocument_get_completed_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument |
@@ -505,7 +507,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
-ezsigndocument_create_object_v2_request = EzmaxApi::EzsigndocumentCreateObjectV2Request.new({a_obj_ezsigndocument: [EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', dt_ezsigndocument_duedate: '2020-12-31 23:59:59', s_ezsigndocument_name: 'Contract #123'})]}) # EzsigndocumentCreateObjectV2Request | 
+ezsigndocument_create_object_v2_request = EzmaxApi::EzsigndocumentCreateObjectV2Request.new({a_obj_ezsigndocument: [EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', s_ezsigndocument_name: 'Contract #123'})]}) # EzsigndocumentCreateObjectV2Request | 
 
 begin
   # Create a new Ezsigndocument
@@ -576,7 +578,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
-ezsigndocument_create_object_v3_request = EzmaxApi::EzsigndocumentCreateObjectV3Request.new({a_obj_ezsigndocument: [EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', dt_ezsigndocument_duedate: '2020-12-31 23:59:59', s_ezsigndocument_name: 'Contract #123'})]}) # EzsigndocumentCreateObjectV3Request | 
+ezsigndocument_create_object_v3_request = EzmaxApi::EzsigndocumentCreateObjectV3Request.new({a_obj_ezsigndocument: [EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', s_ezsigndocument_name: 'Contract #123'})]}) # EzsigndocumentCreateObjectV3Request | 
 
 begin
   # Create a new Ezsigndocument
@@ -915,6 +917,79 @@ end
 - **Accept**: application/json
 
 
+## ezsigndocument_edit_ezsignformfieldgroups_v2
+
+> <EzsigndocumentEditEzsignformfieldgroupsV2Response> ezsigndocument_edit_ezsignformfieldgroups_v2(pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request)
+
+Edit multiple Ezsignformfieldgroups
+
+Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+ezsigndocument_edit_ezsignformfieldgroups_v2_request = EzmaxApi::EzsigndocumentEditEzsignformfieldgroupsV2Request.new({a_obj_ezsignformfieldgroup: [EzmaxApi::EzsignformfieldgroupRequestCompound.new({fki_ezsigndocument_id: 97, e_ezsignformfieldgroup_type: EzmaxApi::FieldEEzsignformfieldgroupType::TEXT, s_ezsignformfieldgroup_label: 'Allergies', i_ezsignformfieldgroup_step: 1, i_ezsignformfieldgroup_filledmin: 1, i_ezsignformfieldgroup_filledmax: 2, b_ezsignformfieldgroup_readonly: false, a_obj_ezsignformfieldgroupsigner: [EzmaxApi::EzsignformfieldgroupsignerRequestCompound.new({fki_ezsignfoldersignerassociation_id: 20})], a_obj_ezsignformfield: [EzmaxApi::EzsignformfieldRequestCompound.new({i_ezsignpage_pagenumber: 1, s_ezsignformfield_label: 'Peanuts', i_ezsignformfield_x: 200, i_ezsignformfield_y: 300, i_ezsignformfield_width: 102, i_ezsignformfield_height: 22})]})]}) # EzsigndocumentEditEzsignformfieldgroupsV2Request | 
+
+begin
+  # Edit multiple Ezsignformfieldgroups
+  result = api_instance.ezsigndocument_edit_ezsignformfieldgroups_v2(pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignformfieldgroups_v2: #{e}"
+end
+```
+
+#### Using the ezsigndocument_edit_ezsignformfieldgroups_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentEditEzsignformfieldgroupsV2Response>, Integer, Hash)> ezsigndocument_edit_ezsignformfieldgroups_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request)
+
+```ruby
+begin
+  # Edit multiple Ezsignformfieldgroups
+  data, status_code, headers = api_instance.ezsigndocument_edit_ezsignformfieldgroups_v2_with_http_info(pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentEditEzsignformfieldgroupsV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignformfieldgroups_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **ezsigndocument_edit_ezsignformfieldgroups_v2_request** | [**EzsigndocumentEditEzsignformfieldgroupsV2Request**](EzsigndocumentEditEzsignformfieldgroupsV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigndocumentEditEzsignformfieldgroupsV2Response**](EzsigndocumentEditEzsignformfieldgroupsV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsigndocument_edit_ezsignsignatures_v1
 
 > <EzsigndocumentEditEzsignsignaturesV1Response> ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request)
@@ -1084,7 +1159,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
 pki_ezsigndocument_id = 56 # Integer | 
-ezsigndocument_edit_object_v1_request = EzmaxApi::EzsigndocumentEditObjectV1Request.new({obj_ezsigndocument: EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', dt_ezsigndocument_duedate: '2020-12-31 23:59:59', s_ezsigndocument_name: 'Contract #123'})}) # EzsigndocumentEditObjectV1Request | 
+ezsigndocument_edit_object_v1_request = EzmaxApi::EzsigndocumentEditObjectV1Request.new({obj_ezsigndocument: EzmaxApi::EzsigndocumentRequestCompound.new({fki_ezsignfolder_id: 33, fki_language_id: 2, e_ezsigndocument_source: 'Base64', s_ezsigndocument_name: 'Contract #123'})}) # EzsigndocumentEditObjectV1Request | 
 
 begin
   # Edit an existing Ezsigndocument
@@ -1484,6 +1559,77 @@ end
 ### Return type
 
 [**EzsigndocumentGetActionableElementsV2Response**](EzsigndocumentGetActionableElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocument_get_actionable_elements_v3
+
+> <EzsigndocumentGetActionableElementsV3Response> ezsigndocument_get_actionable_elements_v3(pki_ezsigndocument_id)
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+
+begin
+  # Retrieve actionable elements for the Ezsigndocument
+  result = api_instance.ezsigndocument_get_actionable_elements_v3(pki_ezsigndocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_v3: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_actionable_elements_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetActionableElementsV3Response>, Integer, Hash)> ezsigndocument_get_actionable_elements_v3_with_http_info(pki_ezsigndocument_id)
+
+```ruby
+begin
+  # Retrieve actionable elements for the Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_actionable_elements_v3_with_http_info(pki_ezsigndocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetActionableElementsV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigndocumentGetActionableElementsV3Response**](EzsigndocumentGetActionableElementsV3Response.md)
 
 ### Authorization
 

@@ -13,6 +13,7 @@
 | **s_user_loginname** | **String** | The login name of the User. | [optional] |
 | **s_email_address** | **String** | The email address. | [optional] |
 | **s_usergroup_name_x** | **String** | The Name of the Usergroup in the language of the requester |  |
+| **b_user_isactive** | **Boolean** | Whether the User is active or not | [optional] |
 | **s_usergroupexternal_name** | **String** | The name of the Usergroupexternal | [optional] |
 
 ## Example
@@ -30,6 +31,7 @@ instance = EzmaxApi::UsergroupmembershipResponse.new(
   s_user_loginname: JohnDoe,
   s_email_address: email@example.com,
   s_usergroup_name_x: Administration,
+  b_user_isactive: true,
   s_usergroupexternal_name: Administrators
 )
 ```

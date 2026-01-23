@@ -9,11 +9,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignsignature_create_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_create_object_v4**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v4) | **POST** /4/object/ezsignsignature | Create a new Ezsignsignature |
 | [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature |
-| [**ezsignsignature_edit_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignature_edit_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v3) | **PUT** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature |
 | [**ezsignsignature_get_ezsignsignatureattachment_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatureattachment_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature&#39;s Ezsignsignatureattachments |
 | [**ezsignsignature_get_ezsignsignatures_automatic_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures |
-| [**ezsignsignature_get_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignature_get_object_v4**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v4) | **GET** /4/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature |
 | [**ezsignsignature_sign_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_sign_v1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature |
 
@@ -373,79 +371,6 @@ end
 - **Accept**: application/json
 
 
-## ezsignsignature_edit_object_v2
-
-> <EzsignsignatureEditObjectV2Response> ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
-
-Edit an existing Ezsignsignature
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | 
-ezsignsignature_edit_object_v2_request = EzmaxApi::EzsignsignatureEditObjectV2Request.new({obj_ezsignsignature: EzmaxApi::EzsignsignatureRequestCompoundV2.new({fki_ezsignfoldersignerassociation_id: 20, i_ezsignpage_pagenumber: 1, i_ezsignsignature_x: 200, i_ezsignsignature_y: 300, i_ezsignsignature_step: 1, e_ezsignsignature_type: EzmaxApi::FieldEEzsignsignatureType::ACKNOWLEDGEMENT, fki_ezsigndocument_id: 97})}) # EzsignsignatureEditObjectV2Request | 
-
-begin
-  # Edit an existing Ezsignsignature
-  result = api_instance.ezsignsignature_edit_object_v2(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2: #{e}"
-end
-```
-
-#### Using the ezsignsignature_edit_object_v2_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignsignatureEditObjectV2Response>, Integer, Hash)> ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
-
-```ruby
-begin
-  # Edit an existing Ezsignsignature
-  data, status_code, headers = api_instance.ezsignsignature_edit_object_v2_with_http_info(pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignsignatureEditObjectV2Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** |  |  |
-| **ezsignsignature_edit_object_v2_request** | [**EzsignsignatureEditObjectV2Request**](EzsignsignatureEditObjectV2Request.md) |  |  |
-
-### Return type
-
-[**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## ezsignsignature_edit_object_v3
 
 > <EzsignsignatureEditObjectV3Response> ezsignsignature_edit_object_v3(pki_ezsignsignature_id, ezsignsignature_edit_object_v3_request)
@@ -645,77 +570,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**EzsignsignatureGetEzsignsignaturesAutomaticV1Response**](EzsignsignatureGetEzsignsignaturesAutomaticV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsignsignature_get_object_v3
-
-> <EzsignsignatureGetObjectV3Response> ezsignsignature_get_object_v3(pki_ezsignsignature_id)
-
-Retrieve an existing Ezsignsignature
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectEzsignsignatureApi.new
-pki_ezsignsignature_id = 56 # Integer | 
-
-begin
-  # Retrieve an existing Ezsignsignature
-  result = api_instance.ezsignsignature_get_object_v3(pki_ezsignsignature_id)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v3: #{e}"
-end
-```
-
-#### Using the ezsignsignature_get_object_v3_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EzsignsignatureGetObjectV3Response>, Integer, Hash)> ezsignsignature_get_object_v3_with_http_info(pki_ezsignsignature_id)
-
-```ruby
-begin
-  # Retrieve an existing Ezsignsignature
-  data, status_code, headers = api_instance.ezsignsignature_get_object_v3_with_http_info(pki_ezsignsignature_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EzsignsignatureGetObjectV3Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v3_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_ezsignsignature_id** | **Integer** |  |  |
-
-### Return type
-
-[**EzsignsignatureGetObjectV3Response**](EzsignsignatureGetObjectV3Response.md)
 
 ### Authorization
 

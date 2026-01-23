@@ -26,7 +26,7 @@ instance = EzmaxApi::OtherincomeListElement.new(
   s_otherincometype_description_x: Evaluation,
   s_otherincome_description: 610 Daniel-Johnson Blvd.,
   e_otherincome_remunerationtype: null,
-  d_otherincome_remunerationsubtotal: 400,
+  d_otherincome_remunerationsubtotal: 400.00,
   d_otherincome_remunerationtaxes: 59.90,
   d_otherincome_remunerationtotal: 459.90,
   dt_otherincome_paid: 2020-12-31,

@@ -7,6 +7,8 @@
 | **pki_systemconfiguration_id** | **Integer** | The unique ID of the Systemconfiguration |  |
 | **fki_systemconfigurationtype_id** | **Integer** | The unique ID of the Systemconfigurationtype |  |
 | **fki_branding_id** | **Integer** | The unique ID of the Branding | [optional] |
+| **fki_timezone_id_default** | **Integer** | The unique ID of the Timezone |  |
+| **s_timezone_name_default** | **String** | The description of the Timezone |  |
 | **s_systemconfigurationtype_description_x** | **String** | The description of the Systemconfigurationtype in the language of the requester |  |
 | **e_systemconfiguration_newexternaluseraction** | [**FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  |  |
 | **e_systemconfiguration_language1** | [**FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  |  |
@@ -21,6 +23,7 @@
 | **dt_systemconfiguration_readonlyexpirationstart** | **String** | The start date where the system will be in read only | [optional] |
 | **dt_systemconfiguration_readonlyexpirationend** | **String** | The end date where the system will be in read only | [optional] |
 | **obj_branding** | [**CustomBrandingResponse**](CustomBrandingResponse.md) |  | [optional] |
+| **i_systemconfiguration_ezsignreminderhoursend** | **Integer** | The hour we will send the eZsign reminders | [optional] |
 
 ## Example
 
@@ -31,6 +34,8 @@ instance = EzmaxApi::SystemconfigurationResponse.new(
   pki_systemconfiguration_id: 1,
   fki_systemconfigurationtype_id: 28,
   fki_branding_id: 78,
+  fki_timezone_id_default: 247,
+  s_timezone_name_default: Default,
   s_systemconfigurationtype_description_x: eZsign (Pro),
   e_systemconfiguration_newexternaluseraction: null,
   e_systemconfiguration_language1: null,
@@ -44,7 +49,8 @@ instance = EzmaxApi::SystemconfigurationResponse.new(
   b_systemconfiguration_sspr: true,
   dt_systemconfiguration_readonlyexpirationstart: 2020-12-31,
   dt_systemconfiguration_readonlyexpirationend: 2021-12-31,
-  obj_branding: null
+  obj_branding: null,
+  i_systemconfiguration_ezsignreminderhoursend: 1
 )
 ```
 

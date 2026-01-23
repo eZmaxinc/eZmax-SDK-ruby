@@ -8,6 +8,7 @@
 | **fki_creditcarddetail_id** | **Integer** | The unique ID of the Creditcarddetail |  |
 | **fki_creditcardtype_id** | **Integer** | The unique ID of the Creditcardtype |  |
 | **b_creditcardclientrelation_isdefault** | **Boolean** | Whether if it&#39;s the creditcardclient is the default one |  |
+| **b_creditcardclient_legacy** | **Boolean** | Whether the Creditcardclient is legacy or not |  |
 | **s_creditcardclient_description** | **String** | The description of the Creditcardclient |  |
 | **b_creditcardclient_allowedcompanypayment** | **Boolean** | Whether if it&#39;s an allowedagencypayment |  |
 | **b_creditcardclient_allowedtranquillit** | **Boolean** | Whether if it&#39;s an allowedtranquillit |  |
@@ -25,6 +26,7 @@ instance = EzmaxApi::CreditcardclientListElement.new(
   fki_creditcarddetail_id: 53,
   fki_creditcardtype_id: 2,
   b_creditcardclientrelation_isdefault: true,
+  b_creditcardclient_legacy: false,
   s_creditcardclient_description: Visa,
   b_creditcardclient_allowedcompanypayment: true,
   b_creditcardclient_allowedtranquillit: true,
