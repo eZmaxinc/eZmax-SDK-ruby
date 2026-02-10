@@ -101,7 +101,6 @@ module EzmaxApi
     # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_batch_download_v1_request [EzsignfolderBatchDownloadV1Request] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :accept Test csharp
     # @return [File]
     def ezsignfolder_batch_download_v1(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts = {})
       data, _status_code, _headers = ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts)
@@ -112,7 +111,6 @@ module EzmaxApi
     # @param pki_ezsignfolder_id [Integer] 
     # @param ezsignfolder_batch_download_v1_request [EzsignfolderBatchDownloadV1Request] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :accept Test csharp
     # @return [Array<(File, Integer, Hash)>] File data, response status code and response headers
     def ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts = {})
       if @api_client.config.debugging
@@ -130,10 +128,6 @@ module EzmaxApi
       if @api_client.config.client_side_validation && ezsignfolder_batch_download_v1_request.nil?
         fail ArgumentError, "Missing the required parameter 'ezsignfolder_batch_download_v1_request' when calling ObjectEzsignfolderApi.ezsignfolder_batch_download_v1"
       end
-      allowable_values = ["application/json", "application/zip", "application/pdf"]
-      if @api_client.config.client_side_validation && opts[:'accept'] && !allowable_values.include?(opts[:'accept'])
-        fail ArgumentError, "invalid value for \"accept\", must be one of #{allowable_values}"
-      end
       # resource path
       local_var_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload'.sub('{' + 'pkiEzsignfolderID' + '}', CGI.escape(pki_ezsignfolder_id.to_s))
 
@@ -149,7 +143,6 @@ module EzmaxApi
       if !content_type.nil?
           header_params['Content-Type'] = content_type
       end
-      header_params[:'Accept'] = opts[:'accept'] if !opts[:'accept'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
