@@ -116,7 +116,7 @@ end
 
 ## ezsignfolder_batch_download_v1
 
-> File ezsignfolder_batch_download_v1(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request)
+> File ezsignfolder_batch_download_v1(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts)
 
 Download multiples files from an Ezsignfolder
 
@@ -136,10 +136,13 @@ end
 api_instance = EzmaxApi::ObjectEzsignfolderApi.new
 pki_ezsignfolder_id = 56 # Integer | 
 ezsignfolder_batch_download_v1_request = EzmaxApi::EzsignfolderBatchDownloadV1Request.new({a_pki_ezsigndocument_id: [97], a_e_document_type: ['Signed']}) # EzsignfolderBatchDownloadV1Request | 
+opts = {
+  accept: 'application/json' # String | Test csharp
+}
 
 begin
   # Download multiples files from an Ezsignfolder
-  result = api_instance.ezsignfolder_batch_download_v1(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request)
+  result = api_instance.ezsignfolder_batch_download_v1(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts)
   p result
 rescue EzmaxApi::ApiError => e
   puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_batch_download_v1: #{e}"
@@ -150,12 +153,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(File, Integer, Hash)> ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request)
+> <Array(File, Integer, Hash)> ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts)
 
 ```ruby
 begin
   # Download multiples files from an Ezsignfolder
-  data, status_code, headers = api_instance.ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request)
+  data, status_code, headers = api_instance.ezsignfolder_batch_download_v1_with_http_info(pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => File
@@ -170,6 +173,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignfolder_id** | **Integer** |  |  |
 | **ezsignfolder_batch_download_v1_request** | [**EzsignfolderBatchDownloadV1Request**](EzsignfolderBatchDownloadV1Request.md) |  |  |
+| **accept** | **String** | Test csharp | [optional] |
 
 ### Return type
 

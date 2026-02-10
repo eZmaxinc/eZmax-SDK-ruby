@@ -19,6 +19,7 @@
 | **b_systemconfiguration_ezsignpersonnal** | **Boolean** | Whether if we allow the creation of personal files in eZsign |  |
 | **b_systemconfiguration_hascreditcardmerchant** | **Boolean** | Whether there is a creditcard merchant configured or not | [optional] |
 | **b_systemconfiguration_isdisposalactive** | **Boolean** | Whether is Disposal processus is active or not | [optional] |
+| **b_systemconfiguration_allowcomplexcreditcardsignature** | **Boolean** | Whether is the system allows to have a complex creditcard signature | [optional] |
 | **b_systemconfiguration_sspr** | **Boolean** | Whether if we allow SSPR |  |
 | **dt_systemconfiguration_readonlyexpirationstart** | **String** | The start date where the system will be in read only | [optional] |
 | **dt_systemconfiguration_readonlyexpirationend** | **String** | The end date where the system will be in read only | [optional] |
@@ -46,6 +47,7 @@ instance = EzmaxApi::SystemconfigurationResponseCompound.new(
   b_systemconfiguration_ezsignpersonnal: true,
   b_systemconfiguration_hascreditcardmerchant: null,
   b_systemconfiguration_isdisposalactive: null,
+  b_systemconfiguration_allowcomplexcreditcardsignature: null,
   b_systemconfiguration_sspr: true,
   dt_systemconfiguration_readonlyexpirationstart: 2020-12-31,
   dt_systemconfiguration_readonlyexpirationend: 2021-12-31,
