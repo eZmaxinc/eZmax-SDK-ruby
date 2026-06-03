@@ -35,7 +35,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectEzdoctemplatedocumentApi.new
-ezdoctemplatedocument_create_object_v1_request = EzmaxApi::EzdoctemplatedocumentCreateObjectV1Request.new({a_obj_ezdoctemplatedocument: [EzmaxApi::EzdoctemplatedocumentRequestCompound.new({fki_language_id: 2, fki_ezdoctemplatetype_id: 7, fki_ezdoctemplatefieldtypecategory_id: 4, b_ezdoctemplatedocument_isactive: true, obj_ezdoctemplatedocument_name: EzmaxApi::MultilingualEzdoctemplatedocumentName.new})]}) # EzdoctemplatedocumentCreateObjectV1Request | 
+ezdoctemplatedocument_create_object_v1_request = EzmaxApi::EzdoctemplatedocumentCreateObjectV1Request.new({a_obj_ezdoctemplatedocument: [EzmaxApi::EzdoctemplatedocumentRequestCompound.new({fki_language_id: 2, fki_ezdoctemplatetype_id: 7, b_ezdoctemplatedocument_isactive: true, obj_ezdoctemplatedocument_name: EzmaxApi::MultilingualEzdoctemplatedocumentName.new})]}) # EzdoctemplatedocumentCreateObjectV1Request | 
 
 begin
   # Create a new Ezdoctemplatedocument
@@ -182,7 +182,7 @@ end
 
 api_instance = EzmaxApi::ObjectEzdoctemplatedocumentApi.new
 pki_ezdoctemplatedocument_id = 56 # Integer | The unique ID of the Ezdoctemplatedocument
-ezdoctemplatedocument_edit_object_v1_request = EzmaxApi::EzdoctemplatedocumentEditObjectV1Request.new({obj_ezdoctemplatedocument: EzmaxApi::EzdoctemplatedocumentRequestCompound.new({fki_language_id: 2, fki_ezdoctemplatetype_id: 7, fki_ezdoctemplatefieldtypecategory_id: 4, b_ezdoctemplatedocument_isactive: true, obj_ezdoctemplatedocument_name: EzmaxApi::MultilingualEzdoctemplatedocumentName.new})}) # EzdoctemplatedocumentEditObjectV1Request | 
+ezdoctemplatedocument_edit_object_v1_request = EzmaxApi::EzdoctemplatedocumentEditObjectV1Request.new({obj_ezdoctemplatedocument: EzmaxApi::EzdoctemplatedocumentRequestCompound.new({fki_language_id: 2, fki_ezdoctemplatetype_id: 7, b_ezdoctemplatedocument_isactive: true, obj_ezdoctemplatedocument_name: EzmaxApi::MultilingualEzdoctemplatedocumentName.new})}) # EzdoctemplatedocumentEditObjectV1Request | 
 
 begin
   # Edit an existing Ezdoctemplatedocument

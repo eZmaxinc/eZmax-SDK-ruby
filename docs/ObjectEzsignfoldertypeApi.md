@@ -5,7 +5,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**ezsignfoldertype_create_object_v3**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_create_object_v3) | **POST** /3/object/ezsignfoldertype | Create a new Ezsignfoldertype |
+| [**ezsignfoldertype_create_object_v4**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_create_object_v4) | **POST** /4/object/ezsignfoldertype | Create a new Ezsignfoldertype |
 | [**ezsignfoldertype_edit_object_v3**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_edit_object_v3) | **PUT** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
+| [**ezsignfoldertype_edit_object_v4**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_edit_object_v4) | **PUT** /4/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype |
 | [**ezsignfoldertype_get_autocomplete_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs |
 | [**ezsignfoldertype_get_list_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list |
 | [**ezsignfoldertype_get_object_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype |
@@ -83,6 +85,77 @@ end
 - **Accept**: application/json
 
 
+## ezsignfoldertype_create_object_v4
+
+> <EzsignfoldertypeCreateObjectV4Response> ezsignfoldertype_create_object_v4(ezsignfoldertype_create_object_v4_request)
+
+Create a new Ezsignfoldertype
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
+ezsignfoldertype_create_object_v4_request = EzmaxApi::EzsignfoldertypeCreateObjectV4Request.new({a_obj_ezsignfoldertype: [EzmaxApi::EzsignfoldertypeRequestCompoundV4.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, a_fki_userlogintype_id: [2], e_ezsignfoldertype_signaturedatedisplay: EzmaxApi::FieldEEzsignfoldertypeSignaturedatedisplay::DEFAULT, e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, e_ezsignfoldertype_completion: EzmaxApi::FieldEEzsignfoldertypeCompletion::PER_EZSIGNDOCUMENT, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_isactive: true})]}) # EzsignfoldertypeCreateObjectV4Request | 
+
+begin
+  # Create a new Ezsignfoldertype
+  result = api_instance.ezsignfoldertype_create_object_v4(ezsignfoldertype_create_object_v4_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v4: #{e}"
+end
+```
+
+#### Using the ezsignfoldertype_create_object_v4_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldertypeCreateObjectV4Response>, Integer, Hash)> ezsignfoldertype_create_object_v4_with_http_info(ezsignfoldertype_create_object_v4_request)
+
+```ruby
+begin
+  # Create a new Ezsignfoldertype
+  data, status_code, headers = api_instance.ezsignfoldertype_create_object_v4_with_http_info(ezsignfoldertype_create_object_v4_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldertypeCreateObjectV4Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_create_object_v4_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **ezsignfoldertype_create_object_v4_request** | [**EzsignfoldertypeCreateObjectV4Request**](EzsignfoldertypeCreateObjectV4Request.md) |  |  |
+
+### Return type
+
+[**EzsignfoldertypeCreateObjectV4Response**](EzsignfoldertypeCreateObjectV4Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsignfoldertype_edit_object_v3
 
 > <EzsignfoldertypeEditObjectV3Response> ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request)
@@ -145,6 +218,79 @@ end
 ### Return type
 
 [**EzsignfoldertypeEditObjectV3Response**](EzsignfoldertypeEditObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsignfoldertype_edit_object_v4
+
+> <EzsignfoldertypeEditObjectV4Response> ezsignfoldertype_edit_object_v4(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v4_request)
+
+Edit an existing Ezsignfoldertype
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldertypeApi.new
+pki_ezsignfoldertype_id = 56 # Integer | 
+ezsignfoldertype_edit_object_v4_request = EzmaxApi::EzsignfoldertypeEditObjectV4Request.new({obj_ezsignfoldertype: EzmaxApi::EzsignfoldertypeRequestCompoundV4.new({obj_ezsignfoldertype_name: EzmaxApi::MultilingualEzsignfoldertypeName.new, fki_branding_id: 78, a_fki_userlogintype_id: [2], e_ezsignfoldertype_signaturedatedisplay: EzmaxApi::FieldEEzsignfoldertypeSignaturedatedisplay::DEFAULT, e_ezsignfoldertype_privacylevel: EzmaxApi::FieldEEzsignfoldertypePrivacylevel::USER, i_ezsignfoldertype_archivaldays: 30, e_ezsignfoldertype_disposal: EzmaxApi::FieldEEzsignfoldertypeDisposal::NO, e_ezsignfoldertype_completion: EzmaxApi::FieldEEzsignfoldertypeCompletion::PER_EZSIGNDOCUMENT, i_ezsignfoldertype_deadlinedays: 5, b_ezsignfoldertype_sendsignedtodocumentowner: false, b_ezsignfoldertype_sendsignedtofolderowner: false, b_ezsignfoldertype_sendsignedtocolleague: false, b_ezsignfoldertype_sendsummarytodocumentowner: false, b_ezsignfoldertype_sendsummarytofolderowner: false, b_ezsignfoldertype_sendsummarytocolleague: false, b_ezsignfoldertype_isactive: true})}) # EzsignfoldertypeEditObjectV4Request | 
+
+begin
+  # Edit an existing Ezsignfoldertype
+  result = api_instance.ezsignfoldertype_edit_object_v4(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v4_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_edit_object_v4: #{e}"
+end
+```
+
+#### Using the ezsignfoldertype_edit_object_v4_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldertypeEditObjectV4Response>, Integer, Hash)> ezsignfoldertype_edit_object_v4_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v4_request)
+
+```ruby
+begin
+  # Edit an existing Ezsignfoldertype
+  data, status_code, headers = api_instance.ezsignfoldertype_edit_object_v4_with_http_info(pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v4_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldertypeEditObjectV4Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_edit_object_v4_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfoldertype_id** | **Integer** |  |  |
+| **ezsignfoldertype_edit_object_v4_request** | [**EzsignfoldertypeEditObjectV4Request**](EzsignfoldertypeEditObjectV4Request.md) |  |  |
+
+### Return type
+
+[**EzsignfoldertypeEditObjectV4Response**](EzsignfoldertypeEditObjectV4Response.md)
 
 ### Authorization
 

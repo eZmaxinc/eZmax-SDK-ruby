@@ -29,6 +29,7 @@
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
 | **e_user_ezsignprepaid** | [**FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional] |
 | **b_user_ezsigntrial** | **Boolean** | Whether the User&#39;s eZsign subscription is a trial | [optional] |
+| **b_user_ezsigntemplaterolegrouping** | **Boolean** | Whether we group or not the Ezsigntemplate roles | [optional] |
 | **dt_user_ezsignprepaidexpiration** | **String** | The eZsign prepaid expiration date | [optional] |
 | **dt_user_npsrequest** | **String** | The date at which the NPS questionnaire will be show | [optional] |
 | **a_pki_permission_id** | **Array&lt;Integer&gt;** | An array of permissions granted to the user or api key |  |
@@ -36,6 +37,7 @@
 | **obj_user_cloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] |
 | **obj_apikey** | [**ActivesessionResponseCompoundApikey**](ActivesessionResponseCompoundApikey.md) |  | [optional] |
 | **a_e_module_internalname** | **Array&lt;String&gt;** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. |  |
+| **b_activesession_maillinglistrequest** | **Boolean** | If you need to ask which mailing lists this user wants to subscribe to | [optional] |
 
 ## Example
 
@@ -68,13 +70,15 @@ instance = EzmaxApi::ActivesessionResponseCompound.new(
   e_user_ezsignaccess: null,
   e_user_ezsignprepaid: null,
   b_user_ezsigntrial: false,
+  b_user_ezsigntemplaterolegrouping: true,
   dt_user_ezsignprepaidexpiration: 2020-12-31,
   dt_user_npsrequest: 2020-12-31,
   a_pki_permission_id: null,
   obj_user_real: null,
   obj_user_cloned: null,
   obj_apikey: null,
-  a_e_module_internalname: null
+  a_e_module_internalname: null,
+  b_activesession_maillinglistrequest: true
 )
 ```
 

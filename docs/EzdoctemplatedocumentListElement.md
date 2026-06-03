@@ -8,7 +8,7 @@
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **fki_ezdoctemplatetype_id** | **Integer** | The unique ID of the Ezdoctemplatetype |  |
-| **fki_ezdoctemplatefieldtypecategory_id** | **Integer** | The unique ID of the Ezdoctemplatefieldtypecategory |  |
+| **fki_ezdoctemplatefieldtypecategory_id** | **Integer** | The unique ID of the Ezdoctemplatefieldtypecategory | [optional] |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester | [optional] |
 | **s_ezdoctemplatetype_description_x** | **String** | The description of the Ezdoctemplatetype in the language of the requester | [optional] |
 | **s_ezdoctemplatefieldtypecategory_description_x** | **String** | The description of the Ezdoctemplatefieldtypecategory in the language of the requester | [optional] |

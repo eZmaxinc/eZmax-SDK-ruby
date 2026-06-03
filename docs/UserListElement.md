@@ -9,6 +9,7 @@
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_user_loginname** | **String** | The login name of the User. |  |
 | **b_user_isactive** | **Boolean** | Whether the User is active or not |  |
+| **b_user_suspended** | **Boolean** | Whether the User is suspended or not | [optional] |
 | **e_user_type** | [**FieldEUserType**](FieldEUserType.md) |  |  |
 | **e_user_origin** | [**FieldEUserOrigin**](FieldEUserOrigin.md) |  |  |
 | **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  |  |
@@ -27,6 +28,7 @@ instance = EzmaxApi::UserListElement.new(
   s_user_lastname: Doe,
   s_user_loginname: JohnDoe,
   b_user_isactive: true,
+  b_user_suspended: true,
   e_user_type: null,
   e_user_origin: null,
   e_user_ezsignaccess: null,

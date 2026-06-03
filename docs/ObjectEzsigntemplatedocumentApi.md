@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**ezsigntemplatedocument_create_object_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_create_object_v1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument |
 | [**ezsigntemplatedocument_download_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_download_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument&#39;s original file |
+| [**ezsigntemplatedocument_edit_ezsigntemplateannotations_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplateannotations_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateannotations | Edit multiple Ezsigntemplateannotations |
 | [**ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions |
 | [**ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups |
 | [**ezsigntemplatedocument_edit_ezsigntemplatesignatures_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplatesignatures_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures |
@@ -13,6 +14,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigntemplatedocument_edit_object_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_object_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument |
 | [**ezsigntemplatedocument_extract_text_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_extract_text_v1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText | Extract text from Ezsigntemplatedocument area |
 | [**ezsigntemplatedocument_flatten_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_flatten_v1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/flatten | Flatten |
+| [**ezsigntemplatedocument_get_ezsigntemplateannotations_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplateannotations_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateannotations | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateannotations |
 | [**ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpagerecognitions |
 | [**ezsigntemplatedocument_get_ezsigntemplatedocumentpages_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplatedocumentpages_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages |
 | [**ezsigntemplatedocument_get_ezsigntemplateformfieldgroups_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplateformfieldgroups_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups |
@@ -160,6 +162,79 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigntemplatedocument_edit_ezsigntemplateannotations_v1
+
+> <EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response> ezsigntemplatedocument_edit_ezsigntemplateannotations_v1(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request)
+
+Edit multiple Ezsigntemplateannotations
+
+Using this endpoint, you can edit multiple Ezsigntemplateannotations at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi.new
+pki_ezsigntemplatedocument_id = 56 # Integer | 
+ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request = EzmaxApi::EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request.new({a_obj_ezsigntemplateannotation: [EzmaxApi::EzsigntemplateannotationRequestCompound.new({fki_ezsigntemplatedocument_id: 133, e_ezsigntemplateannotation_horizontalalignment: EzmaxApi::FieldEEzsigntemplateannotationHorizontalalignment::CENTER, e_ezsigntemplateannotation_verticalalignment: EzmaxApi::FieldEEzsigntemplateannotationVerticalalignment::BOTTOM, e_ezsigntemplateannotation_type: EzmaxApi::FieldEEzsigntemplateannotationType::DROPDOWN, i_ezsigntemplateannotation_x: 17864, i_ezsigntemplateannotation_y: 23342, i_ezsigntemplateannotation_width: 51755, i_ezsigntemplateannotation_height: 58213, i_ezsigntemplatedocumentpage_pagenumber: 1, s_ezsigntemplateannotation_description: 'Name', s_ezsigntemplateannotation_defaulttext: 'John Doe', s_ezsigntemplateannotation_dropdownvalues: '{"Accepts","Refuses"}'})]}) # EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request | 
+
+begin
+  # Edit multiple Ezsigntemplateannotations
+  result = api_instance.ezsigntemplatedocument_edit_ezsigntemplateannotations_v1(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_edit_ezsigntemplateannotations_v1: #{e}"
+end
+```
+
+#### Using the ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response>, Integer, Hash)> ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_with_http_info(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request)
+
+```ruby
+begin
+  # Edit multiple Ezsigntemplateannotations
+  data, status_code, headers = api_instance.ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_with_http_info(pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatedocument_id** | **Integer** |  |  |
+| **ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request** | [**EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request**](EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request.md) |  |  |
+
+### Return type
+
+[**EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response**](EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -671,6 +746,77 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigntemplatedocument_get_ezsigntemplateannotations_v1
+
+> <EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response> ezsigntemplatedocument_get_ezsigntemplateannotations_v1(pki_ezsigntemplatedocument_id)
+
+Retrieve an existing Ezsigntemplatedocument's Ezsigntemplateannotations
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi.new
+pki_ezsigntemplatedocument_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigntemplatedocument's Ezsigntemplateannotations
+  result = api_instance.ezsigntemplatedocument_get_ezsigntemplateannotations_v1(pki_ezsigntemplatedocument_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_get_ezsigntemplateannotations_v1: #{e}"
+end
+```
+
+#### Using the ezsigntemplatedocument_get_ezsigntemplateannotations_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response>, Integer, Hash)> ezsigntemplatedocument_get_ezsigntemplateannotations_v1_with_http_info(pki_ezsigntemplatedocument_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigntemplatedocument's Ezsigntemplateannotations
+  data, status_code, headers = api_instance.ezsigntemplatedocument_get_ezsigntemplateannotations_v1_with_http_info(pki_ezsigntemplatedocument_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_get_ezsigntemplateannotations_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatedocument_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response**](EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

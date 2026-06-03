@@ -27,7 +27,7 @@ instance = EzmaxApi::CustomAttachmentImportIntoEDMRequest.new(
   fki_attachment_id: 1,
   fki_inscriptionchecklist_id: 191,
   s_attachment_url: https://www.example.com,
-  s_attachment_base64: [B@6815c5f2,
+  s_attachment_base64: [B@37cd92d6,
   s_attachment_name: Document.pdf,
   s_attachment_category: Inscription,
   e_attachment_privacy: null,

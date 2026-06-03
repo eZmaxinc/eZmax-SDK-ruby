@@ -16,6 +16,7 @@
 | **s_ezsigntemplateglobal_description** | **String** | The description of the Ezsigntemplate |  |
 | **obj_ezsigntemplateglobaldocument** | [**EzsigntemplateglobaldocumentResponse**](EzsigntemplateglobaldocumentResponse.md) |  | [optional] |
 | **a_obj_ezsigntemplateglobalsigner** | [**Array&lt;EzsigntemplateglobalsignerResponseCompound&gt;**](EzsigntemplateglobalsignerResponseCompound.md) |  |  |
+| **a_obj_ezsigntemplateglobalannotation** | [**Array&lt;EzsigntemplateglobalannotationResponseCompound&gt;**](EzsigntemplateglobalannotationResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -34,7 +35,8 @@ instance = EzmaxApi::EzsigntemplateglobalResponseCompound.new(
   s_ezsigntemplateglobal_code: DR-FR,
   s_ezsigntemplateglobal_description: Standard Contract,
   obj_ezsigntemplateglobaldocument: null,
-  a_obj_ezsigntemplateglobalsigner: null
+  a_obj_ezsigntemplateglobalsigner: null,
+  a_obj_ezsigntemplateglobalannotation: null
 )
 ```
 

@@ -6,6 +6,13 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. |  |
+| **fki_ezsignbulksend_id** | **Integer** | The unique ID of the Ezsignbulksend | [optional] |
+| **s_ezsignbulksend_description** | **String** | The description of the Ezsignbulksend | [optional] |
+| **fki_ezsignbulksendtransmission_id** | **Integer** | The unique ID of the Ezsignbulksendtransmission | [optional] |
+| **s_ezsignbulksendtransmission_description** | **String** | The description of the Ezsignbulksendtransmission | [optional] |
+| **fki_ezsigntemplatepublic_id** | **Integer** | The unique ID of the Ezsigntemplatepublic | [optional] |
+| **s_ezsigntemplatepublic_description** | **String** | The description of the Ezsigntemplatepublic | [optional] |
+| **e_ezsignfolder_source** | [**FieldEEzsignfolderSource**](FieldEEzsignfolderSource.md) |  |  |
 | **e_ezsignfoldertype_privacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |  |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester |  |
 | **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
@@ -29,6 +36,7 @@
 | **dt_ezsignfolder_archive** | **String** | The date and time at which the Ezsignfolder was archived. | [optional] |
 | **dt_ezsignfolder_dispose** | **String** | The date and time at which the Ezsignfolder was disposed. | [optional] |
 | **b_ezsignfolder_signer** | **Boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] |
+| **b_ezsignfolder_ismyown** | **Boolean** | Whether the Ezsignfolder is my own or not | [optional] |
 
 ## Example
 
@@ -38,6 +46,13 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzsignfolderListElement.new(
   pki_ezsignfolder_id: 33,
   fki_ezsignfoldertype_id: 5,
+  fki_ezsignbulksend_id: 8,
+  s_ezsignbulksend_description: Test eZsign Bulk Send,
+  fki_ezsignbulksendtransmission_id: 21,
+  s_ezsignbulksendtransmission_description: Test eZsign Bulk Send Transmission #1,
+  fki_ezsigntemplatepublic_id: 96,
+  s_ezsigntemplatepublic_description: Inscription form,
+  e_ezsignfolder_source: null,
   e_ezsignfoldertype_privacylevel: null,
   s_ezsignfoldertype_name_x: Default,
   s_ezsignfolder_description: Test eZsign Folder,
@@ -60,7 +75,8 @@ instance = EzmaxApi::EzsignfolderListElement.new(
   dt_ezsignfolder_close: 2020-12-31 23:59:59,
   dt_ezsignfolder_archive: 2020-12-31 23:59:59,
   dt_ezsignfolder_dispose: 2020-12-31 23:59:59,
-  b_ezsignfolder_signer: true
+  b_ezsignfolder_signer: true,
+  b_ezsignfolder_ismyown: true
 )
 ```
 

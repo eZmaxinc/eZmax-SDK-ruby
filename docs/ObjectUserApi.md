@@ -13,12 +13,14 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**user_get_autocomplete_v2**](ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs |
 | [**user_get_colleagues_v2**](ObjectUserApi.md#user_get_colleagues_v2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues |
 | [**user_get_effective_permissions_v1**](ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions |
+| [**user_get_ezmaxcustomeruser_v1**](ObjectUserApi.md#user_get_ezmaxcustomeruser_v1) | **GET** /1/object/user/{pkiUserID}/getEzmaxcustomeruser | Returns the Ezmaxcustomeruser for the User |
 | [**user_get_list_v1**](ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list |
 | [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User |
 | [**user_get_permissions_v1**](ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions |
 | [**user_get_subnets_v1**](ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets |
 | [**user_get_usergroupexternals_v1**](ObjectUserApi.md#user_get_usergroupexternals_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals |
 | [**user_get_usergroups_v1**](ObjectUserApi.md#user_get_usergroups_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups |
+| [**user_impersonate_v1**](ObjectUserApi.md#user_impersonate_v1) | **POST** /1/object/user/{pkiUserID}/impersonate | Impersonate the user |
 | [**user_send_password_reset_v1**](ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset |
 
 
@@ -671,6 +673,77 @@ end
 - **Accept**: application/json
 
 
+## user_get_ezmaxcustomeruser_v1
+
+> <UserGetEzmaxcustomeruserV1Response> user_get_ezmaxcustomeruser_v1(pki_user_id)
+
+Returns the Ezmaxcustomeruser for the User
+
+Returns the Ezmaxcustomeruser for the User
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+
+begin
+  # Returns the Ezmaxcustomeruser for the User
+  result = api_instance.user_get_ezmaxcustomeruser_v1(pki_user_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_ezmaxcustomeruser_v1: #{e}"
+end
+```
+
+#### Using the user_get_ezmaxcustomeruser_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserGetEzmaxcustomeruserV1Response>, Integer, Hash)> user_get_ezmaxcustomeruser_v1_with_http_info(pki_user_id)
+
+```ruby
+begin
+  # Returns the Ezmaxcustomeruser for the User
+  data, status_code, headers = api_instance.user_get_ezmaxcustomeruser_v1_with_http_info(pki_user_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserGetEzmaxcustomeruserV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_get_ezmaxcustomeruser_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+
+### Return type
+
+[**UserGetEzmaxcustomeruserV1Response**](UserGetEzmaxcustomeruserV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## user_get_list_v1
 
 > <UserGetListV1Response> user_get_list_v1(opts)
@@ -1096,6 +1169,79 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## user_impersonate_v1
+
+> <UserImpersonateV1Response> user_impersonate_v1(pki_user_id, user_impersonate_v1_request)
+
+Impersonate the user
+
+Using this endpoint, you can impersonate the user.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectUserApi.new
+pki_user_id = 56 # Integer | 
+user_impersonate_v1_request = EzmaxApi::UserImpersonateV1Request.new({fki_user_id: 70, i_expiration_minutes: 37}) # UserImpersonateV1Request | 
+
+begin
+  # Impersonate the user
+  result = api_instance.user_impersonate_v1(pki_user_id, user_impersonate_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_impersonate_v1: #{e}"
+end
+```
+
+#### Using the user_impersonate_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserImpersonateV1Response>, Integer, Hash)> user_impersonate_v1_with_http_info(pki_user_id, user_impersonate_v1_request)
+
+```ruby
+begin
+  # Impersonate the user
+  data, status_code, headers = api_instance.user_impersonate_v1_with_http_info(pki_user_id, user_impersonate_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserImpersonateV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectUserApi->user_impersonate_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_user_id** | **Integer** |  |  |
+| **user_impersonate_v1_request** | [**UserImpersonateV1Request**](UserImpersonateV1Request.md) |  |  |
+
+### Return type
+
+[**UserImpersonateV1Response**](UserImpersonateV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

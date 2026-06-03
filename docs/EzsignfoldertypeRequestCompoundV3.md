@@ -27,7 +27,7 @@
 | **e_ezsignfoldertype_privacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  |  |
 | **i_ezsignfoldertype_fontsizeannotation** | **Integer** | Font size for annotations | [optional] |
 | **i_ezsignfoldertype_fontsizeformfield** | **Integer** | Font size for form fields | [optional] |
-| **i_ezsignfoldertype_sendreminderfirstdays** | **Integer** | The number of days before the the first reminder sending | [optional] |
+| **i_ezsignfoldertype_sendreminderfirstdays** | **Integer** | The number of days before the first reminder sending | [optional] |
 | **i_ezsignfoldertype_sendreminderotherdays** | **Integer** | The number of days after the first reminder sending | [optional] |
 | **i_ezsignfoldertype_archivaldays** | **Integer** | The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype |  |
 | **e_ezsignfoldertype_disposal** | [**FieldEEzsignfoldertypeDisposal**](FieldEEzsignfoldertypeDisposal.md) |  |  |
@@ -43,6 +43,10 @@
 | **b_ezsignfoldertype_reassignezsignsigner** | **Boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] |
 | **b_ezsignfoldertype_reassignuser** | **Boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] |
 | **b_ezsignfoldertype_reassigngroup** | **Boolean** | Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself | [optional] |
+| **b_ezsignfoldertype_senddocumentmergetoemail** | **Boolean** | Whether we send the merged documents in the email to external recipient | [optional] |
+| **b_ezsignfoldertype_senddocumentmergetoezsignsigner** | **Boolean** | Whether we send the merged documents in the email to Ezsignsigner | [optional] |
+| **b_ezsignfoldertype_senddocumentmergetoreceivealldocument** | **Boolean** | Whether we send the merged documents in the email to user and Ezsignsigner who receive all documents. | [optional] |
+| **b_ezsignfoldertype_senddocumentmergetouser** | **Boolean** | Whether we send the merged documents in the email to User | [optional] |
 | **b_ezsignfoldertype_sendsignedtoezsignsigner** | **Boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] |
 | **b_ezsignfoldertype_sendsignedtouser** | **Boolean** | Whether we send an email to User who signed when document is completed | [optional] |
 | **b_ezsignfoldertype_sendattachmentezsignsigner** | **Boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] |
@@ -118,6 +122,10 @@ instance = EzmaxApi::EzsignfoldertypeRequestCompoundV3.new(
   b_ezsignfoldertype_reassignezsignsigner: true,
   b_ezsignfoldertype_reassignuser: true,
   b_ezsignfoldertype_reassigngroup: true,
+  b_ezsignfoldertype_senddocumentmergetoemail: false,
+  b_ezsignfoldertype_senddocumentmergetoezsignsigner: false,
+  b_ezsignfoldertype_senddocumentmergetoreceivealldocument: false,
+  b_ezsignfoldertype_senddocumentmergetouser: false,
   b_ezsignfoldertype_sendsignedtoezsignsigner: false,
   b_ezsignfoldertype_sendsignedtouser: false,
   b_ezsignfoldertype_sendattachmentezsignsigner: false,

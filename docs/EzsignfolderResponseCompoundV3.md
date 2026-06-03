@@ -18,7 +18,7 @@
 | **s_ezsignfolder_description** | **String** | The description of the Ezsignfolder |  |
 | **t_ezsignfolder_note** | **String** | Note about the Ezsignfolder | [optional] |
 | **b_ezsignfolder_isdisposable** | **Boolean** | If the Ezsigndocument can be disposed | [optional] |
-| **i_ezsignfolder_sendreminderfirstdays** | **Integer** | The number of days before the the first reminder sending | [optional] |
+| **i_ezsignfolder_sendreminderfirstdays** | **Integer** | The number of days before the first reminder sending | [optional] |
 | **i_ezsignfolder_sendreminderotherdays** | **Integer** | The number of days after the first reminder sending | [optional] |
 | **dt_ezsignfolder_delayedsenddate** | **String** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] |
 | **dt_ezsignfolder_duedate** | **String** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] |
@@ -26,6 +26,7 @@
 | **dt_ezsignfolder_scheduledarchive** | **String** | The scheduled date and time at which the Ezsignfolder should be archived. | [optional] |
 | **dt_ezsignfolder_scheduleddispose** | **String** | The scheduled date at which the Ezsignfolder should be Disposed. | [optional] |
 | **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | [optional] |
+| **i_ezsignfolder_stepcurrent** | **Integer** | The current step of the ezsignfolder when eEzsignfolderCompletion &#x3D; &#39;PerEzsignfolderStepSync&#39; | [optional] |
 | **dt_ezsignfolder_close** | **String** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional] |
 | **dt_ezsignfolder_archive** | **String** | The date and time at which the Ezsignfolder was archived. | [optional] |
 | **dt_ezsignfolder_dispose** | **String** | The date and time at which the Ezsignfolder was disposed. | [optional] |
@@ -64,6 +65,7 @@ instance = EzmaxApi::EzsignfolderResponseCompoundV3.new(
   dt_ezsignfolder_scheduledarchive: 2020-12-31 23:59:59,
   dt_ezsignfolder_scheduleddispose: 2020-12-31,
   e_ezsignfolder_step: null,
+  i_ezsignfolder_stepcurrent: 30,
   dt_ezsignfolder_close: 2020-12-31 23:59:59,
   dt_ezsignfolder_archive: 2020-12-31 23:59:59,
   dt_ezsignfolder_dispose: 2020-12-31 23:59:59,

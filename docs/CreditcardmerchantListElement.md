@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_creditcardmerchant_id** | **Integer** | The unique ID of the Creditcardmerchant |  |
-| **fki_bankaccount_id** | **Integer** | The unique ID of the Bankaccount |  |
+| **fki_bankaccount_id** | **Integer** | The unique ID of the Bankaccount | [optional] |
 | **fki_language_id** | **Integer** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | [optional] |
 | **b_creditcardmerchant_denyvisa** | **Boolean** | Whether if visa are denied |  |
 | **b_creditcardmerchant_denymastercard** | **Boolean** | Whether if mastercard are denied |  |

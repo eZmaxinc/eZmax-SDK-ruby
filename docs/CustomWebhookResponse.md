@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pki_webhook_id** | **Integer** | The unique ID of the Webhook |  |
+| **pki_webhook_id** | **Integer** | The unique ID of the Webhook | [optional] |
 | **fki_authenticationexternal_id** | **Integer** | The unique ID of the Authenticationexternal | [optional] |
 | **s_webhook_description** | **String** | The description of the Webhook |  |
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
@@ -20,13 +20,14 @@
 | **b_webhook_issigned** | **Boolean** | Whether the requests will be signed or not |  |
 | **b_webhook_skipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use |  |
 | **s_authenticationexternal_description** | **String** | The description of the Authenticationexternal | [optional] |
-| **obj_audit** | [**CommonAudit**](CommonAudit.md) |  |  |
+| **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 | **s_webhook_event** | **String** | The concatenated string to describe the Webhook event | [optional] |
 | **s_webhook_authentificationexternalerror** | **String** | Error message when token renewal failed or is not configured. Only if an Authenticationexternal is set. | [optional] |
 | **a_obj_webhookheader** | [**Array&lt;WebhookheaderResponseCompound&gt;**](WebhookheaderResponseCompound.md) |  | [optional] |
 | **pks_customer_code** | **String** | The customer code assigned to your account |  |
 | **b_webhook_test** | **Boolean** | Wheter the webhook received is a manual test or a real event |  |
 | **e_webhook_emittype** | **String** | Wheter the webhook received is a manual test or a real event | [optional] |
+| **fki_ezmaxpartnerproductstagewebhook_id** | **Integer** | The unique ID of the Ezmaxpartnerproductstagewebhook | [optional] |
 
 ## Example
 
@@ -56,7 +57,8 @@ instance = EzmaxApi::CustomWebhookResponse.new(
   a_obj_webhookheader: null,
   pks_customer_code: demo,
   b_webhook_test: null,
-  e_webhook_emittype: null
+  e_webhook_emittype: null,
+  fki_ezmaxpartnerproductstagewebhook_id: 182
 )
 ```
 

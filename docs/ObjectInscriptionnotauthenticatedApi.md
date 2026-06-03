@@ -4,12 +4,87 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated |
 | [**inscriptionnotauthenticated_get_communication_count_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_count_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount | Retrieve Communication count |
 | [**inscriptionnotauthenticated_get_communication_list_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_list_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptionnotauthenticated_get_communicationrecipients_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communicationrecipients_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated&#39;s Communicationrecipient |
 | [**inscriptionnotauthenticated_get_communicationsenders_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communicationsenders_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated&#39;s Communicationsender |
+| [**inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions |
 | [**inscriptionnotauthenticated_get_list_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_list_v1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list |
 | [**inscriptionnotauthenticated_import_into_edmv1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_import_into_edmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated |
+
+
+## inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1
+
+> <InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response> inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request)
+
+Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionnotauthenticatedApi.new
+pki_inscriptionnotauthenticated_id = 56 # Integer | 
+inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request = EzmaxApi::InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request.new({a_obj_inscriptionnotauthenticatedcondition: [EzmaxApi::CustomInscriptionnotauthenticatedconditionRequest.new({pki_inscriptionnotauthenticatedcondition_id: 16, dt_inscriptionnotauthenticatedcondition_completed: '2020-12-31'})]}) # InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request | 
+
+begin
+  # Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+  result = api_instance.inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1: #{e}"
+end
+```
+
+#### Using the inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response>, Integer, Hash)> inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_with_http_info(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request)
+
+```ruby
+begin
+  # Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+  data, status_code, headers = api_instance.inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_with_http_info(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptionnotauthenticated_id** | **Integer** |  |  |
+| **inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1_request** | [**InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request**](InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request.md) |  |  |
+
+### Return type
+
+[**InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response**](InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## inscriptionnotauthenticated_get_communication_count_v1
@@ -285,6 +360,77 @@ end
 ### Return type
 
 [**InscriptionnotauthenticatedGetCommunicationsendersV1Response**](InscriptionnotauthenticatedGetCommunicationsendersV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1
+
+> <InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response> inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1(pki_inscriptionnotauthenticated_id)
+
+Retrieve Inscriptionnotauthenticated conditions
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionnotauthenticatedApi.new
+pki_inscriptionnotauthenticated_id = 56 # Integer | 
+
+begin
+  # Retrieve Inscriptionnotauthenticated conditions
+  result = api_instance.inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1(pki_inscriptionnotauthenticated_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1: #{e}"
+end
+```
+
+#### Using the inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response>, Integer, Hash)> inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1_with_http_info(pki_inscriptionnotauthenticated_id)
+
+```ruby
+begin
+  # Retrieve Inscriptionnotauthenticated conditions
+  data, status_code, headers = api_instance.inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1_with_http_info(pki_inscriptionnotauthenticated_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptionnotauthenticated_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response**](InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response.md)
 
 ### Authorization
 

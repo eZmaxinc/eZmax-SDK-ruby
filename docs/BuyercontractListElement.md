@@ -11,6 +11,7 @@
 | **d_buyercontract_minimumprice** | **String** | The minimumprice of the Buyercontract |  |
 | **d_buyercontract_maximumprice** | **String** | The maximumprice of the Buyercontract |  |
 | **e_buyercontract_type** | [**FieldEBuyercontractType**](FieldEBuyercontractType.md) |  |  |
+| **s_buyercontract_contract** | **String** | The number of the Buyercontract | [optional] |
 | **dt_buyercontract_date** | **String** | The date of the Buyercontract |  |
 | **dt_buyercontract_expirationdate** | **String** | The expirationdate of the Buyercontract | [optional] |
 | **b_buyercontract_isactive** | **Boolean** | Whether the buyercontract is active or not |  |
@@ -30,6 +31,7 @@ instance = EzmaxApi::BuyercontractListElement.new(
   d_buyercontract_minimumprice: 200000.00,
   d_buyercontract_maximumprice: 250000.00,
   e_buyercontract_type: null,
+  s_buyercontract_contract: 12345,
   dt_buyercontract_date: 2020-12-31,
   dt_buyercontract_expirationdate: 2020-12-31,
   b_buyercontract_isactive: true,

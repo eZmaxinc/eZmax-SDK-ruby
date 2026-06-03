@@ -21,6 +21,7 @@
 | **e_ezsigntemplate_type** | [**FieldEEzsigntemplateType**](FieldEEzsigntemplateType.md) |  | [optional] |
 | **obj_ezsigntemplatedocument** | [**EzsigntemplatedocumentResponse**](EzsigntemplatedocumentResponse.md) |  | [optional] |
 | **a_obj_ezsigntemplatesigner** | [**Array&lt;EzsigntemplatesignerResponseCompound&gt;**](EzsigntemplatesignerResponseCompound.md) |  |  |
+| **a_obj_ezsigntemplateannotation** | [**Array&lt;EzsigntemplateannotationResponseCompound&gt;**](EzsigntemplateannotationResponseCompound.md) |  | [optional] |
 
 ## Example
 
@@ -44,7 +45,8 @@ instance = EzmaxApi::EzsigntemplateResponseCompound.new(
   b_ezsigntemplate_editallowed: null,
   e_ezsigntemplate_type: null,
   obj_ezsigntemplatedocument: null,
-  a_obj_ezsigntemplatesigner: null
+  a_obj_ezsigntemplatesigner: null,
+  a_obj_ezsigntemplateannotation: null
 )
 ```
 
