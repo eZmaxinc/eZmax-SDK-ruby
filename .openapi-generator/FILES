@@ -1829,10 +1829,7 @@ docs/ScimServiceProviderConfig.md
 docs/ScimServiceProviderConfigApi.md
 docs/ScimServiceProviderConfigBulk.md
 docs/ScimServiceProviderConfigChangePassword.md
-docs/ScimServiceProviderConfigEtag.md
 docs/ScimServiceProviderConfigFilter.md
-docs/ScimServiceProviderConfigPatch.md
-docs/ScimServiceProviderConfigSort.md
 docs/ScimUser.md
 docs/ScimUserList.md
 docs/ScimUsersApi.md
@@ -3970,10 +3967,7 @@ lib/Ezmaxapi/models/scim_group_member.rb
 lib/Ezmaxapi/models/scim_service_provider_config.rb
 lib/Ezmaxapi/models/scim_service_provider_config_bulk.rb
 lib/Ezmaxapi/models/scim_service_provider_config_change_password.rb
-lib/Ezmaxapi/models/scim_service_provider_config_etag.rb
 lib/Ezmaxapi/models/scim_service_provider_config_filter.rb
-lib/Ezmaxapi/models/scim_service_provider_config_patch.rb
-lib/Ezmaxapi/models/scim_service_provider_config_sort.rb
 lib/Ezmaxapi/models/scim_user.rb
 lib/Ezmaxapi/models/scim_user_list.rb
 lib/Ezmaxapi/models/secretquestion_autocomplete_element_response.rb

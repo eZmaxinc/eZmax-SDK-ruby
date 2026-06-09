@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_apikey_id** | **Integer** | The unique ID of the Apikey |  |
 | **fki_user_id** | **Integer** | The unique ID of the User |  |
+| **fki_ezmaxpartnerproductstage_id** | **Integer** | The unique ID of the Ezmaxpartnerproductstage | [optional] |
 | **obj_apikey_description** | [**MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  |  |
 | **obj_contact_name** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  |  |
 | **s_apikey_apikey** | **String** | The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [optional] |
@@ -22,6 +23,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::ApikeyResponse.new(
   pki_apikey_id: 99,
   fki_user_id: 70,
+  fki_ezmaxpartnerproductstage_id: 16,
   obj_apikey_description: null,
   obj_contact_name: null,
   s_apikey_apikey: null,
