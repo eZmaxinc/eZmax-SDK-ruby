@@ -25,6 +25,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigndocument_end_prematurely_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_end_prematurely_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely |
 | [**ezsigndocument_extract_text_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_extract_text_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area |
 | [**ezsigndocument_flatten_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten |
+| [**ezsigndocument_get_actionable_elements_for_signer_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_for_signer_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument |
 | [**ezsigndocument_get_actionable_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocument_get_actionable_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
 | [**ezsigndocument_get_actionable_elements_v3**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument |
@@ -1573,6 +1574,85 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocument_get_actionable_elements_for_signer_v1
+
+> <EzsigndocumentGetActionableElementsForSignerV1Response> ezsigndocument_get_actionable_elements_for_signer_v1(pki_ezsigndocument_id, e_signer_type, opts)
+
+Retrieve actionable elements of a user for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by a user at the current step in the process
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigndocumentApi.new
+pki_ezsigndocument_id = 56 # Integer | 
+e_signer_type = 'Ezsignsigner' # String | 
+opts = {
+  fki_ezsignsigner_id: 56, # Integer | 
+  fki_user_id: 56 # Integer | 
+}
+
+begin
+  # Retrieve actionable elements of a user for the Ezsigndocument
+  result = api_instance.ezsigndocument_get_actionable_elements_for_signer_v1(pki_ezsigndocument_id, e_signer_type, opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_for_signer_v1: #{e}"
+end
+```
+
+#### Using the ezsigndocument_get_actionable_elements_for_signer_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigndocumentGetActionableElementsForSignerV1Response>, Integer, Hash)> ezsigndocument_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsigndocument_id, e_signer_type, opts)
+
+```ruby
+begin
+  # Retrieve actionable elements of a user for the Ezsigndocument
+  data, status_code, headers = api_instance.ezsigndocument_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsigndocument_id, e_signer_type, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigndocumentGetActionableElementsForSignerV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_for_signer_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigndocument_id** | **Integer** |  |  |
+| **e_signer_type** | **String** |  |  |
+| **fki_ezsignsigner_id** | **Integer** |  | [optional] |
+| **fki_user_id** | **Integer** |  | [optional] |
+
+### Return type
+
+[**EzsigndocumentGetActionableElementsForSignerV1Response**](EzsigndocumentGetActionableElementsForSignerV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

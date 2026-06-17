@@ -15,6 +15,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfolder_duplicate_v1**](ObjectEzsignfolderApi.md#ezsignfolder_duplicate_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder |
 | [**ezsignfolder_edit_object_v3**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder |
 | [**ezsignfolder_end_prematurely_v1**](ObjectEzsignfolderApi.md#ezsignfolder_end_prematurely_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely |
+| [**ezsignfolder_get_actionable_elements_for_signer_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_for_signer_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder |
 | [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolder_get_actionable_elements_v2**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
 | [**ezsignfolder_get_actionable_elements_v3**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder |
@@ -832,6 +833,85 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsignfolder_get_actionable_elements_for_signer_v1
+
+> <EzsignfolderGetActionableElementsForSignerV1Response> ezsignfolder_get_actionable_elements_for_signer_v1(pki_ezsignfolder_id, e_signer_type, opts)
+
+Retrieve actionable elements of a user for the Ezsignfolder
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfolderApi.new
+pki_ezsignfolder_id = 56 # Integer | 
+e_signer_type = 'Ezsignsigner' # String | 
+opts = {
+  fki_ezsignsigner_id: 56, # Integer | 
+  fki_user_id: 56 # Integer | 
+}
+
+begin
+  # Retrieve actionable elements of a user for the Ezsignfolder
+  result = api_instance.ezsignfolder_get_actionable_elements_for_signer_v1(pki_ezsignfolder_id, e_signer_type, opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_actionable_elements_for_signer_v1: #{e}"
+end
+```
+
+#### Using the ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfolderGetActionableElementsForSignerV1Response>, Integer, Hash)> ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsignfolder_id, e_signer_type, opts)
+
+```ruby
+begin
+  # Retrieve actionable elements of a user for the Ezsignfolder
+  data, status_code, headers = api_instance.ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsignfolder_id, e_signer_type, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfolderGetActionableElementsForSignerV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfolderApi->ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfolder_id** | **Integer** |  |  |
+| **e_signer_type** | **String** |  |  |
+| **fki_ezsignsigner_id** | **Integer** |  | [optional] |
+| **fki_user_id** | **Integer** |  | [optional] |
+
+### Return type
+
+[**EzsignfolderGetActionableElementsForSignerV1Response**](EzsignfolderGetActionableElementsForSignerV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

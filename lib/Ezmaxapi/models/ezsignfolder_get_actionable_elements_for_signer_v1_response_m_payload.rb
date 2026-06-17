@@ -14,15 +14,17 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Request for POST /1/object/user/{pkiUserID}/impersonate
-  class UserImpersonateV1Request < ApiModelBase
-    # The number of minute before key is no longer active
-    attr_accessor :i_expiration_minutes
+  # Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner
+  class EzsignfolderGetActionableElementsForSignerV1ResponseMPayload < ApiModelBase
+    attr_accessor :a_obj_ezsignsignature
+
+    attr_accessor :a_obj_ezsignformfieldgroup
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'i_expiration_minutes' => :'iExpirationMinutes'
+        :'a_obj_ezsignsignature' => :'a_objEzsignsignature',
+        :'a_obj_ezsignformfieldgroup' => :'a_objEzsignformfieldgroup'
       }
     end
 
@@ -39,7 +41,8 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'i_expiration_minutes' => :'Integer'
+        :'a_obj_ezsignsignature' => :'Array<EzsignsignatureResponseCompound>',
+        :'a_obj_ezsignformfieldgroup' => :'Array<EzsignformfieldgroupResponseCompound>'
       }
     end
 
@@ -53,22 +56,32 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::UserImpersonateV1Request` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderGetActionableElementsForSignerV1ResponseMPayload` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::UserImpersonateV1Request`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderGetActionableElementsForSignerV1ResponseMPayload`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'i_expiration_minutes')
-        self.i_expiration_minutes = attributes[:'i_expiration_minutes']
+      if attributes.key?(:'a_obj_ezsignsignature')
+        if (value = attributes[:'a_obj_ezsignsignature']).is_a?(Array)
+          self.a_obj_ezsignsignature = value
+        end
       else
-        self.i_expiration_minutes = nil
+        self.a_obj_ezsignsignature = nil
+      end
+
+      if attributes.key?(:'a_obj_ezsignformfieldgroup')
+        if (value = attributes[:'a_obj_ezsignformfieldgroup']).is_a?(Array)
+          self.a_obj_ezsignformfieldgroup = value
+        end
+      else
+        self.a_obj_ezsignformfieldgroup = nil
       end
     end
 
@@ -77,16 +90,12 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @i_expiration_minutes.nil?
-        invalid_properties.push('invalid value for "i_expiration_minutes", i_expiration_minutes cannot be nil.')
+      if @a_obj_ezsignsignature.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignsignature", a_obj_ezsignsignature cannot be nil.')
       end
 
-      if @i_expiration_minutes > 180
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be smaller than or equal to 180.')
-      end
-
-      if @i_expiration_minutes < 1
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be greater than or equal to 1.')
+      if @a_obj_ezsignformfieldgroup.nil?
+        invalid_properties.push('invalid value for "a_obj_ezsignformfieldgroup", a_obj_ezsignformfieldgroup cannot be nil.')
       end
 
       invalid_properties
@@ -96,28 +105,29 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @i_expiration_minutes.nil?
-      return false if @i_expiration_minutes > 180
-      return false if @i_expiration_minutes < 1
+      return false if @a_obj_ezsignsignature.nil?
+      return false if @a_obj_ezsignformfieldgroup.nil?
       true
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] i_expiration_minutes Value to be assigned
-    def i_expiration_minutes=(i_expiration_minutes)
-      if i_expiration_minutes.nil?
-        fail ArgumentError, 'i_expiration_minutes cannot be nil'
+    # @param [Object] a_obj_ezsignsignature Value to be assigned
+    def a_obj_ezsignsignature=(a_obj_ezsignsignature)
+      if a_obj_ezsignsignature.nil?
+        fail ArgumentError, 'a_obj_ezsignsignature cannot be nil'
       end
 
-      if i_expiration_minutes > 180
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be smaller than or equal to 180.'
+      @a_obj_ezsignsignature = a_obj_ezsignsignature
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] a_obj_ezsignformfieldgroup Value to be assigned
+    def a_obj_ezsignformfieldgroup=(a_obj_ezsignformfieldgroup)
+      if a_obj_ezsignformfieldgroup.nil?
+        fail ArgumentError, 'a_obj_ezsignformfieldgroup cannot be nil'
       end
 
-      if i_expiration_minutes < 1
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be greater than or equal to 1.'
-      end
-
-      @i_expiration_minutes = i_expiration_minutes
+      @a_obj_ezsignformfieldgroup = a_obj_ezsignformfieldgroup
     end
 
     # Checks equality by comparing each attribute.
@@ -125,7 +135,8 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          i_expiration_minutes == o.i_expiration_minutes
+          a_obj_ezsignsignature == o.a_obj_ezsignsignature &&
+          a_obj_ezsignformfieldgroup == o.a_obj_ezsignformfieldgroup
     end
 
     # @see the `==` method
@@ -137,7 +148,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_expiration_minutes].hash
+      [a_obj_ezsignsignature, a_obj_ezsignformfieldgroup].hash
     end
 
     # Builds the object from hash

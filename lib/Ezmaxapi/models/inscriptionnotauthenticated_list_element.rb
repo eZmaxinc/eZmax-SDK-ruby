@@ -25,6 +25,12 @@ module EzmaxApi
     # The unique ID of the Inscriptiontype
     attr_accessor :fki_inscriptiontype_id
 
+    # The unique ID of the Buyercontract
+    attr_accessor :fki_buyercontract_id
+
+    # The number of the Buyercontract
+    attr_accessor :s_buyercontract_contract
+
     # The name of the Inscriptiontype in the language of the requester
     attr_accessor :s_inscriptiontype_name_x
 
@@ -35,6 +41,9 @@ module EzmaxApi
 
     # The mls of the Inscription
     attr_accessor :s_inscription_mls
+
+    # The sale contract number
+    attr_accessor :s_inscription_contract
 
     # The saleprice of the Inscription
     attr_accessor :d_inscription_saleprice
@@ -133,10 +142,13 @@ module EzmaxApi
         :'pki_inscription_id' => :'pkiInscriptionID',
         :'pki_inscriptionnotauthenticated_id' => :'pkiInscriptionnotauthenticatedID',
         :'fki_inscriptiontype_id' => :'fkiInscriptiontypeID',
+        :'fki_buyercontract_id' => :'fkiBuyercontractID',
+        :'s_buyercontract_contract' => :'sBuyercontractContract',
         :'s_inscriptiontype_name_x' => :'sInscriptiontypeNameX',
         :'e_inscription_step' => :'eInscriptionStep',
         :'s_inscription_civicend' => :'sInscriptionCivicend',
         :'s_inscription_mls' => :'sInscriptionMLS',
+        :'s_inscription_contract' => :'sInscriptionContract',
         :'d_inscription_saleprice' => :'dInscriptionSaleprice',
         :'d_inscription_rentprice' => :'dInscriptionRentprice',
         :'dt_inscription_date' => :'dtInscriptionDate',
@@ -179,10 +191,13 @@ module EzmaxApi
         :'pki_inscription_id' => :'Integer',
         :'pki_inscriptionnotauthenticated_id' => :'Integer',
         :'fki_inscriptiontype_id' => :'Integer',
+        :'fki_buyercontract_id' => :'Integer',
+        :'s_buyercontract_contract' => :'String',
         :'s_inscriptiontype_name_x' => :'String',
         :'e_inscription_step' => :'FieldEInscriptionStep',
         :'s_inscription_civicend' => :'String',
         :'s_inscription_mls' => :'String',
+        :'s_inscription_contract' => :'String',
         :'d_inscription_saleprice' => :'String',
         :'d_inscription_rentprice' => :'String',
         :'dt_inscription_date' => :'String',
@@ -247,6 +262,14 @@ module EzmaxApi
         self.fki_inscriptiontype_id = nil
       end
 
+      if attributes.key?(:'fki_buyercontract_id')
+        self.fki_buyercontract_id = attributes[:'fki_buyercontract_id']
+      end
+
+      if attributes.key?(:'s_buyercontract_contract')
+        self.s_buyercontract_contract = attributes[:'s_buyercontract_contract']
+      end
+
       if attributes.key?(:'s_inscriptiontype_name_x')
         self.s_inscriptiontype_name_x = attributes[:'s_inscriptiontype_name_x']
       else
@@ -267,6 +290,10 @@ module EzmaxApi
 
       if attributes.key?(:'s_inscription_mls')
         self.s_inscription_mls = attributes[:'s_inscription_mls']
+      end
+
+      if attributes.key?(:'s_inscription_contract')
+        self.s_inscription_contract = attributes[:'s_inscription_contract']
       end
 
       if attributes.key?(:'d_inscription_saleprice')
@@ -401,6 +428,14 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_inscriptiontype_id", must be greater than or equal to 0.')
       end
 
+      if !@fki_buyercontract_id.nil? && @fki_buyercontract_id > 65535
+        invalid_properties.push('invalid value for "fki_buyercontract_id", must be smaller than or equal to 65535.')
+      end
+
+      if !@fki_buyercontract_id.nil? && @fki_buyercontract_id < 1
+        invalid_properties.push('invalid value for "fki_buyercontract_id", must be greater than or equal to 1.')
+      end
+
       if @s_inscriptiontype_name_x.nil?
         invalid_properties.push('invalid value for "s_inscriptiontype_name_x", s_inscriptiontype_name_x cannot be nil.')
       end
@@ -426,6 +461,11 @@ module EzmaxApi
       pattern = Regexp.new(/^.{0,20}$/)
       if !@s_inscription_mls.nil? && @s_inscription_mls !~ pattern
         invalid_properties.push("invalid value for \"s_inscription_mls\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^.{0,20}$/)
+      if !@s_inscription_contract.nil? && @s_inscription_contract !~ pattern
+        invalid_properties.push("invalid value for \"s_inscription_contract\", must conform to the pattern #{pattern}.")
       end
 
       if @d_inscription_saleprice.nil?
@@ -540,12 +580,15 @@ module EzmaxApi
       return false if @fki_inscriptiontype_id.nil?
       return false if @fki_inscriptiontype_id > 255
       return false if @fki_inscriptiontype_id < 0
+      return false if !@fki_buyercontract_id.nil? && @fki_buyercontract_id > 65535
+      return false if !@fki_buyercontract_id.nil? && @fki_buyercontract_id < 1
       return false if @s_inscriptiontype_name_x.nil?
       return false if @s_inscriptiontype_name_x !~ Regexp.new(/^.{0,30}$/)
       return false if @e_inscription_step.nil?
       return false if @s_inscription_civicend.nil?
       return false if @s_inscription_civicend !~ Regexp.new(/^.{0,6}$/)
       return false if !@s_inscription_mls.nil? && @s_inscription_mls !~ Regexp.new(/^.{0,20}$/)
+      return false if !@s_inscription_contract.nil? && @s_inscription_contract !~ Regexp.new(/^.{0,20}$/)
       return false if @d_inscription_saleprice.nil?
       return false if @d_inscription_saleprice.to_s.length > 13
       return false if @d_inscription_saleprice.to_s.length < 4
@@ -618,6 +661,24 @@ module EzmaxApi
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] fki_buyercontract_id Value to be assigned
+    def fki_buyercontract_id=(fki_buyercontract_id)
+      if fki_buyercontract_id.nil?
+        fail ArgumentError, 'fki_buyercontract_id cannot be nil'
+      end
+
+      if fki_buyercontract_id > 65535
+        fail ArgumentError, 'invalid value for "fki_buyercontract_id", must be smaller than or equal to 65535.'
+      end
+
+      if fki_buyercontract_id < 1
+        fail ArgumentError, 'invalid value for "fki_buyercontract_id", must be greater than or equal to 1.'
+      end
+
+      @fki_buyercontract_id = fki_buyercontract_id
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] s_inscriptiontype_name_x Value to be assigned
     def s_inscriptiontype_name_x=(s_inscriptiontype_name_x)
       if s_inscriptiontype_name_x.nil?
@@ -670,6 +731,21 @@ module EzmaxApi
       end
 
       @s_inscription_mls = s_inscription_mls
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_inscription_contract Value to be assigned
+    def s_inscription_contract=(s_inscription_contract)
+      if s_inscription_contract.nil?
+        fail ArgumentError, 's_inscription_contract cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,20}$/)
+      if s_inscription_contract !~ pattern
+        fail ArgumentError, "invalid value for \"s_inscription_contract\", must conform to the pattern #{pattern}."
+      end
+
+      @s_inscription_contract = s_inscription_contract
     end
 
     # Custom attribute writer method with validation
@@ -909,10 +985,13 @@ module EzmaxApi
           pki_inscription_id == o.pki_inscription_id &&
           pki_inscriptionnotauthenticated_id == o.pki_inscriptionnotauthenticated_id &&
           fki_inscriptiontype_id == o.fki_inscriptiontype_id &&
+          fki_buyercontract_id == o.fki_buyercontract_id &&
+          s_buyercontract_contract == o.s_buyercontract_contract &&
           s_inscriptiontype_name_x == o.s_inscriptiontype_name_x &&
           e_inscription_step == o.e_inscription_step &&
           s_inscription_civicend == o.s_inscription_civicend &&
           s_inscription_mls == o.s_inscription_mls &&
+          s_inscription_contract == o.s_inscription_contract &&
           d_inscription_saleprice == o.d_inscription_saleprice &&
           d_inscription_rentprice == o.d_inscription_rentprice &&
           dt_inscription_date == o.dt_inscription_date &&
@@ -947,7 +1026,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_inscription_id, pki_inscriptionnotauthenticated_id, fki_inscriptiontype_id, s_inscriptiontype_name_x, e_inscription_step, s_inscription_civicend, s_inscription_mls, d_inscription_saleprice, d_inscription_rentprice, dt_inscription_date, dt_inscription_expirationdate, dt_inscription_notarydate, b_inscription_inspection, b_inscription_isactive, b_inscription_archived, dt_inscriptionnotauthenticated_notaryscheduledate, dt_inscriptionnotauthenticated_transactiondate, dt_inscriptionnotauthenticated_transactiondate_real, b_inscriptionnotauthenticated_conditional, b_inscriptionnotauthenticated_isactive, s_address_civic, s_address_street, s_address_suite, s_address_city, s_address_zip, fki_province_id, s_province_name_x, fki_country_id, s_country_name_x, s_inscriptionnotauthenticated_offertopurchasenumber].hash
+      [pki_inscription_id, pki_inscriptionnotauthenticated_id, fki_inscriptiontype_id, fki_buyercontract_id, s_buyercontract_contract, s_inscriptiontype_name_x, e_inscription_step, s_inscription_civicend, s_inscription_mls, s_inscription_contract, d_inscription_saleprice, d_inscription_rentprice, dt_inscription_date, dt_inscription_expirationdate, dt_inscription_notarydate, b_inscription_inspection, b_inscription_isactive, b_inscription_archived, dt_inscriptionnotauthenticated_notaryscheduledate, dt_inscriptionnotauthenticated_transactiondate, dt_inscriptionnotauthenticated_transactiondate_real, b_inscriptionnotauthenticated_conditional, b_inscriptionnotauthenticated_isactive, s_address_civic, s_address_street, s_address_suite, s_address_city, s_address_zip, fki_province_id, s_province_name_x, fki_country_id, s_country_name_x, s_inscriptionnotauthenticated_offertopurchasenumber].hash
     end
 
     # Builds the object from hash

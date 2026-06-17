@@ -14,15 +14,21 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Request for POST /1/object/user/{pkiUserID}/impersonate
-  class UserImpersonateV1Request < ApiModelBase
-    # The number of minute before key is no longer active
-    attr_accessor :i_expiration_minutes
+  # This is the base Webhook object
+  class WebhookEzmaxpartnerproductUnsubscribe < ApiModelBase
+    attr_accessor :obj_webhook
+
+    # An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+    attr_accessor :a_obj_attempt
+
+    attr_accessor :obj_ezmaxpartnerproduct
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'i_expiration_minutes' => :'iExpirationMinutes'
+        :'obj_webhook' => :'objWebhook',
+        :'a_obj_attempt' => :'a_objAttempt',
+        :'obj_ezmaxpartnerproduct' => :'objEzmaxpartnerproduct'
       }
     end
 
@@ -39,7 +45,9 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'i_expiration_minutes' => :'Integer'
+        :'obj_webhook' => :'CustomWebhookResponse',
+        :'a_obj_attempt' => :'Array<AttemptResponseCompound>',
+        :'obj_ezmaxpartnerproduct' => :'CustomEzmaxpartnerproductSubscribe'
       }
     end
 
@@ -49,26 +57,47 @@ module EzmaxApi
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'CommonWebhook'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::UserImpersonateV1Request` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::WebhookEzmaxpartnerproductUnsubscribe` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::UserImpersonateV1Request`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::WebhookEzmaxpartnerproductUnsubscribe`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'i_expiration_minutes')
-        self.i_expiration_minutes = attributes[:'i_expiration_minutes']
+      if attributes.key?(:'obj_webhook')
+        self.obj_webhook = attributes[:'obj_webhook']
       else
-        self.i_expiration_minutes = nil
+        self.obj_webhook = nil
+      end
+
+      if attributes.key?(:'a_obj_attempt')
+        if (value = attributes[:'a_obj_attempt']).is_a?(Array)
+          self.a_obj_attempt = value
+        end
+      else
+        self.a_obj_attempt = nil
+      end
+
+      if attributes.key?(:'obj_ezmaxpartnerproduct')
+        self.obj_ezmaxpartnerproduct = attributes[:'obj_ezmaxpartnerproduct']
+      else
+        self.obj_ezmaxpartnerproduct = nil
       end
     end
 
@@ -77,16 +106,16 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @i_expiration_minutes.nil?
-        invalid_properties.push('invalid value for "i_expiration_minutes", i_expiration_minutes cannot be nil.')
+      if @obj_webhook.nil?
+        invalid_properties.push('invalid value for "obj_webhook", obj_webhook cannot be nil.')
       end
 
-      if @i_expiration_minutes > 180
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be smaller than or equal to 180.')
+      if @a_obj_attempt.nil?
+        invalid_properties.push('invalid value for "a_obj_attempt", a_obj_attempt cannot be nil.')
       end
 
-      if @i_expiration_minutes < 1
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be greater than or equal to 1.')
+      if @obj_ezmaxpartnerproduct.nil?
+        invalid_properties.push('invalid value for "obj_ezmaxpartnerproduct", obj_ezmaxpartnerproduct cannot be nil.')
       end
 
       invalid_properties
@@ -96,28 +125,40 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @i_expiration_minutes.nil?
-      return false if @i_expiration_minutes > 180
-      return false if @i_expiration_minutes < 1
+      return false if @obj_webhook.nil?
+      return false if @a_obj_attempt.nil?
+      return false if @obj_ezmaxpartnerproduct.nil?
       true
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] i_expiration_minutes Value to be assigned
-    def i_expiration_minutes=(i_expiration_minutes)
-      if i_expiration_minutes.nil?
-        fail ArgumentError, 'i_expiration_minutes cannot be nil'
+    # @param [Object] obj_webhook Value to be assigned
+    def obj_webhook=(obj_webhook)
+      if obj_webhook.nil?
+        fail ArgumentError, 'obj_webhook cannot be nil'
       end
 
-      if i_expiration_minutes > 180
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be smaller than or equal to 180.'
+      @obj_webhook = obj_webhook
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] a_obj_attempt Value to be assigned
+    def a_obj_attempt=(a_obj_attempt)
+      if a_obj_attempt.nil?
+        fail ArgumentError, 'a_obj_attempt cannot be nil'
       end
 
-      if i_expiration_minutes < 1
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be greater than or equal to 1.'
+      @a_obj_attempt = a_obj_attempt
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] obj_ezmaxpartnerproduct Value to be assigned
+    def obj_ezmaxpartnerproduct=(obj_ezmaxpartnerproduct)
+      if obj_ezmaxpartnerproduct.nil?
+        fail ArgumentError, 'obj_ezmaxpartnerproduct cannot be nil'
       end
 
-      @i_expiration_minutes = i_expiration_minutes
+      @obj_ezmaxpartnerproduct = obj_ezmaxpartnerproduct
     end
 
     # Checks equality by comparing each attribute.
@@ -125,7 +166,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          i_expiration_minutes == o.i_expiration_minutes
+          obj_webhook == o.obj_webhook &&
+          a_obj_attempt == o.a_obj_attempt &&
+          obj_ezmaxpartnerproduct == o.obj_ezmaxpartnerproduct
     end
 
     # @see the `==` method
@@ -137,7 +180,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_expiration_minutes].hash
+      [obj_webhook, a_obj_attempt, obj_ezmaxpartnerproduct].hash
     end
 
     # Builds the object from hash

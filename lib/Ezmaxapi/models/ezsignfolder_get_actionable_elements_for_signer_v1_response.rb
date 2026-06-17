@@ -14,15 +14,20 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Request for POST /1/object/user/{pkiUserID}/impersonate
-  class UserImpersonateV1Request < ApiModelBase
-    # The number of minute before key is no longer active
-    attr_accessor :i_expiration_minutes
+  # Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner
+  class EzsignfolderGetActionableElementsForSignerV1Response < ApiModelBase
+    attr_accessor :obj_debug_payload
+
+    attr_accessor :obj_debug
+
+    attr_accessor :m_payload
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'i_expiration_minutes' => :'iExpirationMinutes'
+        :'obj_debug_payload' => :'objDebugPayload',
+        :'obj_debug' => :'objDebug',
+        :'m_payload' => :'mPayload'
       }
     end
 
@@ -39,7 +44,9 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'i_expiration_minutes' => :'Integer'
+        :'obj_debug_payload' => :'CommonResponseObjDebugPayload',
+        :'obj_debug' => :'CommonResponseObjDebug',
+        :'m_payload' => :'EzsignfolderGetActionableElementsForSignerV1ResponseMPayload'
       }
     end
 
@@ -49,26 +56,43 @@ module EzmaxApi
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'CommonResponse'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::UserImpersonateV1Request` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzsignfolderGetActionableElementsForSignerV1Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::UserImpersonateV1Request`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzsignfolderGetActionableElementsForSignerV1Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'i_expiration_minutes')
-        self.i_expiration_minutes = attributes[:'i_expiration_minutes']
+      if attributes.key?(:'obj_debug_payload')
+        self.obj_debug_payload = attributes[:'obj_debug_payload']
       else
-        self.i_expiration_minutes = nil
+        self.obj_debug_payload = nil
+      end
+
+      if attributes.key?(:'obj_debug')
+        self.obj_debug = attributes[:'obj_debug']
+      end
+
+      if attributes.key?(:'m_payload')
+        self.m_payload = attributes[:'m_payload']
+      else
+        self.m_payload = nil
       end
     end
 
@@ -77,16 +101,12 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @i_expiration_minutes.nil?
-        invalid_properties.push('invalid value for "i_expiration_minutes", i_expiration_minutes cannot be nil.')
+      if @obj_debug_payload.nil?
+        invalid_properties.push('invalid value for "obj_debug_payload", obj_debug_payload cannot be nil.')
       end
 
-      if @i_expiration_minutes > 180
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be smaller than or equal to 180.')
-      end
-
-      if @i_expiration_minutes < 1
-        invalid_properties.push('invalid value for "i_expiration_minutes", must be greater than or equal to 1.')
+      if @m_payload.nil?
+        invalid_properties.push('invalid value for "m_payload", m_payload cannot be nil.')
       end
 
       invalid_properties
@@ -96,28 +116,29 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @i_expiration_minutes.nil?
-      return false if @i_expiration_minutes > 180
-      return false if @i_expiration_minutes < 1
+      return false if @obj_debug_payload.nil?
+      return false if @m_payload.nil?
       true
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] i_expiration_minutes Value to be assigned
-    def i_expiration_minutes=(i_expiration_minutes)
-      if i_expiration_minutes.nil?
-        fail ArgumentError, 'i_expiration_minutes cannot be nil'
+    # @param [Object] obj_debug_payload Value to be assigned
+    def obj_debug_payload=(obj_debug_payload)
+      if obj_debug_payload.nil?
+        fail ArgumentError, 'obj_debug_payload cannot be nil'
       end
 
-      if i_expiration_minutes > 180
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be smaller than or equal to 180.'
+      @obj_debug_payload = obj_debug_payload
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] m_payload Value to be assigned
+    def m_payload=(m_payload)
+      if m_payload.nil?
+        fail ArgumentError, 'm_payload cannot be nil'
       end
 
-      if i_expiration_minutes < 1
-        fail ArgumentError, 'invalid value for "i_expiration_minutes", must be greater than or equal to 1.'
-      end
-
-      @i_expiration_minutes = i_expiration_minutes
+      @m_payload = m_payload
     end
 
     # Checks equality by comparing each attribute.
@@ -125,7 +146,9 @@ module EzmaxApi
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          i_expiration_minutes == o.i_expiration_minutes
+          obj_debug_payload == o.obj_debug_payload &&
+          obj_debug == o.obj_debug &&
+          m_payload == o.m_payload
     end
 
     # @see the `==` method
@@ -137,7 +160,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [i_expiration_minutes].hash
+      [obj_debug_payload, obj_debug, m_payload].hash
     end
 
     # Builds the object from hash

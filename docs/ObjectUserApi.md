@@ -1195,7 +1195,7 @@ end
 
 api_instance = EzmaxApi::ObjectUserApi.new
 pki_user_id = 56 # Integer | 
-user_impersonate_v1_request = EzmaxApi::UserImpersonateV1Request.new({fki_user_id: 70, i_expiration_minutes: 37}) # UserImpersonateV1Request | 
+user_impersonate_v1_request = EzmaxApi::UserImpersonateV1Request.new({i_expiration_minutes: 37}) # UserImpersonateV1Request | 
 
 begin
   # Impersonate the user

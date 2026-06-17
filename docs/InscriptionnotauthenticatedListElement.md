@@ -7,10 +7,13 @@
 | **pki_inscription_id** | **Integer** | The unique ID of the Inscription. |  |
 | **pki_inscriptionnotauthenticated_id** | **Integer** | The unique ID of the Inscriptionnotauthenticated. | [optional] |
 | **fki_inscriptiontype_id** | **Integer** | The unique ID of the Inscriptiontype |  |
+| **fki_buyercontract_id** | **Integer** | The unique ID of the Buyercontract | [optional] |
+| **s_buyercontract_contract** | **String** | The number of the Buyercontract | [optional] |
 | **s_inscriptiontype_name_x** | **String** | The name of the Inscriptiontype in the language of the requester |  |
 | **e_inscription_step** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |  |
 | **s_inscription_civicend** | **String** | The civicend of the Inscription |  |
 | **s_inscription_mls** | **String** | The mls of the Inscription | [optional] |
+| **s_inscription_contract** | **String** | The sale contract number | [optional] |
 | **d_inscription_saleprice** | **String** | The saleprice of the Inscription |  |
 | **d_inscription_rentprice** | **String** | The rentprice of the Inscription |  |
 | **dt_inscription_date** | **String** | The date of the Inscription | [optional] |
@@ -44,10 +47,13 @@ instance = EzmaxApi::InscriptionnotauthenticatedListElement.new(
   pki_inscription_id: 17,
   pki_inscriptionnotauthenticated_id: 24,
   fki_inscriptiontype_id: 51,
+  fki_buyercontract_id: 38,
+  s_buyercontract_contract: 12345,
   s_inscriptiontype_name_x: Revenue Property,
   e_inscription_step: null,
   s_inscription_civicend: 630,
   s_inscription_mls: X00000,
+  s_inscription_contract: 1542254,
   d_inscription_saleprice: 200000.00,
   d_inscription_rentprice: 1200.00,
   dt_inscription_date: 2020-12-31,

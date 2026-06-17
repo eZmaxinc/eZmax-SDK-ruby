@@ -822,6 +822,99 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve actionable elements of a user for the Ezsignfolder
+    # Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param e_signer_type [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :fki_ezsignsigner_id 
+    # @option opts [Integer] :fki_user_id 
+    # @return [EzsignfolderGetActionableElementsForSignerV1Response]
+    def ezsignfolder_get_actionable_elements_for_signer_v1(pki_ezsignfolder_id, e_signer_type, opts = {})
+      data, _status_code, _headers = ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsignfolder_id, e_signer_type, opts)
+      data
+    end
+
+    # Retrieve actionable elements of a user for the Ezsignfolder
+    # Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+    # @param pki_ezsignfolder_id [Integer] 
+    # @param e_signer_type [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :fki_ezsignsigner_id 
+    # @option opts [Integer] :fki_user_id 
+    # @return [Array<(EzsignfolderGetActionableElementsForSignerV1Response, Integer, Hash)>] EzsignfolderGetActionableElementsForSignerV1Response data, response status code and response headers
+    def ezsignfolder_get_actionable_elements_for_signer_v1_with_http_info(pki_ezsignfolder_id, e_signer_type, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1 ...'
+      end
+      # verify the required parameter 'pki_ezsignfolder_id' is set
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_ezsignfolder_id' when calling ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1"
+      end
+      if @api_client.config.client_side_validation && pki_ezsignfolder_id < 0
+        fail ArgumentError, 'invalid value for "pki_ezsignfolder_id" when calling ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1, must be greater than or equal to 0.'
+      end
+
+      # verify the required parameter 'e_signer_type' is set
+      if @api_client.config.client_side_validation && e_signer_type.nil?
+        fail ArgumentError, "Missing the required parameter 'e_signer_type' when calling ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1"
+      end
+      # verify enum value
+      allowable_values = ["Ezsignsigner", "User"]
+      if @api_client.config.client_side_validation && !allowable_values.include?(e_signer_type)
+        fail ArgumentError, "invalid value for \"e_signer_type\", must be one of #{allowable_values}"
+      end
+      if @api_client.config.client_side_validation && !opts[:'fki_ezsignsigner_id'].nil? && opts[:'fki_ezsignsigner_id'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"fki_ezsignsigner_id"]" when calling ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1, must be greater than or equal to 0.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'fki_user_id'].nil? && opts[:'fki_user_id'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"fki_user_id"]" when calling ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner'.sub('{pkiEzsignfolderID}', CGI.escape(pki_ezsignfolder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'eSignerType'] = e_signer_type
+      query_params[:'fkiEzsignsignerID'] = opts[:'fki_ezsignsigner_id'] if !opts[:'fki_ezsignsigner_id'].nil?
+      query_params[:'fkiUserID'] = opts[:'fki_user_id'] if !opts[:'fki_user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EzsignfolderGetActionableElementsForSignerV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectEzsignfolderApi.ezsignfolder_get_actionable_elements_for_signer_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectEzsignfolderApi#ezsignfolder_get_actionable_elements_for_signer_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve actionable elements for the Ezsignfolder
     # Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.    Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
     # @param pki_ezsignfolder_id [Integer] 
