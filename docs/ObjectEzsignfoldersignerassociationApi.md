@@ -8,12 +8,15 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignfoldersignerassociation_create_embedded_url_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_embedded_url_v2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing |
 | [**ezsignfoldersignerassociation_create_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_create_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
+| [**ezsignfoldersignerassociation_create_object_v3**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v3) | **POST** /3/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_delete_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_delete_object_v1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_edit_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_edit_object_v1) | **PUT** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Edit an existing Ezsignfoldersignerassociation |
+| [**ezsignfoldersignerassociation_edit_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_edit_object_v2) | **PUT** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Edit an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_force_disconnect_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_force_disconnect_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/forceDisconnect | Disconnects the Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_get_in_person_login_url_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_in_person_login_url_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing |
 | [**ezsignfoldersignerassociation_get_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_get_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
+| [**ezsignfoldersignerassociation_get_object_v3**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v3) | **GET** /3/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_patch_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_patch_object_v1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation |
 | [**ezsignfoldersignerassociation_reassign_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_reassign_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms |
 
@@ -306,6 +309,77 @@ end
 - **Accept**: application/json
 
 
+## ezsignfoldersignerassociation_create_object_v3
+
+> <EzsignfoldersignerassociationCreateObjectV3Response> ezsignfoldersignerassociation_create_object_v3(ezsignfoldersignerassociation_create_object_v3_request)
+
+Create a new Ezsignfoldersignerassociation
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
+ezsignfoldersignerassociation_create_object_v3_request = EzmaxApi::EzsignfoldersignerassociationCreateObjectV3Request.new({a_obj_ezsignfoldersignerassociation: [EzmaxApi::EzsignfoldersignerassociationRequestCompoundV2.new({fki_ezsignfolder_id: 33, e_ezsignfoldersignerassociation_role: EzmaxApi::FieldEEzsignfoldersignerassociationRole::CC})]}) # EzsignfoldersignerassociationCreateObjectV3Request | 
+
+begin
+  # Create a new Ezsignfoldersignerassociation
+  result = api_instance.ezsignfoldersignerassociation_create_object_v3(ezsignfoldersignerassociation_create_object_v3_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_create_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignfoldersignerassociation_create_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldersignerassociationCreateObjectV3Response>, Integer, Hash)> ezsignfoldersignerassociation_create_object_v3_with_http_info(ezsignfoldersignerassociation_create_object_v3_request)
+
+```ruby
+begin
+  # Create a new Ezsignfoldersignerassociation
+  data, status_code, headers = api_instance.ezsignfoldersignerassociation_create_object_v3_with_http_info(ezsignfoldersignerassociation_create_object_v3_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldersignerassociationCreateObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_create_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **ezsignfoldersignerassociation_create_object_v3_request** | [**EzsignfoldersignerassociationCreateObjectV3Request**](EzsignfoldersignerassociationCreateObjectV3Request.md) |  |  |
+
+### Return type
+
+[**EzsignfoldersignerassociationCreateObjectV3Response**](EzsignfoldersignerassociationCreateObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsignfoldersignerassociation_delete_object_v1
 
 > <EzsignfoldersignerassociationDeleteObjectV1Response> ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id)
@@ -439,6 +513,79 @@ end
 ### Return type
 
 [**EzsignfoldersignerassociationEditObjectV1Response**](EzsignfoldersignerassociationEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsignfoldersignerassociation_edit_object_v2
+
+> <EzsignfoldersignerassociationEditObjectV2Response> ezsignfoldersignerassociation_edit_object_v2(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v2_request)
+
+Edit an existing Ezsignfoldersignerassociation
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
+ezsignfoldersignerassociation_edit_object_v2_request = EzmaxApi::EzsignfoldersignerassociationEditObjectV2Request.new({obj_ezsignfoldersignerassociation: EzmaxApi::EzsignfoldersignerassociationRequestCompoundV2.new({fki_ezsignfolder_id: 33, e_ezsignfoldersignerassociation_role: EzmaxApi::FieldEEzsignfoldersignerassociationRole::CC})}) # EzsignfoldersignerassociationEditObjectV2Request | 
+
+begin
+  # Edit an existing Ezsignfoldersignerassociation
+  result = api_instance.ezsignfoldersignerassociation_edit_object_v2(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_edit_object_v2: #{e}"
+end
+```
+
+#### Using the ezsignfoldersignerassociation_edit_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldersignerassociationEditObjectV2Response>, Integer, Hash)> ezsignfoldersignerassociation_edit_object_v2_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v2_request)
+
+```ruby
+begin
+  # Edit an existing Ezsignfoldersignerassociation
+  data, status_code, headers = api_instance.ezsignfoldersignerassociation_edit_object_v2_with_http_info(pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldersignerassociationEditObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_edit_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
+| **ezsignfoldersignerassociation_edit_object_v2_request** | [**EzsignfoldersignerassociationEditObjectV2Request**](EzsignfoldersignerassociationEditObjectV2Request.md) |  |  |
+
+### Return type
+
+[**EzsignfoldersignerassociationEditObjectV2Response**](EzsignfoldersignerassociationEditObjectV2Response.md)
 
 ### Authorization
 
@@ -725,6 +872,77 @@ end
 ### Return type
 
 [**EzsignfoldersignerassociationGetObjectV2Response**](EzsignfoldersignerassociationGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfoldersignerassociation_get_object_v3
+
+> <EzsignfoldersignerassociationGetObjectV3Response> ezsignfoldersignerassociation_get_object_v3(pki_ezsignfoldersignerassociation_id)
+
+Retrieve an existing Ezsignfoldersignerassociation
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi.new
+pki_ezsignfoldersignerassociation_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignfoldersignerassociation
+  result = api_instance.ezsignfoldersignerassociation_get_object_v3(pki_ezsignfoldersignerassociation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignfoldersignerassociation_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignfoldersignerassociationGetObjectV3Response>, Integer, Hash)> ezsignfoldersignerassociation_get_object_v3_with_http_info(pki_ezsignfoldersignerassociation_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignfoldersignerassociation
+  data, status_code, headers = api_instance.ezsignfoldersignerassociation_get_object_v3_with_http_info(pki_ezsignfoldersignerassociation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignfoldersignerassociationGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignfoldersignerassociation_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignfoldersignerassociationGetObjectV3Response**](EzsignfoldersignerassociationGetObjectV3Response.md)
 
 ### Authorization
 

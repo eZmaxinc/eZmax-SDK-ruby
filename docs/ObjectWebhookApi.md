@@ -37,7 +37,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectWebhookApi.new
-webhook_create_object_v2_request = EzmaxApi::WebhookCreateObjectV2Request.new({a_obj_webhook: [EzmaxApi::WebhookRequestCompound.new({s_webhook_description: 'Import into our system', e_webhook_module: EzmaxApi::FieldEWebhookModule::EZSIGN, s_webhook_url: 'https://www.example.com', s_webhook_emailfailed: 'email@example.com', b_webhook_isactive: true, b_webhook_skipsslvalidation: false})]}) # WebhookCreateObjectV2Request | 
+webhook_create_object_v2_request = EzmaxApi::WebhookCreateObjectV2Request.new({a_obj_webhook: [EzmaxApi::WebhookRequestCompound.new({s_webhook_description: 'Import into our system', e_webhook_module: EzmaxApi::FieldEWebhookModule::EZMAXPARTNER, s_webhook_url: 'https://www.example.com', s_webhook_emailfailed: 'email@example.com', b_webhook_isactive: true, b_webhook_skipsslvalidation: false})]}) # WebhookCreateObjectV2Request | 
 
 begin
   # Create a new Webhook
@@ -180,7 +180,7 @@ end
 
 api_instance = EzmaxApi::ObjectWebhookApi.new
 pki_webhook_id = 56 # Integer | 
-webhook_edit_object_v1_request = EzmaxApi::WebhookEditObjectV1Request.new({obj_webhook: EzmaxApi::WebhookRequestCompound.new({s_webhook_description: 'Import into our system', e_webhook_module: EzmaxApi::FieldEWebhookModule::EZSIGN, s_webhook_url: 'https://www.example.com', s_webhook_emailfailed: 'email@example.com', b_webhook_isactive: true, b_webhook_skipsslvalidation: false})}) # WebhookEditObjectV1Request | 
+webhook_edit_object_v1_request = EzmaxApi::WebhookEditObjectV1Request.new({obj_webhook: EzmaxApi::WebhookRequestCompound.new({s_webhook_description: 'Import into our system', e_webhook_module: EzmaxApi::FieldEWebhookModule::EZMAXPARTNER, s_webhook_url: 'https://www.example.com', s_webhook_emailfailed: 'email@example.com', b_webhook_isactive: true, b_webhook_skipsslvalidation: false})}) # WebhookEditObjectV1Request | 
 
 begin
   # Edit an existing Webhook
@@ -548,7 +548,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectWebhookApi.new
-webhook_send_webhook_v1_request = EzmaxApi::WebhookSendWebhookV1Request.new({e_webhook_module: EzmaxApi::FieldEWebhookModule::EZSIGN}) # WebhookSendWebhookV1Request | 
+webhook_send_webhook_v1_request = EzmaxApi::WebhookSendWebhookV1Request.new({e_webhook_module: EzmaxApi::FieldEWebhookModule::EZMAXPARTNER}) # WebhookSendWebhookV1Request | 
 
 begin
   # Emit a Webhook event

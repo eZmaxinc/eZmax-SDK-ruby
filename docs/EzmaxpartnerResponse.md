@@ -13,6 +13,7 @@
 | **obj_ezmaxpartner_shortdescription** | [**MultilingualEzmaxpartnerShortdescription**](MultilingualEzmaxpartnerShortdescription.md) |  |  |
 | **obj_ezmaxpartner_url** | [**MultilingualEzmaxpartnerUrl**](MultilingualEzmaxpartnerUrl.md) |  |  |
 | **b_ezmaxpartner_isactive** | **Boolean** | Whether the Ezmaxpartner is active or not | [optional] |
+| **obj_ezmaxpartner_logourl** | [**MultilingualEzmaxpartnerLogourl**](MultilingualEzmaxpartnerLogourl.md) |  |  |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = EzmaxApi::EzmaxpartnerResponse.new(
   obj_ezmaxpartner_phone_e164: null,
   obj_ezmaxpartner_shortdescription: null,
   obj_ezmaxpartner_url: null,
-  b_ezmaxpartner_isactive: false
+  b_ezmaxpartner_isactive: false,
+  obj_ezmaxpartner_logourl: null
 )
 ```
 

@@ -10,6 +10,7 @@
 | **fki_ezsignfoldertype_id** | **Integer** | The unique ID of the Ezsignfoldertype. | [optional] |
 | **s_ezsignfoldertype_name_x** | **String** | The name of the Ezsignfoldertype in the language of the requester | [optional] |
 | **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  |  |
+| **e_webhook_ezmaxpartnerevent** | [**FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional] |
 | **e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] |
 | **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] |
 | **s_webhook_url** | **String** | The URL of the Webhook callback |  |
@@ -41,6 +42,7 @@ instance = EzmaxApi::CustomWebhookResponse.new(
   fki_ezsignfoldertype_id: 5,
   s_ezsignfoldertype_name_x: Default,
   e_webhook_module: null,
+  e_webhook_ezmaxpartnerevent: null,
   e_webhook_ezsignevent: null,
   e_webhook_managementevent: null,
   s_webhook_url: https://www.example.com,

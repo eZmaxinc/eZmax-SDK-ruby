@@ -27,6 +27,7 @@
 | **dt_inscriptionnotauthenticated_transactiondate_real** | **String** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] |
 | **b_inscriptionnotauthenticated_conditional** | **Boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] |
 | **b_inscriptionnotauthenticated_isactive** | **Boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] |
+| **b_inscriptionnotauthenticated_draft** | **Boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] |
 | **s_address_civic** | **String** | The Civic number. | [optional] |
 | **s_address_street** | **String** | The Street Name | [optional] |
 | **s_address_suite** | **String** | The Suite or appartment number | [optional] |
@@ -67,6 +68,7 @@ instance = EzmaxApi::InscriptionnotauthenticatedListElement.new(
   dt_inscriptionnotauthenticated_transactiondate_real: 2020-12-31,
   b_inscriptionnotauthenticated_conditional: true,
   b_inscriptionnotauthenticated_isactive: true,
+  b_inscriptionnotauthenticated_draft: true,
   s_address_civic: 2540,
   s_address_street: Daniel-Johnson Blvd.,
   s_address_suite: 610,

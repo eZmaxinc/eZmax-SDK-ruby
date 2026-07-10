@@ -9,7 +9,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**inscription_get_communication_list_v1**](ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list |
 | [**inscription_get_communicationrecipients_v1**](ObjectInscriptionApi.md#inscription_get_communicationrecipients_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription&#39;s Communicationrecipient |
 | [**inscription_get_communicationsenders_v1**](ObjectInscriptionApi.md#inscription_get_communicationsenders_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription&#39;s Communicationsender |
+| [**inscription_get_inscriptionnotauthenticateds_v1**](ObjectInscriptionApi.md#inscription_get_inscriptionnotauthenticateds_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list |
 | [**inscription_get_list_v1**](ObjectInscriptionApi.md#inscription_get_list_v1) | **GET** /1/object/inscription/getList | Retrieve Inscription list |
+| [**inscription_get_object_v2**](ObjectInscriptionApi.md#inscription_get_object_v2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription |
 | [**inscription_import_into_edmv1**](ObjectInscriptionApi.md#inscription_import_into_edmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription |
 | [**inscription_prepare_files_transfer_v1**](ObjectInscriptionApi.md#inscription_prepare_files_transfer_v1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM |
 
@@ -369,6 +371,75 @@ end
 - **Accept**: application/json
 
 
+## inscription_get_inscriptionnotauthenticateds_v1
+
+> <InscriptionGetInscriptionnotauthenticatedsV1Response> inscription_get_inscriptionnotauthenticateds_v1(pki_inscription_id)
+
+Retrieve Inscriptionnotauthenticated list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionApi.new
+pki_inscription_id = 56 # Integer | 
+
+begin
+  # Retrieve Inscriptionnotauthenticated list
+  result = api_instance.inscription_get_inscriptionnotauthenticateds_v1(pki_inscription_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_inscriptionnotauthenticateds_v1: #{e}"
+end
+```
+
+#### Using the inscription_get_inscriptionnotauthenticateds_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionGetInscriptionnotauthenticatedsV1Response>, Integer, Hash)> inscription_get_inscriptionnotauthenticateds_v1_with_http_info(pki_inscription_id)
+
+```ruby
+begin
+  # Retrieve Inscriptionnotauthenticated list
+  data, status_code, headers = api_instance.inscription_get_inscriptionnotauthenticateds_v1_with_http_info(pki_inscription_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionGetInscriptionnotauthenticatedsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_inscriptionnotauthenticateds_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscription_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptionGetInscriptionnotauthenticatedsV1Response**](InscriptionGetInscriptionnotauthenticatedsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## inscription_get_list_v1
 
 > <InscriptionGetListV1Response> inscription_get_list_v1(opts)
@@ -448,6 +519,77 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+
+## inscription_get_object_v2
+
+> <InscriptionGetObjectV2Response> inscription_get_object_v2(pki_inscription_id)
+
+Retrieve an existing Inscription
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionApi.new
+pki_inscription_id = 56 # Integer | The unique ID of the Inscription
+
+begin
+  # Retrieve an existing Inscription
+  result = api_instance.inscription_get_object_v2(pki_inscription_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_object_v2: #{e}"
+end
+```
+
+#### Using the inscription_get_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionGetObjectV2Response>, Integer, Hash)> inscription_get_object_v2_with_http_info(pki_inscription_id)
+
+```ruby
+begin
+  # Retrieve an existing Inscription
+  data, status_code, headers = api_instance.inscription_get_object_v2_with_http_info(pki_inscription_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionGetObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_get_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscription_id** | **Integer** | The unique ID of the Inscription |  |
+
+### Return type
+
+[**InscriptionGetObjectV2Response**](InscriptionGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## inscription_import_into_edmv1
