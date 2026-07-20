@@ -26,6 +26,7 @@
 | **dt_agent_senioritydate** | **String** | The seniority date of the Agent | [optional] |
 | **dt_agent_sickleavestart** | **String** | The sick leave start date of the Agent | [optional] |
 | **dt_agent_sickleaveend** | **String** | The sick leave end date of the Agent | [optional] |
+| **e_agent_schedule** | [**FieldEAgentSchedule**](FieldEAgentSchedule.md) |  |  |
 | **b_agent_tranquillit** | **Boolean** | Whether if it&#39;s an tranquillit |  |
 | **b_agent_residentiallicense** | **Boolean** | Whether if it&#39;s an residentiallicense |  |
 | **b_agent_commerciallicense** | **Boolean** | Whether if it&#39;s an commerciallicense |  |
@@ -76,6 +77,7 @@ instance = EzmaxApi::AgentListElement.new(
   dt_agent_senioritydate: 2020-12-31,
   dt_agent_sickleavestart: 2020-12-31,
   dt_agent_sickleaveend: 2020-12-31,
+  e_agent_schedule: null,
   b_agent_tranquillit: true,
   b_agent_residentiallicense: true,
   b_agent_commerciallicense: true,

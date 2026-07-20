@@ -11,6 +11,7 @@
 | **s_ezmaxpartner_name_x** | **String** | The name of the Ezmaxpartner in the language of the requester |  |
 | **s_ezmaxpartner_phone_e164_x** | **String** | A phone number in E.164 Format |  |
 | **s_ezmaxpartner_url_x** | **String** | The url of the Ezmaxpartner website in the language of the requester |  |
+| **obj_ezmaxpartner_logourl** | [**MultilingualEzmaxpartnerLogourl**](MultilingualEzmaxpartnerLogourl.md) |  |  |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = EzmaxApi::CustomEzmaxpartnerListElement.new(
   s_ezmaxpartner_shortdescription_x: This is a software to e-sign documents,
   s_ezmaxpartner_name_x: eZmax,
   s_ezmaxpartner_phone_e164_x: +15149901516,
-  s_ezmaxpartner_url_x: http://www.website.com/avatar.jpg
+  s_ezmaxpartner_url_x: http://www.website.com/avatar.jpg,
+  obj_ezmaxpartner_logourl: null
 )
 ```
 

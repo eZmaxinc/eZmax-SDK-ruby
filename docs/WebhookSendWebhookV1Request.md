@@ -7,6 +7,7 @@
 | **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  |  |
 | **e_webhook_ezsignevent** | [**CustomEWebhookEzsignevent**](CustomEWebhookEzsignevent.md) |  | [optional] |
 | **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] |
+| **e_webhook_realestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] |
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder | [optional] |
 | **fki_ezsigndocument_id** | **Integer** | The unique ID of the Ezsigndocument | [optional] |
 | **fki_ezsignsigner_id** | **Integer** | The unique ID of the Ezsignsigner | [optional] |
@@ -22,6 +23,7 @@ instance = EzmaxApi::WebhookSendWebhookV1Request.new(
   e_webhook_module: null,
   e_webhook_ezsignevent: null,
   e_webhook_managementevent: null,
+  e_webhook_realestateevent: null,
   fki_ezsignfolder_id: 33,
   fki_ezsigndocument_id: 97,
   fki_ezsignsigner_id: 89,

@@ -11,6 +11,7 @@
 | **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  |  |
 | **e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] |
 | **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] |
+| **e_webhook_realestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] |
 | **s_webhook_url** | **String** | The URL of the Webhook callback |  |
 | **s_webhook_emailfailed** | **String** | The email that will receive the Webhook in case all attempts fail |  |
 | **b_webhook_isactive** | **Boolean** | Whether the Webhook is active or not |  |
@@ -31,6 +32,7 @@ instance = EzmaxApi::WebhookRequestCompound.new(
   e_webhook_module: null,
   e_webhook_ezsignevent: null,
   e_webhook_managementevent: null,
+  e_webhook_realestateevent: null,
   s_webhook_url: https://www.example.com,
   s_webhook_emailfailed: email@example.com,
   b_webhook_isactive: true,

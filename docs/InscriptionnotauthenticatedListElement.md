@@ -7,10 +7,15 @@
 | **pki_inscription_id** | **Integer** | The unique ID of the Inscription. |  |
 | **pki_inscriptionnotauthenticated_id** | **Integer** | The unique ID of the Inscriptionnotauthenticated. | [optional] |
 | **fki_inscriptiontype_id** | **Integer** | The unique ID of the Inscriptiontype |  |
+| **s_inscriptiontype_name_x** | **String** | The name of the Inscriptiontype in the language of the requester |  |
+| **fki_inscriptionbuildingtype_id** | **Integer** | The unique ID of the Inscriptionbuildingtype |  |
+| **s_inscriptionbuildingtype_name_x** | **String** | The name of the Inscriptionbuildingtype in the language of the requester |  |
+| **fki_inscriptioncategory_id** | **Integer** | The unique ID of the Inscriptioncategory |  |
+| **s_inscriptioncategory_name_x** | **String** | The name of the Inscriptioncategory in the language of the requester |  |
 | **fki_buyercontract_id** | **Integer** | The unique ID of the Buyercontract | [optional] |
 | **s_buyercontract_contract** | **String** | The number of the Buyercontract | [optional] |
-| **s_inscriptiontype_name_x** | **String** | The name of the Inscriptiontype in the language of the requester |  |
 | **e_inscription_step** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |  |
+| **e_inscription_type** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  |  |
 | **s_inscription_civicend** | **String** | The civicend of the Inscription |  |
 | **s_inscription_mls** | **String** | The mls of the Inscription | [optional] |
 | **s_inscription_contract** | **String** | The sale contract number | [optional] |
@@ -38,6 +43,7 @@
 | **fki_country_id** | **Integer** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional] |
 | **s_country_name_x** | **String** | The name of the Country in the language of the requester | [optional] |
 | **s_inscriptionnotauthenticated_offertopurchasenumber** | **String** | The Offer to purchase number |  |
+| **i_inscription_unit** | **Integer** | The unit of the Inscription |  |
 
 ## Example
 
@@ -48,10 +54,15 @@ instance = EzmaxApi::InscriptionnotauthenticatedListElement.new(
   pki_inscription_id: 17,
   pki_inscriptionnotauthenticated_id: 24,
   fki_inscriptiontype_id: 51,
+  s_inscriptiontype_name_x: Revenue Property,
+  fki_inscriptionbuildingtype_id: 182,
+  s_inscriptionbuildingtype_name_x: Semi-detached,
+  fki_inscriptioncategory_id: 185,
+  s_inscriptioncategory_name_x: Bungalow,
   fki_buyercontract_id: 38,
   s_buyercontract_contract: 12345,
-  s_inscriptiontype_name_x: Revenue Property,
   e_inscription_step: null,
+  e_inscription_type: null,
   s_inscription_civicend: 630,
   s_inscription_mls: X00000,
   s_inscription_contract: 1542254,
@@ -78,7 +89,8 @@ instance = EzmaxApi::InscriptionnotauthenticatedListElement.new(
   s_province_name_x: Quebec,
   fki_country_id: 1,
   s_country_name_x: Canada,
-  s_inscriptionnotauthenticated_offertopurchasenumber: PL32216
+  s_inscriptionnotauthenticated_offertopurchasenumber: PL32216,
+  i_inscription_unit: 247
 )
 ```
 
