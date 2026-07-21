@@ -67,14 +67,14 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ExternalEzmaxpartnerApi.new
-documentation_subscribe_v1_request = EzmaxApi::DocumentationSubscribeV1Request.new # DocumentationSubscribeV1Request | 
+ezmaxpartner_subscribe_v1_request = EzmaxApi::EzmaxpartnerSubscribeV1Request.new # EzmaxpartnerSubscribeV1Request | 
 
 begin
   #Subscribe to an Ezmaxparnerproductstage
-  result = api_instance.externalpartner_subscribe_v1(documentation_subscribe_v1_request)
+  result = api_instance.ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Exception when calling ExternalEzmaxpartnerApi->externalpartner_subscribe_v1: #{e}"
+  puts "Exception when calling ExternalEzmaxpartnerApi->ezmaxpartner_subscribe_v1: #{e}"
 end
 
 ```
@@ -85,7 +85,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*EzmaxApi::ExternalEzmaxpartnerApi* | [**externalpartner_subscribe_v1**](docs/ExternalEzmaxpartnerApi.md#externalpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
+*EzmaxApi::ExternalEzmaxpartnerApi* | [**ezmaxpartner_subscribe_v1**](docs/ExternalEzmaxpartnerApi.md#ezmaxpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
 *EzmaxApi::GlobalCustomerApi* | [**global_customer_get_endpoint_v1**](docs/GlobalCustomerApi.md#global_customer_get_endpoint_v1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *EzmaxApi::GlobalEzmaxclientApi* | [**global_ezmaxclient_version_v1**](docs/GlobalEzmaxclientApi.md#global_ezmaxclient_version_v1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *EzmaxApi::GlobalEzmaxcustomerApi* | [**global_ezmaxcustomer_get_configuration_v1**](docs/GlobalEzmaxcustomerApi.md#global_ezmaxcustomer_get_configuration_v1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
@@ -1076,8 +1076,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::DiscussionmessageRequestPatch](docs/DiscussionmessageRequestPatch.md)
  - [EzmaxApi::DiscussionmessageResponse](docs/DiscussionmessageResponse.md)
  - [EzmaxApi::DiscussionmessageResponseCompound](docs/DiscussionmessageResponseCompound.md)
- - [EzmaxApi::DocumentationSubscribeV1Request](docs/DocumentationSubscribeV1Request.md)
- - [EzmaxApi::DocumentationSubscribeV1Response](docs/DocumentationSubscribeV1Response.md)
  - [EzmaxApi::DomainAutocompleteElementResponse](docs/DomainAutocompleteElementResponse.md)
  - [EzmaxApi::DomainCreateObjectV1Request](docs/DomainCreateObjectV1Request.md)
  - [EzmaxApi::DomainCreateObjectV1Response](docs/DomainCreateObjectV1Response.md)
@@ -1197,6 +1195,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EzmaxpartnerGetObjectV2ResponseMPayload](docs/EzmaxpartnerGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::EzmaxpartnerResponse](docs/EzmaxpartnerResponse.md)
  - [EzmaxApi::EzmaxpartnerResponseCompound](docs/EzmaxpartnerResponseCompound.md)
+ - [EzmaxApi::EzmaxpartnerSubscribeV1Request](docs/EzmaxpartnerSubscribeV1Request.md)
+ - [EzmaxApi::EzmaxpartnerSubscribeV1Response](docs/EzmaxpartnerSubscribeV1Response.md)
  - [EzmaxApi::EzmaxproductAutocompleteElementResponse](docs/EzmaxproductAutocompleteElementResponse.md)
  - [EzmaxApi::EzmaxproductGetAutocompleteV2Response](docs/EzmaxproductGetAutocompleteV2Response.md)
  - [EzmaxApi::EzmaxproductGetAutocompleteV2ResponseMPayload](docs/EzmaxproductGetAutocompleteV2ResponseMPayload.md)

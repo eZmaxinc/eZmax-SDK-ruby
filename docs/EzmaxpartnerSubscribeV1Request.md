@@ -1,4 +1,4 @@
-# EzmaxApi::DocumentationSubscribeV1Request
+# EzmaxApi::EzmaxpartnerSubscribeV1Request
 
 ## Properties
 
@@ -33,7 +33,7 @@
 ```ruby
 require 'Ezmaxapi'
 
-instance = EzmaxApi::DocumentationSubscribeV1Request.new(
+instance = EzmaxApi::EzmaxpartnerSubscribeV1Request.new(
   pks_ezmaxcustomer_code: demo,
   s_infrastructureenvironmenttype_description: prod,
   s_company_name1: Acme inc.,

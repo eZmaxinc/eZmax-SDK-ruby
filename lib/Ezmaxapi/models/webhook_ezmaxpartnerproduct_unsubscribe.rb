@@ -23,12 +23,15 @@ module EzmaxApi
 
     attr_accessor :obj_ezmaxpartnerproduct
 
+    attr_accessor :s_external_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'obj_webhook' => :'objWebhook',
         :'a_obj_attempt' => :'a_objAttempt',
-        :'obj_ezmaxpartnerproduct' => :'objEzmaxpartnerproduct'
+        :'obj_ezmaxpartnerproduct' => :'objEzmaxpartnerproduct',
+        :'s_external_id' => :'sExternalID'
       }
     end
 
@@ -47,7 +50,8 @@ module EzmaxApi
       {
         :'obj_webhook' => :'CustomWebhookResponse',
         :'a_obj_attempt' => :'Array<AttemptResponseCompound>',
-        :'obj_ezmaxpartnerproduct' => :'CustomEzmaxpartnerproductSubscribe'
+        :'obj_ezmaxpartnerproduct' => :'CustomEzmaxpartnerproductSubscribe',
+        :'s_external_id' => :'String'
       }
     end
 
@@ -98,6 +102,10 @@ module EzmaxApi
         self.obj_ezmaxpartnerproduct = attributes[:'obj_ezmaxpartnerproduct']
       else
         self.obj_ezmaxpartnerproduct = nil
+      end
+
+      if attributes.key?(:'s_external_id')
+        self.s_external_id = attributes[:'s_external_id']
       end
     end
 
@@ -168,7 +176,8 @@ module EzmaxApi
       self.class == o.class &&
           obj_webhook == o.obj_webhook &&
           a_obj_attempt == o.a_obj_attempt &&
-          obj_ezmaxpartnerproduct == o.obj_ezmaxpartnerproduct
+          obj_ezmaxpartnerproduct == o.obj_ezmaxpartnerproduct &&
+          s_external_id == o.s_external_id
     end
 
     # @see the `==` method
@@ -180,7 +189,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [obj_webhook, a_obj_attempt, obj_ezmaxpartnerproduct].hash
+      [obj_webhook, a_obj_attempt, obj_ezmaxpartnerproduct, s_external_id].hash
     end
 
     # Builds the object from hash

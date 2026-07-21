@@ -4,12 +4,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**externalpartner_subscribe_v1**](ExternalEzmaxpartnerApi.md#externalpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
+| [**ezmaxpartner_subscribe_v1**](ExternalEzmaxpartnerApi.md#ezmaxpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage |
 
 
-## externalpartner_subscribe_v1
+## ezmaxpartner_subscribe_v1
 
-> <DocumentationSubscribeV1Response> externalpartner_subscribe_v1(documentation_subscribe_v1_request)
+> <EzmaxpartnerSubscribeV1Response> ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request)
 
 Subscribe to an Ezmaxparnerproductstage
 
@@ -29,32 +29,32 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ExternalEzmaxpartnerApi.new
-documentation_subscribe_v1_request = EzmaxApi::DocumentationSubscribeV1Request.new # DocumentationSubscribeV1Request | 
+ezmaxpartner_subscribe_v1_request = EzmaxApi::EzmaxpartnerSubscribeV1Request.new # EzmaxpartnerSubscribeV1Request | 
 
 begin
   # Subscribe to an Ezmaxparnerproductstage
-  result = api_instance.externalpartner_subscribe_v1(documentation_subscribe_v1_request)
+  result = api_instance.ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request)
   p result
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ExternalEzmaxpartnerApi->externalpartner_subscribe_v1: #{e}"
+  puts "Error when calling ExternalEzmaxpartnerApi->ezmaxpartner_subscribe_v1: #{e}"
 end
 ```
 
-#### Using the externalpartner_subscribe_v1_with_http_info variant
+#### Using the ezmaxpartner_subscribe_v1_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DocumentationSubscribeV1Response>, Integer, Hash)> externalpartner_subscribe_v1_with_http_info(documentation_subscribe_v1_request)
+> <Array(<EzmaxpartnerSubscribeV1Response>, Integer, Hash)> ezmaxpartner_subscribe_v1_with_http_info(ezmaxpartner_subscribe_v1_request)
 
 ```ruby
 begin
   # Subscribe to an Ezmaxparnerproductstage
-  data, status_code, headers = api_instance.externalpartner_subscribe_v1_with_http_info(documentation_subscribe_v1_request)
+  data, status_code, headers = api_instance.ezmaxpartner_subscribe_v1_with_http_info(ezmaxpartner_subscribe_v1_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DocumentationSubscribeV1Response>
+  p data # => <EzmaxpartnerSubscribeV1Response>
 rescue EzmaxApi::ApiError => e
-  puts "Error when calling ExternalEzmaxpartnerApi->externalpartner_subscribe_v1_with_http_info: #{e}"
+  puts "Error when calling ExternalEzmaxpartnerApi->ezmaxpartner_subscribe_v1_with_http_info: #{e}"
 end
 ```
 
@@ -62,11 +62,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **documentation_subscribe_v1_request** | [**DocumentationSubscribeV1Request**](DocumentationSubscribeV1Request.md) |  |  |
+| **ezmaxpartner_subscribe_v1_request** | [**EzmaxpartnerSubscribeV1Request**](EzmaxpartnerSubscribeV1Request.md) |  |  |
 
 ### Return type
 
-[**DocumentationSubscribeV1Response**](DocumentationSubscribeV1Response.md)
+[**EzmaxpartnerSubscribeV1Response**](EzmaxpartnerSubscribeV1Response.md)
 
 ### Authorization
 

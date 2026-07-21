@@ -21,26 +21,26 @@ module EzmaxApi
     end
     # Subscribe to an Ezmaxparnerproductstage
     # Subscribe to an Ezmaxparnerproductstage
-    # @param documentation_subscribe_v1_request [DocumentationSubscribeV1Request] 
+    # @param ezmaxpartner_subscribe_v1_request [EzmaxpartnerSubscribeV1Request] 
     # @param [Hash] opts the optional parameters
-    # @return [DocumentationSubscribeV1Response]
-    def externalpartner_subscribe_v1(documentation_subscribe_v1_request, opts = {})
-      data, _status_code, _headers = externalpartner_subscribe_v1_with_http_info(documentation_subscribe_v1_request, opts)
+    # @return [EzmaxpartnerSubscribeV1Response]
+    def ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request, opts = {})
+      data, _status_code, _headers = ezmaxpartner_subscribe_v1_with_http_info(ezmaxpartner_subscribe_v1_request, opts)
       data
     end
 
     # Subscribe to an Ezmaxparnerproductstage
     # Subscribe to an Ezmaxparnerproductstage
-    # @param documentation_subscribe_v1_request [DocumentationSubscribeV1Request] 
+    # @param ezmaxpartner_subscribe_v1_request [EzmaxpartnerSubscribeV1Request] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DocumentationSubscribeV1Response, Integer, Hash)>] DocumentationSubscribeV1Response data, response status code and response headers
-    def externalpartner_subscribe_v1_with_http_info(documentation_subscribe_v1_request, opts = {})
+    # @return [Array<(EzmaxpartnerSubscribeV1Response, Integer, Hash)>] EzmaxpartnerSubscribeV1Response data, response status code and response headers
+    def ezmaxpartner_subscribe_v1_with_http_info(ezmaxpartner_subscribe_v1_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ExternalEzmaxpartnerApi.externalpartner_subscribe_v1 ...'
+        @api_client.config.logger.debug 'Calling API: ExternalEzmaxpartnerApi.ezmaxpartner_subscribe_v1 ...'
       end
-      # verify the required parameter 'documentation_subscribe_v1_request' is set
-      if @api_client.config.client_side_validation && documentation_subscribe_v1_request.nil?
-        fail ArgumentError, "Missing the required parameter 'documentation_subscribe_v1_request' when calling ExternalEzmaxpartnerApi.externalpartner_subscribe_v1"
+      # verify the required parameter 'ezmaxpartner_subscribe_v1_request' is set
+      if @api_client.config.client_side_validation && ezmaxpartner_subscribe_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'ezmaxpartner_subscribe_v1_request' when calling ExternalEzmaxpartnerApi.ezmaxpartner_subscribe_v1"
       end
       # resource path
       local_var_path = '/1/external/ezmaxpartner/subscribe'
@@ -62,16 +62,16 @@ module EzmaxApi
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(documentation_subscribe_v1_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(ezmaxpartner_subscribe_v1_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DocumentationSubscribeV1Response'
+      return_type = opts[:debug_return_type] || 'EzmaxpartnerSubscribeV1Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['Authorization']
 
       new_options = opts.merge(
-        :operation => :"ExternalEzmaxpartnerApi.externalpartner_subscribe_v1",
+        :operation => :"ExternalEzmaxpartnerApi.ezmaxpartner_subscribe_v1",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -82,7 +82,7 @@ module EzmaxApi
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ExternalEzmaxpartnerApi#externalpartner_subscribe_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ExternalEzmaxpartnerApi#ezmaxpartner_subscribe_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

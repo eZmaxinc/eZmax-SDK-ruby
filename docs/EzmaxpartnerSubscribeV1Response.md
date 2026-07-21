@@ -1,4 +1,4 @@
-# EzmaxApi::DocumentationSubscribeV1Response
+# EzmaxApi::EzmaxpartnerSubscribeV1Response
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'Ezmaxapi'
 
-instance = EzmaxApi::DocumentationSubscribeV1Response.new(
+instance = EzmaxApi::EzmaxpartnerSubscribeV1Response.new(
   s_external_id: null
 )
 ```

@@ -15,7 +15,7 @@ require 'time'
 
 module EzmaxApi
   # Request for POST /1/module/ezmaxmaillinglist/subscribe
-  class DocumentationSubscribeV1Response < ApiModelBase
+  class EzmaxpartnerSubscribeV1Response < ApiModelBase
     # 
     attr_accessor :s_external_id
 
@@ -53,14 +53,14 @@ module EzmaxApi
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::DocumentationSubscribeV1Response` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `EzmaxApi::EzmaxpartnerSubscribeV1Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::DocumentationSubscribeV1Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `EzmaxApi::EzmaxpartnerSubscribeV1Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
