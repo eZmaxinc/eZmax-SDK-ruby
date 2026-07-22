@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  |  |
 | **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] |
-| **m_payload** | **Object** | Response for GET /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds |  |
+| **m_payload** | [**InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload**](InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.md) |  |  |
 
 ## Example
 

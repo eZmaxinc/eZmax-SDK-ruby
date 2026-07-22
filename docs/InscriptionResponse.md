@@ -5,14 +5,12 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_inscription_id** | **Integer** | The unique ID of the Inscription. |  |
-| **fki_company_id** | **Integer** | The unique ID of the Company |  |
-| **s_company_name_x** | **String** | The Name of the Company in the language of the requester | [optional] |
-| **fki_department_id** | **Integer** | The unique ID of the Department |  |
+| **fki_department_id** | **Integer** | The unique ID of the Department | [optional] |
 | **s_department_name_x** | **String** | The Name of the Department in the language of the requester | [optional] |
 | **fki_realestateboard_id** | **Integer** | The unique ID of the Realestateboard |  |
 | **s_realestateboard_name_x** | **String** | The name of the Realestateboard | [optional] |
 | **fki_address_id** | **Integer** | The unique ID of the Address |  |
-| **s_address** | **String** | The complete address in a single line | [optional] |
+| **obj_address** | [**AddressResponseCompound**](AddressResponseCompound.md) |  | [optional] |
 | **fki_inscriptionbuildingtype_id** | **Integer** | The unique ID of the Inscriptionbuildingtype |  |
 | **s_inscriptionbuildingtype_name_x** | **String** | The name of the Inscriptionbuildingtype in the language of the requester | [optional] |
 | **fki_inscriptiontype_id** | **Integer** | The unique ID of the Inscriptiontype |  |
@@ -21,44 +19,45 @@
 | **s_inscriptioncategory_name_x** | **String** | The name of the Inscriptioncategory in the language of the requester | [optional] |
 | **e_inscription_step** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |  |
 | **e_inscription_residence_type** | [**FieldEInscriptionResidenceType**](FieldEInscriptionResidenceType.md) |  |  |
-| **s_inscription_civicend** | **String** | The civicend of the Inscription |  |
-| **s_inscription_mls** | **String** | The mls of the Inscription |  |
+| **s_inscription_civicend** | **String** | The address civic end of the Inscription |  |
+| **s_inscription_mls** | **String** | The mls of the Inscription | [optional] |
 | **s_inscription_contract** | **String** | The sale contract number |  |
-| **i_inscription_sellerdeclaration** | **Integer** | The sellerdeclaration of the Inscription |  |
+| **i_inscription_sellerdeclaration** | **Integer** | The seller declaration number of the Inscription |  |
 | **e_inscription_type** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  |  |
-| **d_inscription_initialsaleprice** | **String** | The initialsaleprice of the Inscription |  |
+| **d_inscription_initialsaleprice** | **String** | The initial sale price of the Inscription |  |
 | **d_inscription_saleprice** | **String** | The saleprice of the Inscription |  |
-| **d_inscription_rentprice** | **String** | The rentprice of the Inscription |  |
+| **d_inscription_rentprice** | **String** | The rent price of the Inscription |  |
 | **e_inscription_remunerationtype** | [**FieldEInscriptionRemunerationtype**](FieldEInscriptionRemunerationtype.md) |  |  |
 | **e_inscription_remunerationinscriptorsellertype** | [**FieldEInscriptionRemunerationinscriptorsellertype**](FieldEInscriptionRemunerationinscriptorsellertype.md) |  |  |
 | **e_inscription_remunerationreferencetype** | [**FieldEInscriptionRemunerationreferencetype**](FieldEInscriptionRemunerationreferencetype.md) |  |  |
 | **e_inscription_remunerationtotaltype** | [**FieldEInscriptionRemunerationtotaltype**](FieldEInscriptionRemunerationtotaltype.md) |  |  |
-| **d_inscription_remuneration** | **String** | The remuneration of the Inscription |  |
-| **d_inscription_remunerationinscriptorseller** | **String** | The remunerationinscriptorseller of the Inscription |  |
-| **d_inscription_remunerationreference** | **String** | The remunerationreference of the Inscription |  |
-| **d_inscription_remunerationtotal** | **String** | The remunerationtotal of the Inscription |  |
-| **d_inscription_mortgagesold** | **String** | The mortgagesold of the Inscription |  |
-| **dt_inscription_date** | **String** | The date of the Inscription |  |
-| **dt_inscription_cancellationdate** | **String** | The cancellationdate of the Inscription |  |
-| **dt_inscription_initialexpirationdate** | **String** | The initialexpirationdate of the Inscription |  |
-| **dt_inscription_expirationdate** | **String** | The expirationdate of the Inscription |  |
-| **dt_inscription_notarydate** | **String** | The notarydate of the Inscription |  |
-| **dt_inscription_notaryentereddate** | **String** | The notaryentereddate of the Inscription |  |
+| **d_inscription_remuneration** | **String** | The remuneration amount of the Inscription |  |
+| **d_inscription_remunerationinscriptorseller** | **String** | The remuneration amount for the inscriptor or seller of the Inscription |  |
+| **d_inscription_remunerationreference** | **String** | The remuneration amount for the reference of the Inscription |  |
+| **d_inscription_remunerationtotal** | **String** | The remuneration amount total of the Inscription |  |
+| **d_inscription_mortgagesold** | **String** | The balande for the mortgage of the Inscription |  |
+| **dt_inscription_date** | **String** | The date of the Inscription | [optional] |
+| **dt_inscription_cancellationdate** | **String** | The cancellation date of the Inscription | [optional] |
+| **dt_inscription_initialexpirationdate** | **String** | The initial expiration date of the Inscription | [optional] |
+| **dt_inscription_expirationdate** | **String** | The expiration date of the Inscription | [optional] |
+| **dt_inscription_notarydate** | **String** | The notary date of the Inscription | [optional] |
+| **dt_inscription_notaryentereddate** | **String** | The notary entered date of the Inscription | [optional] |
 | **t_inscription_cadastre** | **String** | The cadastre of the Inscription |  |
 | **b_inscription_reference** | **Boolean** | Whether if it&#39;s an reference |  |
 | **b_inscription_inspection** | **Boolean** | Whether the inscription can be acces by an inspector |  |
 | **b_inscription_isactive** | **Boolean** | Whether the inscription is active or not |  |
-| **t_inscription_checklistnote** | **String** | The checklistnote of the Inscription |  |
+| **t_inscription_checklistnote** | **String** | The checklist note of the Inscription |  |
 | **b_inscription_new** | **Boolean** | Whether if it&#39;s an new |  |
 | **b_inscription_homeowner** | **Boolean** | Whether if it&#39;s an homeowner |  |
 | **b_inscription_archived** | **Boolean** | Whether the inscription is archived or not |  |
 | **b_inscription_litigation** | **Boolean** | Whether if it&#39;s an litigation |  |
 | **b_inscription_repossession** | **Boolean** | Whether if it&#39;s an repossession |  |
-| **b_inscription_issolicitation** | **Boolean** | Whether if it&#39;s an issolicitation |  |
-| **b_inscription_salebyowner** | **Boolean** | Whether if it&#39;s an salebyowner |  |
-| **b_inscription_soldwithoutlegalwarranty** | **Boolean** | Whether if it&#39;s an soldwithoutlegalwarranty |  |
-| **i_inscription_constructionyear** | **Integer** | The constructionyear of the Inscription |  |
-| **i_inscription_unit** | **Integer** | The unit of the Inscription |  |
+| **b_inscription_issolicitation** | **Boolean** | Whether if it&#39;s a solicitation |  |
+| **b_inscription_salebyowner** | **Boolean** | Whether if it&#39;s a sale by the owner |  |
+| **b_inscription_soldwithoutlegalwarranty** | **Boolean** | Whether if it&#39;s sold without the legal warranty |  |
+| **i_inscription_constructionyear** | **Integer** | The construction year of the Inscription |  |
+| **i_inscription_unit** | **Integer** | The number of unit for the Inscription |  |
+| **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] |
 
 ## Example
 
@@ -67,14 +66,12 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::InscriptionResponse.new(
   pki_inscription_id: 17,
-  fki_company_id: 1,
-  s_company_name_x: Acme inc.,
   fki_department_id: 21,
   s_department_name_x: Head Office,
   fki_realestateboard_id: 16,
   s_realestateboard_name_x: Exclusive Listing,
   fki_address_id: 142,
-  s_address: 2500 Daniel-Johnson Blvd., Suite 800 Laval, Quebec H7T 2P6,
+  obj_address: null,
   fki_inscriptionbuildingtype_id: 182,
   s_inscriptionbuildingtype_name_x: Semi-detached,
   fki_inscriptiontype_id: 51,
@@ -120,7 +117,8 @@ instance = EzmaxApi::InscriptionResponse.new(
   b_inscription_salebyowner: true,
   b_inscription_soldwithoutlegalwarranty: true,
   i_inscription_constructionyear: 25689,
-  i_inscription_unit: 247
+  i_inscription_unit: 247,
+  obj_audit: null
 )
 ```
 

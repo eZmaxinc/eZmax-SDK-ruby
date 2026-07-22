@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **a_obj_inscriptionnotauthenticatedcondition** | [**Array&lt;CustomInscriptionnotauthenticatedconditionRequest&gt;**](CustomInscriptionnotauthenticatedconditionRequest.md) |  |  |
-| **dt_inscriptionnotauthenticated_transactiondate_real** | **String** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] |
+| **dt_inscriptionnotauthenticated_transactiondate_real** | **String** | The real transactiondate of the Inscriptionnotauthenticated | [optional] |
 
 ## Example
 

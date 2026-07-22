@@ -9,7 +9,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**inscription_get_communication_list_v1**](ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list |
 | [**inscription_get_communicationrecipients_v1**](ObjectInscriptionApi.md#inscription_get_communicationrecipients_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription&#39;s Communicationrecipient |
 | [**inscription_get_communicationsenders_v1**](ObjectInscriptionApi.md#inscription_get_communicationsenders_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription&#39;s Communicationsender |
-| [**inscription_get_inscriptionnotauthenticateds_v1**](ObjectInscriptionApi.md#inscription_get_inscriptionnotauthenticateds_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list |
+| [**inscription_get_inscriptionnotauthenticateds_v1**](ObjectInscriptionApi.md#inscription_get_inscriptionnotauthenticateds_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscription&#39;s Inscriptionnotauthenticated |
 | [**inscription_get_list_v1**](ObjectInscriptionApi.md#inscription_get_list_v1) | **GET** /1/object/inscription/getList | Retrieve Inscription list |
 | [**inscription_get_object_v2**](ObjectInscriptionApi.md#inscription_get_object_v2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription |
 | [**inscription_import_into_edmv1**](ObjectInscriptionApi.md#inscription_import_into_edmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription |
@@ -375,7 +375,7 @@ end
 
 > <InscriptionGetInscriptionnotauthenticatedsV1Response> inscription_get_inscriptionnotauthenticateds_v1(pki_inscription_id)
 
-Retrieve Inscriptionnotauthenticated list
+Retrieve Inscription's Inscriptionnotauthenticated
 
 ### Examples
 
@@ -394,7 +394,7 @@ api_instance = EzmaxApi::ObjectInscriptionApi.new
 pki_inscription_id = 56 # Integer | 
 
 begin
-  # Retrieve Inscriptionnotauthenticated list
+  # Retrieve Inscription's Inscriptionnotauthenticated
   result = api_instance.inscription_get_inscriptionnotauthenticateds_v1(pki_inscription_id)
   p result
 rescue EzmaxApi::ApiError => e
@@ -410,7 +410,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Retrieve Inscriptionnotauthenticated list
+  # Retrieve Inscription's Inscriptionnotauthenticated
   data, status_code, headers = api_instance.inscription_get_inscriptionnotauthenticateds_v1_with_http_info(pki_inscription_id)
   p status_code # => 2xx
   p headers # => { ... }

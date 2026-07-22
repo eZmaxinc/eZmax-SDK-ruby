@@ -16,23 +16,23 @@
 | **s_buyercontract_contract** | **String** | The number of the Buyercontract | [optional] |
 | **e_inscription_step** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  |  |
 | **e_inscription_type** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  |  |
-| **s_inscription_civicend** | **String** | The civicend of the Inscription |  |
+| **s_inscription_civicend** | **String** | The address civic end of the Inscription |  |
 | **s_inscription_mls** | **String** | The mls of the Inscription | [optional] |
 | **s_inscription_contract** | **String** | The sale contract number | [optional] |
 | **d_inscription_saleprice** | **String** | The saleprice of the Inscription |  |
-| **d_inscription_rentprice** | **String** | The rentprice of the Inscription |  |
+| **d_inscription_rentprice** | **String** | The rent price of the Inscription |  |
 | **dt_inscription_date** | **String** | The date of the Inscription | [optional] |
-| **dt_inscription_expirationdate** | **String** | The expirationdate of the Inscription | [optional] |
-| **dt_inscription_notarydate** | **String** | The notarydate of the Inscription | [optional] |
+| **dt_inscription_expirationdate** | **String** | The expiration date of the Inscription | [optional] |
+| **dt_inscription_notarydate** | **String** | The notary date of the Inscription | [optional] |
 | **b_inscription_inspection** | **Boolean** | Whether the inscription can be acces by an inspector | [optional] |
 | **b_inscription_isactive** | **Boolean** | Whether the inscription is active or not |  |
 | **b_inscription_archived** | **Boolean** | Whether the inscription is archived or not |  |
-| **dt_inscriptionnotauthenticated_notaryscheduledate** | **String** | The notaryscheduledate of the Inscriptionnotauthenticated | [optional] |
-| **dt_inscriptionnotauthenticated_transactiondate** | **String** | The transactiondate of the Inscriptionnotauthenticated | [optional] |
-| **dt_inscriptionnotauthenticated_transactiondate_real** | **String** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] |
+| **dt_inscriptionnotauthenticated_notaryscheduledate** | **String** | The notary schedule date of the Inscriptionnotauthenticated | [optional] |
+| **dt_inscriptionnotauthenticated_transactiondate** | **String** | The transaction date of the Inscriptionnotauthenticated | [optional] |
+| **dt_inscriptionnotauthenticated_transactiondate_real** | **String** | The real transactiondate of the Inscriptionnotauthenticated | [optional] |
 | **b_inscriptionnotauthenticated_conditional** | **Boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] |
 | **b_inscriptionnotauthenticated_isactive** | **Boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] |
-| **b_inscriptionnotauthenticated_draft** | **Boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] |
+| **b_inscriptionnotauthenticated_draft** | **Boolean** | Whether the Inscriptionnotauthenticated is a draft or not | [optional] |
 | **s_address_civic** | **String** | The Civic number. | [optional] |
 | **s_address_street** | **String** | The Street Name | [optional] |
 | **s_address_suite** | **String** | The Suite or appartment number | [optional] |
@@ -42,8 +42,8 @@
 | **s_province_name_x** | **String** | The name of the Province in the language of the requester | [optional] |
 | **fki_country_id** | **Integer** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional] |
 | **s_country_name_x** | **String** | The name of the Country in the language of the requester | [optional] |
-| **s_inscriptionnotauthenticated_offertopurchasenumber** | **String** | The Offer to purchase number |  |
-| **i_inscription_unit** | **Integer** | The unit of the Inscription |  |
+| **s_inscriptionnotauthenticated_offertopurchasenumber** | **String** | The offer to purchase number of the Inscriptionnotauthenticated |  |
+| **i_inscription_unit** | **Integer** | The number of unit for the Inscription |  |
 
 ## Example
 
