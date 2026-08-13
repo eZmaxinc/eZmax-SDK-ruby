@@ -8,6 +8,7 @@
 | **a_fki_ezsignfoldersignerassociation_id** | **Array&lt;Integer&gt;** |  |  |
 | **a_obj_ezsigndocument** | [**Array&lt;CustomEzsigndocumentDuplicateRequest&gt;**](CustomEzsigndocumentDuplicateRequest.md) |  |  |
 | **t_ezsignfolder_note** | **String** | Note about the Ezsignfolder | [optional] |
+| **b_keepenteredvalues** | **Boolean** | Whether we keep the entered values or not in the Ezsignform | [optional][default to true] |
 
 ## Example
 
@@ -18,7 +19,8 @@ instance = EzmaxApi::EzsignfolderDuplicateV1Request.new(
   s_ezsignfolder_description: Test eZsign Folder,
   a_fki_ezsignfoldersignerassociation_id: null,
   a_obj_ezsigndocument: null,
-  t_ezsignfolder_note: This is a note
+  t_ezsignfolder_note: This is a note,
+  b_keepenteredvalues: null
 )
 ```
 

@@ -17,6 +17,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignbulksend_get_list_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_list_v1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list |
 | [**ezsignbulksend_get_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v2) | **GET** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
 | [**ezsignbulksend_get_object_v3**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v3) | **GET** /3/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
+| [**ezsignbulksend_get_object_v4**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v4) | **GET** /4/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend |
 | [**ezsignbulksend_reorder_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_reorder_v1) | **POST** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder | Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend |
 
 
@@ -962,6 +963,77 @@ end
 ### Return type
 
 [**EzsignbulksendGetObjectV3Response**](EzsignbulksendGetObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignbulksend_get_object_v4
+
+> <EzsignbulksendGetObjectV4Response> ezsignbulksend_get_object_v4(pki_ezsignbulksend_id)
+
+Retrieve an existing Ezsignbulksend
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksendApi.new
+pki_ezsignbulksend_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignbulksend
+  result = api_instance.ezsignbulksend_get_object_v4(pki_ezsignbulksend_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_object_v4: #{e}"
+end
+```
+
+#### Using the ezsignbulksend_get_object_v4_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignbulksendGetObjectV4Response>, Integer, Hash)> ezsignbulksend_get_object_v4_with_http_info(pki_ezsignbulksend_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignbulksend
+  data, status_code, headers = api_instance.ezsignbulksend_get_object_v4_with_http_info(pki_ezsignbulksend_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignbulksendGetObjectV4Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksendApi->ezsignbulksend_get_object_v4_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignbulksend_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignbulksendGetObjectV4Response**](EzsignbulksendGetObjectV4Response.md)
 
 ### Authorization
 

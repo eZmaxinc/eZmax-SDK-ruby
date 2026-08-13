@@ -7,6 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsignbulksenddocumentmapping_create_object_v1**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmapping_create_object_v1) | **POST** /1/object/ezsignbulksenddocumentmapping | Create a new Ezsignbulksenddocumentmapping |
 | [**ezsignbulksenddocumentmapping_delete_object_v1**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmapping_delete_object_v1) | **DELETE** /1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Delete an existing Ezsignbulksenddocumentmapping |
 | [**ezsignbulksenddocumentmapping_get_object_v2**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmapping_get_object_v2) | **GET** /2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping |
+| [**ezsignbulksenddocumentmapping_get_object_v3**](ObjectEzsignbulksenddocumentmappingApi.md#ezsignbulksenddocumentmapping_get_object_v3) | **GET** /3/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID} | Retrieve an existing Ezsignbulksenddocumentmapping |
 
 
 ## ezsignbulksenddocumentmapping_create_object_v1
@@ -211,6 +212,77 @@ end
 ### Return type
 
 [**EzsignbulksenddocumentmappingGetObjectV2Response**](EzsignbulksenddocumentmappingGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignbulksenddocumentmapping_get_object_v3
+
+> <EzsignbulksenddocumentmappingGetObjectV3Response> ezsignbulksenddocumentmapping_get_object_v3(pki_ezsignbulksenddocumentmapping_id)
+
+Retrieve an existing Ezsignbulksenddocumentmapping
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsignbulksenddocumentmappingApi.new
+pki_ezsignbulksenddocumentmapping_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsignbulksenddocumentmapping
+  result = api_instance.ezsignbulksenddocumentmapping_get_object_v3(pki_ezsignbulksenddocumentmapping_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksenddocumentmappingApi->ezsignbulksenddocumentmapping_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsignbulksenddocumentmapping_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsignbulksenddocumentmappingGetObjectV3Response>, Integer, Hash)> ezsignbulksenddocumentmapping_get_object_v3_with_http_info(pki_ezsignbulksenddocumentmapping_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsignbulksenddocumentmapping
+  data, status_code, headers = api_instance.ezsignbulksenddocumentmapping_get_object_v3_with_http_info(pki_ezsignbulksenddocumentmapping_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsignbulksenddocumentmappingGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsignbulksenddocumentmappingApi->ezsignbulksenddocumentmapping_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsignbulksenddocumentmapping_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsignbulksenddocumentmappingGetObjectV3Response**](EzsignbulksenddocumentmappingGetObjectV3Response.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **s_external_id** | **String** |  |  |
+| **s_external_id** | **String** |  | [optional] |
 
 ## Example
 

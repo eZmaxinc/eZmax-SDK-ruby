@@ -11,6 +11,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigntemplate_get_autocomplete_v2**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_autocomplete_v2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs |
 | [**ezsigntemplate_get_list_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_list_v1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list |
 | [**ezsigntemplate_get_object_v3**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
+| [**ezsigntemplate_get_object_v4**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v4) | **GET** /4/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate |
 
 
 ## ezsigntemplate_copy_v1
@@ -523,6 +524,77 @@ end
 ### Return type
 
 [**EzsigntemplateGetObjectV3Response**](EzsigntemplateGetObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigntemplate_get_object_v4
+
+> <EzsigntemplateGetObjectV4Response> ezsigntemplate_get_object_v4(pki_ezsigntemplate_id)
+
+Retrieve an existing Ezsigntemplate
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplateApi.new
+pki_ezsigntemplate_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigntemplate
+  result = api_instance.ezsigntemplate_get_object_v4(pki_ezsigntemplate_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplateApi->ezsigntemplate_get_object_v4: #{e}"
+end
+```
+
+#### Using the ezsigntemplate_get_object_v4_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplateGetObjectV4Response>, Integer, Hash)> ezsigntemplate_get_object_v4_with_http_info(pki_ezsigntemplate_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigntemplate
+  data, status_code, headers = api_instance.ezsigntemplate_get_object_v4_with_http_info(pki_ezsigntemplate_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplateGetObjectV4Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplateApi->ezsigntemplate_get_object_v4_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplate_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigntemplateGetObjectV4Response**](EzsigntemplateGetObjectV4Response.md)
 
 ### Authorization
 

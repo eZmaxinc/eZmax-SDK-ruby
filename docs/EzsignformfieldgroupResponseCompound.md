@@ -21,6 +21,7 @@
 | **s_ezsignformfieldgroup_textvalidationcustommessage** | **String** | Description of validation rule. Show by signatory. | [optional] |
 | **t_ezsignformfieldgroup_tooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] |
 | **e_ezsignformfieldgroup_tooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] |
+| **dt_ezsignformfieldgroup_completed** | **String** | The date the Ezsignformfieldgroup was completed. | [optional] |
 | **a_obj_ezsignformfield** | [**Array&lt;EzsignformfieldResponseCompound&gt;**](EzsignformfieldResponseCompound.md) |  |  |
 | **a_obj_dropdown_element** | [**Array&lt;CustomDropdownElementResponseCompound&gt;**](CustomDropdownElementResponseCompound.md) |  | [optional] |
 | **a_obj_ezsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerResponseCompound&gt;**](EzsignformfieldgroupsignerResponseCompound.md) |  |  |
@@ -48,6 +49,7 @@ instance = EzmaxApi::EzsignformfieldgroupResponseCompound.new(
   s_ezsignformfieldgroup_textvalidationcustommessage: Phone number,
   t_ezsignformfieldgroup_tooltip: Please enter a valid email address,
   e_ezsignformfieldgroup_tooltipposition: null,
+  dt_ezsignformfieldgroup_completed: 2020-12-31 23:59:59,
   a_obj_ezsignformfield: null,
   a_obj_dropdown_element: null,
   a_obj_ezsignformfieldgroupsigner: null

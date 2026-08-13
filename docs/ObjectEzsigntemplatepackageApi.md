@@ -7,10 +7,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**ezsigntemplatepackage_create_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_create_object_v1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage |
 | [**ezsigntemplatepackage_delete_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage |
 | [**ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners |
+| [**ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2) | **PUT** /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners |
 | [**ezsigntemplatepackage_edit_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_edit_object_v1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Edit an existing Ezsigntemplatepackage |
 | [**ezsigntemplatepackage_get_autocomplete_v2**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_autocomplete_v2) | **GET** /2/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs |
 | [**ezsigntemplatepackage_get_list_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_list_v1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list |
 | [**ezsigntemplatepackage_get_object_v2**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_object_v2) | **GET** /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage |
+| [**ezsigntemplatepackage_get_object_v3**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_object_v3) | **GET** /3/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage |
 
 
 ## ezsigntemplatepackage_create_object_v1
@@ -217,6 +219,79 @@ end
 ### Return type
 
 [**EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response**](EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2
+
+> <EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response> ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2(pki_ezsigntemplatepackage_id, ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request)
+
+Edit multiple Ezsigntemplatepackagesigners
+
+Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepackageApi.new
+pki_ezsigntemplatepackage_id = 56 # Integer | 
+ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request = EzmaxApi::EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request.new({a_obj_ezsigntemplatepackagesigner: [EzmaxApi::EzsigntemplatepackagesignerRequestCompoundV2.new({fki_ezsigntemplatepackage_id: 99, s_ezsigntemplatepackagesigner_description: 'Customer'})]}) # EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request | 
+
+begin
+  # Edit multiple Ezsigntemplatepackagesigners
+  result = api_instance.ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2(pki_ezsigntemplatepackage_id, ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response>, Integer, Hash)> ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_with_http_info(pki_ezsigntemplatepackage_id, ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request)
+
+```ruby
+begin
+  # Edit multiple Ezsigntemplatepackagesigners
+  data, status_code, headers = api_instance.ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_with_http_info(pki_ezsigntemplatepackage_id, ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatepackage_id** | **Integer** |  |  |
+| **ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v2_request** | [**EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request**](EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response**](EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response.md)
 
 ### Authorization
 
@@ -523,6 +598,77 @@ end
 ### Return type
 
 [**EzsigntemplatepackageGetObjectV2Response**](EzsigntemplatepackageGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigntemplatepackage_get_object_v3
+
+> <EzsigntemplatepackageGetObjectV3Response> ezsigntemplatepackage_get_object_v3(pki_ezsigntemplatepackage_id)
+
+Retrieve an existing Ezsigntemplatepackage
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepackageApi.new
+pki_ezsigntemplatepackage_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigntemplatepackage
+  result = api_instance.ezsigntemplatepackage_get_object_v3(pki_ezsigntemplatepackage_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepackage_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepackageGetObjectV3Response>, Integer, Hash)> ezsigntemplatepackage_get_object_v3_with_http_info(pki_ezsigntemplatepackage_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigntemplatepackage
+  data, status_code, headers = api_instance.ezsigntemplatepackage_get_object_v3_with_http_info(pki_ezsigntemplatepackage_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepackageGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatepackage_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigntemplatepackageGetObjectV3Response**](EzsigntemplatepackageGetObjectV3Response.md)
 
 ### Authorization
 

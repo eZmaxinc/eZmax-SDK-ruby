@@ -5,9 +5,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**ezsigntemplatepackagesigner_create_object_v1**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_create_object_v1) | **POST** /1/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesigner_create_object_v2**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_create_object_v2) | **POST** /2/object/ezsigntemplatepackagesigner | Create a new Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesigner_delete_object_v1**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Delete an existing Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesigner_edit_object_v1**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_edit_object_v1) | **PUT** /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesigner_edit_object_v2**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_edit_object_v2) | **PUT** /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Edit an existing Ezsigntemplatepackagesigner |
 | [**ezsigntemplatepackagesigner_get_object_v2**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_get_object_v2) | **GET** /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner |
+| [**ezsigntemplatepackagesigner_get_object_v3**](ObjectEzsigntemplatepackagesignerApi.md#ezsigntemplatepackagesigner_get_object_v3) | **GET** /3/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID} | Retrieve an existing Ezsigntemplatepackagesigner |
 
 
 ## ezsigntemplatepackagesigner_create_object_v1
@@ -70,6 +73,77 @@ end
 ### Return type
 
 [**EzsigntemplatepackagesignerCreateObjectV1Response**](EzsigntemplatepackagesignerCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigntemplatepackagesigner_create_object_v2
+
+> <EzsigntemplatepackagesignerCreateObjectV2Response> ezsigntemplatepackagesigner_create_object_v2(ezsigntemplatepackagesigner_create_object_v2_request)
+
+Create a new Ezsigntemplatepackagesigner
+
+The endpoint allows to create one or many elements at once.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepackagesignerApi.new
+ezsigntemplatepackagesigner_create_object_v2_request = EzmaxApi::EzsigntemplatepackagesignerCreateObjectV2Request.new({a_obj_ezsigntemplatepackagesigner: [EzmaxApi::EzsigntemplatepackagesignerRequestCompoundV2.new({fki_ezsigntemplatepackage_id: 99, s_ezsigntemplatepackagesigner_description: 'Customer'})]}) # EzsigntemplatepackagesignerCreateObjectV2Request | 
+
+begin
+  # Create a new Ezsigntemplatepackagesigner
+  result = api_instance.ezsigntemplatepackagesigner_create_object_v2(ezsigntemplatepackagesigner_create_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_create_object_v2: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepackagesigner_create_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepackagesignerCreateObjectV2Response>, Integer, Hash)> ezsigntemplatepackagesigner_create_object_v2_with_http_info(ezsigntemplatepackagesigner_create_object_v2_request)
+
+```ruby
+begin
+  # Create a new Ezsigntemplatepackagesigner
+  data, status_code, headers = api_instance.ezsigntemplatepackagesigner_create_object_v2_with_http_info(ezsigntemplatepackagesigner_create_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepackagesignerCreateObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_create_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **ezsigntemplatepackagesigner_create_object_v2_request** | [**EzsigntemplatepackagesignerCreateObjectV2Request**](EzsigntemplatepackagesignerCreateObjectV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigntemplatepackagesignerCreateObjectV2Response**](EzsigntemplatepackagesignerCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -225,6 +299,79 @@ end
 - **Accept**: application/json
 
 
+## ezsigntemplatepackagesigner_edit_object_v2
+
+> <EzsigntemplatepackagesignerEditObjectV2Response> ezsigntemplatepackagesigner_edit_object_v2(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v2_request)
+
+Edit an existing Ezsigntemplatepackagesigner
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepackagesignerApi.new
+pki_ezsigntemplatepackagesigner_id = 56 # Integer | 
+ezsigntemplatepackagesigner_edit_object_v2_request = EzmaxApi::EzsigntemplatepackagesignerEditObjectV2Request.new({obj_ezsigntemplatepackagesigner: EzmaxApi::EzsigntemplatepackagesignerRequestCompoundV2.new({fki_ezsigntemplatepackage_id: 99, s_ezsigntemplatepackagesigner_description: 'Customer'})}) # EzsigntemplatepackagesignerEditObjectV2Request | 
+
+begin
+  # Edit an existing Ezsigntemplatepackagesigner
+  result = api_instance.ezsigntemplatepackagesigner_edit_object_v2(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v2_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_edit_object_v2: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepackagesigner_edit_object_v2_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepackagesignerEditObjectV2Response>, Integer, Hash)> ezsigntemplatepackagesigner_edit_object_v2_with_http_info(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v2_request)
+
+```ruby
+begin
+  # Edit an existing Ezsigntemplatepackagesigner
+  data, status_code, headers = api_instance.ezsigntemplatepackagesigner_edit_object_v2_with_http_info(pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v2_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepackagesignerEditObjectV2Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_edit_object_v2_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatepackagesigner_id** | **Integer** |  |  |
+| **ezsigntemplatepackagesigner_edit_object_v2_request** | [**EzsigntemplatepackagesignerEditObjectV2Request**](EzsigntemplatepackagesignerEditObjectV2Request.md) |  |  |
+
+### Return type
+
+[**EzsigntemplatepackagesignerEditObjectV2Response**](EzsigntemplatepackagesignerEditObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## ezsigntemplatepackagesigner_get_object_v2
 
 > <EzsigntemplatepackagesignerGetObjectV2Response> ezsigntemplatepackagesigner_get_object_v2(pki_ezsigntemplatepackagesigner_id)
@@ -285,6 +432,77 @@ end
 ### Return type
 
 [**EzsigntemplatepackagesignerGetObjectV2Response**](EzsigntemplatepackagesignerGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigntemplatepackagesigner_get_object_v3
+
+> <EzsigntemplatepackagesignerGetObjectV3Response> ezsigntemplatepackagesigner_get_object_v3(pki_ezsigntemplatepackagesigner_id)
+
+Retrieve an existing Ezsigntemplatepackagesigner
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEzsigntemplatepackagesignerApi.new
+pki_ezsigntemplatepackagesigner_id = 56 # Integer | 
+
+begin
+  # Retrieve an existing Ezsigntemplatepackagesigner
+  result = api_instance.ezsigntemplatepackagesigner_get_object_v3(pki_ezsigntemplatepackagesigner_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_get_object_v3: #{e}"
+end
+```
+
+#### Using the ezsigntemplatepackagesigner_get_object_v3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EzsigntemplatepackagesignerGetObjectV3Response>, Integer, Hash)> ezsigntemplatepackagesigner_get_object_v3_with_http_info(pki_ezsigntemplatepackagesigner_id)
+
+```ruby
+begin
+  # Retrieve an existing Ezsigntemplatepackagesigner
+  data, status_code, headers = api_instance.ezsigntemplatepackagesigner_get_object_v3_with_http_info(pki_ezsigntemplatepackagesigner_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EzsigntemplatepackagesignerGetObjectV3Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEzsigntemplatepackagesignerApi->ezsigntemplatepackagesigner_get_object_v3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_ezsigntemplatepackagesigner_id** | **Integer** |  |  |
+
+### Return type
+
+[**EzsigntemplatepackagesignerGetObjectV3Response**](EzsigntemplatepackagesignerGetObjectV3Response.md)
 
 ### Authorization
 
