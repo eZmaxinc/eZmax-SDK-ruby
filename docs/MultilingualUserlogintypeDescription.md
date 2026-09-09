@@ -13,7 +13,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualUserlogintypeDescription.new(
-  s_userlogintype_description1: Courriel et téléphone ou SMS,
+  s_userlogintype_description1: Courriel et tÃ©lÃ©phone ou SMS,
   s_userlogintype_description2: Email and phone or SMS
 )
 ```

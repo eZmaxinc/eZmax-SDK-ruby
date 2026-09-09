@@ -18,7 +18,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::VariableexpenseListElement.new(
   pki_variableexpense_id: 2,
   s_variableexpense_code: EQBUR,
-  s_variableexpense_description_x: Équipements de bureau,
+  s_variableexpense_description_x: Ã‰quipements de bureau,
   e_variableexpense_taxable: null,
   b_variableexpense_isactive: true
 )

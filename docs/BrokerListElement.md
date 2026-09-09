@@ -51,7 +51,7 @@ instance = EzmaxApi::BrokerListElement.new(
   fki_department_id: 21,
   s_department_name_x: Head Office,
   fki_brokertype_id: 1,
-  s_brokertype_name_x: Agence immobilière,
+  s_brokertype_name_x: Agence immobiliÃ¨re,
   s_broker_code: AAA,
   s_realestateboardnumber_number: A123456,
   i_agent_bannernumber: 4228739532,

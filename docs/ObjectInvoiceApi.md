@@ -4,12 +4,84 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**invoice_batch_download_v1**](ObjectInvoiceApi.md#invoice_batch_download_v1) | **POST** /1/object/invoice/{pkiInvoiceID}/batchDownload | Download multiples attachments from an Invoice |
 | [**invoice_get_attachments_v1**](ObjectInvoiceApi.md#invoice_get_attachments_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getAttachments | Retrieve Invoice&#39;s Attachments |
 | [**invoice_get_communication_count_v1**](ObjectInvoiceApi.md#invoice_get_communication_count_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationCount | Retrieve Communication count |
 | [**invoice_get_communication_list_v1**](ObjectInvoiceApi.md#invoice_get_communication_list_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list |
 | [**invoice_get_communicationrecipients_v1**](ObjectInvoiceApi.md#invoice_get_communicationrecipients_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationrecipients | Retrieve Invoice&#39;s Communicationrecipient |
 | [**invoice_get_communicationsenders_v1**](ObjectInvoiceApi.md#invoice_get_communicationsenders_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationsenders | Retrieve Invoice&#39;s Communicationsender |
 | [**invoice_import_into_edmv1**](ObjectInvoiceApi.md#invoice_import_into_edmv1) | **POST** /1/object/invoice/{pkiInvoiceID}/importIntoEDM | Import attachments into the Invoice |
+
+
+## invoice_batch_download_v1
+
+> File invoice_batch_download_v1(pki_invoice_id, invoice_batch_download_v1_request)
+
+Download multiples attachments from an Invoice
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInvoiceApi.new
+pki_invoice_id = 56 # Integer | 
+invoice_batch_download_v1_request = EzmaxApi::InvoiceBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # InvoiceBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from an Invoice
+  result = api_instance.invoice_batch_download_v1(pki_invoice_id, invoice_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInvoiceApi->invoice_batch_download_v1: #{e}"
+end
+```
+
+#### Using the invoice_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> invoice_batch_download_v1_with_http_info(pki_invoice_id, invoice_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from an Invoice
+  data, status_code, headers = api_instance.invoice_batch_download_v1_with_http_info(pki_invoice_id, invoice_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInvoiceApi->invoice_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_invoice_id** | **Integer** |  |  |
+| **invoice_batch_download_v1_request** | [**InvoiceBatchDownloadV1Request**](InvoiceBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
 
 
 ## invoice_get_attachments_v1

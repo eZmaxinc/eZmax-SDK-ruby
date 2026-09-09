@@ -4,8 +4,150 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**employee_batch_download_v1**](ObjectEmployeeApi.md#employee_batch_download_v1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee |
+| [**employee_get_attachments_v1**](ObjectEmployeeApi.md#employee_get_attachments_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee&#39;s attachments |
 | [**employee_get_list_v1**](ObjectEmployeeApi.md#employee_get_list_v1) | **GET** /1/object/employee/getList | Retrieve Employee list |
 | [**employee_import_into_edmv1**](ObjectEmployeeApi.md#employee_import_into_edmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee |
+
+
+## employee_batch_download_v1
+
+> File employee_batch_download_v1(pki_employee_id, employee_batch_download_v1_request)
+
+Download multiples attachments from a Employee
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+employee_batch_download_v1_request = EzmaxApi::EmployeeBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # EmployeeBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Employee
+  result = api_instance.employee_batch_download_v1(pki_employee_id, employee_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_batch_download_v1: #{e}"
+end
+```
+
+#### Using the employee_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> employee_batch_download_v1_with_http_info(pki_employee_id, employee_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Employee
+  data, status_code, headers = api_instance.employee_batch_download_v1_with_http_info(pki_employee_id, employee_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+| **employee_batch_download_v1_request** | [**EmployeeBatchDownloadV1Request**](EmployeeBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## employee_get_attachments_v1
+
+> <EmployeeGetAttachmentsV1Response> employee_get_attachments_v1(pki_employee_id)
+
+Retrieve Employee's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+
+begin
+  # Retrieve Employee's attachments
+  result = api_instance.employee_get_attachments_v1(pki_employee_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the employee_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmployeeGetAttachmentsV1Response>, Integer, Hash)> employee_get_attachments_v1_with_http_info(pki_employee_id)
+
+```ruby
+begin
+  # Retrieve Employee's attachments
+  data, status_code, headers = api_instance.employee_get_attachments_v1_with_http_info(pki_employee_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmployeeGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+
+### Return type
+
+[**EmployeeGetAttachmentsV1Response**](EmployeeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## employee_get_list_v1

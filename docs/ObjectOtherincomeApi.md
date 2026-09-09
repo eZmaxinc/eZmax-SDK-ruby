@@ -4,12 +4,154 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**otherincome_batch_download_v1**](ObjectOtherincomeApi.md#otherincome_batch_download_v1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/batchDownload | Download multiples attachments from a Otherincome |
+| [**otherincome_get_attachments_v1**](ObjectOtherincomeApi.md#otherincome_get_attachments_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getAttachments | Retrieve Otherincome&#39;s attachments |
 | [**otherincome_get_communication_count_v1**](ObjectOtherincomeApi.md#otherincome_get_communication_count_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationCount | Retrieve Communication count |
 | [**otherincome_get_communication_list_v1**](ObjectOtherincomeApi.md#otherincome_get_communication_list_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list |
 | [**otherincome_get_communicationrecipients_v1**](ObjectOtherincomeApi.md#otherincome_get_communicationrecipients_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients | Retrieve Otherincome&#39;s Communicationrecipient |
 | [**otherincome_get_communicationsenders_v1**](ObjectOtherincomeApi.md#otherincome_get_communicationsenders_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationsenders | Retrieve Otherincome&#39;s Communicationsender |
 | [**otherincome_get_list_v1**](ObjectOtherincomeApi.md#otherincome_get_list_v1) | **GET** /1/object/otherincome/getList | Retrieve Otherincome list |
 | [**otherincome_import_into_edmv1**](ObjectOtherincomeApi.md#otherincome_import_into_edmv1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/importIntoEDM | Import attachments into the Otherincome |
+
+
+## otherincome_batch_download_v1
+
+> File otherincome_batch_download_v1(pki_otherincome_id, otherincome_batch_download_v1_request)
+
+Download multiples attachments from a Otherincome
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOtherincomeApi.new
+pki_otherincome_id = 56 # Integer | 
+otherincome_batch_download_v1_request = EzmaxApi::OtherincomeBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # OtherincomeBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Otherincome
+  result = api_instance.otherincome_batch_download_v1(pki_otherincome_id, otherincome_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOtherincomeApi->otherincome_batch_download_v1: #{e}"
+end
+```
+
+#### Using the otherincome_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> otherincome_batch_download_v1_with_http_info(pki_otherincome_id, otherincome_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Otherincome
+  data, status_code, headers = api_instance.otherincome_batch_download_v1_with_http_info(pki_otherincome_id, otherincome_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOtherincomeApi->otherincome_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_otherincome_id** | **Integer** |  |  |
+| **otherincome_batch_download_v1_request** | [**OtherincomeBatchDownloadV1Request**](OtherincomeBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## otherincome_get_attachments_v1
+
+> <OtherincomeGetAttachmentsV1Response> otherincome_get_attachments_v1(pki_otherincome_id)
+
+Retrieve Otherincome's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOtherincomeApi.new
+pki_otherincome_id = 56 # Integer | 
+
+begin
+  # Retrieve Otherincome's attachments
+  result = api_instance.otherincome_get_attachments_v1(pki_otherincome_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOtherincomeApi->otherincome_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the otherincome_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OtherincomeGetAttachmentsV1Response>, Integer, Hash)> otherincome_get_attachments_v1_with_http_info(pki_otherincome_id)
+
+```ruby
+begin
+  # Retrieve Otherincome's attachments
+  data, status_code, headers = api_instance.otherincome_get_attachments_v1_with_http_info(pki_otherincome_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OtherincomeGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOtherincomeApi->otherincome_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_otherincome_id** | **Integer** |  |  |
+
+### Return type
+
+[**OtherincomeGetAttachmentsV1Response**](OtherincomeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## otherincome_get_communication_count_v1

@@ -87,7 +87,7 @@ instance = EzmaxApi::InscriptionnotauthenticatedResponse.new(
   b_inscriptionnotauthenticated_isactive: true,
   e_inscriptionnotauthenticated_residence_type: null,
   t_inscriptionnotauthenticated_checklistnote: Include original signatures,
-  d_inscriptionnotauthenticated_selleronlyretribution: 1500.14,
+  d_inscriptionnotauthenticated_selleronlyretribution: 500.140,
   b_inscriptionnotauthenticated_draft: true
 )
 ```

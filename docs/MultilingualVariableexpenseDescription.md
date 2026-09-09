@@ -13,7 +13,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualVariableexpenseDescription.new(
-  s_variableexpense_description1: Équipements de bureau,
+  s_variableexpense_description1: Ã‰quipements de bureau,
   s_variableexpense_description2: Office equipment
 )
 ```

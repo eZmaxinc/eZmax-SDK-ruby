@@ -13,8 +13,8 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualEzmaxinvoicingsummaryinternalDescription.new(
-  s_ezmaxinvoicingsummaryinternal_description1: Défaut,
-  s_ezmaxinvoicingsummaryinternal_description2: Défault
+  s_ezmaxinvoicingsummaryinternal_description1: DÃ©faut,
+  s_ezmaxinvoicingsummaryinternal_description2: DÃ©fault
 )
 ```
 

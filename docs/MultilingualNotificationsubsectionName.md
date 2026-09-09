@@ -13,7 +13,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualNotificationsubsectionName.new(
-  s_notificationsubsection_name1: Signature électronique,
+  s_notificationsubsection_name1: Signature Ã©lectronique,
   s_notificationsubsection_name2: Electronic signature
 )
 ```

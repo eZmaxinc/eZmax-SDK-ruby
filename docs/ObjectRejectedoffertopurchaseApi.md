@@ -4,12 +4,154 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**rejectedoffertopurchase_batch_download_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_batch_download_v1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/batchDownload | Download multiples attachments from a Rejectedoffertopurchase |
+| [**rejectedoffertopurchase_get_attachments_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_attachments_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getAttachments | Retrieve Rejectedoffertopurchase&#39;s attachments |
 | [**rejectedoffertopurchase_get_communication_count_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communication_count_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationCount | Retrieve Communication count |
 | [**rejectedoffertopurchase_get_communication_list_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communication_list_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list |
 | [**rejectedoffertopurchase_get_communicationrecipients_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communicationrecipients_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients | Retrieve Rejectedoffertopurchase&#39;s Communicationrecipient |
 | [**rejectedoffertopurchase_get_communicationsenders_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communicationsenders_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationsenders | Retrieve Rejectedoffertopurchase&#39;s Communicationsender |
 | [**rejectedoffertopurchase_get_list_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_list_v1) | **GET** /1/object/rejectedoffertopurchase/getList | Retrieve Rejectedoffertopurchase list |
 | [**rejectedoffertopurchase_import_into_edmv1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_import_into_edmv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase |
+
+
+## rejectedoffertopurchase_batch_download_v1
+
+> File rejectedoffertopurchase_batch_download_v1(pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request)
+
+Download multiples attachments from a Rejectedoffertopurchase
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectRejectedoffertopurchaseApi.new
+pki_rejectedoffertopurchase_id = 56 # Integer | 
+rejectedoffertopurchase_batch_download_v1_request = EzmaxApi::RejectedoffertopurchaseBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # RejectedoffertopurchaseBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Rejectedoffertopurchase
+  result = api_instance.rejectedoffertopurchase_batch_download_v1(pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_batch_download_v1: #{e}"
+end
+```
+
+#### Using the rejectedoffertopurchase_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> rejectedoffertopurchase_batch_download_v1_with_http_info(pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Rejectedoffertopurchase
+  data, status_code, headers = api_instance.rejectedoffertopurchase_batch_download_v1_with_http_info(pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_rejectedoffertopurchase_id** | **Integer** |  |  |
+| **rejectedoffertopurchase_batch_download_v1_request** | [**RejectedoffertopurchaseBatchDownloadV1Request**](RejectedoffertopurchaseBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## rejectedoffertopurchase_get_attachments_v1
+
+> <RejectedoffertopurchaseGetAttachmentsV1Response> rejectedoffertopurchase_get_attachments_v1(pki_rejectedoffertopurchase_id)
+
+Retrieve Rejectedoffertopurchase's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectRejectedoffertopurchaseApi.new
+pki_rejectedoffertopurchase_id = 56 # Integer | 
+
+begin
+  # Retrieve Rejectedoffertopurchase's attachments
+  result = api_instance.rejectedoffertopurchase_get_attachments_v1(pki_rejectedoffertopurchase_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the rejectedoffertopurchase_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RejectedoffertopurchaseGetAttachmentsV1Response>, Integer, Hash)> rejectedoffertopurchase_get_attachments_v1_with_http_info(pki_rejectedoffertopurchase_id)
+
+```ruby
+begin
+  # Retrieve Rejectedoffertopurchase's attachments
+  data, status_code, headers = api_instance.rejectedoffertopurchase_get_attachments_v1_with_http_info(pki_rejectedoffertopurchase_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RejectedoffertopurchaseGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_rejectedoffertopurchase_id** | **Integer** |  |  |
+
+### Return type
+
+[**RejectedoffertopurchaseGetAttachmentsV1Response**](RejectedoffertopurchaseGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## rejectedoffertopurchase_get_communication_count_v1

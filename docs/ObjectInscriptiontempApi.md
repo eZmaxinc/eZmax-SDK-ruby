@@ -4,12 +4,154 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**inscriptiontemp_batch_download_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_batch_download_v1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/batchDownload | Download multiples attachments from a Inscriptiontemp |
+| [**inscriptiontemp_get_attachments_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_attachments_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getAttachments | Retrieve Inscriptiontemp&#39;s attachments |
 | [**inscriptiontemp_get_communication_count_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_communication_count_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationCount | Retrieve Communication count |
 | [**inscriptiontemp_get_communication_list_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_communication_list_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptiontemp_get_communicationrecipients_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_communicationrecipients_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp&#39;s Communicationrecipient |
 | [**inscriptiontemp_get_communicationsenders_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_communicationsenders_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders | Retrieve Inscriptiontemp&#39;s Communicationsender |
 | [**inscriptiontemp_get_list_v1**](ObjectInscriptiontempApi.md#inscriptiontemp_get_list_v1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list |
 | [**inscriptiontemp_import_into_edmv1**](ObjectInscriptiontempApi.md#inscriptiontemp_import_into_edmv1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp |
+
+
+## inscriptiontemp_batch_download_v1
+
+> File inscriptiontemp_batch_download_v1(pki_inscriptiontemp_id, inscriptiontemp_batch_download_v1_request)
+
+Download multiples attachments from a Inscriptiontemp
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptiontempApi.new
+pki_inscriptiontemp_id = 56 # Integer | 
+inscriptiontemp_batch_download_v1_request = EzmaxApi::InscriptiontempBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # InscriptiontempBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Inscriptiontemp
+  result = api_instance.inscriptiontemp_batch_download_v1(pki_inscriptiontemp_id, inscriptiontemp_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptiontempApi->inscriptiontemp_batch_download_v1: #{e}"
+end
+```
+
+#### Using the inscriptiontemp_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> inscriptiontemp_batch_download_v1_with_http_info(pki_inscriptiontemp_id, inscriptiontemp_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Inscriptiontemp
+  data, status_code, headers = api_instance.inscriptiontemp_batch_download_v1_with_http_info(pki_inscriptiontemp_id, inscriptiontemp_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptiontempApi->inscriptiontemp_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptiontemp_id** | **Integer** |  |  |
+| **inscriptiontemp_batch_download_v1_request** | [**InscriptiontempBatchDownloadV1Request**](InscriptiontempBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## inscriptiontemp_get_attachments_v1
+
+> <InscriptiontempGetAttachmentsV1Response> inscriptiontemp_get_attachments_v1(pki_inscriptiontemp_id)
+
+Retrieve Inscriptiontemp's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptiontempApi.new
+pki_inscriptiontemp_id = 56 # Integer | 
+
+begin
+  # Retrieve Inscriptiontemp's attachments
+  result = api_instance.inscriptiontemp_get_attachments_v1(pki_inscriptiontemp_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptiontempApi->inscriptiontemp_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the inscriptiontemp_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptiontempGetAttachmentsV1Response>, Integer, Hash)> inscriptiontemp_get_attachments_v1_with_http_info(pki_inscriptiontemp_id)
+
+```ruby
+begin
+  # Retrieve Inscriptiontemp's attachments
+  data, status_code, headers = api_instance.inscriptiontemp_get_attachments_v1_with_http_info(pki_inscriptiontemp_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptiontempGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptiontempApi->inscriptiontemp_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptiontemp_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptiontempGetAttachmentsV1Response**](InscriptiontempGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## inscriptiontemp_get_communication_count_v1

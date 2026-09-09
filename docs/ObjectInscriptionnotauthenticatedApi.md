@@ -4,7 +4,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**inscriptionnotauthenticated_batch_download_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_batch_download_v1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/batchDownload | Download multiples attachments from a Inscriptionnotauthenticated |
 | [**inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated |
+| [**inscriptionnotauthenticated_get_attachments_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_attachments_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getAttachments | Retrieve Inscriptionnotauthenticated&#39;s attachments |
 | [**inscriptionnotauthenticated_get_communication_count_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_count_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount | Retrieve Communication count |
 | [**inscriptionnotauthenticated_get_communication_list_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_list_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list |
 | [**inscriptionnotauthenticated_get_communicationrecipients_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communicationrecipients_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated&#39;s Communicationrecipient |
@@ -13,6 +15,77 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**inscriptionnotauthenticated_get_list_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_list_v1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list |
 | [**inscriptionnotauthenticated_get_object_v2**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_object_v2) | **GET** /2/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID} | Retrieve an existing Inscriptionnotauthenticated |
 | [**inscriptionnotauthenticated_import_into_edmv1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_import_into_edmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated |
+
+
+## inscriptionnotauthenticated_batch_download_v1
+
+> File inscriptionnotauthenticated_batch_download_v1(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_batch_download_v1_request)
+
+Download multiples attachments from a Inscriptionnotauthenticated
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionnotauthenticatedApi.new
+pki_inscriptionnotauthenticated_id = 56 # Integer | 
+inscriptionnotauthenticated_batch_download_v1_request = EzmaxApi::InscriptionnotauthenticatedBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # InscriptionnotauthenticatedBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Inscriptionnotauthenticated
+  result = api_instance.inscriptionnotauthenticated_batch_download_v1(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_batch_download_v1: #{e}"
+end
+```
+
+#### Using the inscriptionnotauthenticated_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> inscriptionnotauthenticated_batch_download_v1_with_http_info(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Inscriptionnotauthenticated
+  data, status_code, headers = api_instance.inscriptionnotauthenticated_batch_download_v1_with_http_info(pki_inscriptionnotauthenticated_id, inscriptionnotauthenticated_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptionnotauthenticated_id** | **Integer** |  |  |
+| **inscriptionnotauthenticated_batch_download_v1_request** | [**InscriptionnotauthenticatedBatchDownloadV1Request**](InscriptionnotauthenticatedBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
 
 
 ## inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1
@@ -85,6 +158,75 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## inscriptionnotauthenticated_get_attachments_v1
+
+> <InscriptionnotauthenticatedGetAttachmentsV1Response> inscriptionnotauthenticated_get_attachments_v1(pki_inscriptionnotauthenticated_id)
+
+Retrieve Inscriptionnotauthenticated's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionnotauthenticatedApi.new
+pki_inscriptionnotauthenticated_id = 56 # Integer | 
+
+begin
+  # Retrieve Inscriptionnotauthenticated's attachments
+  result = api_instance.inscriptionnotauthenticated_get_attachments_v1(pki_inscriptionnotauthenticated_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the inscriptionnotauthenticated_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionnotauthenticatedGetAttachmentsV1Response>, Integer, Hash)> inscriptionnotauthenticated_get_attachments_v1_with_http_info(pki_inscriptionnotauthenticated_id)
+
+```ruby
+begin
+  # Retrieve Inscriptionnotauthenticated's attachments
+  data, status_code, headers = api_instance.inscriptionnotauthenticated_get_attachments_v1_with_http_info(pki_inscriptionnotauthenticated_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionnotauthenticatedGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscriptionnotauthenticated_id** | **Integer** |  |  |
+
+### Return type
+
+[**InscriptionnotauthenticatedGetAttachmentsV1Response**](InscriptionnotauthenticatedGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

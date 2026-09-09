@@ -14,7 +14,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::VariableexpenseAutocompleteElementResponse.new(
-  s_variableexpense_description_x: Équipements de bureau,
+  s_variableexpense_description_x: Ã‰quipements de bureau,
   pki_variableexpense_id: 2,
   b_variableexpense_isactive: true
 )

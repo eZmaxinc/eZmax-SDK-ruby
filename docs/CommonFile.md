@@ -17,7 +17,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::CommonFile.new(
   s_file_name: example.pdf,
   s_file_url: null,
-  s_file_base64: [B@687a762c,
+  s_file_base64: [B@6e5bfdfc,
   e_file_source: null
 )
 ```

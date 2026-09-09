@@ -4,8 +4,150 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**supplier_batch_download_v1**](ObjectSupplierApi.md#supplier_batch_download_v1) | **POST** /1/object/supplier/{pkiSupplierID}/batchDownload | Download multiples attachments from a Supplier |
+| [**supplier_get_attachments_v1**](ObjectSupplierApi.md#supplier_get_attachments_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getAttachments | Retrieve Supplier&#39;s attachments |
 | [**supplier_get_list_v1**](ObjectSupplierApi.md#supplier_get_list_v1) | **GET** /1/object/supplier/getList | Retrieve Supplier list |
 | [**supplier_import_into_edmv1**](ObjectSupplierApi.md#supplier_import_into_edmv1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier |
+
+
+## supplier_batch_download_v1
+
+> File supplier_batch_download_v1(pki_supplier_id, supplier_batch_download_v1_request)
+
+Download multiples attachments from a Supplier
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+supplier_batch_download_v1_request = EzmaxApi::SupplierBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # SupplierBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Supplier
+  result = api_instance.supplier_batch_download_v1(pki_supplier_id, supplier_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_batch_download_v1: #{e}"
+end
+```
+
+#### Using the supplier_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> supplier_batch_download_v1_with_http_info(pki_supplier_id, supplier_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Supplier
+  data, status_code, headers = api_instance.supplier_batch_download_v1_with_http_info(pki_supplier_id, supplier_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+| **supplier_batch_download_v1_request** | [**SupplierBatchDownloadV1Request**](SupplierBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## supplier_get_attachments_v1
+
+> <SupplierGetAttachmentsV1Response> supplier_get_attachments_v1(pki_supplier_id)
+
+Retrieve Supplier's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+
+begin
+  # Retrieve Supplier's attachments
+  result = api_instance.supplier_get_attachments_v1(pki_supplier_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the supplier_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SupplierGetAttachmentsV1Response>, Integer, Hash)> supplier_get_attachments_v1_with_http_info(pki_supplier_id)
+
+```ruby
+begin
+  # Retrieve Supplier's attachments
+  data, status_code, headers = api_instance.supplier_get_attachments_v1_with_http_info(pki_supplier_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SupplierGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+
+### Return type
+
+[**SupplierGetAttachmentsV1Response**](SupplierGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## supplier_get_list_v1

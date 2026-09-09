@@ -4,9 +4,151 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**broker_batch_download_v1**](ObjectBrokerApi.md#broker_batch_download_v1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker |
+| [**broker_get_attachments_v1**](ObjectBrokerApi.md#broker_get_attachments_v1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker&#39;s attachments |
 | [**broker_get_autocomplete_v2**](ObjectBrokerApi.md#broker_get_autocomplete_v2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs |
 | [**broker_get_list_v1**](ObjectBrokerApi.md#broker_get_list_v1) | **GET** /1/object/broker/getList | Retrieve Broker list |
 | [**broker_import_into_edmv1**](ObjectBrokerApi.md#broker_import_into_edmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker |
+
+
+## broker_batch_download_v1
+
+> File broker_batch_download_v1(pki_broker_id, broker_batch_download_v1_request)
+
+Download multiples attachments from a Broker
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+broker_batch_download_v1_request = EzmaxApi::BrokerBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # BrokerBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Broker
+  result = api_instance.broker_batch_download_v1(pki_broker_id, broker_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_batch_download_v1: #{e}"
+end
+```
+
+#### Using the broker_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> broker_batch_download_v1_with_http_info(pki_broker_id, broker_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Broker
+  data, status_code, headers = api_instance.broker_batch_download_v1_with_http_info(pki_broker_id, broker_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+| **broker_batch_download_v1_request** | [**BrokerBatchDownloadV1Request**](BrokerBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## broker_get_attachments_v1
+
+> <BrokerGetAttachmentsV1Response> broker_get_attachments_v1(pki_broker_id)
+
+Retrieve Broker's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+
+begin
+  # Retrieve Broker's attachments
+  result = api_instance.broker_get_attachments_v1(pki_broker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the broker_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BrokerGetAttachmentsV1Response>, Integer, Hash)> broker_get_attachments_v1_with_http_info(pki_broker_id)
+
+```ruby
+begin
+  # Retrieve Broker's attachments
+  data, status_code, headers = api_instance.broker_get_attachments_v1_with_http_info(pki_broker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BrokerGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+
+### Return type
+
+[**BrokerGetAttachmentsV1Response**](BrokerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## broker_get_autocomplete_v2

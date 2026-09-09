@@ -4,12 +4,154 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**buyercontract_batch_download_v1**](ObjectBuyercontractApi.md#buyercontract_batch_download_v1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/batchDownload | Download multiples attachments from a Buyercontract |
+| [**buyercontract_get_attachments_v1**](ObjectBuyercontractApi.md#buyercontract_get_attachments_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getAttachments | Retrieve Buyercontract&#39;s attachments |
 | [**buyercontract_get_communication_count_v1**](ObjectBuyercontractApi.md#buyercontract_get_communication_count_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationCount | Retrieve Communication count |
 | [**buyercontract_get_communication_list_v1**](ObjectBuyercontractApi.md#buyercontract_get_communication_list_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList | Retrieve Communication list |
 | [**buyercontract_get_communicationrecipients_v1**](ObjectBuyercontractApi.md#buyercontract_get_communicationrecipients_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients | Retrieve Buyercontract&#39;s Communicationrecipient |
 | [**buyercontract_get_communicationsenders_v1**](ObjectBuyercontractApi.md#buyercontract_get_communicationsenders_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders | Retrieve Buyercontract&#39;s Communicationsender |
 | [**buyercontract_get_list_v1**](ObjectBuyercontractApi.md#buyercontract_get_list_v1) | **GET** /1/object/buyercontract/getList | Retrieve Buyercontract list |
 | [**buyercontract_import_into_edmv1**](ObjectBuyercontractApi.md#buyercontract_import_into_edmv1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/importIntoEDM | Import attachments into the Buyercontract |
+
+
+## buyercontract_batch_download_v1
+
+> File buyercontract_batch_download_v1(pki_buyercontract_id, buyercontract_batch_download_v1_request)
+
+Download multiples attachments from a Buyercontract
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBuyercontractApi.new
+pki_buyercontract_id = 56 # Integer | 
+buyercontract_batch_download_v1_request = EzmaxApi::BuyercontractBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # BuyercontractBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Buyercontract
+  result = api_instance.buyercontract_batch_download_v1(pki_buyercontract_id, buyercontract_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBuyercontractApi->buyercontract_batch_download_v1: #{e}"
+end
+```
+
+#### Using the buyercontract_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> buyercontract_batch_download_v1_with_http_info(pki_buyercontract_id, buyercontract_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Buyercontract
+  data, status_code, headers = api_instance.buyercontract_batch_download_v1_with_http_info(pki_buyercontract_id, buyercontract_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBuyercontractApi->buyercontract_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_buyercontract_id** | **Integer** |  |  |
+| **buyercontract_batch_download_v1_request** | [**BuyercontractBatchDownloadV1Request**](BuyercontractBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## buyercontract_get_attachments_v1
+
+> <BuyercontractGetAttachmentsV1Response> buyercontract_get_attachments_v1(pki_buyercontract_id)
+
+Retrieve Buyercontract's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBuyercontractApi.new
+pki_buyercontract_id = 56 # Integer | 
+
+begin
+  # Retrieve Buyercontract's attachments
+  result = api_instance.buyercontract_get_attachments_v1(pki_buyercontract_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBuyercontractApi->buyercontract_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the buyercontract_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BuyercontractGetAttachmentsV1Response>, Integer, Hash)> buyercontract_get_attachments_v1_with_http_info(pki_buyercontract_id)
+
+```ruby
+begin
+  # Retrieve Buyercontract's attachments
+  data, status_code, headers = api_instance.buyercontract_get_attachments_v1_with_http_info(pki_buyercontract_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BuyercontractGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBuyercontractApi->buyercontract_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_buyercontract_id** | **Integer** |  |  |
+
+### Return type
+
+[**BuyercontractGetAttachmentsV1Response**](BuyercontractGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## buyercontract_get_communication_count_v1

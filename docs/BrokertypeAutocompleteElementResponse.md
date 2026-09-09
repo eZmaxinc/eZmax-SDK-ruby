@@ -15,7 +15,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::BrokertypeAutocompleteElementResponse.new(
   pki_brokertype_id: 1,
-  s_brokertype_name_x: Agence immobilière,
+  s_brokertype_name_x: Agence immobiliÃ¨re,
   b_brokertype_isactive: true
 )
 ```

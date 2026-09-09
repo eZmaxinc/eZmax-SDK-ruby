@@ -4,9 +4,151 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**customer_batch_download_v1**](ObjectCustomerApi.md#customer_batch_download_v1) | **POST** /1/object/customer/{pkiCustomerID}/batchDownload | Download multiples attachments from a Customer |
+| [**customer_get_attachments_v1**](ObjectCustomerApi.md#customer_get_attachments_v1) | **GET** /1/object/customer/{pkiCustomerID}/getAttachments | Retrieve Customer&#39;s attachments |
 | [**customer_get_autocomplete_v2**](ObjectCustomerApi.md#customer_get_autocomplete_v2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs |
 | [**customer_get_object_v2**](ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer |
 | [**customer_import_into_edmv1**](ObjectCustomerApi.md#customer_import_into_edmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Customer |
+
+
+## customer_batch_download_v1
+
+> File customer_batch_download_v1(pki_customer_id, customer_batch_download_v1_request)
+
+Download multiples attachments from a Customer
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+customer_batch_download_v1_request = EzmaxApi::CustomerBatchDownloadV1Request.new({a_pki_attachment_id: [1]}) # CustomerBatchDownloadV1Request | 
+
+begin
+  # Download multiples attachments from a Customer
+  result = api_instance.customer_batch_download_v1(pki_customer_id, customer_batch_download_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_batch_download_v1: #{e}"
+end
+```
+
+#### Using the customer_batch_download_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(File, Integer, Hash)> customer_batch_download_v1_with_http_info(pki_customer_id, customer_batch_download_v1_request)
+
+```ruby
+begin
+  # Download multiples attachments from a Customer
+  data, status_code, headers = api_instance.customer_batch_download_v1_with_http_info(pki_customer_id, customer_batch_download_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => File
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_batch_download_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+| **customer_batch_download_v1_request** | [**CustomerBatchDownloadV1Request**](CustomerBatchDownloadV1Request.md) |  |  |
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/zip, text/xml, application/json
+
+
+## customer_get_attachments_v1
+
+> <CustomerGetAttachmentsV1Response> customer_get_attachments_v1(pki_customer_id)
+
+Retrieve Customer's attachments
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+
+begin
+  # Retrieve Customer's attachments
+  result = api_instance.customer_get_attachments_v1(pki_customer_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_attachments_v1: #{e}"
+end
+```
+
+#### Using the customer_get_attachments_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetAttachmentsV1Response>, Integer, Hash)> customer_get_attachments_v1_with_http_info(pki_customer_id)
+
+```ruby
+begin
+  # Retrieve Customer's attachments
+  data, status_code, headers = api_instance.customer_get_attachments_v1_with_http_info(pki_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetAttachmentsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_attachments_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+
+### Return type
+
+[**CustomerGetAttachmentsV1Response**](CustomerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## customer_get_autocomplete_v2

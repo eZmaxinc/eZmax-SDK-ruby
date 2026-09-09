@@ -13,7 +13,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::MultilingualBillingentityinternalDescription.new(
-  s_billingentityinternal_description1: Défaut,
+  s_billingentityinternal_description1: DÃ©faut,
   s_billingentityinternal_description2: Default
 )
 ```

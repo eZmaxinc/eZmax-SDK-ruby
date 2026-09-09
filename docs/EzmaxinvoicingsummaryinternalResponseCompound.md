@@ -20,7 +20,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::EzmaxinvoicingsummaryinternalResponseCompound.new(
   pki_ezmaxinvoicingsummaryinternal_id: 57,
   obj_ezmaxinvoicingsummaryinternal_description: null,
-  s_ezmaxinvoicingsummaryinternal_description_x: Défaut,
+  s_ezmaxinvoicingsummaryinternal_description_x: DÃ©faut,
   fki_ezmaxinvoicing_id: 28,
   fki_billingentityinternal_id: 1,
   s_billingentityinternal_description_x: Default,

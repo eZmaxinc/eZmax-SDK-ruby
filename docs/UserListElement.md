@@ -5,6 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **pki_user_id** | **Integer** | The unique ID of the User |  |
+| **fki_agent_id** | **Integer** | The unique ID of the Agent. | [optional] |
+| **fki_broker_id** | **Integer** | The unique ID of the Broker. | [optional] |
 | **s_user_firstname** | **String** | The first name of the user |  |
 | **s_user_lastname** | **String** | The last name of the user |  |
 | **s_user_loginname** | **String** | The login name of the User. |  |
@@ -24,6 +26,8 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::UserListElement.new(
   pki_user_id: 70,
+  fki_agent_id: 1,
+  fki_broker_id: 26,
   s_user_firstname: John,
   s_user_lastname: Doe,
   s_user_loginname: JohnDoe,

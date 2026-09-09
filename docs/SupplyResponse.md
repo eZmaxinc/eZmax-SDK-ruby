@@ -34,7 +34,7 @@ instance = EzmaxApi::SupplyResponse.new(
   b_supply_variableprice: true,
   s_glaccount_description_x: Supplies income,
   s_glaccountcontainer_longdescription_x: Quebec,
-  s_variableexpense_description_x: Équipements de bureau
+  s_variableexpense_description_x: Ã‰quipements de bureau
 )
 ```
 

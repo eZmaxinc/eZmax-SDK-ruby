@@ -8,12 +8,12 @@
 | **fki_inscriptiontype_id** | **Integer** | The unique ID of the Inscriptiontype |  |
 | **s_inscriptiontype_name_x** | **String** | The name of the Inscriptiontype in the language of the requester |  |
 | **e_buyercontract_step** | [**FieldEBuyercontractStep**](FieldEBuyercontractStep.md) |  |  |
-| **d_buyercontract_minimumprice** | **String** | The minimumprice of the Buyercontract |  |
-| **d_buyercontract_maximumprice** | **String** | The maximumprice of the Buyercontract |  |
+| **d_buyercontract_minimumprice** | **String** | The minimum price of the Buyercontract |  |
+| **d_buyercontract_maximumprice** | **String** | The maximum price of the Buyercontract |  |
 | **e_buyercontract_type** | [**FieldEBuyercontractType**](FieldEBuyercontractType.md) |  |  |
 | **s_buyercontract_contract** | **String** | The number of the Buyercontract | [optional] |
 | **dt_buyercontract_date** | **String** | The date of the Buyercontract |  |
-| **dt_buyercontract_expirationdate** | **String** | The expirationdate of the Buyercontract | [optional] |
+| **dt_buyercontract_expirationdate** | **String** | The expiration date of the Buyercontract | [optional] |
 | **b_buyercontract_isactive** | **Boolean** | Whether the buyercontract is active or not |  |
 | **s_buyercontract_brokers** | **String** | The brokers&#39; name of the Buyercontract |  |
 | **s_buyercontract_buyers** | **String** | The buyers&#39; name of the Buyercontract |  |

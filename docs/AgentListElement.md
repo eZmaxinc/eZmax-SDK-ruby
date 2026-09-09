@@ -19,8 +19,9 @@
 | **i_agent_longdistancecode** | **Integer** | The longdistancecode of the Agent |  |
 | **i_agent_bannernumber** | **Integer** | The bannernumber of the Agent |  |
 | **s_agent_realestateassociationlicense** | **String** | The realestateassociationlicense of the Agent |  |
-| **dt_agent_hiredate** | **String** | The hiredate of the Agent | [optional] |
-| **dt_agent_leavedate** | **String** | The leavedate of the Agent | [optional] |
+| **dt_agent_permitexpiration** | **String** | The expiration date of permit of the Agent | [optional] |
+| **dt_agent_hiredate** | **String** | The hire date of the Agent | [optional] |
+| **dt_agent_leavedate** | **String** | The leave date of the Agent | [optional] |
 | **dt_agent_contractdate** | **String** | The contract date of the Agent | [optional] |
 | **dt_agent_transferdate** | **String** | The transfer date of the Agent | [optional] |
 | **dt_agent_senioritydate** | **String** | The seniority date of the Agent | [optional] |
@@ -70,6 +71,7 @@ instance = EzmaxApi::AgentListElement.new(
   i_agent_longdistancecode: 6436057,
   i_agent_bannernumber: 4228739532,
   s_agent_realestateassociationlicense: A0000,
+  dt_agent_permitexpiration: 2020-12-31,
   dt_agent_hiredate: 2020-12-31,
   dt_agent_leavedate: 2020-12-31,
   dt_agent_contractdate: 2020-12-31,
