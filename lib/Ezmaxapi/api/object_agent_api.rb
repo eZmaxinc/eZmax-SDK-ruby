@@ -241,6 +241,266 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Communication count
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [AgentGetCommunicationCountV1Response]
+    def agent_get_communication_count_v1(pki_agent_id, opts = {})
+      data, _status_code, _headers = agent_get_communication_count_v1_with_http_info(pki_agent_id, opts)
+      data
+    end
+
+    # Retrieve Communication count
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AgentGetCommunicationCountV1Response, Integer, Hash)>] AgentGetCommunicationCountV1Response data, response status code and response headers
+    def agent_get_communication_count_v1_with_http_info(pki_agent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAgentApi.agent_get_communication_count_v1 ...'
+      end
+      # verify the required parameter 'pki_agent_id' is set
+      if @api_client.config.client_side_validation && pki_agent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_agent_id' when calling ObjectAgentApi.agent_get_communication_count_v1"
+      end
+      if @api_client.config.client_side_validation && pki_agent_id < 0
+        fail ArgumentError, 'invalid value for "pki_agent_id" when calling ObjectAgentApi.agent_get_communication_count_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/agent/{pkiAgentID}/getCommunicationCount'.sub('{pkiAgentID}', CGI.escape(pki_agent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AgentGetCommunicationCountV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAgentApi.agent_get_communication_count_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAgentApi#agent_get_communication_count_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication list
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [AgentGetCommunicationListV1Response]
+    def agent_get_communication_list_v1(pki_agent_id, opts = {})
+      data, _status_code, _headers = agent_get_communication_list_v1_with_http_info(pki_agent_id, opts)
+      data
+    end
+
+    # Retrieve Communication list
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AgentGetCommunicationListV1Response, Integer, Hash)>] AgentGetCommunicationListV1Response data, response status code and response headers
+    def agent_get_communication_list_v1_with_http_info(pki_agent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAgentApi.agent_get_communication_list_v1 ...'
+      end
+      # verify the required parameter 'pki_agent_id' is set
+      if @api_client.config.client_side_validation && pki_agent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_agent_id' when calling ObjectAgentApi.agent_get_communication_list_v1"
+      end
+      if @api_client.config.client_side_validation && pki_agent_id < 0
+        fail ArgumentError, 'invalid value for "pki_agent_id" when calling ObjectAgentApi.agent_get_communication_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/agent/{pkiAgentID}/getCommunicationList'.sub('{pkiAgentID}', CGI.escape(pki_agent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AgentGetCommunicationListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAgentApi.agent_get_communication_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAgentApi#agent_get_communication_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [AgentGetCommunicationrecipientsV1Response]
+    def agent_get_communicationrecipients_v1(pki_agent_id, opts = {})
+      data, _status_code, _headers = agent_get_communicationrecipients_v1_with_http_info(pki_agent_id, opts)
+      data
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AgentGetCommunicationrecipientsV1Response, Integer, Hash)>] AgentGetCommunicationrecipientsV1Response data, response status code and response headers
+    def agent_get_communicationrecipients_v1_with_http_info(pki_agent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAgentApi.agent_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_agent_id' is set
+      if @api_client.config.client_side_validation && pki_agent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_agent_id' when calling ObjectAgentApi.agent_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_agent_id < 0
+        fail ArgumentError, 'invalid value for "pki_agent_id" when calling ObjectAgentApi.agent_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/agent/{pkiAgentID}/getCommunicationrecipients'.sub('{pkiAgentID}', CGI.escape(pki_agent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AgentGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAgentApi.agent_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAgentApi#agent_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication senders
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [AgentGetCommunicationsendersV1Response]
+    def agent_get_communicationsenders_v1(pki_agent_id, opts = {})
+      data, _status_code, _headers = agent_get_communicationsenders_v1_with_http_info(pki_agent_id, opts)
+      data
+    end
+
+    # Retrieve Communication senders
+    # @param pki_agent_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AgentGetCommunicationsendersV1Response, Integer, Hash)>] AgentGetCommunicationsendersV1Response data, response status code and response headers
+    def agent_get_communicationsenders_v1_with_http_info(pki_agent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAgentApi.agent_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_agent_id' is set
+      if @api_client.config.client_side_validation && pki_agent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_agent_id' when calling ObjectAgentApi.agent_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_agent_id < 0
+        fail ArgumentError, 'invalid value for "pki_agent_id" when calling ObjectAgentApi.agent_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/agent/{pkiAgentID}/getCommunicationsenders'.sub('{pkiAgentID}', CGI.escape(pki_agent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AgentGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAgentApi.agent_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAgentApi#agent_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve Agent list
     # 
     # @param [Hash] opts the optional parameters

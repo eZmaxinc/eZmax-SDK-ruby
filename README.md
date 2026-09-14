@@ -106,6 +106,10 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectAgentApi* | [**agent_batch_download_v1**](docs/ObjectAgentApi.md#agent_batch_download_v1) | **POST** /1/object/agent/{pkiAgentID}/batchDownload | Download multiples attachments from a Agent
 *EzmaxApi::ObjectAgentApi* | [**agent_get_attachments_v1**](docs/ObjectAgentApi.md#agent_get_attachments_v1) | **GET** /1/object/agent/{pkiAgentID}/getAttachments | Retrieve Agent's attachments
 *EzmaxApi::ObjectAgentApi* | [**agent_get_autocomplete_v2**](docs/ObjectAgentApi.md#agent_get_autocomplete_v2) | **GET** /2/object/agent/getAutocomplete/{sSelector} | Retrieve Agents and IDs
+*EzmaxApi::ObjectAgentApi* | [**agent_get_communication_count_v1**](docs/ObjectAgentApi.md#agent_get_communication_count_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectAgentApi* | [**agent_get_communication_list_v1**](docs/ObjectAgentApi.md#agent_get_communication_list_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectAgentApi* | [**agent_get_communicationrecipients_v1**](docs/ObjectAgentApi.md#agent_get_communicationrecipients_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectAgentApi* | [**agent_get_communicationsenders_v1**](docs/ObjectAgentApi.md#agent_get_communicationsenders_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectAgentApi* | [**agent_get_list_v1**](docs/ObjectAgentApi.md#agent_get_list_v1) | **GET** /1/object/agent/getList | Retrieve Agent list
 *EzmaxApi::ObjectAgentApi* | [**agent_import_into_edmv1**](docs/ObjectAgentApi.md#agent_import_into_edmv1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent
 *EzmaxApi::ObjectAgenttypeApi* | [**agenttype_get_autocomplete_v2**](docs/ObjectAgenttypeApi.md#agenttype_get_autocomplete_v2) | **GET** /2/object/agenttype/getAutocomplete/{sSelector} | Retrieve Agenttypes and IDs
@@ -119,9 +123,12 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectApikeyApi* | [**apikey_get_permissions_v1**](docs/ObjectApikeyApi.md#apikey_get_permissions_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getPermissions | Retrieve an existing Apikey's Permissions
 *EzmaxApi::ObjectApikeyApi* | [**apikey_get_subnets_v1**](docs/ObjectApikeyApi.md#apikey_get_subnets_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey's subnets
 *EzmaxApi::ObjectApikeyApi* | [**apikey_regenerate_v1**](docs/ObjectApikeyApi.md#apikey_regenerate_v1) | **POST** /1/object/apikey/{pkiApikeyID}/regenerate | Regenerate the Apikey
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_delete_v1**](docs/ObjectAttachmentApi.md#attachment_delete_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/delete | Delete an existing attachment
 *EzmaxApi::ObjectAttachmentApi* | [**attachment_download_v1**](docs/ObjectAttachmentApi.md#attachment_download_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content
 *EzmaxApi::ObjectAttachmentApi* | [**attachment_get_attachmentlogs_v1**](docs/ObjectAttachmentApi.md#attachment_get_attachmentlogs_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs
-*EzmaxApi::ObjectAttachmentApi* | [**attachment_rename_v1**](docs/ObjectAttachmentApi.md#attachment_rename_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an Attachment
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_rename_v1**](docs/ObjectAttachmentApi.md#attachment_rename_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an attachment
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_restore_v1**](docs/ObjectAttachmentApi.md#attachment_restore_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/restore | Restore a deleted attachment
+*EzmaxApi::ObjectAttachmentApi* | [**attachment_validate_v1**](docs/ObjectAttachmentApi.md#attachment_validate_v1) | **PATCH** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment
 *EzmaxApi::ObjectAuthenticationexternalApi* | [**authenticationexternal_create_object_v1**](docs/ObjectAuthenticationexternalApi.md#authenticationexternal_create_object_v1) | **POST** /1/object/authenticationexternal | Create a new Authenticationexternal
 *EzmaxApi::ObjectAuthenticationexternalApi* | [**authenticationexternal_delete_object_v1**](docs/ObjectAuthenticationexternalApi.md#authenticationexternal_delete_object_v1) | **DELETE** /1/object/authenticationexternal/{pkiAuthenticationexternalID} | Delete an existing Authenticationexternal
 *EzmaxApi::ObjectAuthenticationexternalApi* | [**authenticationexternal_edit_object_v1**](docs/ObjectAuthenticationexternalApi.md#authenticationexternal_edit_object_v1) | **PUT** /1/object/authenticationexternal/{pkiAuthenticationexternalID} | Edit an existing Authenticationexternal
@@ -132,6 +139,10 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectBankaccountApi* | [**bankaccount_batch_download_v1**](docs/ObjectBankaccountApi.md#bankaccount_batch_download_v1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/batchDownload | Download multiples attachments from a Bankaccount
 *EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_attachments_v1**](docs/ObjectBankaccountApi.md#bankaccount_get_attachments_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getAttachments | Retrieve Bankaccount's attachments
 *EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_autocomplete_v2**](docs/ObjectBankaccountApi.md#bankaccount_get_autocomplete_v2) | **GET** /2/object/bankaccount/getAutocomplete/{sSelector} | Retrieve Bankaccounts and IDs
+*EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_communication_count_v1**](docs/ObjectBankaccountApi.md#bankaccount_get_communication_count_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_communication_list_v1**](docs/ObjectBankaccountApi.md#bankaccount_get_communication_list_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_communicationrecipients_v1**](docs/ObjectBankaccountApi.md#bankaccount_get_communicationrecipients_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectBankaccountApi* | [**bankaccount_get_communicationsenders_v1**](docs/ObjectBankaccountApi.md#bankaccount_get_communicationsenders_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectBankaccountApi* | [**bankaccount_import_into_edmv1**](docs/ObjectBankaccountApi.md#bankaccount_import_into_edmv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount
 *EzmaxApi::ObjectBillingentityexternalApi* | [**billingentityexternal_generate_federation_token_v1**](docs/ObjectBillingentityexternalApi.md#billingentityexternal_generate_federation_token_v1) | **POST** /1/object/billingentityexternal/{pkiBillingentityexternalID}/generateFederationToken | Generate a federation token
 *EzmaxApi::ObjectBillingentityexternalApi* | [**billingentityexternal_get_autocomplete_v2**](docs/ObjectBillingentityexternalApi.md#billingentityexternal_get_autocomplete_v2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
@@ -148,6 +159,10 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectBrokerApi* | [**broker_batch_download_v1**](docs/ObjectBrokerApi.md#broker_batch_download_v1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker
 *EzmaxApi::ObjectBrokerApi* | [**broker_get_attachments_v1**](docs/ObjectBrokerApi.md#broker_get_attachments_v1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker's attachments
 *EzmaxApi::ObjectBrokerApi* | [**broker_get_autocomplete_v2**](docs/ObjectBrokerApi.md#broker_get_autocomplete_v2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs
+*EzmaxApi::ObjectBrokerApi* | [**broker_get_communication_count_v1**](docs/ObjectBrokerApi.md#broker_get_communication_count_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectBrokerApi* | [**broker_get_communication_list_v1**](docs/ObjectBrokerApi.md#broker_get_communication_list_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectBrokerApi* | [**broker_get_communicationrecipients_v1**](docs/ObjectBrokerApi.md#broker_get_communicationrecipients_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectBrokerApi* | [**broker_get_communicationsenders_v1**](docs/ObjectBrokerApi.md#broker_get_communicationsenders_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectBrokerApi* | [**broker_get_list_v1**](docs/ObjectBrokerApi.md#broker_get_list_v1) | **GET** /1/object/broker/getList | Retrieve Broker list
 *EzmaxApi::ObjectBrokerApi* | [**broker_import_into_edmv1**](docs/ObjectBrokerApi.md#broker_import_into_edmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker
 *EzmaxApi::ObjectBrokertypeApi* | [**brokertype_get_autocomplete_v2**](docs/ObjectBrokertypeApi.md#brokertype_get_autocomplete_v2) | **GET** /2/object/brokertype/getAutocomplete/{sSelector} | Retrieve Brokertypes and IDs
@@ -162,6 +177,10 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectClonehistoryApi* | [**clonehistory_get_list_v1**](docs/ObjectClonehistoryApi.md#clonehistory_get_list_v1) | **GET** /1/object/clonehistory/getList | Retrieve Clonehistory list
 *EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_batch_download_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_batch_download_v1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/batchDownload | Download multiples attachments from a Commission advance
 *EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_get_attachments_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_get_attachments_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getAttachments | Retrieve Commissionadvance's attachments
+*EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_get_communication_count_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_get_communication_count_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_get_communication_list_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_get_communication_list_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_get_communicationrecipients_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_get_communicationrecipients_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_get_communicationsenders_v1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_get_communicationsenders_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectCommissionadvanceApi* | [**commissionadvance_import_into_edmv1**](docs/ObjectCommissionadvanceApi.md#commissionadvance_import_into_edmv1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/importIntoEDM | Import attachments into the Commissionadvance
 *EzmaxApi::ObjectCommunicationApi* | [**communication_get_communication_body_v1**](docs/ObjectCommunicationApi.md#communication_get_communication_body_v1) | **GET** /1/object/communication/{pkiCommunicationID}/getCommunicationBody | Retrieve the communication body
 *EzmaxApi::ObjectCommunicationApi* | [**communication_send_v1**](docs/ObjectCommunicationApi.md#communication_send_v1) | **POST** /1/object/communication/send | Send a new Communication
@@ -187,17 +206,33 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectCustomerApi* | [**customer_batch_download_v1**](docs/ObjectCustomerApi.md#customer_batch_download_v1) | **POST** /1/object/customer/{pkiCustomerID}/batchDownload | Download multiples attachments from a Customer
 *EzmaxApi::ObjectCustomerApi* | [**customer_get_attachments_v1**](docs/ObjectCustomerApi.md#customer_get_attachments_v1) | **GET** /1/object/customer/{pkiCustomerID}/getAttachments | Retrieve Customer's attachments
 *EzmaxApi::ObjectCustomerApi* | [**customer_get_autocomplete_v2**](docs/ObjectCustomerApi.md#customer_get_autocomplete_v2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs
+*EzmaxApi::ObjectCustomerApi* | [**customer_get_communication_count_v1**](docs/ObjectCustomerApi.md#customer_get_communication_count_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectCustomerApi* | [**customer_get_communication_list_v1**](docs/ObjectCustomerApi.md#customer_get_communication_list_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectCustomerApi* | [**customer_get_communicationrecipients_v1**](docs/ObjectCustomerApi.md#customer_get_communicationrecipients_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectCustomerApi* | [**customer_get_communicationsenders_v1**](docs/ObjectCustomerApi.md#customer_get_communicationsenders_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectCustomerApi* | [**customer_get_object_v2**](docs/ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer
 *EzmaxApi::ObjectCustomerApi* | [**customer_import_into_edmv1**](docs/ObjectCustomerApi.md#customer_import_into_edmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Customer
 *EzmaxApi::ObjectDepartmentApi* | [**department_get_autocomplete_v2**](docs/ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *EzmaxApi::ObjectDepositApi* | [**deposit_batch_download_v1**](docs/ObjectDepositApi.md#deposit_batch_download_v1) | **POST** /1/object/deposit/{pkiDepositID}/batchDownload | Download multiples attachments from a Deposit
 *EzmaxApi::ObjectDepositApi* | [**deposit_get_attachments_v1**](docs/ObjectDepositApi.md#deposit_get_attachments_v1) | **GET** /1/object/deposit/{pkiDepositID}/getAttachments | Retrieve Deposit's attachments
+*EzmaxApi::ObjectDepositApi* | [**deposit_get_communication_count_v1**](docs/ObjectDepositApi.md#deposit_get_communication_count_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectDepositApi* | [**deposit_get_communication_list_v1**](docs/ObjectDepositApi.md#deposit_get_communication_list_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectDepositApi* | [**deposit_get_communicationrecipients_v1**](docs/ObjectDepositApi.md#deposit_get_communicationrecipients_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectDepositApi* | [**deposit_get_communicationsenders_v1**](docs/ObjectDepositApi.md#deposit_get_communicationsenders_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectDepositApi* | [**deposit_import_into_edmv1**](docs/ObjectDepositApi.md#deposit_import_into_edmv1) | **POST** /1/object/deposit/{pkiDepositID}/importIntoEDM | Import attachments into the Deposit
 *EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_batch_download_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_batch_download_v1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/batchDownload | Download multiples attachments from a Deposittransitcheque
 *EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_get_attachments_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_get_attachments_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments | Retrieve Deposittransitcheque's attachments
+*EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_get_communication_count_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communication_count_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_get_communication_list_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communication_list_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_get_communicationrecipients_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationrecipients_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_get_communicationsenders_v1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationsenders_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectDeposittransitchequeApi* | [**deposittransitcheque_import_into_edmv1**](docs/ObjectDeposittransitchequeApi.md#deposittransitcheque_import_into_edmv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque
 *EzmaxApi::ObjectDisclosureApi* | [**disclosure_batch_download_v1**](docs/ObjectDisclosureApi.md#disclosure_batch_download_v1) | **POST** /1/object/disclosure/{pkiDisclosureID}/batchDownload | Download multiples attachments from a Disclosure
 *EzmaxApi::ObjectDisclosureApi* | [**disclosure_get_attachments_v1**](docs/ObjectDisclosureApi.md#disclosure_get_attachments_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getAttachments | Retrieve Disclosure's attachments
+*EzmaxApi::ObjectDisclosureApi* | [**disclosure_get_communication_count_v1**](docs/ObjectDisclosureApi.md#disclosure_get_communication_count_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectDisclosureApi* | [**disclosure_get_communication_list_v1**](docs/ObjectDisclosureApi.md#disclosure_get_communication_list_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectDisclosureApi* | [**disclosure_get_communicationrecipients_v1**](docs/ObjectDisclosureApi.md#disclosure_get_communicationrecipients_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectDisclosureApi* | [**disclosure_get_communicationsenders_v1**](docs/ObjectDisclosureApi.md#disclosure_get_communicationsenders_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectDisclosureApi* | [**disclosure_import_into_edmv1**](docs/ObjectDisclosureApi.md#disclosure_import_into_edmv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure
 *EzmaxApi::ObjectDiscussionApi* | [**discussion_chat_v1**](docs/ObjectDiscussionApi.md#discussion_chat_v1) | **POST** /1/object/discussion/chat | Have a Discussion with the AI Chatbot
 *EzmaxApi::ObjectDiscussionApi* | [**discussion_create_object_v1**](docs/ObjectDiscussionApi.md#discussion_create_object_v1) | **POST** /1/object/discussion | Create a new Discussion
@@ -225,10 +260,18 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectEmailtypeApi* | [**emailtype_get_autocomplete_v2**](docs/ObjectEmailtypeApi.md#emailtype_get_autocomplete_v2) | **GET** /2/object/emailtype/getAutocomplete/{sSelector} | Retrieve Emailtypes and IDs
 *EzmaxApi::ObjectEmployeeApi* | [**employee_batch_download_v1**](docs/ObjectEmployeeApi.md#employee_batch_download_v1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee
 *EzmaxApi::ObjectEmployeeApi* | [**employee_get_attachments_v1**](docs/ObjectEmployeeApi.md#employee_get_attachments_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee's attachments
+*EzmaxApi::ObjectEmployeeApi* | [**employee_get_communication_count_v1**](docs/ObjectEmployeeApi.md#employee_get_communication_count_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectEmployeeApi* | [**employee_get_communication_list_v1**](docs/ObjectEmployeeApi.md#employee_get_communication_list_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectEmployeeApi* | [**employee_get_communicationrecipients_v1**](docs/ObjectEmployeeApi.md#employee_get_communicationrecipients_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectEmployeeApi* | [**employee_get_communicationsenders_v1**](docs/ObjectEmployeeApi.md#employee_get_communicationsenders_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectEmployeeApi* | [**employee_get_list_v1**](docs/ObjectEmployeeApi.md#employee_get_list_v1) | **GET** /1/object/employee/getList | Retrieve Employee list
 *EzmaxApi::ObjectEmployeeApi* | [**employee_import_into_edmv1**](docs/ObjectEmployeeApi.md#employee_import_into_edmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee
 *EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_batch_download_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_batch_download_v1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/batchDownload | Download multiples attachments from an Externalbroker
 *EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_get_attachments_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_get_attachments_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getAttachments | Retrieve Externalbroker's attachments
+*EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_get_communication_count_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_get_communication_count_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationCount | Retrieve Communication count
+*EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_get_communication_list_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_get_communication_list_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList | Retrieve Communication list
+*EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_get_communicationrecipients_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_get_communicationrecipients_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients | Retrieve Communication recipients
+*EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_get_communicationsenders_v1**](docs/ObjectExternalbrokerApi.md#externalbroker_get_communicationsenders_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders | Retrieve Communication senders
 *EzmaxApi::ObjectExternalbrokerApi* | [**externalbroker_import_into_edmv1**](docs/ObjectExternalbrokerApi.md#externalbroker_import_into_edmv1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/importIntoEDM | Import attachments into the Externalbroker
 *EzmaxApi::ObjectEzdoctemplatedocumentApi* | [**ezdoctemplatedocument_create_object_v1**](docs/ObjectEzdoctemplatedocumentApi.md#ezdoctemplatedocument_create_object_v1) | **POST** /1/object/ezdoctemplatedocument | Create a new Ezdoctemplatedocument
 *EzmaxApi::ObjectEzdoctemplatedocumentApi* | [**ezdoctemplatedocument_download_v1**](docs/ObjectEzdoctemplatedocumentApi.md#ezdoctemplatedocument_download_v1) | **GET** /1/object/ezdoctemplatedocument/{pkiEzdoctemplatedocumentID}/download | Retrieve the content
@@ -783,6 +826,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::AgentGetAttachmentsV1ResponseMPayload](docs/AgentGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::AgentGetAutocompleteV2Response](docs/AgentGetAutocompleteV2Response.md)
  - [EzmaxApi::AgentGetAutocompleteV2ResponseMPayload](docs/AgentGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::AgentGetCommunicationCountV1Response](docs/AgentGetCommunicationCountV1Response.md)
+ - [EzmaxApi::AgentGetCommunicationCountV1ResponseMPayload](docs/AgentGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::AgentGetCommunicationListV1Response](docs/AgentGetCommunicationListV1Response.md)
+ - [EzmaxApi::AgentGetCommunicationListV1ResponseMPayload](docs/AgentGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::AgentGetCommunicationrecipientsV1Response](docs/AgentGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::AgentGetCommunicationrecipientsV1ResponseMPayload](docs/AgentGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::AgentGetCommunicationsendersV1Response](docs/AgentGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::AgentGetCommunicationsendersV1ResponseMPayload](docs/AgentGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::AgentGetListV1Response](docs/AgentGetListV1Response.md)
  - [EzmaxApi::AgentGetListV1ResponseMPayload](docs/AgentGetListV1ResponseMPayload.md)
  - [EzmaxApi::AgentImportIntoEDMV1Request](docs/AgentImportIntoEDMV1Request.md)
@@ -821,6 +872,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::ApikeyRequestCompound](docs/ApikeyRequestCompound.md)
  - [EzmaxApi::ApikeyResponse](docs/ApikeyResponse.md)
  - [EzmaxApi::ApikeyResponseCompound](docs/ApikeyResponseCompound.md)
+ - [EzmaxApi::AttachmentDeleteV1Response](docs/AttachmentDeleteV1Response.md)
+ - [EzmaxApi::AttachmentDeleteV1ResponseMPayload](docs/AttachmentDeleteV1ResponseMPayload.md)
  - [EzmaxApi::AttachmentGetAttachmentlogsV1Response](docs/AttachmentGetAttachmentlogsV1Response.md)
  - [EzmaxApi::AttachmentGetAttachmentlogsV1ResponseMPayload](docs/AttachmentGetAttachmentlogsV1ResponseMPayload.md)
  - [EzmaxApi::AttachmentRenameV1Request](docs/AttachmentRenameV1Request.md)
@@ -828,6 +881,12 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::AttachmentRenameV1ResponseMPayload](docs/AttachmentRenameV1ResponseMPayload.md)
  - [EzmaxApi::AttachmentResponse](docs/AttachmentResponse.md)
  - [EzmaxApi::AttachmentResponseCompound](docs/AttachmentResponseCompound.md)
+ - [EzmaxApi::AttachmentRestoreV1Request](docs/AttachmentRestoreV1Request.md)
+ - [EzmaxApi::AttachmentRestoreV1Response](docs/AttachmentRestoreV1Response.md)
+ - [EzmaxApi::AttachmentRestoreV1ResponseMPayload](docs/AttachmentRestoreV1ResponseMPayload.md)
+ - [EzmaxApi::AttachmentValidateV1Request](docs/AttachmentValidateV1Request.md)
+ - [EzmaxApi::AttachmentValidateV1Response](docs/AttachmentValidateV1Response.md)
+ - [EzmaxApi::AttachmentValidateV1ResponseMPayload](docs/AttachmentValidateV1ResponseMPayload.md)
  - [EzmaxApi::AttachmentlogResponse](docs/AttachmentlogResponse.md)
  - [EzmaxApi::AttachmentlogResponseCompound](docs/AttachmentlogResponseCompound.md)
  - [EzmaxApi::AttemptResponse](docs/AttemptResponse.md)
@@ -857,6 +916,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::BankaccountGetAttachmentsV1ResponseMPayload](docs/BankaccountGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::BankaccountGetAutocompleteV2Response](docs/BankaccountGetAutocompleteV2Response.md)
  - [EzmaxApi::BankaccountGetAutocompleteV2ResponseMPayload](docs/BankaccountGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::BankaccountGetCommunicationCountV1Response](docs/BankaccountGetCommunicationCountV1Response.md)
+ - [EzmaxApi::BankaccountGetCommunicationCountV1ResponseMPayload](docs/BankaccountGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::BankaccountGetCommunicationListV1Response](docs/BankaccountGetCommunicationListV1Response.md)
+ - [EzmaxApi::BankaccountGetCommunicationListV1ResponseMPayload](docs/BankaccountGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::BankaccountGetCommunicationrecipientsV1Response](docs/BankaccountGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::BankaccountGetCommunicationrecipientsV1ResponseMPayload](docs/BankaccountGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::BankaccountGetCommunicationsendersV1Response](docs/BankaccountGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::BankaccountGetCommunicationsendersV1ResponseMPayload](docs/BankaccountGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::BankaccountImportIntoEDMV1Request](docs/BankaccountImportIntoEDMV1Request.md)
  - [EzmaxApi::BankaccountImportIntoEDMV1Response](docs/BankaccountImportIntoEDMV1Response.md)
  - [EzmaxApi::BankaccountImportIntoEDMV1ResponseMPayload](docs/BankaccountImportIntoEDMV1ResponseMPayload.md)
@@ -910,6 +977,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::BrokerGetAttachmentsV1ResponseMPayload](docs/BrokerGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::BrokerGetAutocompleteV2Response](docs/BrokerGetAutocompleteV2Response.md)
  - [EzmaxApi::BrokerGetAutocompleteV2ResponseMPayload](docs/BrokerGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::BrokerGetCommunicationCountV1Response](docs/BrokerGetCommunicationCountV1Response.md)
+ - [EzmaxApi::BrokerGetCommunicationCountV1ResponseMPayload](docs/BrokerGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::BrokerGetCommunicationListV1Response](docs/BrokerGetCommunicationListV1Response.md)
+ - [EzmaxApi::BrokerGetCommunicationListV1ResponseMPayload](docs/BrokerGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::BrokerGetCommunicationrecipientsV1Response](docs/BrokerGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::BrokerGetCommunicationrecipientsV1ResponseMPayload](docs/BrokerGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::BrokerGetCommunicationsendersV1Response](docs/BrokerGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::BrokerGetCommunicationsendersV1ResponseMPayload](docs/BrokerGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::BrokerGetListV1Response](docs/BrokerGetListV1Response.md)
  - [EzmaxApi::BrokerGetListV1ResponseMPayload](docs/BrokerGetListV1ResponseMPayload.md)
  - [EzmaxApi::BrokerImportIntoEDMV1Request](docs/BrokerImportIntoEDMV1Request.md)
@@ -947,6 +1022,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::CommissionadvanceBatchDownloadV1Request](docs/CommissionadvanceBatchDownloadV1Request.md)
  - [EzmaxApi::CommissionadvanceGetAttachmentsV1Response](docs/CommissionadvanceGetAttachmentsV1Response.md)
  - [EzmaxApi::CommissionadvanceGetAttachmentsV1ResponseMPayload](docs/CommissionadvanceGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationCountV1Response](docs/CommissionadvanceGetCommunicationCountV1Response.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationCountV1ResponseMPayload](docs/CommissionadvanceGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationListV1Response](docs/CommissionadvanceGetCommunicationListV1Response.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationListV1ResponseMPayload](docs/CommissionadvanceGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationrecipientsV1Response](docs/CommissionadvanceGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationrecipientsV1ResponseMPayload](docs/CommissionadvanceGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationsendersV1Response](docs/CommissionadvanceGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::CommissionadvanceGetCommunicationsendersV1ResponseMPayload](docs/CommissionadvanceGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::CommissionadvanceImportIntoEDMV1Request](docs/CommissionadvanceImportIntoEDMV1Request.md)
  - [EzmaxApi::CommissionadvanceImportIntoEDMV1Response](docs/CommissionadvanceImportIntoEDMV1Response.md)
  - [EzmaxApi::CommissionadvanceImportIntoEDMV1ResponseMPayload](docs/CommissionadvanceImportIntoEDMV1ResponseMPayload.md)
@@ -1158,6 +1241,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::CustomerGetAttachmentsV1ResponseMPayload](docs/CustomerGetAttachmentsV1ResponseMPayload.md)
  - [EzmaxApi::CustomerGetAutocompleteV2Response](docs/CustomerGetAutocompleteV2Response.md)
  - [EzmaxApi::CustomerGetAutocompleteV2ResponseMPayload](docs/CustomerGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::CustomerGetCommunicationCountV1Response](docs/CustomerGetCommunicationCountV1Response.md)
+ - [EzmaxApi::CustomerGetCommunicationCountV1ResponseMPayload](docs/CustomerGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::CustomerGetCommunicationListV1Response](docs/CustomerGetCommunicationListV1Response.md)
+ - [EzmaxApi::CustomerGetCommunicationListV1ResponseMPayload](docs/CustomerGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::CustomerGetCommunicationrecipientsV1Response](docs/CustomerGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::CustomerGetCommunicationrecipientsV1ResponseMPayload](docs/CustomerGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::CustomerGetCommunicationsendersV1Response](docs/CustomerGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::CustomerGetCommunicationsendersV1ResponseMPayload](docs/CustomerGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::CustomerGetObjectV2Response](docs/CustomerGetObjectV2Response.md)
  - [EzmaxApi::CustomerGetObjectV2ResponseMPayload](docs/CustomerGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::CustomerImportIntoEDMV1Request](docs/CustomerImportIntoEDMV1Request.md)
@@ -1171,18 +1262,42 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::DepositBatchDownloadV1Request](docs/DepositBatchDownloadV1Request.md)
  - [EzmaxApi::DepositGetAttachmentsV1Response](docs/DepositGetAttachmentsV1Response.md)
  - [EzmaxApi::DepositGetAttachmentsV1ResponseMPayload](docs/DepositGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::DepositGetCommunicationCountV1Response](docs/DepositGetCommunicationCountV1Response.md)
+ - [EzmaxApi::DepositGetCommunicationCountV1ResponseMPayload](docs/DepositGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::DepositGetCommunicationListV1Response](docs/DepositGetCommunicationListV1Response.md)
+ - [EzmaxApi::DepositGetCommunicationListV1ResponseMPayload](docs/DepositGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::DepositGetCommunicationrecipientsV1Response](docs/DepositGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::DepositGetCommunicationrecipientsV1ResponseMPayload](docs/DepositGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::DepositGetCommunicationsendersV1Response](docs/DepositGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::DepositGetCommunicationsendersV1ResponseMPayload](docs/DepositGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::DepositImportIntoEDMV1Request](docs/DepositImportIntoEDMV1Request.md)
  - [EzmaxApi::DepositImportIntoEDMV1Response](docs/DepositImportIntoEDMV1Response.md)
  - [EzmaxApi::DepositImportIntoEDMV1ResponseMPayload](docs/DepositImportIntoEDMV1ResponseMPayload.md)
  - [EzmaxApi::DeposittransitchequeBatchDownloadV1Request](docs/DeposittransitchequeBatchDownloadV1Request.md)
  - [EzmaxApi::DeposittransitchequeGetAttachmentsV1Response](docs/DeposittransitchequeGetAttachmentsV1Response.md)
  - [EzmaxApi::DeposittransitchequeGetAttachmentsV1ResponseMPayload](docs/DeposittransitchequeGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationCountV1Response](docs/DeposittransitchequeGetCommunicationCountV1Response.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationCountV1ResponseMPayload](docs/DeposittransitchequeGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationListV1Response](docs/DeposittransitchequeGetCommunicationListV1Response.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationListV1ResponseMPayload](docs/DeposittransitchequeGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationrecipientsV1Response](docs/DeposittransitchequeGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationrecipientsV1ResponseMPayload](docs/DeposittransitchequeGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationsendersV1Response](docs/DeposittransitchequeGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::DeposittransitchequeGetCommunicationsendersV1ResponseMPayload](docs/DeposittransitchequeGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::DeposittransitchequeImportIntoEDMV1Request](docs/DeposittransitchequeImportIntoEDMV1Request.md)
  - [EzmaxApi::DeposittransitchequeImportIntoEDMV1Response](docs/DeposittransitchequeImportIntoEDMV1Response.md)
  - [EzmaxApi::DeposittransitchequeImportIntoEDMV1ResponseMPayload](docs/DeposittransitchequeImportIntoEDMV1ResponseMPayload.md)
  - [EzmaxApi::DisclosureBatchDownloadV1Request](docs/DisclosureBatchDownloadV1Request.md)
  - [EzmaxApi::DisclosureGetAttachmentsV1Response](docs/DisclosureGetAttachmentsV1Response.md)
  - [EzmaxApi::DisclosureGetAttachmentsV1ResponseMPayload](docs/DisclosureGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::DisclosureGetCommunicationCountV1Response](docs/DisclosureGetCommunicationCountV1Response.md)
+ - [EzmaxApi::DisclosureGetCommunicationCountV1ResponseMPayload](docs/DisclosureGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::DisclosureGetCommunicationListV1Response](docs/DisclosureGetCommunicationListV1Response.md)
+ - [EzmaxApi::DisclosureGetCommunicationListV1ResponseMPayload](docs/DisclosureGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::DisclosureGetCommunicationrecipientsV1Response](docs/DisclosureGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::DisclosureGetCommunicationrecipientsV1ResponseMPayload](docs/DisclosureGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::DisclosureGetCommunicationsendersV1Response](docs/DisclosureGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::DisclosureGetCommunicationsendersV1ResponseMPayload](docs/DisclosureGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::DisclosureImportIntoEDMV1Request](docs/DisclosureImportIntoEDMV1Request.md)
  - [EzmaxApi::DisclosureImportIntoEDMV1Response](docs/DisclosureImportIntoEDMV1Response.md)
  - [EzmaxApi::DisclosureImportIntoEDMV1ResponseMPayload](docs/DisclosureImportIntoEDMV1ResponseMPayload.md)
@@ -1262,6 +1377,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::EmployeeBatchDownloadV1Request](docs/EmployeeBatchDownloadV1Request.md)
  - [EzmaxApi::EmployeeGetAttachmentsV1Response](docs/EmployeeGetAttachmentsV1Response.md)
  - [EzmaxApi::EmployeeGetAttachmentsV1ResponseMPayload](docs/EmployeeGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::EmployeeGetCommunicationCountV1Response](docs/EmployeeGetCommunicationCountV1Response.md)
+ - [EzmaxApi::EmployeeGetCommunicationCountV1ResponseMPayload](docs/EmployeeGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::EmployeeGetCommunicationListV1Response](docs/EmployeeGetCommunicationListV1Response.md)
+ - [EzmaxApi::EmployeeGetCommunicationListV1ResponseMPayload](docs/EmployeeGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::EmployeeGetCommunicationrecipientsV1Response](docs/EmployeeGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::EmployeeGetCommunicationrecipientsV1ResponseMPayload](docs/EmployeeGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::EmployeeGetCommunicationsendersV1Response](docs/EmployeeGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::EmployeeGetCommunicationsendersV1ResponseMPayload](docs/EmployeeGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::EmployeeGetListV1Response](docs/EmployeeGetListV1Response.md)
  - [EzmaxApi::EmployeeGetListV1ResponseMPayload](docs/EmployeeGetListV1ResponseMPayload.md)
  - [EzmaxApi::EmployeeImportIntoEDMV1Request](docs/EmployeeImportIntoEDMV1Request.md)
@@ -1277,6 +1400,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::ExternalbrokerBatchDownloadV1Request](docs/ExternalbrokerBatchDownloadV1Request.md)
  - [EzmaxApi::ExternalbrokerGetAttachmentsV1Response](docs/ExternalbrokerGetAttachmentsV1Response.md)
  - [EzmaxApi::ExternalbrokerGetAttachmentsV1ResponseMPayload](docs/ExternalbrokerGetAttachmentsV1ResponseMPayload.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationCountV1Response](docs/ExternalbrokerGetCommunicationCountV1Response.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationCountV1ResponseMPayload](docs/ExternalbrokerGetCommunicationCountV1ResponseMPayload.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationListV1Response](docs/ExternalbrokerGetCommunicationListV1Response.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationListV1ResponseMPayload](docs/ExternalbrokerGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationrecipientsV1Response](docs/ExternalbrokerGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationrecipientsV1ResponseMPayload](docs/ExternalbrokerGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationsendersV1Response](docs/ExternalbrokerGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::ExternalbrokerGetCommunicationsendersV1ResponseMPayload](docs/ExternalbrokerGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::ExternalbrokerImportIntoEDMV1Request](docs/ExternalbrokerImportIntoEDMV1Request.md)
  - [EzmaxApi::ExternalbrokerImportIntoEDMV1Response](docs/ExternalbrokerImportIntoEDMV1Response.md)
  - [EzmaxApi::ExternalbrokerImportIntoEDMV1ResponseMPayload](docs/ExternalbrokerImportIntoEDMV1ResponseMPayload.md)

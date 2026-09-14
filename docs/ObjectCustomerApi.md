@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**customer_batch_download_v1**](ObjectCustomerApi.md#customer_batch_download_v1) | **POST** /1/object/customer/{pkiCustomerID}/batchDownload | Download multiples attachments from a Customer |
 | [**customer_get_attachments_v1**](ObjectCustomerApi.md#customer_get_attachments_v1) | **GET** /1/object/customer/{pkiCustomerID}/getAttachments | Retrieve Customer&#39;s attachments |
 | [**customer_get_autocomplete_v2**](ObjectCustomerApi.md#customer_get_autocomplete_v2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs |
+| [**customer_get_communication_count_v1**](ObjectCustomerApi.md#customer_get_communication_count_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationCount | Retrieve Communication count |
+| [**customer_get_communication_list_v1**](ObjectCustomerApi.md#customer_get_communication_list_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationList | Retrieve Communication list |
+| [**customer_get_communicationrecipients_v1**](ObjectCustomerApi.md#customer_get_communicationrecipients_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**customer_get_communicationsenders_v1**](ObjectCustomerApi.md#customer_get_communicationsenders_v1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationsenders | Retrieve Communication senders |
 | [**customer_get_object_v2**](ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer |
 | [**customer_import_into_edmv1**](ObjectCustomerApi.md#customer_import_into_edmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Customer |
 
@@ -219,6 +223,282 @@ end
 ### Return type
 
 [**CustomerGetAutocompleteV2Response**](CustomerGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## customer_get_communication_count_v1
+
+> <CustomerGetCommunicationCountV1Response> customer_get_communication_count_v1(pki_customer_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.customer_get_communication_count_v1(pki_customer_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the customer_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetCommunicationCountV1Response>, Integer, Hash)> customer_get_communication_count_v1_with_http_info(pki_customer_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.customer_get_communication_count_v1_with_http_info(pki_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+
+### Return type
+
+[**CustomerGetCommunicationCountV1Response**](CustomerGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## customer_get_communication_list_v1
+
+> <CustomerGetCommunicationListV1Response> customer_get_communication_list_v1(pki_customer_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.customer_get_communication_list_v1(pki_customer_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the customer_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetCommunicationListV1Response>, Integer, Hash)> customer_get_communication_list_v1_with_http_info(pki_customer_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.customer_get_communication_list_v1_with_http_info(pki_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+
+### Return type
+
+[**CustomerGetCommunicationListV1Response**](CustomerGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## customer_get_communicationrecipients_v1
+
+> <CustomerGetCommunicationrecipientsV1Response> customer_get_communicationrecipients_v1(pki_customer_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.customer_get_communicationrecipients_v1(pki_customer_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the customer_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetCommunicationrecipientsV1Response>, Integer, Hash)> customer_get_communicationrecipients_v1_with_http_info(pki_customer_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.customer_get_communicationrecipients_v1_with_http_info(pki_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+
+### Return type
+
+[**CustomerGetCommunicationrecipientsV1Response**](CustomerGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## customer_get_communicationsenders_v1
+
+> <CustomerGetCommunicationsendersV1Response> customer_get_communicationsenders_v1(pki_customer_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCustomerApi.new
+pki_customer_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.customer_get_communicationsenders_v1(pki_customer_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the customer_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerGetCommunicationsendersV1Response>, Integer, Hash)> customer_get_communicationsenders_v1_with_http_info(pki_customer_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.customer_get_communicationsenders_v1_with_http_info(pki_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCustomerApi->customer_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_customer_id** | **Integer** |  |  |
+
+### Return type
+
+[**CustomerGetCommunicationsendersV1Response**](CustomerGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

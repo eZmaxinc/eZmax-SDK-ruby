@@ -53,6 +53,7 @@
 | **fki_ezsigndocument_id_reference** | **Integer** | The unique ID of the Ezsigndocument | [optional] |
 | **e_attachment_documenttype** | [**FieldEAttachmentDocumenttype**](FieldEAttachmentDocumenttype.md) |  |  |
 | **s_attachment_name** | **String** | The name of the Attachment |  |
+| **s_attachment_category** | **String** | The attachment category |  |
 | **e_attachment_privacy** | [**FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  |  |
 | **fki_user_id_specific** | **Integer** | The unique ID of the User | [optional] |
 | **e_attachment_type** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  |  |
@@ -125,6 +126,7 @@ instance = EzmaxApi::CustomAttachmentResponse.new(
   fki_ezsigndocument_id_reference: 97,
   e_attachment_documenttype: null,
   s_attachment_name: Document.pdf,
+  s_attachment_category: Inscription,
   e_attachment_privacy: null,
   fki_user_id_specific: 70,
   e_attachment_type: null,

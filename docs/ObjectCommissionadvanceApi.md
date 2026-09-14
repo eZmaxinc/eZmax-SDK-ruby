@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**commissionadvance_batch_download_v1**](ObjectCommissionadvanceApi.md#commissionadvance_batch_download_v1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/batchDownload | Download multiples attachments from a Commission advance |
 | [**commissionadvance_get_attachments_v1**](ObjectCommissionadvanceApi.md#commissionadvance_get_attachments_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getAttachments | Retrieve Commissionadvance&#39;s attachments |
+| [**commissionadvance_get_communication_count_v1**](ObjectCommissionadvanceApi.md#commissionadvance_get_communication_count_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationCount | Retrieve Communication count |
+| [**commissionadvance_get_communication_list_v1**](ObjectCommissionadvanceApi.md#commissionadvance_get_communication_list_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList | Retrieve Communication list |
+| [**commissionadvance_get_communicationrecipients_v1**](ObjectCommissionadvanceApi.md#commissionadvance_get_communicationrecipients_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**commissionadvance_get_communicationsenders_v1**](ObjectCommissionadvanceApi.md#commissionadvance_get_communicationsenders_v1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders | Retrieve Communication senders |
 | [**commissionadvance_import_into_edmv1**](ObjectCommissionadvanceApi.md#commissionadvance_import_into_edmv1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/importIntoEDM | Import attachments into the Commissionadvance |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**CommissionadvanceGetAttachmentsV1Response**](CommissionadvanceGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## commissionadvance_get_communication_count_v1
+
+> <CommissionadvanceGetCommunicationCountV1Response> commissionadvance_get_communication_count_v1(pki_commissionadvance_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCommissionadvanceApi.new
+pki_commissionadvance_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.commissionadvance_get_communication_count_v1(pki_commissionadvance_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the commissionadvance_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CommissionadvanceGetCommunicationCountV1Response>, Integer, Hash)> commissionadvance_get_communication_count_v1_with_http_info(pki_commissionadvance_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.commissionadvance_get_communication_count_v1_with_http_info(pki_commissionadvance_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CommissionadvanceGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_commissionadvance_id** | **Integer** |  |  |
+
+### Return type
+
+[**CommissionadvanceGetCommunicationCountV1Response**](CommissionadvanceGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## commissionadvance_get_communication_list_v1
+
+> <CommissionadvanceGetCommunicationListV1Response> commissionadvance_get_communication_list_v1(pki_commissionadvance_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCommissionadvanceApi.new
+pki_commissionadvance_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.commissionadvance_get_communication_list_v1(pki_commissionadvance_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the commissionadvance_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CommissionadvanceGetCommunicationListV1Response>, Integer, Hash)> commissionadvance_get_communication_list_v1_with_http_info(pki_commissionadvance_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.commissionadvance_get_communication_list_v1_with_http_info(pki_commissionadvance_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CommissionadvanceGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_commissionadvance_id** | **Integer** |  |  |
+
+### Return type
+
+[**CommissionadvanceGetCommunicationListV1Response**](CommissionadvanceGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## commissionadvance_get_communicationrecipients_v1
+
+> <CommissionadvanceGetCommunicationrecipientsV1Response> commissionadvance_get_communicationrecipients_v1(pki_commissionadvance_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCommissionadvanceApi.new
+pki_commissionadvance_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.commissionadvance_get_communicationrecipients_v1(pki_commissionadvance_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the commissionadvance_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CommissionadvanceGetCommunicationrecipientsV1Response>, Integer, Hash)> commissionadvance_get_communicationrecipients_v1_with_http_info(pki_commissionadvance_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.commissionadvance_get_communicationrecipients_v1_with_http_info(pki_commissionadvance_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CommissionadvanceGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_commissionadvance_id** | **Integer** |  |  |
+
+### Return type
+
+[**CommissionadvanceGetCommunicationrecipientsV1Response**](CommissionadvanceGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## commissionadvance_get_communicationsenders_v1
+
+> <CommissionadvanceGetCommunicationsendersV1Response> commissionadvance_get_communicationsenders_v1(pki_commissionadvance_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectCommissionadvanceApi.new
+pki_commissionadvance_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.commissionadvance_get_communicationsenders_v1(pki_commissionadvance_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the commissionadvance_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CommissionadvanceGetCommunicationsendersV1Response>, Integer, Hash)> commissionadvance_get_communicationsenders_v1_with_http_info(pki_commissionadvance_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.commissionadvance_get_communicationsenders_v1_with_http_info(pki_commissionadvance_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CommissionadvanceGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectCommissionadvanceApi->commissionadvance_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_commissionadvance_id** | **Integer** |  |  |
+
+### Return type
+
+[**CommissionadvanceGetCommunicationsendersV1Response**](CommissionadvanceGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

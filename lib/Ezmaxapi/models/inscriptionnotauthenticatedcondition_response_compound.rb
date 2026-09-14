@@ -200,7 +200,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "t_inscriptionnotauthenticatedcondition_comment", t_inscriptionnotauthenticatedcondition_comment cannot be nil.')
       end
 
-      pattern = Regexp.new(/^.{0,65535}$/)
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
       if @t_inscriptionnotauthenticatedcondition_comment !~ pattern
         invalid_properties.push("invalid value for \"t_inscriptionnotauthenticatedcondition_comment\", must conform to the pattern #{pattern}.")
       end
@@ -222,7 +222,7 @@ module EzmaxApi
       return false if !@dt_inscriptionnotauthenticatedcondition_completed.nil? && @dt_inscriptionnotauthenticatedcondition_completed !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/)
       return false if !@dt_inscriptionnotauthenticatedcondition_due.nil? && @dt_inscriptionnotauthenticatedcondition_due !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/)
       return false if @t_inscriptionnotauthenticatedcondition_comment.nil?
-      return false if @t_inscriptionnotauthenticatedcondition_comment !~ Regexp.new(/^.{0,65535}$/)
+      return false if @t_inscriptionnotauthenticatedcondition_comment !~ Regexp.new(/^[\s\S]{0,65535}$/)
       true
     end
 
@@ -322,7 +322,7 @@ module EzmaxApi
         fail ArgumentError, 't_inscriptionnotauthenticatedcondition_comment cannot be nil'
       end
 
-      pattern = Regexp.new(/^.{0,65535}$/)
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
       if t_inscriptionnotauthenticatedcondition_comment !~ pattern
         fail ArgumentError, "invalid value for \"t_inscriptionnotauthenticatedcondition_comment\", must conform to the pattern #{pattern}."
       end

@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**externalbroker_batch_download_v1**](ObjectExternalbrokerApi.md#externalbroker_batch_download_v1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/batchDownload | Download multiples attachments from an Externalbroker |
 | [**externalbroker_get_attachments_v1**](ObjectExternalbrokerApi.md#externalbroker_get_attachments_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getAttachments | Retrieve Externalbroker&#39;s attachments |
+| [**externalbroker_get_communication_count_v1**](ObjectExternalbrokerApi.md#externalbroker_get_communication_count_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationCount | Retrieve Communication count |
+| [**externalbroker_get_communication_list_v1**](ObjectExternalbrokerApi.md#externalbroker_get_communication_list_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList | Retrieve Communication list |
+| [**externalbroker_get_communicationrecipients_v1**](ObjectExternalbrokerApi.md#externalbroker_get_communicationrecipients_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**externalbroker_get_communicationsenders_v1**](ObjectExternalbrokerApi.md#externalbroker_get_communicationsenders_v1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders | Retrieve Communication senders |
 | [**externalbroker_import_into_edmv1**](ObjectExternalbrokerApi.md#externalbroker_import_into_edmv1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/importIntoEDM | Import attachments into the Externalbroker |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**ExternalbrokerGetAttachmentsV1Response**](ExternalbrokerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## externalbroker_get_communication_count_v1
+
+> <ExternalbrokerGetCommunicationCountV1Response> externalbroker_get_communication_count_v1(pki_externalbroker_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectExternalbrokerApi.new
+pki_externalbroker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.externalbroker_get_communication_count_v1(pki_externalbroker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the externalbroker_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExternalbrokerGetCommunicationCountV1Response>, Integer, Hash)> externalbroker_get_communication_count_v1_with_http_info(pki_externalbroker_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.externalbroker_get_communication_count_v1_with_http_info(pki_externalbroker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExternalbrokerGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_externalbroker_id** | **Integer** |  |  |
+
+### Return type
+
+[**ExternalbrokerGetCommunicationCountV1Response**](ExternalbrokerGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## externalbroker_get_communication_list_v1
+
+> <ExternalbrokerGetCommunicationListV1Response> externalbroker_get_communication_list_v1(pki_externalbroker_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectExternalbrokerApi.new
+pki_externalbroker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.externalbroker_get_communication_list_v1(pki_externalbroker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the externalbroker_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExternalbrokerGetCommunicationListV1Response>, Integer, Hash)> externalbroker_get_communication_list_v1_with_http_info(pki_externalbroker_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.externalbroker_get_communication_list_v1_with_http_info(pki_externalbroker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExternalbrokerGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_externalbroker_id** | **Integer** |  |  |
+
+### Return type
+
+[**ExternalbrokerGetCommunicationListV1Response**](ExternalbrokerGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## externalbroker_get_communicationrecipients_v1
+
+> <ExternalbrokerGetCommunicationrecipientsV1Response> externalbroker_get_communicationrecipients_v1(pki_externalbroker_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectExternalbrokerApi.new
+pki_externalbroker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.externalbroker_get_communicationrecipients_v1(pki_externalbroker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the externalbroker_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExternalbrokerGetCommunicationrecipientsV1Response>, Integer, Hash)> externalbroker_get_communicationrecipients_v1_with_http_info(pki_externalbroker_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.externalbroker_get_communicationrecipients_v1_with_http_info(pki_externalbroker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExternalbrokerGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_externalbroker_id** | **Integer** |  |  |
+
+### Return type
+
+[**ExternalbrokerGetCommunicationrecipientsV1Response**](ExternalbrokerGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## externalbroker_get_communicationsenders_v1
+
+> <ExternalbrokerGetCommunicationsendersV1Response> externalbroker_get_communicationsenders_v1(pki_externalbroker_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectExternalbrokerApi.new
+pki_externalbroker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.externalbroker_get_communicationsenders_v1(pki_externalbroker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the externalbroker_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ExternalbrokerGetCommunicationsendersV1Response>, Integer, Hash)> externalbroker_get_communicationsenders_v1_with_http_info(pki_externalbroker_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.externalbroker_get_communicationsenders_v1_with_http_info(pki_externalbroker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ExternalbrokerGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectExternalbrokerApi->externalbroker_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_externalbroker_id** | **Integer** |  |  |
+
+### Return type
+
+[**ExternalbrokerGetCommunicationsendersV1Response**](ExternalbrokerGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

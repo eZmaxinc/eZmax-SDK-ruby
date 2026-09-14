@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**broker_batch_download_v1**](ObjectBrokerApi.md#broker_batch_download_v1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker |
 | [**broker_get_attachments_v1**](ObjectBrokerApi.md#broker_get_attachments_v1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker&#39;s attachments |
 | [**broker_get_autocomplete_v2**](ObjectBrokerApi.md#broker_get_autocomplete_v2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs |
+| [**broker_get_communication_count_v1**](ObjectBrokerApi.md#broker_get_communication_count_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationCount | Retrieve Communication count |
+| [**broker_get_communication_list_v1**](ObjectBrokerApi.md#broker_get_communication_list_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationList | Retrieve Communication list |
+| [**broker_get_communicationrecipients_v1**](ObjectBrokerApi.md#broker_get_communicationrecipients_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**broker_get_communicationsenders_v1**](ObjectBrokerApi.md#broker_get_communicationsenders_v1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationsenders | Retrieve Communication senders |
 | [**broker_get_list_v1**](ObjectBrokerApi.md#broker_get_list_v1) | **GET** /1/object/broker/getList | Retrieve Broker list |
 | [**broker_import_into_edmv1**](ObjectBrokerApi.md#broker_import_into_edmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker |
 
@@ -219,6 +223,282 @@ end
 ### Return type
 
 [**BrokerGetAutocompleteV2Response**](BrokerGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## broker_get_communication_count_v1
+
+> <BrokerGetCommunicationCountV1Response> broker_get_communication_count_v1(pki_broker_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.broker_get_communication_count_v1(pki_broker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the broker_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BrokerGetCommunicationCountV1Response>, Integer, Hash)> broker_get_communication_count_v1_with_http_info(pki_broker_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.broker_get_communication_count_v1_with_http_info(pki_broker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BrokerGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+
+### Return type
+
+[**BrokerGetCommunicationCountV1Response**](BrokerGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## broker_get_communication_list_v1
+
+> <BrokerGetCommunicationListV1Response> broker_get_communication_list_v1(pki_broker_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.broker_get_communication_list_v1(pki_broker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the broker_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BrokerGetCommunicationListV1Response>, Integer, Hash)> broker_get_communication_list_v1_with_http_info(pki_broker_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.broker_get_communication_list_v1_with_http_info(pki_broker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BrokerGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+
+### Return type
+
+[**BrokerGetCommunicationListV1Response**](BrokerGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## broker_get_communicationrecipients_v1
+
+> <BrokerGetCommunicationrecipientsV1Response> broker_get_communicationrecipients_v1(pki_broker_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.broker_get_communicationrecipients_v1(pki_broker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the broker_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BrokerGetCommunicationrecipientsV1Response>, Integer, Hash)> broker_get_communicationrecipients_v1_with_http_info(pki_broker_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.broker_get_communicationrecipients_v1_with_http_info(pki_broker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BrokerGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+
+### Return type
+
+[**BrokerGetCommunicationrecipientsV1Response**](BrokerGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## broker_get_communicationsenders_v1
+
+> <BrokerGetCommunicationsendersV1Response> broker_get_communicationsenders_v1(pki_broker_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBrokerApi.new
+pki_broker_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.broker_get_communicationsenders_v1(pki_broker_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the broker_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BrokerGetCommunicationsendersV1Response>, Integer, Hash)> broker_get_communicationsenders_v1_with_http_info(pki_broker_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.broker_get_communicationsenders_v1_with_http_info(pki_broker_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BrokerGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBrokerApi->broker_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_broker_id** | **Integer** |  |  |
+
+### Return type
+
+[**BrokerGetCommunicationsendersV1Response**](BrokerGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

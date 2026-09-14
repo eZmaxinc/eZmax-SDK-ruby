@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**deposit_batch_download_v1**](ObjectDepositApi.md#deposit_batch_download_v1) | **POST** /1/object/deposit/{pkiDepositID}/batchDownload | Download multiples attachments from a Deposit |
 | [**deposit_get_attachments_v1**](ObjectDepositApi.md#deposit_get_attachments_v1) | **GET** /1/object/deposit/{pkiDepositID}/getAttachments | Retrieve Deposit&#39;s attachments |
+| [**deposit_get_communication_count_v1**](ObjectDepositApi.md#deposit_get_communication_count_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationCount | Retrieve Communication count |
+| [**deposit_get_communication_list_v1**](ObjectDepositApi.md#deposit_get_communication_list_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationList | Retrieve Communication list |
+| [**deposit_get_communicationrecipients_v1**](ObjectDepositApi.md#deposit_get_communicationrecipients_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**deposit_get_communicationsenders_v1**](ObjectDepositApi.md#deposit_get_communicationsenders_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationsenders | Retrieve Communication senders |
 | [**deposit_import_into_edmv1**](ObjectDepositApi.md#deposit_import_into_edmv1) | **POST** /1/object/deposit/{pkiDepositID}/importIntoEDM | Import attachments into the Deposit |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**DepositGetAttachmentsV1Response**](DepositGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposit_get_communication_count_v1
+
+> <DepositGetCommunicationCountV1Response> deposit_get_communication_count_v1(pki_deposit_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDepositApi.new
+pki_deposit_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.deposit_get_communication_count_v1(pki_deposit_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the deposit_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DepositGetCommunicationCountV1Response>, Integer, Hash)> deposit_get_communication_count_v1_with_http_info(pki_deposit_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.deposit_get_communication_count_v1_with_http_info(pki_deposit_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DepositGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposit_id** | **Integer** |  |  |
+
+### Return type
+
+[**DepositGetCommunicationCountV1Response**](DepositGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposit_get_communication_list_v1
+
+> <DepositGetCommunicationListV1Response> deposit_get_communication_list_v1(pki_deposit_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDepositApi.new
+pki_deposit_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.deposit_get_communication_list_v1(pki_deposit_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the deposit_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DepositGetCommunicationListV1Response>, Integer, Hash)> deposit_get_communication_list_v1_with_http_info(pki_deposit_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.deposit_get_communication_list_v1_with_http_info(pki_deposit_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DepositGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposit_id** | **Integer** |  |  |
+
+### Return type
+
+[**DepositGetCommunicationListV1Response**](DepositGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposit_get_communicationrecipients_v1
+
+> <DepositGetCommunicationrecipientsV1Response> deposit_get_communicationrecipients_v1(pki_deposit_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDepositApi.new
+pki_deposit_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.deposit_get_communicationrecipients_v1(pki_deposit_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the deposit_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DepositGetCommunicationrecipientsV1Response>, Integer, Hash)> deposit_get_communicationrecipients_v1_with_http_info(pki_deposit_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.deposit_get_communicationrecipients_v1_with_http_info(pki_deposit_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DepositGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposit_id** | **Integer** |  |  |
+
+### Return type
+
+[**DepositGetCommunicationrecipientsV1Response**](DepositGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposit_get_communicationsenders_v1
+
+> <DepositGetCommunicationsendersV1Response> deposit_get_communicationsenders_v1(pki_deposit_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDepositApi.new
+pki_deposit_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.deposit_get_communicationsenders_v1(pki_deposit_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the deposit_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DepositGetCommunicationsendersV1Response>, Integer, Hash)> deposit_get_communicationsenders_v1_with_http_info(pki_deposit_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.deposit_get_communicationsenders_v1_with_http_info(pki_deposit_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DepositGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposit_id** | **Integer** |  |  |
+
+### Return type
+
+[**DepositGetCommunicationsendersV1Response**](DepositGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

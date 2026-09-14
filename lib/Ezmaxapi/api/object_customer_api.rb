@@ -241,6 +241,266 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Communication count
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [CustomerGetCommunicationCountV1Response]
+    def customer_get_communication_count_v1(pki_customer_id, opts = {})
+      data, _status_code, _headers = customer_get_communication_count_v1_with_http_info(pki_customer_id, opts)
+      data
+    end
+
+    # Retrieve Communication count
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CustomerGetCommunicationCountV1Response, Integer, Hash)>] CustomerGetCommunicationCountV1Response data, response status code and response headers
+    def customer_get_communication_count_v1_with_http_info(pki_customer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectCustomerApi.customer_get_communication_count_v1 ...'
+      end
+      # verify the required parameter 'pki_customer_id' is set
+      if @api_client.config.client_side_validation && pki_customer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_customer_id' when calling ObjectCustomerApi.customer_get_communication_count_v1"
+      end
+      if @api_client.config.client_side_validation && pki_customer_id < 0
+        fail ArgumentError, 'invalid value for "pki_customer_id" when calling ObjectCustomerApi.customer_get_communication_count_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/customer/{pkiCustomerID}/getCommunicationCount'.sub('{pkiCustomerID}', CGI.escape(pki_customer_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CustomerGetCommunicationCountV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectCustomerApi.customer_get_communication_count_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectCustomerApi#customer_get_communication_count_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication list
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [CustomerGetCommunicationListV1Response]
+    def customer_get_communication_list_v1(pki_customer_id, opts = {})
+      data, _status_code, _headers = customer_get_communication_list_v1_with_http_info(pki_customer_id, opts)
+      data
+    end
+
+    # Retrieve Communication list
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CustomerGetCommunicationListV1Response, Integer, Hash)>] CustomerGetCommunicationListV1Response data, response status code and response headers
+    def customer_get_communication_list_v1_with_http_info(pki_customer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectCustomerApi.customer_get_communication_list_v1 ...'
+      end
+      # verify the required parameter 'pki_customer_id' is set
+      if @api_client.config.client_side_validation && pki_customer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_customer_id' when calling ObjectCustomerApi.customer_get_communication_list_v1"
+      end
+      if @api_client.config.client_side_validation && pki_customer_id < 0
+        fail ArgumentError, 'invalid value for "pki_customer_id" when calling ObjectCustomerApi.customer_get_communication_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/customer/{pkiCustomerID}/getCommunicationList'.sub('{pkiCustomerID}', CGI.escape(pki_customer_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CustomerGetCommunicationListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectCustomerApi.customer_get_communication_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectCustomerApi#customer_get_communication_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [CustomerGetCommunicationrecipientsV1Response]
+    def customer_get_communicationrecipients_v1(pki_customer_id, opts = {})
+      data, _status_code, _headers = customer_get_communicationrecipients_v1_with_http_info(pki_customer_id, opts)
+      data
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CustomerGetCommunicationrecipientsV1Response, Integer, Hash)>] CustomerGetCommunicationrecipientsV1Response data, response status code and response headers
+    def customer_get_communicationrecipients_v1_with_http_info(pki_customer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectCustomerApi.customer_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_customer_id' is set
+      if @api_client.config.client_side_validation && pki_customer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_customer_id' when calling ObjectCustomerApi.customer_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_customer_id < 0
+        fail ArgumentError, 'invalid value for "pki_customer_id" when calling ObjectCustomerApi.customer_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/customer/{pkiCustomerID}/getCommunicationrecipients'.sub('{pkiCustomerID}', CGI.escape(pki_customer_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CustomerGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectCustomerApi.customer_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectCustomerApi#customer_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication senders
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [CustomerGetCommunicationsendersV1Response]
+    def customer_get_communicationsenders_v1(pki_customer_id, opts = {})
+      data, _status_code, _headers = customer_get_communicationsenders_v1_with_http_info(pki_customer_id, opts)
+      data
+    end
+
+    # Retrieve Communication senders
+    # @param pki_customer_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CustomerGetCommunicationsendersV1Response, Integer, Hash)>] CustomerGetCommunicationsendersV1Response data, response status code and response headers
+    def customer_get_communicationsenders_v1_with_http_info(pki_customer_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectCustomerApi.customer_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_customer_id' is set
+      if @api_client.config.client_side_validation && pki_customer_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_customer_id' when calling ObjectCustomerApi.customer_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_customer_id < 0
+        fail ArgumentError, 'invalid value for "pki_customer_id" when calling ObjectCustomerApi.customer_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/customer/{pkiCustomerID}/getCommunicationsenders'.sub('{pkiCustomerID}', CGI.escape(pki_customer_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CustomerGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectCustomerApi.customer_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectCustomerApi#customer_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve an existing Customer
     # 
     # @param pki_customer_id [Integer] The unique ID of the Customer

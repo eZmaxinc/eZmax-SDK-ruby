@@ -162,6 +162,9 @@ module EzmaxApi
     # The name of the Attachment
     attr_accessor :s_attachment_name
 
+    # The attachment category
+    attr_accessor :s_attachment_category
+
     attr_accessor :e_attachment_privacy
 
     # The unique ID of the User
@@ -268,6 +271,7 @@ module EzmaxApi
         :'fki_ezsigndocument_id_reference' => :'fkiEzsigndocumentIDReference',
         :'e_attachment_documenttype' => :'eAttachmentDocumenttype',
         :'s_attachment_name' => :'sAttachmentName',
+        :'s_attachment_category' => :'sAttachmentCategory',
         :'e_attachment_privacy' => :'eAttachmentPrivacy',
         :'fki_user_id_specific' => :'fkiUserIDSpecific',
         :'e_attachment_type' => :'eAttachmentType',
@@ -345,6 +349,7 @@ module EzmaxApi
         :'fki_ezsigndocument_id_reference' => :'Integer',
         :'e_attachment_documenttype' => :'FieldEAttachmentDocumenttype',
         :'s_attachment_name' => :'String',
+        :'s_attachment_category' => :'String',
         :'e_attachment_privacy' => :'FieldEAttachmentPrivacy',
         :'fki_user_id_specific' => :'Integer',
         :'e_attachment_type' => :'FieldEAttachmentType',
@@ -589,6 +594,12 @@ module EzmaxApi
         self.s_attachment_name = attributes[:'s_attachment_name']
       else
         self.s_attachment_name = nil
+      end
+
+      if attributes.key?(:'s_attachment_category')
+        self.s_attachment_category = attributes[:'s_attachment_category']
+      else
+        self.s_attachment_category = nil
       end
 
       if attributes.key?(:'e_attachment_privacy')
@@ -980,6 +991,15 @@ module EzmaxApi
         invalid_properties.push("invalid value for \"s_attachment_name\", must conform to the pattern #{pattern}.")
       end
 
+      if @s_attachment_category.nil?
+        invalid_properties.push('invalid value for "s_attachment_category", s_attachment_category cannot be nil.')
+      end
+
+      pattern = Regexp.new(/^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{0,75}$/)
+      if @s_attachment_category !~ pattern
+        invalid_properties.push("invalid value for \"s_attachment_category\", must conform to the pattern #{pattern}.")
+      end
+
       if @e_attachment_privacy.nil?
         invalid_properties.push('invalid value for "e_attachment_privacy", e_attachment_privacy cannot be nil.')
       end
@@ -1129,6 +1149,8 @@ module EzmaxApi
       return false if @e_attachment_documenttype.nil?
       return false if @s_attachment_name.nil?
       return false if @s_attachment_name !~ Regexp.new(/^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{1,75}$/)
+      return false if @s_attachment_category.nil?
+      return false if @s_attachment_category !~ Regexp.new(/^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{0,75}$/)
       return false if @e_attachment_privacy.nil?
       return false if !@fki_user_id_specific.nil? && @fki_user_id_specific < 0
       return false if @e_attachment_type.nil?
@@ -1937,6 +1959,21 @@ module EzmaxApi
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] s_attachment_category Value to be assigned
+    def s_attachment_category=(s_attachment_category)
+      if s_attachment_category.nil?
+        fail ArgumentError, 's_attachment_category cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{0,75}$/)
+      if s_attachment_category !~ pattern
+        fail ArgumentError, "invalid value for \"s_attachment_category\", must conform to the pattern #{pattern}."
+      end
+
+      @s_attachment_category = s_attachment_category
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] e_attachment_privacy Value to be assigned
     def e_attachment_privacy=(e_attachment_privacy)
       if e_attachment_privacy.nil?
@@ -2134,6 +2171,7 @@ module EzmaxApi
           fki_ezsigndocument_id_reference == o.fki_ezsigndocument_id_reference &&
           e_attachment_documenttype == o.e_attachment_documenttype &&
           s_attachment_name == o.s_attachment_name &&
+          s_attachment_category == o.s_attachment_category &&
           e_attachment_privacy == o.e_attachment_privacy &&
           fki_user_id_specific == o.fki_user_id_specific &&
           e_attachment_type == o.e_attachment_type &&
@@ -2157,7 +2195,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_attachment_id, fki_computer_id, fki_adjustment_id, fki_agent_id, fki_bankaccount_id, fki_broker_id, fki_commissionadvance_id, fki_communication_id, fki_customer_id, fki_customertemplate_id, fki_deposit_id, fki_deposittransitcheque_id, fki_electronicfundstransfer_id, fki_employee_id, fki_externalbroker_id, fki_ezcomadvanceserver_id, fki_ezcomcompany_id, fki_ezsigndocument_id, fki_ghacqcontract_id, fki_inscription_id, fki_inscriptiontemp_id, fki_inscriptionnotauthenticated_id, fki_invoice_id, fki_buyercontract_id, fki_franchisebroker_id, fki_franchiseagence_id, fki_franchiseoffice_id, fki_franchisefranchise_id, fki_franchisecomplaint_id, fki_lead_id, fki_marketingprogram_id, fki_marketingfollow_id, fki_notary_id, fki_officetaxreport_id, fki_otherincome_id, fki_paymentpreparation_id, fki_purchase_id, fki_salary_id, fki_supplier_id, fki_tranqcontract_id, fki_template_id, fki_inscriptionchecklist_id, fki_folder_id, fki_rejectedoffertopurchase_id, fki_disclosure_id, fki_reconciliation_id, fki_ezsigndocument_id_reference, e_attachment_documenttype, s_attachment_name, e_attachment_privacy, fki_user_id_specific, e_attachment_type, i_attachment_size, i_attachment_ed_mmoduleflag, s_attachment_md5, b_attachment_deleted, b_attachment_valid, e_attachment_verified, t_attachment_rejectioncomment, fki_user_id_owner, obj_audit].hash
+      [pki_attachment_id, fki_computer_id, fki_adjustment_id, fki_agent_id, fki_bankaccount_id, fki_broker_id, fki_commissionadvance_id, fki_communication_id, fki_customer_id, fki_customertemplate_id, fki_deposit_id, fki_deposittransitcheque_id, fki_electronicfundstransfer_id, fki_employee_id, fki_externalbroker_id, fki_ezcomadvanceserver_id, fki_ezcomcompany_id, fki_ezsigndocument_id, fki_ghacqcontract_id, fki_inscription_id, fki_inscriptiontemp_id, fki_inscriptionnotauthenticated_id, fki_invoice_id, fki_buyercontract_id, fki_franchisebroker_id, fki_franchiseagence_id, fki_franchiseoffice_id, fki_franchisefranchise_id, fki_franchisecomplaint_id, fki_lead_id, fki_marketingprogram_id, fki_marketingfollow_id, fki_notary_id, fki_officetaxreport_id, fki_otherincome_id, fki_paymentpreparation_id, fki_purchase_id, fki_salary_id, fki_supplier_id, fki_tranqcontract_id, fki_template_id, fki_inscriptionchecklist_id, fki_folder_id, fki_rejectedoffertopurchase_id, fki_disclosure_id, fki_reconciliation_id, fki_ezsigndocument_id_reference, e_attachment_documenttype, s_attachment_name, s_attachment_category, e_attachment_privacy, fki_user_id_specific, e_attachment_type, i_attachment_size, i_attachment_ed_mmoduleflag, s_attachment_md5, b_attachment_deleted, b_attachment_valid, e_attachment_verified, t_attachment_rejectioncomment, fki_user_id_owner, obj_audit].hash
     end
 
     # Builds the object from hash

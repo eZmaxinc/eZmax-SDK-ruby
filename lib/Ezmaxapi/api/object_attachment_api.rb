@@ -19,6 +19,84 @@ module EzmaxApi
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Delete an existing attachment
+    # Te endpoint allows to delete an attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param body [Object] 
+    # @param [Hash] opts the optional parameters
+    # @return [AttachmentDeleteV1Response]
+    def attachment_delete_v1(pki_attachment_id, body, opts = {})
+      data, _status_code, _headers = attachment_delete_v1_with_http_info(pki_attachment_id, body, opts)
+      data
+    end
+
+    # Delete an existing attachment
+    # Te endpoint allows to delete an attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param body [Object] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AttachmentDeleteV1Response, Integer, Hash)>] AttachmentDeleteV1Response data, response status code and response headers
+    def attachment_delete_v1_with_http_info(pki_attachment_id, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAttachmentApi.attachment_delete_v1 ...'
+      end
+      # verify the required parameter 'pki_attachment_id' is set
+      if @api_client.config.client_side_validation && pki_attachment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_attachment_id' when calling ObjectAttachmentApi.attachment_delete_v1"
+      end
+      if @api_client.config.client_side_validation && pki_attachment_id < 0
+        fail ArgumentError, 'invalid value for "pki_attachment_id" when calling ObjectAttachmentApi.attachment_delete_v1, must be greater than or equal to 0.'
+      end
+
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling ObjectAttachmentApi.attachment_delete_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/attachment/{pkiAttachmentID}/delete'.sub('{pkiAttachmentID}', CGI.escape(pki_attachment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AttachmentDeleteV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAttachmentApi.attachment_delete_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAttachmentApi#attachment_delete_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve the content
     # Using this endpoint, you can retrieve the content of an attachment.
     # @param pki_attachment_id [Integer] 
@@ -153,7 +231,7 @@ module EzmaxApi
       return data, status_code, headers
     end
 
-    # Rename an Attachment
+    # Rename an attachment
     # The endpoint allows to change the attachment's file name and category.
     # @param pki_attachment_id [Integer] 
     # @param attachment_rename_v1_request [AttachmentRenameV1Request] 
@@ -164,7 +242,7 @@ module EzmaxApi
       data
     end
 
-    # Rename an Attachment
+    # Rename an attachment
     # The endpoint allows to change the attachment&#39;s file name and category.
     # @param pki_attachment_id [Integer] 
     # @param attachment_rename_v1_request [AttachmentRenameV1Request] 
@@ -227,6 +305,162 @@ module EzmaxApi
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ObjectAttachmentApi#attachment_rename_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Restore a deleted attachment
+    # The endpoints allows to restore a previously deleted attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param attachment_restore_v1_request [AttachmentRestoreV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [AttachmentRestoreV1Response]
+    def attachment_restore_v1(pki_attachment_id, attachment_restore_v1_request, opts = {})
+      data, _status_code, _headers = attachment_restore_v1_with_http_info(pki_attachment_id, attachment_restore_v1_request, opts)
+      data
+    end
+
+    # Restore a deleted attachment
+    # The endpoints allows to restore a previously deleted attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param attachment_restore_v1_request [AttachmentRestoreV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AttachmentRestoreV1Response, Integer, Hash)>] AttachmentRestoreV1Response data, response status code and response headers
+    def attachment_restore_v1_with_http_info(pki_attachment_id, attachment_restore_v1_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAttachmentApi.attachment_restore_v1 ...'
+      end
+      # verify the required parameter 'pki_attachment_id' is set
+      if @api_client.config.client_side_validation && pki_attachment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_attachment_id' when calling ObjectAttachmentApi.attachment_restore_v1"
+      end
+      if @api_client.config.client_side_validation && pki_attachment_id < 0
+        fail ArgumentError, 'invalid value for "pki_attachment_id" when calling ObjectAttachmentApi.attachment_restore_v1, must be greater than or equal to 0.'
+      end
+
+      # verify the required parameter 'attachment_restore_v1_request' is set
+      if @api_client.config.client_side_validation && attachment_restore_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'attachment_restore_v1_request' when calling ObjectAttachmentApi.attachment_restore_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/attachment/{pkiAttachmentID}/restore'.sub('{pkiAttachmentID}', CGI.escape(pki_attachment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(attachment_restore_v1_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AttachmentRestoreV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAttachmentApi.attachment_restore_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAttachmentApi#attachment_restore_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Validate an existing attachment
+    # This endpoint allows to validate or reject an attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param attachment_validate_v1_request [AttachmentValidateV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [AttachmentValidateV1Response]
+    def attachment_validate_v1(pki_attachment_id, attachment_validate_v1_request, opts = {})
+      data, _status_code, _headers = attachment_validate_v1_with_http_info(pki_attachment_id, attachment_validate_v1_request, opts)
+      data
+    end
+
+    # Validate an existing attachment
+    # This endpoint allows to validate or reject an attachment.
+    # @param pki_attachment_id [Integer] 
+    # @param attachment_validate_v1_request [AttachmentValidateV1Request] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(AttachmentValidateV1Response, Integer, Hash)>] AttachmentValidateV1Response data, response status code and response headers
+    def attachment_validate_v1_with_http_info(pki_attachment_id, attachment_validate_v1_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectAttachmentApi.attachment_validate_v1 ...'
+      end
+      # verify the required parameter 'pki_attachment_id' is set
+      if @api_client.config.client_side_validation && pki_attachment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_attachment_id' when calling ObjectAttachmentApi.attachment_validate_v1"
+      end
+      if @api_client.config.client_side_validation && pki_attachment_id < 0
+        fail ArgumentError, 'invalid value for "pki_attachment_id" when calling ObjectAttachmentApi.attachment_validate_v1, must be greater than or equal to 0.'
+      end
+
+      # verify the required parameter 'attachment_validate_v1_request' is set
+      if @api_client.config.client_side_validation && attachment_validate_v1_request.nil?
+        fail ArgumentError, "Missing the required parameter 'attachment_validate_v1_request' when calling ObjectAttachmentApi.attachment_validate_v1"
+      end
+      # resource path
+      local_var_path = '/1/object/attachment/{pkiAttachmentID}/validate'.sub('{pkiAttachmentID}', CGI.escape(pki_attachment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(attachment_validate_v1_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AttachmentValidateV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectAttachmentApi.attachment_validate_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectAttachmentApi#attachment_validate_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

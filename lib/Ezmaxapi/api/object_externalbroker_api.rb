@@ -160,6 +160,266 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Communication count
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [ExternalbrokerGetCommunicationCountV1Response]
+    def externalbroker_get_communication_count_v1(pki_externalbroker_id, opts = {})
+      data, _status_code, _headers = externalbroker_get_communication_count_v1_with_http_info(pki_externalbroker_id, opts)
+      data
+    end
+
+    # Retrieve Communication count
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ExternalbrokerGetCommunicationCountV1Response, Integer, Hash)>] ExternalbrokerGetCommunicationCountV1Response data, response status code and response headers
+    def externalbroker_get_communication_count_v1_with_http_info(pki_externalbroker_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectExternalbrokerApi.externalbroker_get_communication_count_v1 ...'
+      end
+      # verify the required parameter 'pki_externalbroker_id' is set
+      if @api_client.config.client_side_validation && pki_externalbroker_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_externalbroker_id' when calling ObjectExternalbrokerApi.externalbroker_get_communication_count_v1"
+      end
+      if @api_client.config.client_side_validation && pki_externalbroker_id < 0
+        fail ArgumentError, 'invalid value for "pki_externalbroker_id" when calling ObjectExternalbrokerApi.externalbroker_get_communication_count_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationCount'.sub('{pkiExternalbrokerID}', CGI.escape(pki_externalbroker_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ExternalbrokerGetCommunicationCountV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectExternalbrokerApi.externalbroker_get_communication_count_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectExternalbrokerApi#externalbroker_get_communication_count_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication list
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [ExternalbrokerGetCommunicationListV1Response]
+    def externalbroker_get_communication_list_v1(pki_externalbroker_id, opts = {})
+      data, _status_code, _headers = externalbroker_get_communication_list_v1_with_http_info(pki_externalbroker_id, opts)
+      data
+    end
+
+    # Retrieve Communication list
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ExternalbrokerGetCommunicationListV1Response, Integer, Hash)>] ExternalbrokerGetCommunicationListV1Response data, response status code and response headers
+    def externalbroker_get_communication_list_v1_with_http_info(pki_externalbroker_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectExternalbrokerApi.externalbroker_get_communication_list_v1 ...'
+      end
+      # verify the required parameter 'pki_externalbroker_id' is set
+      if @api_client.config.client_side_validation && pki_externalbroker_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_externalbroker_id' when calling ObjectExternalbrokerApi.externalbroker_get_communication_list_v1"
+      end
+      if @api_client.config.client_side_validation && pki_externalbroker_id < 0
+        fail ArgumentError, 'invalid value for "pki_externalbroker_id" when calling ObjectExternalbrokerApi.externalbroker_get_communication_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList'.sub('{pkiExternalbrokerID}', CGI.escape(pki_externalbroker_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ExternalbrokerGetCommunicationListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectExternalbrokerApi.externalbroker_get_communication_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectExternalbrokerApi#externalbroker_get_communication_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [ExternalbrokerGetCommunicationrecipientsV1Response]
+    def externalbroker_get_communicationrecipients_v1(pki_externalbroker_id, opts = {})
+      data, _status_code, _headers = externalbroker_get_communicationrecipients_v1_with_http_info(pki_externalbroker_id, opts)
+      data
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ExternalbrokerGetCommunicationrecipientsV1Response, Integer, Hash)>] ExternalbrokerGetCommunicationrecipientsV1Response data, response status code and response headers
+    def externalbroker_get_communicationrecipients_v1_with_http_info(pki_externalbroker_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectExternalbrokerApi.externalbroker_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_externalbroker_id' is set
+      if @api_client.config.client_side_validation && pki_externalbroker_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_externalbroker_id' when calling ObjectExternalbrokerApi.externalbroker_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_externalbroker_id < 0
+        fail ArgumentError, 'invalid value for "pki_externalbroker_id" when calling ObjectExternalbrokerApi.externalbroker_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients'.sub('{pkiExternalbrokerID}', CGI.escape(pki_externalbroker_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ExternalbrokerGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectExternalbrokerApi.externalbroker_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectExternalbrokerApi#externalbroker_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication senders
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [ExternalbrokerGetCommunicationsendersV1Response]
+    def externalbroker_get_communicationsenders_v1(pki_externalbroker_id, opts = {})
+      data, _status_code, _headers = externalbroker_get_communicationsenders_v1_with_http_info(pki_externalbroker_id, opts)
+      data
+    end
+
+    # Retrieve Communication senders
+    # @param pki_externalbroker_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ExternalbrokerGetCommunicationsendersV1Response, Integer, Hash)>] ExternalbrokerGetCommunicationsendersV1Response data, response status code and response headers
+    def externalbroker_get_communicationsenders_v1_with_http_info(pki_externalbroker_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectExternalbrokerApi.externalbroker_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_externalbroker_id' is set
+      if @api_client.config.client_side_validation && pki_externalbroker_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_externalbroker_id' when calling ObjectExternalbrokerApi.externalbroker_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_externalbroker_id < 0
+        fail ArgumentError, 'invalid value for "pki_externalbroker_id" when calling ObjectExternalbrokerApi.externalbroker_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders'.sub('{pkiExternalbrokerID}', CGI.escape(pki_externalbroker_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ExternalbrokerGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectExternalbrokerApi.externalbroker_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectExternalbrokerApi#externalbroker_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Import attachments into the Externalbroker
     # 
     # @param pki_externalbroker_id [Integer] 

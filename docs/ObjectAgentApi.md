@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**agent_batch_download_v1**](ObjectAgentApi.md#agent_batch_download_v1) | **POST** /1/object/agent/{pkiAgentID}/batchDownload | Download multiples attachments from a Agent |
 | [**agent_get_attachments_v1**](ObjectAgentApi.md#agent_get_attachments_v1) | **GET** /1/object/agent/{pkiAgentID}/getAttachments | Retrieve Agent&#39;s attachments |
 | [**agent_get_autocomplete_v2**](ObjectAgentApi.md#agent_get_autocomplete_v2) | **GET** /2/object/agent/getAutocomplete/{sSelector} | Retrieve Agents and IDs |
+| [**agent_get_communication_count_v1**](ObjectAgentApi.md#agent_get_communication_count_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationCount | Retrieve Communication count |
+| [**agent_get_communication_list_v1**](ObjectAgentApi.md#agent_get_communication_list_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list |
+| [**agent_get_communicationrecipients_v1**](ObjectAgentApi.md#agent_get_communicationrecipients_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**agent_get_communicationsenders_v1**](ObjectAgentApi.md#agent_get_communicationsenders_v1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders |
 | [**agent_get_list_v1**](ObjectAgentApi.md#agent_get_list_v1) | **GET** /1/object/agent/getList | Retrieve Agent list |
 | [**agent_import_into_edmv1**](ObjectAgentApi.md#agent_import_into_edmv1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent |
 
@@ -219,6 +223,282 @@ end
 ### Return type
 
 [**AgentGetAutocompleteV2Response**](AgentGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## agent_get_communication_count_v1
+
+> <AgentGetCommunicationCountV1Response> agent_get_communication_count_v1(pki_agent_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAgentApi.new
+pki_agent_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.agent_get_communication_count_v1(pki_agent_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the agent_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AgentGetCommunicationCountV1Response>, Integer, Hash)> agent_get_communication_count_v1_with_http_info(pki_agent_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.agent_get_communication_count_v1_with_http_info(pki_agent_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AgentGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_agent_id** | **Integer** |  |  |
+
+### Return type
+
+[**AgentGetCommunicationCountV1Response**](AgentGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## agent_get_communication_list_v1
+
+> <AgentGetCommunicationListV1Response> agent_get_communication_list_v1(pki_agent_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAgentApi.new
+pki_agent_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.agent_get_communication_list_v1(pki_agent_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the agent_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AgentGetCommunicationListV1Response>, Integer, Hash)> agent_get_communication_list_v1_with_http_info(pki_agent_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.agent_get_communication_list_v1_with_http_info(pki_agent_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AgentGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_agent_id** | **Integer** |  |  |
+
+### Return type
+
+[**AgentGetCommunicationListV1Response**](AgentGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## agent_get_communicationrecipients_v1
+
+> <AgentGetCommunicationrecipientsV1Response> agent_get_communicationrecipients_v1(pki_agent_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAgentApi.new
+pki_agent_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.agent_get_communicationrecipients_v1(pki_agent_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the agent_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AgentGetCommunicationrecipientsV1Response>, Integer, Hash)> agent_get_communicationrecipients_v1_with_http_info(pki_agent_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.agent_get_communicationrecipients_v1_with_http_info(pki_agent_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AgentGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_agent_id** | **Integer** |  |  |
+
+### Return type
+
+[**AgentGetCommunicationrecipientsV1Response**](AgentGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## agent_get_communicationsenders_v1
+
+> <AgentGetCommunicationsendersV1Response> agent_get_communicationsenders_v1(pki_agent_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAgentApi.new
+pki_agent_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.agent_get_communicationsenders_v1(pki_agent_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the agent_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AgentGetCommunicationsendersV1Response>, Integer, Hash)> agent_get_communicationsenders_v1_with_http_info(pki_agent_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.agent_get_communicationsenders_v1_with_http_info(pki_agent_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AgentGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAgentApi->agent_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_agent_id** | **Integer** |  |  |
+
+### Return type
+
+[**AgentGetCommunicationsendersV1Response**](AgentGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

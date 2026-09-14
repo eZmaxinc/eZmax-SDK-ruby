@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**deposittransitcheque_batch_download_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_batch_download_v1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/batchDownload | Download multiples attachments from a Deposittransitcheque |
 | [**deposittransitcheque_get_attachments_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_attachments_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments | Retrieve Deposittransitcheque&#39;s attachments |
+| [**deposittransitcheque_get_communication_count_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communication_count_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount | Retrieve Communication count |
+| [**deposittransitcheque_get_communication_list_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communication_list_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list |
+| [**deposittransitcheque_get_communicationrecipients_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationrecipients_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**deposittransitcheque_get_communicationsenders_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationsenders_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders |
 | [**deposittransitcheque_import_into_edmv1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_import_into_edmv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**DeposittransitchequeGetAttachmentsV1Response**](DeposittransitchequeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposittransitcheque_get_communication_count_v1
+
+> <DeposittransitchequeGetCommunicationCountV1Response> deposittransitcheque_get_communication_count_v1(pki_deposittransitcheque_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDeposittransitchequeApi.new
+pki_deposittransitcheque_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.deposittransitcheque_get_communication_count_v1(pki_deposittransitcheque_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the deposittransitcheque_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeposittransitchequeGetCommunicationCountV1Response>, Integer, Hash)> deposittransitcheque_get_communication_count_v1_with_http_info(pki_deposittransitcheque_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.deposittransitcheque_get_communication_count_v1_with_http_info(pki_deposittransitcheque_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeposittransitchequeGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposittransitcheque_id** | **Integer** |  |  |
+
+### Return type
+
+[**DeposittransitchequeGetCommunicationCountV1Response**](DeposittransitchequeGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposittransitcheque_get_communication_list_v1
+
+> <DeposittransitchequeGetCommunicationListV1Response> deposittransitcheque_get_communication_list_v1(pki_deposittransitcheque_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDeposittransitchequeApi.new
+pki_deposittransitcheque_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.deposittransitcheque_get_communication_list_v1(pki_deposittransitcheque_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the deposittransitcheque_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeposittransitchequeGetCommunicationListV1Response>, Integer, Hash)> deposittransitcheque_get_communication_list_v1_with_http_info(pki_deposittransitcheque_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.deposittransitcheque_get_communication_list_v1_with_http_info(pki_deposittransitcheque_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeposittransitchequeGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposittransitcheque_id** | **Integer** |  |  |
+
+### Return type
+
+[**DeposittransitchequeGetCommunicationListV1Response**](DeposittransitchequeGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposittransitcheque_get_communicationrecipients_v1
+
+> <DeposittransitchequeGetCommunicationrecipientsV1Response> deposittransitcheque_get_communicationrecipients_v1(pki_deposittransitcheque_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDeposittransitchequeApi.new
+pki_deposittransitcheque_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.deposittransitcheque_get_communicationrecipients_v1(pki_deposittransitcheque_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the deposittransitcheque_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeposittransitchequeGetCommunicationrecipientsV1Response>, Integer, Hash)> deposittransitcheque_get_communicationrecipients_v1_with_http_info(pki_deposittransitcheque_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.deposittransitcheque_get_communicationrecipients_v1_with_http_info(pki_deposittransitcheque_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeposittransitchequeGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposittransitcheque_id** | **Integer** |  |  |
+
+### Return type
+
+[**DeposittransitchequeGetCommunicationrecipientsV1Response**](DeposittransitchequeGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deposittransitcheque_get_communicationsenders_v1
+
+> <DeposittransitchequeGetCommunicationsendersV1Response> deposittransitcheque_get_communicationsenders_v1(pki_deposittransitcheque_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDeposittransitchequeApi.new
+pki_deposittransitcheque_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.deposittransitcheque_get_communicationsenders_v1(pki_deposittransitcheque_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the deposittransitcheque_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeposittransitchequeGetCommunicationsendersV1Response>, Integer, Hash)> deposittransitcheque_get_communicationsenders_v1_with_http_info(pki_deposittransitcheque_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.deposittransitcheque_get_communicationsenders_v1_with_http_info(pki_deposittransitcheque_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeposittransitchequeGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_deposittransitcheque_id** | **Integer** |  |  |
+
+### Return type
+
+[**DeposittransitchequeGetCommunicationsendersV1Response**](DeposittransitchequeGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

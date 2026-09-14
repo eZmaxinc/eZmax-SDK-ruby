@@ -168,6 +168,282 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Communication count
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [DepositGetCommunicationCountV1Response]
+    def deposit_get_communication_count_v1(pki_deposit_id, opts = {})
+      data, _status_code, _headers = deposit_get_communication_count_v1_with_http_info(pki_deposit_id, opts)
+      data
+    end
+
+    # Retrieve Communication count
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DepositGetCommunicationCountV1Response, Integer, Hash)>] DepositGetCommunicationCountV1Response data, response status code and response headers
+    def deposit_get_communication_count_v1_with_http_info(pki_deposit_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectDepositApi.deposit_get_communication_count_v1 ...'
+      end
+      # verify the required parameter 'pki_deposit_id' is set
+      if @api_client.config.client_side_validation && pki_deposit_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_deposit_id' when calling ObjectDepositApi.deposit_get_communication_count_v1"
+      end
+      if @api_client.config.client_side_validation && pki_deposit_id > 16777215
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communication_count_v1, must be smaller than or equal to 16777215.'
+      end
+
+      if @api_client.config.client_side_validation && pki_deposit_id < 0
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communication_count_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/deposit/{pkiDepositID}/getCommunicationCount'.sub('{pkiDepositID}', CGI.escape(pki_deposit_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DepositGetCommunicationCountV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectDepositApi.deposit_get_communication_count_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectDepositApi#deposit_get_communication_count_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication list
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [DepositGetCommunicationListV1Response]
+    def deposit_get_communication_list_v1(pki_deposit_id, opts = {})
+      data, _status_code, _headers = deposit_get_communication_list_v1_with_http_info(pki_deposit_id, opts)
+      data
+    end
+
+    # Retrieve Communication list
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DepositGetCommunicationListV1Response, Integer, Hash)>] DepositGetCommunicationListV1Response data, response status code and response headers
+    def deposit_get_communication_list_v1_with_http_info(pki_deposit_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectDepositApi.deposit_get_communication_list_v1 ...'
+      end
+      # verify the required parameter 'pki_deposit_id' is set
+      if @api_client.config.client_side_validation && pki_deposit_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_deposit_id' when calling ObjectDepositApi.deposit_get_communication_list_v1"
+      end
+      if @api_client.config.client_side_validation && pki_deposit_id > 16777215
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communication_list_v1, must be smaller than or equal to 16777215.'
+      end
+
+      if @api_client.config.client_side_validation && pki_deposit_id < 0
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communication_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/deposit/{pkiDepositID}/getCommunicationList'.sub('{pkiDepositID}', CGI.escape(pki_deposit_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DepositGetCommunicationListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectDepositApi.deposit_get_communication_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectDepositApi#deposit_get_communication_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [DepositGetCommunicationrecipientsV1Response]
+    def deposit_get_communicationrecipients_v1(pki_deposit_id, opts = {})
+      data, _status_code, _headers = deposit_get_communicationrecipients_v1_with_http_info(pki_deposit_id, opts)
+      data
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DepositGetCommunicationrecipientsV1Response, Integer, Hash)>] DepositGetCommunicationrecipientsV1Response data, response status code and response headers
+    def deposit_get_communicationrecipients_v1_with_http_info(pki_deposit_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectDepositApi.deposit_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_deposit_id' is set
+      if @api_client.config.client_side_validation && pki_deposit_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_deposit_id' when calling ObjectDepositApi.deposit_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_deposit_id > 16777215
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communicationrecipients_v1, must be smaller than or equal to 16777215.'
+      end
+
+      if @api_client.config.client_side_validation && pki_deposit_id < 0
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/deposit/{pkiDepositID}/getCommunicationrecipients'.sub('{pkiDepositID}', CGI.escape(pki_deposit_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DepositGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectDepositApi.deposit_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectDepositApi#deposit_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication senders
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [DepositGetCommunicationsendersV1Response]
+    def deposit_get_communicationsenders_v1(pki_deposit_id, opts = {})
+      data, _status_code, _headers = deposit_get_communicationsenders_v1_with_http_info(pki_deposit_id, opts)
+      data
+    end
+
+    # Retrieve Communication senders
+    # @param pki_deposit_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DepositGetCommunicationsendersV1Response, Integer, Hash)>] DepositGetCommunicationsendersV1Response data, response status code and response headers
+    def deposit_get_communicationsenders_v1_with_http_info(pki_deposit_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectDepositApi.deposit_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_deposit_id' is set
+      if @api_client.config.client_side_validation && pki_deposit_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_deposit_id' when calling ObjectDepositApi.deposit_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_deposit_id > 16777215
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communicationsenders_v1, must be smaller than or equal to 16777215.'
+      end
+
+      if @api_client.config.client_side_validation && pki_deposit_id < 0
+        fail ArgumentError, 'invalid value for "pki_deposit_id" when calling ObjectDepositApi.deposit_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/deposit/{pkiDepositID}/getCommunicationsenders'.sub('{pkiDepositID}', CGI.escape(pki_deposit_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DepositGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectDepositApi.deposit_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectDepositApi#deposit_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Import attachments into the Deposit
     # @param pki_deposit_id [Integer] 
     # @param deposit_import_into_edmv1_request [DepositImportIntoEDMV1Request] 

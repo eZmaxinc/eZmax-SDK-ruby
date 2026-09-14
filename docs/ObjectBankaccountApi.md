@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**bankaccount_batch_download_v1**](ObjectBankaccountApi.md#bankaccount_batch_download_v1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/batchDownload | Download multiples attachments from a Bankaccount |
 | [**bankaccount_get_attachments_v1**](ObjectBankaccountApi.md#bankaccount_get_attachments_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getAttachments | Retrieve Bankaccount&#39;s attachments |
 | [**bankaccount_get_autocomplete_v2**](ObjectBankaccountApi.md#bankaccount_get_autocomplete_v2) | **GET** /2/object/bankaccount/getAutocomplete/{sSelector} | Retrieve Bankaccounts and IDs |
+| [**bankaccount_get_communication_count_v1**](ObjectBankaccountApi.md#bankaccount_get_communication_count_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount | Retrieve Communication count |
+| [**bankaccount_get_communication_list_v1**](ObjectBankaccountApi.md#bankaccount_get_communication_list_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list |
+| [**bankaccount_get_communicationrecipients_v1**](ObjectBankaccountApi.md#bankaccount_get_communicationrecipients_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**bankaccount_get_communicationsenders_v1**](ObjectBankaccountApi.md#bankaccount_get_communicationsenders_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders |
 | [**bankaccount_import_into_edmv1**](ObjectBankaccountApi.md#bankaccount_import_into_edmv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount |
 
 
@@ -218,6 +222,282 @@ end
 ### Return type
 
 [**BankaccountGetAutocompleteV2Response**](BankaccountGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bankaccount_get_communication_count_v1
+
+> <BankaccountGetCommunicationCountV1Response> bankaccount_get_communication_count_v1(pki_bankaccount_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBankaccountApi.new
+pki_bankaccount_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.bankaccount_get_communication_count_v1(pki_bankaccount_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the bankaccount_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BankaccountGetCommunicationCountV1Response>, Integer, Hash)> bankaccount_get_communication_count_v1_with_http_info(pki_bankaccount_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.bankaccount_get_communication_count_v1_with_http_info(pki_bankaccount_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BankaccountGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_bankaccount_id** | **Integer** |  |  |
+
+### Return type
+
+[**BankaccountGetCommunicationCountV1Response**](BankaccountGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bankaccount_get_communication_list_v1
+
+> <BankaccountGetCommunicationListV1Response> bankaccount_get_communication_list_v1(pki_bankaccount_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBankaccountApi.new
+pki_bankaccount_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.bankaccount_get_communication_list_v1(pki_bankaccount_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the bankaccount_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BankaccountGetCommunicationListV1Response>, Integer, Hash)> bankaccount_get_communication_list_v1_with_http_info(pki_bankaccount_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.bankaccount_get_communication_list_v1_with_http_info(pki_bankaccount_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BankaccountGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_bankaccount_id** | **Integer** |  |  |
+
+### Return type
+
+[**BankaccountGetCommunicationListV1Response**](BankaccountGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bankaccount_get_communicationrecipients_v1
+
+> <BankaccountGetCommunicationrecipientsV1Response> bankaccount_get_communicationrecipients_v1(pki_bankaccount_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBankaccountApi.new
+pki_bankaccount_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.bankaccount_get_communicationrecipients_v1(pki_bankaccount_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the bankaccount_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BankaccountGetCommunicationrecipientsV1Response>, Integer, Hash)> bankaccount_get_communicationrecipients_v1_with_http_info(pki_bankaccount_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.bankaccount_get_communicationrecipients_v1_with_http_info(pki_bankaccount_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BankaccountGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_bankaccount_id** | **Integer** |  |  |
+
+### Return type
+
+[**BankaccountGetCommunicationrecipientsV1Response**](BankaccountGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bankaccount_get_communicationsenders_v1
+
+> <BankaccountGetCommunicationsendersV1Response> bankaccount_get_communicationsenders_v1(pki_bankaccount_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBankaccountApi.new
+pki_bankaccount_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.bankaccount_get_communicationsenders_v1(pki_bankaccount_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the bankaccount_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BankaccountGetCommunicationsendersV1Response>, Integer, Hash)> bankaccount_get_communicationsenders_v1_with_http_info(pki_bankaccount_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.bankaccount_get_communicationsenders_v1_with_http_info(pki_bankaccount_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BankaccountGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_bankaccount_id** | **Integer** |  |  |
+
+### Return type
+
+[**BankaccountGetCommunicationsendersV1Response**](BankaccountGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

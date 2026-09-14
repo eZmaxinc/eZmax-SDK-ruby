@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**employee_batch_download_v1**](ObjectEmployeeApi.md#employee_batch_download_v1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee |
 | [**employee_get_attachments_v1**](ObjectEmployeeApi.md#employee_get_attachments_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee&#39;s attachments |
+| [**employee_get_communication_count_v1**](ObjectEmployeeApi.md#employee_get_communication_count_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationCount | Retrieve Communication count |
+| [**employee_get_communication_list_v1**](ObjectEmployeeApi.md#employee_get_communication_list_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationList | Retrieve Communication list |
+| [**employee_get_communicationrecipients_v1**](ObjectEmployeeApi.md#employee_get_communicationrecipients_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**employee_get_communicationsenders_v1**](ObjectEmployeeApi.md#employee_get_communicationsenders_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationsenders | Retrieve Communication senders |
 | [**employee_get_list_v1**](ObjectEmployeeApi.md#employee_get_list_v1) | **GET** /1/object/employee/getList | Retrieve Employee list |
 | [**employee_import_into_edmv1**](ObjectEmployeeApi.md#employee_import_into_edmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee |
 
@@ -139,6 +143,282 @@ end
 ### Return type
 
 [**EmployeeGetAttachmentsV1Response**](EmployeeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## employee_get_communication_count_v1
+
+> <EmployeeGetCommunicationCountV1Response> employee_get_communication_count_v1(pki_employee_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.employee_get_communication_count_v1(pki_employee_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the employee_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmployeeGetCommunicationCountV1Response>, Integer, Hash)> employee_get_communication_count_v1_with_http_info(pki_employee_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.employee_get_communication_count_v1_with_http_info(pki_employee_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmployeeGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+
+### Return type
+
+[**EmployeeGetCommunicationCountV1Response**](EmployeeGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## employee_get_communication_list_v1
+
+> <EmployeeGetCommunicationListV1Response> employee_get_communication_list_v1(pki_employee_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.employee_get_communication_list_v1(pki_employee_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the employee_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmployeeGetCommunicationListV1Response>, Integer, Hash)> employee_get_communication_list_v1_with_http_info(pki_employee_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.employee_get_communication_list_v1_with_http_info(pki_employee_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmployeeGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+
+### Return type
+
+[**EmployeeGetCommunicationListV1Response**](EmployeeGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## employee_get_communicationrecipients_v1
+
+> <EmployeeGetCommunicationrecipientsV1Response> employee_get_communicationrecipients_v1(pki_employee_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.employee_get_communicationrecipients_v1(pki_employee_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the employee_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmployeeGetCommunicationrecipientsV1Response>, Integer, Hash)> employee_get_communicationrecipients_v1_with_http_info(pki_employee_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.employee_get_communicationrecipients_v1_with_http_info(pki_employee_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmployeeGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+
+### Return type
+
+[**EmployeeGetCommunicationrecipientsV1Response**](EmployeeGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## employee_get_communicationsenders_v1
+
+> <EmployeeGetCommunicationsendersV1Response> employee_get_communicationsenders_v1(pki_employee_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectEmployeeApi.new
+pki_employee_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.employee_get_communicationsenders_v1(pki_employee_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the employee_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmployeeGetCommunicationsendersV1Response>, Integer, Hash)> employee_get_communicationsenders_v1_with_http_info(pki_employee_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.employee_get_communicationsenders_v1_with_http_info(pki_employee_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmployeeGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectEmployeeApi->employee_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_employee_id** | **Integer** |  |  |
+
+### Return type
+
+[**EmployeeGetCommunicationsendersV1Response**](EmployeeGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

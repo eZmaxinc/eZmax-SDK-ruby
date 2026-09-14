@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**disclosure_batch_download_v1**](ObjectDisclosureApi.md#disclosure_batch_download_v1) | **POST** /1/object/disclosure/{pkiDisclosureID}/batchDownload | Download multiples attachments from a Disclosure |
 | [**disclosure_get_attachments_v1**](ObjectDisclosureApi.md#disclosure_get_attachments_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getAttachments | Retrieve Disclosure&#39;s attachments |
+| [**disclosure_get_communication_count_v1**](ObjectDisclosureApi.md#disclosure_get_communication_count_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationCount | Retrieve Communication count |
+| [**disclosure_get_communication_list_v1**](ObjectDisclosureApi.md#disclosure_get_communication_list_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list |
+| [**disclosure_get_communicationrecipients_v1**](ObjectDisclosureApi.md#disclosure_get_communicationrecipients_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**disclosure_get_communicationsenders_v1**](ObjectDisclosureApi.md#disclosure_get_communicationsenders_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders |
 | [**disclosure_import_into_edmv1**](ObjectDisclosureApi.md#disclosure_import_into_edmv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**DisclosureGetAttachmentsV1Response**](DisclosureGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## disclosure_get_communication_count_v1
+
+> <DisclosureGetCommunicationCountV1Response> disclosure_get_communication_count_v1(pki_disclosure_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDisclosureApi.new
+pki_disclosure_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.disclosure_get_communication_count_v1(pki_disclosure_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the disclosure_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DisclosureGetCommunicationCountV1Response>, Integer, Hash)> disclosure_get_communication_count_v1_with_http_info(pki_disclosure_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.disclosure_get_communication_count_v1_with_http_info(pki_disclosure_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DisclosureGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_disclosure_id** | **Integer** |  |  |
+
+### Return type
+
+[**DisclosureGetCommunicationCountV1Response**](DisclosureGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## disclosure_get_communication_list_v1
+
+> <DisclosureGetCommunicationListV1Response> disclosure_get_communication_list_v1(pki_disclosure_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDisclosureApi.new
+pki_disclosure_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.disclosure_get_communication_list_v1(pki_disclosure_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the disclosure_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DisclosureGetCommunicationListV1Response>, Integer, Hash)> disclosure_get_communication_list_v1_with_http_info(pki_disclosure_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.disclosure_get_communication_list_v1_with_http_info(pki_disclosure_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DisclosureGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_disclosure_id** | **Integer** |  |  |
+
+### Return type
+
+[**DisclosureGetCommunicationListV1Response**](DisclosureGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## disclosure_get_communicationrecipients_v1
+
+> <DisclosureGetCommunicationrecipientsV1Response> disclosure_get_communicationrecipients_v1(pki_disclosure_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDisclosureApi.new
+pki_disclosure_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.disclosure_get_communicationrecipients_v1(pki_disclosure_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the disclosure_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DisclosureGetCommunicationrecipientsV1Response>, Integer, Hash)> disclosure_get_communicationrecipients_v1_with_http_info(pki_disclosure_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.disclosure_get_communicationrecipients_v1_with_http_info(pki_disclosure_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DisclosureGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_disclosure_id** | **Integer** |  |  |
+
+### Return type
+
+[**DisclosureGetCommunicationrecipientsV1Response**](DisclosureGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## disclosure_get_communicationsenders_v1
+
+> <DisclosureGetCommunicationsendersV1Response> disclosure_get_communicationsenders_v1(pki_disclosure_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDisclosureApi.new
+pki_disclosure_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.disclosure_get_communicationsenders_v1(pki_disclosure_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the disclosure_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DisclosureGetCommunicationsendersV1Response>, Integer, Hash)> disclosure_get_communicationsenders_v1_with_http_info(pki_disclosure_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.disclosure_get_communicationsenders_v1_with_http_info(pki_disclosure_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DisclosureGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_disclosure_id** | **Integer** |  |  |
+
+### Return type
+
+[**DisclosureGetCommunicationsendersV1Response**](DisclosureGetCommunicationsendersV1Response.md)
 
 ### Authorization
 
