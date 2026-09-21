@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**disclosure_get_communication_list_v1**](ObjectDisclosureApi.md#disclosure_get_communication_list_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list |
 | [**disclosure_get_communicationrecipients_v1**](ObjectDisclosureApi.md#disclosure_get_communicationrecipients_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**disclosure_get_communicationsenders_v1**](ObjectDisclosureApi.md#disclosure_get_communicationsenders_v1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders |
+| [**disclosure_get_list_v1**](ObjectDisclosureApi.md#disclosure_get_list_v1) | **GET** /1/object/disclosure/getList | Retrieve Disclosure list |
 | [**disclosure_import_into_edmv1**](ObjectDisclosureApi.md#disclosure_import_into_edmv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure |
 
 
@@ -427,6 +428,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## disclosure_get_list_v1
+
+> <DisclosureGetListV1Response> disclosure_get_list_v1(opts)
+
+Retrieve Disclosure list
+
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDisclosureApi.new
+opts = {
+  e_order_by: 'pkiDisclosureID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Disclosure list
+  result = api_instance.disclosure_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_list_v1: #{e}"
+end
+```
+
+#### Using the disclosure_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DisclosureGetListV1Response>, Integer, Hash)> disclosure_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Disclosure list
+  data, status_code, headers = api_instance.disclosure_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DisclosureGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDisclosureApi->disclosure_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**DisclosureGetListV1Response**](DisclosureGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## disclosure_import_into_edmv1

@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**folder_batch_download_v1**](ObjectFolderApi.md#folder_batch_download_v1) | **POST** /1/object/folder/{pkiFolderID}/batchDownload | Download multiples attachments from an Folder |
 | [**folder_get_attachments_v1**](ObjectFolderApi.md#folder_get_attachments_v1) | **GET** /1/object/folder/{pkiFolderID}/getAttachments | Retrieve Folder&#39;s attachments |
+| [**folder_get_communication_count_v1**](ObjectFolderApi.md#folder_get_communication_count_v1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationCount | Retrieve Communication count |
+| [**folder_get_communication_list_v1**](ObjectFolderApi.md#folder_get_communication_list_v1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationList | Retrieve Communication list |
+| [**folder_get_communicationrecipients_v1**](ObjectFolderApi.md#folder_get_communicationrecipients_v1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**folder_get_communicationsenders_v1**](ObjectFolderApi.md#folder_get_communicationsenders_v1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationsenders | Retrieve Communication senders |
 | [**folder_import_into_edmv1**](ObjectFolderApi.md#folder_import_into_edmv1) | **POST** /1/object/folder/{pkiFolderID}/importIntoEDM | Import attachments into the Folder |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**FolderGetAttachmentsV1Response**](FolderGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## folder_get_communication_count_v1
+
+> <FolderGetCommunicationCountV1Response> folder_get_communication_count_v1(pki_folder_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectFolderApi.new
+pki_folder_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.folder_get_communication_count_v1(pki_folder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the folder_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<FolderGetCommunicationCountV1Response>, Integer, Hash)> folder_get_communication_count_v1_with_http_info(pki_folder_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.folder_get_communication_count_v1_with_http_info(pki_folder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <FolderGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_folder_id** | **Integer** |  |  |
+
+### Return type
+
+[**FolderGetCommunicationCountV1Response**](FolderGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## folder_get_communication_list_v1
+
+> <FolderGetCommunicationListV1Response> folder_get_communication_list_v1(pki_folder_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectFolderApi.new
+pki_folder_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.folder_get_communication_list_v1(pki_folder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the folder_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<FolderGetCommunicationListV1Response>, Integer, Hash)> folder_get_communication_list_v1_with_http_info(pki_folder_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.folder_get_communication_list_v1_with_http_info(pki_folder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <FolderGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_folder_id** | **Integer** |  |  |
+
+### Return type
+
+[**FolderGetCommunicationListV1Response**](FolderGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## folder_get_communicationrecipients_v1
+
+> <FolderGetCommunicationrecipientsV1Response> folder_get_communicationrecipients_v1(pki_folder_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectFolderApi.new
+pki_folder_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.folder_get_communicationrecipients_v1(pki_folder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the folder_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<FolderGetCommunicationrecipientsV1Response>, Integer, Hash)> folder_get_communicationrecipients_v1_with_http_info(pki_folder_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.folder_get_communicationrecipients_v1_with_http_info(pki_folder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <FolderGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_folder_id** | **Integer** |  |  |
+
+### Return type
+
+[**FolderGetCommunicationrecipientsV1Response**](FolderGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## folder_get_communicationsenders_v1
+
+> <FolderGetCommunicationsendersV1Response> folder_get_communicationsenders_v1(pki_folder_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectFolderApi.new
+pki_folder_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.folder_get_communicationsenders_v1(pki_folder_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the folder_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<FolderGetCommunicationsendersV1Response>, Integer, Hash)> folder_get_communicationsenders_v1_with_http_info(pki_folder_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.folder_get_communicationsenders_v1_with_http_info(pki_folder_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <FolderGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectFolderApi->folder_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_folder_id** | **Integer** |  |  |
+
+### Return type
+
+[**FolderGetCommunicationsendersV1Response**](FolderGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

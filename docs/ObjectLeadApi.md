@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**lead_batch_download_v1**](ObjectLeadApi.md#lead_batch_download_v1) | **POST** /1/object/lead/{pkiLeadID}/batchDownload | Download multiples attachments from a Lead |
 | [**lead_get_attachments_v1**](ObjectLeadApi.md#lead_get_attachments_v1) | **GET** /1/object/lead/{pkiLeadID}/getAttachments | Retrieve Lead&#39;s attachments |
+| [**lead_get_communication_count_v1**](ObjectLeadApi.md#lead_get_communication_count_v1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationCount | Retrieve Communication count |
+| [**lead_get_communication_list_v1**](ObjectLeadApi.md#lead_get_communication_list_v1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationList | Retrieve Communication list |
+| [**lead_get_communicationrecipients_v1**](ObjectLeadApi.md#lead_get_communicationrecipients_v1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**lead_get_communicationsenders_v1**](ObjectLeadApi.md#lead_get_communicationsenders_v1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationsenders | Retrieve Communication senders |
 | [**lead_get_list_v1**](ObjectLeadApi.md#lead_get_list_v1) | **GET** /1/object/lead/getList | Retrieve Lead list |
 | [**lead_import_into_edmv1**](ObjectLeadApi.md#lead_import_into_edmv1) | **POST** /1/object/lead/{pkiLeadID}/importIntoEDM | Import attachments into the Lead |
 
@@ -139,6 +143,282 @@ end
 ### Return type
 
 [**LeadGetAttachmentsV1Response**](LeadGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## lead_get_communication_count_v1
+
+> <LeadGetCommunicationCountV1Response> lead_get_communication_count_v1(pki_lead_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectLeadApi.new
+pki_lead_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.lead_get_communication_count_v1(pki_lead_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the lead_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<LeadGetCommunicationCountV1Response>, Integer, Hash)> lead_get_communication_count_v1_with_http_info(pki_lead_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.lead_get_communication_count_v1_with_http_info(pki_lead_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <LeadGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_lead_id** | **Integer** |  |  |
+
+### Return type
+
+[**LeadGetCommunicationCountV1Response**](LeadGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## lead_get_communication_list_v1
+
+> <LeadGetCommunicationListV1Response> lead_get_communication_list_v1(pki_lead_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectLeadApi.new
+pki_lead_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.lead_get_communication_list_v1(pki_lead_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the lead_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<LeadGetCommunicationListV1Response>, Integer, Hash)> lead_get_communication_list_v1_with_http_info(pki_lead_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.lead_get_communication_list_v1_with_http_info(pki_lead_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <LeadGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_lead_id** | **Integer** |  |  |
+
+### Return type
+
+[**LeadGetCommunicationListV1Response**](LeadGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## lead_get_communicationrecipients_v1
+
+> <LeadGetCommunicationrecipientsV1Response> lead_get_communicationrecipients_v1(pki_lead_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectLeadApi.new
+pki_lead_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.lead_get_communicationrecipients_v1(pki_lead_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the lead_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<LeadGetCommunicationrecipientsV1Response>, Integer, Hash)> lead_get_communicationrecipients_v1_with_http_info(pki_lead_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.lead_get_communicationrecipients_v1_with_http_info(pki_lead_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <LeadGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_lead_id** | **Integer** |  |  |
+
+### Return type
+
+[**LeadGetCommunicationrecipientsV1Response**](LeadGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## lead_get_communicationsenders_v1
+
+> <LeadGetCommunicationsendersV1Response> lead_get_communicationsenders_v1(pki_lead_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectLeadApi.new
+pki_lead_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.lead_get_communicationsenders_v1(pki_lead_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the lead_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<LeadGetCommunicationsendersV1Response>, Integer, Hash)> lead_get_communicationsenders_v1_with_http_info(pki_lead_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.lead_get_communicationsenders_v1_with_http_info(pki_lead_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <LeadGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectLeadApi->lead_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_lead_id** | **Integer** |  |  |
+
+### Return type
+
+[**LeadGetCommunicationsendersV1Response**](LeadGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

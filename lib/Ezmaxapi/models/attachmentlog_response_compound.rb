@@ -22,6 +22,8 @@ module EzmaxApi
     # The unique ID of the User
     attr_accessor :fki_user_id
 
+    attr_accessor :obj_user
+
     # The created date
     attr_accessor :dt_attachmentlog_datetime
 
@@ -57,6 +59,7 @@ module EzmaxApi
       {
         :'fki_attachment_id' => :'fkiAttachmentID',
         :'fki_user_id' => :'fkiUserID',
+        :'obj_user' => :'objUser',
         :'dt_attachmentlog_datetime' => :'dtAttachmentlogDatetime',
         :'e_attachmentlog_type' => :'eAttachmentlogType',
         :'s_attachmentlog_detail' => :'sAttachmentlogDetail'
@@ -78,6 +81,7 @@ module EzmaxApi
       {
         :'fki_attachment_id' => :'Integer',
         :'fki_user_id' => :'Integer',
+        :'obj_user' => :'CustomUserNameResponse',
         :'dt_attachmentlog_datetime' => :'String',
         :'e_attachmentlog_type' => :'FieldEAttachmentlogType',
         :'s_attachmentlog_detail' => :'String'
@@ -125,6 +129,12 @@ module EzmaxApi
         self.fki_user_id = nil
       end
 
+      if attributes.key?(:'obj_user')
+        self.obj_user = attributes[:'obj_user']
+      else
+        self.obj_user = nil
+      end
+
       if attributes.key?(:'dt_attachmentlog_datetime')
         self.dt_attachmentlog_datetime = attributes[:'dt_attachmentlog_datetime']
       else
@@ -163,6 +173,10 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_user_id", must be greater than or equal to 0.')
       end
 
+      if @obj_user.nil?
+        invalid_properties.push('invalid value for "obj_user", obj_user cannot be nil.')
+      end
+
       if @dt_attachmentlog_datetime.nil?
         invalid_properties.push('invalid value for "dt_attachmentlog_datetime", dt_attachmentlog_datetime cannot be nil.')
       end
@@ -192,6 +206,7 @@ module EzmaxApi
       return false if @fki_attachment_id < 0
       return false if @fki_user_id.nil?
       return false if @fki_user_id < 0
+      return false if @obj_user.nil?
       return false if @dt_attachmentlog_datetime.nil?
       return false if @dt_attachmentlog_datetime !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
       return false if @e_attachmentlog_type.nil?
@@ -225,6 +240,16 @@ module EzmaxApi
       end
 
       @fki_user_id = fki_user_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] obj_user Value to be assigned
+    def obj_user=(obj_user)
+      if obj_user.nil?
+        fail ArgumentError, 'obj_user cannot be nil'
+      end
+
+      @obj_user = obj_user
     end
 
     # Custom attribute writer method with validation
@@ -274,6 +299,7 @@ module EzmaxApi
       self.class == o.class &&
           fki_attachment_id == o.fki_attachment_id &&
           fki_user_id == o.fki_user_id &&
+          obj_user == o.obj_user &&
           dt_attachmentlog_datetime == o.dt_attachmentlog_datetime &&
           e_attachmentlog_type == o.e_attachmentlog_type &&
           s_attachmentlog_detail == o.s_attachmentlog_detail
@@ -288,7 +314,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [fki_attachment_id, fki_user_id, dt_attachmentlog_datetime, e_attachmentlog_type, s_attachmentlog_detail].hash
+      [fki_attachment_id, fki_user_id, obj_user, dt_attachmentlog_datetime, e_attachmentlog_type, s_attachmentlog_detail].hash
     end
 
     # Builds the object from hash

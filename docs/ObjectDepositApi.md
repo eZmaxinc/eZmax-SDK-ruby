@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**deposit_get_communication_list_v1**](ObjectDepositApi.md#deposit_get_communication_list_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationList | Retrieve Communication list |
 | [**deposit_get_communicationrecipients_v1**](ObjectDepositApi.md#deposit_get_communicationrecipients_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**deposit_get_communicationsenders_v1**](ObjectDepositApi.md#deposit_get_communicationsenders_v1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationsenders | Retrieve Communication senders |
+| [**deposit_get_list_v1**](ObjectDepositApi.md#deposit_get_list_v1) | **GET** /1/object/deposit/getList | Retrieve Deposit list |
 | [**deposit_import_into_edmv1**](ObjectDepositApi.md#deposit_import_into_edmv1) | **POST** /1/object/deposit/{pkiDepositID}/importIntoEDM | Import attachments into the Deposit |
 
 
@@ -427,6 +428,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## deposit_get_list_v1
+
+> <DepositGetListV1Response> deposit_get_list_v1(opts)
+
+Retrieve Deposit list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDepositApi.new
+opts = {
+  e_order_by: 'pkiDepositID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Deposit list
+  result = api_instance.deposit_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_list_v1: #{e}"
+end
+```
+
+#### Using the deposit_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DepositGetListV1Response>, Integer, Hash)> deposit_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Deposit list
+  data, status_code, headers = api_instance.deposit_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DepositGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDepositApi->deposit_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**DepositGetListV1Response**](DepositGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## deposit_import_into_edmv1

@@ -25,6 +25,9 @@ module EzmaxApi
     # The first name of the user
     attr_accessor :s_user_firstname
 
+    # The login name of the User.
+    attr_accessor :s_user_loginname
+
     # The job title of the user
     attr_accessor :s_user_jobtitle
 
@@ -34,6 +37,7 @@ module EzmaxApi
         :'s_contacttitle_name_x' => :'sContacttitleNameX',
         :'s_user_lastname' => :'sUserLastname',
         :'s_user_firstname' => :'sUserFirstname',
+        :'s_user_loginname' => :'sUserLoginname',
         :'s_user_jobtitle' => :'sUserJobtitle'
       }
     end
@@ -54,6 +58,7 @@ module EzmaxApi
         :'s_contacttitle_name_x' => :'String',
         :'s_user_lastname' => :'String',
         :'s_user_firstname' => :'String',
+        :'s_user_loginname' => :'String',
         :'s_user_jobtitle' => :'String'
       }
     end
@@ -96,6 +101,10 @@ module EzmaxApi
         self.s_user_firstname = nil
       end
 
+      if attributes.key?(:'s_user_loginname')
+        self.s_user_loginname = attributes[:'s_user_loginname']
+      end
+
       if attributes.key?(:'s_user_jobtitle')
         self.s_user_jobtitle = attributes[:'s_user_jobtitle']
       end
@@ -119,6 +128,11 @@ module EzmaxApi
         invalid_properties.push('invalid value for "s_user_firstname", s_user_firstname cannot be nil.')
       end
 
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
+      if !@s_user_loginname.nil? && @s_user_loginname !~ pattern
+        invalid_properties.push("invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}.")
+      end
+
       pattern = Regexp.new(/^.{0,50}$/)
       if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ pattern
         invalid_properties.push("invalid value for \"s_user_jobtitle\", must conform to the pattern #{pattern}.")
@@ -134,6 +148,7 @@ module EzmaxApi
       return false if !@s_contacttitle_name_x.nil? && @s_contacttitle_name_x !~ Regexp.new(/^.{0,10}$/)
       return false if @s_user_lastname.nil?
       return false if @s_user_firstname.nil?
+      return false if !@s_user_loginname.nil? && @s_user_loginname !~ Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
       return false if !@s_user_jobtitle.nil? && @s_user_jobtitle !~ Regexp.new(/^.{0,50}$/)
       true
     end
@@ -174,6 +189,21 @@ module EzmaxApi
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] s_user_loginname Value to be assigned
+    def s_user_loginname=(s_user_loginname)
+      if s_user_loginname.nil?
+        fail ArgumentError, 's_user_loginname cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/)
+      if s_user_loginname !~ pattern
+        fail ArgumentError, "invalid value for \"s_user_loginname\", must conform to the pattern #{pattern}."
+      end
+
+      @s_user_loginname = s_user_loginname
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] s_user_jobtitle Value to be assigned
     def s_user_jobtitle=(s_user_jobtitle)
       if s_user_jobtitle.nil?
@@ -196,6 +226,7 @@ module EzmaxApi
           s_contacttitle_name_x == o.s_contacttitle_name_x &&
           s_user_lastname == o.s_user_lastname &&
           s_user_firstname == o.s_user_firstname &&
+          s_user_loginname == o.s_user_loginname &&
           s_user_jobtitle == o.s_user_jobtitle
     end
 
@@ -208,7 +239,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [s_contacttitle_name_x, s_user_lastname, s_user_firstname, s_user_jobtitle].hash
+      [s_contacttitle_name_x, s_user_lastname, s_user_firstname, s_user_loginname, s_user_jobtitle].hash
     end
 
     # Builds the object from hash

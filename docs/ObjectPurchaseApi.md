@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**purchase_batch_download_v1**](ObjectPurchaseApi.md#purchase_batch_download_v1) | **POST** /1/object/purchase/{pkiPurchaseID}/batchDownload | Download multiples attachments from a Purchase |
 | [**purchase_get_attachments_v1**](ObjectPurchaseApi.md#purchase_get_attachments_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getAttachments | Retrieve Purchase&#39;s attachments |
+| [**purchase_get_list_v1**](ObjectPurchaseApi.md#purchase_get_list_v1) | **GET** /1/object/purchase/getList | Retrieve Purchase list |
 | [**purchase_import_into_edmv1**](ObjectPurchaseApi.md#purchase_import_into_edmv1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase |
 
 
@@ -147,6 +148,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## purchase_get_list_v1
+
+> <PurchaseGetListV1Response> purchase_get_list_v1(opts)
+
+Retrieve Purchase list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPurchaseApi.new
+opts = {
+  e_order_by: 'pkiPurchaseID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Purchase list
+  result = api_instance.purchase_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_list_v1: #{e}"
+end
+```
+
+#### Using the purchase_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PurchaseGetListV1Response>, Integer, Hash)> purchase_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Purchase list
+  data, status_code, headers = api_instance.purchase_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PurchaseGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**PurchaseGetListV1Response**](PurchaseGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## purchase_import_into_edmv1

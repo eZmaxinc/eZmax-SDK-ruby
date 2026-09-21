@@ -45,7 +45,8 @@
 | **fki_supplier_id** | **Integer** | The unique ID of the Supplier. | [optional] |
 | **fki_tranqcontract_id** | **Integer** | The unique ID of the Tranqcontract | [optional] |
 | **fki_template_id** | **Integer** | The unique ID of the Template | [optional] |
-| **fki_inscriptionchecklist_id** | **Integer** | The unique ID of the Inscriptionchecklist | [optional] |
+| **fki_documenttypechecklist_id** | **Integer** | The unique ID of the Documenttypechecklist | [optional] |
+| **s_documenttype_name_x** | **String** | The name of the Documenttype in the language of the requester | [optional] |
 | **fki_folder_id** | **Integer** | The unique ID of the Folder | [optional] |
 | **fki_rejectedoffertopurchase_id** | **Integer** | The unique ID of the Rejectedoffertopurchase | [optional] |
 | **fki_disclosure_id** | **Integer** | The unique ID of the Disclosure | [optional] |
@@ -118,7 +119,8 @@ instance = EzmaxApi::CustomAttachmentResponse.new(
   fki_supplier_id: 1,
   fki_tranqcontract_id: 39,
   fki_template_id: 232,
-  fki_inscriptionchecklist_id: 191,
+  fki_documenttypechecklist_id: 191,
+  s_documenttype_name_x: Loan deed,
   fki_folder_id: 81,
   fki_rejectedoffertopurchase_id: 532,
   fki_disclosure_id: 51,

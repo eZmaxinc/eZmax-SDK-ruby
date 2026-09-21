@@ -525,6 +525,94 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Bankaccount list
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :e_order_by Specify how you want the results to be sorted
+    # @option opts [Integer] :i_row_max 
+    # @option opts [Integer] :i_row_offset  (default to 0)
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_filter 
+    # @return [BankaccountGetListV1Response]
+    def bankaccount_get_list_v1(opts = {})
+      data, _status_code, _headers = bankaccount_get_list_v1_with_http_info(opts)
+      data
+    end
+
+    # Retrieve Bankaccount list
+    # Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing&lt;br&gt;Trust |
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :e_order_by Specify how you want the results to be sorted
+    # @option opts [Integer] :i_row_max 
+    # @option opts [Integer] :i_row_offset  (default to 0)
+    # @option opts [HeaderAcceptLanguage] :accept_language 
+    # @option opts [String] :s_filter 
+    # @return [Array<(BankaccountGetListV1Response, Integer, Hash)>] BankaccountGetListV1Response data, response status code and response headers
+    def bankaccount_get_list_v1_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectBankaccountApi.bankaccount_get_list_v1 ...'
+      end
+      allowable_values = ["pkiBankaccountID_ASC", "pkiBankaccountID_DESC", "sBankaccountBankname_ASC", "sBankaccountBankname_DESC", "sBankaccountTransit_ASC", "sBankaccountTransit_DESC", "sBankaccountInstitution_ASC", "sBankaccountInstitution_DESC", "sBankaccountAccount_ASC", "sBankaccountAccount_DESC", "sBankaccountNumber_ASC", "sBankaccountNumber_DESC", "eBankaccountType_ASC", "eBankaccountType_DESC", "bBankaccountCommissionprocessing_ASC", "bBankaccountCommissionprocessing_DESC", "bBankaccountIsactive_ASC", "bBankaccountIsactive_DESC", "iGlaccountCode_ASC", "iGlaccountCode_DESC", "sGlaccountDescriptionX_ASC", "sGlaccountDescriptionX_DESC"]
+      if @api_client.config.client_side_validation && opts[:'e_order_by'] && !allowable_values.include?(opts[:'e_order_by'])
+        fail ArgumentError, "invalid value for \"e_order_by\", must be one of #{allowable_values}"
+      end
+      if @api_client.config.client_side_validation && !opts[:'i_row_max'].nil? && opts[:'i_row_max'] > 10000
+        fail ArgumentError, 'invalid value for "opts[:"i_row_max"]" when calling ObjectBankaccountApi.bankaccount_get_list_v1, must be smaller than or equal to 10000.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'i_row_max'].nil? && opts[:'i_row_max'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"i_row_max"]" when calling ObjectBankaccountApi.bankaccount_get_list_v1, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'i_row_offset'].nil? && opts[:'i_row_offset'] < 0
+        fail ArgumentError, 'invalid value for "opts[:"i_row_offset"]" when calling ObjectBankaccountApi.bankaccount_get_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/bankaccount/getList'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'eOrderBy'] = opts[:'e_order_by'] if !opts[:'e_order_by'].nil?
+      query_params[:'iRowMax'] = opts[:'i_row_max'] if !opts[:'i_row_max'].nil?
+      query_params[:'iRowOffset'] = opts[:'i_row_offset'] if !opts[:'i_row_offset'].nil?
+      query_params[:'sFilter'] = opts[:'s_filter'] if !opts[:'s_filter'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']) unless header_params['Accept']
+      header_params[:'Accept-Language'] = opts[:'accept_language'] if !opts[:'accept_language'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BankaccountGetListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectBankaccountApi.bankaccount_get_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectBankaccountApi#bankaccount_get_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Import attachments into the Bankaccount
     # @param pki_bankaccount_id [Integer] 
     # @param bankaccount_import_into_edmv1_request [BankaccountImportIntoEDMV1Request] 

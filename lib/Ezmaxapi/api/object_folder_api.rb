@@ -168,6 +168,282 @@ module EzmaxApi
       return data, status_code, headers
     end
 
+    # Retrieve Communication count
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [FolderGetCommunicationCountV1Response]
+    def folder_get_communication_count_v1(pki_folder_id, opts = {})
+      data, _status_code, _headers = folder_get_communication_count_v1_with_http_info(pki_folder_id, opts)
+      data
+    end
+
+    # Retrieve Communication count
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FolderGetCommunicationCountV1Response, Integer, Hash)>] FolderGetCommunicationCountV1Response data, response status code and response headers
+    def folder_get_communication_count_v1_with_http_info(pki_folder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectFolderApi.folder_get_communication_count_v1 ...'
+      end
+      # verify the required parameter 'pki_folder_id' is set
+      if @api_client.config.client_side_validation && pki_folder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_folder_id' when calling ObjectFolderApi.folder_get_communication_count_v1"
+      end
+      if @api_client.config.client_side_validation && pki_folder_id > 65535
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communication_count_v1, must be smaller than or equal to 65535.'
+      end
+
+      if @api_client.config.client_side_validation && pki_folder_id < 0
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communication_count_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/folder/{pkiFolderID}/getCommunicationCount'.sub('{pkiFolderID}', CGI.escape(pki_folder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FolderGetCommunicationCountV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectFolderApi.folder_get_communication_count_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectFolderApi#folder_get_communication_count_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication list
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [FolderGetCommunicationListV1Response]
+    def folder_get_communication_list_v1(pki_folder_id, opts = {})
+      data, _status_code, _headers = folder_get_communication_list_v1_with_http_info(pki_folder_id, opts)
+      data
+    end
+
+    # Retrieve Communication list
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FolderGetCommunicationListV1Response, Integer, Hash)>] FolderGetCommunicationListV1Response data, response status code and response headers
+    def folder_get_communication_list_v1_with_http_info(pki_folder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectFolderApi.folder_get_communication_list_v1 ...'
+      end
+      # verify the required parameter 'pki_folder_id' is set
+      if @api_client.config.client_side_validation && pki_folder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_folder_id' when calling ObjectFolderApi.folder_get_communication_list_v1"
+      end
+      if @api_client.config.client_side_validation && pki_folder_id > 65535
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communication_list_v1, must be smaller than or equal to 65535.'
+      end
+
+      if @api_client.config.client_side_validation && pki_folder_id < 0
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communication_list_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/folder/{pkiFolderID}/getCommunicationList'.sub('{pkiFolderID}', CGI.escape(pki_folder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FolderGetCommunicationListV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectFolderApi.folder_get_communication_list_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectFolderApi#folder_get_communication_list_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [FolderGetCommunicationrecipientsV1Response]
+    def folder_get_communicationrecipients_v1(pki_folder_id, opts = {})
+      data, _status_code, _headers = folder_get_communicationrecipients_v1_with_http_info(pki_folder_id, opts)
+      data
+    end
+
+    # Retrieve Communication recipients
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FolderGetCommunicationrecipientsV1Response, Integer, Hash)>] FolderGetCommunicationrecipientsV1Response data, response status code and response headers
+    def folder_get_communicationrecipients_v1_with_http_info(pki_folder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectFolderApi.folder_get_communicationrecipients_v1 ...'
+      end
+      # verify the required parameter 'pki_folder_id' is set
+      if @api_client.config.client_side_validation && pki_folder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_folder_id' when calling ObjectFolderApi.folder_get_communicationrecipients_v1"
+      end
+      if @api_client.config.client_side_validation && pki_folder_id > 65535
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communicationrecipients_v1, must be smaller than or equal to 65535.'
+      end
+
+      if @api_client.config.client_side_validation && pki_folder_id < 0
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communicationrecipients_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/folder/{pkiFolderID}/getCommunicationrecipients'.sub('{pkiFolderID}', CGI.escape(pki_folder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FolderGetCommunicationrecipientsV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectFolderApi.folder_get_communicationrecipients_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectFolderApi#folder_get_communicationrecipients_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve Communication senders
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [FolderGetCommunicationsendersV1Response]
+    def folder_get_communicationsenders_v1(pki_folder_id, opts = {})
+      data, _status_code, _headers = folder_get_communicationsenders_v1_with_http_info(pki_folder_id, opts)
+      data
+    end
+
+    # Retrieve Communication senders
+    # @param pki_folder_id [Integer] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FolderGetCommunicationsendersV1Response, Integer, Hash)>] FolderGetCommunicationsendersV1Response data, response status code and response headers
+    def folder_get_communicationsenders_v1_with_http_info(pki_folder_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ObjectFolderApi.folder_get_communicationsenders_v1 ...'
+      end
+      # verify the required parameter 'pki_folder_id' is set
+      if @api_client.config.client_side_validation && pki_folder_id.nil?
+        fail ArgumentError, "Missing the required parameter 'pki_folder_id' when calling ObjectFolderApi.folder_get_communicationsenders_v1"
+      end
+      if @api_client.config.client_side_validation && pki_folder_id > 65535
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communicationsenders_v1, must be smaller than or equal to 65535.'
+      end
+
+      if @api_client.config.client_side_validation && pki_folder_id < 0
+        fail ArgumentError, 'invalid value for "pki_folder_id" when calling ObjectFolderApi.folder_get_communicationsenders_v1, must be greater than or equal to 0.'
+      end
+
+      # resource path
+      local_var_path = '/1/object/folder/{pkiFolderID}/getCommunicationsenders'.sub('{pkiFolderID}', CGI.escape(pki_folder_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FolderGetCommunicationsendersV1Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['Authorization']
+
+      new_options = opts.merge(
+        :operation => :"ObjectFolderApi.folder_get_communicationsenders_v1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ObjectFolderApi#folder_get_communicationsenders_v1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Import attachments into the Folder
     # @param pki_folder_id [Integer] 
     # @param folder_import_into_edmv1_request [FolderImportIntoEDMV1Request] 

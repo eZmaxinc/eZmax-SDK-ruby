@@ -6,6 +6,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**notary_batch_download_v1**](ObjectNotaryApi.md#notary_batch_download_v1) | **POST** /1/object/notary/{pkiNotaryID}/batchDownload | Download multiples attachments from a Notary |
 | [**notary_get_attachments_v1**](ObjectNotaryApi.md#notary_get_attachments_v1) | **GET** /1/object/notary/{pkiNotaryID}/getAttachments | Retrieve Notary&#39;s attachments |
+| [**notary_get_communication_count_v1**](ObjectNotaryApi.md#notary_get_communication_count_v1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationCount | Retrieve Communication count |
+| [**notary_get_communication_list_v1**](ObjectNotaryApi.md#notary_get_communication_list_v1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationList | Retrieve Communication list |
+| [**notary_get_communicationrecipients_v1**](ObjectNotaryApi.md#notary_get_communicationrecipients_v1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**notary_get_communicationsenders_v1**](ObjectNotaryApi.md#notary_get_communicationsenders_v1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationsenders | Retrieve Communication senders |
+| [**notary_get_list_v1**](ObjectNotaryApi.md#notary_get_list_v1) | **GET** /1/object/notary/getList | Retrieve Notary list |
 | [**notary_import_into_edmv1**](ObjectNotaryApi.md#notary_import_into_edmv1) | **POST** /1/object/notary/{pkiNotaryID}/importIntoEDM | Import attachments into the Notary |
 
 
@@ -147,6 +152,363 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## notary_get_communication_count_v1
+
+> <NotaryGetCommunicationCountV1Response> notary_get_communication_count_v1(pki_notary_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectNotaryApi.new
+pki_notary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.notary_get_communication_count_v1(pki_notary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the notary_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotaryGetCommunicationCountV1Response>, Integer, Hash)> notary_get_communication_count_v1_with_http_info(pki_notary_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.notary_get_communication_count_v1_with_http_info(pki_notary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotaryGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_notary_id** | **Integer** |  |  |
+
+### Return type
+
+[**NotaryGetCommunicationCountV1Response**](NotaryGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## notary_get_communication_list_v1
+
+> <NotaryGetCommunicationListV1Response> notary_get_communication_list_v1(pki_notary_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectNotaryApi.new
+pki_notary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.notary_get_communication_list_v1(pki_notary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the notary_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotaryGetCommunicationListV1Response>, Integer, Hash)> notary_get_communication_list_v1_with_http_info(pki_notary_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.notary_get_communication_list_v1_with_http_info(pki_notary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotaryGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_notary_id** | **Integer** |  |  |
+
+### Return type
+
+[**NotaryGetCommunicationListV1Response**](NotaryGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## notary_get_communicationrecipients_v1
+
+> <NotaryGetCommunicationrecipientsV1Response> notary_get_communicationrecipients_v1(pki_notary_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectNotaryApi.new
+pki_notary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.notary_get_communicationrecipients_v1(pki_notary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the notary_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotaryGetCommunicationrecipientsV1Response>, Integer, Hash)> notary_get_communicationrecipients_v1_with_http_info(pki_notary_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.notary_get_communicationrecipients_v1_with_http_info(pki_notary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotaryGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_notary_id** | **Integer** |  |  |
+
+### Return type
+
+[**NotaryGetCommunicationrecipientsV1Response**](NotaryGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## notary_get_communicationsenders_v1
+
+> <NotaryGetCommunicationsendersV1Response> notary_get_communicationsenders_v1(pki_notary_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectNotaryApi.new
+pki_notary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.notary_get_communicationsenders_v1(pki_notary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the notary_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotaryGetCommunicationsendersV1Response>, Integer, Hash)> notary_get_communicationsenders_v1_with_http_info(pki_notary_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.notary_get_communicationsenders_v1_with_http_info(pki_notary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotaryGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_notary_id** | **Integer** |  |  |
+
+### Return type
+
+[**NotaryGetCommunicationsendersV1Response**](NotaryGetCommunicationsendersV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## notary_get_list_v1
+
+> <NotaryGetListV1Response> notary_get_list_v1(opts)
+
+Retrieve Notary list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectNotaryApi.new
+opts = {
+  e_order_by: 'pkiNotaryID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Notary list
+  result = api_instance.notary_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_list_v1: #{e}"
+end
+```
+
+#### Using the notary_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotaryGetListV1Response>, Integer, Hash)> notary_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Notary list
+  data, status_code, headers = api_instance.notary_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotaryGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectNotaryApi->notary_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**NotaryGetListV1Response**](NotaryGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## notary_import_into_edmv1

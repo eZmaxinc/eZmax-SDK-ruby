@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Response for PATCH /1/object/attachment/{pkiAttachmentID}/validate
+  # Response for POST /1/object/attachment/{pkiAttachmentID}/validate
   class AttachmentValidateV1ResponseMPayload < ApiModelBase
     # The unique ID of the Attachment.
     attr_accessor :pki_attachment_id

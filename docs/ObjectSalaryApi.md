@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**salary_batch_download_v1**](ObjectSalaryApi.md#salary_batch_download_v1) | **POST** /1/object/salary/{pkiSalaryID}/batchDownload | Download multiples attachments from a Reconciliation |
 | [**salary_get_attachments_v1**](ObjectSalaryApi.md#salary_get_attachments_v1) | **GET** /1/object/salary/{pkiSalaryID}/getAttachments | Retrieve Salary&#39;s attachments |
+| [**salary_get_list_v1**](ObjectSalaryApi.md#salary_get_list_v1) | **GET** /1/object/salary/getList | Retrieve Salary list |
 | [**salary_import_into_edmv1**](ObjectSalaryApi.md#salary_import_into_edmv1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary |
 
 
@@ -147,6 +148,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## salary_get_list_v1
+
+> <SalaryGetListV1Response> salary_get_list_v1(opts)
+
+Retrieve Salary list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSalaryApi.new
+opts = {
+  e_order_by: 'pkiSalaryID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Salary list
+  result = api_instance.salary_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_list_v1: #{e}"
+end
+```
+
+#### Using the salary_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SalaryGetListV1Response>, Integer, Hash)> salary_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Salary list
+  data, status_code, headers = api_instance.salary_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SalaryGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**SalaryGetListV1Response**](SalaryGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## salary_import_into_edmv1

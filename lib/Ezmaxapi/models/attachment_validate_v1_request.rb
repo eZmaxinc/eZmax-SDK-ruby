@@ -14,9 +14,24 @@ require 'date'
 require 'time'
 
 module EzmaxApi
-  # Request for PATCH /1/object/attachment/{pkiAttachmentID}/validate
+  # Request for POST /1/object/attachment/{pkiAttachmentID}/validate
   class AttachmentValidateV1Request < ApiModelBase
+    # The unique ID of the Attachmentrejectreason
+    attr_accessor :fki_attachmentrejectreason_id
+
     attr_accessor :e_attachment_verified
+
+    # The rejectioncomment of the Attachment
+    attr_accessor :t_attachment_rejectioncomment
+
+    # A list of email addresses to send a rejection notification to.
+    attr_accessor :a_s_notification_email_address
+
+    # The email body to send to the notification recipients.
+    attr_accessor :t_notification_message
+
+    # Should a copy of the attachment be included in the email.
+    attr_accessor :b_notification_include_attachment
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -43,7 +58,12 @@ module EzmaxApi
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'e_attachment_verified' => :'eAttachmentVerified'
+        :'fki_attachmentrejectreason_id' => :'fkiAttachmentrejectreasonID',
+        :'e_attachment_verified' => :'eAttachmentVerified',
+        :'t_attachment_rejectioncomment' => :'tAttachmentRejectioncomment',
+        :'a_s_notification_email_address' => :'a_sNotificationEmailAddress',
+        :'t_notification_message' => :'tNotificationMessage',
+        :'b_notification_include_attachment' => :'bNotificationIncludeAttachment'
       }
     end
 
@@ -60,7 +80,12 @@ module EzmaxApi
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'e_attachment_verified' => :'FieldEAttachmentVerified'
+        :'fki_attachmentrejectreason_id' => :'Integer',
+        :'e_attachment_verified' => :'FieldEAttachmentVerified',
+        :'t_attachment_rejectioncomment' => :'String',
+        :'a_s_notification_email_address' => :'Array<String>',
+        :'t_notification_message' => :'String',
+        :'b_notification_include_attachment' => :'Boolean'
       }
     end
 
@@ -86,10 +111,32 @@ module EzmaxApi
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'fki_attachmentrejectreason_id')
+        self.fki_attachmentrejectreason_id = attributes[:'fki_attachmentrejectreason_id']
+      end
+
       if attributes.key?(:'e_attachment_verified')
         self.e_attachment_verified = attributes[:'e_attachment_verified']
       else
         self.e_attachment_verified = nil
+      end
+
+      if attributes.key?(:'t_attachment_rejectioncomment')
+        self.t_attachment_rejectioncomment = attributes[:'t_attachment_rejectioncomment']
+      end
+
+      if attributes.key?(:'a_s_notification_email_address')
+        if (value = attributes[:'a_s_notification_email_address']).is_a?(Array)
+          self.a_s_notification_email_address = value
+        end
+      end
+
+      if attributes.key?(:'t_notification_message')
+        self.t_notification_message = attributes[:'t_notification_message']
+      end
+
+      if attributes.key?(:'b_notification_include_attachment')
+        self.b_notification_include_attachment = attributes[:'b_notification_include_attachment']
       end
     end
 
@@ -98,8 +145,26 @@ module EzmaxApi
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if !@fki_attachmentrejectreason_id.nil? && @fki_attachmentrejectreason_id > 255
+        invalid_properties.push('invalid value for "fki_attachmentrejectreason_id", must be smaller than or equal to 255.')
+      end
+
+      if !@fki_attachmentrejectreason_id.nil? && @fki_attachmentrejectreason_id < 0
+        invalid_properties.push('invalid value for "fki_attachmentrejectreason_id", must be greater than or equal to 0.')
+      end
+
       if @e_attachment_verified.nil?
         invalid_properties.push('invalid value for "e_attachment_verified", e_attachment_verified cannot be nil.')
+      end
+
+      pattern = Regexp.new(/^.{0,65535}$/)
+      if !@t_attachment_rejectioncomment.nil? && @t_attachment_rejectioncomment !~ pattern
+        invalid_properties.push("invalid value for \"t_attachment_rejectioncomment\", must conform to the pattern #{pattern}.")
+      end
+
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
+      if !@t_notification_message.nil? && @t_notification_message !~ pattern
+        invalid_properties.push("invalid value for \"t_notification_message\", must conform to the pattern #{pattern}.")
       end
 
       invalid_properties
@@ -109,8 +174,30 @@ module EzmaxApi
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if !@fki_attachmentrejectreason_id.nil? && @fki_attachmentrejectreason_id > 255
+      return false if !@fki_attachmentrejectreason_id.nil? && @fki_attachmentrejectreason_id < 0
       return false if @e_attachment_verified.nil?
+      return false if !@t_attachment_rejectioncomment.nil? && @t_attachment_rejectioncomment !~ Regexp.new(/^.{0,65535}$/)
+      return false if !@t_notification_message.nil? && @t_notification_message !~ Regexp.new(/^[\s\S]{0,65535}$/)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] fki_attachmentrejectreason_id Value to be assigned
+    def fki_attachmentrejectreason_id=(fki_attachmentrejectreason_id)
+      if fki_attachmentrejectreason_id.nil?
+        fail ArgumentError, 'fki_attachmentrejectreason_id cannot be nil'
+      end
+
+      if fki_attachmentrejectreason_id > 255
+        fail ArgumentError, 'invalid value for "fki_attachmentrejectreason_id", must be smaller than or equal to 255.'
+      end
+
+      if fki_attachmentrejectreason_id < 0
+        fail ArgumentError, 'invalid value for "fki_attachmentrejectreason_id", must be greater than or equal to 0.'
+      end
+
+      @fki_attachmentrejectreason_id = fki_attachmentrejectreason_id
     end
 
     # Custom attribute writer method with validation
@@ -123,12 +210,57 @@ module EzmaxApi
       @e_attachment_verified = e_attachment_verified
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] t_attachment_rejectioncomment Value to be assigned
+    def t_attachment_rejectioncomment=(t_attachment_rejectioncomment)
+      if t_attachment_rejectioncomment.nil?
+        fail ArgumentError, 't_attachment_rejectioncomment cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,65535}$/)
+      if t_attachment_rejectioncomment !~ pattern
+        fail ArgumentError, "invalid value for \"t_attachment_rejectioncomment\", must conform to the pattern #{pattern}."
+      end
+
+      @t_attachment_rejectioncomment = t_attachment_rejectioncomment
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] a_s_notification_email_address Value to be assigned
+    def a_s_notification_email_address=(a_s_notification_email_address)
+      if a_s_notification_email_address.nil?
+        fail ArgumentError, 'a_s_notification_email_address cannot be nil'
+      end
+
+      @a_s_notification_email_address = a_s_notification_email_address
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] t_notification_message Value to be assigned
+    def t_notification_message=(t_notification_message)
+      if t_notification_message.nil?
+        fail ArgumentError, 't_notification_message cannot be nil'
+      end
+
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
+      if t_notification_message !~ pattern
+        fail ArgumentError, "invalid value for \"t_notification_message\", must conform to the pattern #{pattern}."
+      end
+
+      @t_notification_message = t_notification_message
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          e_attachment_verified == o.e_attachment_verified
+          fki_attachmentrejectreason_id == o.fki_attachmentrejectreason_id &&
+          e_attachment_verified == o.e_attachment_verified &&
+          t_attachment_rejectioncomment == o.t_attachment_rejectioncomment &&
+          a_s_notification_email_address == o.a_s_notification_email_address &&
+          t_notification_message == o.t_notification_message &&
+          b_notification_include_attachment == o.b_notification_include_attachment
     end
 
     # @see the `==` method
@@ -140,7 +272,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [e_attachment_verified].hash
+      [fki_attachmentrejectreason_id, e_attachment_verified, t_attachment_rejectioncomment, a_s_notification_email_address, t_notification_message, b_notification_include_attachment].hash
     end
 
     # Builds the object from hash

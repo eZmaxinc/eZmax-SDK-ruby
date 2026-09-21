@@ -139,8 +139,11 @@ module EzmaxApi
     # The unique ID of the Template
     attr_accessor :fki_template_id
 
-    # The unique ID of the Inscriptionchecklist
-    attr_accessor :fki_inscriptionchecklist_id
+    # The unique ID of the Documenttypechecklist
+    attr_accessor :fki_documenttypechecklist_id
+
+    # The name of the Documenttype in the language of the requester
+    attr_accessor :s_documenttype_name_x
 
     # The unique ID of the Folder
     attr_accessor :fki_folder_id
@@ -263,7 +266,8 @@ module EzmaxApi
         :'fki_supplier_id' => :'fkiSupplierID',
         :'fki_tranqcontract_id' => :'fkiTranqcontractID',
         :'fki_template_id' => :'fkiTemplateID',
-        :'fki_inscriptionchecklist_id' => :'fkiInscriptionchecklistID',
+        :'fki_documenttypechecklist_id' => :'fkiDocumenttypechecklistID',
+        :'s_documenttype_name_x' => :'sDocumenttypeNameX',
         :'fki_folder_id' => :'fkiFolderID',
         :'fki_rejectedoffertopurchase_id' => :'fkiRejectedoffertopurchaseID',
         :'fki_disclosure_id' => :'fkiDisclosureID',
@@ -341,7 +345,8 @@ module EzmaxApi
         :'fki_supplier_id' => :'Integer',
         :'fki_tranqcontract_id' => :'Integer',
         :'fki_template_id' => :'Integer',
-        :'fki_inscriptionchecklist_id' => :'Integer',
+        :'fki_documenttypechecklist_id' => :'Integer',
+        :'s_documenttype_name_x' => :'String',
         :'fki_folder_id' => :'Integer',
         :'fki_rejectedoffertopurchase_id' => :'Integer',
         :'fki_disclosure_id' => :'Integer',
@@ -553,8 +558,12 @@ module EzmaxApi
         self.fki_template_id = attributes[:'fki_template_id']
       end
 
-      if attributes.key?(:'fki_inscriptionchecklist_id')
-        self.fki_inscriptionchecklist_id = attributes[:'fki_inscriptionchecklist_id']
+      if attributes.key?(:'fki_documenttypechecklist_id')
+        self.fki_documenttypechecklist_id = attributes[:'fki_documenttypechecklist_id']
+      end
+
+      if attributes.key?(:'s_documenttype_name_x')
+        self.s_documenttype_name_x = attributes[:'s_documenttype_name_x']
       end
 
       if attributes.key?(:'fki_folder_id')
@@ -927,12 +936,17 @@ module EzmaxApi
         invalid_properties.push('invalid value for "fki_template_id", must be greater than or equal to 0.')
       end
 
-      if !@fki_inscriptionchecklist_id.nil? && @fki_inscriptionchecklist_id > 16777215
-        invalid_properties.push('invalid value for "fki_inscriptionchecklist_id", must be smaller than or equal to 16777215.')
+      if !@fki_documenttypechecklist_id.nil? && @fki_documenttypechecklist_id > 16777215
+        invalid_properties.push('invalid value for "fki_documenttypechecklist_id", must be smaller than or equal to 16777215.')
       end
 
-      if !@fki_inscriptionchecklist_id.nil? && @fki_inscriptionchecklist_id < 0
-        invalid_properties.push('invalid value for "fki_inscriptionchecklist_id", must be greater than or equal to 0.')
+      if !@fki_documenttypechecklist_id.nil? && @fki_documenttypechecklist_id < 0
+        invalid_properties.push('invalid value for "fki_documenttypechecklist_id", must be greater than or equal to 0.')
+      end
+
+      pattern = Regexp.new(/^.{0,55}$/)
+      if !@s_documenttype_name_x.nil? && @s_documenttype_name_x !~ pattern
+        invalid_properties.push("invalid value for \"s_documenttype_name_x\", must conform to the pattern #{pattern}.")
       end
 
       if !@fki_folder_id.nil? && @fki_folder_id > 65535
@@ -1128,8 +1142,9 @@ module EzmaxApi
       return false if !@fki_tranqcontract_id.nil? && @fki_tranqcontract_id < 0
       return false if !@fki_template_id.nil? && @fki_template_id > 65535
       return false if !@fki_template_id.nil? && @fki_template_id < 0
-      return false if !@fki_inscriptionchecklist_id.nil? && @fki_inscriptionchecklist_id > 16777215
-      return false if !@fki_inscriptionchecklist_id.nil? && @fki_inscriptionchecklist_id < 0
+      return false if !@fki_documenttypechecklist_id.nil? && @fki_documenttypechecklist_id > 16777215
+      return false if !@fki_documenttypechecklist_id.nil? && @fki_documenttypechecklist_id < 0
+      return false if !@s_documenttype_name_x.nil? && @s_documenttype_name_x !~ Regexp.new(/^.{0,55}$/)
       return false if !@fki_folder_id.nil? && @fki_folder_id > 65535
       return false if !@fki_folder_id.nil? && @fki_folder_id < 0
       return false if !@fki_rejectedoffertopurchase_id.nil? && @fki_rejectedoffertopurchase_id > 65535
@@ -1823,21 +1838,36 @@ module EzmaxApi
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] fki_inscriptionchecklist_id Value to be assigned
-    def fki_inscriptionchecklist_id=(fki_inscriptionchecklist_id)
-      if fki_inscriptionchecklist_id.nil?
-        fail ArgumentError, 'fki_inscriptionchecklist_id cannot be nil'
+    # @param [Object] fki_documenttypechecklist_id Value to be assigned
+    def fki_documenttypechecklist_id=(fki_documenttypechecklist_id)
+      if fki_documenttypechecklist_id.nil?
+        fail ArgumentError, 'fki_documenttypechecklist_id cannot be nil'
       end
 
-      if fki_inscriptionchecklist_id > 16777215
-        fail ArgumentError, 'invalid value for "fki_inscriptionchecklist_id", must be smaller than or equal to 16777215.'
+      if fki_documenttypechecklist_id > 16777215
+        fail ArgumentError, 'invalid value for "fki_documenttypechecklist_id", must be smaller than or equal to 16777215.'
       end
 
-      if fki_inscriptionchecklist_id < 0
-        fail ArgumentError, 'invalid value for "fki_inscriptionchecklist_id", must be greater than or equal to 0.'
+      if fki_documenttypechecklist_id < 0
+        fail ArgumentError, 'invalid value for "fki_documenttypechecklist_id", must be greater than or equal to 0.'
       end
 
-      @fki_inscriptionchecklist_id = fki_inscriptionchecklist_id
+      @fki_documenttypechecklist_id = fki_documenttypechecklist_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] s_documenttype_name_x Value to be assigned
+    def s_documenttype_name_x=(s_documenttype_name_x)
+      if s_documenttype_name_x.nil?
+        fail ArgumentError, 's_documenttype_name_x cannot be nil'
+      end
+
+      pattern = Regexp.new(/^.{0,55}$/)
+      if s_documenttype_name_x !~ pattern
+        fail ArgumentError, "invalid value for \"s_documenttype_name_x\", must conform to the pattern #{pattern}."
+      end
+
+      @s_documenttype_name_x = s_documenttype_name_x
     end
 
     # Custom attribute writer method with validation
@@ -2156,7 +2186,8 @@ module EzmaxApi
           fki_supplier_id == o.fki_supplier_id &&
           fki_tranqcontract_id == o.fki_tranqcontract_id &&
           fki_template_id == o.fki_template_id &&
-          fki_inscriptionchecklist_id == o.fki_inscriptionchecklist_id &&
+          fki_documenttypechecklist_id == o.fki_documenttypechecklist_id &&
+          s_documenttype_name_x == o.s_documenttype_name_x &&
           fki_folder_id == o.fki_folder_id &&
           fki_rejectedoffertopurchase_id == o.fki_rejectedoffertopurchase_id &&
           fki_disclosure_id == o.fki_disclosure_id &&
@@ -2188,7 +2219,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_attachment_id, fki_computer_id, fki_adjustment_id, fki_agent_id, fki_bankaccount_id, fki_broker_id, fki_commissionadvance_id, fki_communication_id, fki_customer_id, fki_customertemplate_id, fki_deposit_id, fki_deposittransitcheque_id, fki_electronicfundstransfer_id, fki_employee_id, fki_externalbroker_id, fki_ezcomadvanceserver_id, fki_ezcomcompany_id, fki_ezsigndocument_id, fki_ghacqcontract_id, fki_inscription_id, fki_inscriptiontemp_id, fki_inscriptionnotauthenticated_id, fki_invoice_id, fki_buyercontract_id, fki_franchisebroker_id, fki_franchiseagence_id, fki_franchiseoffice_id, fki_franchisefranchise_id, fki_franchisecomplaint_id, fki_lead_id, fki_marketingprogram_id, fki_marketingfollow_id, fki_notary_id, fki_officetaxreport_id, fki_otherincome_id, fki_paymentpreparation_id, fki_purchase_id, fki_salary_id, fki_supplier_id, fki_tranqcontract_id, fki_template_id, fki_inscriptionchecklist_id, fki_folder_id, fki_rejectedoffertopurchase_id, fki_disclosure_id, fki_reconciliation_id, fki_ezsigndocument_id_reference, e_attachment_documenttype, s_attachment_name, s_attachment_category, e_attachment_privacy, fki_user_id_specific, e_attachment_type, i_attachment_size, i_attachment_ed_mmoduleflag, s_attachment_md5, b_attachment_deleted, b_attachment_valid, e_attachment_verified, t_attachment_rejectioncomment, fki_user_id_owner, obj_audit].hash
+      [pki_attachment_id, fki_computer_id, fki_adjustment_id, fki_agent_id, fki_bankaccount_id, fki_broker_id, fki_commissionadvance_id, fki_communication_id, fki_customer_id, fki_customertemplate_id, fki_deposit_id, fki_deposittransitcheque_id, fki_electronicfundstransfer_id, fki_employee_id, fki_externalbroker_id, fki_ezcomadvanceserver_id, fki_ezcomcompany_id, fki_ezsigndocument_id, fki_ghacqcontract_id, fki_inscription_id, fki_inscriptiontemp_id, fki_inscriptionnotauthenticated_id, fki_invoice_id, fki_buyercontract_id, fki_franchisebroker_id, fki_franchiseagence_id, fki_franchiseoffice_id, fki_franchisefranchise_id, fki_franchisecomplaint_id, fki_lead_id, fki_marketingprogram_id, fki_marketingfollow_id, fki_notary_id, fki_officetaxreport_id, fki_otherincome_id, fki_paymentpreparation_id, fki_purchase_id, fki_salary_id, fki_supplier_id, fki_tranqcontract_id, fki_template_id, fki_documenttypechecklist_id, s_documenttype_name_x, fki_folder_id, fki_rejectedoffertopurchase_id, fki_disclosure_id, fki_reconciliation_id, fki_ezsigndocument_id_reference, e_attachment_documenttype, s_attachment_name, s_attachment_category, e_attachment_privacy, fki_user_id_specific, e_attachment_type, i_attachment_size, i_attachment_ed_mmoduleflag, s_attachment_md5, b_attachment_deleted, b_attachment_valid, e_attachment_verified, t_attachment_rejectioncomment, fki_user_id_owner, obj_audit].hash
     end
 
     # Builds the object from hash

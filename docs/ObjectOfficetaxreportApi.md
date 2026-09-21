@@ -6,6 +6,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**officetaxreport_batch_download_v1**](ObjectOfficetaxreportApi.md#officetaxreport_batch_download_v1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/batchDownload | Download multiples attachments from an Officetaxreport |
 | [**officetaxreport_get_attachments_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_attachments_v1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getAttachments | Retrieve Officetaxreport&#39;s attachments |
+| [**officetaxreport_get_communication_count_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_communication_count_v1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationCount | Retrieve Communication count |
+| [**officetaxreport_get_communication_list_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_communication_list_v1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationList | Retrieve Communication list |
+| [**officetaxreport_get_communicationrecipients_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_communicationrecipients_v1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**officetaxreport_get_communicationsenders_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_communicationsenders_v1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationsenders | Retrieve Communication senders |
+| [**officetaxreport_get_list_v1**](ObjectOfficetaxreportApi.md#officetaxreport_get_list_v1) | **GET** /1/object/officetaxreport/getList | Retrieve Officetaxreport list |
 | [**officetaxreport_import_into_edmv1**](ObjectOfficetaxreportApi.md#officetaxreport_import_into_edmv1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/importIntoEDM | Import attachments into the Officetaxreport |
 
 
@@ -147,6 +152,363 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## officetaxreport_get_communication_count_v1
+
+> <OfficetaxreportGetCommunicationCountV1Response> officetaxreport_get_communication_count_v1(pki_officetaxreport_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOfficetaxreportApi.new
+pki_officetaxreport_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.officetaxreport_get_communication_count_v1(pki_officetaxreport_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the officetaxreport_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OfficetaxreportGetCommunicationCountV1Response>, Integer, Hash)> officetaxreport_get_communication_count_v1_with_http_info(pki_officetaxreport_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.officetaxreport_get_communication_count_v1_with_http_info(pki_officetaxreport_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OfficetaxreportGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_officetaxreport_id** | **Integer** |  |  |
+
+### Return type
+
+[**OfficetaxreportGetCommunicationCountV1Response**](OfficetaxreportGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## officetaxreport_get_communication_list_v1
+
+> <OfficetaxreportGetCommunicationListV1Response> officetaxreport_get_communication_list_v1(pki_officetaxreport_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOfficetaxreportApi.new
+pki_officetaxreport_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.officetaxreport_get_communication_list_v1(pki_officetaxreport_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the officetaxreport_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OfficetaxreportGetCommunicationListV1Response>, Integer, Hash)> officetaxreport_get_communication_list_v1_with_http_info(pki_officetaxreport_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.officetaxreport_get_communication_list_v1_with_http_info(pki_officetaxreport_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OfficetaxreportGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_officetaxreport_id** | **Integer** |  |  |
+
+### Return type
+
+[**OfficetaxreportGetCommunicationListV1Response**](OfficetaxreportGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## officetaxreport_get_communicationrecipients_v1
+
+> <OfficetaxreportGetCommunicationrecipientsV1Response> officetaxreport_get_communicationrecipients_v1(pki_officetaxreport_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOfficetaxreportApi.new
+pki_officetaxreport_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.officetaxreport_get_communicationrecipients_v1(pki_officetaxreport_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the officetaxreport_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OfficetaxreportGetCommunicationrecipientsV1Response>, Integer, Hash)> officetaxreport_get_communicationrecipients_v1_with_http_info(pki_officetaxreport_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.officetaxreport_get_communicationrecipients_v1_with_http_info(pki_officetaxreport_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OfficetaxreportGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_officetaxreport_id** | **Integer** |  |  |
+
+### Return type
+
+[**OfficetaxreportGetCommunicationrecipientsV1Response**](OfficetaxreportGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## officetaxreport_get_communicationsenders_v1
+
+> <OfficetaxreportGetCommunicationsendersV1Response> officetaxreport_get_communicationsenders_v1(pki_officetaxreport_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOfficetaxreportApi.new
+pki_officetaxreport_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.officetaxreport_get_communicationsenders_v1(pki_officetaxreport_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the officetaxreport_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OfficetaxreportGetCommunicationsendersV1Response>, Integer, Hash)> officetaxreport_get_communicationsenders_v1_with_http_info(pki_officetaxreport_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.officetaxreport_get_communicationsenders_v1_with_http_info(pki_officetaxreport_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OfficetaxreportGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_officetaxreport_id** | **Integer** |  |  |
+
+### Return type
+
+[**OfficetaxreportGetCommunicationsendersV1Response**](OfficetaxreportGetCommunicationsendersV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## officetaxreport_get_list_v1
+
+> <OfficetaxreportGetListV1Response> officetaxreport_get_list_v1(opts)
+
+Retrieve Officetaxreport list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectOfficetaxreportApi.new
+opts = {
+  e_order_by: 'pkiOfficetaxreportID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Officetaxreport list
+  result = api_instance.officetaxreport_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_list_v1: #{e}"
+end
+```
+
+#### Using the officetaxreport_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OfficetaxreportGetListV1Response>, Integer, Hash)> officetaxreport_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Officetaxreport list
+  data, status_code, headers = api_instance.officetaxreport_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OfficetaxreportGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectOfficetaxreportApi->officetaxreport_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**OfficetaxreportGetListV1Response**](OfficetaxreportGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## officetaxreport_import_into_edmv1

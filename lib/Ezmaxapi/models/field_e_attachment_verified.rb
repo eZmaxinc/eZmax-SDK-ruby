@@ -18,9 +18,10 @@ module EzmaxApi
     NO = "No".freeze
     YES = "Yes".freeze
     REJECTED = "Rejected".freeze
+    PENDING = "Pending".freeze
 
     def self.all_vars
-      @all_vars ||= [NO, YES, REJECTED].freeze
+      @all_vars ||= [NO, YES, REJECTED, PENDING].freeze
     end
 
     # Builds the enum from string

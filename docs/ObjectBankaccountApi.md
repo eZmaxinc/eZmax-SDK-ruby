@@ -11,6 +11,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**bankaccount_get_communication_list_v1**](ObjectBankaccountApi.md#bankaccount_get_communication_list_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list |
 | [**bankaccount_get_communicationrecipients_v1**](ObjectBankaccountApi.md#bankaccount_get_communicationrecipients_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**bankaccount_get_communicationsenders_v1**](ObjectBankaccountApi.md#bankaccount_get_communicationsenders_v1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders |
+| [**bankaccount_get_list_v1**](ObjectBankaccountApi.md#bankaccount_get_list_v1) | **GET** /1/object/bankaccount/getList | Retrieve Bankaccount list |
 | [**bankaccount_import_into_edmv1**](ObjectBankaccountApi.md#bankaccount_import_into_edmv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount |
 
 
@@ -507,6 +508,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## bankaccount_get_list_v1
+
+> <BankaccountGetListV1Response> bankaccount_get_list_v1(opts)
+
+Retrieve Bankaccount list
+
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectBankaccountApi.new
+opts = {
+  e_order_by: 'pkiBankaccountID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Bankaccount list
+  result = api_instance.bankaccount_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_list_v1: #{e}"
+end
+```
+
+#### Using the bankaccount_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<BankaccountGetListV1Response>, Integer, Hash)> bankaccount_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Bankaccount list
+  data, status_code, headers = api_instance.bankaccount_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <BankaccountGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectBankaccountApi->bankaccount_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**BankaccountGetListV1Response**](BankaccountGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## bankaccount_import_into_edmv1

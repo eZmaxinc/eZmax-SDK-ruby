@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**deposittransitcheque_get_communication_list_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communication_list_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list |
 | [**deposittransitcheque_get_communicationrecipients_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationrecipients_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**deposittransitcheque_get_communicationsenders_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_communicationsenders_v1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders |
+| [**deposittransitcheque_get_list_v1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_get_list_v1) | **GET** /1/object/deposittransitcheque/getList | Retrieve Deposittransitcheque list |
 | [**deposittransitcheque_import_into_edmv1**](ObjectDeposittransitchequeApi.md#deposittransitcheque_import_into_edmv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque |
 
 
@@ -427,6 +428,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## deposittransitcheque_get_list_v1
+
+> <DeposittransitchequeGetListV1Response> deposittransitcheque_get_list_v1(opts)
+
+Retrieve Deposittransitcheque list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectDeposittransitchequeApi.new
+opts = {
+  e_order_by: 'pkiDeposittransitchequeID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Deposittransitcheque list
+  result = api_instance.deposittransitcheque_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_list_v1: #{e}"
+end
+```
+
+#### Using the deposittransitcheque_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DeposittransitchequeGetListV1Response>, Integer, Hash)> deposittransitcheque_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Deposittransitcheque list
+  data, status_code, headers = api_instance.deposittransitcheque_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DeposittransitchequeGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectDeposittransitchequeApi->deposittransitcheque_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**DeposittransitchequeGetListV1Response**](DeposittransitchequeGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## deposittransitcheque_import_into_edmv1
