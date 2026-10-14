@@ -479,6 +479,7 @@ api_instance = EzmaxApi::ObjectUserApi.new
 s_selector = 'AgentBrokerAssistant' # String | The type of Users to return
 opts = {
   e_filter_active: 'All', # String | Specify which results we want to display.
+  fki_attachment_id: 'fki_attachment_id_example', # String | Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser.
   s_query: 's_query_example', # String | Allow to filter the returned results
   accept_language: EzmaxApi::HeaderAcceptLanguage:: # HeaderAcceptLanguage | 
 }
@@ -516,6 +517,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **s_selector** | **String** | The type of Users to return |  |
 | **e_filter_active** | **String** | Specify which results we want to display. | [optional][default to &#39;Active&#39;] |
+| **fki_attachment_id** | **String** | Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. | [optional] |
 | **s_query** | **String** | Allow to filter the returned results | [optional] |
 | **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
 

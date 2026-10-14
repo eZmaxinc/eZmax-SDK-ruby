@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**purchase_batch_download_v1**](ObjectPurchaseApi.md#purchase_batch_download_v1) | **POST** /1/object/purchase/{pkiPurchaseID}/batchDownload | Download multiples attachments from a Purchase |
 | [**purchase_get_attachments_v1**](ObjectPurchaseApi.md#purchase_get_attachments_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getAttachments | Retrieve Purchase&#39;s attachments |
+| [**purchase_get_communication_count_v1**](ObjectPurchaseApi.md#purchase_get_communication_count_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationCount | Retrieve Communication count |
+| [**purchase_get_communication_list_v1**](ObjectPurchaseApi.md#purchase_get_communication_list_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationList | Retrieve Communication list |
+| [**purchase_get_communicationrecipients_v1**](ObjectPurchaseApi.md#purchase_get_communicationrecipients_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**purchase_get_communicationsenders_v1**](ObjectPurchaseApi.md#purchase_get_communicationsenders_v1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationsenders | Retrieve Communication senders |
 | [**purchase_get_list_v1**](ObjectPurchaseApi.md#purchase_get_list_v1) | **GET** /1/object/purchase/getList | Retrieve Purchase list |
 | [**purchase_import_into_edmv1**](ObjectPurchaseApi.md#purchase_import_into_edmv1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase |
 
@@ -139,6 +143,282 @@ end
 ### Return type
 
 [**PurchaseGetAttachmentsV1Response**](PurchaseGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## purchase_get_communication_count_v1
+
+> <PurchaseGetCommunicationCountV1Response> purchase_get_communication_count_v1(pki_purchase_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPurchaseApi.new
+pki_purchase_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.purchase_get_communication_count_v1(pki_purchase_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the purchase_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PurchaseGetCommunicationCountV1Response>, Integer, Hash)> purchase_get_communication_count_v1_with_http_info(pki_purchase_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.purchase_get_communication_count_v1_with_http_info(pki_purchase_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PurchaseGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_purchase_id** | **Integer** |  |  |
+
+### Return type
+
+[**PurchaseGetCommunicationCountV1Response**](PurchaseGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## purchase_get_communication_list_v1
+
+> <PurchaseGetCommunicationListV1Response> purchase_get_communication_list_v1(pki_purchase_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPurchaseApi.new
+pki_purchase_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.purchase_get_communication_list_v1(pki_purchase_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the purchase_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PurchaseGetCommunicationListV1Response>, Integer, Hash)> purchase_get_communication_list_v1_with_http_info(pki_purchase_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.purchase_get_communication_list_v1_with_http_info(pki_purchase_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PurchaseGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_purchase_id** | **Integer** |  |  |
+
+### Return type
+
+[**PurchaseGetCommunicationListV1Response**](PurchaseGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## purchase_get_communicationrecipients_v1
+
+> <PurchaseGetCommunicationrecipientsV1Response> purchase_get_communicationrecipients_v1(pki_purchase_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPurchaseApi.new
+pki_purchase_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.purchase_get_communicationrecipients_v1(pki_purchase_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the purchase_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PurchaseGetCommunicationrecipientsV1Response>, Integer, Hash)> purchase_get_communicationrecipients_v1_with_http_info(pki_purchase_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.purchase_get_communicationrecipients_v1_with_http_info(pki_purchase_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PurchaseGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_purchase_id** | **Integer** |  |  |
+
+### Return type
+
+[**PurchaseGetCommunicationrecipientsV1Response**](PurchaseGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## purchase_get_communicationsenders_v1
+
+> <PurchaseGetCommunicationsendersV1Response> purchase_get_communicationsenders_v1(pki_purchase_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPurchaseApi.new
+pki_purchase_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.purchase_get_communicationsenders_v1(pki_purchase_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the purchase_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PurchaseGetCommunicationsendersV1Response>, Integer, Hash)> purchase_get_communicationsenders_v1_with_http_info(pki_purchase_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.purchase_get_communicationsenders_v1_with_http_info(pki_purchase_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PurchaseGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPurchaseApi->purchase_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_purchase_id** | **Integer** |  |  |
+
+### Return type
+
+[**PurchaseGetCommunicationsendersV1Response**](PurchaseGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

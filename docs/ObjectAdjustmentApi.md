@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**adjustment_get_communication_list_v1**](ObjectAdjustmentApi.md#adjustment_get_communication_list_v1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list |
 | [**adjustment_get_communicationrecipients_v1**](ObjectAdjustmentApi.md#adjustment_get_communicationrecipients_v1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients |
 | [**adjustment_get_communicationsenders_v1**](ObjectAdjustmentApi.md#adjustment_get_communicationsenders_v1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders |
+| [**adjustment_get_list_v1**](ObjectAdjustmentApi.md#adjustment_get_list_v1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list |
 | [**adjustment_import_into_edmv1**](ObjectAdjustmentApi.md#adjustment_import_into_edmv1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment |
 
 
@@ -427,6 +428,87 @@ end
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## adjustment_get_list_v1
+
+> <AdjustmentGetListV1Response> adjustment_get_list_v1(opts)
+
+Retrieve Adjustment list
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAdjustmentApi.new
+opts = {
+  e_order_by: 'pkiAdjustmentID_ASC', # String | Specify how you want the results to be sorted
+  i_row_max: 56, # Integer | 
+  i_row_offset: 56, # Integer | 
+  accept_language: EzmaxApi::HeaderAcceptLanguage::, # HeaderAcceptLanguage | 
+  s_filter: 's_filter_example' # String | 
+}
+
+begin
+  # Retrieve Adjustment list
+  result = api_instance.adjustment_get_list_v1(opts)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAdjustmentApi->adjustment_get_list_v1: #{e}"
+end
+```
+
+#### Using the adjustment_get_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AdjustmentGetListV1Response>, Integer, Hash)> adjustment_get_list_v1_with_http_info(opts)
+
+```ruby
+begin
+  # Retrieve Adjustment list
+  data, status_code, headers = api_instance.adjustment_get_list_v1_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AdjustmentGetListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAdjustmentApi->adjustment_get_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **e_order_by** | **String** | Specify how you want the results to be sorted | [optional] |
+| **i_row_max** | **Integer** |  | [optional] |
+| **i_row_offset** | **Integer** |  | [optional][default to 0] |
+| **accept_language** | [**HeaderAcceptLanguage**](.md) |  | [optional] |
+| **s_filter** | **String** |  | [optional] |
+
+### Return type
+
+[**AdjustmentGetListV1Response**](AdjustmentGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ## adjustment_import_into_edmv1

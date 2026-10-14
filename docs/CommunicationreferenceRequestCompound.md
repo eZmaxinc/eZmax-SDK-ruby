@@ -8,6 +8,7 @@
 | **fki_buyercontract_id** | **Integer** | The unique ID of the Buyercontract | [optional] |
 | **fki_ezsignfolder_id** | **Integer** | The unique ID of the Ezsignfolder | [optional] |
 | **fki_inscription_id** | **Integer** | The unique ID of the Inscription. | [optional] |
+| **fki_inscriptionnotauthenticated_id** | **Integer** | The unique ID of the Inscriptionnotauthenticated. | [optional] |
 | **fki_inscriptiontemp_id** | **Integer** | The unique ID of the Inscriptiontemp | [optional] |
 | **fki_invoice_id** | **Integer** | The unique ID of the Invoice. | [optional] |
 | **fki_otherincome_id** | **Integer** | The unique ID of the Otherincome | [optional] |
@@ -24,6 +25,7 @@ instance = EzmaxApi::CommunicationreferenceRequestCompound.new(
   fki_buyercontract_id: 38,
   fki_ezsignfolder_id: 33,
   fki_inscription_id: 17,
+  fki_inscriptionnotauthenticated_id: 24,
   fki_inscriptiontemp_id: 2445,
   fki_invoice_id: 1,
   fki_otherincome_id: 142,

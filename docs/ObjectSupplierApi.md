@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**supplier_batch_download_v1**](ObjectSupplierApi.md#supplier_batch_download_v1) | **POST** /1/object/supplier/{pkiSupplierID}/batchDownload | Download multiples attachments from a Supplier |
 | [**supplier_get_attachments_v1**](ObjectSupplierApi.md#supplier_get_attachments_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getAttachments | Retrieve Supplier&#39;s attachments |
+| [**supplier_get_communication_count_v1**](ObjectSupplierApi.md#supplier_get_communication_count_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationCount | Retrieve Communication count |
+| [**supplier_get_communication_list_v1**](ObjectSupplierApi.md#supplier_get_communication_list_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationList | Retrieve Communication list |
+| [**supplier_get_communicationrecipients_v1**](ObjectSupplierApi.md#supplier_get_communicationrecipients_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**supplier_get_communicationsenders_v1**](ObjectSupplierApi.md#supplier_get_communicationsenders_v1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationsenders | Retrieve Communication senders |
 | [**supplier_get_list_v1**](ObjectSupplierApi.md#supplier_get_list_v1) | **GET** /1/object/supplier/getList | Retrieve Supplier list |
 | [**supplier_import_into_edmv1**](ObjectSupplierApi.md#supplier_import_into_edmv1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier |
 
@@ -139,6 +143,282 @@ end
 ### Return type
 
 [**SupplierGetAttachmentsV1Response**](SupplierGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## supplier_get_communication_count_v1
+
+> <SupplierGetCommunicationCountV1Response> supplier_get_communication_count_v1(pki_supplier_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.supplier_get_communication_count_v1(pki_supplier_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the supplier_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SupplierGetCommunicationCountV1Response>, Integer, Hash)> supplier_get_communication_count_v1_with_http_info(pki_supplier_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.supplier_get_communication_count_v1_with_http_info(pki_supplier_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SupplierGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+
+### Return type
+
+[**SupplierGetCommunicationCountV1Response**](SupplierGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## supplier_get_communication_list_v1
+
+> <SupplierGetCommunicationListV1Response> supplier_get_communication_list_v1(pki_supplier_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.supplier_get_communication_list_v1(pki_supplier_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the supplier_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SupplierGetCommunicationListV1Response>, Integer, Hash)> supplier_get_communication_list_v1_with_http_info(pki_supplier_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.supplier_get_communication_list_v1_with_http_info(pki_supplier_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SupplierGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+
+### Return type
+
+[**SupplierGetCommunicationListV1Response**](SupplierGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## supplier_get_communicationrecipients_v1
+
+> <SupplierGetCommunicationrecipientsV1Response> supplier_get_communicationrecipients_v1(pki_supplier_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.supplier_get_communicationrecipients_v1(pki_supplier_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the supplier_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SupplierGetCommunicationrecipientsV1Response>, Integer, Hash)> supplier_get_communicationrecipients_v1_with_http_info(pki_supplier_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.supplier_get_communicationrecipients_v1_with_http_info(pki_supplier_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SupplierGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+
+### Return type
+
+[**SupplierGetCommunicationrecipientsV1Response**](SupplierGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## supplier_get_communicationsenders_v1
+
+> <SupplierGetCommunicationsendersV1Response> supplier_get_communicationsenders_v1(pki_supplier_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSupplierApi.new
+pki_supplier_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.supplier_get_communicationsenders_v1(pki_supplier_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the supplier_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SupplierGetCommunicationsendersV1Response>, Integer, Hash)> supplier_get_communicationsenders_v1_with_http_info(pki_supplier_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.supplier_get_communicationsenders_v1_with_http_info(pki_supplier_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SupplierGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSupplierApi->supplier_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_supplier_id** | **Integer** |  |  |
+
+### Return type
+
+[**SupplierGetCommunicationsendersV1Response**](SupplierGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

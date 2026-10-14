@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**reconciliation_batch_download_v1**](ObjectReconciliationApi.md#reconciliation_batch_download_v1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/batchDownload | Download multiples attachments from a Reconciliation |
 | [**reconciliation_get_attachments_v1**](ObjectReconciliationApi.md#reconciliation_get_attachments_v1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getAttachments | Retrieve Reconciliation&#39;s attachments |
+| [**reconciliation_get_communication_count_v1**](ObjectReconciliationApi.md#reconciliation_get_communication_count_v1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationCount | Retrieve Communication count |
+| [**reconciliation_get_communication_list_v1**](ObjectReconciliationApi.md#reconciliation_get_communication_list_v1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationList | Retrieve Communication list |
+| [**reconciliation_get_communicationrecipients_v1**](ObjectReconciliationApi.md#reconciliation_get_communicationrecipients_v1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**reconciliation_get_communicationsenders_v1**](ObjectReconciliationApi.md#reconciliation_get_communicationsenders_v1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationsenders | Retrieve Communication senders |
 | [**reconciliation_import_into_edmv1**](ObjectReconciliationApi.md#reconciliation_import_into_edmv1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/importIntoEDM | Import attachments into the Reconciliation |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**ReconciliationGetAttachmentsV1Response**](ReconciliationGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## reconciliation_get_communication_count_v1
+
+> <ReconciliationGetCommunicationCountV1Response> reconciliation_get_communication_count_v1(pki_reconciliation_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectReconciliationApi.new
+pki_reconciliation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.reconciliation_get_communication_count_v1(pki_reconciliation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the reconciliation_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ReconciliationGetCommunicationCountV1Response>, Integer, Hash)> reconciliation_get_communication_count_v1_with_http_info(pki_reconciliation_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.reconciliation_get_communication_count_v1_with_http_info(pki_reconciliation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ReconciliationGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_reconciliation_id** | **Integer** |  |  |
+
+### Return type
+
+[**ReconciliationGetCommunicationCountV1Response**](ReconciliationGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## reconciliation_get_communication_list_v1
+
+> <ReconciliationGetCommunicationListV1Response> reconciliation_get_communication_list_v1(pki_reconciliation_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectReconciliationApi.new
+pki_reconciliation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.reconciliation_get_communication_list_v1(pki_reconciliation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the reconciliation_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ReconciliationGetCommunicationListV1Response>, Integer, Hash)> reconciliation_get_communication_list_v1_with_http_info(pki_reconciliation_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.reconciliation_get_communication_list_v1_with_http_info(pki_reconciliation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ReconciliationGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_reconciliation_id** | **Integer** |  |  |
+
+### Return type
+
+[**ReconciliationGetCommunicationListV1Response**](ReconciliationGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## reconciliation_get_communicationrecipients_v1
+
+> <ReconciliationGetCommunicationrecipientsV1Response> reconciliation_get_communicationrecipients_v1(pki_reconciliation_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectReconciliationApi.new
+pki_reconciliation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.reconciliation_get_communicationrecipients_v1(pki_reconciliation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the reconciliation_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ReconciliationGetCommunicationrecipientsV1Response>, Integer, Hash)> reconciliation_get_communicationrecipients_v1_with_http_info(pki_reconciliation_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.reconciliation_get_communicationrecipients_v1_with_http_info(pki_reconciliation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ReconciliationGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_reconciliation_id** | **Integer** |  |  |
+
+### Return type
+
+[**ReconciliationGetCommunicationrecipientsV1Response**](ReconciliationGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## reconciliation_get_communicationsenders_v1
+
+> <ReconciliationGetCommunicationsendersV1Response> reconciliation_get_communicationsenders_v1(pki_reconciliation_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectReconciliationApi.new
+pki_reconciliation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.reconciliation_get_communicationsenders_v1(pki_reconciliation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the reconciliation_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ReconciliationGetCommunicationsendersV1Response>, Integer, Hash)> reconciliation_get_communicationsenders_v1_with_http_info(pki_reconciliation_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.reconciliation_get_communicationsenders_v1_with_http_info(pki_reconciliation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ReconciliationGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectReconciliationApi->reconciliation_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_reconciliation_id** | **Integer** |  |  |
+
+### Return type
+
+[**ReconciliationGetCommunicationsendersV1Response**](ReconciliationGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

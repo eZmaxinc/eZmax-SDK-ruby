@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **a_pki_attachment_id** | **Array&lt;Integer&gt;** |  |  |
+| **a_obj_attachment** | [**Array&lt;CustomAttachmentImportIntoEDMResponse&gt;**](CustomAttachmentImportIntoEDMResponse.md) |  |  |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'Ezmaxapi'
 
 instance = EzmaxApi::InvoiceImportIntoEDMV1ResponseMPayload.new(
-  a_pki_attachment_id: null
+  a_obj_attachment: null
 )
 ```
 

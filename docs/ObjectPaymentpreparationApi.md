@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**paymentpreparation_batch_download_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_batch_download_v1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/batchDownload | Download multiples attachments from an Paymentpreparation |
 | [**paymentpreparation_get_attachments_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_get_attachments_v1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getAttachments | Retrieve Paymentpreparation&#39;s attachments |
+| [**paymentpreparation_get_communication_count_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_get_communication_count_v1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationCount | Retrieve Communication count |
+| [**paymentpreparation_get_communication_list_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_get_communication_list_v1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationList | Retrieve Communication list |
+| [**paymentpreparation_get_communicationrecipients_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_get_communicationrecipients_v1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**paymentpreparation_get_communicationsenders_v1**](ObjectPaymentpreparationApi.md#paymentpreparation_get_communicationsenders_v1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationsenders | Retrieve Communication senders |
 | [**paymentpreparation_import_into_edmv1**](ObjectPaymentpreparationApi.md#paymentpreparation_import_into_edmv1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/importIntoEDM | Import attachments into the Paymentpreparation |
 
 
@@ -138,6 +142,282 @@ end
 ### Return type
 
 [**PaymentpreparationGetAttachmentsV1Response**](PaymentpreparationGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## paymentpreparation_get_communication_count_v1
+
+> <PaymentpreparationGetCommunicationCountV1Response> paymentpreparation_get_communication_count_v1(pki_paymentpreparation_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPaymentpreparationApi.new
+pki_paymentpreparation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.paymentpreparation_get_communication_count_v1(pki_paymentpreparation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the paymentpreparation_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PaymentpreparationGetCommunicationCountV1Response>, Integer, Hash)> paymentpreparation_get_communication_count_v1_with_http_info(pki_paymentpreparation_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.paymentpreparation_get_communication_count_v1_with_http_info(pki_paymentpreparation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PaymentpreparationGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_paymentpreparation_id** | **Integer** |  |  |
+
+### Return type
+
+[**PaymentpreparationGetCommunicationCountV1Response**](PaymentpreparationGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## paymentpreparation_get_communication_list_v1
+
+> <PaymentpreparationGetCommunicationListV1Response> paymentpreparation_get_communication_list_v1(pki_paymentpreparation_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPaymentpreparationApi.new
+pki_paymentpreparation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.paymentpreparation_get_communication_list_v1(pki_paymentpreparation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the paymentpreparation_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PaymentpreparationGetCommunicationListV1Response>, Integer, Hash)> paymentpreparation_get_communication_list_v1_with_http_info(pki_paymentpreparation_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.paymentpreparation_get_communication_list_v1_with_http_info(pki_paymentpreparation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PaymentpreparationGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_paymentpreparation_id** | **Integer** |  |  |
+
+### Return type
+
+[**PaymentpreparationGetCommunicationListV1Response**](PaymentpreparationGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## paymentpreparation_get_communicationrecipients_v1
+
+> <PaymentpreparationGetCommunicationrecipientsV1Response> paymentpreparation_get_communicationrecipients_v1(pki_paymentpreparation_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPaymentpreparationApi.new
+pki_paymentpreparation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.paymentpreparation_get_communicationrecipients_v1(pki_paymentpreparation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the paymentpreparation_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PaymentpreparationGetCommunicationrecipientsV1Response>, Integer, Hash)> paymentpreparation_get_communicationrecipients_v1_with_http_info(pki_paymentpreparation_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.paymentpreparation_get_communicationrecipients_v1_with_http_info(pki_paymentpreparation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PaymentpreparationGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_paymentpreparation_id** | **Integer** |  |  |
+
+### Return type
+
+[**PaymentpreparationGetCommunicationrecipientsV1Response**](PaymentpreparationGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## paymentpreparation_get_communicationsenders_v1
+
+> <PaymentpreparationGetCommunicationsendersV1Response> paymentpreparation_get_communicationsenders_v1(pki_paymentpreparation_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectPaymentpreparationApi.new
+pki_paymentpreparation_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.paymentpreparation_get_communicationsenders_v1(pki_paymentpreparation_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the paymentpreparation_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PaymentpreparationGetCommunicationsendersV1Response>, Integer, Hash)> paymentpreparation_get_communicationsenders_v1_with_http_info(pki_paymentpreparation_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.paymentpreparation_get_communicationsenders_v1_with_http_info(pki_paymentpreparation_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PaymentpreparationGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectPaymentpreparationApi->paymentpreparation_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_paymentpreparation_id** | **Integer** |  |  |
+
+### Return type
+
+[**PaymentpreparationGetCommunicationsendersV1Response**](PaymentpreparationGetCommunicationsendersV1Response.md)
 
 ### Authorization
 

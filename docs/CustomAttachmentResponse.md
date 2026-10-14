@@ -57,6 +57,7 @@
 | **s_attachment_category** | **String** | The attachment category |  |
 | **e_attachment_privacy** | [**FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  |  |
 | **fki_user_id_specific** | **Integer** | The unique ID of the User | [optional] |
+| **obj_user_specific** | [**CustomUserNameResponse**](CustomUserNameResponse.md) |  | [optional] |
 | **e_attachment_type** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  |  |
 | **i_attachment_size** | **Integer** | The size of the Attachment |  |
 | **i_attachment_ed_mmoduleflag** | **Integer** | The edmmoduleflag of the Attachment | [optional] |
@@ -131,6 +132,7 @@ instance = EzmaxApi::CustomAttachmentResponse.new(
   s_attachment_category: Inscription,
   e_attachment_privacy: null,
   fki_user_id_specific: 70,
+  obj_user_specific: null,
   e_attachment_type: null,
   i_attachment_size: 277465200,
   i_attachment_ed_mmoduleflag: 65,

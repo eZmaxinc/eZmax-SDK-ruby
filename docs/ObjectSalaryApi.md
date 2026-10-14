@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | ------ | ------------ | ----------- |
 | [**salary_batch_download_v1**](ObjectSalaryApi.md#salary_batch_download_v1) | **POST** /1/object/salary/{pkiSalaryID}/batchDownload | Download multiples attachments from a Reconciliation |
 | [**salary_get_attachments_v1**](ObjectSalaryApi.md#salary_get_attachments_v1) | **GET** /1/object/salary/{pkiSalaryID}/getAttachments | Retrieve Salary&#39;s attachments |
+| [**salary_get_communication_count_v1**](ObjectSalaryApi.md#salary_get_communication_count_v1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationCount | Retrieve Communication count |
+| [**salary_get_communication_list_v1**](ObjectSalaryApi.md#salary_get_communication_list_v1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationList | Retrieve Communication list |
+| [**salary_get_communicationrecipients_v1**](ObjectSalaryApi.md#salary_get_communicationrecipients_v1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationrecipients | Retrieve Communication recipients |
+| [**salary_get_communicationsenders_v1**](ObjectSalaryApi.md#salary_get_communicationsenders_v1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationsenders | Retrieve Communication senders |
 | [**salary_get_list_v1**](ObjectSalaryApi.md#salary_get_list_v1) | **GET** /1/object/salary/getList | Retrieve Salary list |
 | [**salary_import_into_edmv1**](ObjectSalaryApi.md#salary_import_into_edmv1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary |
 
@@ -139,6 +143,282 @@ end
 ### Return type
 
 [**SalaryGetAttachmentsV1Response**](SalaryGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## salary_get_communication_count_v1
+
+> <SalaryGetCommunicationCountV1Response> salary_get_communication_count_v1(pki_salary_id)
+
+Retrieve Communication count
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSalaryApi.new
+pki_salary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication count
+  result = api_instance.salary_get_communication_count_v1(pki_salary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communication_count_v1: #{e}"
+end
+```
+
+#### Using the salary_get_communication_count_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SalaryGetCommunicationCountV1Response>, Integer, Hash)> salary_get_communication_count_v1_with_http_info(pki_salary_id)
+
+```ruby
+begin
+  # Retrieve Communication count
+  data, status_code, headers = api_instance.salary_get_communication_count_v1_with_http_info(pki_salary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SalaryGetCommunicationCountV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communication_count_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_salary_id** | **Integer** |  |  |
+
+### Return type
+
+[**SalaryGetCommunicationCountV1Response**](SalaryGetCommunicationCountV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## salary_get_communication_list_v1
+
+> <SalaryGetCommunicationListV1Response> salary_get_communication_list_v1(pki_salary_id)
+
+Retrieve Communication list
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSalaryApi.new
+pki_salary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication list
+  result = api_instance.salary_get_communication_list_v1(pki_salary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communication_list_v1: #{e}"
+end
+```
+
+#### Using the salary_get_communication_list_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SalaryGetCommunicationListV1Response>, Integer, Hash)> salary_get_communication_list_v1_with_http_info(pki_salary_id)
+
+```ruby
+begin
+  # Retrieve Communication list
+  data, status_code, headers = api_instance.salary_get_communication_list_v1_with_http_info(pki_salary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SalaryGetCommunicationListV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communication_list_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_salary_id** | **Integer** |  |  |
+
+### Return type
+
+[**SalaryGetCommunicationListV1Response**](SalaryGetCommunicationListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## salary_get_communicationrecipients_v1
+
+> <SalaryGetCommunicationrecipientsV1Response> salary_get_communicationrecipients_v1(pki_salary_id)
+
+Retrieve Communication recipients
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSalaryApi.new
+pki_salary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication recipients
+  result = api_instance.salary_get_communicationrecipients_v1(pki_salary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communicationrecipients_v1: #{e}"
+end
+```
+
+#### Using the salary_get_communicationrecipients_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SalaryGetCommunicationrecipientsV1Response>, Integer, Hash)> salary_get_communicationrecipients_v1_with_http_info(pki_salary_id)
+
+```ruby
+begin
+  # Retrieve Communication recipients
+  data, status_code, headers = api_instance.salary_get_communicationrecipients_v1_with_http_info(pki_salary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SalaryGetCommunicationrecipientsV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communicationrecipients_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_salary_id** | **Integer** |  |  |
+
+### Return type
+
+[**SalaryGetCommunicationrecipientsV1Response**](SalaryGetCommunicationrecipientsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## salary_get_communicationsenders_v1
+
+> <SalaryGetCommunicationsendersV1Response> salary_get_communicationsenders_v1(pki_salary_id)
+
+Retrieve Communication senders
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectSalaryApi.new
+pki_salary_id = 56 # Integer | 
+
+begin
+  # Retrieve Communication senders
+  result = api_instance.salary_get_communicationsenders_v1(pki_salary_id)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communicationsenders_v1: #{e}"
+end
+```
+
+#### Using the salary_get_communicationsenders_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SalaryGetCommunicationsendersV1Response>, Integer, Hash)> salary_get_communicationsenders_v1_with_http_info(pki_salary_id)
+
+```ruby
+begin
+  # Retrieve Communication senders
+  data, status_code, headers = api_instance.salary_get_communicationsenders_v1_with_http_info(pki_salary_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SalaryGetCommunicationsendersV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectSalaryApi->salary_get_communicationsenders_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_salary_id** | **Integer** |  |  |
+
+### Return type
+
+[**SalaryGetCommunicationsendersV1Response**](SalaryGetCommunicationsendersV1Response.md)
 
 ### Authorization
 
