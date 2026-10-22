@@ -254,6 +254,17 @@ Class | Method | HTTP request | Description
 *EzmaxApi::ObjectDiscussionmessageApi* | [**discussionmessage_create_object_v1**](docs/ObjectDiscussionmessageApi.md#discussionmessage_create_object_v1) | **POST** /1/object/discussionmessage | Create a new Discussionmessage
 *EzmaxApi::ObjectDiscussionmessageApi* | [**discussionmessage_delete_object_v1**](docs/ObjectDiscussionmessageApi.md#discussionmessage_delete_object_v1) | **DELETE** /1/object/discussionmessage/{pkiDiscussionmessageID} | Delete an existing Discussionmessage
 *EzmaxApi::ObjectDiscussionmessageApi* | [**discussionmessage_patch_object_v1**](docs/ObjectDiscussionmessageApi.md#discussionmessage_patch_object_v1) | **PATCH** /1/object/discussionmessage/{pkiDiscussionmessageID} | Patch an existing Discussionmessage
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_create_object_v1**](docs/ObjectDocumenttypeApi.md#documenttype_create_object_v1) | **POST** /1/object/documenttype | Create a new Documenttype
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_delete_object_v1**](docs/ObjectDocumenttypeApi.md#documenttype_delete_object_v1) | **DELETE** /1/object/documenttype/{pkiDocumenttypeID} | Delete an existing Documenttype
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_edit_object_v1**](docs/ObjectDocumenttypeApi.md#documenttype_edit_object_v1) | **PUT** /1/object/documenttype/{pkiDocumenttypeID} | Edit an existing Documenttype
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_get_autocomplete_v2**](docs/ObjectDocumenttypeApi.md#documenttype_get_autocomplete_v2) | **GET** /2/object/documenttype/getAutocomplete/{sSelector} | Retrieve Documenttypes and IDs
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_get_list_v1**](docs/ObjectDocumenttypeApi.md#documenttype_get_list_v1) | **GET** /1/object/documenttype/getList | Retrieve Documenttype list
+*EzmaxApi::ObjectDocumenttypeApi* | [**documenttype_get_object_v2**](docs/ObjectDocumenttypeApi.md#documenttype_get_object_v2) | **GET** /2/object/documenttype/{pkiDocumenttypeID} | Retrieve an existing Documenttype
+*EzmaxApi::ObjectDocumenttypechecklistApi* | [**documenttypechecklist_create_object_v1**](docs/ObjectDocumenttypechecklistApi.md#documenttypechecklist_create_object_v1) | **POST** /1/object/documenttypechecklist | Create a new Documenttypechecklist
+*EzmaxApi::ObjectDocumenttypechecklistApi* | [**documenttypechecklist_delete_object_v1**](docs/ObjectDocumenttypechecklistApi.md#documenttypechecklist_delete_object_v1) | **DELETE** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Delete an existing Documenttypechecklist
+*EzmaxApi::ObjectDocumenttypechecklistApi* | [**documenttypechecklist_edit_object_v1**](docs/ObjectDocumenttypechecklistApi.md#documenttypechecklist_edit_object_v1) | **PUT** /1/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Edit an existing Documenttypechecklist
+*EzmaxApi::ObjectDocumenttypechecklistApi* | [**documenttypechecklist_get_list_v1**](docs/ObjectDocumenttypechecklistApi.md#documenttypechecklist_get_list_v1) | **GET** /1/object/documenttypechecklist/getList | Retrieve Documenttypechecklist list
+*EzmaxApi::ObjectDocumenttypechecklistApi* | [**documenttypechecklist_get_object_v2**](docs/ObjectDocumenttypechecklistApi.md#documenttypechecklist_get_object_v2) | **GET** /2/object/documenttypechecklist/{pkiDocumenttypechecklistID} | Retrieve an existing Documenttypechecklist
 *EzmaxApi::ObjectDomainApi* | [**domain_create_object_v1**](docs/ObjectDomainApi.md#domain_create_object_v1) | **POST** /1/object/domain | Create a new Domain
 *EzmaxApi::ObjectDomainApi* | [**domain_delete_object_v1**](docs/ObjectDomainApi.md#domain_delete_object_v1) | **DELETE** /1/object/domain/{pkiDomainID} | Delete an existing Domain
 *EzmaxApi::ObjectDomainApi* | [**domain_get_autocomplete_v2**](docs/ObjectDomainApi.md#domain_get_autocomplete_v2) | **GET** /2/object/domain/getAutocomplete/{sSelector} | Retrieve Domain and IDs
@@ -1416,6 +1427,39 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::DiscussionmessageRequestPatch](docs/DiscussionmessageRequestPatch.md)
  - [EzmaxApi::DiscussionmessageResponse](docs/DiscussionmessageResponse.md)
  - [EzmaxApi::DiscussionmessageResponseCompound](docs/DiscussionmessageResponseCompound.md)
+ - [EzmaxApi::DocumenttypeAutocompleteElementResponse](docs/DocumenttypeAutocompleteElementResponse.md)
+ - [EzmaxApi::DocumenttypeCreateObjectV1Request](docs/DocumenttypeCreateObjectV1Request.md)
+ - [EzmaxApi::DocumenttypeCreateObjectV1Response](docs/DocumenttypeCreateObjectV1Response.md)
+ - [EzmaxApi::DocumenttypeCreateObjectV1ResponseMPayload](docs/DocumenttypeCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypeDeleteObjectV1Response](docs/DocumenttypeDeleteObjectV1Response.md)
+ - [EzmaxApi::DocumenttypeEditObjectV1Request](docs/DocumenttypeEditObjectV1Request.md)
+ - [EzmaxApi::DocumenttypeEditObjectV1Response](docs/DocumenttypeEditObjectV1Response.md)
+ - [EzmaxApi::DocumenttypeGetAutocompleteV2Response](docs/DocumenttypeGetAutocompleteV2Response.md)
+ - [EzmaxApi::DocumenttypeGetAutocompleteV2ResponseMPayload](docs/DocumenttypeGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypeGetListV1Response](docs/DocumenttypeGetListV1Response.md)
+ - [EzmaxApi::DocumenttypeGetListV1ResponseMPayload](docs/DocumenttypeGetListV1ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypeGetObjectV2Response](docs/DocumenttypeGetObjectV2Response.md)
+ - [EzmaxApi::DocumenttypeGetObjectV2ResponseMPayload](docs/DocumenttypeGetObjectV2ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypeListElement](docs/DocumenttypeListElement.md)
+ - [EzmaxApi::DocumenttypeRequest](docs/DocumenttypeRequest.md)
+ - [EzmaxApi::DocumenttypeRequestCompound](docs/DocumenttypeRequestCompound.md)
+ - [EzmaxApi::DocumenttypeResponse](docs/DocumenttypeResponse.md)
+ - [EzmaxApi::DocumenttypeResponseCompound](docs/DocumenttypeResponseCompound.md)
+ - [EzmaxApi::DocumenttypechecklistCreateObjectV1Request](docs/DocumenttypechecklistCreateObjectV1Request.md)
+ - [EzmaxApi::DocumenttypechecklistCreateObjectV1Response](docs/DocumenttypechecklistCreateObjectV1Response.md)
+ - [EzmaxApi::DocumenttypechecklistCreateObjectV1ResponseMPayload](docs/DocumenttypechecklistCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypechecklistDeleteObjectV1Response](docs/DocumenttypechecklistDeleteObjectV1Response.md)
+ - [EzmaxApi::DocumenttypechecklistEditObjectV1Request](docs/DocumenttypechecklistEditObjectV1Request.md)
+ - [EzmaxApi::DocumenttypechecklistEditObjectV1Response](docs/DocumenttypechecklistEditObjectV1Response.md)
+ - [EzmaxApi::DocumenttypechecklistGetListV1Response](docs/DocumenttypechecklistGetListV1Response.md)
+ - [EzmaxApi::DocumenttypechecklistGetListV1ResponseMPayload](docs/DocumenttypechecklistGetListV1ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypechecklistGetObjectV2Response](docs/DocumenttypechecklistGetObjectV2Response.md)
+ - [EzmaxApi::DocumenttypechecklistGetObjectV2ResponseMPayload](docs/DocumenttypechecklistGetObjectV2ResponseMPayload.md)
+ - [EzmaxApi::DocumenttypechecklistListElement](docs/DocumenttypechecklistListElement.md)
+ - [EzmaxApi::DocumenttypechecklistRequest](docs/DocumenttypechecklistRequest.md)
+ - [EzmaxApi::DocumenttypechecklistRequestCompound](docs/DocumenttypechecklistRequestCompound.md)
+ - [EzmaxApi::DocumenttypechecklistResponse](docs/DocumenttypechecklistResponse.md)
+ - [EzmaxApi::DocumenttypechecklistResponseCompound](docs/DocumenttypechecklistResponseCompound.md)
  - [EzmaxApi::DomainAutocompleteElementResponse](docs/DomainAutocompleteElementResponse.md)
  - [EzmaxApi::DomainCreateObjectV1Request](docs/DomainCreateObjectV1Request.md)
  - [EzmaxApi::DomainCreateObjectV1Response](docs/DomainCreateObjectV1Response.md)
@@ -2418,6 +2462,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::FieldEDisclosureInteresttype](docs/FieldEDisclosureInteresttype.md)
  - [EzmaxApi::FieldEDiscussionRobot](docs/FieldEDiscussionRobot.md)
  - [EzmaxApi::FieldEDiscussionmessageStatus](docs/FieldEDiscussionmessageStatus.md)
+ - [EzmaxApi::FieldEDocumenttypeEzcom](docs/FieldEDocumenttypeEzcom.md)
+ - [EzmaxApi::FieldEDocumenttypePrivacydefault](docs/FieldEDocumenttypePrivacydefault.md)
+ - [EzmaxApi::FieldEDocumenttypeRepossession](docs/FieldEDocumenttypeRepossession.md)
+ - [EzmaxApi::FieldEDocumenttypeSalebyowner](docs/FieldEDocumenttypeSalebyowner.md)
+ - [EzmaxApi::FieldEDocumenttypeSaledisplaybyrole](docs/FieldEDocumenttypeSaledisplaybyrole.md)
+ - [EzmaxApi::FieldEDocumenttypeStatusdefault](docs/FieldEDocumenttypeStatusdefault.md)
+ - [EzmaxApi::FieldEDocumenttypeTransactiontype](docs/FieldEDocumenttypeTransactiontype.md)
+ - [EzmaxApi::FieldEDocumenttypechecklistStatus](docs/FieldEDocumenttypechecklistStatus.md)
  - [EzmaxApi::FieldEErrorCode](docs/FieldEErrorCode.md)
  - [EzmaxApi::FieldEEzdoctemplatedocumentPrivacylevel](docs/FieldEEzdoctemplatedocumentPrivacylevel.md)
  - [EzmaxApi::FieldEEzmaxinvoicingPaymenttype](docs/FieldEEzmaxinvoicingPaymenttype.md)
@@ -2712,6 +2764,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EzmaxApi::MultilingualBillingentityinternalDescription](docs/MultilingualBillingentityinternalDescription.md)
  - [EzmaxApi::MultilingualBrandingDescription](docs/MultilingualBrandingDescription.md)
+ - [EzmaxApi::MultilingualDocumenttypeName](docs/MultilingualDocumenttypeName.md)
  - [EzmaxApi::MultilingualEzdoctemplatedocumentName](docs/MultilingualEzdoctemplatedocumentName.md)
  - [EzmaxApi::MultilingualEzmaxcustomerCompany](docs/MultilingualEzmaxcustomerCompany.md)
  - [EzmaxApi::MultilingualEzmaxcustomerNote](docs/MultilingualEzmaxcustomerNote.md)
