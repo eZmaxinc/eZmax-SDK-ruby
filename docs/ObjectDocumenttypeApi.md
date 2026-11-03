@@ -5,7 +5,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**documenttype_create_object_v1**](ObjectDocumenttypeApi.md#documenttype_create_object_v1) | **POST** /1/object/documenttype | Create a new Documenttype |
-| [**documenttype_delete_object_v1**](ObjectDocumenttypeApi.md#documenttype_delete_object_v1) | **DELETE** /1/object/documenttype/{pkiDocumenttypeID} | Delete an existing Documenttype |
 | [**documenttype_edit_object_v1**](ObjectDocumenttypeApi.md#documenttype_edit_object_v1) | **PUT** /1/object/documenttype/{pkiDocumenttypeID} | Edit an existing Documenttype |
 | [**documenttype_get_autocomplete_v2**](ObjectDocumenttypeApi.md#documenttype_get_autocomplete_v2) | **GET** /2/object/documenttype/getAutocomplete/{sSelector} | Retrieve Documenttypes and IDs |
 | [**documenttype_get_list_v1**](ObjectDocumenttypeApi.md#documenttype_get_list_v1) | **GET** /1/object/documenttype/getList | Retrieve Documenttype list |
@@ -34,7 +33,7 @@ EzmaxApi.configure do |config|
 end
 
 api_instance = EzmaxApi::ObjectDocumenttypeApi.new
-documenttype_create_object_v1_request = EzmaxApi::DocumenttypeCreateObjectV1Request.new({a_obj_documenttype: [EzmaxApi::DocumenttypeRequestCompound.new({obj_documenttype_name: EzmaxApi::MultilingualDocumenttypeName.new, s_documenttype_defaultfilename: 'invoice.pdf', b_documenttype_showagent: true, b_documenttype_isactive: true, b_documenttype_isrequired: true, b_documenttype_sale: true, b_documenttype_rental: true, b_documenttype_reference: true, b_documenttype_mortgagereference: true, b_documenttype_evaluation: true, b_documenttype_consultation: true, b_documenttype_otherservices: true, b_documenttype_foreclosedsale: true, b_documenttype_commercialfunding: true, b_documenttype_canafe: true, e_documenttype_ezcom: EzmaxApi::FieldEDocumenttypeEzcom::PROMISE_TO_PURCHASE, e_documenttype_privacydefault: EzmaxApi::FieldEDocumenttypePrivacydefault::ADMINISTRATION, e_documenttype_statusdefault: EzmaxApi::FieldEDocumenttypeStatusdefault::NOT_REQUIRED, e_documenttype_salebyowner: EzmaxApi::FieldEDocumenttypeSalebyowner::ALL, e_documenttype_saledisplaybyrole: EzmaxApi::FieldEDocumenttypeSaledisplaybyrole::INSCRIPTOR_SELLER, e_documenttype_transactiontype: EzmaxApi::FieldEDocumenttypeTransactiontype::ALL, e_documenttype_repossession: EzmaxApi::FieldEDocumenttypeRepossession::ALL})]}) # DocumenttypeCreateObjectV1Request | 
+documenttype_create_object_v1_request = EzmaxApi::DocumenttypeCreateObjectV1Request.new({a_obj_documenttype: [EzmaxApi::DocumenttypeRequestCompound.new({obj_documenttype_name: EzmaxApi::MultilingualDocumenttypeName.new, e_documenttype_step: EzmaxApi::ComputedEDocumenttypeStep::AGENTBROKER, s_documenttype_defaultfilename: 'invoice.pdf', b_documenttype_showagent: true, b_documenttype_isactive: true, b_documenttype_isrequired: true, b_documenttype_sale: true, b_documenttype_rental: true, b_documenttype_reference: true, b_documenttype_mortgagereference: true, b_documenttype_evaluation: true, b_documenttype_consultation: true, b_documenttype_otherservices: true, b_documenttype_foreclosedsale: true, b_documenttype_commercialfunding: true, b_documenttype_canafe: true, e_documenttype_privacydefault: EzmaxApi::FieldEDocumenttypePrivacydefault::ADMINISTRATION, e_documenttype_statusdefault: EzmaxApi::FieldEDocumenttypeStatusdefault::NOT_REQUIRED, e_documenttype_salebyowner: EzmaxApi::FieldEDocumenttypeSalebyowner::ALL, e_documenttype_saledisplaybyrole: EzmaxApi::FieldEDocumenttypeSaledisplaybyrole::INSCRIPTOR_SELLER, e_documenttype_transactiontype: EzmaxApi::FieldEDocumenttypeTransactiontype::ALL, e_documenttype_repossession: EzmaxApi::FieldEDocumenttypeRepossession::ALL, a_fki_inscriptiontype_id: [51]})]}) # DocumenttypeCreateObjectV1Request | 
 
 begin
   # Create a new Documenttype
@@ -83,77 +82,6 @@ end
 - **Accept**: application/json
 
 
-## documenttype_delete_object_v1
-
-> <DocumenttypeDeleteObjectV1Response> documenttype_delete_object_v1(pki_documenttype_id)
-
-Delete an existing Documenttype
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectDocumenttypeApi.new
-pki_documenttype_id = 56 # Integer | The unique ID of the Documenttype
-
-begin
-  # Delete an existing Documenttype
-  result = api_instance.documenttype_delete_object_v1(pki_documenttype_id)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectDocumenttypeApi->documenttype_delete_object_v1: #{e}"
-end
-```
-
-#### Using the documenttype_delete_object_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DocumenttypeDeleteObjectV1Response>, Integer, Hash)> documenttype_delete_object_v1_with_http_info(pki_documenttype_id)
-
-```ruby
-begin
-  # Delete an existing Documenttype
-  data, status_code, headers = api_instance.documenttype_delete_object_v1_with_http_info(pki_documenttype_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DocumenttypeDeleteObjectV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectDocumenttypeApi->documenttype_delete_object_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_documenttype_id** | **Integer** | The unique ID of the Documenttype |  |
-
-### Return type
-
-[**DocumenttypeDeleteObjectV1Response**](DocumenttypeDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## documenttype_edit_object_v1
 
 > <DocumenttypeEditObjectV1Response> documenttype_edit_object_v1(pki_documenttype_id, documenttype_edit_object_v1_request)
@@ -177,7 +105,7 @@ end
 
 api_instance = EzmaxApi::ObjectDocumenttypeApi.new
 pki_documenttype_id = 56 # Integer | The unique ID of the Documenttype
-documenttype_edit_object_v1_request = EzmaxApi::DocumenttypeEditObjectV1Request.new({obj_documenttype: EzmaxApi::DocumenttypeRequestCompound.new({obj_documenttype_name: EzmaxApi::MultilingualDocumenttypeName.new, s_documenttype_defaultfilename: 'invoice.pdf', b_documenttype_showagent: true, b_documenttype_isactive: true, b_documenttype_isrequired: true, b_documenttype_sale: true, b_documenttype_rental: true, b_documenttype_reference: true, b_documenttype_mortgagereference: true, b_documenttype_evaluation: true, b_documenttype_consultation: true, b_documenttype_otherservices: true, b_documenttype_foreclosedsale: true, b_documenttype_commercialfunding: true, b_documenttype_canafe: true, e_documenttype_ezcom: EzmaxApi::FieldEDocumenttypeEzcom::PROMISE_TO_PURCHASE, e_documenttype_privacydefault: EzmaxApi::FieldEDocumenttypePrivacydefault::ADMINISTRATION, e_documenttype_statusdefault: EzmaxApi::FieldEDocumenttypeStatusdefault::NOT_REQUIRED, e_documenttype_salebyowner: EzmaxApi::FieldEDocumenttypeSalebyowner::ALL, e_documenttype_saledisplaybyrole: EzmaxApi::FieldEDocumenttypeSaledisplaybyrole::INSCRIPTOR_SELLER, e_documenttype_transactiontype: EzmaxApi::FieldEDocumenttypeTransactiontype::ALL, e_documenttype_repossession: EzmaxApi::FieldEDocumenttypeRepossession::ALL})}) # DocumenttypeEditObjectV1Request | 
+documenttype_edit_object_v1_request = EzmaxApi::DocumenttypeEditObjectV1Request.new({obj_documenttype: EzmaxApi::DocumenttypeRequestCompound.new({obj_documenttype_name: EzmaxApi::MultilingualDocumenttypeName.new, e_documenttype_step: EzmaxApi::ComputedEDocumenttypeStep::AGENTBROKER, s_documenttype_defaultfilename: 'invoice.pdf', b_documenttype_showagent: true, b_documenttype_isactive: true, b_documenttype_isrequired: true, b_documenttype_sale: true, b_documenttype_rental: true, b_documenttype_reference: true, b_documenttype_mortgagereference: true, b_documenttype_evaluation: true, b_documenttype_consultation: true, b_documenttype_otherservices: true, b_documenttype_foreclosedsale: true, b_documenttype_commercialfunding: true, b_documenttype_canafe: true, e_documenttype_privacydefault: EzmaxApi::FieldEDocumenttypePrivacydefault::ADMINISTRATION, e_documenttype_statusdefault: EzmaxApi::FieldEDocumenttypeStatusdefault::NOT_REQUIRED, e_documenttype_salebyowner: EzmaxApi::FieldEDocumenttypeSalebyowner::ALL, e_documenttype_saledisplaybyrole: EzmaxApi::FieldEDocumenttypeSaledisplaybyrole::INSCRIPTOR_SELLER, e_documenttype_transactiontype: EzmaxApi::FieldEDocumenttypeTransactiontype::ALL, e_documenttype_repossession: EzmaxApi::FieldEDocumenttypeRepossession::ALL, a_fki_inscriptiontype_id: [51]})}) # DocumenttypeEditObjectV1Request | 
 
 begin
   # Edit an existing Documenttype

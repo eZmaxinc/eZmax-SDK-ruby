@@ -15,6 +15,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | [**inscription_get_object_v2**](ObjectInscriptionApi.md#inscription_get_object_v2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription |
 | [**inscription_import_into_edmv1**](ObjectInscriptionApi.md#inscription_import_into_edmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription |
 | [**inscription_prepare_files_transfer_v1**](ObjectInscriptionApi.md#inscription_prepare_files_transfer_v1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM |
+| [**inscription_synchronization_documenttype_v1**](ObjectInscriptionApi.md#inscription_synchronization_documenttype_v1) | **POST** /1/object/inscription/{pkiInscriptionID}/synchronizationDocumenttype | Synchronization of the Documenttype in the Inscription |
 
 
 ## inscription_batch_download_v1
@@ -799,6 +800,79 @@ end
 ### Return type
 
 [**InscriptionPrepareFilesTransferV1Response**](InscriptionPrepareFilesTransferV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## inscription_synchronization_documenttype_v1
+
+> <InscriptionSynchronizationDocumenttypeV1Response> inscription_synchronization_documenttype_v1(pki_inscription_id, body)
+
+Synchronization of the Documenttype in the Inscription
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectInscriptionApi.new
+pki_inscription_id = 56 # Integer | 
+body = { ... } # Object | 
+
+begin
+  # Synchronization of the Documenttype in the Inscription
+  result = api_instance.inscription_synchronization_documenttype_v1(pki_inscription_id, body)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_synchronization_documenttype_v1: #{e}"
+end
+```
+
+#### Using the inscription_synchronization_documenttype_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InscriptionSynchronizationDocumenttypeV1Response>, Integer, Hash)> inscription_synchronization_documenttype_v1_with_http_info(pki_inscription_id, body)
+
+```ruby
+begin
+  # Synchronization of the Documenttype in the Inscription
+  data, status_code, headers = api_instance.inscription_synchronization_documenttype_v1_with_http_info(pki_inscription_id, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InscriptionSynchronizationDocumenttypeV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectInscriptionApi->inscription_synchronization_documenttype_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_inscription_id** | **Integer** |  |  |
+| **body** | **Object** |  |  |
+
+### Return type
+
+[**InscriptionSynchronizationDocumenttypeV1Response**](InscriptionSynchronizationDocumenttypeV1Response.md)
 
 ### Authorization
 

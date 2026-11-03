@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_inscriptionnotauthenticated_id** | **Integer** | The unique ID of the Inscriptionnotauthenticated. |  |
 | **fki_inscription_id** | **Integer** | The unique ID of the Inscription. |  |
+| **obj_inscription** | [**CustomInscription**](CustomInscription.md) |  |  |
 | **fki_department_id** | **Integer** | The unique ID of the Department | [optional] |
 | **s_department_name_x** | **String** | The Name of the Department in the language of the requester | [optional] |
 | **fki_financialinstitution_id** | **Integer** | The unique ID of the Financialinstitution | [optional] |
@@ -52,6 +53,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::InscriptionnotauthenticatedResponse.new(
   pki_inscriptionnotauthenticated_id: 24,
   fki_inscription_id: 17,
+  obj_inscription: null,
   fki_department_id: 21,
   s_department_name_x: Head Office,
   fki_financialinstitution_id: 211,

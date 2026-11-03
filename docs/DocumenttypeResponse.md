@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **pki_documenttype_id** | **Integer** | The unique ID of the Documenttype |  |
 | **obj_documenttype_name** | [**MultilingualDocumenttypeName**](MultilingualDocumenttypeName.md) |  |  |
+| **e_documenttype_step** | [**ComputedEDocumenttypeStep**](ComputedEDocumenttypeStep.md) |  |  |
 | **s_documenttype_defaultfilename** | **String** | The defaultfilename of the Documenttype |  |
 | **b_documenttype_showagent** | **Boolean** | Whether if it&#39;s an showagent |  |
 | **b_documenttype_isactive** | **Boolean** | Whether the documenttype is active or not |  |
@@ -27,6 +28,7 @@
 | **e_documenttype_saledisplaybyrole** | [**FieldEDocumenttypeSaledisplaybyrole**](FieldEDocumenttypeSaledisplaybyrole.md) |  | [optional] |
 | **e_documenttype_transactiontype** | [**FieldEDocumenttypeTransactiontype**](FieldEDocumenttypeTransactiontype.md) |  | [optional] |
 | **e_documenttype_repossession** | [**FieldEDocumenttypeRepossession**](FieldEDocumenttypeRepossession.md) |  | [optional] |
+| **a_fki_inscriptiontype_id** | **Array&lt;Integer&gt;** |  |  |
 
 ## Example
 
@@ -36,6 +38,7 @@ require 'Ezmaxapi'
 instance = EzmaxApi::DocumenttypeResponse.new(
   pki_documenttype_id: 172,
   obj_documenttype_name: null,
+  e_documenttype_step: null,
   s_documenttype_defaultfilename: invoice.pdf,
   b_documenttype_showagent: true,
   b_documenttype_isactive: true,
@@ -56,7 +59,8 @@ instance = EzmaxApi::DocumenttypeResponse.new(
   e_documenttype_salebyowner: null,
   e_documenttype_saledisplaybyrole: null,
   e_documenttype_transactiontype: null,
-  e_documenttype_repossession: null
+  e_documenttype_repossession: null,
+  a_fki_inscriptiontype_id: null
 )
 ```
 

@@ -5,12 +5,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**attachment_delete_v1**](ObjectAttachmentApi.md#attachment_delete_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/delete | Delete an existing attachment |
-| [**attachment_document_type_v1**](ObjectAttachmentApi.md#attachment_document_type_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/documentType | Change attachment document type |
 | [**attachment_download_v1**](ObjectAttachmentApi.md#attachment_download_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content |
 | [**attachment_get_attachmentlogs_v1**](ObjectAttachmentApi.md#attachment_get_attachmentlogs_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs |
-| [**attachment_privacy_v1**](ObjectAttachmentApi.md#attachment_privacy_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/privacy | Change the attachment privacy |
 | [**attachment_rename_v1**](ObjectAttachmentApi.md#attachment_rename_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an attachment |
 | [**attachment_restore_v1**](ObjectAttachmentApi.md#attachment_restore_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/restore | Restore a deleted attachment |
+| [**attachment_set_document_type_v1**](ObjectAttachmentApi.md#attachment_set_document_type_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/setDocumentType | Change attachment document type |
+| [**attachment_set_privacy_v1**](ObjectAttachmentApi.md#attachment_set_privacy_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/setPrivacy | Change the attachment privacy |
 | [**attachment_validate_v1**](ObjectAttachmentApi.md#attachment_validate_v1) | **POST** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment |
 
 
@@ -76,79 +76,6 @@ end
 ### Return type
 
 [**AttachmentDeleteV1Response**](AttachmentDeleteV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## attachment_document_type_v1
-
-> <AttachmentDocumentTypeV1Response> attachment_document_type_v1(pki_attachment_id, attachment_document_type_v1_request)
-
-Change attachment document type
-
-The endpoint allows to change the checklist document type for an attachment.
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectAttachmentApi.new
-pki_attachment_id = 56 # Integer | 
-attachment_document_type_v1_request = EzmaxApi::AttachmentDocumentTypeV1Request.new({fki_documenttypechecklist_id: 191}) # AttachmentDocumentTypeV1Request | 
-
-begin
-  # Change attachment document type
-  result = api_instance.attachment_document_type_v1(pki_attachment_id, attachment_document_type_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectAttachmentApi->attachment_document_type_v1: #{e}"
-end
-```
-
-#### Using the attachment_document_type_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<AttachmentDocumentTypeV1Response>, Integer, Hash)> attachment_document_type_v1_with_http_info(pki_attachment_id, attachment_document_type_v1_request)
-
-```ruby
-begin
-  # Change attachment document type
-  data, status_code, headers = api_instance.attachment_document_type_v1_with_http_info(pki_attachment_id, attachment_document_type_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <AttachmentDocumentTypeV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectAttachmentApi->attachment_document_type_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_attachment_id** | **Integer** |  |  |
-| **attachment_document_type_v1_request** | [**AttachmentDocumentTypeV1Request**](AttachmentDocumentTypeV1Request.md) |  |  |
-
-### Return type
-
-[**AttachmentDocumentTypeV1Response**](AttachmentDocumentTypeV1Response.md)
 
 ### Authorization
 
@@ -306,79 +233,6 @@ end
 - **Accept**: application/json
 
 
-## attachment_privacy_v1
-
-> <AttachmentPrivacyV1Response> attachment_privacy_v1(pki_attachment_id, attachment_privacy_v1_request)
-
-Change the attachment privacy
-
-The endpoint allows to change an attachment's access privacy.
-
-### Examples
-
-```ruby
-require 'time'
-require 'Ezmaxapi'
-# setup authorization
-EzmaxApi.configure do |config|
-  # Configure API key authorization: Authorization
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = EzmaxApi::ObjectAttachmentApi.new
-pki_attachment_id = 56 # Integer | 
-attachment_privacy_v1_request = EzmaxApi::AttachmentPrivacyV1Request.new({e_attachment_privacy: EzmaxApi::FieldEAttachmentPrivacy::ALL}) # AttachmentPrivacyV1Request | 
-
-begin
-  # Change the attachment privacy
-  result = api_instance.attachment_privacy_v1(pki_attachment_id, attachment_privacy_v1_request)
-  p result
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectAttachmentApi->attachment_privacy_v1: #{e}"
-end
-```
-
-#### Using the attachment_privacy_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<AttachmentPrivacyV1Response>, Integer, Hash)> attachment_privacy_v1_with_http_info(pki_attachment_id, attachment_privacy_v1_request)
-
-```ruby
-begin
-  # Change the attachment privacy
-  data, status_code, headers = api_instance.attachment_privacy_v1_with_http_info(pki_attachment_id, attachment_privacy_v1_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <AttachmentPrivacyV1Response>
-rescue EzmaxApi::ApiError => e
-  puts "Error when calling ObjectAttachmentApi->attachment_privacy_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **pki_attachment_id** | **Integer** |  |  |
-| **attachment_privacy_v1_request** | [**AttachmentPrivacyV1Request**](AttachmentPrivacyV1Request.md) |  |  |
-
-### Return type
-
-[**AttachmentPrivacyV1Response**](AttachmentPrivacyV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## attachment_rename_v1
 
 > <AttachmentRenameV1Response> attachment_rename_v1(pki_attachment_id, attachment_rename_v1_request)
@@ -514,6 +368,152 @@ end
 ### Return type
 
 [**AttachmentRestoreV1Response**](AttachmentRestoreV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## attachment_set_document_type_v1
+
+> <AttachmentSetDocumentTypeV1Response> attachment_set_document_type_v1(pki_attachment_id, attachment_set_document_type_v1_request)
+
+Change attachment document type
+
+The endpoint allows to change the checklist document type for an attachment.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAttachmentApi.new
+pki_attachment_id = 56 # Integer | 
+attachment_set_document_type_v1_request = EzmaxApi::AttachmentSetDocumentTypeV1Request.new({fki_documenttypechecklist_id: 191}) # AttachmentSetDocumentTypeV1Request | 
+
+begin
+  # Change attachment document type
+  result = api_instance.attachment_set_document_type_v1(pki_attachment_id, attachment_set_document_type_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAttachmentApi->attachment_set_document_type_v1: #{e}"
+end
+```
+
+#### Using the attachment_set_document_type_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AttachmentSetDocumentTypeV1Response>, Integer, Hash)> attachment_set_document_type_v1_with_http_info(pki_attachment_id, attachment_set_document_type_v1_request)
+
+```ruby
+begin
+  # Change attachment document type
+  data, status_code, headers = api_instance.attachment_set_document_type_v1_with_http_info(pki_attachment_id, attachment_set_document_type_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AttachmentSetDocumentTypeV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAttachmentApi->attachment_set_document_type_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_attachment_id** | **Integer** |  |  |
+| **attachment_set_document_type_v1_request** | [**AttachmentSetDocumentTypeV1Request**](AttachmentSetDocumentTypeV1Request.md) |  |  |
+
+### Return type
+
+[**AttachmentSetDocumentTypeV1Response**](AttachmentSetDocumentTypeV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## attachment_set_privacy_v1
+
+> <AttachmentSetPrivacyV1Response> attachment_set_privacy_v1(pki_attachment_id, attachment_set_privacy_v1_request)
+
+Change the attachment privacy
+
+The endpoint allows to change an attachment's access privacy.
+
+### Examples
+
+```ruby
+require 'time'
+require 'Ezmaxapi'
+# setup authorization
+EzmaxApi.configure do |config|
+  # Configure API key authorization: Authorization
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = EzmaxApi::ObjectAttachmentApi.new
+pki_attachment_id = 56 # Integer | 
+attachment_set_privacy_v1_request = EzmaxApi::AttachmentSetPrivacyV1Request.new({e_attachment_privacy: EzmaxApi::FieldEAttachmentPrivacy::ALL}) # AttachmentSetPrivacyV1Request | 
+
+begin
+  # Change the attachment privacy
+  result = api_instance.attachment_set_privacy_v1(pki_attachment_id, attachment_set_privacy_v1_request)
+  p result
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAttachmentApi->attachment_set_privacy_v1: #{e}"
+end
+```
+
+#### Using the attachment_set_privacy_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AttachmentSetPrivacyV1Response>, Integer, Hash)> attachment_set_privacy_v1_with_http_info(pki_attachment_id, attachment_set_privacy_v1_request)
+
+```ruby
+begin
+  # Change the attachment privacy
+  data, status_code, headers = api_instance.attachment_set_privacy_v1_with_http_info(pki_attachment_id, attachment_set_privacy_v1_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AttachmentSetPrivacyV1Response>
+rescue EzmaxApi::ApiError => e
+  puts "Error when calling ObjectAttachmentApi->attachment_set_privacy_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pki_attachment_id** | **Integer** |  |  |
+| **attachment_set_privacy_v1_request** | [**AttachmentSetPrivacyV1Request**](AttachmentSetPrivacyV1Request.md) |  |  |
+
+### Return type
+
+[**AttachmentSetPrivacyV1Response**](AttachmentSetPrivacyV1Response.md)
 
 ### Authorization
 

@@ -30,7 +30,7 @@ instance = EzmaxApi::EzsigntemplatedocumentRequest.new(
   s_ezsigntemplatedocument_name: Standard Contract,
   e_ezsigntemplatedocument_source: null,
   e_ezsigntemplatedocument_format: null,
-  s_ezsigntemplatedocument_base64: [B@12365c88,
+  s_ezsigntemplatedocument_base64: [B@12f3afb5,
   s_ezsigntemplatedocument_url: http://www.example.com/template.pdf,
   b_ezsigntemplatedocument_forcerepair: null,
   e_ezsigntemplatedocument_form: null,
