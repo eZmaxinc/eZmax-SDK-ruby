@@ -156,6 +156,8 @@ module EzmaxApi
 
     attr_accessor :a_obj_ezsignsignaturepaymentdetail
 
+    attr_accessor :obj_creditcardmerchant
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -232,7 +234,8 @@ module EzmaxApi
         :'obj_creditcardtransaction' => :'objCreditcardtransaction',
         :'a_obj_ezsignelementdependency' => :'a_objEzsignelementdependency',
         :'obj_timezone' => :'objTimezone',
-        :'a_obj_ezsignsignaturepaymentdetail' => :'a_objEzsignsignaturepaymentdetail'
+        :'a_obj_ezsignsignaturepaymentdetail' => :'a_objEzsignsignaturepaymentdetail',
+        :'obj_creditcardmerchant' => :'objCreditcardmerchant'
       }
     end
 
@@ -300,7 +303,8 @@ module EzmaxApi
         :'obj_creditcardtransaction' => :'CustomCreditcardtransactionResponse',
         :'a_obj_ezsignelementdependency' => :'Array<EzsignelementdependencyResponseCompound>',
         :'obj_timezone' => :'CustomTimezoneWithCodeResponse',
-        :'a_obj_ezsignsignaturepaymentdetail' => :'Array<EzsignsignaturepaymentdetailResponseCompound>'
+        :'a_obj_ezsignsignaturepaymentdetail' => :'Array<EzsignsignaturepaymentdetailResponseCompound>',
+        :'obj_creditcardmerchant' => :'CustomCreditcardmerchantResponse'
       }
     end
 
@@ -573,6 +577,10 @@ module EzmaxApi
         if (value = attributes[:'a_obj_ezsignsignaturepaymentdetail']).is_a?(Array)
           self.a_obj_ezsignsignaturepaymentdetail = value
         end
+      end
+
+      if attributes.key?(:'obj_creditcardmerchant')
+        self.obj_creditcardmerchant = attributes[:'obj_creditcardmerchant']
       end
     end
 
@@ -1171,7 +1179,8 @@ module EzmaxApi
           obj_creditcardtransaction == o.obj_creditcardtransaction &&
           a_obj_ezsignelementdependency == o.a_obj_ezsignelementdependency &&
           obj_timezone == o.obj_timezone &&
-          a_obj_ezsignsignaturepaymentdetail == o.a_obj_ezsignsignaturepaymentdetail
+          a_obj_ezsignsignaturepaymentdetail == o.a_obj_ezsignsignaturepaymentdetail &&
+          obj_creditcardmerchant == o.obj_creditcardmerchant
     end
 
     # @see the `==` method
@@ -1183,7 +1192,7 @@ module EzmaxApi
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, fki_ezsignsigningreason_id, fki_font_id, fki_paymentgateway_id, s_currency_description_x, d_ezsignsignature_creditcardamount, s_ezsignsignature_creditcardamountdescription, b_ezsignsignature_creditcardcustomamount, s_ezsignsigningreason_description_x, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, i_ezsignsignature_stepadjusted, e_ezsignsignature_type, e_ezsignsignature_signaturepad, e_ezsignsignature_signaturepadrequired, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, e_ezsignsignature_consultationtrigger, b_ezsignsignature_handwritten, b_ezsignsignature_reason, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, s_ezsignsignature_textvalidationcustommessage, e_ezsignsignature_dependencyrequirement, s_ezsignsignature_defaultvalue, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature, dt_ezsignsignature_date_in_folder_timezone, s_ezsignsignergroup_description_x, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, obj_creditcardtransaction, a_obj_ezsignelementdependency, obj_timezone, a_obj_ezsignsignaturepaymentdetail].hash
+      [pki_ezsignsignature_id, fki_ezsigndocument_id, fki_ezsignfoldersignerassociation_id, fki_ezsignsigningreason_id, fki_font_id, fki_paymentgateway_id, s_currency_description_x, d_ezsignsignature_creditcardamount, s_ezsignsignature_creditcardamountdescription, b_ezsignsignature_creditcardcustomamount, s_ezsignsigningreason_description_x, i_ezsignpage_pagenumber, i_ezsignsignature_x, i_ezsignsignature_y, i_ezsignsignature_height, i_ezsignsignature_width, i_ezsignsignature_step, i_ezsignsignature_stepadjusted, e_ezsignsignature_type, e_ezsignsignature_signaturepad, e_ezsignsignature_signaturepadrequired, t_ezsignsignature_tooltip, e_ezsignsignature_tooltipposition, e_ezsignsignature_font, i_ezsignsignature_validationstep, s_ezsignsignature_attachmentdescription, e_ezsignsignature_attachmentnamesource, e_ezsignsignature_consultationtrigger, b_ezsignsignature_handwritten, b_ezsignsignature_reason, b_ezsignsignature_required, fki_ezsignfoldersignerassociation_id_validation, dt_ezsignsignature_date, i_ezsignsignatureattachment_count, s_ezsignsignature_description, i_ezsignsignature_maxlength, e_ezsignsignature_textvalidation, s_ezsignsignature_textvalidationcustommessage, e_ezsignsignature_dependencyrequirement, s_ezsignsignature_defaultvalue, s_ezsignsignature_regexp, obj_contact_name, obj_contact_name_delegation, obj_signature, dt_ezsignsignature_date_in_folder_timezone, s_ezsignsignergroup_description_x, b_ezsignsignature_customdate, a_obj_ezsignsignaturecustomdate, obj_creditcardtransaction, a_obj_ezsignelementdependency, obj_timezone, a_obj_ezsignsignaturepaymentdetail, obj_creditcardmerchant].hash
     end
 
     # Builds the object from hash

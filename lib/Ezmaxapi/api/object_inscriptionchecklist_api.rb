@@ -65,7 +65,7 @@ module EzmaxApi
         fail ArgumentError, "Missing the required parameter 's_selector' when calling ObjectInscriptionchecklistApi.inscriptionchecklist_get_autocomplete_v3"
       end
       # verify enum value
-      allowable_values = ["All"]
+      allowable_values = ["All", "Required"]
       if @api_client.config.client_side_validation && !allowable_values.include?(s_selector)
         fail ArgumentError, "invalid value for \"s_selector\", must be one of #{allowable_values}"
       end

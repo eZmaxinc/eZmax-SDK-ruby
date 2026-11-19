@@ -1255,6 +1255,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::CustomContactNameResponse](docs/CustomContactNameResponse.md)
  - [EzmaxApi::CustomCreateEzsignelementsPositionedByWordRequest](docs/CustomCreateEzsignelementsPositionedByWordRequest.md)
  - [EzmaxApi::CustomCreditcardRequest](docs/CustomCreditcardRequest.md)
+ - [EzmaxApi::CustomCreditcardmerchantResponse](docs/CustomCreditcardmerchantResponse.md)
  - [EzmaxApi::CustomCreditcardtransactionResponse](docs/CustomCreditcardtransactionResponse.md)
  - [EzmaxApi::CustomCreditcardtransactionresponseResponse](docs/CustomCreditcardtransactionresponseResponse.md)
  - [EzmaxApi::CustomDiscussionconfigurationResponse](docs/CustomDiscussionconfigurationResponse.md)

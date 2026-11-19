@@ -415,6 +415,7 @@ docs/CustomCommunicationsenderResponse.md
 docs/CustomContactNameResponse.md
 docs/CustomCreateEzsignelementsPositionedByWordRequest.md
 docs/CustomCreditcardRequest.md
+docs/CustomCreditcardmerchantResponse.md
 docs/CustomCreditcardtransactionResponse.md
 docs/CustomCreditcardtransactionresponseResponse.md
 docs/CustomDiscussionconfigurationResponse.md
@@ -3216,6 +3217,7 @@ lib/Ezmaxapi/models/custom_communicationsender_response.rb
 lib/Ezmaxapi/models/custom_contact_name_response.rb
 lib/Ezmaxapi/models/custom_create_ezsignelements_positioned_by_word_request.rb
 lib/Ezmaxapi/models/custom_creditcard_request.rb
+lib/Ezmaxapi/models/custom_creditcardmerchant_response.rb
 lib/Ezmaxapi/models/custom_creditcardtransaction_response.rb
 lib/Ezmaxapi/models/custom_creditcardtransactionresponse_response.rb
 lib/Ezmaxapi/models/custom_discussionconfiguration_response.rb

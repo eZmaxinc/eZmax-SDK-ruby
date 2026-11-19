@@ -16,7 +16,7 @@ require 'Ezmaxapi'
 
 instance = EzmaxApi::RealestateassociationAutocompleteElementResponse.new(
   pki_realestateassociation_id: 16,
-  s_realestateassociation_name_x: Organisme d’autoréglementation du courtage immobilier du Québec,
+  s_realestateassociation_name_x: Organisme d‧autoréglementation du courtage immobilier du Québec,
   s_realestateassociation_acronym_x: OACIQ,
   b_realestateassociation_isactive: true
 )

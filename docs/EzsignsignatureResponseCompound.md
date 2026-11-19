@@ -56,6 +56,7 @@
 | **a_obj_ezsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponseCompound.md) |  | [optional] |
 | **obj_timezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] |
 | **a_obj_ezsignsignaturepaymentdetail** | [**Array&lt;EzsignsignaturepaymentdetailResponseCompound&gt;**](EzsignsignaturepaymentdetailResponseCompound.md) |  | [optional] |
+| **obj_creditcardmerchant** | [**CustomCreditcardmerchantResponse**](CustomCreditcardmerchantResponse.md) |  | [optional] |
 
 ## Example
 
@@ -114,7 +115,8 @@ instance = EzmaxApi::EzsignsignatureResponseCompound.new(
   obj_creditcardtransaction: null,
   a_obj_ezsignelementdependency: null,
   obj_timezone: null,
-  a_obj_ezsignsignaturepaymentdetail: null
+  a_obj_ezsignsignaturepaymentdetail: null,
+  obj_creditcardmerchant: null
 )
 ```
 

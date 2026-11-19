@@ -193,7 +193,7 @@ module EzmaxApi
         invalid_properties.push('invalid value for "e_attachmentlog_type", e_attachmentlog_type cannot be nil.')
       end
 
-      pattern = Regexp.new(/[\s\S]{0,65535}$/)
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
       if !@s_attachmentlog_detail.nil? && @s_attachmentlog_detail !~ pattern
         invalid_properties.push("invalid value for \"s_attachmentlog_detail\", must conform to the pattern #{pattern}.")
       end
@@ -213,7 +213,7 @@ module EzmaxApi
       return false if @dt_attachmentlog_datetime.nil?
       return false if @dt_attachmentlog_datetime !~ Regexp.new(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/)
       return false if @e_attachmentlog_type.nil?
-      return false if !@s_attachmentlog_detail.nil? && @s_attachmentlog_detail !~ Regexp.new(/[\s\S]{0,65535}$/)
+      return false if !@s_attachmentlog_detail.nil? && @s_attachmentlog_detail !~ Regexp.new(/^[\s\S]{0,65535}$/)
       true
     end
 
@@ -287,7 +287,7 @@ module EzmaxApi
         fail ArgumentError, 's_attachmentlog_detail cannot be nil'
       end
 
-      pattern = Regexp.new(/[\s\S]{0,65535}$/)
+      pattern = Regexp.new(/^[\s\S]{0,65535}$/)
       if s_attachmentlog_detail !~ pattern
         fail ArgumentError, "invalid value for \"s_attachmentlog_detail\", must conform to the pattern #{pattern}."
       end
